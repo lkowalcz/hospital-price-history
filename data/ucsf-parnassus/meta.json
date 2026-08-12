@@ -2,12 +2,13 @@
   "system": "UCSF Health",
   "location_name": "UCSF Parnassus",
   "mrf_url": "https://app.box.com/index.php?rm=box_download_shared_file&shared_name=ldckxfm5nm9wah74gqi7fdhe6mrtpg5e&file_id=f_1959275070690",
-  "source_filename": "index.php",
+  "source_filename": "index.php.json",
   "sha256": "024837bb4fd4a3c8c7703fa1b94493deca4ee43ca0864d9548d61e1a02f6125d",
   "size_bytes": 90990822,
   "source_last_modified": null,
   "source_etag": null,
-  "status": "metadata-only",
+  "transfer_fingerprint": "215e1ff2128a112004194155f8a3d25828791fd3d269b6c401afa2380fc7ad32",
+  "status": "sharded",
   "first_seen": "2026-08-12T05:16:55Z",
-  "last_changed": "2026-08-12T05:16:55Z"
+  "last_changed": "2026-08-12T07:48:25Z"
 }

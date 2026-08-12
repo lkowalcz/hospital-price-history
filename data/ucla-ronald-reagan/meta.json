@@ -9,5 +9,6 @@
   "source_etag": null,
   "status": "sharded",
   "first_seen": "2026-08-12T05:17:07Z",
-  "last_changed": "2026-08-12T05:17:07Z"
+  "last_changed": "2026-08-12T05:17:07Z",
+  "transfer_fingerprint": "9a83b8f7ed2ff921ee6ed30946f73573068fe5575ceed776733aa63684fa6011"
 }

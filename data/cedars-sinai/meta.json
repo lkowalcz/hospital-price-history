@@ -7,7 +7,8 @@
   "size_bytes": 883973507,
   "source_last_modified": null,
   "source_etag": null,
-  "status": "metadata-only",
+  "transfer_fingerprint": "bcf2d431d70b13590dcb16985e6c65da6204ec3c5b551d8c361840153283f613",
+  "status": "summarized",
   "first_seen": "2026-08-12T05:15:41Z",
   "last_changed": "2026-08-12T05:15:41Z"
 }
