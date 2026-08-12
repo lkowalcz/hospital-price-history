@@ -1,0 +1,13 @@
+{
+  "system": "Duke Health",
+  "location_name": "Duke University Hospital",
+  "mrf_url": "https://rca.elevatepfs.com/ptapp/api/cdm/export/oneclick?recno=fad40f5dd5e6b2097ff0a8f592b095fac2e3a3eeef64efd5ca2b56f564a91e8e",
+  "source_filename": "oneclick",
+  "sha256": "4a3676408e3bb040c132f4d3e3c2630fa01e7c24890c93a7a2d4e1482624bb98",
+  "size_bytes": 950021371,
+  "source_last_modified": null,
+  "source_etag": null,
+  "status": "metadata-only",
+  "first_seen": "2026-08-12T05:21:16Z",
+  "last_changed": "2026-08-12T05:21:16Z"
+}

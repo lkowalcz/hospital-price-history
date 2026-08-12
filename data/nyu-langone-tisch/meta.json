@@ -1,0 +1,13 @@
+{
+  "system": "NYU Langone Health",
+  "location_name": "NYU Langone Tisch Hospital",
+  "mrf_url": "https://standard-charges-prod.s3.amazonaws.com/pricing_files/133971298-1801992631_nyu-langone-tisch_standardcharges.csv",
+  "source_filename": "133971298-1801992631_nyu-langone-tisch_standardcharges.csv",
+  "sha256": "e7bc3c2a45732c7ee8c38b50e1ebbaca694e10e879d9979350eb366b5eccbbe0",
+  "size_bytes": 482291422,
+  "source_last_modified": "Fri, 13 Mar 2026 15:11:39 GMT",
+  "source_etag": "\"cc6d8d648a61a9ec36131ff68df4374c-29\"",
+  "status": "sharded",
+  "first_seen": "2026-08-12T05:16:48Z",
+  "last_changed": "2026-08-12T05:16:48Z"
+}

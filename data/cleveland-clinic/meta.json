@@ -1,0 +1,13 @@
+{
+  "system": "Cleveland Clinic",
+  "location_name": "cleveland clinic main campus",
+  "mrf_url": "https://clevelandclinic.pt.panaceainc.com/MRFDownload/clevelandclinic/clevelandclinic",
+  "source_filename": "340714585_the-cleveland-clinic-foundation_standardcharges.csv",
+  "sha256": "dabba0312d52a715d7739826a811f7d26fb82d006422d946062357f5e67e7415",
+  "size_bytes": 1421901334,
+  "source_last_modified": null,
+  "source_etag": null,
+  "status": "metadata-only",
+  "first_seen": "2026-08-12T05:15:27Z",
+  "last_changed": "2026-08-12T05:15:27Z"
+}

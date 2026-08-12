@@ -1,0 +1,13 @@
+{
+  "system": "Atrium Health (Advocate Health)",
+  "location_name": "Atrium Health Carolinas Medical Center",
+  "mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/11170/561398929-1295789907_carolinas-medical-center_standardcharges.csv",
+  "source_filename": "561398929-1295789907_carolinas-medical-center_standardcharges.csv",
+  "sha256": "1c45d66064e0482bc643d6263463f286d4cd365643edd12ff1955e321a4df59c",
+  "size_bytes": 2870286338,
+  "source_last_modified": "Sat, 28 Mar 2026 23:45:22 GMT",
+  "source_etag": "0x8DE8D2413FCA9A0",
+  "status": "metadata-only",
+  "first_seen": "2026-08-12T06:12:42Z",
+  "last_changed": "2026-08-12T06:12:42Z"
+}

@@ -1,0 +1,13 @@
+{
+  "system": "Emory Healthcare",
+  "location_name": "Emory University Hospital",
+  "mrf_url": "https://www.emoryhealthcare.org/-/media/Project/EH/Emory/ui/pricing-transparency/csv/2026/580566256_1588640692_emory-university_standardcharges.csv",
+  "source_filename": "580566256_1588640692_emory-university_standardcharges.csv",
+  "sha256": "e1bf1a0be650a80b72f20076db77cad825200a6a8b3102a4ff129c031bd786db",
+  "size_bytes": 53748263,
+  "source_last_modified": "Wed, 03 Jun 2026 21:31:28 GMT",
+  "source_etag": "beb0c23900c64ab2872353b9f8a15a58",
+  "status": "sharded",
+  "first_seen": "2026-08-12T05:45:50Z",
+  "last_changed": "2026-08-12T05:45:50Z"
+}
