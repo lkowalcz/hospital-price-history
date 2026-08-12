@@ -1,0 +1,12 @@
+{
+  "system": "Mass General Brigham",
+  "location_name": "Brigham and Women's Hospital",
+  "mrf_url": "https://www.massgeneralbrigham.org/content/dam/mgb-global/en/price-transparency/042312909_Brigham-and-Womens-Hospital_StandardCharges.zip",
+  "source_filename": "042312909_Brigham-and-Womens-Hospital_StandardCharges.csv",
+  "sha256": "1fdaca8cf89da24ae22f4028b120db64e7badec1f3d37a361f6878bdfcd4aefd",
+  "size_bytes": 45940862,
+  "source_last_modified": "Mon, 30 Mar 2026 18:03:48 GMT",
+  "status": "stored",
+  "first_seen": "2026-08-12T05:04:02Z",
+  "last_changed": "2026-08-12T05:04:02Z"
+}

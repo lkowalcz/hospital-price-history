@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "mgh",
+    "system": "Mass General Brigham",
+    "hpt_txt": "https://www.massgeneralbrigham.org/cms-hpt.txt",
+    "location_name": "Massachusetts General Hospital"
+  },
+  {
+    "slug": "brigham-and-womens",
+    "system": "Mass General Brigham",
+    "hpt_txt": "https://www.massgeneralbrigham.org/cms-hpt.txt",
+    "location_name": "Brigham and Women's Hospital"
+  },
+  {
+    "slug": "bwh-faulkner",
+    "system": "Mass General Brigham",
+    "hpt_txt": "https://www.massgeneralbrigham.org/cms-hpt.txt",
+    "location_name": "Brigham and Women's Faulkner Hospital"
+  },
+  {
+    "slug": "marthas-vineyard",
+    "system": "Mass General Brigham",
+    "hpt_txt": "https://www.massgeneralbrigham.org/cms-hpt.txt",
+    "location_name": "Martha's Vineyard Hospital"
+  },
+  {
+    "slug": "nyp-columbia",
+    "system": "NewYork-Presbyterian",
+    "hpt_txt": "https://www.nyp.org/cms-hpt.txt",
+    "location_name": "NewYork-Presbyterian Columbia University Irving Medical Center"
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "system": "NewYork-Presbyterian",
+  "location_name": "NewYork-Presbyterian Columbia University Irving Medical Center",
+  "mrf_url": "https://nyp.widen.net/content/hisgjrgpuk/original/133957095_NewYork-Presbyterian-Hospital_standardcharges.json.zip?u=n8xzey&download=true",
+  "source_filename": "133957095_newyork-presbyterian-hospital_standardcharges.json",
+  "sha256": "ca1a59d4685660b99db1cb654186fca1c846a43bb942d04812ac4ff080365d56",
+  "size_bytes": 226655511,
+  "source_last_modified": "Tue, 31 Mar 2026 18:44:37 GMT",
+  "status": "metadata-only (too large for git)",
+  "first_seen": "2026-08-12T05:04:03Z",
+  "last_changed": "2026-08-12T05:04:03Z"
+}

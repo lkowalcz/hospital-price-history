@@ -1,0 +1,12 @@
+{
+  "system": "Mass General Brigham",
+  "location_name": "Massachusetts General Hospital",
+  "mrf_url": "https://www.massgeneralbrigham.org/content/dam/mgb-global/en/price-transparency/042697983_Massachusetts-General-Hospital_StandardCharges.zip",
+  "source_filename": "042697983_Massachusetts-General-Hospital_StandardCharges.csv",
+  "sha256": "f51cb627f78f404e3201c21dc7f953325f5a587e78089337665269d0e793bc0a",
+  "size_bytes": 63267286,
+  "source_last_modified": "Mon, 30 Mar 2026 18:03:52 GMT",
+  "status": "stored",
+  "first_seen": "2026-08-12T05:04:01Z",
+  "last_changed": "2026-08-12T05:04:01Z"
+}

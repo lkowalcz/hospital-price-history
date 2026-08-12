@@ -1,0 +1,12 @@
+{
+  "system": "Mass General Brigham",
+  "location_name": "Brigham and Women's Faulkner Hospital",
+  "mrf_url": "https://www.massgeneralbrigham.org/content/dam/mgb-global/en/price-transparency/042768256_Brigham-and-Womens-Faulkner-Hospital_StandardCharges.zip",
+  "source_filename": "042768256_Brigham-and-Womens-Faulkner-Hospital_StandardCharges.csv",
+  "sha256": "22a89b6792a686876f656bddac7744dab359353614f1d694379590e2482845ea",
+  "size_bytes": 15942797,
+  "source_last_modified": "Mon, 30 Mar 2026 18:03:44 GMT",
+  "status": "stored",
+  "first_seen": "2026-08-12T05:04:02Z",
+  "last_changed": "2026-08-12T05:04:02Z"
+}
