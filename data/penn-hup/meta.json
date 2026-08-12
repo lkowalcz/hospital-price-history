@@ -3,11 +3,12 @@
   "location_name": "The Hospital of the University of Pennsylvania",
   "mrf_url": "https://www1.pennmedicine.org/images/pricing/231352685_the-trustees-of-the-university-of-pennsylvania-dba-the-hospital-of-the-univer_standardcharges.csv",
   "source_filename": "231352685_the-trustees-of-the-university-of-pennsylvania-dba-the-hospital-of-the-univer_standardcharges.csv",
-  "sha256": "25eb29300f50870d9c7fdf64709953715318e82ec94a06d73ddca33a33abeb34",
-  "size_bytes": 2346268631,
+  "sha256": "84201ae3ef0e7ae026102ebb731ffc06134e5d626e48f755c20b0f750ec282b2",
+  "size_bytes": 2346343903,
   "source_last_modified": "Mon, 30 Mar 2026 13:57:01 GMT",
   "source_etag": "\"1bf729154dc0dc1:0\"",
-  "status": "metadata-only",
+  "transfer_fingerprint": "1aeba2b94771f545a8b82bb03c30e645fdb11b98a83eb415a9e6acd7b029b2eb",
+  "status": "summarized",
   "first_seen": "2026-08-12T05:45:47Z",
-  "last_changed": "2026-08-12T05:45:47Z"
+  "last_changed": "2026-08-12T07:14:46Z"
 }

@@ -1,0 +1,4176 @@
+{
+ "attestation": {
+  "attestation": "To the best of its knowledge and belief, this hospital has included all applicable standard charge information in accordance with the requirements of 45 CFR 180.50, and the information encoded is true, accurate, and complete as of the date in the file. This hospital has included all payer-specific negotiated charges in dollars that can be expressed as a dollar amount. For payer-specific negotiated charges that cannot be expressed as a dollar amount in the machine-readable file or not knowable in advance, the hospital attests that the payer-specific negotiated charge is based on a contractual algorithm, percentage or formula that precludes the provision of a dollar amount and has provided all necessary information available to the hospital for the public to be able to derive the dollar amount, including, but not limited to, the specific fee schedule or components referenced in such percentage, algorithm or formula.",
+  "attester_name": "James Wentz ",
+  "confirm_attestation": true
+ },
+ "hospital_address": [
+  "505 Parnassus Ave, Box 0296, San Francisco, CA 94143",
+  "1975 4th Street, San Francisco, CA 94158",
+  "1600 Divisadero, San Francisco, CA 94115",
+  "505 Parnassus Ave, San Francisco, CA 94143"
+ ],
+ "hospital_name": "Ucsf Medical Center",
+ "last_updated_on": "2026-04-01",
+ "license_information": {
+  "license_number": "220000091|220000091|220000091|220000091",
+  "state": "CA"
+ },
+ "location_name": [
+  "Ucsf Medical Center",
+  "UCSF Mission Bay",
+  "UCSF Mt Zion",
+  "UCSF Parnassus"
+ ],
+ "modifier_information": [
+  {
+   "code": "26",
+   "description": "Professional Component",
+   "modifier_payer_information": [
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Alameda Alliance",
+     "plan_name": "IHSS All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Alameda Alliance",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aspire",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Covered California Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "EPN/IFP Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "PPO/EPO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Brown & Toland Health Services",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Central California Alliance for Health",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Central Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Chinese Community Health Plan",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Chinese Community Health Plan",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Cigna",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Contra Costa Health Plan",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Contra Costa Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "First Health/Coventry",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan of San Mateo",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan of San Mateo",
+     "plan_name": "Pediatric Only Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan San Joaquin County",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Hill Physicians Medical Group HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Interplan Health Group",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Multiplan",
+     "plan_name": "PHCS All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Networks by Design",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "On Lok",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Optum",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Partnership Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Progyny",
+     "plan_name": "Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "San Francisco Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Stanislaus County Partners in Health",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sutter Health",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sutter Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Apple Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Hill Physicians Medical Group Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "non-HMO Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Select/Select Plus Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Western Health Advantage",
+     "plan_name": "All Commercial Plans"
+    }
+   ]
+  },
+  {
+   "code": "GO",
+   "description": "Services delivered under an outpatient occupational therapy plan of care",
+   "modifier_payer_information": [
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Alameda Alliance",
+     "plan_name": "IHSS All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Alameda Alliance",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aspire",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Covered California Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "EPN/IFP Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "PPO/EPO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Brown & Toland Health Services",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Central California Alliance for Health",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Central Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Chinese Community Health Plan",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Chinese Community Health Plan",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Cigna",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Contra Costa Health Plan",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Contra Costa Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "First Health/Coventry",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan of San Mateo",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan of San Mateo",
+     "plan_name": "Pediatric Only Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan San Joaquin County",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Hill Physicians Medical Group HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Interplan Health Group",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Multiplan",
+     "plan_name": "PHCS All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Networks by Design",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "On Lok",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Optum",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Partnership Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Progyny",
+     "plan_name": "Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "San Francisco Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Stanislaus County Partners in Health",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sutter Health",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sutter Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Apple Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Hill Physicians Medical Group Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "non-HMO Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Select/Select Plus Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Western Health Advantage",
+     "plan_name": "All Commercial Plans"
+    }
+   ]
+  },
+  {
+   "code": "FB",
+   "description": "Item provided without cost to provider, supplier or practitioner, or full credit received for replaced device (examples, but not limited to, covered under warranty, replaced due to defect, free samples)",
+   "modifier_payer_information": [
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Alameda Alliance",
+     "plan_name": "IHSS All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Alameda Alliance",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aspire",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Covered California Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "EPN/IFP Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "PPO/EPO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Brown & Toland Health Services",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Central California Alliance for Health",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Central Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Chinese Community Health Plan",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Chinese Community Health Plan",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Cigna",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Contra Costa Health Plan",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Contra Costa Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "First Health/Coventry",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan of San Mateo",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan of San Mateo",
+     "plan_name": "Pediatric Only Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan San Joaquin County",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Hill Physicians Medical Group HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Interplan Health Group",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Multiplan",
+     "plan_name": "PHCS All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Networks by Design",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "On Lok",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Optum",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Partnership Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Progyny",
+     "plan_name": "Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "San Francisco Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Stanislaus County Partners in Health",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sutter Health",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sutter Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Apple Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Hill Physicians Medical Group Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "non-HMO Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Select/Select Plus Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Western Health Advantage",
+     "plan_name": "All Commercial Plans"
+    }
+   ]
+  },
+  {
+   "code": "90",
+   "description": "Reference (Outside) Laboratory",
+   "modifier_payer_information": [
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Alameda Alliance",
+     "plan_name": "IHSS All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Alameda Alliance",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aspire",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Covered California Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "EPN/IFP Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "PPO/EPO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Brown & Toland Health Services",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Central California Alliance for Health",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Central Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Chinese Community Health Plan",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Chinese Community Health Plan",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Cigna",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Contra Costa Health Plan",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Contra Costa Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "First Health/Coventry",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan of San Mateo",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan of San Mateo",
+     "plan_name": "Pediatric Only Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan San Joaquin County",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Hill Physicians Medical Group HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Interplan Health Group",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Multiplan",
+     "plan_name": "PHCS All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Networks by Design",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "On Lok",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Optum",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Partnership Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Progyny",
+     "plan_name": "Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "San Francisco Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Stanislaus County Partners in Health",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sutter Health",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sutter Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Apple Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Hill Physicians Medical Group Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "non-HMO Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Select/Select Plus Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Western Health Advantage",
+     "plan_name": "All Commercial Plans"
+    }
+   ]
+  },
+  {
+   "code": "QW",
+   "description": "Clia waived test",
+   "modifier_payer_information": [
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Alameda Alliance",
+     "plan_name": "IHSS All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Alameda Alliance",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aspire",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Covered California Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "EPN/IFP Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "PPO/EPO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Brown & Toland Health Services",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Central California Alliance for Health",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Central Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Chinese Community Health Plan",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Chinese Community Health Plan",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Cigna",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Contra Costa Health Plan",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Contra Costa Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "First Health/Coventry",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan of San Mateo",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan of San Mateo",
+     "plan_name": "Pediatric Only Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan San Joaquin County",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Hill Physicians Medical Group HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Interplan Health Group",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Multiplan",
+     "plan_name": "PHCS All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Networks by Design",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "On Lok",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Optum",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Partnership Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Progyny",
+     "plan_name": "Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "San Francisco Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Stanislaus County Partners in Health",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sutter Health",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sutter Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Apple Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Hill Physicians Medical Group Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "non-HMO Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Select/Select Plus Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Western Health Advantage",
+     "plan_name": "All Commercial Plans"
+    }
+   ]
+  },
+  {
+   "code": "TC",
+   "description": "Technical Component; represents the costs of equipment, supplies, and technician personnel for a procedure, excluding the physician's interpretation. It is used when only the technical portion of a test is billed, typically by hospitals, imaging centers, or independent diagnostic testing facilities",
+   "modifier_payer_information": [
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Alameda Alliance",
+     "plan_name": "IHSS All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Alameda Alliance",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aspire",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Covered California Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "EPN/IFP Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "PPO/EPO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Brown & Toland Health Services",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Central California Alliance for Health",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Central Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Chinese Community Health Plan",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Chinese Community Health Plan",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Cigna",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Contra Costa Health Plan",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Contra Costa Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "First Health/Coventry",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan of San Mateo",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan of San Mateo",
+     "plan_name": "Pediatric Only Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan San Joaquin County",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Hill Physicians Medical Group HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Interplan Health Group",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Multiplan",
+     "plan_name": "PHCS All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Networks by Design",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "On Lok",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Optum",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Partnership Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Progyny",
+     "plan_name": "Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "San Francisco Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Stanislaus County Partners in Health",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sutter Health",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sutter Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Apple Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Hill Physicians Medical Group Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "non-HMO Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Select/Select Plus Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Western Health Advantage",
+     "plan_name": "All Commercial Plans"
+    }
+   ]
+  },
+  {
+   "code": "52",
+   "description": "Reduced Services",
+   "modifier_payer_information": [
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Alameda Alliance",
+     "plan_name": "IHSS All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Alameda Alliance",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aspire",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Covered California Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "EPN/IFP Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "PPO/EPO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Brown & Toland Health Services",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Central California Alliance for Health",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Central Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Chinese Community Health Plan",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Chinese Community Health Plan",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Cigna",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Contra Costa Health Plan",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Contra Costa Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "First Health/Coventry",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan of San Mateo",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan of San Mateo",
+     "plan_name": "Pediatric Only Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan San Joaquin County",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Hill Physicians Medical Group HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Interplan Health Group",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Multiplan",
+     "plan_name": "PHCS All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Networks by Design",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "On Lok",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Optum",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Partnership Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Progyny",
+     "plan_name": "Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "San Francisco Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Stanislaus County Partners in Health",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sutter Health",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sutter Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Apple Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Hill Physicians Medical Group Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "non-HMO Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Select/Select Plus Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Western Health Advantage",
+     "plan_name": "All Commercial Plans"
+    }
+   ]
+  },
+  {
+   "code": "GP",
+   "description": "Services delivered under an outpatient physical therapy plan of care",
+   "modifier_payer_information": [
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Alameda Alliance",
+     "plan_name": "IHSS All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Alameda Alliance",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aspire",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Covered California Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "EPN/IFP Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "PPO/EPO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Brown & Toland Health Services",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Central California Alliance for Health",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Central Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Chinese Community Health Plan",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Chinese Community Health Plan",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Cigna",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Contra Costa Health Plan",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Contra Costa Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "First Health/Coventry",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan of San Mateo",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan of San Mateo",
+     "plan_name": "Pediatric Only Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan San Joaquin County",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Hill Physicians Medical Group HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Interplan Health Group",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Multiplan",
+     "plan_name": "PHCS All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Networks by Design",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "On Lok",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Optum",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Partnership Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Progyny",
+     "plan_name": "Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "San Francisco Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Stanislaus County Partners in Health",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sutter Health",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sutter Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Apple Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Hill Physicians Medical Group Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "non-HMO Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Select/Select Plus Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Western Health Advantage",
+     "plan_name": "All Commercial Plans"
+    }
+   ]
+  },
+  {
+   "code": "GN",
+   "description": "Services delivered under an outpatient speech language pathology plan of care",
+   "modifier_payer_information": [
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Alameda Alliance",
+     "plan_name": "IHSS All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Alameda Alliance",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aspire",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Covered California Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "EPN/IFP Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "PPO/EPO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Brown & Toland Health Services",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Central California Alliance for Health",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Central Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Chinese Community Health Plan",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Chinese Community Health Plan",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Cigna",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Contra Costa Health Plan",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Contra Costa Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "First Health/Coventry",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan of San Mateo",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan of San Mateo",
+     "plan_name": "Pediatric Only Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan San Joaquin County",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Hill Physicians Medical Group HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Interplan Health Group",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Multiplan",
+     "plan_name": "PHCS All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Networks by Design",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "On Lok",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Optum",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Partnership Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Progyny",
+     "plan_name": "Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "San Francisco Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Stanislaus County Partners in Health",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sutter Health",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sutter Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Apple Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Hill Physicians Medical Group Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "non-HMO Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Select/Select Plus Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Western Health Advantage",
+     "plan_name": "All Commercial Plans"
+    }
+   ]
+  },
+  {
+   "code": "22",
+   "description": "Increased Procedural Services",
+   "modifier_payer_information": [
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Alameda Alliance",
+     "plan_name": "IHSS All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Alameda Alliance",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aspire",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Covered California Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "EPN/IFP Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "PPO/EPO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Brown & Toland Health Services",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Central California Alliance for Health",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Central Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Chinese Community Health Plan",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Chinese Community Health Plan",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Cigna",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Contra Costa Health Plan",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Contra Costa Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "First Health/Coventry",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan of San Mateo",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan of San Mateo",
+     "plan_name": "Pediatric Only Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan San Joaquin County",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Hill Physicians Medical Group HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Interplan Health Group",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Multiplan",
+     "plan_name": "PHCS All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Networks by Design",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "On Lok",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Optum",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Partnership Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Progyny",
+     "plan_name": "Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "San Francisco Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Stanislaus County Partners in Health",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sutter Health",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sutter Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Apple Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Hill Physicians Medical Group Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "non-HMO Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Select/Select Plus Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Western Health Advantage",
+     "plan_name": "All Commercial Plans"
+    }
+   ]
+  },
+  {
+   "code": "RB",
+   "description": "Replacement of a part of a dme, orthotic or prosthetic item furnished as part of a repair",
+   "modifier_payer_information": [
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Alameda Alliance",
+     "plan_name": "IHSS All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Alameda Alliance",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aspire",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Covered California Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "EPN/IFP Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "PPO/EPO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Brown & Toland Health Services",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Central California Alliance for Health",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Central Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Chinese Community Health Plan",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Chinese Community Health Plan",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Cigna",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Contra Costa Health Plan",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Contra Costa Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "First Health/Coventry",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan of San Mateo",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan of San Mateo",
+     "plan_name": "Pediatric Only Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan San Joaquin County",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Hill Physicians Medical Group HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Interplan Health Group",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Multiplan",
+     "plan_name": "PHCS All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Networks by Design",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "On Lok",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Optum",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Partnership Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Progyny",
+     "plan_name": "Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "San Francisco Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Stanislaus County Partners in Health",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sutter Health",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sutter Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Apple Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Hill Physicians Medical Group Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "non-HMO Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Select/Select Plus Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Western Health Advantage",
+     "plan_name": "All Commercial Plans"
+    }
+   ]
+  },
+  {
+   "code": "U1",
+   "description": "Medicaid level of care 1, as defined by each state",
+   "modifier_payer_information": [
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Alameda Alliance",
+     "plan_name": "IHSS All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Alameda Alliance",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aspire",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Covered California Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "EPN/IFP Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "PPO/EPO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Brown & Toland Health Services",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Central California Alliance for Health",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Central Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Chinese Community Health Plan",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Chinese Community Health Plan",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Cigna",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Contra Costa Health Plan",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Contra Costa Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "First Health/Coventry",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan of San Mateo",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan of San Mateo",
+     "plan_name": "Pediatric Only Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan San Joaquin County",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Hill Physicians Medical Group HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Interplan Health Group",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Multiplan",
+     "plan_name": "PHCS All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Networks by Design",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "On Lok",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Optum",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Partnership Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Progyny",
+     "plan_name": "Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "San Francisco Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Stanislaus County Partners in Health",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sutter Health",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sutter Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Apple Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Hill Physicians Medical Group Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "non-HMO Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Select/Select Plus Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Western Health Advantage",
+     "plan_name": "All Commercial Plans"
+    }
+   ]
+  },
+  {
+   "code": "U2",
+   "description": "Medicaid level of care 2, as defined by each state",
+   "modifier_payer_information": [
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Alameda Alliance",
+     "plan_name": "IHSS All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Alameda Alliance",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aspire",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Covered California Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "EPN/IFP Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "PPO/EPO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Brown & Toland Health Services",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Central California Alliance for Health",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Central Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Chinese Community Health Plan",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Chinese Community Health Plan",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Cigna",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Contra Costa Health Plan",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Contra Costa Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "First Health/Coventry",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan of San Mateo",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan of San Mateo",
+     "plan_name": "Pediatric Only Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan San Joaquin County",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Hill Physicians Medical Group HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Interplan Health Group",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Multiplan",
+     "plan_name": "PHCS All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Networks by Design",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "On Lok",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Optum",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Partnership Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Progyny",
+     "plan_name": "Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "San Francisco Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Stanislaus County Partners in Health",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sutter Health",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sutter Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Apple Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Hill Physicians Medical Group Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "non-HMO Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Select/Select Plus Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Western Health Advantage",
+     "plan_name": "All Commercial Plans"
+    }
+   ]
+  },
+  {
+   "code": "U8",
+   "description": "Medicaid level of care 8, as defined by each state",
+   "modifier_payer_information": [
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Alameda Alliance",
+     "plan_name": "IHSS All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Alameda Alliance",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aspire",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Covered California Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "EPN/IFP Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "PPO/EPO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Brown & Toland Health Services",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Central California Alliance for Health",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Central Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Chinese Community Health Plan",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Chinese Community Health Plan",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Cigna",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Contra Costa Health Plan",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Contra Costa Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "First Health/Coventry",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan of San Mateo",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan of San Mateo",
+     "plan_name": "Pediatric Only Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan San Joaquin County",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Hill Physicians Medical Group HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Interplan Health Group",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Multiplan",
+     "plan_name": "PHCS All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Networks by Design",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "On Lok",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Optum",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Partnership Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Progyny",
+     "plan_name": "Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "San Francisco Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Stanislaus County Partners in Health",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sutter Health",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sutter Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Apple Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Hill Physicians Medical Group Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "non-HMO Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Select/Select Plus Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Western Health Advantage",
+     "plan_name": "All Commercial Plans"
+    }
+   ]
+  },
+  {
+   "code": "50",
+   "description": "Bilateral Procedure",
+   "modifier_payer_information": [
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Alameda Alliance",
+     "plan_name": "IHSS All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Alameda Alliance",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aspire",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Cross",
+     "plan_name": "Anthem Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Covered California Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "EPN/IFP Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "PPO/EPO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Blue Shield",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Brown & Toland Health Services",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Central California Alliance for Health",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Central Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Chinese Community Health Plan",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Chinese Community Health Plan",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Cigna",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Contra Costa Health Plan",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Contra Costa Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "First Health/Coventry",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan of San Mateo",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan of San Mateo",
+     "plan_name": "Pediatric Only Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health Plan San Joaquin County",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Hill Physicians Medical Group HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Interplan Health Group",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Kaiser Permanente",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Multiplan",
+     "plan_name": "PHCS All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Networks by Design",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "On Lok",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Optum",
+     "plan_name": "Transplant"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Partnership Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Progyny",
+     "plan_name": "Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "San Francisco Health Plan",
+     "plan_name": "Medi-Cal Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Stanislaus County Partners in Health",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sutter Health",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sutter Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Apple Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Hill Physicians Medical Group Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "HMO/POS"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "non-HMO Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Select/Select Plus Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Western Health Advantage",
+     "plan_name": "All Commercial Plans"
+    }
+   ]
+  }
+ ],
+ "type_2_npi": [
+  "1689772592",
+  "1639278369",
+  "1457450116",
+  "1497847552",
+  "1194824813",
+  "1720183858"
+ ],
+ "version": "3.0.0"
+}

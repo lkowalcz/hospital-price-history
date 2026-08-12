@@ -42,11 +42,17 @@ See `hospitals.json` for the exact list; each entry's current state lives in
 |------|------|---------------|
 | `stored` | ≤ 45 MB | single normalized file |
 | `sharded` | ≤ 600 MB, parseable | 32 hash-bucketed, sorted shard files (CSV rows or JSONL items) plus a `_header` file — every shard is git-sized and a changed row touches only its bucket |
-| `metadata-only` | larger or unparseable | `meta.json` hash/size/timing only, so change *timing* is still captured. Several systems (Northwestern, Atrium, Penn, Cleveland Clinic, Duke, Cedars-Sinai, Northwell) publish 0.7–5 GB files that exceed any sane git budget |
+| `summarized` | larger, CMS v3 | `summary.csv`: per code — description, gross charge, discounted cash price, min/max negotiated rate, payer-entry count. Collapses the 0.7–5 GB files (Northwestern, Atrium, Penn, Cleveland Clinic, Duke, Cedars-Sinai, Northwell) into a few diffable MB |
+| `metadata-only` | unparseable | `meta.json` hash/size/timing only, so change *timing* is still captured |
 
-Servers that provide no `Last-Modified`/`ETag` force a full download just to
-detect change; files over 400 MB from such servers are refetched weekly
-(Sundays) instead of daily.
+### Cheap change detection
+
+Downloads are skipped when nothing changed, checked in escalating order of
+cost: `HEAD` `Last-Modified`/`ETag` when the server provides validators;
+otherwise a fingerprint hashed from ~1 MB Range-request samples at five
+fixed offsets (+ content length) — ~5 MB to check a 5 GB file. Servers
+supporting neither (Cedars-Sinai, Cleveland Clinic, Duke) get a full
+refetch weekly (Sundays) instead of daily.
 
 ## Running locally
 
