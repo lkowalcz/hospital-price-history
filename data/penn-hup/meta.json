@@ -1,0 +1,13 @@
+{
+  "system": "Penn Medicine",
+  "location_name": "The Hospital of the University of Pennsylvania",
+  "mrf_url": "https://www1.pennmedicine.org/images/pricing/231352685_the-trustees-of-the-university-of-pennsylvania-dba-the-hospital-of-the-univer_standardcharges.csv",
+  "source_filename": "231352685_the-trustees-of-the-university-of-pennsylvania-dba-the-hospital-of-the-univer_standardcharges.csv",
+  "sha256": "25eb29300f50870d9c7fdf64709953715318e82ec94a06d73ddca33a33abeb34",
+  "size_bytes": 2346268631,
+  "source_last_modified": "Mon, 30 Mar 2026 13:57:01 GMT",
+  "source_etag": "\"1bf729154dc0dc1:0\"",
+  "status": "metadata-only",
+  "first_seen": "2026-08-12T05:45:47Z",
+  "last_changed": "2026-08-12T05:45:47Z"
+}

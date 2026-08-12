@@ -1,0 +1,13 @@
+{
+  "system": "Stanford Medicine",
+  "location_name": "Stanford Health Care",
+  "mrf_url": "https://stanfordhealthcare.org/content/dam/SHC/patientsandvisitors/pricingtransparency/946174066_stanford-health-care_standardcharges.json",
+  "source_filename": "946174066_stanford-health-care_standardcharges.json",
+  "sha256": "d21ae2b92615b8496cc7124d3456b9761dbf439d0f231919e4195a86bac68259",
+  "size_bytes": 154579203,
+  "source_last_modified": "Tue, 31 Mar 2026 23:59:12 GMT",
+  "source_etag": null,
+  "status": "sharded",
+  "first_seen": "2026-08-12T05:15:07Z",
+  "last_changed": "2026-08-12T05:15:07Z"
+}

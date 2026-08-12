@@ -1,0 +1,13 @@
+{
+  "system": "Kaiser Permanente",
+  "location_name": "Oakland Medical Center",
+  "mrf_url": "https://healthy.kaiserpermanente.org/content/dam/kporg/final/documents/health-plan-documents/coverage-information/machine-readable/941105628-oakland-medical-center-standard-charges-ncal-en.csv",
+  "source_filename": "941105628-oakland-medical-center-standard-charges-ncal-en.csv",
+  "sha256": "cd76387a87886502b6e77ed0f1c7190395086b66f8657f173e8cf9d7b032af80",
+  "size_bytes": 215205350,
+  "source_last_modified": "Wed, 12 Aug 2026 06:16:38 GMT",
+  "source_etag": null,
+  "status": "sharded",
+  "first_seen": "2026-08-12T05:47:07Z",
+  "last_changed": "2026-08-12T05:47:07Z"
+}

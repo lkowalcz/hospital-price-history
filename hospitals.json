@@ -28,5 +28,101 @@
     "system": "NewYork-Presbyterian",
     "hpt_txt": "https://www.nyp.org/cms-hpt.txt",
     "location_name": "NewYork-Presbyterian Columbia University Irving Medical Center"
+  },
+  {
+    "slug": "stanford",
+    "system": "Stanford Medicine",
+    "hpt_txt": "https://stanfordhealthcare.org/cms-hpt.txt",
+    "location_name": "Stanford Health Care"
+  },
+  {
+    "slug": "cleveland-clinic",
+    "system": "Cleveland Clinic",
+    "hpt_txt": "https://my.clevelandclinic.org/cms-hpt.txt",
+    "location_name": "cleveland clinic main campus"
+  },
+  {
+    "slug": "cedars-sinai",
+    "system": "Cedars-Sinai",
+    "hpt_txt": "https://www.cedars-sinai.org/cms-hpt.txt",
+    "location_name": "Cedars-Sinai Medical Center"
+  },
+  {
+    "slug": "nyu-langone-tisch",
+    "system": "NYU Langone Health",
+    "hpt_txt": "https://nyulangone.org/cms-hpt.txt",
+    "location_name": "NYU Langone Tisch Hospital"
+  },
+  {
+    "slug": "uchicago",
+    "system": "UChicago Medicine",
+    "hpt_txt": "https://www.uchicagomedicine.org/cms-hpt.txt",
+    "location_name": "University of Chicago Medical Center"
+  },
+  {
+    "slug": "ucsf-parnassus",
+    "system": "UCSF Health",
+    "hpt_txt": "https://www.ucsfhealth.org/cms-hpt.txt",
+    "location_name": "UCSF Parnassus"
+  },
+  {
+    "slug": "ucla-ronald-reagan",
+    "system": "UCLA Health",
+    "hpt_txt": "https://www.uclahealth.org/cms-hpt.txt",
+    "location_name": "Ronald Reagan UCLA Medical Center"
+  },
+  {
+    "slug": "duke",
+    "system": "Duke Health",
+    "hpt_txt": "https://www.dukehealth.org/cms-hpt.txt",
+    "location_name": "Duke University Hospital"
+  },
+  {
+    "slug": "md-anderson",
+    "system": "UT MD Anderson",
+    "hpt_txt": "https://www.mdanderson.org/cms-hpt.txt",
+    "location_name": "University of Texas MD Anderson Cancer Center"
+  },
+  {
+    "slug": "northwestern-memorial",
+    "system": "Northwestern Medicine",
+    "hpt_txt": "https://www.nm.org/cms-hpt.txt",
+    "location_name": "Northwestern Memorial Hospital"
+  },
+  {
+    "slug": "penn-hup",
+    "system": "Penn Medicine",
+    "hpt_txt": "https://www.pennmedicine.org/cms-hpt.txt",
+    "location_name": "The Hospital of the University of Pennsylvania"
+  },
+  {
+    "slug": "northwell-north-shore",
+    "system": "Northwell Health",
+    "hpt_txt": "https://www.northwell.edu/cms-hpt.txt",
+    "location_name": "North Shore University Hospital"
+  },
+  {
+    "slug": "emory-university-hospital",
+    "system": "Emory Healthcare",
+    "hpt_txt": "https://www.emoryhealthcare.org/cms-hpt.txt",
+    "location_name": "Emory University Hospital"
+  },
+  {
+    "slug": "kaiser-oakland",
+    "system": "Kaiser Permanente",
+    "hpt_txt": "https://healthy.kaiserpermanente.org/cms-hpt.txt",
+    "location_name": "Oakland Medical Center"
+  },
+  {
+    "slug": "atrium-carolinas",
+    "system": "Atrium Health (Advocate Health)",
+    "hpt_txt": "https://www.atriumhealth.org/cms-hpt.txt",
+    "location_name": "Atrium Health Carolinas Medical Center"
+  },
+  {
+    "slug": "boston-medical-center",
+    "system": "Boston Medical Center Health System",
+    "hpt_txt": "https://www.bmc.org/cms-hpt.txt",
+    "location_name": "Boston Medical Center"
   }
 ]

@@ -1,0 +1,13 @@
+{
+  "system": "UChicago Medicine",
+  "location_name": "University of Chicago Medical Center",
+  "mrf_url": "https://edge.sitecorecloud.io/unichicagomc-81nbqnb3/media/files/pricing-transparency/2026/363488183_the-university-of-chicago-medical-center_standardcharges.json",
+  "source_filename": "363488183_the-university-of-chicago-medical-center_standardcharges.json",
+  "sha256": "22104232326ddb857920f0a9d560def71d6c4ea8b13effa89eac3bb0903bb44f",
+  "size_bytes": 55335368,
+  "source_last_modified": "Wed, 01 Apr 2026 20:50:10 GMT",
+  "source_etag": "\"0x8DE903043BDA19F\"",
+  "status": "sharded",
+  "first_seen": "2026-08-12T05:16:52Z",
+  "last_changed": "2026-08-12T05:16:52Z"
+}

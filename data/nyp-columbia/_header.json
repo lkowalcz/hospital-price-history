@@ -1,0 +1,147 @@
+{
+ "attestation": {
+  "attestation": "To the best of its knowledge and belief, this hospital has included all applicable standard charge information in accordance with the requirements of 45 CFR 180.50, and the information encoded is true, accurate, and complete as of the date in the file. This hospital has included all payer-specific negotiated charges in dollars that can be expressed as a dollar amount. For payer-specific negotiated charges that cannot be expressed as a dollar amount in the machine-readable file or not knowable in advance, the hospital attests that the payer-specific negotiated charge is based on a contractual algorithm, percentage or formula that precludes the provision of a dollar amount and has provided all necessary information available to the hospital for the public to be able to derive the dollar amount, including, but not limited to, the specific fee schedule or components referenced in such percentage, algorithm or formula.",
+  "attester_name": "William Farrell",
+  "confirm_attestation": true
+ },
+ "hospital_address": [
+  "622 West 168th Street New York NY 10032",
+  "525 East 68th Street New York NY 10021",
+  "5141 Broadway New York NY 10034",
+  "55 Palmer Avenue Bronxville NY 10708",
+  "170 William Street New York NY 10038",
+  "21 Bloomingdale Road White Plains NY 10605",
+  "506 Sixth Street Brooklyn NY 11215"
+ ],
+ "hospital_name": "NewYork-Presbyterian Columbia University Irving Medical Center|NewYork-Presbyterian Weill Cornell Medical Center|NewYork-Presbyterian Brooklyn Methodist Hospital",
+ "last_updated_on": "2026-03-31",
+ "license_information": {
+  "license_number": "7002054H",
+  "state": "NY"
+ },
+ "location_name": [
+  "NewYork-Presbyterian Columbia University Irving Medical Center",
+  "NewYork-Presbyterian Weill Cornell Medical Center",
+  "NewYork-Presbyterian Allen Hospital",
+  "NewYork-Presbyterian Westchester",
+  "NewYork-Presbyterian Lower Manhattan Hospital",
+  "NewYork-Presbyterian Westchester Behavioral Health",
+  "NewYork-Presbyterian Brooklyn Methodist Hospital"
+ ],
+ "modifier_information": [
+  {
+   "code": "LT",
+   "description": "Left side of body",
+   "modifier_payer_information": [
+    {
+     "description": "For ambulatory surgery non-primary procedures, when LT modifier is billed in conjuction with RT modifier: 50% discount when 2 procedures billed, 75% discount when more than 2  procedures billed.",
+     "payer_name": "Anthem Blue Cross and Blue Shield",
+     "plan_name": "All Commercial Plans"
+    }
+   ]
+  },
+  {
+   "code": "RT",
+   "description": "Right side of body",
+   "modifier_payer_information": [
+    {
+     "description": "For ambulatory surgery non-primary procedures, when RT modifier is billed in conjuction with LT modifier: 50% discount when 2 procedures billed, 75% discount when more than 2  procedures billed.",
+     "payer_name": "Anthem Blue Cross and Blue Shield",
+     "plan_name": "All Commercial Plans"
+    }
+   ]
+  },
+  {
+   "code": "50",
+   "description": "Bilateral procedure",
+   "modifier_payer_information": [
+    {
+     "description": "150% payment adjustment for the item or service to which the modifier is appended",
+     "payer_name": "Cigna Healthcare",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "150% payment adjustment for the item or service to which the modifier is appended",
+     "payer_name": "Oxford Health Plans",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "150% payment adjustment for the item or service to which the modifier is appended",
+     "payer_name": "United Healthcare",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "150% payment adjustment for the item or service to which the modifier is appended",
+     "payer_name": "United Healthcare",
+     "plan_name": "Medicare Advantage"
+    },
+    {
+     "description": "150% payment adjustment for the item or service to which the modifier is appended",
+     "payer_name": "Anthem Blue Cross and Blue Shield",
+     "plan_name": "Medicare Advantage"
+    },
+    {
+     "description": "150% payment adjustment for the item or service to which the modifier is appended",
+     "payer_name": "Anthem Blue Cross and Blue Shield Healthplus",
+     "plan_name": "Medicare Advantage"
+    },
+    {
+     "description": "150% payment adjustment for the item or service to which the modifier is appended",
+     "payer_name": "Cigna Healthcare",
+     "plan_name": "Medicare Advantage"
+    },
+    {
+     "description": "150% payment adjustment for the item or service to which the modifier is appended",
+     "payer_name": "EmblemHealth",
+     "plan_name": "Medicare Advantage"
+    },
+    {
+     "description": "150% payment adjustment for the item or service to which the modifier is appended",
+     "payer_name": "Fidelis Care",
+     "plan_name": "Medicare Advantage"
+    },
+    {
+     "description": "150% payment adjustment for the item or service to which the modifier is appended",
+     "payer_name": "HealthFirst",
+     "plan_name": "Medicare Advantage"
+    },
+    {
+     "description": "150% payment adjustment for the item or service to which the modifier is appended",
+     "payer_name": "Oxford Health Plans",
+     "plan_name": "Medicare Advantage"
+    },
+    {
+     "description": "150% payment adjustment for the item or service to which the modifier is appended",
+     "payer_name": "Senior Whole Health",
+     "plan_name": "Medicare Advantage"
+    },
+    {
+     "description": "150% payment adjustment for the item or service to which the modifier is appended",
+     "payer_name": "United Healthcare Community Plan",
+     "plan_name": "Medicare Advantage"
+    },
+    {
+     "description": "150% payment adjustment for the item or service to which the modifier is appended",
+     "payer_name": "VNS Health",
+     "plan_name": "Medicare Advantage"
+    },
+    {
+     "description": "150% payment adjustment for the item or service to which the modifier is appended",
+     "payer_name": "WellCare",
+     "plan_name": "Medicare Advantage"
+    }
+   ]
+  }
+ ],
+ "type_2_npi": [
+  "1952332801 ",
+  " 1770502635 ",
+  " 1790969269 ",
+  " 1194832477 ",
+  " 1609970011 ",
+  " 1518061928 ",
+  " 1144504044 ",
+  " 1780196345"
+ ],
+ "version": "3.0.0"
+}

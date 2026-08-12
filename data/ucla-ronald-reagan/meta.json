@@ -1,0 +1,13 @@
+{
+  "system": "UCLA Health",
+  "location_name": "Ronald Reagan UCLA Medical Center",
+  "mrf_url": "https://www.uclahealth.org/sites/default/files/cms-hpt/956006143_ronald-reagan-ucla-medical-center_standardcharges.json",
+  "source_filename": "956006143_ronald-reagan-ucla-medical-center_standardcharges.json",
+  "sha256": "97215d1ec3a3c1ec872d65a6f36a744ba14b7628c311471044e5280b9251c5a6",
+  "size_bytes": 499979594,
+  "source_last_modified": null,
+  "source_etag": null,
+  "status": "sharded",
+  "first_seen": "2026-08-12T05:17:07Z",
+  "last_changed": "2026-08-12T05:17:07Z"
+}

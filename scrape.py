@@ -4,22 +4,28 @@
 For each hospital in hospitals.json:
   1. Fetch the CMS-mandated /cms-hpt.txt discovery file and find the block
      matching `location_name` to get the current MRF URL.
-  2. Download the MRF (unzipping if needed) and normalize it.
-  3. If the content hash changed, write it to data/<slug>/ along with meta.json.
+  2. HEAD the MRF; if Last-Modified/ETag match the stored meta, skip it.
+  3. Otherwise download (unzipping if needed), normalize, and — when the
+     content hash changed — write it to data/<slug>/.
 
-Files larger than MAX_CONTENT_BYTES are tracked metadata-only: we still hash
-and record them (so git history shows *when* they changed) but don't store
-the content itself.
+Storage modes, chosen automatically by size:
+  - stored:   single normalized file under data/<slug>/
+  - sharded:  content split into SHARD_COUNT hash-bucketed, sorted shard
+              files (CSV rows or JSONL items), each git-sized. A changed row
+              touches only its bucket, so diffs stay meaningful.
+  - metadata-only: unparseable giants; meta.json still records hash/size/
+              timing on every change.
 
 Stdlib only. Designed to run under GitHub Actions on a cron schedule, with
 `git commit` happening in the workflow only when something changed.
 """
 
+import csv
 import hashlib
 import io
 import json
+import shutil
 import sys
-import tempfile
 import urllib.request
 import zipfile
 from datetime import datetime, timezone
@@ -27,17 +33,41 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
-MAX_CONTENT_BYTES = 80 * 1024 * 1024  # git-friendly cap; larger files -> metadata only
+MAX_STORED_BYTES = 45 * 1024 * 1024   # above this, shard
+MAX_SHARD_TOTAL = 600 * 1024 * 1024   # above this, metadata-only (repo size budget)
+SHARD_COUNT = 32
+# No-validator servers force a full download just to detect change; for big
+# files that's too expensive daily, so refetch those only on Sundays.
+WEEKLY_FETCH_BYTES = 400 * 1024 * 1024
+
+# Several hospital CDNs (Cloudflare, Akamai) refuse non-browser User-Agents,
+# despite 45 CFR 180.50 requiring these files be accessible to automated
+# searches. A browser UA recovers most of them.
 USER_AGENT = (
-    "hospital-price-history/0.1 (git-scraping archive of public CMS price "
-    "transparency files; contact: lkowalcz@gmail.com)"
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
 )
 
 
-def fetch(url, timeout=120):
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
+def request(url, method="GET", timeout=300):
+    req = urllib.request.Request(
+        url, method=method, headers={"User-Agent": USER_AGENT, "Accept": "*/*"}
+    )
+    resp = urllib.request.urlopen(req, timeout=timeout)
+    return resp
+
+
+def fetch(url, timeout=300):
+    with request(url, timeout=timeout) as resp:
         return resp.read(), dict(resp.headers)
+
+
+def head(url):
+    try:
+        with request(url, method="HEAD", timeout=60) as resp:
+            return dict(resp.headers)
+    except Exception:
+        return {}  # no HEAD support; fall through to GET
 
 
 def normalize_name(s):
@@ -79,7 +109,12 @@ def extract_payload(body, headers, url):
         name = url.split("?")[0].rsplit("/", 1)[-1] or "standardcharges"
         return name, body
     with zipfile.ZipFile(io.BytesIO(body)) as zf:
-        names = [n for n in zf.namelist() if not n.endswith("/")]
+        names = [
+            n for n in zf.namelist()
+            if not n.endswith("/")
+            and not n.startswith("__MACOSX")
+            and not Path(n).name.startswith("._")
+        ]
         if len(names) != 1:
             raise ValueError(f"expected 1 file in zip, found {names}")
         return Path(names[0]).name, zf.read(names[0])
@@ -87,13 +122,14 @@ def extract_payload(body, headers, url):
 
 def normalize_payload(name, payload):
     """Stable representation so diffs reflect real changes, not formatting."""
-    if name.casefold().endswith(".json") and len(payload) <= MAX_CONTENT_BYTES:
+    lower = name.casefold()
+    if lower.endswith(".json") and len(payload) <= MAX_STORED_BYTES:
         try:
             obj = json.loads(payload)
             return json.dumps(obj, indent=1, sort_keys=True).encode() + b"\n"
         except (ValueError, MemoryError):
             return payload
-    if name.casefold().endswith((".csv", ".txt")):
+    if lower.endswith((".csv", ".txt")):
         return payload.replace(b"\r\n", b"\n")
     return payload
 
@@ -101,6 +137,77 @@ def normalize_payload(name, payload):
 def ext_of(name):
     suffix = Path(name).suffix.casefold()
     return suffix if suffix in (".csv", ".json", ".xml", ".txt") else ".bin"
+
+
+def bucket_of(line):
+    return int.from_bytes(hashlib.sha1(line.encode()).digest()[:4], "big") % SHARD_COUNT
+
+
+def shard_lines(lines):
+    buckets = [[] for _ in range(SHARD_COUNT)]
+    for line in lines:
+        buckets[bucket_of(line)].append(line)
+    for bucket in buckets:
+        bucket.sort()
+    return buckets
+
+
+def write_shards(outdir, header_name, header_text, buckets, ext):
+    shard_dir = outdir / "shards"
+    shard_dir.mkdir(exist_ok=True)
+    (outdir / header_name).write_text(header_text)
+    for i, bucket in enumerate(buckets):
+        (shard_dir / f"{i:02d}{ext}").write_text(
+            "\n".join(bucket) + ("\n" if bucket else "")
+        )
+
+
+def store_sharded(outdir, name, payload):
+    """Split an oversized MRF into hash-bucketed sorted shards. Returns mode."""
+    lower = name.casefold()
+    if lower.endswith(".csv"):
+        text = payload.decode("utf-8", errors="replace")
+        lines = text.split("\n")
+        # CMS v3 CSV: rows 1-2 are attestation metadata, row 3 is the column
+        # header; keep them whole so shard rows share a documented schema.
+        reader = csv.reader(io.StringIO(text))
+        header_rows = []
+        for _ in range(3):
+            try:
+                header_rows.append(next(reader))
+            except StopIteration:
+                break
+        header_line_count = reader.line_num
+        header_text = "\n".join(lines[:header_line_count]) + "\n"
+        body = [l for l in lines[header_line_count:] if l]
+        write_shards(outdir, "_header.csv", header_text, shard_lines(body), ".csv")
+        return "sharded"
+    if lower.endswith(".json"):
+        try:
+            obj = json.loads(payload)
+        except (ValueError, MemoryError):
+            return "metadata-only"
+        if not isinstance(obj, dict):
+            return "metadata-only"
+        items = obj.pop("standard_charge_information", None)
+        if not isinstance(items, list):
+            return "metadata-only"
+        header_text = json.dumps(obj, indent=1, sort_keys=True) + "\n"
+        lines = [json.dumps(item, sort_keys=True, separators=(",", ":")) for item in items]
+        write_shards(outdir, "_header.json", header_text, shard_lines(lines), ".jsonl")
+        return "sharded"
+    return "metadata-only"
+
+
+def clear_content(outdir):
+    for path in outdir.iterdir():
+        if path.name == "meta.json":
+            continue
+        shutil.rmtree(path) if path.is_dir() else path.unlink()
+
+
+def utcnow():
+    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 def process(hospital):
@@ -120,17 +227,43 @@ def process(hospital):
             return f"{slug}: MRF no longer listed in cms-hpt.txt"
         return None
 
+    # Cheap skip: if the server's validators match what we stored, don't
+    # re-download (matters when tracking dozens of multi-hundred-MB files).
+    if mrf_url == old_meta.get("mrf_url") and old_meta.get("sha256"):
+        h = head(mrf_url)
+        validators = (h.get("Last-Modified"), h.get("ETag"))
+        stored = (old_meta.get("source_last_modified"), old_meta.get("source_etag"))
+        if any(validators) and validators == stored:
+            return None
+        if (
+            not any(stored)
+            and old_meta.get("size_bytes", 0) > WEEKLY_FETCH_BYTES
+            and datetime.now(timezone.utc).weekday() != 6
+        ):
+            return None  # big no-validator file: full refetch Sundays only
+
     body, headers = fetch(mrf_url)
     name, payload = extract_payload(body, headers, mrf_url)
     payload = normalize_payload(name, payload)
     sha = hashlib.sha256(payload).hexdigest()
 
-    if sha == old_meta.get("sha256") and mrf_url == old_meta.get("mrf_url"):
-        return None  # nothing changed; leave the working tree untouched
+    changed = sha != old_meta.get("sha256") or mrf_url != old_meta.get("mrf_url")
+    if not changed:
+        # Content identical but validators rotated; refresh them quietly so
+        # the HEAD short-circuit works next run.
+        old_meta["source_last_modified"] = headers.get("Last-Modified")
+        old_meta["source_etag"] = headers.get("ETag")
+        meta_path.write_text(json.dumps(old_meta, indent=2) + "\n")
+        return None
 
-    stored = len(payload) <= MAX_CONTENT_BYTES
-    if stored:
+    clear_content(outdir)
+    if len(payload) <= MAX_STORED_BYTES:
         (outdir / f"standardcharges{ext_of(name)}").write_bytes(payload)
+        mode = "stored"
+    elif len(payload) <= MAX_SHARD_TOTAL:
+        mode = store_sharded(outdir, name, payload)
+    else:
+        mode = "metadata-only"
 
     meta = {
         "system": hospital["system"],
@@ -140,16 +273,14 @@ def process(hospital):
         "sha256": sha,
         "size_bytes": len(payload),
         "source_last_modified": headers.get("Last-Modified"),
-        "status": "stored" if stored else "metadata-only (too large for git)",
+        "source_etag": headers.get("ETag"),
+        "status": mode,
         "first_seen": old_meta.get("first_seen") or utcnow(),
         "last_changed": utcnow(),
     }
     meta_path.write_text(json.dumps(meta, indent=2) + "\n")
-    return f"{slug}: {'updated' if old_meta else 'first snapshot'} ({len(payload):,} bytes)"
-
-
-def utcnow():
-    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    verb = "updated" if old_meta.get("sha256") else "first snapshot"
+    return f"{slug}: {verb} ({len(payload):,} bytes, {mode})"
 
 
 def main():
