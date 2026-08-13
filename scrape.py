@@ -463,14 +463,15 @@ def process(hospital, scratch):
         stored = (old_meta.get("source_last_modified"), old_meta.get("source_etag"))
         if any(validators) and validators == stored:
             return None
-        if not any(stored):
-            # Server offers no validators: try a ~5 MB sampled fingerprint.
-            fp = remote_fingerprint(mrf_url)
-            if fp and fp == old_meta.get("transfer_fingerprint"):
-                return None
-            if fp is None and old_meta.get("size_bytes", 0) > MAX_SHARD_TOTAL \
-                    and datetime.now(timezone.utc).weekday() != 6:
-                return None  # no Range support either: full refetch Sundays only
+        # Validators absent — or rotating on every request (Kaiser): fall
+        # back to a ~5 MB sampled Range fingerprint before a full download.
+        fp = remote_fingerprint(mrf_url)
+        if fp and fp == old_meta.get("transfer_fingerprint"):
+            return None
+        if fp is None and not any(stored) \
+                and old_meta.get("size_bytes", 0) > MAX_SHARD_TOTAL \
+                and datetime.now(timezone.utc).weekday() != 6:
+            return None  # no Range support either: full refetch Sundays only
 
     workdir = Path(tempfile.mkdtemp(dir=scratch))
     try:
