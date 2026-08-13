@@ -32,6 +32,8 @@ import re
 import shutil
 import sys
 import tempfile
+import time
+import urllib.error
 import urllib.parse
 import urllib.request
 import zipfile
@@ -64,23 +66,42 @@ def request(url, method="GET", timeout=600, extra=None):
     )
 
 
+def with_retries(fn, attempts=3, delay=20):
+    """Retry transient network failures with linear backoff; re-raise the last."""
+    for i in range(attempts):
+        try:
+            return fn()
+        except urllib.error.HTTPError:
+            raise  # a definitive server answer, not a transient fault
+        except (urllib.error.URLError, ConnectionError, TimeoutError, OSError):
+            if i == attempts - 1:
+                raise
+            time.sleep(delay * (i + 1))
+
+
 def fetch_small(url, timeout=60):
-    with request(url, timeout=timeout) as resp:
-        return resp.read(), dict(resp.headers)
+    def go():
+        with request(url, timeout=timeout) as resp:
+            return resp.read(), dict(resp.headers)
+    return with_retries(go)
 
 
 def head(url):
-    try:
-        with request(url, method="HEAD", timeout=60) as resp:
-            return dict(resp.headers)
-    except Exception:
-        return {}  # no HEAD support; fall through to GET
+    def go():
+        try:
+            with request(url, method="HEAD", timeout=60) as resp:
+                return dict(resp.headers)
+        except urllib.error.HTTPError:
+            return {}  # reachable but no HEAD support; caller falls through to GET
+    return with_retries(go)
 
 
 def download_to(url, dest):
-    with request(url) as resp, open(dest, "wb") as f:
-        shutil.copyfileobj(resp, f, 1024 * 1024)
-        return dict(resp.headers)
+    def go():
+        with request(url) as resp, open(dest, "wb") as f:
+            shutil.copyfileobj(resp, f, 1024 * 1024)
+            return dict(resp.headers)
+    return with_retries(go)
 
 
 def fingerprint_offsets(total):
@@ -509,32 +530,66 @@ def process(hospital, scratch):
         shutil.rmtree(workdir, ignore_errors=True)
 
 
+def record_failure(slug, exc):
+    """Persist an outage streak in meta.json — unreachability is signal too."""
+    meta_path = DATA / slug / "meta.json"
+    meta = json.loads(meta_path.read_text()) if meta_path.exists() else {}
+    prior = meta.get("fetch_failures", {})
+    meta["fetch_failures"] = {
+        "count": prior.get("count", 0) + 1,
+        "first_failed": prior.get("first_failed") or utcnow(),
+        "last_error": str(exc)[:200],
+        "last_attempt": utcnow(),
+    }
+    meta_path.parent.mkdir(parents=True, exist_ok=True)
+    meta_path.write_text(json.dumps(meta, indent=2) + "\n")
+    return meta["fetch_failures"]["count"]
+
+
+def clear_failure_record(slug):
+    meta_path = DATA / slug / "meta.json"
+    if not meta_path.exists():
+        return False
+    meta = json.loads(meta_path.read_text())
+    if meta.pop("fetch_failures", None) is None:
+        return False
+    meta_path.write_text(json.dumps(meta, indent=2) + "\n")
+    return True
+
+
 def main():
     scratch = Path(tempfile.mkdtemp(prefix="mrf-scrape-"))
     hospitals = json.loads((ROOT / "hospitals.json").read_text())
-    changes, failures = [], []
+    changes, failures, recovered = [], [], []
     try:
         for hospital in hospitals:
+            slug = hospital["slug"]
             try:
                 result = process(hospital, scratch)
+                if clear_failure_record(slug):
+                    recovered.append(slug)
                 if result:
                     changes.append(result)
                     print(result, flush=True)
                 else:
-                    print(f"{hospital['slug']}: unchanged", flush=True)
+                    print(f"{slug}: unchanged", flush=True)
             except Exception as exc:  # one bad hospital shouldn't sink the run
-                failures.append(f"{hospital['slug']}: {exc}")
-                print(f"{hospital['slug']}: ERROR {exc}", file=sys.stderr, flush=True)
+                streak = record_failure(slug, exc)
+                failures.append(f"{slug} (day {streak})")
+                print(f"{slug}: ERROR {exc}", file=sys.stderr, flush=True)
     finally:
         shutil.rmtree(scratch, ignore_errors=True)
 
-    (ROOT / "commit_message.txt").write_text(
-        "Update price files: " + "; ".join(c.split(":")[0] for c in changes) + "\n"
-        if changes
-        else "No changes\n"
-    )
-    if failures and not changes:
-        sys.exit(1)
+    parts = []
+    if changes:
+        parts.append("Update price files: " + "; ".join(c.split(":")[0] for c in changes))
+    if failures:
+        parts.append("fetch errors: " + ", ".join(failures))
+    if recovered:
+        parts.append("recovered: " + ", ".join(recovered))
+    (ROOT / "commit_message.txt").write_text(("; ".join(parts) or "No changes") + "\n")
+    if len(failures) > len(hospitals) / 2:
+        sys.exit(1)  # majority failing means the problem is ours, not theirs
 
 
 if __name__ == "__main__":
