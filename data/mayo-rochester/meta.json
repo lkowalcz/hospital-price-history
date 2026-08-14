@@ -1,0 +1,7 @@
+{
+  "fetch_failures": {
+    "first_failed": "2026-08-14T05:14:45Z",
+    "last_error": "Command '['/private/tmp/claude-501/-Users-lucaskowalczyk/dceffcac-0cef-4ac1-8893-aabda1858525/scratchpad/ci/curl_chrome145', '-sS', '-L', '--max-time', '900', '-D', '/var/folders/z_/7ny560sj6mg4l0jrhd",
+    "last_attempt": "2026-08-14T05:14:45Z"
+  }
+}

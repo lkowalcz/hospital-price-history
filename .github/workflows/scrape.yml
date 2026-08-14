@@ -21,8 +21,16 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Install curl-impersonate
+        run: |
+          curl -sL -o ci.tar.gz https://github.com/lexiforest/curl-impersonate/releases/download/v2.1.0/curl-impersonate-v2.1.0.x86_64-linux-gnu.tar.gz
+          mkdir -p "$RUNNER_TEMP/ci" && tar xzf ci.tar.gz -C "$RUNNER_TEMP/ci"
+          echo "CURL_IMPERSONATE_BIN=$RUNNER_TEMP/ci/curl_chrome145" >> "$GITHUB_ENV"
+
       - name: Scrape
         run: python scrape.py
+        env:
+          MAX_DOWNLOAD_BYTES: "10000000000"
 
       - name: Commit if changed
         run: |

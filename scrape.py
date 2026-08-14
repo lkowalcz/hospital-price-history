@@ -28,8 +28,10 @@ import csv
 import hashlib
 import io
 import json
+import os
 import re
 import shutil
+import subprocess
 import sys
 import tempfile
 import time
@@ -58,6 +60,48 @@ USER_AGENT = (
 
 # ---------------------------------------------------------------- HTTP layer
 
+# Optional path to a curl-impersonate wrapper (e.g. curl_chrome145). Hospitals
+# whose CDNs block by TLS fingerprint are marked "fetch": "impersonate" in
+# hospitals.json and routed through it.
+IMPERSONATE_BIN = os.environ.get("CURL_IMPERSONATE_BIN")
+
+
+class Headers(dict):
+    """Case-insensitive header lookup; curl/HTTP2 lowercases header names."""
+
+    def __init__(self, pairs):
+        super().__init__({k.lower(): v for k, v in pairs})
+
+    def get(self, key, default=None):
+        return super().get(key.lower(), default)
+
+
+def parse_header_dump(text):
+    """Headers of the final response in a curl -D dump (redirects stack blocks)."""
+    blocks = [b for b in text.replace("\r", "").strip().split("\n\n") if b.strip()]
+    status, pairs = 0, []
+    if blocks:
+        lines = blocks[-1].splitlines()
+        m = re.search(r"\s(\d{3})", lines[0])
+        status = int(m.group(1)) if m else 0
+        pairs = [line.partition(":")[::2] for line in lines[1:] if ":" in line]
+    return status, Headers((k.strip(), v.strip()) for k, v in pairs)
+
+
+def curl_fetch(url, dest=None, extra=()):
+    """Fetch via curl-impersonate; returns (status, Headers, stdout_bytes)."""
+    with tempfile.NamedTemporaryFile(suffix=".hdrs", delete=False) as tf:
+        hdr_path = tf.name
+    cmd = [IMPERSONATE_BIN, "-sS", "-L", "--max-time", "3600", "-D", hdr_path,
+           "-o", str(dest) if dest else "-", *extra, url]
+    try:
+        proc = subprocess.run(cmd, check=True, capture_output=True)
+        status, headers = parse_header_dump(Path(hdr_path).read_text(errors="replace"))
+        return status, headers, proc.stdout
+    finally:
+        Path(hdr_path).unlink(missing_ok=True)
+
+
 def request(url, method="GET", timeout=600, extra=None):
     headers = {"User-Agent": USER_AGENT, "Accept": "*/*"}
     headers.update(extra or {})
@@ -73,34 +117,53 @@ def with_retries(fn, attempts=3, delay=20):
             return fn()
         except urllib.error.HTTPError:
             raise  # a definitive server answer, not a transient fault
-        except (urllib.error.URLError, ConnectionError, TimeoutError, OSError):
+        except (urllib.error.URLError, ConnectionError, TimeoutError, OSError,
+                subprocess.CalledProcessError):
             if i == attempts - 1:
                 raise
             time.sleep(delay * (i + 1))
 
 
-def fetch_small(url, timeout=60):
+def fetch_small(url, timeout=60, impersonate=False):
+    if impersonate and IMPERSONATE_BIN:
+        def go():
+            status, headers, body = curl_fetch(url, extra=("--fail",))
+            return body, headers
+        return with_retries(go)
+
     def go():
         with request(url, timeout=timeout) as resp:
-            return resp.read(), dict(resp.headers)
+            return resp.read(), Headers(resp.headers.items())
     return with_retries(go)
 
 
-def head(url):
+def head(url, impersonate=False):
+    if impersonate and IMPERSONATE_BIN:
+        def go():
+            status, headers, _ = curl_fetch(url, dest=os.devnull, extra=("-I",))
+            return headers if 200 <= status < 300 else Headers([])
+        return with_retries(go)
+
     def go():
         try:
             with request(url, method="HEAD", timeout=60) as resp:
-                return dict(resp.headers)
+                return Headers(resp.headers.items())
         except urllib.error.HTTPError:
-            return {}  # reachable but no HEAD support; caller falls through to GET
+            return Headers([])  # reachable but no HEAD support; fall through to GET
     return with_retries(go)
 
 
-def download_to(url, dest):
+def download_to(url, dest, impersonate=False):
+    if impersonate and IMPERSONATE_BIN:
+        def go():
+            status, headers, _ = curl_fetch(url, dest=dest, extra=("--fail",))
+            return headers
+        return with_retries(go)
+
     def go():
         with request(url) as resp, open(dest, "wb") as f:
             shutil.copyfileobj(resp, f, 1024 * 1024)
-            return dict(resp.headers)
+            return Headers(resp.headers.items())
     return with_retries(go)
 
 
@@ -109,22 +172,34 @@ def fingerprint_offsets(total):
                    max(total - SAMPLE_BYTES, 0)})
 
 
-def remote_fingerprint(url):
+def remote_fingerprint(url, impersonate=False):
     """Hash of ~5 MB of Range-request samples + length; None if unsupported."""
-    try:
-        with request(url, extra={"Range": f"bytes=0-{SAMPLE_BYTES - 1}"},
-                     timeout=120) as resp:
+    def ranged(off):
+        if impersonate and IMPERSONATE_BIN:
+            status, headers, body = curl_fetch(
+                url, extra=("-r", f"{off}-{off + SAMPLE_BYTES - 1}"))
+            if status != 206:
+                return None, None
+            return headers, body
+        resp = request(url, extra={"Range": f"bytes={off}-{off + SAMPLE_BYTES - 1}"},
+                       timeout=120)
+        with resp:
             if resp.status != 206:
-                return None
-            total = int(resp.headers["Content-Range"].split("/")[1])
-            h = hashlib.sha256(str(total).encode())
-            h.update(resp.read())
+                return None, None
+            return Headers(resp.headers.items()), resp.read()
+
+    try:
+        headers, body = ranged(0)
+        if headers is None:
+            return None
+        total = int(headers.get("Content-Range").split("/")[1])
+        h = hashlib.sha256(str(total).encode())
+        h.update(body)
         for off in fingerprint_offsets(total)[1:]:
-            with request(url, extra={"Range": f"bytes={off}-{off + SAMPLE_BYTES - 1}"},
-                         timeout=120) as resp:
-                if resp.status != 206:
-                    return None
-                h.update(resp.read())
+            headers, body = ranged(off)
+            if headers is None:
+                return None
+            h.update(body)
         return h.hexdigest()
     except Exception:
         return None
@@ -178,8 +253,13 @@ def decode_text(raw):
     return raw.decode("utf-8-sig", errors="replace")
 
 
+def wants_impersonate(hospital):
+    return hospital.get("fetch") == "impersonate"
+
+
 def discover_mrf_url(hospital):
-    raw, _ = fetch_small(hospital["hpt_txt"], timeout=30)
+    raw, _ = fetch_small(hospital["hpt_txt"], timeout=30,
+                         impersonate=wants_impersonate(hospital))
     wanted = normalize_name(hospital["location_name"])
     for block in parse_hpt_txt(decode_text(raw)):
         if normalize_name(block.get("location-name", "")) == wanted:
@@ -479,15 +559,16 @@ def process(hospital, scratch):
         and old_meta.get("summary_attempted_sha") != old_meta.get("sha256")
     )
 
+    imp = wants_impersonate(hospital)
     if not upgrade_needed and mrf_url == old_meta.get("mrf_url") and old_meta.get("sha256"):
-        h = head(mrf_url)
+        h = head(mrf_url, impersonate=imp)
         validators = (h.get("Last-Modified"), h.get("ETag"))
         stored = (old_meta.get("source_last_modified"), old_meta.get("source_etag"))
         if any(validators) and validators == stored:
             return None
         # Validators absent — or rotating on every request (Kaiser): fall
         # back to a ~5 MB sampled Range fingerprint before a full download.
-        fp = remote_fingerprint(mrf_url)
+        fp = remote_fingerprint(mrf_url, impersonate=imp)
         if fp and fp == old_meta.get("transfer_fingerprint"):
             return None
         if fp is None and not any(stored) \
@@ -495,10 +576,20 @@ def process(hospital, scratch):
                 and datetime.now(timezone.utc).weekday() != 6:
             return None  # no Range support either: full refetch Sundays only
 
+    # Runners have limited disk; oversized files (Mayo's 14.5 GB CSV) must be
+    # fetched from an environment without the cap (a local run).
+    limit = int(os.environ.get("MAX_DOWNLOAD_BYTES", 0))
+    if limit:
+        cl = int(head(mrf_url, impersonate=imp).get("Content-Length") or 0)
+        if cl > limit:
+            raise ValueError(
+                f"file is {cl:,} bytes, over MAX_DOWNLOAD_BYTES={limit:,}; "
+                "fetch from an uncapped environment")
+
     workdir = Path(tempfile.mkdtemp(dir=scratch))
     try:
         tmp = workdir / "download"
-        headers = download_to(mrf_url, tmp)
+        headers = download_to(mrf_url, tmp, impersonate=imp)
         transfer_fp = local_fingerprint(tmp)
         name, payload_path = materialize(tmp, headers, mrf_url, workdir)
         size = payload_path.stat().st_size
