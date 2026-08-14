@@ -1,7 +1,15 @@
 {
-  "fetch_failures": {
-    "first_failed": "2026-08-14T05:14:45Z",
-    "last_error": "Command '['/private/tmp/claude-501/-Users-lucaskowalczyk/dceffcac-0cef-4ac1-8893-aabda1858525/scratchpad/ci/curl_chrome145', '-sS', '-L', '--max-time', '900', '-D', '/var/folders/z_/7ny560sj6mg4l0jrhd",
-    "last_attempt": "2026-08-14T05:14:45Z"
-  }
+  "system": "Mayo Clinic",
+  "location_name": "Mayo Clinic Hospital-Rochester",
+  "mrf_url": "https://mcorgstatic.blob.core.windows.net/cms-price/410944601_mayo-clinic-hospital-rochester_standardcharges.csv",
+  "source_filename": "mayo.csv",
+  "sha256": "68bedf7442ddd82ed1ae68ba4ceeb217a3a6305fd3a7a9c66e24c66107d0ce06",
+  "size_bytes": 13350569463,
+  "source_last_modified": "Fri, 14 Aug 2026 16:49:01 GMT",
+  "source_etag": "0x8DEFA23F1AEF0F9",
+  "transfer_fingerprint": "ed44db2701a3d538de998c4ec485e5efdb645d70bbcff446f6815cd5741fccd9",
+  "status": "summarized",
+  "first_seen": "2026-08-14T23:13:37Z",
+  "last_changed": "2026-08-14T23:13:37Z",
+  "note": "ingested from a local fetch (see README notes)"
 }
