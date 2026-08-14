@@ -1,0 +1,14 @@
+{
+  "system": "Geisinger",
+  "location_name": "Geisinger Medical Center",
+  "mrf_url": "https://www.geisinger.org/-/media/OneGeisinger/pdfs/ghs/patient-care/patients-and-visitors/billing-and-insurance/hosp-charges-csv/24-0795959_Geisinger-Medical-Center_standardcharges",
+  "source_filename": "24-0795959_Geisinger-Medical-Center_standardcharges",
+  "sha256": "fd89474e4957a95160cbe93c5351f608d129e22786584dbf9d41b612f75c3ec9",
+  "size_bytes": 15192,
+  "source_last_modified": null,
+  "source_etag": null,
+  "transfer_fingerprint": "b18a32c446b01c1edcdd366a5f2fed9331197e9807d7c8ac3a29ce96504c23f2",
+  "status": "stored",
+  "first_seen": "2026-08-14T03:47:14Z",
+  "last_changed": "2026-08-14T03:47:14Z"
+}

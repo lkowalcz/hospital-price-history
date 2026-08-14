@@ -1,0 +1,14 @@
+{
+  "system": "Jefferson Health",
+  "location_name": "Thomas Jefferson University Hospital",
+  "mrf_url": "https://use2webtechstgpricelist.blob.core.windows.net/pricelist/Complete%20File/232829095_thomas-jefferson-university-hospital_standardcharges.csv",
+  "source_filename": "232829095_thomas-jefferson-university-hospital_standardcharges.csv",
+  "sha256": "bffbc3b68df08ec8012d8a803bae749ce9efe56ee5a7198da15483c3521e0a4c",
+  "size_bytes": 284755787,
+  "source_last_modified": "Fri, 27 Mar 2026 18:34:16 GMT",
+  "source_etag": "0x8DE8C2F73AA7B6B",
+  "transfer_fingerprint": "4db51416b571040d519617f458b5113931389e07f89f3f908b5277f9ca37e8c8",
+  "status": "sharded",
+  "first_seen": "2026-08-14T03:57:38Z",
+  "last_changed": "2026-08-14T03:57:38Z"
+}

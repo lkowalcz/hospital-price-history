@@ -1,0 +1,14 @@
+{
+  "system": "Providence",
+  "location_name": "Providence Portland Medical Center",
+  "mrf_url": "https://pricetransparency.providence.org/oregon/live/930386906_providence-portland-medical-center_standardcharges.json",
+  "source_filename": "930386906_providence-portland-medical-center_standardcharges.json",
+  "sha256": "e1a2f4a4fdf463e283cd76a29467625ab991e2571edd0eba3be2ff0d4130c388",
+  "size_bytes": 208900329,
+  "source_last_modified": null,
+  "source_etag": null,
+  "transfer_fingerprint": "727371118de660ec2f79c93b73bda93eba37c806cd7012a6658dff2b34cf39fb",
+  "status": "sharded",
+  "first_seen": "2026-08-14T03:45:14Z",
+  "last_changed": "2026-08-14T03:45:14Z"
+}

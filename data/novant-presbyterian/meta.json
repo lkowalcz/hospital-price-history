@@ -1,0 +1,14 @@
+{
+  "system": "Novant Health",
+  "location_name": "Novant Health Presbyterian Medical Center",
+  "mrf_url": "https://www2.novanthealth.org/Public_Files/regulatory/560554230_the-presbyterian-hospital-dba-novant-health-presbyterian-medical-center_standardcharges.json",
+  "source_filename": "560554230_the-presbyterian-hospital-dba-novant-health-presbyterian-medical-center_standardcharges.json",
+  "sha256": "fc08aedb926c1dd5ea0d9658d70a3c2762ed794561ea71d19cba29464756f04d",
+  "size_bytes": 297764267,
+  "source_last_modified": "Fri, 24 Apr 2026 13:52:07 GMT",
+  "source_etag": "\"19bb408af1d3dc1:0\"",
+  "transfer_fingerprint": "b74bae21c35bf67eb516ec9e4f7751456f7bee1dc12db8ca630c026ea6a92400",
+  "status": "sharded",
+  "first_seen": "2026-08-14T03:47:29Z",
+  "last_changed": "2026-08-14T03:47:29Z"
+}

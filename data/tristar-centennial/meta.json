@@ -1,0 +1,14 @@
+{
+  "system": "HCA Healthcare (TriStar)",
+  "location_name": "CENTENNIAL MEDICAL CENTER",
+  "mrf_url": "https://stctrprodsnsvc00455826e6.blob.core.windows.net/pt-final-posting-files/62-1113737_TRISTAR-CENTENNIAL-MEDICAL-CENTER_standardcharges.json?si=dpx-pt-json-access-policy&spr=https&sv=2024-11-04&sr=c&sig=vdmkLz8lCE1qb%2BnsaFfL8tcI7Gg6B%2B3s%2Fny3TPZ1kqs%3D",
+  "source_filename": "62-1113737_TRISTAR-CENTENNIAL-MEDICAL-CENTER_standardcharges.json",
+  "sha256": "840c0b127143f8e887fc1647991bcbdf7a7af14186c854f31271636b408828a1",
+  "size_bytes": 654308152,
+  "source_last_modified": "Wed, 27 May 2026 22:30:33 GMT",
+  "source_etag": "\"0x8DEBC3F90B751B1\"",
+  "transfer_fingerprint": "b9d74a2953c06f435ae3b30d968a163e9bec883e52db2f8338ff040ed7f1130c",
+  "status": "summarized",
+  "first_seen": "2026-08-14T03:44:21Z",
+  "last_changed": "2026-08-14T03:44:21Z"
+}

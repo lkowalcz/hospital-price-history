@@ -1,0 +1,8 @@
+{
+  "fetch_failures": {
+    "count": 1,
+    "first_failed": "2026-08-14T03:57:26Z",
+    "last_error": "HTTP Error 404: Not Found",
+    "last_attempt": "2026-08-14T03:57:26Z"
+  }
+}

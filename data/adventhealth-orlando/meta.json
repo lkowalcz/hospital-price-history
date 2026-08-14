@@ -1,0 +1,14 @@
+{
+  "system": "AdventHealth",
+  "location_name": "AdventHealth Orlando",
+  "mrf_url": "https://HospitalPriceDisclosure.com/download.aspx?pi=A7H2v*_*svHhuGAp2wfaahGA*-*",
+  "source_filename": "download.aspx.json",
+  "sha256": "1fd0c454d2061b38655b294fca9bc21c5b57c4d89d02e33ad98c4fe6ddbfbf12",
+  "size_bytes": 47723533,
+  "source_last_modified": "Tue, 31 Mar 2026 00:21:22 GMT",
+  "source_etag": "0x8DE8EBB6FFFB771",
+  "transfer_fingerprint": "9546165eefc34e18ad9274c499ac2e45f6b4e343e3e563ee88ae4f796cb6f80e",
+  "status": "sharded",
+  "first_seen": "2026-08-14T03:45:39Z",
+  "last_changed": "2026-08-14T03:45:39Z"
+}

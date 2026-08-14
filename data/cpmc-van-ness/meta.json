@@ -1,0 +1,14 @@
+{
+  "system": "Sutter Health",
+  "location_name": "CALIFORNIA PACIFIC MEDICAL CENTER VAN NESS CAMPUS",
+  "mrf_url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/940562680-1740348929_california-pacific-medical-center-van-ness-campus_standardcharges.csv",
+  "source_filename": "940562680-1740348929_california-pacific-medical-center-van-ness-campus_standardcharges.csv",
+  "sha256": "a56c1f4c6d21232586671fe0a641be0d9fc018a5aaa8f9fafb598d07d8b44a0d",
+  "size_bytes": 23483075,
+  "source_last_modified": "Fri, 03 Apr 2026 20:33:50 GMT",
+  "source_etag": "\"0x8DE91C0507A1AAE\"",
+  "transfer_fingerprint": "a949d90f4af9bd063de47d7109b2744767e39a95c6b8737dcc7f23a18ad27a60",
+  "status": "stored",
+  "first_seen": "2026-08-14T03:45:40Z",
+  "last_changed": "2026-08-14T03:45:40Z"
+}

@@ -1,0 +1,14 @@
+{
+  "system": "MUSC Health",
+  "location_name": "MUSC Health Main Campus - Charleston",
+  "mrf_url": "https://d3crna64wemw02.cloudfront.net/asset/339713052848/document_tt6t30451l5sn2ucbf23rab30t/571098556_MUSC-Health-Charleston-Main-Campus_standardcharges.csv",
+  "source_filename": "571098556_MUSC-Health-Charleston-Main-Campus_standardcharges.csv",
+  "sha256": "eb0b6c92a72bd58d4ab7146ebdd479ba52dd6ce33f23aeb703c6c43caffaefeb",
+  "size_bytes": 49242334,
+  "source_last_modified": "Thu, 02 Apr 2026 19:23:13 GMT",
+  "source_etag": "\"c94a720d5fd52759cd650fdeda3c983c-10\"",
+  "transfer_fingerprint": "0bf938357d3ad4a38b5274bc2967862403c5efb723b2faeed4d39228b9758048",
+  "status": "sharded",
+  "first_seen": "2026-08-14T03:57:26Z",
+  "last_changed": "2026-08-14T03:57:26Z"
+}

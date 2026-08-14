@@ -1,0 +1,8 @@
+{
+  "fetch_failures": {
+    "count": 1,
+    "first_failed": "2026-08-14T03:55:33Z",
+    "last_error": "<urlopen error [Errno 110] Connection timed out>",
+    "last_attempt": "2026-08-14T03:55:33Z"
+  }
+}

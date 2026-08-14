@@ -1,0 +1,14 @@
+{
+  "system": "Banner Health",
+  "location_name": "Banner University Medical Center Phoenix",
+  "mrf_url": "https://images.pricetransparency.healthcare/public-mrfs/banner/270036499_banner-university-medical-center-phoenix_standardcharges.csv",
+  "source_filename": "270036499_banner-university-medical-center-phoenix_standardcharges.csv",
+  "sha256": "3b3c2d90da55f3aaee089b5e618c007d883a1ccccec5ec0641cfe4aa9577831c",
+  "size_bytes": 127902492,
+  "source_last_modified": "Wed, 04 Mar 2026 15:03:07 GMT",
+  "source_etag": "\"590e2c4fb967c91d0eb3fb6a7a56362d-8\"",
+  "transfer_fingerprint": "19ce8b01bb31cb430b55ce4a5a8761130ee4785c4562f546ed1dbeb56e11e79c",
+  "status": "sharded",
+  "first_seen": "2026-08-14T03:47:13Z",
+  "last_changed": "2026-08-14T03:47:13Z"
+}
