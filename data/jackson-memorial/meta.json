@@ -1,0 +1,14 @@
+{
+  "system": "Jackson Health System (public safety-net)",
+  "location_name": "Jackson Memorial Hospital",
+  "mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbJMHMiamiFL&type=CDMWithoutLabel&fileType=CSV",
+  "source_filename": "Reports.aspx.csv",
+  "sha256": "68022fe2716c4e456b5ed27378f4050a2aec49c7804f6dc1e8fb1120df8d97b3",
+  "size_bytes": 291989419,
+  "source_last_modified": null,
+  "source_etag": null,
+  "transfer_fingerprint": "a0d58c8ed2cbde230cd0c824e60539abf7051343fcd2c92eb0bd0a4a67ea80dd",
+  "status": "sharded",
+  "first_seen": "2026-08-14T03:56:05Z",
+  "last_changed": "2026-08-14T03:56:05Z"
+}

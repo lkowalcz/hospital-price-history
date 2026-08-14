@@ -1,0 +1,14 @@
+{
+  "system": "OhioHealth",
+  "location_name": "Riverside Methodist Hospital",
+  "mrf_url": "https://www.ohiohealth.com/siteassets/patients-and-visitors/preparing-for-your-visit/out-of-pocket-estimates/314394942_riverside-methodist-hospital_standardcharges.json",
+  "source_filename": "314394942_riverside-methodist-hospital_standardcharges.json",
+  "sha256": "ccfc22472b29103335aacd8bc64068bcf3db96f037eb76c677ccd1c88ed84fc5",
+  "size_bytes": 36601535,
+  "source_last_modified": "Tue, 24 Mar 2026 17:45:52 GMT",
+  "source_etag": "\"1dcbbb60f0a0b33\"",
+  "transfer_fingerprint": "38087d1c06d3ca6a911f72ada3ce73b1a5bbdc0c60ed137d67c9f86ae0091967",
+  "status": "stored",
+  "first_seen": "2026-08-14T03:47:17Z",
+  "last_changed": "2026-08-14T03:47:17Z"
+}

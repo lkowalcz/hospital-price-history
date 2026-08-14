@@ -1,0 +1,14 @@
+{
+  "system": "Tampa General Hospital",
+  "location_name": "Tampa General Hospital",
+  "mrf_url": "https://www.tgh.org/-/media/files/patients-and-visitors/593458145_tampa-general-hospital_standardcharges.csv?rev=7c310c7c008b4517a240a5892e37ed20",
+  "source_filename": "593458145_tampa-general-hospital_standardcharges.csv",
+  "sha256": "04ea7a24fcc42cd4d960dc350a70bdfa47b1d9a408aa4d23565280f9e563cd05",
+  "size_bytes": 94030964,
+  "source_last_modified": "Fri, 03 Apr 2026 20:57:25 GMT",
+  "source_etag": "73c7cee7622d4775bac9ad521a1d1863",
+  "transfer_fingerprint": "33fa4d7a705ef64b20df5c3f7135b0ac54a53a0889e3ef8ea66512b5313b133b",
+  "status": "sharded",
+  "first_seen": "2026-08-14T03:56:20Z",
+  "last_changed": "2026-08-14T03:56:20Z"
+}

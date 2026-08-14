@@ -1,0 +1,14 @@
+{
+  "system": "HCA Healthcare (Houston)",
+  "location_name": "HCA HOUSTON MEDICAL CENTER",
+  "mrf_url": "https://stctrprodsnsvc00455826e6.blob.core.windows.net/pt-final-posting-files/82-1635538_HCA-HOUSTON-HEALTHCARE-MEDICAL-CENTER_standardcharges.json?si=pt-json-access-policy&spr=https&sv=2024-11-04&sr=c&sig=o5IofreS%2F7ETlsnhPakPWCwHVVUZRobywQ5wUKGjVuQ%3D",
+  "source_filename": "82-1635538_HCA-HOUSTON-HEALTHCARE-MEDICAL-CENTER_standardcharges.json",
+  "sha256": "a00333089cce48e58ddd36ff065c5aa370bf735a3499315d2522a119c1806547",
+  "size_bytes": 606868134,
+  "source_last_modified": "Wed, 18 Mar 2026 15:29:44 GMT",
+  "source_etag": "\"0x8DE85032EB958B5\"",
+  "transfer_fingerprint": "1e39fd73d5e90a2479131e68e8245ad636779246e534f8fbec3fc1a38ad0ce68",
+  "status": "sharded",
+  "first_seen": "2026-08-14T03:44:51Z",
+  "last_changed": "2026-08-14T03:44:51Z"
+}

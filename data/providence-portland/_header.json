@@ -1,0 +1,186 @@
+{
+ "attestation": {
+  "attestation": "To the best of its knowledge and belief, this hospital has included all applicable standard charge information in accordance with the requirements of 45 CFR 180.50, and the information encoded is true, accurate, and complete as of the date in the file. This hospital has included all payer-specific negotiated charges in dollars that can be expressed as a dollar amount. For payer-specific negotiated charges that cannot be expressed as a dollar amount in the machine-readable file or not knowable in advance, the hospital attests that the payer-specific negotiated charge is based on a contractual algorithm, percentage or formula that precludes the provision of a dollar amount and has provided all necessary information available to the hospital for the public to be able to derive the dollar amount, including, but not limited to, the specific fee schedule or components referenced in such percentage, algorithm or formula.",
+  "attester_name": "Kate Buzbee",
+  "confirm_attestation": true
+ },
+ "financial_aid_policy": [
+  "25% off of standard gross charges."
+ ],
+ "hospital_address": [
+  "4805 NE Glisan St, Portland, OR 97213"
+ ],
+ "hospital_name": "Providence Health and Services - Oregon",
+ "last_updated_on": "2026-04-01",
+ "license_information": {
+  "license_number": "14-0012",
+  "state": "OR"
+ },
+ "location_name": [
+  "Providence Portland Medical Center"
+ ],
+ "modifier_information": [
+  {
+   "code": "TC",
+   "description": "Technical Component; represents the costs of equipment, supplies, and technician personnel for a procedure, excluding the physician's interpretation. It is used when only the technical portion of a test is billed, typically by hospitals, imaging centers, or independent diagnostic testing facilities",
+   "modifier_payer_information": [
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "AllCare",
+     "plan_name": "Medicaid Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "AllCare",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "BCBS",
+     "plan_name": "Regence All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "BCBS",
+     "plan_name": "Regence Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "CareOregon",
+     "plan_name": "Medicaid Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "CareOregon",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Cigna",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "First Choice",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "HealthNet",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Humana",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Moda",
+     "plan_name": "Medicaid Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Moda",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Moda",
+     "plan_name": "Non-OEBB All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Moda",
+     "plan_name": "OEBB All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Molina",
+     "plan_name": "Medicaid Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Molina",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Molina Healthcare",
+     "plan_name": "Exchange"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Pacificsource",
+     "plan_name": "Behavioral Health Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Pacificsource",
+     "plan_name": "Medicaid Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Providence Health Plan",
+     "plan_name": "Connect Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Providence Health Plan",
+     "plan_name": "Intel Connect Care Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Providence Health Plan",
+     "plan_name": "Medicaid Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Providence Health Plan",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Providence Health Plan",
+     "plan_name": "PEBB Members Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Providence Health Plan",
+     "plan_name": "Signature, Choice, Extended PPO Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "All Payer All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Charter Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Core Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Medicaid Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Medicare Managed Care Plan"
+    }
+   ]
+  }
+ ],
+ "type_2_npi": [
+  "1003991845",
+  "1023194271",
+  "1841376092"
+ ],
+ "version": "3.0.0"
+}

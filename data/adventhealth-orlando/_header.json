@@ -1,0 +1,447 @@
+{
+ "attestation": {
+  "attestation": "To the best of its knowledge and belief, this hospital has included all applicable standard charge information in accordance with the requirements of 45 CFR 180.50, and the information encoded is true, accurate, and complete as of the date in the file. This hospital has included all payer-specific negotiated charges in dollars that can be expressed as a dollar amount. For payer-specific negotiated charges that cannot be expressed as a dollar amount in the machine-readable file or not knowable in advance, the hospital attests that the payer-specific negotiated charge is based on a contractual algorithm, percentage or formula that precludes the provision of a dollar amount and has provided all necessary information available to the hospital for the public to be able to derive the dollar amount, including, but not limited to, the specific fee schedule or components referenced in such percentage, algorithm or formula.",
+  "attester_name": "Tim Reiner ",
+  "confirm_attestation": true
+ },
+ "hospital_address": [
+  "601 E Rollins St, Orlando, FL 32803",
+  "601 E. Altamonte Dr, Altamonte Springs, FL 32701",
+  "2100 Ocoee Apopka Rd, Apopka, FL 32703",
+  "400 Celebration Place, Celebration, FL 34747",
+  "1909 E Highway 50, Clermont, FL 34711",
+  "7727 Lake Underhill Rd, Orlando, FL 32822",
+  "13323 Hartzog Rd, Winter Garden, FL 34787",
+  "601 E Rollins St, Orlando, FL 32803",
+  "2450 North Orange Blossom Trail, Kissimmee, FL 34744",
+  "950 Rinehart Rd, Lake Mary, FL 32746",
+  "10080 Lake Nona Blvd, Orlando, FL 32827",
+  "12242 S. Orange Ave, Orlando, FL 32824",
+  "4633 Vineland Rd, Orlando, FL 32811",
+  "1800 North Hancock Rd, Minneola, FL 34715",
+  "8100 Red Bug Lake Rd, Oviedo, FL 32765",
+  "7823 Palm Pkwy, Orlando, FL 32836",
+  "2500 E Irlo Bronson Memorial Hwy, Kissimmee, FL 34744",
+  "4281 Pleasant Hill Rd, Kissimmee, FL 34746",
+  "2293 W. Sand Lake Rd, Orlando, FL 32809",
+  "4281 Pleasant Hill Rd, Kissimmee, FL 32773",
+  "7450 North Ronald Reagan Blvd, Sanford, FL 32773",
+  "13691 E Colonial Dr, Orlando, FL 32826",
+  "2000 Fowler Grove Blvd, Winter Garden, FL 34787",
+  "200 North Lakemont Ave, Winter Park, FL 32792"
+ ],
+ "hospital_name": "AdventHealth Orlando",
+ "last_updated_on": "2026-04-01",
+ "license_information": {
+  "license_number": "4369",
+  "state": "FL"
+ },
+ "location_name": [
+  "AdventHealth Orlando",
+  "AdventHealth Altamonte Springs",
+  "AdventHealth Apopka",
+  "AdventHealth Celebration",
+  "AdventHealth Clermont ER",
+  "AdventHealth East Orlando",
+  "AdventHealth Flamingo Crossing ER",
+  "AdventHealth for Children",
+  "AdventHealth Kissimmee",
+  "AdventHealth Lake Mary ER",
+  "AdventHealth Lake Nona ER",
+  "AdventHealth Meadow Woods ER",
+  "AdventHealth Millennia ER",
+  "AdventHealth Minneola",
+  "AdventHealth Oviedo ER",
+  "AdventHealth Palm Parkway ER",
+  "AdventHealth Partin Settlement Health Park",
+  "AdventHealth Poinciana ER",
+  "AdventHealth Sand Lake ER",
+  "AdventHealth Sanford ER",
+  "AdventHealth Sanford ER",
+  "AdventHealth Waterford Lakes ER",
+  "AdventHealth Winter Garden",
+  "AdventHealth Winter Park"
+ ],
+ "modifier_information": [
+  {
+   "code": "TC",
+   "description": "Technical Component; represents the costs of equipment, supplies, and technician personnel for a procedure, excluding the physician's interpretation. It is used when only the technical portion of a test is billed, typically by hospitals, imaging centers, or independent diagnostic testing facilities",
+   "modifier_payer_information": [
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "AdventHealth CastCare Disney",
+     "plan_name": "HMO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "ASA PPO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "Better Health Healthy Kids Medicaid Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "Better Health Medicaid Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "Exchange"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "HMO/PPO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "International PPO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Aetna",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Allegiance",
+     "plan_name": "Health First Employee"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "AvMed",
+     "plan_name": "HMO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "BCBS",
+     "plan_name": "Blue Options/Network Blue Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "BCBS",
+     "plan_name": "BlueSelect PPO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "BCBS",
+     "plan_name": "Global Transplant Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "BCBS",
+     "plan_name": "HMO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "BCBS",
+     "plan_name": "Lucet Health Medicare Managed Care - Behavioral Health"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "BCBS",
+     "plan_name": "Medicare Managed Care - HMO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "BCBS",
+     "plan_name": "Medicare Managed Care - PPO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "BCBS",
+     "plan_name": "MyBlue HMO Exchange"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "BCBS",
+     "plan_name": "PHS Traditional"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "BCBS",
+     "plan_name": "PPO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Carelon",
+     "plan_name": "Medicaid Managed Care - Behavioral Health"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Carelon",
+     "plan_name": "Medicare Managed Care - Behavioral Health"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Centene",
+     "plan_name": "Childrens Medical Services Health Plan Medicaid Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Centene",
+     "plan_name": "Wellcare Medicare Managed Care - Behavioral Health"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Centene",
+     "plan_name": "Wellcare Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Cigna",
+     "plan_name": "Evernorth Medicare Managed Care - Behavioral Health"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Cigna",
+     "plan_name": "HMO/PPO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Cigna",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Cigna",
+     "plan_name": "SureFit EPO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Community Care Plan",
+     "plan_name": "Healthy Kids Medicaid Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Devoted Health",
+     "plan_name": "Global Transplant Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Devoted Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "First Health",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Florida Community Care",
+     "plan_name": "Medicaid Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Freedom Health",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Global Benefits Group",
+     "plan_name": "International PPO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Global Medical Management International",
+     "plan_name": "PPO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health First Health Plans",
+     "plan_name": "HMO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Health First Health Plans",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Humana",
+     "plan_name": "CarePlus Medicare Managed Care - HMO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Humana",
+     "plan_name": "Gold Choice PFFS Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Humana",
+     "plan_name": "Medicare Managed Care - Behavioral Health"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Humana",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Longevity Health Plan",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Lucet Health",
+     "plan_name": "Behavioral Health Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Lucet Health",
+     "plan_name": "MyBlue Behavioral Health Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Magellan Health",
+     "plan_name": "Medicare Managed Care - Behavioral Health"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Molina Healthcare",
+     "plan_name": "Medicaid Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Multiplan",
+     "plan_name": "PPO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "National Healthcare Solutions",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Optimum Healthcare",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Optum",
+     "plan_name": "Global Transplant Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Oscar",
+     "plan_name": "Individual Plan Exchange"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Plotkin Health",
+     "plan_name": "PPO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Private Healthcare Systems PPO",
+     "plan_name": "PPO"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Simply Healthcare",
+     "plan_name": "Global Transplant Medicaid Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Simply Healthcare",
+     "plan_name": "Healthy Kids Medicaid Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Simply Healthcare",
+     "plan_name": "Medicaid Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Simply Healthcare",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sunshine State Health Plan",
+     "plan_name": "Ambetter Exchange"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sunshine State Health Plan",
+     "plan_name": "Medicaid Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "Sunshine State Health Plan",
+     "plan_name": "Transplant Medicaid Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "All Commercial Plans"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Community Plan Medicaid Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Exchange"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Global Transplant Medicaid Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Global Transplant Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Medicaid Managed Care - Behavioral Health"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Medicare Managed Care - Behavioral Health"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Neighborhood Health Partnership Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UnitedHealthCare",
+     "plan_name": "Nexus Other Commercial Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UPMC For Life",
+     "plan_name": "Medicare Managed Care Plan"
+    },
+    {
+     "description": "The modified price is presented in the standard charge value.",
+     "payer_name": "UPMC Health Plan",
+     "plan_name": "HMO"
+    }
+   ]
+  }
+ ],
+ "type_2_npi": [
+  "1306938071"
+ ],
+ "version": "3.0.0"
+}

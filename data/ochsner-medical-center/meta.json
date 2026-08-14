@@ -1,0 +1,14 @@
+{
+  "system": "Ochsner Health",
+  "location_name": "Ochsner Medical Center - (This file encompasses multiple facilities, including OMC \u2013 Jeff Hwy, OMC \u2013 Baptist, OMC \u2013 Clearview, Ochsner Hospital for Orthopedics & Sports Medicine, and OMC \u2013 West Bank Campus)",
+  "mrf_url": "https://ochsner-craft.s3.amazonaws.com/core/720502505_ochsner-clinic-foundation_standardcharges.csv_2026-03-26-204318_iros.csv",
+  "source_filename": "720502505_ochsner-clinic-foundation_standardcharges.csv_2026-03-26-204318_iros.csv",
+  "sha256": "2645739710ff580494dc609a060a99ac3c3aed023b1f249106d2e39346b159b3",
+  "size_bytes": 1323431553,
+  "source_last_modified": "Thu, 16 Apr 2026 16:50:37 GMT",
+  "source_etag": "\"26cbd133888be2d1fcbde3c750c93b10\"",
+  "transfer_fingerprint": "1a5dc9b8c3a5a3ddea42e06cb2719ae54ac22f3188e3a3fbd8613fc316888a41",
+  "status": "summarized",
+  "first_seen": "2026-08-14T03:47:05Z",
+  "last_changed": "2026-08-14T03:47:05Z"
+}

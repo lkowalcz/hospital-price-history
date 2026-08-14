@@ -1,0 +1,14 @@
+{
+  "system": "Corewell Health",
+  "location_name": "Corewell Health Butterworth Hospital",
+  "mrf_url": "https://assets.contentstack.io/v3/assets/blt3055f692fe7bf193/blt0f9fd2163e3908a4/381360529_corewell-health-butterworth-hospital_standardcharges.csv",
+  "source_filename": "381360529_corewell-health-butterworth-hospital_standardcharges.csv",
+  "sha256": "6267f5366e100c2611f9db51c852977612ac4590c11631bbf3500b0535264707",
+  "size_bytes": 29278653,
+  "source_last_modified": "Thu, 13 Aug 2026 21:02:33 GMT",
+  "source_etag": null,
+  "transfer_fingerprint": "0adef470f68725bc83acc4156dc6a01be243a11f0d436d43fae72f9b73b72740",
+  "status": "stored",
+  "first_seen": "2026-08-14T03:56:47Z",
+  "last_changed": "2026-08-14T03:56:47Z"
+}

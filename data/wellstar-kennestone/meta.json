@@ -1,0 +1,14 @@
+{
+  "system": "Wellstar Health System",
+  "location_name": "Wellstar Kennestone Hospital",
+  "mrf_url": "https://www.wellstar.org/wellstar-kennestone-hospital_standard-charges",
+  "source_filename": "wellstar-kennestone-hospital_standard-charges.csv",
+  "sha256": "a8020bfd192f6d1d43891b87d4852ed5f3ebfea01301a8204be83c9c32e7f238",
+  "size_bytes": 57192817,
+  "source_last_modified": null,
+  "source_etag": null,
+  "transfer_fingerprint": "34e88b2ba1a77ff51fcedea16216f20911917e5afc6c82ed2478f6307f1a0072",
+  "status": "sharded",
+  "first_seen": "2026-08-14T03:56:46Z",
+  "last_changed": "2026-08-14T03:56:46Z"
+}

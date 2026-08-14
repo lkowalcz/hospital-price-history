@@ -1,0 +1,14 @@
+{
+  "system": "Baptist Health South Florida",
+  "location_name": "Baptist Hospital",
+  "mrf_url": "https://baptisthealth.net/-/media/Documents/Patient-Resources/Patient-Pricing/Apr-2026/590910342_baptist-hospital-of-miami_standardcharges.zip",
+  "source_filename": "590910342_baptist-hospital-of-miami_standardcharges.csv",
+  "sha256": "07f38f7197df2cfa460ff029f7cd290b9f903b6e27317dcaba627ecafe99896a",
+  "size_bytes": 562325842,
+  "source_last_modified": null,
+  "source_etag": null,
+  "transfer_fingerprint": "3ad292a6dd549fc7c9d6a41370a06db90fb0491a48376b769a4257fcfdeff889",
+  "status": "sharded",
+  "first_seen": "2026-08-14T03:56:43Z",
+  "last_changed": "2026-08-14T03:56:43Z"
+}

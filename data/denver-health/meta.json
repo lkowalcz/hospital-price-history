@@ -1,0 +1,14 @@
+{
+  "system": "Denver Health (public safety-net)",
+  "location_name": "Denver Health Medical Center",
+  "mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7840/841343242_denver-health-and-hospital-authority_standardcharges.csv",
+  "source_filename": "841343242_denver-health-and-hospital-authority_standardcharges.csv",
+  "sha256": "7377e99e651872d692103ba256d10722712a417fbc09065a1d65f759fdea89a6",
+  "size_bytes": 200462082,
+  "source_last_modified": "Thu, 30 Apr 2026 15:54:44 GMT",
+  "source_etag": "0x8DEA6D0CC3CF122",
+  "transfer_fingerprint": "952f670e5c6edfb5522e111d4f3d556d9cae15ef84805d808bbb5dd4b7813f15",
+  "status": "sharded",
+  "first_seen": "2026-08-14T03:56:15Z",
+  "last_changed": "2026-08-14T03:56:15Z"
+}
