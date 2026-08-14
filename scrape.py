@@ -177,7 +177,10 @@ def discover_mrf_url(hospital):
     wanted = normalize_name(hospital["location_name"])
     for block in parse_hpt_txt(decode_text(raw)):
         if normalize_name(block.get("location-name", "")) == wanted:
-            return block.get("mrf-url")
+            url = block.get("mrf-url")
+            if url and not re.match(r"^https?://", url):
+                url = "https://" + url  # Rush lists a scheme-less mrf-url
+            return url
     return None
 
 
@@ -494,6 +497,12 @@ def process(hospital, scratch):
         name, payload_path = materialize(tmp, headers, mrf_url, workdir)
         size = payload_path.stat().st_size
 
+        with open(payload_path, "rb") as f:
+            start = f.read(512).lstrip(b"\xef\xbb\xbf").lstrip().lower()
+        if start.startswith((b"<!doctype", b"<html", b"<head")):
+            # Never archive a bot-block/captcha/error page as price data.
+            raise ValueError("received an HTML page instead of an MRF (bot-block?)")
+
         if size <= MAX_SHARD_TOTAL:
             payload = normalize_payload(name, payload_path.read_bytes())
             sha = hashlib.sha256(payload).hexdigest()
@@ -549,19 +558,35 @@ def process(hospital, scratch):
 
 
 def record_failure(slug, exc):
-    """Persist an outage streak in meta.json — unreachability is signal too."""
+    """Persist an outage streak in meta.json — unreachability is signal too.
+
+    Re-persists at most weekly so a permanently broken source (dead link,
+    bot-block) doesn't generate a noise commit every day; the streak length
+    is derived from first_failed, not from write frequency.
+    """
     meta_path = DATA / slug / "meta.json"
     meta = json.loads(meta_path.read_text()) if meta_path.exists() else {}
     prior = meta.get("fetch_failures", {})
-    meta["fetch_failures"] = {
-        "count": prior.get("count", 0) + 1,
-        "first_failed": prior.get("first_failed") or utcnow(),
-        "last_error": str(exc)[:200],
-        "last_attempt": utcnow(),
-    }
-    meta_path.parent.mkdir(parents=True, exist_ok=True)
-    meta_path.write_text(json.dumps(meta, indent=2) + "\n")
-    return meta["fetch_failures"]["count"]
+    first = prior.get("first_failed") or utcnow()
+    days = (datetime.now(timezone.utc)
+            - datetime.strptime(first, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+            ).days + 1
+    last = prior.get("last_attempt")
+    stale = (
+        not last
+        or (datetime.now(timezone.utc)
+            - datetime.strptime(last, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+            ).days >= 7
+    )
+    if stale:
+        meta["fetch_failures"] = {
+            "first_failed": first,
+            "last_error": str(exc)[:200],
+            "last_attempt": utcnow(),
+        }
+        meta_path.parent.mkdir(parents=True, exist_ok=True)
+        meta_path.write_text(json.dumps(meta, indent=2) + "\n")
+    return days
 
 
 def clear_failure_record(slug):

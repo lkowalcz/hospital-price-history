@@ -86,6 +86,11 @@ No dependencies. Writes into `data/` and `commit_message.txt`.
 - UPMC, Houston Methodist, and Memorial Hermann serve a `cms-hpt.txt`
   containing prose instructions to click through their website instead of
   the machine-readable `mrf-url` blocks the CMS format specifies.
+- Yale New Haven's `cms-hpt.txt` points to a dead URL (404), and Geisinger's
+  MRF link resolves to a Radware CAPTCHA page — both tracked as ongoing
+  `fetch_failures` streaks in their `meta.json`. UAB's CDN blocks GitHub's
+  runner IPs (its snapshot was fetched locally). Rush publishes its
+  `mrf-url` without an `https://` scheme; the scraper compensates.
 - Sutter Health serves its `cms-hpt.txt` as UTF-16; UCSF's JSON leads with
   a UTF-8 BOM; several zips contain `__MACOSX` junk. The scraper tolerates
   all of these.
