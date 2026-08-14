@@ -92,7 +92,8 @@ def curl_fetch(url, dest=None, extra=()):
     """Fetch via curl-impersonate; returns (status, Headers, stdout_bytes)."""
     with tempfile.NamedTemporaryFile(suffix=".hdrs", delete=False) as tf:
         hdr_path = tf.name
-    cmd = [IMPERSONATE_BIN, "-sS", "-L", "--max-time", "3600", "-D", hdr_path,
+    cmd = [IMPERSONATE_BIN, "-sS", "-L",
+           "--max-time", os.environ.get("CURL_MAX_TIME", "3600"), "-D", hdr_path,
            "-o", str(dest) if dest else "-", *extra, url]
     try:
         proc = subprocess.run(cmd, check=True, capture_output=True)
