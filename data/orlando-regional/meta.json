@@ -1,0 +1,14 @@
+{
+  "system": "Orlando Health",
+  "location_name": "Orlando Health Orlando Regional Medical Center",
+  "mrf_url": "https://hospitalpricedisclosure.com/download.aspx?pi=r5C56pFicSGYmflCJ5*__*QXg*-*",
+  "source_filename": "download.aspx.json",
+  "sha256": "dea063b3f788f8698313761747a563771510750c43d91125d6ebe36021c2bfe3",
+  "size_bytes": 90570353,
+  "source_last_modified": "Tue, 31 Mar 2026 01:52:47 GMT",
+  "source_etag": "0x8DE8EC835AEB6F3",
+  "transfer_fingerprint": "1f61a6ef429849f4c8fa1837ce5aa621cde3d58a76bfc212fd4808518491db72",
+  "status": "sharded",
+  "first_seen": "2026-08-14T05:20:01Z",
+  "last_changed": "2026-08-14T05:20:01Z"
+}

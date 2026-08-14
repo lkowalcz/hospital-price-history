@@ -1,0 +1,14 @@
+{
+  "system": "Johns Hopkins Medicine",
+  "location_name": "The Johns Hopkins Hospital",
+  "mrf_url": "https://www.hopkinsmedicine.org/-/media/patient-care/documents/billing-insurance/charge-fees/520591656_the-johns-hopkins-hospital_standardcharges.csv",
+  "source_filename": "520591656_the-johns-hopkins-hospital_standardcharges.csv",
+  "sha256": "5756a1330f9bcc80b2aa6c7af5adc3f6254b254930da811817ce479b24be8ef7",
+  "size_bytes": 14618501,
+  "source_last_modified": "Fri, 14 Aug 2026 04:28:40 GMT",
+  "source_etag": null,
+  "transfer_fingerprint": "23d9174cd4ec627e1e353ee02246a25b4ab2755edba28931b692c3648e40f992",
+  "status": "stored",
+  "first_seen": "2026-08-14T04:28:41Z",
+  "last_changed": "2026-08-14T04:28:41Z"
+}

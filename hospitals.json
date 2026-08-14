@@ -304,5 +304,47 @@
     "system": "Jefferson Health",
     "hpt_txt": "https://www.jeffersonhealth.org/cms-hpt.txt",
     "location_name": "Thomas Jefferson University Hospital"
+  },
+  {
+    "slug": "johns-hopkins",
+    "system": "Johns Hopkins Medicine",
+    "hpt_txt": "https://www.hopkinsmedicine.org/cms-hpt.txt",
+    "location_name": "The Johns Hopkins Hospital",
+    "fetch": "impersonate"
+  },
+  {
+    "slug": "uw-medical-center",
+    "system": "UW Medicine",
+    "hpt_txt": "https://www.uwmedicine.org/cms-hpt.txt",
+    "location_name": "University of Washington Medical Center",
+    "fetch": "impersonate"
+  },
+  {
+    "slug": "mayo-rochester",
+    "system": "Mayo Clinic",
+    "hpt_txt": "https://www.mayoclinic.org/cms-hpt.txt",
+    "location_name": "Mayo Clinic Hospital-Rochester",
+    "fetch": "impersonate"
+  },
+  {
+    "slug": "mount-sinai",
+    "system": "Mount Sinai Health System",
+    "hpt_txt": "https://www.mountsinai.org/cms-hpt.txt",
+    "location_name": "Mount Sinai Hospital",
+    "fetch": "impersonate"
+  },
+  {
+    "slug": "unc-hospitals",
+    "system": "UNC Health",
+    "hpt_txt": "https://www.unchealthcare.org/cms-hpt.txt",
+    "location_name": "UNC Hospitals",
+    "fetch": "impersonate"
+  },
+  {
+    "slug": "orlando-regional",
+    "system": "Orlando Health",
+    "hpt_txt": "https://www.orlandohealth.com/cms-hpt.txt",
+    "location_name": "Orlando Health Orlando Regional Medical Center",
+    "fetch": "impersonate"
   }
 ]

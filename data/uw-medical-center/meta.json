@@ -1,0 +1,14 @@
+{
+  "system": "UW Medicine",
+  "location_name": "University of Washington Medical Center",
+  "mrf_url": "https://www.uwmedicine.org/sites/stevie/files/mrf/916001537_university-of-washington-medical-center_standardcharges.json",
+  "source_filename": "916001537_university-of-washington-medical-center_standardcharges.json",
+  "sha256": "e832d52255a3567b328f627132cf20df7d5d4d74afe6d16a4656af3818f026f3",
+  "size_bytes": 77795301,
+  "source_last_modified": "Wed, 01 Apr 2026 19:08:45 GMT",
+  "source_etag": null,
+  "transfer_fingerprint": "5fb3d0404a62bff3e0ce7a100109131d102dee4a3f272f3d01ab024c7d90217c",
+  "status": "sharded",
+  "first_seen": "2026-08-14T04:28:45Z",
+  "last_changed": "2026-08-14T04:28:45Z"
+}

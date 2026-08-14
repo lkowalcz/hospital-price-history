@@ -1,0 +1,14 @@
+{
+  "system": "Mount Sinai Health System",
+  "location_name": "Mount Sinai Hospital",
+  "mrf_url": "https://www.mountsinai.org/files/mrf/131624096_mount-sinai-hospital_standardcharges.json",
+  "source_filename": "131624096_mount-sinai-hospital_standardcharges.json",
+  "sha256": "0e306c408f2544d82fbc48b156148cf18741498a3dc62c26a5f59779cfa99477",
+  "size_bytes": 171890328,
+  "source_last_modified": "Fri, 03 Apr 2026 16:49:33 GMT",
+  "source_etag": "\"f847b9bbd5bd34153ee4282b82db6efd:1775234973.393667\"",
+  "transfer_fingerprint": "d026d08fee384ea90a40d55b80a58930cd13995123c66914abeb1291ae0733c8",
+  "status": "sharded",
+  "first_seen": "2026-08-14T05:14:55Z",
+  "last_changed": "2026-08-14T05:14:55Z"
+}
