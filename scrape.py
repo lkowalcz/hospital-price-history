@@ -165,10 +165,17 @@ def parse_hpt_txt(text):
     return blocks
 
 
+def decode_text(raw):
+    """Decode site text tolerating BOMs; some hospitals serve UTF-16 (Sutter)."""
+    if raw[:2] in (b"\xff\xfe", b"\xfe\xff"):
+        return raw.decode("utf-16", errors="replace")
+    return raw.decode("utf-8-sig", errors="replace")
+
+
 def discover_mrf_url(hospital):
     raw, _ = fetch_small(hospital["hpt_txt"], timeout=30)
     wanted = normalize_name(hospital["location_name"])
-    for block in parse_hpt_txt(raw.decode("utf-8", errors="replace")):
+    for block in parse_hpt_txt(decode_text(raw)):
         if normalize_name(block.get("location-name", "")) == wanted:
             return block.get("mrf-url")
     return None
@@ -378,29 +385,35 @@ def summarize_csv(path, out_path):
     return write_summary(agg, out_path)
 
 
+def aggregate_items(items):
+    """Fold CMS v3 standard_charge_information items into per-code aggregates."""
+    agg = {}
+    for item in items:
+        desc = str(item.get("description", ""))[:200]
+        codes = item.get("code_information") or [{}]
+        ctype = str(codes[0].get("type", ""))
+        code = str(codes[0].get("code", ""))
+        a = agg.setdefault((ctype, code, desc), CodeAgg())
+        for sc in item.get("standard_charges") or []:
+            a.gross = a.gross or to_float(sc.get("gross_charge"))
+            a.cash = a.cash or to_float(sc.get("discounted_cash"))
+            for p in sc.get("payers_information") or []:
+                v = to_float(p.get("standard_charge_dollar"))
+                if v is not None:
+                    a.add_negotiated(v)
+    return agg
+
+
 def summarize_json(path, out_path):
     """Stream a CMS v3 JSON into a per-code price digest (needs ijson)."""
     try:
         import ijson
     except ImportError:
         return False
-    agg = {}
     with open(path, "rb") as f:
         if f.read(3) != b"\xef\xbb\xbf":  # skip BOM if present
             f.seek(0)
-        for item in ijson.items(f, "standard_charge_information.item"):
-            desc = str(item.get("description", ""))[:200]
-            codes = item.get("code_information") or [{}]
-            ctype = str(codes[0].get("type", ""))
-            code = str(codes[0].get("code", ""))
-            a = agg.setdefault((ctype, code, desc), CodeAgg())
-            for sc in item.get("standard_charges") or []:
-                a.gross = a.gross or to_float(sc.get("gross_charge"))
-                a.cash = a.cash or to_float(sc.get("discounted_cash"))
-                for p in sc.get("payers_information") or []:
-                    v = to_float(p.get("standard_charge_dollar"))
-                    if v is not None:
-                        a.add_negotiated(v)
+        agg = aggregate_items(ijson.items(f, "standard_charge_information.item"))
     return write_summary(agg, out_path)
 
 
@@ -506,6 +519,10 @@ def process(hospital, scratch):
             mode = store_sharded(outdir, name, payload)
         else:
             mode = store_summarized(outdir, name, payload_path)
+        if mode in ("stored", "sharded"):
+            # Companion summary so summary.csv is a uniform analytics layer
+            # across every hospital regardless of storage mode.
+            store_summarized(outdir, name, payload_path)
 
         meta = {
             "system": hospital["system"],

@@ -124,5 +124,185 @@
     "system": "Boston Medical Center Health System",
     "hpt_txt": "https://www.bmc.org/cms-hpt.txt",
     "location_name": "Boston Medical Center"
+  },
+  {
+    "slug": "hca-florida-kendall",
+    "system": "HCA Healthcare (Florida)",
+    "hpt_txt": "https://hcafloridahealthcare.com/cms-hpt.txt",
+    "location_name": "HCA FLORIDA KENDALL HOSPITAL"
+  },
+  {
+    "slug": "medical-city-dallas",
+    "system": "HCA Healthcare (Medical City)",
+    "hpt_txt": "https://medicalcityhealthcare.com/cms-hpt.txt",
+    "location_name": "MEDICAL CITY DALLAS HOSPITAL"
+  },
+  {
+    "slug": "tristar-centennial",
+    "system": "HCA Healthcare (TriStar)",
+    "hpt_txt": "https://tristarhealth.com/cms-hpt.txt",
+    "location_name": "CENTENNIAL MEDICAL CENTER"
+  },
+  {
+    "slug": "hca-houston-medical-center",
+    "system": "HCA Healthcare (Houston)",
+    "hpt_txt": "https://hcahoustonhealthcare.com/cms-hpt.txt",
+    "location_name": "HCA HOUSTON MEDICAL CENTER"
+  },
+  {
+    "slug": "dmc-harper",
+    "system": "Tenet Health (Detroit Medical Center)",
+    "hpt_txt": "https://www.dmc.org/cms-hpt.txt",
+    "location_name": "DMC Harper University Hospital"
+  },
+  {
+    "slug": "providence-portland",
+    "system": "Providence",
+    "hpt_txt": "https://www.providence.org/cms-hpt.txt",
+    "location_name": "Providence Portland Medical Center"
+  },
+  {
+    "slug": "adventhealth-orlando",
+    "system": "AdventHealth",
+    "hpt_txt": "https://www.adventhealth.com/cms-hpt.txt",
+    "location_name": "AdventHealth Orlando"
+  },
+  {
+    "slug": "cpmc-van-ness",
+    "system": "Sutter Health",
+    "hpt_txt": "https://www.sutterhealth.org/cms-hpt.txt",
+    "location_name": "CALIFORNIA PACIFIC MEDICAL CENTER VAN NESS CAMPUS"
+  },
+  {
+    "slug": "intermountain-medical-center",
+    "system": "Intermountain Health",
+    "hpt_txt": "https://intermountainhealthcare.org/cms-hpt.txt",
+    "location_name": "Intermountain Health Intermountain Medical Center"
+  },
+  {
+    "slug": "baylor-university-medical",
+    "system": "Baylor Scott & White",
+    "hpt_txt": "https://www.bswhealth.com/cms-hpt.txt",
+    "location_name": "BAYLOR UNIVERSITY MEDICAL CENTER"
+  },
+  {
+    "slug": "ochsner-medical-center",
+    "system": "Ochsner Health",
+    "hpt_txt": "https://www.ochsner.org/cms-hpt.txt",
+    "location_name": "Ochsner Medical Center - (This file encompasses multiple facilities, including OMC \u2013 Jeff Hwy, OMC \u2013 Baptist, OMC \u2013 Clearview, Ochsner Hospital for Orthopedics & Sports Medicine, and OMC \u2013 West Bank Campus)"
+  },
+  {
+    "slug": "banner-university-phoenix",
+    "system": "Banner Health",
+    "hpt_txt": "https://www.bannerhealth.com/cms-hpt.txt",
+    "location_name": "Banner University Medical Center Phoenix"
+  },
+  {
+    "slug": "geisinger-medical-center",
+    "system": "Geisinger",
+    "hpt_txt": "https://www.geisinger.org/cms-hpt.txt",
+    "location_name": "Geisinger Medical Center"
+  },
+  {
+    "slug": "ohiohealth-riverside",
+    "system": "OhioHealth",
+    "hpt_txt": "https://www.ohiohealth.com/cms-hpt.txt",
+    "location_name": "Riverside Methodist Hospital"
+  },
+  {
+    "slug": "novant-presbyterian",
+    "system": "Novant Health",
+    "hpt_txt": "https://www.novanthealth.org/cms-hpt.txt",
+    "location_name": "Novant Health Presbyterian Medical Center"
+  },
+  {
+    "slug": "rush-university",
+    "system": "Rush University System for Health",
+    "hpt_txt": "https://www.rush.edu/cms-hpt.txt",
+    "location_name": "Rush University Medical Center"
+  },
+  {
+    "slug": "michigan-medicine",
+    "system": "Michigan Medicine",
+    "hpt_txt": "https://www.uofmhealth.org/cms-hpt.txt",
+    "location_name": "UNIVERSITY OF MICHIGAN HEALTH"
+  },
+  {
+    "slug": "uab-hospital",
+    "system": "UAB Medicine",
+    "hpt_txt": "https://www.uabmedicine.org/cms-hpt.txt",
+    "location_name": "University of Alabama Hospital"
+  },
+  {
+    "slug": "parkland",
+    "system": "Parkland Health (public safety-net)",
+    "hpt_txt": "https://www.parklandhealth.org/cms-hpt.txt",
+    "location_name": "Parkland Health"
+  },
+  {
+    "slug": "grady",
+    "system": "Grady Health System (public safety-net)",
+    "hpt_txt": "https://www.gradyhealth.org/cms-hpt.txt",
+    "location_name": "Grady Health System"
+  },
+  {
+    "slug": "jackson-memorial",
+    "system": "Jackson Health System (public safety-net)",
+    "hpt_txt": "https://www.jacksonhealth.org/cms-hpt.txt",
+    "location_name": "Jackson Memorial Hospital"
+  },
+  {
+    "slug": "denver-health",
+    "system": "Denver Health (public safety-net)",
+    "hpt_txt": "https://www.denverhealth.org/cms-hpt.txt",
+    "location_name": "Denver Health Medical Center"
+  },
+  {
+    "slug": "tampa-general",
+    "system": "Tampa General Hospital",
+    "hpt_txt": "https://www.tgh.org/cms-hpt.txt",
+    "location_name": "Tampa General Hospital"
+  },
+  {
+    "slug": "baptist-hospital-miami",
+    "system": "Baptist Health South Florida",
+    "hpt_txt": "https://www.baptisthealth.net/cms-hpt.txt",
+    "location_name": "Baptist Hospital"
+  },
+  {
+    "slug": "wellstar-kennestone",
+    "system": "Wellstar Health System",
+    "hpt_txt": "https://www.wellstar.org/cms-hpt.txt",
+    "location_name": "Wellstar Kennestone Hospital"
+  },
+  {
+    "slug": "corewell-butterworth",
+    "system": "Corewell Health",
+    "hpt_txt": "https://corewellhealth.org/cms-hpt.txt",
+    "location_name": "Corewell Health Butterworth Hospital"
+  },
+  {
+    "slug": "sanford-usd",
+    "system": "Sanford Health",
+    "hpt_txt": "https://www.sanfordhealth.org/cms-hpt.txt",
+    "location_name": "Sanford USD Medical Center"
+  },
+  {
+    "slug": "musc-charleston",
+    "system": "MUSC Health",
+    "hpt_txt": "https://www.muschealth.org/cms-hpt.txt",
+    "location_name": "MUSC Health Main Campus - Charleston"
+  },
+  {
+    "slug": "yale-new-haven",
+    "system": "Yale New Haven Health",
+    "hpt_txt": "https://www.ynhh.org/cms-hpt.txt",
+    "location_name": "Yale New Haven Hospital"
+  },
+  {
+    "slug": "jefferson-tjuh",
+    "system": "Jefferson Health",
+    "hpt_txt": "https://www.jeffersonhealth.org/cms-hpt.txt",
+    "location_name": "Thomas Jefferson University Hospital"
   }
 ]

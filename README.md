@@ -11,17 +11,29 @@ git history shows exactly when.
 
 ## Coverage
 
-21 hospitals across 18 major systems, weighted toward large academic medical
-centers: Mass General Brigham (MGH, Brigham and Women's, Faulkner, Martha's
-Vineyard), NewYork-Presbyterian Columbia, Stanford, Cleveland Clinic main
-campus, Cedars-Sinai, NYU Langone Tisch, University of Chicago, UCSF
-Parnassus, Ronald Reagan UCLA, Duke University Hospital, MD Anderson,
-Northwestern Memorial, Hospital of the University of Pennsylvania, Northwell
-North Shore, Emory University Hospital, Kaiser Oakland, Atrium Carolinas
-Medical Center, and Boston Medical Center.
+51 hospitals across ~45 systems, chosen for breadth of ownership type and
+geography, one flagship per system:
+
+- **Academic medical centers**: MGH, Brigham and Women's (+2 MGB community
+  hospitals), NYP Columbia, Stanford, Cleveland Clinic, Cedars-Sinai, NYU
+  Langone, UChicago, UCSF, UCLA, Duke, MD Anderson, Northwestern, Penn,
+  Emory, Rush, Michigan Medicine, UAB, MUSC, Yale New Haven, Jefferson,
+  Geisinger, Banner University Phoenix
+- **For-profit chains**: HCA (Florida Kendall, Medical City Dallas, TriStar
+  Centennial, HCA Houston), Tenet (DMC Harper University)
+- **Public safety-net hospitals**: Parkland, Grady, Jackson Memorial,
+  Denver Health, Boston Medical Center
+- **Large nonprofit/regional systems**: Kaiser Oakland, Providence Portland,
+  AdventHealth Orlando, Sutter CPMC Van Ness, Intermountain, Baylor
+  University Medical Center, Ochsner, OhioHealth Riverside, Novant
+  Presbyterian, Northwell North Shore, Atrium Carolinas, Tampa General,
+  Baptist Miami, Wellstar Kennestone, Corewell Butterworth, Sanford USD,
+  Martha's Vineyard
 
 See `hospitals.json` for the exact list; each entry's current state lives in
-`data/<slug>/meta.json`.
+`data/<slug>/meta.json`, and every hospital gets a `summary.csv` — a uniform
+per-code digest (gross charge, cash price, min/max negotiated, payer count)
+regardless of how the full file is stored.
 
 ## How it works
 
@@ -67,8 +79,15 @@ No dependencies. Writes into `data/` and `commit_message.txt`.
 - Hospital CDNs behind Cloudflare/Akamai often refuse non-browser
   User-Agents, despite the CMS requirement that these files be accessible to
   automated searches; the scraper sends a browser UA. Johns Hopkins, UW
-  Medicine, Mayo Clinic, Mount Sinai, Houston Methodist, and Vanderbilt block
-  at the TLS-fingerprint level and would need a real browser fetch — future
-  work.
+  Medicine, Mayo Clinic, Mount Sinai, Vanderbilt, UNC, Ascension, Trinity
+  Health, Dignity Health, Advocate, Barnes-Jewish, and Orlando Health block
+  or fail to serve `cms-hpt.txt` at the standard location — future work
+  (likely `curl-impersonate`).
+- UPMC, Houston Methodist, and Memorial Hermann serve a `cms-hpt.txt`
+  containing prose instructions to click through their website instead of
+  the machine-readable `mrf-url` blocks the CMS format specifies.
+- Sutter Health serves its `cms-hpt.txt` as UTF-16; UCSF's JSON leads with
+  a UTF-8 BOM; several zips contain `__MACOSX` junk. The scraper tolerates
+  all of these.
 - The scraper re-discovers each MRF URL from `cms-hpt.txt` on every run, so a
   URL change or a delisting is itself recorded in `meta.json`.
