@@ -148,18 +148,24 @@ def normalize_name(s):
 
 
 def parse_hpt_txt(text):
-    """Parse cms-hpt.txt into a list of {key: value} blocks."""
+    """Parse cms-hpt.txt into a list of {key: value} blocks.
+
+    Records are delimited by each new location-name key rather than by blank
+    lines — some hospitals (Grady) blank-line-separate every field.
+    """
     blocks, current = [], {}
     for line in text.splitlines():
         line = line.strip()
-        if not line:
-            if current:
-                blocks.append(current)
-                current = {}
+        if ":" not in line:
             continue
-        if ":" in line:
-            key, _, value = line.partition(":")
-            current[key.strip().casefold()] = value.strip()
+        key, _, value = line.partition(":")
+        key = key.strip().casefold()
+        if not key:
+            continue
+        if key == "location-name" and current:
+            blocks.append(current)
+            current = {}
+        current.setdefault(key, value.strip())
     if current:
         blocks.append(current)
     return blocks
