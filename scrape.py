@@ -88,13 +88,19 @@ def parse_header_dump(text):
     return status, Headers((k.strip(), v.strip()) for k, v in pairs)
 
 
-def curl_fetch(url, dest=None, extra=()):
+def curl_fetch(url, dest=None, extra=(), max_time=None):
     """Fetch via curl-impersonate; returns (status, Headers, stdout_bytes)."""
     with tempfile.NamedTemporaryFile(suffix=".hdrs", delete=False) as tf:
         hdr_path = tf.name
+    # Real file downloads resume across dropped connections (Mayo's 14.5 GB
+    # blob resets long transfers) — curl retries internally, continuing at
+    # the byte offset already on disk.
+    resume = ("-C", "-", "--retry", "3", "--retry-all-errors") \
+        if dest and str(dest) != os.devnull else ()
     cmd = [IMPERSONATE_BIN, "-sS", "-L",
-           "--max-time", os.environ.get("CURL_MAX_TIME", "3600"), "-D", hdr_path,
-           "-o", str(dest) if dest else "-", *extra, url]
+           "--max-time", str(max_time or os.environ.get("CURL_MAX_TIME", "3600")),
+           "-D", hdr_path,
+           "-o", str(dest) if dest else "-", *resume, *extra, url]
     try:
         proc = subprocess.run(cmd, check=True, capture_output=True)
         status, headers = parse_header_dump(Path(hdr_path).read_text(errors="replace"))
@@ -125,10 +131,10 @@ def with_retries(fn, attempts=3, delay=20):
             time.sleep(delay * (i + 1))
 
 
-def fetch_small(url, timeout=60, impersonate=False):
+def fetch_small(url, timeout=60, impersonate=False, max_time=None):
     if impersonate and IMPERSONATE_BIN:
         def go():
-            status, headers, body = curl_fetch(url, extra=("--fail",))
+            status, headers, body = curl_fetch(url, extra=("--fail",), max_time=max_time)
             return body, headers
         return with_retries(go)
 
@@ -138,10 +144,10 @@ def fetch_small(url, timeout=60, impersonate=False):
     return with_retries(go)
 
 
-def head(url, impersonate=False):
+def head(url, impersonate=False, max_time=None):
     if impersonate and IMPERSONATE_BIN:
         def go():
-            status, headers, _ = curl_fetch(url, dest=os.devnull, extra=("-I",))
+            status, headers, _ = curl_fetch(url, dest=os.devnull, extra=("-I",), max_time=max_time)
             return headers if 200 <= status < 300 else Headers([])
         return with_retries(go)
 
@@ -154,10 +160,10 @@ def head(url, impersonate=False):
     return with_retries(go)
 
 
-def download_to(url, dest, impersonate=False):
+def download_to(url, dest, impersonate=False, max_time=None):
     if impersonate and IMPERSONATE_BIN:
         def go():
-            status, headers, _ = curl_fetch(url, dest=dest, extra=("--fail",))
+            status, headers, _ = curl_fetch(url, dest=dest, extra=("--fail",), max_time=max_time)
             return headers
         return with_retries(go)
 
@@ -173,12 +179,12 @@ def fingerprint_offsets(total):
                    max(total - SAMPLE_BYTES, 0)})
 
 
-def remote_fingerprint(url, impersonate=False):
+def remote_fingerprint(url, impersonate=False, max_time=None):
     """Hash of ~5 MB of Range-request samples + length; None if unsupported."""
     def ranged(off):
         if impersonate and IMPERSONATE_BIN:
             status, headers, body = curl_fetch(
-                url, extra=("-r", f"{off}-{off + SAMPLE_BYTES - 1}"))
+                url, extra=("-r", f"{off}-{off + SAMPLE_BYTES - 1}"), max_time=max_time)
             if status != 206:
                 return None, None
             return headers, body
@@ -260,7 +266,8 @@ def wants_impersonate(hospital):
 
 def discover_mrf_url(hospital):
     raw, _ = fetch_small(hospital["hpt_txt"], timeout=30,
-                         impersonate=wants_impersonate(hospital))
+                         impersonate=wants_impersonate(hospital),
+                         max_time=hospital.get("curl_max_time"))
     wanted = normalize_name(hospital["location_name"])
     for block in parse_hpt_txt(decode_text(raw)):
         if normalize_name(block.get("location-name", "")) == wanted:
@@ -561,15 +568,16 @@ def process(hospital, scratch):
     )
 
     imp = wants_impersonate(hospital)
+    mt = hospital.get("curl_max_time")
     if not upgrade_needed and mrf_url == old_meta.get("mrf_url") and old_meta.get("sha256"):
-        h = head(mrf_url, impersonate=imp)
+        h = head(mrf_url, impersonate=imp, max_time=mt)
         validators = (h.get("Last-Modified"), h.get("ETag"))
         stored = (old_meta.get("source_last_modified"), old_meta.get("source_etag"))
         if any(validators) and validators == stored:
             return None
         # Validators absent — or rotating on every request (Kaiser): fall
         # back to a ~5 MB sampled Range fingerprint before a full download.
-        fp = remote_fingerprint(mrf_url, impersonate=imp)
+        fp = remote_fingerprint(mrf_url, impersonate=imp, max_time=mt)
         if fp and fp == old_meta.get("transfer_fingerprint"):
             return None
         if fp is None and not any(stored) \
@@ -581,7 +589,7 @@ def process(hospital, scratch):
     # fetched from an environment without the cap (a local run).
     limit = int(os.environ.get("MAX_DOWNLOAD_BYTES", 0))
     if limit:
-        cl = int(head(mrf_url, impersonate=imp).get("Content-Length") or 0)
+        cl = int(head(mrf_url, impersonate=imp, max_time=mt).get("Content-Length") or 0)
         if cl > limit:
             raise ValueError(
                 f"file is {cl:,} bytes, over MAX_DOWNLOAD_BYTES={limit:,}; "
@@ -590,7 +598,7 @@ def process(hospital, scratch):
     workdir = Path(tempfile.mkdtemp(dir=scratch))
     try:
         tmp = workdir / "download"
-        headers = download_to(mrf_url, tmp, impersonate=imp)
+        headers = download_to(mrf_url, tmp, impersonate=imp, max_time=mt)
         transfer_fp = local_fingerprint(tmp)
         name, payload_path = materialize(tmp, headers, mrf_url, workdir)
         size = payload_path.stat().st_size
@@ -701,6 +709,9 @@ def clear_failure_record(slug):
 def main():
     scratch = Path(tempfile.mkdtemp(prefix="mrf-scrape-"))
     hospitals = json.loads((ROOT / "hospitals.json").read_text())
+    only = os.environ.get("ONLY")
+    if only:
+        hospitals = [h for h in hospitals if h["slug"] in only.split(",")]
     changes, failures, recovered = [], [], []
     try:
         for hospital in hospitals:

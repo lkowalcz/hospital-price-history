@@ -338,7 +338,8 @@
     "system": "UNC Health",
     "hpt_txt": "https://www.unchealthcare.org/cms-hpt.txt",
     "location_name": "UNC Hospitals",
-    "fetch": "impersonate"
+    "fetch": "impersonate",
+    "curl_max_time": "300"
   },
   {
     "slug": "orlando-regional",
