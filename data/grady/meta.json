@@ -1,4 +1,14 @@
 {
-  "status": "missing-from-hpt-txt",
-  "status_changed": "2026-08-14T03:55:51Z"
+  "system": "Grady Health System (public safety-net)",
+  "location_name": "Grady Health System",
+  "mrf_url": "https://www.gradyhealth.org/files/263037695_GradyMemorialHospitalCorporation_standardcharges.csv.zip",
+  "source_filename": "263037695_GradyMemorialHospitalCorporation_standardcharges.csv",
+  "sha256": "b601ff733e27c381905af95ac4d0c48fcfde835b77a3276c4e1cb5eb4d747334",
+  "size_bytes": 183416851,
+  "source_last_modified": "Wed, 31 Dec 2025 18:50:15 GMT",
+  "source_etag": "\"69557067-5a9696\"",
+  "transfer_fingerprint": "93180e5e93ed7f704f07cbb27549cf73cf3f9970b8b78922fd44e7ef1287aae4",
+  "status": "sharded",
+  "first_seen": "2026-08-14T04:14:12Z",
+  "last_changed": "2026-08-14T04:14:12Z"
 }
