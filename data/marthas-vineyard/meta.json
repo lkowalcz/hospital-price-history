@@ -6,8 +6,9 @@
   "sha256": "2c2bd7f1f069b2a4c4ec37a6daf4a31292961a2bd845491bf7c223f5ab6ab303",
   "size_bytes": 3540576,
   "source_last_modified": "Mon, 30 Mar 2026 18:03:39 GMT",
-  "status": "stored",
+  "status": "missing-from-hpt-txt",
   "first_seen": "2026-08-12T05:04:02Z",
   "last_changed": "2026-08-12T05:04:02Z",
-  "source_etag": "\"0x8DE8E86AC42172C\""
+  "source_etag": "\"0x8DE8E86AC42172C\"",
+  "status_changed": "2026-08-19T07:12:18Z"
 }
