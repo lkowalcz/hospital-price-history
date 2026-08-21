@@ -10,10 +10,5 @@
   "transfer_fingerprint": "3ad292a6dd549fc7c9d6a41370a06db90fb0491a48376b769a4257fcfdeff889",
   "status": "sharded",
   "first_seen": "2026-08-14T03:56:43Z",
-  "last_changed": "2026-08-14T03:56:43Z",
-  "fetch_failures": {
-    "first_failed": "2026-08-21T09:41:21Z",
-    "last_error": "The read operation timed out",
-    "last_attempt": "2026-08-21T09:41:21Z"
-  }
+  "last_changed": "2026-08-14T03:56:43Z"
 }
