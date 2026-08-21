@@ -25,6 +25,7 @@ multi-GB JSON files; everything else degrades gracefully without it.
 """
 
 import csv
+import gzip
 import hashlib
 import io
 import json
@@ -97,7 +98,7 @@ def curl_fetch(url, dest=None, extra=(), max_time=None):
     # the byte offset already on disk.
     resume = ("-C", "-", "--retry", "3", "--retry-all-errors") \
         if dest and str(dest) != os.devnull else ()
-    cmd = [IMPERSONATE_BIN, "-sS", "-L",
+    cmd = [IMPERSONATE_BIN, "-sS", "-L", "--compressed",
            "--max-time", str(max_time or os.environ.get("CURL_MAX_TIME", "3600")),
            "-D", hdr_path,
            "-o", str(dest) if dest else "-", *resume, *extra, url]
@@ -139,8 +140,11 @@ def fetch_small(url, timeout=60, impersonate=False, max_time=None):
         return with_retries(go)
 
     def go():
-        with request(url, timeout=timeout) as resp:
-            return resp.read(), Headers(resp.headers.items())
+        with request(url, timeout=timeout, extra={"Accept-Encoding": "gzip"}) as resp:
+            body = resp.read()
+            if body[:2] == b"\x1f\x8b":  # MGB gzips even identity requests
+                body = gzip.decompress(body)
+            return body, Headers(resp.headers.items())
     return with_retries(go)
 
 
@@ -301,6 +305,13 @@ def materialize(tmp, headers, url, workdir):
     """Return (filename, path) of the actual MRF, unzipping (on disk) if needed."""
     with open(tmp, "rb") as f:
         magic = f.read(4)
+    if magic[:2] == b"\x1f\x8b":  # transfer-gzipped despite our requests
+        plain = workdir / "gunzipped"
+        with gzip.open(tmp, "rb") as src_f, open(plain, "wb") as dst:
+            shutil.copyfileobj(src_f, dst, 1024 * 1024)
+        tmp = plain
+        with open(tmp, "rb") as f:
+            magic = f.read(4)
     if magic != b"PK\x03\x04" and "zip" not in headers.get("Content-Type", ""):
         return filename_from(headers, url, tmp), tmp
     with zipfile.ZipFile(tmp) as zf:

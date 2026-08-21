@@ -1,14 +1,14 @@
 {
   "system": "Mass General Brigham",
   "location_name": "Martha's Vineyard Hospital",
-  "mrf_url": "https://www.massgeneralbrigham.org/content/dam/mgb-global/en/price-transparency/042104691_Marthas-Vineyard-Hospital_StandardCharges.zip",
+  "mrf_url": "https://www.massgeneralbrigham.org/price-transparency/042104691_Marthas-Vineyard-Hospital_StandardCharges.zip",
   "source_filename": "042104691_Marthas-Vineyard-Hospital_StandardCharges.csv",
   "sha256": "2c2bd7f1f069b2a4c4ec37a6daf4a31292961a2bd845491bf7c223f5ab6ab303",
   "size_bytes": 3540576,
-  "source_last_modified": "Mon, 30 Mar 2026 18:03:39 GMT",
-  "status": "missing-from-hpt-txt",
+  "source_last_modified": "Thu, 23 Jul 2026 19:36:39 GMT",
+  "source_etag": "\"92d70c94b419d5489e96c9740d3cb12b\"",
+  "transfer_fingerprint": "b467b8d0645a6b300f00505c2c4f95c74ac46baa353ec62763b4f01b4a9c8c67",
+  "status": "stored",
   "first_seen": "2026-08-12T05:04:02Z",
-  "last_changed": "2026-08-12T05:04:02Z",
-  "source_etag": "\"0x8DE8E86AC42172C\"",
-  "status_changed": "2026-08-19T07:12:18Z"
+  "last_changed": "2026-08-21T07:34:59Z"
 }
