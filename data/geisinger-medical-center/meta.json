@@ -1,8 +1,7 @@
 {
   "fetch_failures": {
-    "count": 1,
     "first_failed": "2026-08-14T04:06:19Z",
     "last_error": "received an HTML page instead of an MRF (bot-block?)",
-    "last_attempt": "2026-08-14T04:06:19Z"
+    "last_attempt": "2026-08-21T07:14:12Z"
   }
 }
