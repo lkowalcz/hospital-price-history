@@ -1,4 +1,14 @@
 {
-  "status": "missing-from-hpt-txt",
-  "status_changed": "2026-08-20T07:15:11Z"
+  "system": "UNC Health",
+  "location_name": "University of North Carolina Hospitals at Chapel Hill",
+  "mrf_url": "https://www.unchealthcare.org/app/files/public/7c4fb899-ac62-4a7f-9eb8-65a532c51fdc/university-of-north-carolina-hospitals-at-chapel-hill_standardcharges.csv",
+  "source_filename": "university-of-north-carolina-hospitals-at-chapel-hill_standardcharges.csv",
+  "sha256": "347dbadf408fa1aa78cab86d65d5f2de0a582234b273ac01ffd253cf64e31a03",
+  "size_bytes": 90731154,
+  "source_last_modified": "Sun, 12 Jul 2026 15:39:27 GMT",
+  "source_etag": null,
+  "transfer_fingerprint": "4d904be2811db89834f1374da0aeafaa61a1213a2e4177e4caf6173f1c990db8",
+  "status": "sharded",
+  "first_seen": "2026-08-21T12:26:42Z",
+  "last_changed": "2026-08-21T12:26:42Z"
 }
