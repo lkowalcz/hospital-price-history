@@ -5,9 +5,9 @@
   "source_filename": "63-6005396_university-of-alabama-hospital_standardcharges.csv",
   "sha256": "349af7a85c60f200c728a2dcef1bb7ea58aa5d3cc8c30ce2096545805b5e2cb1",
   "size_bytes": 409312421,
-  "source_last_modified": "Thu, 05 Mar 2026 15:37:44 GMT",
-  "source_etag": "\"3a5bd1f-64c48b7b977b7\"",
-  "transfer_fingerprint": "1b6b55afc8920dbcac7da39e28808d29303f1c75610caf96d9fc44529b0a6bf4",
+  "source_last_modified": "Thu, 05 Mar 2026 15:37:43 GMT",
+  "source_etag": "\"3a5bd1f-64c48b7b95dcf\"",
+  "transfer_fingerprint": "f470c328c9a99dca668d4e362242137843326a9a15d8ad20b085381c378b629e",
   "status": "sharded",
   "first_seen": "2026-08-14T04:07:36Z",
   "last_changed": "2026-08-14T04:07:36Z"
