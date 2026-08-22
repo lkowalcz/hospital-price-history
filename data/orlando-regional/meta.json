@@ -10,5 +10,10 @@
   "transfer_fingerprint": "1f61a6ef429849f4c8fa1837ce5aa621cde3d58a76bfc212fd4808518491db72",
   "status": "sharded",
   "first_seen": "2026-08-14T05:20:01Z",
-  "last_changed": "2026-08-14T05:20:01Z"
+  "last_changed": "2026-08-14T05:20:01Z",
+  "fetch_failures": {
+    "first_failed": "2026-08-22T07:09:43Z",
+    "last_error": "Command '['/home/runner/work/_temp/ci/curl_chrome145', '-sS', '-L', '--compressed', '--max-time', '3600', '-D', '/tmp/tmpwfryvlrj.hdrs', '-o', '-', '--fail', 'https://www.orlandohealth.com/cms-hpt.txt",
+    "last_attempt": "2026-08-22T07:09:43Z"
+  }
 }
