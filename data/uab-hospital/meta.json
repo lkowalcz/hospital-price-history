@@ -10,5 +10,10 @@
   "transfer_fingerprint": "f470c328c9a99dca668d4e362242137843326a9a15d8ad20b085381c378b629e",
   "status": "sharded",
   "first_seen": "2026-08-14T04:07:36Z",
-  "last_changed": "2026-08-14T04:07:36Z"
+  "last_changed": "2026-08-14T04:07:36Z",
+  "fetch_failures": {
+    "first_failed": "2026-08-23T07:10:32Z",
+    "last_error": "IncompleteRead(467050 bytes read)",
+    "last_attempt": "2026-08-23T07:10:32Z"
+  }
 }
