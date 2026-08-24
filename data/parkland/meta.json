@@ -10,5 +10,10 @@
   "transfer_fingerprint": "c11c2c505b2bc479c9e9896d04fff1c60d8ef056bc2b3d977fb73c38d929a35f",
   "status": "sharded",
   "first_seen": "2026-08-14T03:55:51Z",
-  "last_changed": "2026-08-14T03:55:51Z"
+  "last_changed": "2026-08-14T03:55:51Z",
+  "fetch_failures": {
+    "first_failed": "2026-08-24T07:35:49Z",
+    "last_error": "HTTP Error 500: Internal Server Error",
+    "last_attempt": "2026-08-24T07:35:49Z"
+  }
 }
