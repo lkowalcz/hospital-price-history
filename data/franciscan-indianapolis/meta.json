@@ -1,7 +1,14 @@
 {
-  "fetch_failures": {
-    "first_failed": "2026-08-25T15:55:26Z",
-    "last_error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)>",
-    "last_attempt": "2026-08-25T15:55:26Z"
-  }
+  "system": "Franciscan Health",
+  "location_name": "Franciscan Health Indianapolis",
+  "mrf_url": "https://images.franciscanhealth.org/pdfs/enterprise/price_transparency/350913537_franciscan-health-indianapolis_standardcharges.zip",
+  "source_filename": "350913537_franciscan-health-indianapolis_standardcharges.csv",
+  "sha256": "05e013f69d9e8195c926bf713311d5ce623e97dfc36723c9535b1bbeea7d6887",
+  "size_bytes": 1075870770,
+  "source_last_modified": "Tue, 07 Apr 2026 16:45:22 GMT",
+  "source_etag": "\"159042edadc6dc1:0\"",
+  "transfer_fingerprint": "a96ba0e8ca43c16152c4f64b3e6d3992602833cbf1a952ea6367331d3abe23b5",
+  "status": "summarized",
+  "first_seen": "2026-08-25T16:01:04Z",
+  "last_changed": "2026-08-25T16:01:04Z"
 }

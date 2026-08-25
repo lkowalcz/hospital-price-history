@@ -653,6 +653,7 @@
     "slug": "franciscan-indianapolis",
     "system": "Franciscan Health",
     "hpt_txt": "https://www.franciscanhealth.org/cms-hpt.txt",
-    "location_name": "Franciscan Health Indianapolis"
+    "location_name": "Franciscan Health Indianapolis",
+    "fetch": "impersonate"
   }
 ]
