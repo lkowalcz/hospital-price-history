@@ -15,7 +15,7 @@ from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-BASE = "https://lkowalcz.github.io/hospital-price-history"
+BASE = "https://lukekowalczyk.com/hospital-price-history"
 REPO = "https://github.com/lkowalcz/hospital-price-history"
 
 # Well-known, comparable procedures shown on each hospital page when present.
