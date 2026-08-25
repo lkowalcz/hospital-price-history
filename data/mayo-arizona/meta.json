@@ -1,7 +1,15 @@
 {
-  "fetch_failures": {
-    "first_failed": "2026-08-25T09:58:04Z",
-    "last_error": "Command '['/Users/lucaskowalczyk/Desktop/hospital-price-history/.tools/curl_chrome145', '-sS', '-L', '--compressed', '--max-time', '3600', '-D', '/var/folders/z_/7ny560sj6mg4l0jrhdqw8dq80000gn/T/tmpey",
-    "last_attempt": "2026-08-25T09:58:04Z"
-  }
+  "system": "Mayo Clinic",
+  "location_name": "Mayo Clinic Arizona",
+  "mrf_url": "https://mcorgstatic.blob.core.windows.net/cms-price/860800150_mayo-clinic-arizona_standardcharges.csv",
+  "source_filename": "860800150_mayo-clinic-arizona_standardcharges.csv",
+  "sha256": "b0e330c5bbf9f4b41bca0cadb5b2433d7151659d4f69d698c9c21b9c20d3eb5d",
+  "size_bytes": 21529997739,
+  "source_last_modified": "Fri, 14 Aug 2026 17:21:00 GMT",
+  "source_etag": "0x8DEFA28690A8EE4",
+  "transfer_fingerprint": "87284b7a8af64278e57485a48f930f98e53137c538fcf1a2244192daee828cc5",
+  "status": "summarized",
+  "first_seen": "2026-08-25T21:08:20Z",
+  "last_changed": "2026-08-25T21:08:20Z",
+  "note": "ingested from a local fetch (see README notes)"
 }
