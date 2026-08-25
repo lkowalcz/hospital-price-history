@@ -1,35 +1,61 @@
 {
   "version": 1,
-  "description": "Fixed basket for the Hospital List Price Index. DRG codes match MS-DRG/DRG code types; CPT codes also match rows hospitals label as HCPCS.",
+  "description": "Fixed basket for the Hospital List Price Index. DRG codes match MS-DRG/DRG code types; CPT codes also match rows hospitals label as HCPCS. Categories and plain-language names are presentation metadata; index computation uses type+code only.",
+  "categories": {
+    "stays": {
+      "name": "Hospital stays",
+      "blurb": "Complete inpatient admissions billed as a single episode — planned surgery, childbirth, and the most common medical admissions."
+    },
+    "imaging": {
+      "name": "Imaging & scans",
+      "blurb": "The most frequently ordered radiology services, from a chest X-ray to an MRI."
+    },
+    "procedures": {
+      "name": "Outpatient procedures",
+      "blurb": "Common planned procedures that usually don't require an overnight stay."
+    },
+    "visits": {
+      "name": "Emergency & office visits",
+      "blurb": "The standard billing levels for a moderate and a more complex visit, in the ER and in a clinic."
+    },
+    "labs": {
+      "name": "Blood & lab tests",
+      "blurb": "Routine tests that appear on almost every medical bill."
+    },
+    "cardiac": {
+      "name": "Heart diagnostics",
+      "blurb": "The two most common non-invasive heart tests."
+    }
+  },
   "items": [
-    {"type": "DRG", "code": "470", "label": "Major joint replacement (MS-DRG 470)"},
-    {"type": "DRG", "code": "291", "label": "Heart failure w/ MCC (MS-DRG 291)"},
-    {"type": "DRG", "code": "788", "label": "Cesarean section (MS-DRG 788)"},
-    {"type": "DRG", "code": "807", "label": "Vaginal delivery (MS-DRG 807)"},
-    {"type": "DRG", "code": "247", "label": "Cardiac stent w/ MCC (MS-DRG 247)"},
-    {"type": "DRG", "code": "194", "label": "Pneumonia w/ CC (MS-DRG 194)"},
-    {"type": "DRG", "code": "392", "label": "GI disorders w/o MCC (MS-DRG 392)"},
-    {"type": "DRG", "code": "603", "label": "Cellulitis w/o MCC (MS-DRG 603)"},
-    {"type": "CPT", "code": "70450", "label": "CT head w/o contrast"},
-    {"type": "CPT", "code": "74177", "label": "CT abdomen/pelvis w/ contrast"},
-    {"type": "CPT", "code": "72148", "label": "MRI lumbar spine w/o contrast"},
-    {"type": "CPT", "code": "71046", "label": "Chest X-ray, 2 views"},
-    {"type": "CPT", "code": "76700", "label": "Abdominal ultrasound, complete"},
-    {"type": "CPT", "code": "77067", "label": "Screening mammogram, bilateral"},
-    {"type": "CPT", "code": "45378", "label": "Colonoscopy, diagnostic"},
-    {"type": "CPT", "code": "43239", "label": "Upper GI endoscopy w/ biopsy"},
-    {"type": "CPT", "code": "29881", "label": "Knee arthroscopy w/ meniscectomy"},
-    {"type": "CPT", "code": "66984", "label": "Cataract surgery w/ IOL"},
-    {"type": "CPT", "code": "99283", "label": "ER visit, level 3"},
-    {"type": "CPT", "code": "99284", "label": "ER visit, level 4"},
-    {"type": "CPT", "code": "99213", "label": "Office visit, established, level 3"},
-    {"type": "CPT", "code": "99214", "label": "Office visit, established, level 4"},
-    {"type": "CPT", "code": "80053", "label": "Comprehensive metabolic panel"},
-    {"type": "CPT", "code": "85025", "label": "Complete blood count w/ diff"},
-    {"type": "CPT", "code": "84443", "label": "Thyroid stimulating hormone"},
-    {"type": "CPT", "code": "81001", "label": "Urinalysis w/ microscopy"},
-    {"type": "CPT", "code": "36415", "label": "Venipuncture"},
-    {"type": "CPT", "code": "93306", "label": "Echocardiogram, complete"},
-    {"type": "CPT", "code": "93000", "label": "Electrocardiogram, complete"}
+    {"type": "DRG", "code": "470", "category": "stays", "plain": "Hip or knee replacement", "label": "Major joint replacement (MS-DRG 470)"},
+    {"type": "DRG", "code": "291", "category": "stays", "plain": "Heart failure admission, severe", "label": "Heart failure w/ MCC (MS-DRG 291)"},
+    {"type": "DRG", "code": "788", "category": "stays", "plain": "C-section delivery", "label": "Cesarean section (MS-DRG 788)"},
+    {"type": "DRG", "code": "807", "category": "stays", "plain": "Vaginal delivery", "label": "Vaginal delivery (MS-DRG 807)"},
+    {"type": "DRG", "code": "247", "category": "stays", "plain": "Heart stent placement", "label": "Cardiac stent w/ MCC (MS-DRG 247)"},
+    {"type": "DRG", "code": "194", "category": "stays", "plain": "Pneumonia admission", "label": "Pneumonia w/ CC (MS-DRG 194)"},
+    {"type": "DRG", "code": "392", "category": "stays", "plain": "Digestive illness admission", "label": "GI disorders w/o MCC (MS-DRG 392)"},
+    {"type": "DRG", "code": "603", "category": "stays", "plain": "Skin infection admission", "label": "Cellulitis w/o MCC (MS-DRG 603)"},
+    {"type": "CPT", "code": "70450", "category": "imaging", "plain": "CT scan of the head", "label": "CT head w/o contrast"},
+    {"type": "CPT", "code": "74177", "category": "imaging", "plain": "CT scan of abdomen & pelvis", "label": "CT abdomen/pelvis w/ contrast"},
+    {"type": "CPT", "code": "72148", "category": "imaging", "plain": "MRI of the lower back", "label": "MRI lumbar spine w/o contrast"},
+    {"type": "CPT", "code": "71046", "category": "imaging", "plain": "Chest X-ray", "label": "Chest X-ray, 2 views"},
+    {"type": "CPT", "code": "76700", "category": "imaging", "plain": "Abdominal ultrasound", "label": "Abdominal ultrasound, complete"},
+    {"type": "CPT", "code": "77067", "category": "imaging", "plain": "Screening mammogram", "label": "Screening mammogram, bilateral"},
+    {"type": "CPT", "code": "45378", "category": "procedures", "plain": "Colonoscopy", "label": "Colonoscopy, diagnostic"},
+    {"type": "CPT", "code": "43239", "category": "procedures", "plain": "Upper endoscopy with biopsy", "label": "Upper GI endoscopy w/ biopsy"},
+    {"type": "CPT", "code": "29881", "category": "procedures", "plain": "Knee arthroscopy (cartilage repair)", "label": "Knee arthroscopy w/ meniscectomy"},
+    {"type": "CPT", "code": "66984", "category": "procedures", "plain": "Cataract surgery", "label": "Cataract surgery w/ IOL"},
+    {"type": "CPT", "code": "99283", "category": "visits", "plain": "ER visit, moderate", "label": "ER visit, level 3"},
+    {"type": "CPT", "code": "99284", "category": "visits", "plain": "ER visit, more severe", "label": "ER visit, level 4"},
+    {"type": "CPT", "code": "99213", "category": "visits", "plain": "Office visit, routine", "label": "Office visit, established, level 3"},
+    {"type": "CPT", "code": "99214", "category": "visits", "plain": "Office visit, complex", "label": "Office visit, established, level 4"},
+    {"type": "CPT", "code": "80053", "category": "labs", "plain": "Blood chemistry panel", "label": "Comprehensive metabolic panel"},
+    {"type": "CPT", "code": "85025", "category": "labs", "plain": "Complete blood count", "label": "Complete blood count w/ diff"},
+    {"type": "CPT", "code": "84443", "category": "labs", "plain": "Thyroid hormone test", "label": "Thyroid stimulating hormone"},
+    {"type": "CPT", "code": "81001", "category": "labs", "plain": "Urine test", "label": "Urinalysis w/ microscopy"},
+    {"type": "CPT", "code": "36415", "category": "labs", "plain": "Blood draw", "label": "Venipuncture"},
+    {"type": "CPT", "code": "93306", "category": "cardiac", "plain": "Echocardiogram (heart ultrasound)", "label": "Echocardiogram, complete"},
+    {"type": "CPT", "code": "93000", "category": "cardiac", "plain": "Electrocardiogram (ECG)", "label": "Electrocardiogram, complete"}
   ]
 }

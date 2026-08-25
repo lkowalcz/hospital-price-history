@@ -227,11 +227,38 @@ def price_index_page(outdir):
         body.append('<div class="warn">The series has not started yet: base 100 will be '
                     'set on the first daily computation, once the current roster '
                     'expansion completes. The basket and methodology below are final.</div>')
-    body.append("<h2>The basket</h2><table><tr><th>Code</th><th>Service</th></tr>")
+    body.append(
+        "<h2>What the basket covers</h2>"
+        "<p>The basket spans the main ways people encounter a hospital bill: "
+        "planned surgery and childbirth, common medical admissions, emergency and "
+        "office visits, imaging, outpatient procedures, and routine lab work — "
+        "30 services in six categories. Items were chosen because they are "
+        "<em>standardized</em> (billed under the same national code everywhere), "
+        "<em>high-volume</em>, and <em>priced by most hospitals</em>, which is what "
+        "makes an apples-to-apples index possible.</p>"
+        "<p><strong>What it deliberately leaves out:</strong> drugs and chemotherapy, "
+        "cancer treatment, mental-health and substance-use care, trauma and ICU "
+        "stays, rare or highly specialized surgery, and physician (professional) "
+        "fees. These are excluded not because they don't matter but because "
+        "hospitals code them too inconsistently for clean comparison — including "
+        "them would make the index measure coding differences rather than price "
+        "changes. The basket is fixed and versioned; any change to its membership "
+        "is itself a recorded, versioned event.</p>")
+    cats = basket.get("categories", {})
+    by_cat = {}
     for item in basket["items"]:
-        body.append(f'<tr><td>{esc(item["type"])} {esc(item["code"])}</td>'
-                    f'<td>{esc(item["label"])}</td></tr>')
-    body.append("</table>")
+        by_cat.setdefault(item.get("category", "other"), []).append(item)
+    for cat_id, items_in_cat in by_cat.items():
+        cat = cats.get(cat_id, {"name": cat_id.title(), "blurb": ""})
+        body.append(f"<h2>{esc(cat['name'])} <span class=\"muted\">({len(items_in_cat)})</span></h2>")
+        if cat.get("blurb"):
+            body.append(f"<p class=\"muted\">{esc(cat['blurb'])}</p>")
+        body.append("<table><tr><th>Service</th><th>Billing name</th><th>Code</th></tr>")
+        for item in items_in_cat:
+            body.append(f'<tr><td>{esc(item.get("plain", item["label"]))}</td>'
+                        f'<td class="muted">{esc(item["label"])}</td>'
+                        f'<td>{esc(item["type"])} {esc(item["code"])}</td></tr>')
+        body.append("</table>")
     body.append(
         "<h2>Methodology</h2>"
         "<p>For each hospital, each basket item's price is the median across matching "
