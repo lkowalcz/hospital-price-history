@@ -346,5 +346,313 @@
     "hpt_txt": "https://www.orlandohealth.com/cms-hpt.txt",
     "location_name": "Orlando Health Orlando Regional Medical Center",
     "fetch": "impersonate"
+  },
+  {
+    "slug": "salem-hospital",
+    "system": "Mass General Brigham",
+    "hpt_txt": "https://www.massgeneralbrigham.org/cms-hpt.txt",
+    "location_name": "Salem Hospital"
+  },
+  {
+    "slug": "newton-wellesley",
+    "system": "Mass General Brigham",
+    "hpt_txt": "https://www.massgeneralbrigham.org/cms-hpt.txt",
+    "location_name": "Newton Wellesley Hospital"
+  },
+  {
+    "slug": "mass-eye-and-ear",
+    "system": "Mass General Brigham",
+    "hpt_txt": "https://www.massgeneralbrigham.org/cms-hpt.txt",
+    "location_name": "Massachusetts Eye and Ear"
+  },
+  {
+    "slug": "mclean-hospital",
+    "system": "Mass General Brigham",
+    "hpt_txt": "https://www.massgeneralbrigham.org/cms-hpt.txt",
+    "location_name": "McLean Hospital"
+  },
+  {
+    "slug": "wentworth-douglass",
+    "system": "Mass General Brigham",
+    "hpt_txt": "https://www.massgeneralbrigham.org/cms-hpt.txt",
+    "location_name": "Wentworth Douglass Hospital"
+  },
+  {
+    "slug": "nantucket-cottage",
+    "system": "Mass General Brigham",
+    "hpt_txt": "https://www.massgeneralbrigham.org/cms-hpt.txt",
+    "location_name": "Nantucket Cottage Hospital"
+  },
+  {
+    "slug": "cleveland-clinic-akron",
+    "system": "Cleveland Clinic",
+    "hpt_txt": "https://my.clevelandclinic.org/cms-hpt.txt",
+    "location_name": "akron general"
+  },
+  {
+    "slug": "cleveland-clinic-weston",
+    "system": "Cleveland Clinic",
+    "hpt_txt": "https://my.clevelandclinic.org/cms-hpt.txt",
+    "location_name": "cleveland clinic florida weston hospital"
+  },
+  {
+    "slug": "mayo-arizona",
+    "system": "Mayo Clinic",
+    "hpt_txt": "https://www.mayoclinic.org/cms-hpt.txt",
+    "location_name": "Mayo Clinic Arizona",
+    "fetch": "impersonate"
+  },
+  {
+    "slug": "mayo-florida",
+    "system": "Mayo Clinic",
+    "hpt_txt": "https://www.mayoclinic.org/cms-hpt.txt",
+    "location_name": "Mayo Clinic Florida",
+    "fetch": "impersonate"
+  },
+  {
+    "slug": "hopkins-bayview",
+    "system": "Johns Hopkins Medicine",
+    "hpt_txt": "https://www.hopkinsmedicine.org/cms-hpt.txt",
+    "location_name": "Johns Hopkins Bayview Medical Center",
+    "fetch": "impersonate"
+  },
+  {
+    "slug": "hopkins-all-childrens",
+    "system": "Johns Hopkins Medicine",
+    "hpt_txt": "https://www.hopkinsmedicine.org/cms-hpt.txt",
+    "location_name": "Johns Hopkins All Children's Hospital",
+    "fetch": "impersonate"
+  },
+  {
+    "slug": "lenox-hill",
+    "system": "Northwell Health",
+    "hpt_txt": "https://www.northwell.edu/cms-hpt.txt",
+    "location_name": "Lenox Hill Hospital"
+  },
+  {
+    "slug": "rex-hospital",
+    "system": "UNC Health",
+    "hpt_txt": "https://www.unchealthcare.org/cms-hpt.txt",
+    "location_name": "Rex Hospital",
+    "fetch": "impersonate"
+  },
+  {
+    "slug": "nm-central-dupage",
+    "system": "Northwestern Medicine",
+    "hpt_txt": "https://www.nm.org/cms-hpt.txt",
+    "location_name": "Northwestern Medicine Central DuPage Hospital"
+  },
+  {
+    "slug": "ucla-santa-monica",
+    "system": "UCLA Health",
+    "hpt_txt": "https://www.uclahealth.org/cms-hpt.txt",
+    "location_name": "UCLA Santa Monica Medical Center"
+  },
+  {
+    "slug": "nyu-langone-brooklyn",
+    "system": "NYU Langone Health",
+    "hpt_txt": "https://nyulangone.org/cms-hpt.txt",
+    "location_name": "NYU Langone Hospital - Brooklyn"
+  },
+  {
+    "slug": "nyp-weill-cornell",
+    "system": "NewYork-Presbyterian",
+    "hpt_txt": "https://www.nyp.org/cms-hpt.txt",
+    "location_name": "NewYork-Presbyterian Weill Cornell Medical Center"
+  },
+  {
+    "slug": "nyp-brooklyn-methodist",
+    "system": "NewYork-Presbyterian",
+    "hpt_txt": "https://www.nyp.org/cms-hpt.txt",
+    "location_name": "NewYork-Presbyterian Brooklyn Methodist Hospital"
+  },
+  {
+    "slug": "mount-sinai-brooklyn",
+    "system": "Mount Sinai Health System",
+    "hpt_txt": "https://www.mountsinai.org/cms-hpt.txt",
+    "location_name": "Mount Sinai Brooklyn",
+    "fetch": "impersonate"
+  },
+  {
+    "slug": "harborview",
+    "system": "UW Medicine (public safety-net)",
+    "hpt_txt": "https://www.uwmedicine.org/cms-hpt.txt",
+    "location_name": "Harborview Medical Center",
+    "fetch": "impersonate"
+  },
+  {
+    "slug": "duke-regional",
+    "system": "Duke Health",
+    "hpt_txt": "https://www.dukehealth.org/cms-hpt.txt",
+    "location_name": "Duke Regional Hospital"
+  },
+  {
+    "slug": "kaiser-la-sunset",
+    "system": "Kaiser Permanente",
+    "hpt_txt": "https://healthy.kaiserpermanente.org/cms-hpt.txt",
+    "location_name": "Los Angeles Sunset Medical Center"
+  },
+  {
+    "slug": "providence-alaska",
+    "system": "Providence",
+    "hpt_txt": "https://www.providence.org/cms-hpt.txt",
+    "location_name": "Providence Alaska Medical Center"
+  },
+  {
+    "slug": "pennsylvania-hospital",
+    "system": "Penn Medicine",
+    "hpt_txt": "https://www.pennmedicine.org/cms-hpt.txt",
+    "location_name": "Pennsylvania Hospital"
+  },
+  {
+    "slug": "sibley-memorial",
+    "system": "Johns Hopkins Medicine",
+    "hpt_txt": "https://www.hopkinsmedicine.org/cms-hpt.txt",
+    "location_name": "Sibley Memorial Hospital",
+    "fetch": "impersonate"
+  },
+  {
+    "slug": "sanford-fargo",
+    "system": "Sanford Health",
+    "hpt_txt": "https://www.sanfordhealth.org/cms-hpt.txt",
+    "location_name": "Sanford Fargo Medical Center"
+  },
+  {
+    "slug": "providence-st-patrick",
+    "system": "Providence",
+    "hpt_txt": "https://www.providence.org/cms-hpt.txt",
+    "location_name": "St Patrick Hospital - Broadway Campus"
+  },
+  {
+    "slug": "banner-wyoming",
+    "system": "Banner Health",
+    "hpt_txt": "https://www.bannerhealth.com/cms-hpt.txt",
+    "location_name": "Banner Wyoming Medical Center"
+  },
+  {
+    "slug": "banner-churchill",
+    "system": "Banner Health",
+    "hpt_txt": "https://www.bannerhealth.com/cms-hpt.txt",
+    "location_name": "Banner Churchill Community Hospital"
+  },
+  {
+    "slug": "hackensack-umc",
+    "system": "Hackensack Meridian Health",
+    "hpt_txt": "https://www.hackensackmeridianhealth.org/cms-hpt.txt",
+    "location_name": "Hackensack University Medical Center"
+  },
+  {
+    "slug": "rhode-island-hospital",
+    "system": "Brown University Health",
+    "hpt_txt": "https://www.brownhealth.org/cms-hpt.txt",
+    "location_name": "Rhode Island Hospital"
+  },
+  {
+    "slug": "uvm-medical-center",
+    "system": "UVM Health Network",
+    "hpt_txt": "https://www.uvmhealth.org/cms-hpt.txt",
+    "location_name": "University of Vermont Medical Center"
+  },
+  {
+    "slug": "maine-medical-center",
+    "system": "MaineHealth",
+    "hpt_txt": "https://www.mainehealth.org/cms-hpt.txt",
+    "location_name": "MaineHealth Maine Medical Center Portland"
+  },
+  {
+    "slug": "christiana-hospital",
+    "system": "ChristianaCare",
+    "hpt_txt": "https://christianacare.org/cms-hpt.txt",
+    "location_name": "Christiana Hospital"
+  },
+  {
+    "slug": "sentara-norfolk",
+    "system": "Sentara Health",
+    "hpt_txt": "https://www.sentara.com/cms-hpt.txt",
+    "location_name": "Sentara Norfolk General Hospital"
+  },
+  {
+    "slug": "wvu-hospitals",
+    "system": "WVU Medicine",
+    "hpt_txt": "https://wvumedicine.org/cms-hpt.txt",
+    "location_name": "West Virginia University Hospitals"
+  },
+  {
+    "slug": "uk-chandler",
+    "system": "UK HealthCare",
+    "hpt_txt": "https://ukhealthcare.uky.edu/cms-hpt.txt",
+    "location_name": "UK Chandler Hospital"
+  },
+  {
+    "slug": "froedtert",
+    "system": "Froedtert & MCW",
+    "hpt_txt": "https://www.froedtert.com/cms-hpt.txt",
+    "location_name": "Froedtert Hospital"
+  },
+  {
+    "slug": "mu-health",
+    "system": "MU Health Care",
+    "hpt_txt": "https://www.muhealth.org/cms-hpt.txt",
+    "location_name": "University of Missouri Health Care"
+  },
+  {
+    "slug": "uihc",
+    "system": "University of Iowa Health Care",
+    "hpt_txt": "https://uihc.org/cms-hpt.txt",
+    "location_name": "UNIVERSITY OF IOWA HEALTH CARE MEDICAL CENTER"
+  },
+  {
+    "slug": "nebraska-medical-center",
+    "system": "Nebraska Medicine",
+    "hpt_txt": "https://www.nebraskamed.com/cms-hpt.txt",
+    "location_name": "Nebraska Medical Center"
+  },
+  {
+    "slug": "university-of-kansas",
+    "system": "University of Kansas Health System",
+    "hpt_txt": "https://www.kansashealthsystem.com/cms-hpt.txt",
+    "location_name": "University of Kansas Hospital"
+  },
+  {
+    "slug": "ou-medical-center",
+    "system": "OU Health",
+    "hpt_txt": "https://www.ouhealth.com/cms-hpt.txt",
+    "location_name": "OU Health University of Oklahoma Medical Center"
+  },
+  {
+    "slug": "uams",
+    "system": "UAMS Health",
+    "hpt_txt": "https://uamshealth.com/cms-hpt.txt",
+    "location_name": "University of Arkansas for Medical Sciences"
+  },
+  {
+    "slug": "ummc-jackson",
+    "system": "University of Mississippi Medical Center",
+    "hpt_txt": "https://www.umc.edu/cms-hpt.txt",
+    "location_name": "UMMC Jackson Hospital"
+  },
+  {
+    "slug": "presbyterian-abq",
+    "system": "Presbyterian Healthcare Services",
+    "hpt_txt": "https://www.phs.org/cms-hpt.txt",
+    "location_name": "Presbyterian Hospital"
+  },
+  {
+    "slug": "st-lukes-boise",
+    "system": "St. Luke's Health System",
+    "hpt_txt": "https://www.stlukesonline.org/cms-hpt.txt",
+    "location_name": "St. Luke's Boise Standard Charges"
+  },
+  {
+    "slug": "queens-honolulu",
+    "system": "The Queen's Health System",
+    "hpt_txt": "https://www.queens.org/cms-hpt.txt",
+    "location_name": "The Queen's Medical Center"
+  },
+  {
+    "slug": "franciscan-indianapolis",
+    "system": "Franciscan Health",
+    "hpt_txt": "https://www.franciscanhealth.org/cms-hpt.txt",
+    "location_name": "Franciscan Health Indianapolis"
   }
 ]
