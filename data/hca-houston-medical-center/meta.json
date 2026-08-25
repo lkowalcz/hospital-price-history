@@ -10,5 +10,10 @@
   "transfer_fingerprint": "1e39fd73d5e90a2479131e68e8245ad636779246e534f8fbec3fc1a38ad0ce68",
   "status": "sharded",
   "first_seen": "2026-08-14T03:44:51Z",
-  "last_changed": "2026-08-14T03:44:51Z"
+  "last_changed": "2026-08-14T03:44:51Z",
+  "fetch_failures": {
+    "first_failed": "2026-08-25T07:17:39Z",
+    "last_error": "HTTP Error 403: This request is not authorized to perform this operation.",
+    "last_attempt": "2026-08-25T07:17:39Z"
+  }
 }
