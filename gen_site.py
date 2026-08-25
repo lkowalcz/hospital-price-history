@@ -180,13 +180,88 @@ def hospital_page(h, meta, outdir):
     return canonical
 
 
+def svg_chart(rows, field, color):
+    """Simple line chart of an index series; rows are index-history dicts."""
+    if len(rows) < 2:
+        return '<p class="muted">Chart appears once the series has more than one day.</p>'
+    vals = [float(r[field]) for r in rows]
+    w, h, pad = 640, 180, 30
+    lo, hi = min(vals), max(vals)
+    if hi - lo < 1e-9:
+        lo, hi = lo - 1, hi + 1
+    pts = " ".join(
+        f"{pad + i * (w - 2 * pad) / (len(vals) - 1):.1f},"
+        f"{h - pad - (v - lo) * (h - 2 * pad) / (hi - lo):.1f}"
+        for i, v in enumerate(vals))
+    return (f'<svg viewBox="0 0 {w} {h}" role="img" style="max-width:100%">'
+            f'<polyline fill="none" stroke="{color}" stroke-width="2" points="{pts}"/>'
+            f'<text x="{pad}" y="12" font-size="11" fill="#666">{esc(rows[0]["date"])}'
+            f' → {esc(rows[-1]["date"])} &middot; {vals[-1]:.2f}</text></svg>')
+
+
+def price_index_page(outdir):
+    hist_path = ROOT / "index-history.csv"
+    if not hist_path.exists():
+        return None
+    with open(hist_path) as f:
+        rows = list(csv.DictReader(f))
+    if not rows:
+        return None
+    basket = json.loads((ROOT / "basket.json").read_text())
+    last = rows[-1]
+    canonical = f"{BASE}/price-index/"
+    body = [f'<p class="muted"><a href="{BASE}/">&larr; All hospitals</a></p>',
+            "<h1>Hospital List Price Index</h1>",
+            f'<p>A chain-linked index of what {last["hospitals_cash"]} major US hospitals '
+            'publish as their <strong>cash prices</strong> and <strong>gross charges</strong> '
+            'for a fixed basket of common procedures, imaging, visits, and labs. '
+            'Base 100 = ' + esc(rows[0]["date"]) + '.</p>',
+            f'<h2>Cash price index: {float(last["index_cash"]):.2f}</h2>',
+            svg_chart(rows, "index_cash", "#0b5fa5"),
+            f'<h2>Gross charge index: {float(last["index_gross"]):.2f}</h2>',
+            svg_chart(rows, "index_gross", "#a5350b"),
+            '<p class="muted">Raw series: <a href="https://raw.githubusercontent.com/'
+            'lkowalcz/hospital-price-history/main/index-history.csv">index-history.csv</a></p>',
+            "<h2>The basket</h2><table><tr><th>Code</th><th>Service</th></tr>"]
+    for item in basket["items"]:
+        body.append(f'<tr><td>{esc(item["type"])} {esc(item["code"])}</td>'
+                    f'<td>{esc(item["label"])}</td></tr>')
+    body.append("</table>")
+    body.append(
+        "<h2>Methodology</h2>"
+        "<p>For each hospital, each basket item's price is the median across matching "
+        "rows of its price-file digest. Daily, each (hospital, item) pair present on "
+        "consecutive observations contributes a price relative; relatives are combined "
+        "by geometric mean within each hospital (Jevons), then across hospitals, and "
+        "the result is compounded onto the running index. Chain-linking lets hospitals "
+        "and codes enter or leave the panel without breaking the series.</p>"
+        "<p><strong>Caveats:</strong> these are published list and cash prices, not "
+        "negotiated transaction prices; the panel is this archive's roster, not a "
+        "random sample; long flat stretches reflect the fact that hospitals revise "
+        "these files infrequently — the steps are the news.</p>")
+    desc = ("A daily chain-linked index of US hospital cash prices and gross charges "
+            "over a fixed basket of common services, built from price transparency files.")
+    jsonld = {"@context": "https://schema.org", "@type": "Dataset",
+              "name": "Hospital List Price Index", "description": desc, "url": canonical,
+              "creator": {"@type": "Person", "name": "Lucas Kowalczyk"},
+              "distribution": [{"@type": "DataDownload", "encodingFormat": "text/csv",
+                                "contentUrl": "https://raw.githubusercontent.com/lkowalcz/hospital-price-history/main/index-history.csv"}],
+              "keywords": ["hospital prices", "price index", "healthcare inflation"]}
+    d = outdir / "price-index"
+    d.mkdir(parents=True, exist_ok=True)
+    (d / "index.html").write_text(
+        page("Hospital List Price Index", desc, "\n".join(body), canonical, jsonld))
+    return canonical
+
+
 def index_page(hospitals, metas, outdir):
     body = ["<h1>Hospital Price History</h1>",
             '<p>A public archive tracking the machine-readable price files US hospitals '
             'must publish under federal price transparency rules (45 CFR § 180.50). '
             'Files are checked daily; every change — a revised rate, a republished file, '
             'a file quietly taken down — is recorded in '
-            f'<a href="{REPO}">version-controlled history</a>.</p>',
+            f'<a href="{REPO}">version-controlled history</a>. '
+            f'See also the <a href="{BASE}/price-index/">Hospital List Price Index</a>.</p>',
             "<div class=\"wrap\"><table><tr><th>Hospital</th><th>System</th>"
             "<th>Last changed</th><th>Status</th></tr>"]
     for h in sorted(hospitals, key=lambda x: x["location_name"].casefold()):
@@ -226,6 +301,9 @@ def main():
         metas[h["slug"]] = json.loads(mp.read_text()) if mp.exists() else {}
     for h in hospitals:
         urls.append(hospital_page(h, metas[h["slug"]], outdir))
+    pi = price_index_page(outdir)
+    if pi:
+        urls.append(pi)
     index_page(hospitals, metas, outdir)
     (outdir / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
