@@ -1,0 +1,7 @@
+{
+  "fetch_failures": {
+    "first_failed": "2026-08-25T15:55:26Z",
+    "last_error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)>",
+    "last_attempt": "2026-08-25T15:55:26Z"
+  }
+}

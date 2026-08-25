@@ -1,0 +1,14 @@
+{
+  "system": "UAMS Health",
+  "location_name": "University of Arkansas for Medical Sciences",
+  "mrf_url": "https://apim.services.craneware.com/api-pricing-transparency/api/public/8179f216930ea52889ace48af58b8713/charges/mrf",
+  "source_filename": "716046242_University-of-Arkansas-for-Medical-Sciences_standardcharges.csv",
+  "sha256": "88ce6bcc7f4b9662bd6374a79e0b09fc38c1e05d3b95ca05333f7dc155bc9e71",
+  "size_bytes": 950318142,
+  "source_last_modified": null,
+  "source_etag": null,
+  "transfer_fingerprint": "8cb8eacafb867736357a365f7cbe92e99bc0b365ffdfb7158729cebb6214d2af",
+  "status": "summarized",
+  "first_seen": "2026-08-25T15:53:09Z",
+  "last_changed": "2026-08-25T15:53:09Z"
+}

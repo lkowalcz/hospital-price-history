@@ -1,0 +1,14 @@
+{
+  "system": "WVU Medicine",
+  "location_name": "West Virginia University Hospitals",
+  "mrf_url": "https://wvumedicine.org/wp-content/uploads/2026/08/550643304_West-Virginia-University-Hospitals-Inc._standardcharges.csv",
+  "source_filename": "550643304_West-Virginia-University-Hospitals-Inc._standardcharges.csv",
+  "sha256": "06c1a8d2bffc1c3818399636565ace1c7d89b8accb4f1de34c8c1cfa20398e8a",
+  "size_bytes": 252962653,
+  "source_last_modified": "Mon, 03 Aug 2026 13:24:40 GMT",
+  "source_etag": null,
+  "transfer_fingerprint": "1003f0cfb69a94ac62652621e40ef4df888d4d2d4ee5e8f6164f0d1586dc682e",
+  "status": "sharded",
+  "first_seen": "2026-08-25T14:17:25Z",
+  "last_changed": "2026-08-25T14:17:25Z"
+}

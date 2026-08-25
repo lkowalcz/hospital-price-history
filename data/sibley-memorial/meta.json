@@ -1,0 +1,14 @@
+{
+  "system": "Johns Hopkins Medicine",
+  "location_name": "Sibley Memorial Hospital",
+  "mrf_url": "https://www.hopkinsmedicine.org/-/media/patient-care/documents/billing-insurance/charge-fees/450562642_sibley-memorial-hospital_standardcharges.csv",
+  "source_filename": "450562642_sibley-memorial-hospital_standardcharges.csv",
+  "sha256": "657bbc3064857af50099dbe989644b032a5d6e22e3414f3e074b12b68dfdf368",
+  "size_bytes": 22109675,
+  "source_last_modified": "Tue, 25 Aug 2026 13:23:47 GMT",
+  "source_etag": null,
+  "transfer_fingerprint": "06ea3c232ef52a08c0395605a51cd91ee0b0b08a5df9de62dcf587f6686823a6",
+  "status": "stored",
+  "first_seen": "2026-08-25T13:23:48Z",
+  "last_changed": "2026-08-25T13:23:48Z"
+}

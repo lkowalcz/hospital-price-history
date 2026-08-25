@@ -1,0 +1,7 @@
+{
+  "fetch_failures": {
+    "first_failed": "2026-08-25T13:23:46Z",
+    "last_error": "Command '['/Users/lucaskowalczyk/Desktop/hospital-price-history/.tools/curl_chrome145', '-sS', '-L', '--compressed', '--max-time', '3600', '-D', '/var/folders/z_/7ny560sj6mg4l0jrhdqw8dq80000gn/T/tmp78",
+    "last_attempt": "2026-08-25T13:23:46Z"
+  }
+}

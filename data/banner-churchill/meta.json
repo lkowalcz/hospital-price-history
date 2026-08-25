@@ -1,0 +1,14 @@
+{
+  "system": "Banner Health",
+  "location_name": "Banner Churchill Community Hospital",
+  "mrf_url": "https://images.pricetransparency.healthcare/public-mrfs/banner/880321712_banner-churchill-community-hospital_standardcharges.csv",
+  "source_filename": "880321712_banner-churchill-community-hospital_standardcharges.csv",
+  "sha256": "f08c7ca43d39d4a68f6ee616ad971fc348308f3d8a11ffaae703975b3292eab3",
+  "size_bytes": 26177131,
+  "source_last_modified": "Wed, 04 Mar 2026 15:03:07 GMT",
+  "source_etag": "\"42b305e0a48d252f2e8678af9eebff9d-2\"",
+  "transfer_fingerprint": "127443a491c14e59fff14cfc71dbb632de36651d392b085acc872d8f64ca9399",
+  "status": "stored",
+  "first_seen": "2026-08-25T13:58:52Z",
+  "last_changed": "2026-08-25T13:58:52Z"
+}

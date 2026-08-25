@@ -1,0 +1,14 @@
+{
+  "system": "Presbyterian Healthcare Services",
+  "location_name": "Presbyterian Hospital",
+  "mrf_url": "https://onbaseext.phs.org/PEL/DisplayDocument?ContentID=PEL_00954557",
+  "source_filename": "850105601_presbyterian-hospital_standardcharges.csv",
+  "sha256": "f79cd1e0fd0dbeaa43a636c663a31f4a6fcbb9418a7c770c817c733dae0d2e8a",
+  "size_bytes": 39291568,
+  "source_last_modified": "Wed, 08 Apr 2026 21:38:05 GMT",
+  "source_etag": "W/\"151982758-37\"",
+  "transfer_fingerprint": "259ef4af4a390c22d6934d9564dd25feb5390a45d34ca3b3bb9cd4e707f6a56c",
+  "status": "stored",
+  "first_seen": "2026-08-25T15:53:52Z",
+  "last_changed": "2026-08-25T15:53:52Z"
+}

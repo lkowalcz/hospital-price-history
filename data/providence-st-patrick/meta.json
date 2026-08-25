@@ -1,0 +1,14 @@
+{
+  "system": "Providence",
+  "location_name": "St Patrick Hospital - Broadway Campus",
+  "mrf_url": "https://pricetransparency.providence.org/wamt/live/810231793_st-patrick-hospital_standardcharges.json",
+  "source_filename": "810231793_st-patrick-hospital_standardcharges.json",
+  "sha256": "06b75d02d97f578b2cafa96d40dd00d8b6b98edfdf8c20697128707c1f6bdf54",
+  "size_bytes": 182407616,
+  "source_last_modified": "Fri, 03 Apr 2026 21:33:13 GMT",
+  "source_etag": "\"ea5fcb79b1c3dc1:0\"",
+  "transfer_fingerprint": "421458e215ba1da07c403e9ea314dcee6bdb64a714cbf2bc560683a81f6b1135",
+  "status": "sharded",
+  "first_seen": "2026-08-25T13:58:46Z",
+  "last_changed": "2026-08-25T13:58:46Z"
+}

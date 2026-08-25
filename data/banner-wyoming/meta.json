@@ -1,0 +1,14 @@
+{
+  "system": "Banner Health",
+  "location_name": "Banner Wyoming Medical Center",
+  "mrf_url": "https://images.pricetransparency.healthcare/public-mrfs/banner/830279242_banner-wyoming-medical-center_standardcharges.csv",
+  "source_filename": "830279242_banner-wyoming-medical-center_standardcharges.csv",
+  "sha256": "fcfc1271e306c66b65f5a283e9c79a90f852c1a848893c169da6a73f6a9597ba",
+  "size_bytes": 62230955,
+  "source_last_modified": "Wed, 04 Mar 2026 15:03:07 GMT",
+  "source_etag": "\"550f4f970c559d4fe8a894b2b647295b-4\"",
+  "transfer_fingerprint": "9849efad6c80a194729e6a1f2f5b27fbf21a297dbf5002fd7d62327a72030726",
+  "status": "sharded",
+  "first_seen": "2026-08-25T13:58:50Z",
+  "last_changed": "2026-08-25T13:58:50Z"
+}

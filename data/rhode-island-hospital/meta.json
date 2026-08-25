@@ -1,0 +1,14 @@
+{
+  "system": "Brown University Health",
+  "location_name": "Rhode Island Hospital",
+  "mrf_url": "https://www.brownhealth.org/sites/default/files/2026-03/05-0258954_rhode-island-hospital_standardcharges.csv",
+  "source_filename": "05-0258954_rhode-island-hospital_standardcharges.csv",
+  "sha256": "a98e3181ec5425983ed01537c9d5291f1cd30aa499359584b01a641f7f47f36a",
+  "size_bytes": 37053610,
+  "source_last_modified": "Tue, 31 Mar 2026 17:46:04 GMT",
+  "source_etag": null,
+  "transfer_fingerprint": "66cb2519cbe9843e04079aff1378ffa28b1c479ff96dd91d094a44f302723874",
+  "status": "stored",
+  "first_seen": "2026-08-25T14:02:18Z",
+  "last_changed": "2026-08-25T14:02:18Z"
+}

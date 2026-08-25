@@ -1,0 +1,14 @@
+{
+  "system": "University of Kansas Health System",
+  "location_name": "University of Kansas Hospital",
+  "mrf_url": "https://ukhspricetransparency.blob.core.windows.net/ukhs-price-transparency/48-1201402_TheUniversityOfKansasHealthSystemKansasCityCampus_standardcharges.csv",
+  "source_filename": "48-1201402_TheUniversityOfKansasHealthSystemKansasCityCampus_standardcharges.csv",
+  "sha256": "7d526c5ef5cb9a827d374b429ab1e56b0c9541f36bb87c1de2ebc485ceaaf132",
+  "size_bytes": 1126409043,
+  "source_last_modified": "Fri, 10 Apr 2026 20:43:45 GMT",
+  "source_etag": "0x8DE9741DC02F052",
+  "transfer_fingerprint": "2c6aaa75acb5ef482ba205d81b61f00db4b02e8131ccd880fa5729ccf80dd2de",
+  "status": "summarized",
+  "first_seen": "2026-08-25T15:52:37Z",
+  "last_changed": "2026-08-25T15:52:37Z"
+}

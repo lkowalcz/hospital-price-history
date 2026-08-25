@@ -1,0 +1,14 @@
+{
+  "system": "UK HealthCare",
+  "location_name": "UK Chandler Hospital",
+  "mrf_url": "https://HospitalPriceDisclosure.com/Download.aspx?ci=Dn*__*BGKKwBFJp793mE1jFzw*-*",
+  "source_filename": "Download.aspx.json",
+  "sha256": "fbb9f914f2d451e836ee1b1e5ce57a8fff2cc1d6e72546fdceedce09e54e2956",
+  "size_bytes": 50658004,
+  "source_last_modified": "Thu, 02 Apr 2026 19:46:37 GMT",
+  "source_etag": "0x8DE90F08DAC0FDF",
+  "transfer_fingerprint": "1227cf507d41d255401b4ff21b46511ab9ea1fab1700d1ea549d023434d5c79e",
+  "status": "sharded",
+  "first_seen": "2026-08-25T14:17:34Z",
+  "last_changed": "2026-08-25T14:17:34Z"
+}

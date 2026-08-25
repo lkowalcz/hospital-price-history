@@ -1,0 +1,14 @@
+{
+  "system": "ChristianaCare",
+  "location_name": "Christiana Hospital",
+  "mrf_url": "https://documents.christianacare.org/Finance/510103684_christianacare_standardcharges.csv",
+  "source_filename": "510103684_christianacare_standardcharges.csv",
+  "sha256": "dd3229b5ff13af29fb874ff2eb3a510dd6aa6b0f39e691dd47c77e7a88aa0f2e",
+  "size_bytes": 149009893,
+  "source_last_modified": "Tue, 31 Mar 2026 18:21:56 GMT",
+  "source_etag": null,
+  "transfer_fingerprint": "4d97cf25443b6c9e73cb0533e96851925c004782fd681329f4af4c97bfa3fb59",
+  "status": "sharded",
+  "first_seen": "2026-08-25T14:17:14Z",
+  "last_changed": "2026-08-25T14:17:14Z"
+}

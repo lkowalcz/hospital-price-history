@@ -1,0 +1,14 @@
+{
+  "system": "St. Luke's Health System",
+  "location_name": "St. Luke's Boise Standard Charges",
+  "mrf_url": "https://assets.slhs.org/download/assets/820161600_St-Lukes-Regional-Medical-Center-LTD_standardcharges.csv/58d75b022a1e11f1b53a0a82e5b91713",
+  "source_filename": "820161600_St-Lukes-Regional-Medical-Center-LTD_standardcharges.csv",
+  "sha256": "223b6bbda5d9eab373b3c23e262c3436207dffbf0696d6e7cf43ea4e123eb76a",
+  "size_bytes": 481243206,
+  "source_last_modified": "Sun, 29 Mar 2026 19:21:12 GMT",
+  "source_etag": "\"58d75b022a1e11f1b53a0a82e5b91713-2026-03-29T19:21:12Z\"",
+  "transfer_fingerprint": "d7976cd9a46c814e4f69a0675bfb2b2c7802963b2c46f2c39edffb425ac16e6a",
+  "status": "sharded",
+  "first_seen": "2026-08-25T15:54:20Z",
+  "last_changed": "2026-08-25T15:54:20Z"
+}

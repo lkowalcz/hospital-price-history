@@ -1,0 +1,14 @@
+{
+  "system": "The Queen's Health System",
+  "location_name": "The Queen's Medical Center",
+  "mrf_url": "https://www.queens.org/wp-content/uploads/990073524_queens-medical-center_standardcharges-4.csv",
+  "source_filename": "990073524_queens-medical-center_standardcharges-4.csv",
+  "sha256": "7033684d05c9e6999efef21a1bb6b2f90d3d53a5f6ff8ea4c2ea8753ea459202",
+  "size_bytes": 94662872,
+  "source_last_modified": "Mon, 20 Apr 2026 23:31:42 GMT",
+  "source_etag": "\"69e6b75e-5a4ce5d\"",
+  "transfer_fingerprint": "3fe82c7c681a0c3e0cb04de2b399d303cfef4f508aa520d0d7bbb37fa2952187",
+  "status": "sharded",
+  "first_seen": "2026-08-25T15:54:26Z",
+  "last_changed": "2026-08-25T15:54:26Z"
+}

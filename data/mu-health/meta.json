@@ -1,0 +1,14 @@
+{
+  "system": "MU Health Care",
+  "location_name": "University of Missouri Health Care",
+  "mrf_url": "https://www.muhealth.org/sites/default/files/finance/436003859_university-of-missouri-health-care_standardcharges.csv",
+  "source_filename": "436003859_university-of-missouri-health-care_standardcharges.csv",
+  "sha256": "85fe4571ceeff6e07466f2651ecf371f8c2030559292779379d948776f470f17",
+  "size_bytes": 997746828,
+  "source_last_modified": "Mon, 18 May 2026 16:56:34 GMT",
+  "source_etag": null,
+  "transfer_fingerprint": "0e192b9ca27df1365d373134e3d7820a9c8b7f7c64952c2ff19ad3ba5ce64716",
+  "status": "summarized",
+  "first_seen": "2026-08-25T15:33:14Z",
+  "last_changed": "2026-08-25T15:33:14Z"
+}

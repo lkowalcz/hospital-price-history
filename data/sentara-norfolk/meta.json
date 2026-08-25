@@ -1,0 +1,14 @@
+{
+  "system": "Sentara Health",
+  "location_name": "Sentara Norfolk General Hospital",
+  "mrf_url": "https://www.sentara.com/Documents/s/sentaranorfolkgeneralhospitalstandardchargesxlsx-1395284",
+  "source_filename": "541547408_1437119310_sentara-hospitals_standardcharges.csv",
+  "sha256": "049969d7ea8940265917fde47b570e5011fb20049c37b059c3c83b12a9d55fd0",
+  "size_bytes": 42304502,
+  "source_last_modified": "Tue, 31 Mar 2026 14:09:23 GMT",
+  "source_etag": "\"0x8DE8F2F1C46B74F\"",
+  "transfer_fingerprint": "6d006c2701ddd5acd6d355a50b2725cb5400d177b73f8361176d04203a078c34",
+  "status": "stored",
+  "first_seen": "2026-08-25T14:17:17Z",
+  "last_changed": "2026-08-25T14:17:17Z"
+}

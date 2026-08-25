@@ -1,0 +1,14 @@
+{
+  "system": "UVM Health Network",
+  "location_name": "University of Vermont Medical Center",
+  "mrf_url": "https://www.uvmhealth.org/sites/default/files/030219309_university-of-vermont-medical-center-inc_standardcharges.csv",
+  "source_filename": "030219309_university-of-vermont-medical-center-inc_standardcharges.csv",
+  "sha256": "f2f65df232f4dcd46cc9fa34df79757f2c62b85f23de56d9acc8de9e621a35eb",
+  "size_bytes": 272372755,
+  "source_last_modified": "Fri, 15 May 2026 19:36:47 GMT",
+  "source_etag": "\"104dbfa4-651e0555dd1c0\"",
+  "transfer_fingerprint": "a4532df99315dc0b41ebd0dfbe84f6b85e8cc946017299521726e6e9e70d6da0",
+  "status": "sharded",
+  "first_seen": "2026-08-25T14:02:45Z",
+  "last_changed": "2026-08-25T14:02:45Z"
+}
