@@ -201,28 +201,33 @@ def svg_chart(rows, field, color):
 
 def price_index_page(outdir):
     hist_path = ROOT / "index-history.csv"
-    if not hist_path.exists():
-        return None
-    with open(hist_path) as f:
-        rows = list(csv.DictReader(f))
-    if not rows:
-        return None
+    rows = []
+    if hist_path.exists():
+        with open(hist_path) as f:
+            rows = list(csv.DictReader(f))
     basket = json.loads((ROOT / "basket.json").read_text())
-    last = rows[-1]
     canonical = f"{BASE}/price-index/"
+    hosp_count = rows[-1]["hospitals_cash"] if rows else "the archive's"
     body = [f'<p class="muted"><a href="{BASE}/">&larr; All hospitals</a></p>',
             "<h1>Hospital List Price Index</h1>",
-            f'<p>A chain-linked index of what {last["hospitals_cash"]} major US hospitals '
+            f'<p>A chain-linked index of what {hosp_count} major US hospitals '
             'publish as their <strong>cash prices</strong> and <strong>gross charges</strong> '
-            'for a fixed basket of common procedures, imaging, visits, and labs. '
-            'Base 100 = ' + esc(rows[0]["date"]) + '.</p>',
+            'for a fixed basket of common procedures, imaging, visits, and labs.'
+            + (' Base 100 = ' + esc(rows[0]["date"]) + '.' if rows else '') + '</p>']
+    if rows:
+        last = rows[-1]
+        body += [
             f'<h2>Cash price index: {float(last["index_cash"]):.2f}</h2>',
             svg_chart(rows, "index_cash", "#0b5fa5"),
             f'<h2>Gross charge index: {float(last["index_gross"]):.2f}</h2>',
             svg_chart(rows, "index_gross", "#a5350b"),
             '<p class="muted">Raw series: <a href="https://raw.githubusercontent.com/'
-            'lkowalcz/hospital-price-history/main/index-history.csv">index-history.csv</a></p>',
-            "<h2>The basket</h2><table><tr><th>Code</th><th>Service</th></tr>"]
+            'lkowalcz/hospital-price-history/main/index-history.csv">index-history.csv</a></p>']
+    else:
+        body.append('<div class="warn">The series has not started yet: base 100 will be '
+                    'set on the first daily computation, once the current roster '
+                    'expansion completes. The basket and methodology below are final.</div>')
+    body.append("<h2>The basket</h2><table><tr><th>Code</th><th>Service</th></tr>")
     for item in basket["items"]:
         body.append(f'<tr><td>{esc(item["type"])} {esc(item["code"])}</td>'
                     f'<td>{esc(item["label"])}</td></tr>')
