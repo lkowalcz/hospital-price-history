@@ -1,0 +1,14 @@
+{
+  "system": "Kaiser Permanente",
+  "location_name": "Los Angeles Sunset Medical Center",
+  "mrf_url": "https://healthy.kaiserpermanente.org/content/dam/kporg/final/documents/health-plan-documents/coverage-information/machine-readable/941105628-los-angeles-medical-center-standard-charges-scal-en.csv",
+  "source_filename": "941105628-los-angeles-medical-center-standard-charges-scal-en.csv",
+  "sha256": "07beb1b955cacf43b5aa449b12122fd5766a13bbc868bdbdde0db28da970238e",
+  "size_bytes": 208939237,
+  "source_last_modified": "Fri, 21 Aug 2026 10:00:54 GMT",
+  "source_etag": null,
+  "transfer_fingerprint": "35d2fa8a5279fe563c2359e8f60278752a3f20dd0ce1607bccfb0669b98e3db0",
+  "status": "sharded",
+  "first_seen": "2026-08-25T06:05:03Z",
+  "last_changed": "2026-08-25T06:05:03Z"
+}

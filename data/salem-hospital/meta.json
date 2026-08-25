@@ -1,0 +1,14 @@
+{
+  "system": "Mass General Brigham",
+  "location_name": "Salem Hospital",
+  "mrf_url": "https://www.massgeneralbrigham.org/price-transparency/043399616_Salem-Hospital_StandardCharges.zip",
+  "source_filename": "043399616_Salem-Hospital_StandardCharges.csv",
+  "sha256": "91861e14b87198b8ebad471f3a9f83006a5d70522249ae7c386f1f347a8fa6de",
+  "size_bytes": 13192076,
+  "source_last_modified": "Thu, 23 Jul 2026 19:36:40 GMT",
+  "source_etag": "\"1d5f7a3f30044145a4c338699ce7c6ee\"",
+  "transfer_fingerprint": "f1f70c3ff9c5bb40caf64197134ddc6395b5b488d6e1706fd5f363539a19ddfb",
+  "status": "stored",
+  "first_seen": "2026-08-25T05:46:04Z",
+  "last_changed": "2026-08-25T05:46:04Z"
+}

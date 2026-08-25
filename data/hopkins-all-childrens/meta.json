@@ -1,0 +1,14 @@
+{
+  "system": "Johns Hopkins Medicine",
+  "location_name": "Johns Hopkins All Children's Hospital",
+  "mrf_url": "https://www.hopkinsmedicine.org/-/media/patient-care/documents/billing-insurance/charge-fees/590683252_johns-hopkins-all-children-_s-hospital_standardcharges.csv",
+  "source_filename": "590683252_johns-hopkins-all-children-_s-hospital_standardcharges.csv",
+  "sha256": "22b33f4ea7277c5e7b8d63912ba7869616a8d1b12c9e91851bbf31b63528dcfa",
+  "size_bytes": 18514236,
+  "source_last_modified": "Tue, 25 Aug 2026 05:46:29 GMT",
+  "source_etag": null,
+  "transfer_fingerprint": "134503bdfe39d5be311d39b3c1b915d872a780cb73d3d19f825750700b790474",
+  "status": "stored",
+  "first_seen": "2026-08-25T05:46:30Z",
+  "last_changed": "2026-08-25T05:46:30Z"
+}

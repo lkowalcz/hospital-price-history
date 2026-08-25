@@ -1,0 +1,14 @@
+{
+  "system": "Cleveland Clinic",
+  "location_name": "akron general",
+  "mrf_url": "https://clevelandclinic.pt.panaceainc.com/MRFDownload/clevelandclinic/akron-general",
+  "source_filename": "340714478_akron-general-medical-center_standardcharges.csv",
+  "sha256": "4e5c625950729e3eceac22e0448b415e835a58fd1211be0144ae080f9b80ad24",
+  "size_bytes": 666293896,
+  "source_last_modified": null,
+  "source_etag": null,
+  "transfer_fingerprint": "cfa586ee416a1a2c64547362a9dba803af79616f781afb5ce1260253034f841b",
+  "status": "summarized",
+  "first_seen": "2026-08-25T05:46:14Z",
+  "last_changed": "2026-08-25T05:46:14Z"
+}

@@ -1,0 +1,14 @@
+{
+  "system": "NewYork-Presbyterian",
+  "location_name": "NewYork-Presbyterian Weill Cornell Medical Center",
+  "mrf_url": "https://nyp.widen.net/content/hisgjrgpuk/original/133957095_NewYork-Presbyterian-Hospital_standardcharges.json.zip?u=n8xzey&download=true",
+  "source_filename": "133957095_newyork-presbyterian-hospital_standardcharges.json",
+  "sha256": "ca1a59d4685660b99db1cb654186fca1c846a43bb942d04812ac4ff080365d56",
+  "size_bytes": 226655511,
+  "source_last_modified": "Tue, 31 Mar 2026 18:44:37 GMT",
+  "source_etag": "\"6e28d24e768cd853cdb382accf18c560\"",
+  "transfer_fingerprint": "79c311984f3ba320aa196f65f1ca8850d426a1402898e22edb1ec38603aeb3ab",
+  "status": "sharded",
+  "first_seen": "2026-08-25T06:00:36Z",
+  "last_changed": "2026-08-25T06:00:36Z"
+}

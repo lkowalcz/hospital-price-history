@@ -1,0 +1,14 @@
+{
+  "system": "Mass General Brigham",
+  "location_name": "Wentworth Douglass Hospital",
+  "mrf_url": "https://www.massgeneralbrigham.org/price-transparency/020260334_Wentworth-Douglass-Hospital_StandardCharges.zip",
+  "source_filename": "020260334_Wentworth-Douglass-Hospital_StandardCharges.csv",
+  "sha256": "9a6b0bb6ec51774b1a8fae6917a53fe07a6284b298b00661f48a9c766afa8edc",
+  "size_bytes": 14542815,
+  "source_last_modified": "Thu, 23 Jul 2026 19:36:39 GMT",
+  "source_etag": "\"dc251e8954d75ee04c0006534157ccfd\"",
+  "transfer_fingerprint": "03722d18279dd0faae3a4e108c22806d32679aeb89f2200b007d0d448338394e",
+  "status": "stored",
+  "first_seen": "2026-08-25T05:46:05Z",
+  "last_changed": "2026-08-25T05:46:05Z"
+}

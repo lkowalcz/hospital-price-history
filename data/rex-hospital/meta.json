@@ -1,0 +1,14 @@
+{
+  "system": "UNC Health",
+  "location_name": "Rex Hospital",
+  "mrf_url": "https://www.unchealthcare.org/app/files/public/2e60f576-2b27-4564-9489-e01f8e4b81a8/rex-hospital-inc_standardcharges.csv",
+  "source_filename": "rex-hospital-inc_standardcharges.csv",
+  "sha256": "0dc3a94f0287b7f8b286feb2853a913c82e13380fc713f8323161adcd2c34184",
+  "size_bytes": 46003752,
+  "source_last_modified": "Sun, 12 Jul 2026 15:39:27 GMT",
+  "source_etag": null,
+  "transfer_fingerprint": "deedf724c014580bc47a730b849dc24c32029e0e299966489cd102a8e6e32f1d",
+  "status": "stored",
+  "first_seen": "2026-08-25T05:46:47Z",
+  "last_changed": "2026-08-25T05:46:47Z"
+}

@@ -1,0 +1,14 @@
+{
+  "system": "Penn Medicine",
+  "location_name": "Pennsylvania Hospital",
+  "mrf_url": "https://www1.pennmedicine.org/images/pricing/311538725_Pennsylvania-Hospital-of-the-University-of-Pennsylvania-Health-System_standardcharges.csv",
+  "source_filename": "311538725_Pennsylvania-Hospital-of-the-University-of-Pennsylvania-Health-System_standardcharges.csv",
+  "sha256": "400e00cd7feeaebf462f473912dec081c1d79a9dfbc8b20f394f3f65026e879d",
+  "size_bytes": 604480044,
+  "source_last_modified": "Mon, 30 Mar 2026 13:57:21 GMT",
+  "source_etag": "\"5cff7214dc0dc1:0\"",
+  "transfer_fingerprint": "ad3ae5847b0d1bc02dcd8a5fa61df00a35a25a89f4a099c9d79c88d56a2f4388",
+  "status": "sharded",
+  "first_seen": "2026-08-25T06:06:08Z",
+  "last_changed": "2026-08-25T06:06:08Z"
+}

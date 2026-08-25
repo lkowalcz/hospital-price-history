@@ -1,0 +1,136 @@
+code_type,code,description,gross_charge,discounted_cash,min_negotiated,max_negotiated,payer_entries
+CDM,PX-26000003,IV Infus Non-Chemo Initial Up to 1 Hr - 96365,800.0,600.0,250.18,608.0,8
+CDM,PX-30000497,Hemoglobin Glycosylated (A1c),75.0,56.25,48.6,48.6,1
+CDM,PX-30000701,Thyroid Stimulating Hormone (Tsh),131.0,98.25,84.89,84.89,1
+CDM,PX-30001003,Treponema Pallidum Antibody,103.0,77.25,66.74,66.74,1
+CDM,PX-30002957,Drug Screen Quant Dipropylacetic Acid Total,105.0,78.75,68.04,68.04,1
+CDM,PX-37000032,"Anesthesia, Elctroshock / Ect",216.0,162.0,116.01,139.97,4
+CDM,PX-51000084,"Office Visit, Established Pat",516.0,387.0,153.03,285.35,7
+CDM,PX-51000651,Synchronous Audio-Video Visit New Sf Mdm 15 Min,234.0,175.5,129.4,129.4,1
+CDM,PX-51000653,Synchronous Audio-Video Visit New Mod Mdm 45 Min,599.0,449.25,331.25,331.25,1
+CDM,PX-51000656,Synchronous Audio-Video Visit Est Low Mdm 20 Min,236.0,177.0,130.51,130.51,1
+CDM,PX-51000657,Synchronous Audio-Video Visit Est Mod Mdm 30 Min,367.0,275.25,202.95,202.95,1
+CDM,PX-51000658,Synchronous Audio-Video Vst Est High Mdm 40 Min,516.0,387.0,285.35,285.35,1
+CDM,PX-51000664,Synchronous Audio-Only Visit Est Low Mdm 20 Min,236.0,177.0,130.51,130.51,1
+CDM,PX-51000665,Synchronous Audio-Only Visit Est Mod Mdm 30 Min,367.0,275.25,220.2,220.2,1
+CDM,PX-61000015,MRI Orbit/Face/Neck W&W/O Cont,5718.0,4288.5,424.07,424.07,2
+CDM,PX-61000016,MRI Brain W/O Cont,4352.0,3264.0,287.03,2820.1,6
+CDM,PX-61000016,MRI Brain W/O Cont|REDUCED SERVICES,4352.0,3264.0,287.03,287.03,1
+CDM,PX-61000018,MRI Brain W&W/O Cont,5654.0,4240.5,424.07,3663.79,8
+CDM,PX-61000024,MRI C-Spine W/O Cont,3849.0,2886.75,287.03,287.03,4
+CDM,PX-61000026,MRI T-Spine W/O Cont,3860.0,2895.0,287.03,287.03,3
+CDM,PX-61000028,MRI L-Spine W/O Cont,3825.0,2868.75,287.03,2054.41,5
+CDM,PX-61000028,MRI L-Spine W/O Cont|REDUCED SERVICES,3825.0,2868.75,307.41,307.41,1
+CDM,PX-61000030,MRI C-Spine W&W/O Cont,5623.0,4217.25,424.07,424.07,2
+CDM,PX-61000031,MRI T-Spine W&W/O Cont,5187.0,3890.25,424.07,424.07,1
+CDM,PX-61000032,MRI L-Spine W&W/O Cont,5558.0,4168.5,424.07,424.07,1
+CDM,PX-61000038,MRI Pelvis W/O Cont,4319.0,3239.25,287.03,287.03,2
+CDM,PX-61000040,MRI Pelvis W&W/O Cont,5796.0,4347.0,424.07,3113.03,2
+CDM,PX-61000050,MRI Upr Ext Joint W/O Cont,4076.0,3057.0,287.03,287.03,1
+CDM,PX-61000122,MRI Tmj Unilat or Bilat,3754.0,2815.5,287.03,287.03,1
+CDM,PX-73000001,Ekg Routine Tracing Only,155.0,116.25,70.53,100.44,4
+CDM,PX-74000018,Eeg Awake/Drowsy,500.0,375.0,369.77,369.77,1
+CDM,PX-74000019,Eeg Awake/Asleep,580.0,435.0,369.77,369.77,2
+CDM,PX-90000001,Transcranial Mag Stim Ther Tx Initl,822.0,616.5,369.77,454.57,4
+CDM,PX-90000002,Transcranial Mag Stim Ther Tx Per,489.0,366.75,244.5,369.77,8
+CDM,PX-90000003,Transcranial Mag Stim Ther Tx Redet,610.0,457.5,337.33,369.77,4
+CDM,PX-90000009,Electroconvulsive Therapy,852.0,639.0,457.61,630.06,7
+CDM,PX-90000021,Opps/Php/Iop; Train & Educ Serv,179.0,134.25,96.14,107.4,2
+CDM,PX-90000022,Psych Grp Therapy 15 Min,175.0,131.25,93.99,96.78,2
+CDM,PX-90000024,Psych Therapy Family W/O Pt,233.0,174.75,128.85,128.85,1
+CDM,PX-90000025,Psych Therapy Family W/Pt,279.0,209.25,149.85,154.29,2
+CDM,PX-90000039,Exam Neurobehavrl by Psych per Hr,448.0,336.0,240.62,268.8,3
+CDM,PX-90000048,Psychiatric Diagnostic Evaluation,359.0,269.25,192.82,198.53,3
+CDM,PX-90000049,Psych Diag Evaluation W/Med Service,370.0,277.5,198.73,204.61,2
+CDM,PX-90000050,HC Psych W/Patient 30 Minutes,149.0,111.75,80.03,82.4,2
+CDM,PX-90000051,HC Psych W/Patient W/E&M Srvcs 30 Min,126.0,94.5,67.67,69.68,2
+CDM,PX-90000052,HC Psych W/Patient 45 Minutes,223.0,167.25,119.77,144.5,3
+CDM,PX-90000053,HC Psych W/Patient W/E&M Srvcs 45 Min,207.0,155.25,111.18,114.47,2
+CDM,PX-90000054,HC Psych W/Patient 60 Minutes,337.0,252.75,181.0,186.36,2
+CDM,PX-90000055,HC Psych W/Patient W/E&M Srvcs 60 Min,332.0,249.0,178.32,178.32,1
+CDM,PX-90000099,Psych Est/ New Patient (99211) - Low Level (<15 Min),117.0,87.75,64.7,64.7,1
+CDM,PX-90000101,Psych Est Patient (99213) - Medium Level (16-45 Min),229.0,171.75,126.64,153.03,6
+CDM,PX-90000103,"Office Visit, Established Pat",516.0,387.0,153.03,285.35,7
+CDM,PX-90000134,Neurobehavioral Status Xm Phys/Qhp Ea Addl Hour,401.0,300.75,215.38,240.6,3
+CDM,PX-90000135,Psychological Tst Eval Svc Phys/Qhp First Hour,559.0,419.25,309.13,309.13,1
+CDM,PX-90000136,Psychological Tst Eval Svc Phys/Qhp Ea Addl Hour,425.0,318.75,235.03,235.03,1
+CDM,PX-90000137,Neuropsychological Tst Eval Phys/Qhp 1st Hour,546.0,409.5,293.26,327.6,3
+CDM,PX-90000138,Neuropsychological Tst Eval Phys/Qhp Ea Addl Hr,419.0,314.25,225.04,251.4,3
+CDM,PX-90000139,Psyl/Nrpsycl Tst Phys/Qhp 2+ Tst 1st 30 Min,127.0,95.25,68.21,76.2,3
+CDM,PX-90000140,Psycl/Nrpsycl Tst Phys/Qhp 2+ Tst Ea Addl 30 Min,98.0,73.5,52.64,58.8,3
+CDM,PX-90000141,Psycl/Nrpsycl Tst Tech 2+ Tst 1st 30 Min,217.0,162.75,116.55,130.2,3
+CDM,PX-90000142,Psycl/Nrpsycl Tst Tech 2+ Tst Ea Addl 30 Min,217.0,162.75,116.55,130.2,3
+CDM,PX-90000163,Visit Esketamine 56m or Less,2818.0,2113.5,1366.15,1558.35,3
+CDM,PX-90000164,"Visit Esketamine, > 56m",4007.0,3005.25,1722.38,2596.54,6
+CDM,PX-90000171,Psych Synchronous Audio-Video Visit New Sf Mdm 15 Min,234.0,175.5,129.4,129.4,1
+CDM,PX-90000173,Psych Synchronous Audio-Video Visit New Mod Mdm 45 Min,599.0,449.25,331.25,331.25,1
+CDM,PX-90000176,Psych Synchronous Audio-Video Visit Est Low Mdm 20 Min,236.0,177.0,130.51,130.51,1
+CDM,PX-90000177,Psych Synchronous Audio-Video Visit Est Mod Mdm 30 Min,367.0,275.25,202.95,202.95,1
+CDM,PX-90000178,Psych Synchronous Audio-Video Vst Est High Mdm 40 Min,516.0,387.0,285.35,285.35,1
+CDM,PX-90000184,Psych Synchronous Audio-Only Visit Est Low Mdm 20 Min,236.0,177.0,130.51,130.51,1
+CDM,PX-90000185,Psych Synchronous Audio-Only Visit Est Mod Mdm 30 Min,367.0,275.25,220.2,220.2,1
+CDM,PX-96000029,Neurobehavioral Status Xm Phys/Qhp Ea Addl Hour,123.0,92.25,66.06,73.8,3
+CDM,PX-96000030,Psychological Tst Eval Svc Phys/Qhp First Hour,172.0,129.0,95.12,95.12,1
+CDM,PX-96000031,Psychological Tst Eval Svc Phys/Qhp Ea Addl Hour,131.0,98.25,72.44,72.44,1
+CDM,PX-96000032,Neuropsychological Tst Eval Phys/Qhp 1st Hour,169.0,126.75,90.77,101.4,3
+CDM,PX-96000033,Neuropsychological Tst Eval Phys/Qhp Ea Addl Hr,129.0,96.75,69.29,77.4,3
+CDM,PX-96000034,Psyl/Nrpsycl Tst Phys/Qhp 2+ Tst 1st 30 Min,39.0,29.25,20.95,23.4,3
+CDM,PX-96000035,Psycl/Nrpsycl Tst Phys/Qhp 2+ Tst Ea Addl 30 Min,31.0,23.25,16.65,18.6,3
+CDM,PX-96000036,Psycl/Nrpsycl Tst Tech 2+ Tst 1st 30 Min,60.0,45.0,32.23,36.0,3
+CDM,PX-96000037,Psycl/Nrpsycl Tst Tech 2+ Tst Ea Addl 30 Min,60.0,45.0,32.23,36.0,3
+CDM,PX-96000059,Psych - Prolonged Outpatient E/M Service Each 15 Minutes,128.0,96.0,70.78,70.78,1
+CDM,PX-96000066,Psych Synchronous Audio-Video Visit New Sf Mdm 15 Min,194.0,145.5,107.28,107.28,1
+CDM,PX-96000068,Psych Synchronous Audio-Video Visit New Mod Mdm 45 Min,542.0,406.5,299.73,299.73,1
+CDM,PX-96000071,Psych Synchronous Audio-Video Visit Est Low Mdm 20 Min,270.0,202.5,149.31,149.31,1
+CDM,PX-96000072,Psych Synchronous Audio-Video Visit Est Mod Mdm 30 Min,401.0,300.75,221.75,221.75,1
+CDM,PX-96000073,Psych Synchronous Audio-Video Vst Est High Mdm 40 Min,542.0,406.5,299.73,299.73,1
+CDM,PX-96000079,Psych Synchronous Audio-Only Visit Est Low Mdm 20 Min,248.0,186.0,137.14,137.14,1
+CDM,PX-96000080,Psych Synchronous Audio-Only Visit Est Mod Mdm 30 Min,367.0,275.25,220.2,220.2,1
+CDM,PX-96100001,Pf Psy Thrpy Family W/O Pt,340.0,255.0,188.02,188.02,1
+CDM,PX-96100002,Pf Psy Thrpy Family W/Pt,355.0,266.25,190.67,196.32,2
+CDM,PX-96100003,Pf Psy/Cd Group Therapy,96.0,72.0,51.56,53.09,2
+CDM,PX-96100012,Pf Exam Neurobehavrl by Psych / Hr,134.0,100.5,71.97,74.1,2
+CDM,PX-96100028,Pf Psychiatric Diagnostic Eval,550.0,412.5,295.41,304.15,3
+CDM,PX-96100029,Pf Psych Diag Evaluation W/Med Serv,618.0,463.5,331.93,341.75,2
+CDM,PX-96100030,Hcpr Psych W/Patient 30 Minutes,237.0,177.75,127.29,131.06,2
+CDM,PX-96100031,Hcpr Psych W/Patient W/E&M Srvcs 30 Min,218.0,163.5,117.09,120.55,2
+CDM,PX-96100032,Hcpr Psych W/Patient 45 Minutes,361.0,270.75,193.89,233.93,3
+CDM,PX-96100033,Hcpr Psych W/Patient W/E&M Srvcs 45 Min,277.0,207.75,148.78,153.18,2
+CDM,PX-96100034,Hcpr Psych W/Patient 60 Minutes,461.0,345.75,247.6,254.93,2
+CDM,PX-96100035,Hcpr Psych W/Patient W/E&M Srvcs 60 Min,366.0,274.5,196.58,196.58,1
+CDM,PX-96100047,"Office Visit, Established Pat",281.0,210.75,155.39,182.09,2
+CDM,PX-96100048,"Office Visit, Established Pat",415.0,311.25,222.9,229.5,2
+CDM,PX-96100049,"Office Visit, Established Pat",580.0,435.0,320.74,320.74,1
+CDM,PX-96100059,"Transcranial Magnetic Stimulation Treatment,Planning",879.0,659.25,369.77,486.09,4
+CDM,PX-96100060,"Transcranial Magnetic Stimulation Treatment,Delivery/Management",296.0,222.0,158.98,369.77,7
+CDM,PX-96100061,Repet Tms Tx Subseq Motr Threshld W/Deliv & Mngt,914.0,685.5,369.77,505.44,4
+CDM,PX-96100062,"Ocd Transcranial Magnetic Stimulation Treatment,Planning",879.0,659.25,369.77,486.09,4
+CDM,PX-96100063,"Ocd Transcranial Magnetic Stimulation Treatment,Delivery/Mgmt",296.0,222.0,158.98,369.77,7
+CDM,PX-96100064,Repet Ocd Tms Tx Subseq Motr Threshld W/Deliv & Mngt,914.0,685.5,369.77,505.44,4
+CDM,PX-98300814,Sbsq Hospital IP/Obs Care Sf/Low Mdm 25 Minutes,62.0,46.5,33.3,33.3,1
+CDM,PX-98301335,Electroconvulsive Therapy,172.0,129.0,92.38,630.06,8
+CDM,PX-98301590,"MRI, Face, Neck, Combo",541.0,405.75,424.07,424.07,2
+CDM,PX-98301597,MRI Brain,376.0,282.0,201.95,287.03,6
+CDM,PX-98301597,MRI Brain|REDUCED SERVICES,376.0,282.0,287.03,287.03,1
+CDM,PX-98301599,MRI Brain Combo,578.0,433.5,374.54,424.07,8
+CDM,PX-98301608,"MRI, Cerv Spine",377.0,282.75,287.03,287.03,4
+CDM,PX-98301610,"MRI, Dorsal Spine",377.0,282.75,287.03,287.03,3
+CDM,PX-98301612,"MRI, Lumbar Spine",328.0,246.0,176.17,287.03,5
+CDM,PX-98301612,"MRI, Lumbar Spine|REDUCED SERVICES",328.0,246.0,307.41,307.41,1
+CDM,PX-98301614,"MRI, Cerv Spine Combo",578.0,433.5,424.07,424.07,2
+CDM,PX-98301615,"MRI, Dorsal Spine Combo",505.0,378.75,424.07,424.07,1
+CDM,PX-98301616,"MRI, Lumbar Spine Combo",505.0,378.75,424.07,424.07,1
+CDM,PX-98301618,"MRI, Pelvis, W/O Contrast",370.0,277.5,287.03,287.03,2
+CDM,PX-98301623,"MRI, Joint Upper Extrem",350.0,262.5,287.03,287.03,1
+CDM,PX-99900338,Repet Ocd Tms Tx Initial W/Map/Motr Threshld/Del&M,822.0,616.5,369.77,454.57,4
+CDM,PX-99900339,Therap Repetitive Ocd Tms Tx Subseq Delivery & Mng,489.0,366.75,244.5,369.77,8
+CDM,PX-99900340,Repet Ocd Tms Tx Subseq Motr Threshld W/Deliv & Mn,610.0,457.5,337.33,369.77,4
+MS-DRG,057,Degenerative Nervous System Disorders Without McC,43565.0,32673.75,1216.89,1216.89,1
+MS-DRG,880,Acute Adjustment Reaction And Psychosocial Dysfunction,19478.0,14608.5,1184.0,1184.0,4
+MS-DRG,881,Depressive Neuroses,24734.0,18550.5,1162.08,1162.08,4
+MS-DRG,882,Neuroses Except Depressive,32731.0,24548.25,1118.22,1118.22,4
+MS-DRG,883,Disorders Of Personality And Impulse Control,26505.0,19878.75,1282.67,1282.67,1
+MS-DRG,884,Organic Disturbances And Intellectual Disability,15583.0,11687.25,1184.0,1184.0,2
+MS-DRG,885,Psychoses,32844.0,24633.0,1096.3,1096.3,8
+MS-DRG,894,"Alcohol, Drug Abuse Or Dependence, Left Ama",9767.0,7325.25,942.82,942.82,1
+MS-DRG,897,"Alcohol, Drug Abuse Or Dependence Without Rehabilitation Therapy Without McC",18292.0,13719.0,1041.48,1041.48,4

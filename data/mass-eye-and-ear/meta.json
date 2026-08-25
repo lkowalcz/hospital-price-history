@@ -1,0 +1,14 @@
+{
+  "system": "Mass General Brigham",
+  "location_name": "Massachusetts Eye and Ear",
+  "mrf_url": "https://www.massgeneralbrigham.org/price-transparency/042103591_Massachusetts-Eye-and-Ear_StandardCharges.zip",
+  "source_filename": "042103591_Massachusetts-Eye-and-Ear_StandardCharges.csv",
+  "sha256": "d5013b5fc9f3eae4f428df85ae8f833b0445c0eccdacd4a428394f9cbfc3f5b3",
+  "size_bytes": 4052917,
+  "source_last_modified": "Thu, 23 Jul 2026 19:36:39 GMT",
+  "source_etag": "\"8147544d0779b2ada7d825c319596ab0\"",
+  "transfer_fingerprint": "0eb783cb6d33f69e205e6917672e29bb140d2f8a82389e1aaa7593c492537ceb",
+  "status": "stored",
+  "first_seen": "2026-08-25T05:46:04Z",
+  "last_changed": "2026-08-25T05:46:04Z"
+}

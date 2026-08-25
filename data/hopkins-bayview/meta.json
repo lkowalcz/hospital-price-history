@@ -1,0 +1,14 @@
+{
+  "system": "Johns Hopkins Medicine",
+  "location_name": "Johns Hopkins Bayview Medical Center",
+  "mrf_url": "https://www.hopkinsmedicine.org/-/media/patient-care/documents/billing-insurance/charge-fees/521341890_johns-hopkins-bayview-medical-center_standardcharges.csv",
+  "source_filename": "521341890_johns-hopkins-bayview-medical-center_standardcharges.csv",
+  "sha256": "a578e4b43e140927c50c4008e89c49754d4ac670778468ace54842059bfb6557",
+  "size_bytes": 6025219,
+  "source_last_modified": "Tue, 25 Aug 2026 05:46:28 GMT",
+  "source_etag": null,
+  "transfer_fingerprint": "6432f3cd316627fe556bc52a66491dde6fa136d650a819e7053c88d4bb67e0a1",
+  "status": "stored",
+  "first_seen": "2026-08-25T05:46:28Z",
+  "last_changed": "2026-08-25T05:46:28Z"
+}

@@ -1,0 +1,14 @@
+{
+  "system": "Mass General Brigham",
+  "location_name": "Nantucket Cottage Hospital",
+  "mrf_url": "https://www.massgeneralbrigham.org/price-transparency/042103823_Nantucket-Cottage-Hospital_StandardCharges.zip",
+  "source_filename": "042103823_Nantucket-Cottage-Hospital_StandardCharges.csv",
+  "sha256": "84eee988b2196ae3a29d2635abb013cb9dbb22f6538ba299c6fbdf9465ea654a",
+  "size_bytes": 1343433,
+  "source_last_modified": "Thu, 23 Jul 2026 19:36:39 GMT",
+  "source_etag": "\"885729feee14b3be1dfbe80ba169540b\"",
+  "transfer_fingerprint": "e8d54d48ffe48e0010ae91ad13400d4b8101f60bf72a91d28f8f5b592e6c3e15",
+  "status": "stored",
+  "first_seen": "2026-08-25T05:46:05Z",
+  "last_changed": "2026-08-25T05:46:05Z"
+}

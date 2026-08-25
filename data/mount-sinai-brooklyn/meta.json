@@ -1,0 +1,14 @@
+{
+  "system": "Mount Sinai Health System",
+  "location_name": "Mount Sinai Brooklyn",
+  "mrf_url": "https://www.mountsinai.org/files/mrf/135564934_mount-sinai-brooklyn_standardcharges.json",
+  "source_filename": "135564934_mount-sinai-brooklyn_standardcharges.json",
+  "sha256": "4c66af60f8f6006c41ef2f9770f0a2ea142f1e3202683b13f161e9c1545c45ca",
+  "size_bytes": 82151350,
+  "source_last_modified": "Fri, 03 Apr 2026 16:49:16 GMT",
+  "source_etag": "\"905a69991c4e72f03e56645045a4a82f:1775234956.198399\"",
+  "transfer_fingerprint": "f5fdcd8480fa0a2cdeca940e7221626b2dc59452aef4be31abdb9994f49387df",
+  "status": "sharded",
+  "first_seen": "2026-08-25T06:00:50Z",
+  "last_changed": "2026-08-25T06:00:50Z"
+}

@@ -1,0 +1,14 @@
+{
+  "system": "NYU Langone Health",
+  "location_name": "NYU Langone Hospital - Brooklyn",
+  "mrf_url": "https://standard-charges-prod.s3.amazonaws.com/pricing_files/133971298-1619341716_nyu-langone-brooklyn_standardcharges.csv",
+  "source_filename": "133971298-1619341716_nyu-langone-brooklyn_standardcharges.csv",
+  "sha256": "91ed68c180036367cea5fadbcde8b37bdd69f85d503222e915415fdadb6feff8",
+  "size_bytes": 479211670,
+  "source_last_modified": "Fri, 13 Mar 2026 15:24:25 GMT",
+  "source_etag": "\"145f62d68bd41f178a4c49bbd6669490-28\"",
+  "transfer_fingerprint": "f9e7ad40f0d2431739ece5f57b78d5176251623b367ee892d905766220fc9b08",
+  "status": "sharded",
+  "first_seen": "2026-08-25T06:00:28Z",
+  "last_changed": "2026-08-25T06:00:28Z"
+}

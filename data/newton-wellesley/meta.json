@@ -1,0 +1,14 @@
+{
+  "system": "Mass General Brigham",
+  "location_name": "Newton Wellesley Hospital",
+  "mrf_url": "https://www.massgeneralbrigham.org/price-transparency/042103611_Newton-Wellesley-Hospital_StandardCharges.zip",
+  "source_filename": "042103611_Newton-Wellesley-Hospital_StandardCharges.csv",
+  "sha256": "1bcd9dc25ff2934fed7d8e5781d0649033b6a9becd6981eb025d091ad4dc9716",
+  "size_bytes": 15367284,
+  "source_last_modified": "Thu, 23 Jul 2026 19:36:39 GMT",
+  "source_etag": "\"a39c48a9367de9aa892ad7258d77f855\"",
+  "transfer_fingerprint": "a6b5eedef4c9f21b01f91771cd31f43a88ee8f3f408bc91f83e0f4832ba00091",
+  "status": "stored",
+  "first_seen": "2026-08-25T05:46:04Z",
+  "last_changed": "2026-08-25T05:46:04Z"
+}

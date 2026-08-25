@@ -1,0 +1,14 @@
+{
+  "system": "Providence",
+  "location_name": "Providence Alaska Medical Center",
+  "mrf_url": "https://pricetransparency.providence.org/alaska/live/920016429_providence-alaska-medical-center_standardcharges.json",
+  "source_filename": "920016429_providence-alaska-medical-center_standardcharges.json",
+  "sha256": "6524d22e9fb2d4d9191c2ba381ceef52b54654cad0fa33a0d5d2c1ce912085d4",
+  "size_bytes": 185422720,
+  "source_last_modified": "Fri, 03 Apr 2026 20:43:50 GMT",
+  "source_etag": "\"a9bd9d93aac3dc1:0\"",
+  "transfer_fingerprint": "b4a8caf0ee3bebe363472b6deb8af49be99944ab7cdcad64384b5c94a65efa66",
+  "status": "sharded",
+  "first_seen": "2026-08-25T06:05:14Z",
+  "last_changed": "2026-08-25T06:05:14Z"
+}

@@ -1,0 +1,14 @@
+{
+  "system": "UCLA Health",
+  "location_name": "UCLA Santa Monica Medical Center",
+  "mrf_url": "https://www.uclahealth.org/sites/default/files/cms-hpt/954541687_santa-monica-ucla-medical-center-and-orthopaedic-hospital_standardcharges.json",
+  "source_filename": "954541687_santa-monica-ucla-medical-center-and-orthopaedic-hospital_standardcharges.json",
+  "sha256": "5abda4012a4104edee6666e05f128b95ccac5de5769b3743da45ad4302cc12ba",
+  "size_bytes": 450464364,
+  "source_last_modified": "Wed, 01 Apr 2026 19:55:31 GMT",
+  "source_etag": null,
+  "transfer_fingerprint": "d88418d96da5a33acbf4000f046c588741772e9a5af5c46a67d449c0817f879c",
+  "status": "sharded",
+  "first_seen": "2026-08-25T05:59:22Z",
+  "last_changed": "2026-08-25T05:59:22Z"
+}

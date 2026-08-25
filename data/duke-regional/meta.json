@@ -1,0 +1,14 @@
+{
+  "system": "Duke Health",
+  "location_name": "Duke Regional Hospital",
+  "mrf_url": "https://rca.elevatepfs.com/ptapp/api/cdm/export/oneclick?recno=6218eb9ff7c607c1b86fc33c62f39d2663e9f7a51d87144995dfaa26b0ab9984",
+  "source_filename": "562070036_Duke-Regional-Hospital_standardcharges.csv",
+  "sha256": "f51869a54067aac7069433be1a49e03884266b01532583c8bb0767fe855831ff",
+  "size_bytes": 665647226,
+  "source_last_modified": null,
+  "source_etag": null,
+  "transfer_fingerprint": "7d430bcc59cdbdd92b12546b9d70d5eb3689c91519b47f22b52cdac4586391bd",
+  "status": "summarized",
+  "first_seen": "2026-08-25T06:04:22Z",
+  "last_changed": "2026-08-25T06:04:22Z"
+}
