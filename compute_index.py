@@ -149,12 +149,11 @@ def main():
         hosp_c = sum(1 for p in cur_prices.values() if any(v.get("cash") for v in p.values()))
         hosp_g = sum(1 for p in cur_prices.values() if any(v.get("gross") for v in p.values()))
 
+    if not ANOMALIES.exists():  # always present so the workflow can git-add it
+        ANOMALIES.write_text("date,field,hospital,item,prev,cur\n")
     if anomalies:
-        new_file = not ANOMALIES.exists()
         with open(ANOMALIES, "a", newline="") as f:
             w = csv.writer(f)
-            if new_file:
-                w.writerow(["date", "field", "hospital", "item", "prev", "cur"])
             for field, slug, key, a, b in anomalies:
                 w.writerow([today, field, slug, key, a, b])
         print(f"index: excluded {len(anomalies)} extreme relatives "
