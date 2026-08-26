@@ -25,7 +25,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # full history for per-hospital change logs
+          fetch-depth: 0      # full history for per-hospital change logs
+          filter: blob:none   # git log --format needs no blobs; skip the
+                              # legacy shard pack (~0.5 GB) entirely
 
       - uses: actions/setup-python@v5
         with:

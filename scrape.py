@@ -14,7 +14,10 @@ For each hospital in hospitals.json:
 Storage modes, chosen automatically by size:
   - stored:     single normalized file (<= 45 MB)
   - sharded:    32 hash-bucketed, sorted shard files (<= 600 MB); a changed
-                row touches only its bucket, so diffs stay meaningful
+                row touches only its bucket, so diffs stay meaningful.
+                Written into the companion raw-data repo (RAW_REPO_DIR, or a
+                sibling hospital-price-history-raw clone) to keep this repo
+                small; meta.json and summary.csv stay here
   - summarized: larger files are stream-parsed (CMS v3 schema) into
                 summary.csv — per code: description, gross charge, cash
                 price, min/max negotiated rate, payer count
@@ -45,6 +48,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
+# Sharded (payer-level) content lives in a companion repo so this repo stays
+# clonable; see README "Where the data lives". Locally: a sibling clone.
+RAW_DATA = Path(os.environ.get(
+    "RAW_REPO_DIR", ROOT.parent / "hospital-price-history-raw")) / "data"
 MAX_STORED_BYTES = 45 * 1024 * 1024   # above this, shard
 MAX_SHARD_TOTAL = 600 * 1024 * 1024   # above this, summarize
 SHARD_COUNT = 32
@@ -373,7 +380,7 @@ def shard_lines(lines):
 
 def write_shards(outdir, header_name, header_text, buckets, ext):
     shard_dir = outdir / "shards"
-    shard_dir.mkdir(exist_ok=True)
+    shard_dir.mkdir(parents=True, exist_ok=True)
     (outdir / header_name).write_text(header_text)
     for i, bucket in enumerate(buckets):
         (shard_dir / f"{i:02d}{ext}").write_text(
@@ -539,6 +546,12 @@ def store_summarized(outdir, name, path):
 
 # ------------------------------------------------------------------ pipeline
 
+# Slugs whose content was rewritten this run. The workflow reads
+# changed_slugs.txt to sync exactly these paths in the raw repo (whose old
+# shards are not on disk under its sparse checkout).
+REWRITTEN = []
+
+
 def clear_content(outdir):
     for path in outdir.iterdir():
         if path.name == "meta.json":
@@ -638,11 +651,16 @@ def process(hospital, scratch):
             return None
 
         clear_content(outdir)
+        # Raw-repo cleanup for local full checkouts; under the workflow's
+        # sparse checkout old shards aren't on disk, so the commit step
+        # re-syncs each rewritten slug's raw path from changed_slugs.txt.
+        shutil.rmtree(RAW_DATA / slug, ignore_errors=True)
+        REWRITTEN.append(slug)
         if payload is not None and len(payload) <= MAX_STORED_BYTES:
             (outdir / f"standardcharges{ext_of(name)}").write_bytes(payload)
             mode = "stored"
         elif payload is not None:
-            mode = store_sharded(outdir, name, payload)
+            mode = store_sharded(RAW_DATA / slug, name, payload)
         else:
             mode = store_summarized(outdir, name, payload_path)
         if mode in ("stored", "sharded"):
@@ -751,6 +769,8 @@ def main():
     if recovered:
         parts.append("recovered: " + ", ".join(recovered))
     (ROOT / "commit_message.txt").write_text(("; ".join(parts) or "No changes") + "\n")
+    (ROOT / "changed_slugs.txt").write_text(
+        "".join(s + "\n" for s in REWRITTEN))
     if len(failures) > len(hospitals) / 2:
         sys.exit(1)  # majority failing means the problem is ours, not theirs
 

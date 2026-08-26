@@ -11,8 +11,9 @@ git history shows exactly when.
 
 ## Coverage
 
-51 hospitals across ~45 systems, chosen for breadth of ownership type and
-geography, one flagship per system:
+107 hospitals chosen for breadth of ownership type and geography (see
+`hospitals.json` for the full roster). The founding cohort, one flagship
+per system:
 
 - **Academic medical centers**: MGH, Brigham and Women's (+2 MGB community
   hospitals), NYP Columbia, Stanford, Cleveland Clinic, Cedars-Sinai, NYU
@@ -53,9 +54,29 @@ regardless of how the full file is stored.
 | Mode | When | What's stored |
 |------|------|---------------|
 | `stored` | ≤ 45 MB | single normalized file |
-| `sharded` | ≤ 600 MB, parseable | 32 hash-bucketed, sorted shard files (CSV rows or JSONL items) plus a `_header` file — every shard is git-sized and a changed row touches only its bucket |
+| `sharded` | ≤ 600 MB, parseable | 32 hash-bucketed, sorted shard files (CSV rows or JSONL items) plus a `_header` file — every shard is git-sized and a changed row touches only its bucket. Lives in the [companion raw repo](https://github.com/lkowalcz/hospital-price-history-raw) (see below) |
 | `summarized` | larger, CMS v3 | `summary.csv`: per code — description, gross charge, discounted cash price, min/max negotiated rate, payer-entry count. Collapses the 0.7–5 GB files (Northwestern, Atrium, Penn, Cleveland Clinic, Duke, Cedars-Sinai, Northwell) into a few diffable MB |
 | `metadata-only` | unparseable | `meta.json` hash/size/timing only, so change *timing* is still captured |
+
+### Where the data lives
+
+This repo is the product layer — `hospitals.json`, per-hospital `meta.json`
+and `summary.csv`, small (`stored`) payloads, the price index, and the site.
+Payer-level sharded content lives in a companion repo,
+[hospital-price-history-raw](https://github.com/lkowalcz/hospital-price-history-raw),
+under the same `data/<slug>/` layout, so this repo stays a ~1 GB clone
+while the raw record grows freely.
+
+A daily snapshot is therefore a **pair of commits**: the raw repo is
+committed first, and each sharded hospital's `meta.json` in the main commit
+pins the exact raw commit (`raw_commit`) holding its shards. Shard history
+**before 2026-08-26** lives in this repo's own git history; from that date
+on it lives in the raw repo.
+
+For `summarized` giants, whose repo representation is lossy, the original
+multi-GB download can be preserved via `archive_snapshot.py`, which
+zstd-compresses it, uploads it to the Internet Archive, and records the
+item URL + sha256 in `meta.json` under `cold_storage`.
 
 ### Cheap change detection
 
@@ -69,10 +90,13 @@ refetch weekly (Sundays) instead of daily.
 ## Running locally
 
 ```sh
+git clone https://github.com/lkowalcz/hospital-price-history-raw ../hospital-price-history-raw
 python3 scrape.py
 ```
 
-No dependencies. Writes into `data/` and `commit_message.txt`.
+Writes into `data/`, `commit_message.txt`, and (for sharded hospitals) the
+sibling raw clone — commit and push both, raw first. `RAW_REPO_DIR`
+overrides the raw clone location. `ONLY=slug1,slug2` limits the run.
 
 ## Notes
 

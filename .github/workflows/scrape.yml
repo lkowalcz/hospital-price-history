@@ -3,7 +3,11 @@ name: Scrape hospital price files
 on:
   schedule:
     - cron: "23 6 * * *"  # daily, 06:23 UTC (off-peak; odd minute avoids the top-of-hour rush)
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      only:
+        description: "Comma-separated hospital slugs to scrape (default: all)"
+        required: false
 
 permissions:
   contents: write
@@ -12,7 +16,26 @@ jobs:
   scrape:
     runs-on: ubuntu-latest
     steps:
+      # blob:none keeps historical pack blobs off the runner; the working
+      # tree (meta, summaries, stored payloads) is still fully materialized.
       - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+
+      # Companion raw repo (payer-level shards, ~12 GB working tree). Sparse
+      # checkout materializes root files only — the scraper never reads old
+      # shards, and the commit step below re-syncs exactly the slugs it
+      # rewrote, so shard blobs are never downloaded here.
+      - uses: actions/checkout@v4
+        with:
+          repository: lkowalcz/hospital-price-history-raw
+          ssh-key: ${{ secrets.RAW_REPO_DEPLOY_KEY }}
+          path: raw-repo
+          filter: blob:none
+          sparse-checkout: |
+            /*
+            !/data/
+          sparse-checkout-cone-mode: false
 
       - uses: actions/setup-python@v5
         with:
@@ -31,11 +54,62 @@ jobs:
         run: python scrape.py
         env:
           MAX_DOWNLOAD_BYTES: "10000000000"
+          RAW_REPO_DIR: ${{ github.workspace }}/raw-repo
+          ONLY: ${{ inputs.only }}
 
       - name: Compute price index
         run: python compute_index.py
 
-      - name: Commit if changed
+      # Raw repo first, so meta.json in the main commit can pin the raw
+      # commit that holds this snapshot's shards. For each rewritten slug:
+      # drop its index entries (old shards are sparse — not on disk), then
+      # stage whatever the scraper wrote. Net effect is an exact replacement,
+      # including deletion when a hospital leaves sharded mode.
+      - name: Commit raw repo
+        id: raw
+        run: |
+          git -C raw-repo config user.name "price-history-bot"
+          git -C raw-repo config user.email "actions@users.noreply.github.com"
+          if [ -f changed_slugs.txt ]; then
+            while read -r slug; do
+              if [ -n "$slug" ]; then
+                git -C raw-repo rm -r -q --cached --sparse --ignore-unmatch "data/$slug"
+                if [ -d "raw-repo/data/$slug" ]; then
+                  git -C raw-repo add --sparse "data/$slug"
+                fi
+              fi
+            done < changed_slugs.txt
+          fi
+          if git -C raw-repo diff --cached --quiet; then
+            echo "No raw changes."
+          else
+            git -C raw-repo commit -F "$GITHUB_WORKSPACE/commit_message.txt"
+            git -C raw-repo push
+          fi
+          echo "sha=$(git -C raw-repo rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Record raw commit in meta.json
+        env:
+          RAW_SHA: ${{ steps.raw.outputs.sha }}
+        run: |
+          python3 - <<'EOF'
+          import json, os
+          from pathlib import Path
+          sha = os.environ["RAW_SHA"]
+          p = Path("changed_slugs.txt")
+          for slug in (p.read_text().split() if p.exists() else []):
+              mp = Path("data") / slug / "meta.json"
+              if not mp.exists():
+                  continue
+              meta = json.loads(mp.read_text())
+              if (Path("raw-repo/data") / slug).is_dir():
+                  meta["raw_commit"] = sha
+              else:
+                  meta.pop("raw_commit", None)
+              mp.write_text(json.dumps(meta, indent=2) + "\n")
+          EOF
+
+      - name: Commit main repo
         run: |
           git config user.name "price-history-bot"
           git config user.email "actions@users.noreply.github.com"

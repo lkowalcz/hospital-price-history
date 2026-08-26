@@ -9,5 +9,6 @@
   "source_etag": "\"cc6d8d648a61a9ec36131ff68df4374c-29\"",
   "status": "sharded",
   "first_seen": "2026-08-12T05:16:48Z",
-  "last_changed": "2026-08-12T05:16:48Z"
+  "last_changed": "2026-08-12T05:16:48Z",
+  "raw_commit": "bab8eacfb818b8516f93aa201c07f4b5688a6d3e"
 }

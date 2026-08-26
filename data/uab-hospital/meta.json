@@ -10,5 +10,6 @@
   "transfer_fingerprint": "f470c328c9a99dca668d4e362242137843326a9a15d8ad20b085381c378b629e",
   "status": "sharded",
   "first_seen": "2026-08-14T04:07:36Z",
-  "last_changed": "2026-08-14T04:07:36Z"
+  "last_changed": "2026-08-14T04:07:36Z",
+  "raw_commit": "bab8eacfb818b8516f93aa201c07f4b5688a6d3e"
 }

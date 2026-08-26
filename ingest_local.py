@@ -4,16 +4,23 @@
 For hospitals whose files must be fetched outside the scraper (oversized
 for runners, IP-blocked CDNs, flaky hosts needing manual resume). Runs the
 same storage/summary/meta pipeline as scrape.py's process().
+
+Sharded content is written into the companion raw repo (a sibling
+hospital-price-history-raw clone, or RAW_REPO_DIR); remember to commit and
+push BOTH repos, raw first. Consider archiving the original download with
+archive_snapshot.py before deleting it.
 """
 
 import json
 import sys
 from pathlib import Path
 
-from scrape import (DATA, ROOT, MAX_STORED_BYTES, MAX_SHARD_TOTAL, clear_content,
-                    discover_mrf_url, ext_of, head, local_fingerprint,
-                    normalize_payload, sha256_file, store_sharded,
-                    store_summarized, utcnow, wants_impersonate)
+import shutil
+
+from scrape import (DATA, RAW_DATA, ROOT, MAX_STORED_BYTES, MAX_SHARD_TOTAL,
+                    clear_content, discover_mrf_url, ext_of, head,
+                    local_fingerprint, normalize_payload, sha256_file,
+                    store_sharded, store_summarized, utcnow, wants_impersonate)
 
 
 def main():
@@ -32,6 +39,7 @@ def main():
     size = path.stat().st_size
 
     clear_content(outdir)
+    shutil.rmtree(RAW_DATA / slug, ignore_errors=True)
     if size <= MAX_SHARD_TOTAL:
         payload = normalize_payload(name, path.read_bytes())
         import hashlib
@@ -40,7 +48,7 @@ def main():
             (outdir / f"standardcharges{ext_of(name)}").write_bytes(payload)
             mode = "stored"
         else:
-            mode = store_sharded(outdir, name, payload)
+            mode = store_sharded(RAW_DATA / slug, name, payload)
         if mode in ("stored", "sharded"):
             store_summarized(outdir, name, path)
     else:

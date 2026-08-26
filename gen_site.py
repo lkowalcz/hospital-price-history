@@ -17,6 +17,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 BASE = "https://lukekowalczyk.com/hospital-price-history"
 REPO = "https://github.com/lkowalcz/hospital-price-history"
+# Payer-level sharded content lives in a companion repo (see README).
+RAW_REPO = "https://github.com/lkowalcz/hospital-price-history-raw"
 
 # Well-known, comparable procedures shown on each hospital page when present.
 FEATURED_DRGS = {
@@ -114,13 +116,20 @@ def hospital_page(h, meta, outdir):
              f'<span class="badge">{esc(meta.get("status", "no data"))}</span></p>']
 
     parts.append("<h2>Tracking status</h2><table>")
-    for label, val in [
-            ("Monitored since", (meta.get("first_seen") or "")[:10]),
-            ("File last changed", (meta.get("last_changed") or "")[:10]),
-            ("File size", f'{meta.get("size_bytes", 0):,} bytes' if meta.get("size_bytes") else "—"),
-            ("Billing codes in summary", f"{len(rows):,}" if rows else "—"),
-            ("Source file", f'<a href="{esc(meta.get("mrf_url", ""))}" rel="nofollow">machine-readable file</a>'
-             if meta.get("mrf_url") else "—")]:
+    status_rows = [
+        ("Monitored since", (meta.get("first_seen") or "")[:10]),
+        ("File last changed", (meta.get("last_changed") or "")[:10]),
+        ("File size", f'{meta.get("size_bytes", 0):,} bytes' if meta.get("size_bytes") else "—"),
+        ("Billing codes in summary", f"{len(rows):,}" if rows else "—"),
+        ("Source file", f'<a href="{esc(meta.get("mrf_url", ""))}" rel="nofollow">machine-readable file</a>'
+         if meta.get("mrf_url") else "—")]
+    if meta.get("status") == "sharded":
+        ref = meta.get("raw_commit") or "main"
+        status_rows.append((
+            "Payer-level rates",
+            f'<a href="{RAW_REPO}/tree/{esc(ref)}/data/{slug}">full data</a> &middot; '
+            f'<a href="{RAW_REPO}/commits/main/data/{slug}">change diffs</a>'))
+    for label, val in status_rows:
         parts.append(f"<tr><th>{label}</th><td>{val}</td></tr>")
     parts.append("</table>")
 
@@ -292,7 +301,8 @@ def index_page(hospitals, metas, outdir):
             'must publish under federal price transparency rules (45 CFR § 180.50). '
             'Files are checked daily; every change — a revised rate, a republished file, '
             'a file quietly taken down — is recorded in '
-            f'<a href="{REPO}">version-controlled history</a>. '
+            f'<a href="{REPO}">version-controlled history</a>, with full payer-level '
+            f'rate data in a <a href="{RAW_REPO}">companion raw-data repo</a>. '
             f'See also the <a href="{BASE}/price-index/">Hospital List Price Index</a>.</p>',
             "<div class=\"wrap\"><table><tr><th>Hospital</th><th>System</th>"
             "<th>Last changed</th><th>Status</th></tr>"]
@@ -315,7 +325,9 @@ def index_page(hospitals, metas, outdir):
         "creator": {"@type": "Person", "name": "Lucas Kowalczyk"},
         "license": "https://creativecommons.org/publicdomain/zero/1.0/",
         "distribution": [{"@type": "DataDownload", "encodingFormat": "application/zip",
-                          "contentUrl": f"{REPO}/archive/refs/heads/main.zip"}],
+                          "contentUrl": f"{REPO}/archive/refs/heads/main.zip"},
+                         {"@type": "DataDownload", "encodingFormat": "application/zip",
+                          "contentUrl": f"{RAW_REPO}/archive/refs/heads/main.zip"}],
         "keywords": ["hospital prices", "price transparency", "healthcare costs",
                      "negotiated rates", "machine-readable files"],
     }
