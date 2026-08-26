@@ -3,11 +3,7 @@
   "location_name": "MaineHealth Maine Medical Center Portland",
   "mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7975/010238552-1760436216_mainehealth_standardcharges.csv",
   "source_filename": "010238552-1760436216_mainehealth_standardcharges.csv",
-  "sha256": "541ed4bc440f38a1f7de88d21b2fe9787309b076a5d6e332f984c7ab7e8bce17",
   "size_bytes": 1184369198,
-  "source_last_modified": "Mon, 09 Mar 2026 17:52:48 GMT",
-  "source_etag": "0x8DE7E04AD2335BE",
-  "transfer_fingerprint": "d48bae6dc160e61e26435e8caeef297dc4b6faf03492fd7efc93248458aae15b",
   "status": "summarized",
   "first_seen": "2026-08-25T14:16:18Z",
   "last_changed": "2026-08-25T14:16:18Z"

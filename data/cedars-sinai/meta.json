@@ -3,11 +3,7 @@
   "location_name": "Cedars-Sinai Medical Center",
   "mrf_url": "https://www.cedars-sinai.org/content/dam/cedars-sinai/billing-insurance/documents/951644600_CEDARS-SINAI-MEDICAL-CENTER_standardcharges.json",
   "source_filename": "951644600_CEDARS-SINAI-MEDICAL-CENTER_standardcharges.json",
-  "sha256": "8c188ab3b02967785256d5867cf760778581e5e849f0fd1141955c2a2dcd2dbf",
   "size_bytes": 883973507,
-  "source_last_modified": "Tue, 16 Dec 2025 16:19:50 GMT",
-  "source_etag": "W/\"34b05d83-6461418d27580-gzip\"",
-  "transfer_fingerprint": "bcf2d431d70b13590dcb16985e6c65da6204ec3c5b551d8c361840153283f613",
   "status": "summarized",
   "first_seen": "2026-08-12T05:15:41Z",
   "last_changed": "2026-08-12T05:15:41Z"

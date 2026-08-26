@@ -12,6 +12,12 @@ on:
 permissions:
   contents: write
 
+# Two scrape runs racing would fight over the two-repo commit dance;
+# queue instead.
+concurrency:
+  group: scrape
+  cancel-in-progress: false
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
