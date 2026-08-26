@@ -69,9 +69,9 @@ while the raw record grows freely.
 
 A daily snapshot is therefore a **pair of commits**: the raw repo is
 committed first, and each sharded hospital's `meta.json` in the main commit
-pins the exact raw commit (`raw_commit`) holding its shards. Shard history
-**before 2026-08-26** lives in this repo's own git history; from that date
-on it lives in the raw repo.
+pins the exact raw commit (`raw_commit`) holding its shards. The raw repo
+carries the complete shard history from the archive's first day — `git log
+data/<slug>/` there is the full payer-level changelog per hospital.
 
 For `summarized` giants, whose repo representation is lossy, the original
 multi-GB download can be preserved via `archive_snapshot.py`, which
