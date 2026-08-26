@@ -95,7 +95,8 @@ python3 scrape.py
 ```
 
 Writes into `data/`, `commit_message.txt`, and (for sharded hospitals) the
-sibling raw clone — commit and push both, raw first. `RAW_REPO_DIR`
+sibling raw clone — pull both repos first (the daily workflow also commits
+to them), then commit and push both, raw first. `RAW_REPO_DIR`
 overrides the raw clone location. `ONLY=slug1,slug2` limits the run.
 
 ## Tests
