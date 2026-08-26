@@ -32,8 +32,8 @@ def main():
     meta_path = outdir / "meta.json"
     old_meta = json.loads(meta_path.read_text()) if meta_path.exists() else {}
 
-    mrf_url = discover_mrf_url(hospital)
     imp = wants_impersonate(hospital)
+    mrf_url = discover_mrf_url(hospital, imp)
     h = head(mrf_url, impersonate=imp, max_time=hospital.get("curl_max_time"))
     name = path.name
     size = path.stat().st_size

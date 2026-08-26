@@ -279,12 +279,16 @@ def wants_impersonate(hospital):
     return hospital.get("fetch") == "impersonate"
 
 
-def discover_mrf_url(hospital):
+def discover_mrf_url(hospital, impersonate):
     raw, _ = fetch_small(hospital["hpt_txt"], timeout=30,
-                         impersonate=wants_impersonate(hospital),
+                         impersonate=impersonate,
                          max_time=hospital.get("curl_max_time"))
+    text = decode_text(raw)
+    if text.lstrip()[:16].casefold().startswith(("<!doctype", "<html", "<head")):
+        # A challenge/block page here is a fetch failure, not a delisting.
+        raise ValueError("cms-hpt.txt returned an HTML page (bot-block?)")
     wanted = normalize_name(hospital["location_name"])
-    for block in parse_hpt_txt(decode_text(raw)):
+    for block in parse_hpt_txt(text):
         if normalize_name(block.get("location-name", "")) == wanted:
             url = block.get("mrf-url")
             if url and not re.match(r"^https?://", url):
@@ -639,14 +643,21 @@ def utcnow():
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def process(hospital, scratch):
+def process(hospital, scratch, impersonate=None):
+    """Scrape one hospital. impersonate: None = per-config (hospitals.json
+    `fetch` plus a learned fetch_escalated flag in meta.json); True/False
+    forces the transport — the fallback ladder in main() retries a failed
+    hospital once with the opposite one."""
     slug = hospital["slug"]
     outdir = DATA / slug
     outdir.mkdir(parents=True, exist_ok=True)
     meta_path = outdir / "meta.json"
     old_meta = json.loads(meta_path.read_text()) if meta_path.exists() else {}
 
-    mrf_url = discover_mrf_url(hospital)
+    imp = impersonate
+    if imp is None:
+        imp = wants_impersonate(hospital) or bool(old_meta.get("fetch_escalated"))
+    mrf_url = discover_mrf_url(hospital, imp)
     if not mrf_url:
         # Losing the listing is itself signal; record it without erasing data.
         if old_meta.get("status") != "missing-from-hpt-txt":
@@ -667,7 +678,6 @@ def process(hospital, scratch):
         and old_meta.get("summary_attempted_sha") != old_meta.get("sha256")
     )
 
-    imp = wants_impersonate(hospital)
     mt = hospital.get("curl_max_time")
     if not upgrade_needed and mrf_url == old_meta.get("mrf_url") and old_meta.get("sha256"):
         h = head(mrf_url, impersonate=imp, max_time=mt)
@@ -760,6 +770,8 @@ def process(hospital, scratch):
         }
         if mode == "metadata-only" and size > MAX_SHARD_TOTAL:
             meta["summary_attempted_sha"] = sha
+        if old_meta.get("fetch_escalated"):
+            meta["fetch_escalated"] = old_meta["fetch_escalated"]
         meta_path.write_text(json.dumps(meta, indent=2) + "\n")
         verb = ("updated" if old_meta.get("sha256") else "first snapshot") \
             if changed else "backfilled summary"
@@ -800,6 +812,24 @@ def record_failure(slug, exc):
     return days
 
 
+def is_escalated(slug):
+    meta_path = DATA / slug / "meta.json"
+    if not meta_path.exists():
+        return False
+    return bool(json.loads(meta_path.read_text()).get("fetch_escalated"))
+
+
+def mark_escalated(slug):
+    """Remember that this hospital needed the impersonate fallback, so
+    future runs go straight to the transport that works."""
+    meta_path = DATA / slug / "meta.json"
+    meta = json.loads(meta_path.read_text()) if meta_path.exists() else {}
+    if not meta.get("fetch_escalated"):
+        meta["fetch_escalated"] = utcnow()
+        meta_path.parent.mkdir(parents=True, exist_ok=True)
+        meta_path.write_text(json.dumps(meta, indent=2) + "\n")
+
+
 def clear_failure_record(slug):
     meta_path = DATA / slug / "meta.json"
     if not meta_path.exists():
@@ -817,12 +847,27 @@ def main():
     only = os.environ.get("ONLY")
     if only:
         hospitals = [h for h in hospitals if h["slug"] in only.split(",")]
-    changes, failures, recovered = [], [], []
+    changes, failures, recovered, escalated = [], [], [], []
     try:
         for hospital in hospitals:
             slug = hospital["slug"]
             try:
-                result = process(hospital, scratch)
+                try:
+                    result = process(hospital, scratch)
+                except Exception as exc:
+                    # Fallback ladder: retry once with the opposite transport
+                    # (plain <-> curl-impersonate). CDNs block one or the
+                    # other, and which one changes over time.
+                    if not IMPERSONATE_BIN:
+                        raise
+                    default_imp = wants_impersonate(hospital) or is_escalated(slug)
+                    print(f"{slug}: {exc}; retrying via "
+                          f"{'plain fetch' if default_imp else 'impersonate'}",
+                          file=sys.stderr, flush=True)
+                    result = process(hospital, scratch, impersonate=not default_imp)
+                    if not default_imp:
+                        mark_escalated(slug)
+                        escalated.append(slug)
                 if clear_failure_record(slug):
                     recovered.append(slug)
                 if result:
@@ -844,6 +889,8 @@ def main():
         parts.append("fetch errors: " + ", ".join(failures))
     if recovered:
         parts.append("recovered: " + ", ".join(recovered))
+    if escalated:
+        parts.append("escalated to impersonate: " + ", ".join(escalated))
     (ROOT / "commit_message.txt").write_text(("; ".join(parts) or "No changes") + "\n")
     (ROOT / "changed_slugs.txt").write_text(
         "".join(s + "\n" for s in REWRITTEN))

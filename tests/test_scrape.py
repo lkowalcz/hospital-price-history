@@ -11,6 +11,7 @@ import csv
 import json
 import tempfile
 import unittest
+import unittest.mock
 from pathlib import Path
 
 import scrape
@@ -203,6 +204,62 @@ class TestSummarizeGolden(unittest.TestCase):
         self.assertTrue(scrape.internal_type("R.C."))
         self.assertFalse(scrape.internal_type("HCPCS"))
         self.assertFalse(scrape.internal_type("MS-DRG"))
+
+
+class TestDiscoverMrfUrl(unittest.TestCase):
+    def fake_fetch(self, body):
+        return lambda url, timeout=60, impersonate=False, max_time=None: (body, {})
+
+    def test_scheme_less_url_fixed(self):
+        # Rush publishes its mrf-url without a scheme.
+        body = b"location-name: Rush\nmrf-url: example.org/standardcharges.csv\n"
+        with unittest.mock.patch.object(scrape, "fetch_small", self.fake_fetch(body)):
+            h = {"hpt_txt": "https://x/cms-hpt.txt", "location_name": "Rush"}
+            self.assertEqual(scrape.discover_mrf_url(h, False),
+                             "https://example.org/standardcharges.csv")
+
+    def test_missing_location_returns_none(self):
+        body = b"location-name: Other\nmrf-url: https://x/mrf.csv\n"
+        with unittest.mock.patch.object(scrape, "fetch_small", self.fake_fetch(body)):
+            h = {"hpt_txt": "https://x/cms-hpt.txt", "location_name": "Rush"}
+            self.assertIsNone(scrape.discover_mrf_url(h, False))
+
+    def test_html_block_page_raises(self):
+        # A challenge page must surface as a fetch failure (so the fallback
+        # ladder retries it), never as a "missing-from-hpt-txt" delisting.
+        body = b"<!DOCTYPE html><html><body>Checking your browser</body></html>"
+        with unittest.mock.patch.object(scrape, "fetch_small", self.fake_fetch(body)):
+            h = {"hpt_txt": "https://x/cms-hpt.txt", "location_name": "Rush"}
+            with self.assertRaises(ValueError):
+                scrape.discover_mrf_url(h, False)
+
+
+class TestEscalation(unittest.TestCase):
+    def setUp(self):
+        self._data = scrape.DATA
+        self._tmp = tempfile.TemporaryDirectory()
+        scrape.DATA = Path(self._tmp.name)
+
+    def tearDown(self):
+        scrape.DATA = self._data
+        self._tmp.cleanup()
+
+    def test_mark_and_read_round_trip(self):
+        self.assertFalse(scrape.is_escalated("h1"))
+        scrape.mark_escalated("h1")
+        self.assertTrue(scrape.is_escalated("h1"))
+        meta = json.loads((scrape.DATA / "h1" / "meta.json").read_text())
+        self.assertIn("fetch_escalated", meta)
+
+    def test_mark_preserves_existing_meta_and_timestamp(self):
+        d = scrape.DATA / "h1"
+        d.mkdir(parents=True)
+        (d / "meta.json").write_text(json.dumps(
+            {"sha256": "abc", "fetch_escalated": "2026-01-01T00:00:00Z"}) + "\n")
+        scrape.mark_escalated("h1")  # already marked: must not overwrite
+        meta = json.loads((d / "meta.json").read_text())
+        self.assertEqual(meta["fetch_escalated"], "2026-01-01T00:00:00Z")
+        self.assertEqual(meta["sha256"], "abc")
 
 
 class TestFilenameFrom(unittest.TestCase):

@@ -114,11 +114,12 @@ should be reviewed as one.
 
 - Hospital CDNs behind Cloudflare/Akamai often refuse non-browser
   User-Agents, despite the CMS requirement that these files be accessible to
-  automated searches; the scraper sends a browser UA. Johns Hopkins, UW
-  Medicine, Mayo Clinic, Mount Sinai, Vanderbilt, UNC, Ascension, Trinity
-  Health, Dignity Health, Advocate, Barnes-Jewish, and Orlando Health block
-  or fail to serve `cms-hpt.txt` at the standard location — future work
-  (likely `curl-impersonate`).
+  automated searches; the scraper sends a browser UA, and hospitals whose
+  CDNs block by TLS fingerprint are fetched via `curl-impersonate`
+  (`"fetch": "impersonate"` in `hospitals.json`). When either transport
+  fails, the scraper automatically retries once with the other; a plain
+  fetch rescued by impersonation is remembered (`fetch_escalated` in
+  `meta.json`) so later runs go straight to what works.
 - UPMC, Houston Methodist, and Memorial Hermann serve a `cms-hpt.txt`
   containing prose instructions to click through their website instead of
   the machine-readable `mrf-url` blocks the CMS format specifies.
