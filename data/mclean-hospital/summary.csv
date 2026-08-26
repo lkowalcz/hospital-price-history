@@ -125,6 +125,113 @@ CDM,PX-98301623,"MRI, Joint Upper Extrem",350.0,262.5,287.03,287.03,1
 CDM,PX-99900338,Repet Ocd Tms Tx Initial W/Map/Motr Threshld/Del&M,822.0,616.5,369.77,454.57,4
 CDM,PX-99900339,Therap Repetitive Ocd Tms Tx Subseq Delivery & Mng,489.0,366.75,244.5,369.77,8
 CDM,PX-99900340,Repet Ocd Tms Tx Subseq Motr Threshld W/Deliv & Mn,610.0,457.5,337.33,369.77,4
+CPT,00104,"Anesthesia, Elctroshock / Ect",216.0,162.0,116.01,139.97,4
+CPT,70336,MRI Tmj Unilat or Bilat,3754.0,2815.5,287.03,287.03,1
+CPT,70543,MRI Orbit/Face/Neck W&W/O Cont,5718.0,4288.5,424.07,424.07,2
+CPT,70543,"MRI, Face, Neck, Combo",541.0,405.75,424.07,424.07,2
+CPT,70551,MRI Brain,376.0,282.0,201.95,287.03,6
+CPT,70551,MRI Brain W/O Cont,4352.0,3264.0,287.03,2820.1,6
+CPT,70551,MRI Brain W/O Cont|REDUCED SERVICES,4352.0,3264.0,287.03,287.03,1
+CPT,70551,MRI Brain|REDUCED SERVICES,376.0,282.0,287.03,287.03,1
+CPT,70553,MRI Brain Combo,578.0,433.5,374.54,424.07,8
+CPT,70553,MRI Brain W&W/O Cont,5654.0,4240.5,424.07,3663.79,8
+CPT,72141,MRI C-Spine W/O Cont,3849.0,2886.75,287.03,287.03,4
+CPT,72141,"MRI, Cerv Spine",377.0,282.75,287.03,287.03,4
+CPT,72146,MRI T-Spine W/O Cont,3860.0,2895.0,287.03,287.03,3
+CPT,72146,"MRI, Dorsal Spine",377.0,282.75,287.03,287.03,3
+CPT,72148,MRI L-Spine W/O Cont,3825.0,2868.75,287.03,2054.41,5
+CPT,72148,MRI L-Spine W/O Cont|REDUCED SERVICES,3825.0,2868.75,307.41,307.41,1
+CPT,72148,"MRI, Lumbar Spine",328.0,246.0,176.17,287.03,5
+CPT,72148,"MRI, Lumbar Spine|REDUCED SERVICES",328.0,246.0,307.41,307.41,1
+CPT,72156,MRI C-Spine W&W/O Cont,5623.0,4217.25,424.07,424.07,2
+CPT,72156,"MRI, Cerv Spine Combo",578.0,433.5,424.07,424.07,2
+CPT,72157,MRI T-Spine W&W/O Cont,5187.0,3890.25,424.07,424.07,1
+CPT,72157,"MRI, Dorsal Spine Combo",505.0,378.75,424.07,424.07,1
+CPT,72158,MRI L-Spine W&W/O Cont,5558.0,4168.5,424.07,424.07,1
+CPT,72158,"MRI, Lumbar Spine Combo",505.0,378.75,424.07,424.07,1
+CPT,72195,MRI Pelvis W/O Cont,4319.0,3239.25,287.03,287.03,2
+CPT,72195,"MRI, Pelvis, W/O Contrast",370.0,277.5,287.03,287.03,2
+CPT,72197,MRI Pelvis W&W/O Cont,5796.0,4347.0,424.07,3113.03,2
+CPT,73221,MRI Upr Ext Joint W/O Cont,4076.0,3057.0,287.03,287.03,1
+CPT,73221,"MRI, Joint Upper Extrem",350.0,262.5,287.03,287.03,1
+CPT,80164,Drug Screen Quant Dipropylacetic Acid Total,105.0,78.75,68.04,68.04,1
+CPT,83036,Hemoglobin Glycosylated (A1c),75.0,56.25,48.6,48.6,1
+CPT,84443,Thyroid Stimulating Hormone (Tsh),131.0,98.25,84.89,84.89,1
+CPT,86780,Treponema Pallidum Antibody,103.0,77.25,66.74,66.74,1
+CPT,90791,Pf Psychiatric Diagnostic Eval,550.0,412.5,295.41,304.15,3
+CPT,90791,Psychiatric Diagnostic Evaluation,359.0,269.25,192.82,198.53,3
+CPT,90792,Pf Psych Diag Evaluation W/Med Serv,618.0,463.5,331.93,341.75,2
+CPT,90792,Psych Diag Evaluation W/Med Service,370.0,277.5,198.73,204.61,2
+CPT,90832,HC Psych W/Patient 30 Minutes,149.0,111.75,80.03,82.4,2
+CPT,90832,Hcpr Psych W/Patient 30 Minutes,237.0,177.75,127.29,131.06,2
+CPT,90833,HC Psych W/Patient W/E&M Srvcs 30 Min,126.0,94.5,67.67,69.68,2
+CPT,90833,Hcpr Psych W/Patient W/E&M Srvcs 30 Min,218.0,163.5,117.09,120.55,2
+CPT,90834,HC Psych W/Patient 45 Minutes,223.0,167.25,119.77,144.5,3
+CPT,90834,Hcpr Psych W/Patient 45 Minutes,361.0,270.75,193.89,233.93,3
+CPT,90836,HC Psych W/Patient W/E&M Srvcs 45 Min,207.0,155.25,111.18,114.47,2
+CPT,90836,Hcpr Psych W/Patient W/E&M Srvcs 45 Min,277.0,207.75,148.78,153.18,2
+CPT,90837,HC Psych W/Patient 60 Minutes,337.0,252.75,181.0,186.36,2
+CPT,90837,Hcpr Psych W/Patient 60 Minutes,461.0,345.75,247.6,254.93,2
+CPT,90838,HC Psych W/Patient W/E&M Srvcs 60 Min,332.0,249.0,178.32,178.32,1
+CPT,90838,Hcpr Psych W/Patient W/E&M Srvcs 60 Min,366.0,274.5,196.58,196.58,1
+CPT,90846,Pf Psy Thrpy Family W/O Pt,340.0,255.0,188.02,188.02,1
+CPT,90846,Psych Therapy Family W/O Pt,233.0,174.75,128.85,128.85,1
+CPT,90847,Pf Psy Thrpy Family W/Pt,355.0,266.25,190.67,196.32,2
+CPT,90847,Psych Therapy Family W/Pt,279.0,209.25,149.85,154.29,2
+CPT,90853,Pf Psy/Cd Group Therapy,96.0,72.0,51.56,53.09,2
+CPT,90853,Psych Grp Therapy 15 Min,175.0,131.25,93.99,96.78,2
+CPT,90867,"Ocd Transcranial Magnetic Stimulation Treatment,Planning",879.0,659.25,369.77,486.09,4
+CPT,90867,Repet Ocd Tms Tx Initial W/Map/Motr Threshld/Del&M,822.0,616.5,369.77,454.57,4
+CPT,90867,Transcranial Mag Stim Ther Tx Initl,822.0,616.5,369.77,454.57,4
+CPT,90867,"Transcranial Magnetic Stimulation Treatment,Planning",879.0,659.25,369.77,486.09,4
+CPT,90868,"Ocd Transcranial Magnetic Stimulation Treatment,Delivery/Mgmt",296.0,222.0,158.98,369.77,7
+CPT,90868,Therap Repetitive Ocd Tms Tx Subseq Delivery & Mng,489.0,366.75,244.5,369.77,8
+CPT,90868,Transcranial Mag Stim Ther Tx Per,489.0,366.75,244.5,369.77,8
+CPT,90868,"Transcranial Magnetic Stimulation Treatment,Delivery/Management",296.0,222.0,158.98,369.77,7
+CPT,90869,Repet Ocd Tms Tx Subseq Motr Threshld W/Deliv & Mn,610.0,457.5,337.33,369.77,4
+CPT,90869,Repet Ocd Tms Tx Subseq Motr Threshld W/Deliv & Mngt,914.0,685.5,369.77,505.44,4
+CPT,90869,Repet Tms Tx Subseq Motr Threshld W/Deliv & Mngt,914.0,685.5,369.77,505.44,4
+CPT,90869,Transcranial Mag Stim Ther Tx Redet,610.0,457.5,337.33,369.77,4
+CPT,90870,Electroconvulsive Therapy,852.0,639.0,92.38,630.06,15
+CPT,93005,Ekg Routine Tracing Only,155.0,116.25,70.53,100.44,4
+CPT,95816,Eeg Awake/Drowsy,500.0,375.0,369.77,369.77,1
+CPT,95819,Eeg Awake/Asleep,580.0,435.0,369.77,369.77,2
+CPT,96116,Exam Neurobehavrl by Psych per Hr,448.0,336.0,240.62,268.8,3
+CPT,96116,Pf Exam Neurobehavrl by Psych / Hr,134.0,100.5,71.97,74.1,2
+CPT,96121,Neurobehavioral Status Xm Phys/Qhp Ea Addl Hour,401.0,300.75,66.06,240.6,6
+CPT,96130,Psychological Tst Eval Svc Phys/Qhp First Hour,559.0,419.25,95.12,309.13,2
+CPT,96131,Psychological Tst Eval Svc Phys/Qhp Ea Addl Hour,425.0,318.75,72.44,235.03,2
+CPT,96132,Neuropsychological Tst Eval Phys/Qhp 1st Hour,546.0,409.5,90.77,327.6,6
+CPT,96133,Neuropsychological Tst Eval Phys/Qhp Ea Addl Hr,419.0,314.25,69.29,251.4,6
+CPT,96136,Psyl/Nrpsycl Tst Phys/Qhp 2+ Tst 1st 30 Min,127.0,95.25,20.95,76.2,6
+CPT,96137,Psycl/Nrpsycl Tst Phys/Qhp 2+ Tst Ea Addl 30 Min,98.0,73.5,16.65,58.8,6
+CPT,96138,Psycl/Nrpsycl Tst Tech 2+ Tst 1st 30 Min,217.0,162.75,32.23,130.2,6
+CPT,96139,Psycl/Nrpsycl Tst Tech 2+ Tst Ea Addl 30 Min,217.0,162.75,32.23,130.2,6
+CPT,96365,IV Infus Non-Chemo Initial Up to 1 Hr - 96365,800.0,600.0,250.18,608.0,8
+CPT,98000,Psych Synchronous Audio-Video Visit New Sf Mdm 15 Min,234.0,175.5,107.28,129.4,2
+CPT,98000,Synchronous Audio-Video Visit New Sf Mdm 15 Min,234.0,175.5,129.4,129.4,1
+CPT,98002,Psych Synchronous Audio-Video Visit New Mod Mdm 45 Min,599.0,449.25,299.73,331.25,2
+CPT,98002,Synchronous Audio-Video Visit New Mod Mdm 45 Min,599.0,449.25,331.25,331.25,1
+CPT,98005,Psych Synchronous Audio-Video Visit Est Low Mdm 20 Min,236.0,177.0,130.51,149.31,2
+CPT,98005,Synchronous Audio-Video Visit Est Low Mdm 20 Min,236.0,177.0,130.51,130.51,1
+CPT,98006,Psych Synchronous Audio-Video Visit Est Mod Mdm 30 Min,367.0,275.25,202.95,221.75,2
+CPT,98006,Synchronous Audio-Video Visit Est Mod Mdm 30 Min,367.0,275.25,202.95,202.95,1
+CPT,98007,Psych Synchronous Audio-Video Vst Est High Mdm 40 Min,516.0,387.0,285.35,299.73,2
+CPT,98007,Synchronous Audio-Video Vst Est High Mdm 40 Min,516.0,387.0,285.35,285.35,1
+CPT,98013,Psych Synchronous Audio-Only Visit Est Low Mdm 20 Min,236.0,177.0,130.51,137.14,2
+CPT,98013,Synchronous Audio-Only Visit Est Low Mdm 20 Min,236.0,177.0,130.51,130.51,1
+CPT,98014,Psych Synchronous Audio-Only Visit Est Mod Mdm 30 Min,367.0,275.25,220.2,220.2,2
+CPT,98014,Synchronous Audio-Only Visit Est Mod Mdm 30 Min,367.0,275.25,220.2,220.2,1
+CPT,99211,Psych Est/ New Patient (99211) - Low Level (<15 Min),117.0,87.75,64.7,64.7,1
+CPT,99213,"Office Visit, Established Pat",281.0,210.75,155.39,182.09,2
+CPT,99213,Psych Est Patient (99213) - Medium Level (16-45 Min),229.0,171.75,126.64,153.03,6
+CPT,99214,"Office Visit, Established Pat",415.0,311.25,222.9,229.5,2
+CPT,99215,"Office Visit, Established Pat",516.0,387.0,153.03,320.74,15
+CPT,99231,Sbsq Hospital IP/Obs Care Sf/Low Mdm 25 Minutes,62.0,46.5,33.3,33.3,1
+CPT,99417,Psych - Prolonged Outpatient E/M Service Each 15 Minutes,128.0,96.0,70.78,70.78,1
+HCPCS,G0177,Opps/Php/Iop; Train & Educ Serv,179.0,134.25,96.14,107.4,2
+HCPCS,G2082,Visit Esketamine 56m or Less,2818.0,2113.5,1366.15,1558.35,3
+HCPCS,G2083,"Visit Esketamine, > 56m",4007.0,3005.25,1722.38,2596.54,6
 MS-DRG,057,Degenerative Nervous System Disorders Without McC,43565.0,32673.75,1216.89,1216.89,1
 MS-DRG,880,Acute Adjustment Reaction And Psychosocial Dysfunction,19478.0,14608.5,1184.0,1184.0,4
 MS-DRG,881,Depressive Neuroses,24734.0,18550.5,1162.08,1162.08,4

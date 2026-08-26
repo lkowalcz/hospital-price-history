@@ -3,13 +3,9 @@
   "location_name": "Boston Medical Center",
   "mrf_url": "https://www.bmchealthsystem.org/wp-content/uploads/043314093_BostonMedicalCenter_standardcharges.csv.zip",
   "source_filename": "043314093_BostonMedicalCenter_standardcharges.csv",
-  "sha256": "a89a6a3073ad4c6c80b1be104c735b66daeaa75c8ad7ae331e83c1288f563150",
   "size_bytes": 482984076,
-  "source_last_modified": "Thu, 26 Mar 2026 15:29:35 GMT",
-  "source_etag": "\"69c550df-29052ce\"",
   "status": "sharded",
   "first_seen": "2026-08-12T06:16:55Z",
   "last_changed": "2026-08-12T06:16:55Z",
-  "transfer_fingerprint": "699f20028ae6b31503d9ce7d8777a316d98a39d3574deac3d6263118aaab7139",
   "raw_commit": "bab8eacfb818b8516f93aa201c07f4b5688a6d3e"
 }

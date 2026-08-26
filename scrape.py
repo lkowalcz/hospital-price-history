@@ -46,6 +46,10 @@ import zipfile
 from datetime import datetime, timezone
 from pathlib import Path
 
+# Some MRFs carry very large quoted fields; never let the csv module's
+# default 128 KB field cap abort a summarization.
+csv.field_size_limit(10**9)
+
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
 # Sharded (payer-level) content lives in a companion repo so this repo stays
@@ -365,6 +369,25 @@ def ext_of(name):
 
 # ----------------------------------------------------------------- sharding
 
+def csv_records(lines):
+    """Group physical lines into CSV records.
+
+    A quoted field can contain newlines, so a record is complete only when
+    its double-quote count balances; fragmenting such records across shards
+    would scramble the file's row structure. Single-line records pass
+    through byte-identical, keeping shards stable for the common case.
+    """
+    buf, quotes = [], 0
+    for line in lines:
+        buf.append(line)
+        quotes += line.count('"')
+        if quotes % 2 == 0:
+            yield "\n".join(buf)
+            buf, quotes = [], 0
+    if buf:  # unbalanced trailer (malformed CSV): keep the bytes anyway
+        yield "\n".join(buf)
+
+
 def bucket_of(line):
     return int.from_bytes(hashlib.sha1(line.encode()).digest()[:4], "big") % SHARD_COUNT
 
@@ -404,7 +427,7 @@ def store_sharded(outdir, name, payload):
                 break
         header_line_count = reader.line_num
         header_text = "\n".join(lines[:header_line_count]) + "\n"
-        body = [l for l in lines[header_line_count:] if l]
+        body = [r for r in csv_records(lines[header_line_count:]) if r]
         write_shards(outdir, "_header.csv", header_text, shard_lines(body), ".csv")
         return "sharded"
     if lower.endswith(".json"):
@@ -431,6 +454,22 @@ SUMMARY_COLUMNS = [
     "gross_charge", "discounted_cash",
     "min_negotiated", "max_negotiated", "payer_entries",
 ]
+
+# Hospital-internal code systems (chargemaster and revenue-center codes).
+# They are kept when they are a row's primary (first) code, but prices are
+# not fanned out to them from later slots: chargemaster rows often carry
+# LOCAL + CDM + RC side by side, and duplicating every row across all three
+# multiplies the summary without adding cross-hospital signal.
+INTERNAL_CODE_TYPES = {"LOCAL", "CDM", "RC"}
+_internal_cache = {}
+
+
+def internal_type(t):
+    r = _internal_cache.get(t)
+    if r is None:
+        r = re.sub(r"[^A-Z0-9]", "", t.upper()) in INTERNAL_CODE_TYPES
+        _internal_cache[t] = r
+    return r
 
 
 class CodeAgg:
@@ -476,12 +515,19 @@ def summarize_csv(path, out_path):
             return False
         idx = {name.strip().casefold(): i for i, name in enumerate(header)}
         desc_i = idx.get("description")
-        code_i = idx.get("code|1")
-        ctype_i = idx.get("code|1|type")
+        # All code|N slots: a row often carries several codes for one service
+        # (MS-DRG in slot 1, CPT in slot 2, ...); its prices count toward
+        # every code it is billed under, not just the first.
+        code_cols = []
+        for name, i in idx.items():
+            m = re.fullmatch(r"code\|(\d+)", name)
+            if m:
+                code_cols.append((int(m.group(1)), i, idx.get(f"code|{m.group(1)}|type")))
+        code_cols.sort()
         gross_i = idx.get("standard_charge|gross")
         cash_i = idx.get("standard_charge|discounted_cash")
         neg = [i for name, i in idx.items() if "negotiated_dollar" in name]
-        if desc_i is None or code_i is None or not neg:
+        if desc_i is None or not code_cols or not neg:
             return False
 
         def cell(row, i):
@@ -489,33 +535,63 @@ def summarize_csv(path, out_path):
 
         agg = {}
         for row in reader:
-            key = (cell(row, ctype_i), cell(row, code_i), cell(row, desc_i)[:200])
-            a = agg.setdefault(key, CodeAgg())
-            a.gross = a.gross or to_float(cell(row, gross_i))
-            a.cash = a.cash or to_float(cell(row, cash_i))
+            desc = cell(row, desc_i)[:200]
+            keys = []
+            for _, ci, ti in code_cols:
+                code = cell(row, ci)
+                if code:
+                    ctype = cell(row, ti)
+                    if keys and internal_type(ctype):
+                        continue
+                    k = (ctype, code, desc)
+                    if k not in keys:
+                        keys.append(k)
+            if not keys:  # un-coded row (drugs, room rates): keep, under a blank code
+                keys = [("", "", desc)]
+            aggs = [agg.setdefault(k, CodeAgg()) for k in keys]
+            gross, cash = to_float(cell(row, gross_i)), to_float(cell(row, cash_i))
+            for a in aggs:
+                a.gross = a.gross or gross
+                a.cash = a.cash or cash
             for i in neg:
                 v = to_float(cell(row, i))
                 if v is not None:
-                    a.add_negotiated(v)
+                    for a in aggs:
+                        a.add_negotiated(v)
     return write_summary(agg, out_path)
 
 
 def aggregate_items(items):
-    """Fold CMS v3 standard_charge_information items into per-code aggregates."""
+    """Fold CMS v3 standard_charge_information items into per-code aggregates.
+
+    An item's prices count toward every entry in its code_information list
+    (e.g. both the MS-DRG and the CPT it is billed under), not just the
+    first — except hospital-internal types (see INTERNAL_CODE_TYPES), which
+    only count when they are the item's primary code.
+    """
     agg = {}
     for item in items:
         desc = str(item.get("description", ""))[:200]
-        codes = item.get("code_information") or [{}]
-        ctype = str(codes[0].get("type", ""))
-        code = str(codes[0].get("code", ""))
-        a = agg.setdefault((ctype, code, desc), CodeAgg())
+        keys = []
+        for c in item.get("code_information") or [{}]:
+            ctype = str(c.get("type", ""))
+            if keys and internal_type(ctype):
+                continue
+            k = (ctype, str(c.get("code", "")), desc)
+            if k not in keys:
+                keys.append(k)
+        aggs = [agg.setdefault(k, CodeAgg()) for k in keys]
         for sc in item.get("standard_charges") or []:
-            a.gross = a.gross or to_float(sc.get("gross_charge"))
-            a.cash = a.cash or to_float(sc.get("discounted_cash"))
+            gross = to_float(sc.get("gross_charge"))
+            cash = to_float(sc.get("discounted_cash"))
+            for a in aggs:
+                a.gross = a.gross or gross
+                a.cash = a.cash or cash
             for p in sc.get("payers_information") or []:
                 v = to_float(p.get("standard_charge_dollar"))
                 if v is not None:
-                    a.add_negotiated(v)
+                    for a in aggs:
+                        a.add_negotiated(v)
     return agg
 
 

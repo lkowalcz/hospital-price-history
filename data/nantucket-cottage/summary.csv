@@ -835,6 +835,669 @@ CDM,SUP-ITM-10240784,SYSTEM KYLEENA 19.5MG LEVONORGESTREL-RELEASING INTRAUTERINE
 CDM,SUP-ITM-10278658,SCREW SPINAL 3.5X80MM ANTHEM TI NONLOCKING,132.0,99.0,122.56,122.56,1
 CDM,SUP-ITM-10328718,SUTURE HI-FI 2 36IN POLYESTER CO-BRAIDEDED 1STRAND NO NEEDLE BLUE WHITE BX/12EA,81.78,61.33,75.93,75.93,1
 CDM,SUP-ITM-10328720,SUTURE HI-FI 2 HC-5 40IN POLYESTER BRAIDED TAPER 1STRAND 1/2 CIRCLE HIGH STRENGTH WHITE BX/12EA,66.75,50.06,61.98,61.98,1
+CPT,0001A,Imm Admn Sarscov2 30mcg/0.3ml Dil Recon 1st Dose,75.0,56.25,58.2,58.2,1
+CPT,0002A,Imm Admn Sarscov2 30mcg/0.3ml Dil Recon 2nd Dose,75.0,56.25,58.2,58.2,1
+CPT,0077U,Ig Paraprotein Qual Imprcip&Ms Bld/UR W/Isotype,100.0,75.0,92.85,94.28,2
+CPT,0241U,Nfct Ds Rna 4 Targets Upper Respiratory Specimen,478.0,358.5,370.93,455.06,11
+CPT,10005,Fine Needle Aspiration Bx W/US Gdn 1st Lesion,400.0,300.0,273.93,894.79,6
+CPT,10030,Image-Guided Catheter Fluid Collection Drainage,798.0,598.5,662.51,835.47,3
+CPT,10120,Incision/Remove FB Subq Smp,436.0,327.0,359.17,359.17,1
+CPT,10160,Aspiration Abscess/Hema/Bulla/Cyst,193.0,144.75,359.17,359.17,1
+CPT,11042,Debride Skin/Subq Tissue,200.0,150.0,359.17,474.42,2
+CPT,11042,Pf Debr Skin/Subq Tissue,223.0,167.25,474.42,474.42,1
+CPT,11102,Tangential Biopsy Skin Single Lesion,226.0,169.5,201.78,252.7,3
+CPT,11104,Punch Biopsy Skin Single Lesion,285.0,213.75,508.1,508.1,2
+CPT,11200,Remove Tag Skin <15,111.0,83.25,201.78,201.78,1
+CPT,11300,Shave Lesn Trunk/Arm/Leg <0.5cm,131.0,98.25,201.78,201.78,1
+CPT,11400,Exc Lesn Bgn Trunk/Arm/Leg <0.5cm,1077.0,807.75,662.51,835.47,2
+CPT,11400,Pf Exc Lesn Bgn Trnk/Arm <0.5cm,355.0,266.25,835.47,835.47,1
+CPT,11401,Exc Lesn Bgn Trunk/Arm/Leg .6-1.0cm,1077.0,807.75,359.17,835.75,4
+CPT,11401,Pf Exc Lesn Bgn Trnk/Arm .6-1.0cm,494.0,370.5,383.34,508.1,2
+CPT,11402,Exc Lesn Bgn Trunk/Arm/Leg 1.1-2.0,1077.0,807.75,662.51,999.99,3
+CPT,11402,Pf Exc Lesn Bgn Trnk/Arm 1.1-2.0cm,542.0,406.5,503.25,894.79,2
+CPT,11403,Exc Lesn Bgn Trunk/Arm/Leg 2.1-3.0,1077.0,807.75,662.51,894.79,2
+CPT,11403,Pf Exc Lesn Bgn Trnk/Arm 2.1-3.0cm,691.0,518.25,894.79,894.79,1
+CPT,11420,Exc Lesn Bgn Sclp/Hnd/Gen <0.5cm,1077.0,807.75,999.99,999.99,1
+CPT,11420,Pf Exc Lesn Bgn Sclp/Hnd <0.5cm,392.0,294.0,363.97,363.97,1
+CPT,11421,Exc Lesn Bgn Sclp/Hnd/Gen 0.6-1.0cm,1077.0,807.75,662.51,894.79,2
+CPT,11421,Pf Exc Lesn Bgn Sclp/Hnd 0.6-1.0cm,530.0,397.5,894.79,894.79,1
+CPT,11441,Exc Lesn Bgn Face/Ear/Lip 0.6-1.0cm,1077.0,807.75,662.51,662.51,1
+CPT,11601,Exc Lesn Mal Trunk/Arm/Leg .6-1.0cm,655.0,491.25,894.79,894.79,1
+CPT,11601,Pf Exc Lesn Mal Trnk/Arm .6-1.0cm,714.0,535.5,894.79,894.79,1
+CPT,11602,Exc Lesn Mal Trunk/Arm/Leg 1.1-2.0,1077.0,807.75,359.17,359.17,1
+CPT,11606,Exc Lesn Mal Trunk/Arm/Leg >4.0cm,3467.0,2600.25,1923.94,2690.39,3
+CPT,11606,Pf Exc Lesn Mal Trnk/Arm >4.0cm,1486.0,1114.5,1153.14,1923.94,3
+CPT,11621,Exc Lesn Mal Sclp/Hnd/Gen 0.6-1.0cm,1077.0,807.75,662.51,894.79,2
+CPT,11621,Pf Exc Lesn Mal Sclp/Hnd 0.6-1.0cm,721.0,540.75,894.79,894.79,1
+CPT,11640,Exc Lesn Mal Face/Ear/Lip <0.5cm,1077.0,807.75,835.75,835.75,1
+CPT,11640,Pf Exc Lesn Mal Face/Ear <0.5cm,598.0,448.5,464.05,464.05,1
+CPT,11641,Exc Lesn Mal Face/Ear/Lip 0.6-1.0cm,724.0,543.0,835.47,835.47,1
+CPT,11641,Pf Exc Lesn Mal Face/Ear 0.6-1.0cm,760.0,570.0,835.47,835.47,1
+CPT,12031,Pf Rpr Lac Int Sclp/Ax <2.5cm,340.0,255.0,474.42,474.42,1
+CPT,12031,Rpr Lac Intermd Scalp/Axil <2.5cm,577.0,432.75,359.17,474.42,2
+CPT,16020,Dress/Debride Burn <5% Total Sm,272.0,204.0,211.07,211.07,1
+CPT,16020,Pf Dress/Debr Burn <5% Sm,157.0,117.75,121.83,121.83,1
+CPT,17000,Dest Lesn Premalignant 1st Lesion,257.0,192.75,201.78,235.94,2
+CPT,17000,Pf Dest Lesn Premalig 1st Lesion,274.0,205.5,235.94,235.94,1
+CPT,17110,Destruct Benign Lesion Up to 14 Les,297.0,222.75,201.78,201.78,1
+CPT,17272,Dest Lesn Mal Sclp/Hnd/Gen 1.1-2.0,697.0,522.75,252.7,252.7,1
+CPT,17272,Pf Dest Lesn Mal Sclp/Hnd 1.1-2.0cm,609.0,456.75,252.7,252.7,1
+CPT,20552,Inject Trigger Point 1-2 Muscle(S),723.0,542.25,283.01,671.31,4
+CPT,20552,Pf Inject Trigger Point 1-2 Muscle,185.0,138.75,171.77,350.56,3
+CPT,20553,Inject Trigger Pt 3+ Muscle Groups,698.0,523.5,283.01,283.01,1
+CPT,21552,Exc Tum Tiss Neck/Ant Thx Subq 3+,2138.0,1603.5,3639.81,3639.81,1
+CPT,21552,Pf Exc Tum Tiss N/Ant Thx Subq 3+,2175.0,1631.25,3639.81,3639.81,1
+CPT,21930,Exc Tumor Back/Flank <3cm,1888.0,1416.0,1572.96,1572.96,1
+CPT,21931,Exc Tumor Back/Flank Subq 3cm or Gr,2095.0,1571.25,1572.96,1572.96,1
+CPT,21931,Pf Exc Tumr Back/Flank Subq 3cm +,2264.0,1698.0,1572.96,1572.96,1
+CPT,26055,Tendon Sheath Incision,3141.0,2355.75,2035.32,2035.32,1
+CPT,31899,Tracheotomy Tube Change,45.0,33.75,230.53,230.53,1
+CPT,36415,Venipuncture,16.0,12.0,12.42,15.23,6
+CPT,36416,Collect Finger/Heel/Ear Stick,16.0,12.0,15.12,15.12,1
+CPT,36430,Transfusion Blood/Comp,3527.0,2645.25,555.98,2736.95,2
+CPT,36589,Pf Rem Tnl Cv W/O Port/Pump,673.0,504.75,734.15,734.15,1
+CPT,36589,Rem Tnld Cv Cath W/O Port/Pump,1913.0,1434.75,709.02,734.15,2
+CPT,36590,Pf Rem Tnl Cv Acc W/Port/Pump,1279.0,959.25,1208.78,1975.58,2
+CPT,36590,Rem Tnld Cv Access W/Port/Pump,2965.0,2223.75,709.02,2802.22,3
+CPT,36591,Collect Blood Port/Access Dvc,138.0,103.5,121.77,163.93,3
+CPT,36592,HC Collect Blood From Catheter Venous,170.0,127.5,121.77,163.93,2
+CPT,36593,Declot Port Thrombolytic Agent,262.0,196.5,329.78,421.83,2
+CPT,38222,Diagnostic Bone Marrow Biopsies & Aspirations,442.0,331.5,3398.51,3398.51,2
+CPT,40800,Drain Absc/Cyst Vestib Mouth Smp,1267.0,950.25,1160.7,1160.7,1
+CPT,40800,Drg Absc Cst Hmtma Vestibule Mouth Smpl,584.0,438.0,535.0,535.0,1
+CPT,43235,Egd Flex Dx W/Brushing/Washing,1913.0,1434.75,870.88,1807.98,7
+CPT,43235,Esophagogastroduodenoscopy Transoral Diagnostic,1538.0,1153.5,1192.34,1453.56,5
+CPT,43239,Egd Flex Transoral W/Biopsy,1913.0,1434.75,870.88,1807.98,8
+CPT,43239,Egd Transoral Biopsy Single/Multiple,1701.0,1275.75,1192.34,1607.62,5
+CPT,43244,Egd W/Band Ligate Varices Esop/Gast,1630.0,1222.5,1513.46,1513.46,1
+CPT,43249,Egd Flex W/Balloon Dilation <30mm,1913.0,1434.75,1696.3,2412.49,3
+CPT,44386,Endo Eval Small Intest Pouch Biopsy,2965.0,2223.75,1082.6,1082.6,1
+CPT,44970,Laparoscopic Appendectomy,2611.0,1958.25,2282.01,7419.84,4
+CPT,45330,Pf Sigmoidoscopy Flex,656.0,492.0,1159.47,1159.47,1
+CPT,45330,Sigmoidoscopy Flexible,1077.0,807.75,851.82,1159.47,3
+CPT,45331,Sigmoidoscopy Flx W/Biopsy Single/Multiple,850.0,637.5,789.23,1159.47,2
+CPT,45331,Sigmoidoscopy W/Biopsy,1913.0,1434.75,1159.47,1776.22,2
+CPT,45378,Colonoscopy Flexible,3451.0,2588.25,851.82,3285.35,8
+CPT,45378,Colonoscopy Flx Dx W/Collj Spec When Pfrmd,3451.0,2588.25,851.82,3285.35,14
+CPT,45380,Colonoscopy W/Biopsy Single/Multiple,2524.0,1893.0,1120.45,2385.43,16
+CPT,45385,Colonoscopy Flex W/Rem Tumor Snare,2524.0,1893.0,1120.45,2343.53,6
+CPT,45385,Colsc Flx W/Rmvl of Tumor Polyp Lesion Snare Tq,2524.0,1893.0,1120.45,2343.53,10
+CPT,46220,Excision Single External Papilla or Tag Anus,2234.0,1675.5,1120.45,1120.45,1
+CPT,46260,Hemorrhoidectomy Int & Xtrnl 2/> Column/Gro,2753.0,2064.75,2669.73,2669.73,1
+CPT,46930,"Dest Intrnl Hemrrhds, Thermal",698.0,523.5,1120.45,1499.49,2
+CPT,46930,Destruction Internal Hemorrhoid Thermal Energy,735.0,551.25,1499.49,1499.49,1
+CPT,47000,Biopsy Liver Needle Perc,2182.0,1636.5,1572.96,1692.76,2
+CPT,47562,Laparoscopy Surg Cholecystectomy,3258.0,2443.5,3025.05,5255.62,3
+CPT,49083,Abdom Paracentesis Dx/Ther W/Imaging Guidance,564.0,423.0,1192.34,1192.34,2
+CPT,49083,Abdominal Paracentesis W/ Imaging,2778.0,2083.5,870.88,1192.34,3
+CPT,51702,Catheter Bladder Smp,316.0,237.0,163.93,163.93,1
+CPT,51702,Pf Catheter Bladder Smp,448.0,336.0,163.93,163.93,1
+CPT,52000,Cystourethroscopy,2182.0,1636.5,642.96,2025.99,5
+CPT,55250,Vasectomy Semen Exam Postop,1913.0,1434.75,1989.5,1989.5,2
+CPT,57522,Conization Cervix Loop Elect Exc,3467.0,2600.25,2700.25,2700.25,1
+CPT,58300,Insert Intrauterine Device- 58300,1430.0,1072.5,89.94,1327.76,3
+CPT,58300,Pf Insert Intrauterine Device,250.0,187.5,232.13,232.13,1
+CPT,58301,Remove Device Intrauterine Iud,653.0,489.75,189.75,189.75,1
+CPT,58558,Hysteroscopy Biopsy Endometrium,4466.0,3349.5,2700.25,4146.68,5
+CPT,58558,Pf Hysteroscopy W/Biopsy Sample,2019.0,1514.25,1566.74,3775.5,3
+CPT,58562,Hysteroscopy Rem FB Impacted,1440.0,1080.0,1337.04,2700.25,2
+CPT,58563,Hysteroscopy Ablat Endometrial,1698.0,1273.5,4718.12,4718.12,1
+CPT,58661,Laparoscopy W/Rmvl Adnexal Structures|BILATERAL PROCEDURE,3544.0,2658.0,7883.43,7883.43,1
+CPT,59025,Fetal Nonstress Test,139.0,104.25,107.86,132.33,5
+CPT,59025,Test Non Stress Fetal,1046.0,784.5,811.7,995.79,5
+CPT,59412,External Cephalic Version W/WO Tocolysis,854.0,640.5,2700.25,2700.25,1
+CPT,59412,Version Cephalic External,800.0,600.0,2700.25,2700.25,1
+CPT,59812,Surg Tx Abortion Incmpl,4210.0,3157.5,2700.25,2700.25,2
+CPT,59820,Surg Tx Abortion Missed 1st Trimest,5095.0,3821.25,2700.25,3953.72,2
+CPT,59820,Tx Missed Abortion First Trimester Surgical,1708.0,1281.0,1325.41,1325.41,1
+CPT,62270,Lumbar Puncture Diagnostic,716.0,537.0,822.33,822.33,2
+CPT,62270,Pf Puncture Spinal Lumbar Diag,182.0,136.5,822.33,822.33,2
+CPT,62323,Njx Dx/Ther Sbst Intrlmnr Lmbr/Sac W/Img Gdn,2392.0,1794.0,684.77,880.71,5
+CPT,70150,Xr Facial Bones 3+ Views,1117.0,837.75,866.79,866.79,1
+CPT,70160,Xr Nasal Cmpl 3+ Views,681.0,510.75,528.46,632.31,2
+CPT,70220,Xr Sinuses 3+ Views,681.0,510.75,632.31,632.31,1
+CPT,70250,Xr Skull Ltd <4 Views,851.0,638.25,126.27,126.27,1
+CPT,70330,Xr Tmj Open & Closed Bilat,769.0,576.75,104.55,104.55,1
+CPT,70360,Xr Neck Soft Tissue,696.0,522.0,111.98,111.98,1
+CPT,70450,CT Head W/O Contrast,1805.0,1353.75,135.24,1718.36,6
+CPT,70450,CT Head W/O Contrast|UNUSUAL SEPARATE SERVICE,1805.0,1353.75,126.27,126.27,1
+CPT,70470,CT Head W&W/O Contrast,2886.0,2164.5,211.39,2995.87,2
+CPT,70480,CT Orb/Fos/Sel/Ear W/O Contrast,3033.0,2274.75,135.24,135.24,1
+CPT,70481,CT Orb/Fos/Sel/Ear W/Contrast,3545.0,2658.75,2995.87,2995.87,1
+CPT,70486,CT Max/Facial W/O Contrast,2467.0,1850.25,135.24,1914.39,5
+CPT,70487,CT Max/Facial W/Contrast,3015.0,2261.25,2799.43,2799.43,1
+CPT,70490,CT Neck W/O Contrast,2414.0,1810.5,1670.78,1670.78,1
+CPT,70491,CT Neck W/Contrast,2933.0,2199.75,226.4,2995.87,5
+CPT,70496,Cta Head W&W/O Contrast,5935.0,4451.25,226.4,5609.17,5
+CPT,70498,Cta Neck W&W/O Contrast,5968.0,4476.0,226.4,5640.36,5
+CPT,70543,MRI Orbit/Face/Neck W&W/O Cont,6741.0,5055.75,454.18,5730.46,2
+CPT,70546,Mra Head W&W/O Cont|UNUSUAL SEPARATE SERVICE,7510.0,5632.5,454.18,454.18,1
+CPT,70548,Mra Neck W/Cont,5211.0,3908.25,5730.46,5730.46,1
+CPT,70549,Mra Neck W&W/O Cont,7503.0,5627.25,5730.46,7142.86,2
+CPT,70551,MRI Brain W/O Cont,5130.0,3847.5,307.41,4848.36,7
+CPT,70552,MRI Brain W/Cont,5751.0,4313.25,5730.46,5730.46,1
+CPT,70553,MRI Brain W&W/O Cont,6667.0,5000.25,454.18,6346.98,8
+CPT,71045,Radiologic Exam Chest Single View,315.0,236.25,111.98,299.88,4
+CPT,71046,Radiologic Exam Chest 2 Views,419.0,314.25,111.98,398.89,10
+CPT,71101,Xr Ribs W/Cxr 3+ Views Uni,698.0,523.5,135.24,659.68,3
+CPT,71111,Xr Ribs W/Cxr 4+ Views Bilat,843.0,632.25,126.27,126.27,1
+CPT,71250,Diagnostic Computed Tomography Thorax W/O Cntrst,2379.0,1784.25,135.24,2248.39,9
+CPT,71260,Diagnostic Computed Tomography Thorax W/Contrast,2895.0,2171.25,226.4,2995.87,11
+CPT,71271,Low Dose CT Lung Screening,1356.0,1017.0,135.24,1259.05,5
+CPT,71275,Cta Chest (Noncor) W&W/O Contrast,4259.0,3194.25,226.4,4025.18,8
+CPT,71550,MRI Chest W/O Cont,5559.0,4169.25,5161.53,5161.53,1
+CPT,71552,MRI Chest W&W/O Cont,7926.0,5944.5,6150.58,6150.58,1
+CPT,72040,Xr C-Spine 2 or 3 Views,801.0,600.75,111.98,762.55,6
+CPT,72050,Xr C-Spine 4 or 5 Views,1052.0,789.0,135.24,976.78,4
+CPT,72052,Xr C-Spine 6 or More Views,1199.0,899.25,135.24,135.24,1
+CPT,72070,Xr T-Spine 2 Views,776.0,582.0,135.24,602.18,2
+CPT,72072,Xr T-Spine 3 Views,776.0,582.0,135.24,602.18,2
+CPT,72082,Radex Entir Thrc Lmbr Crv Sac Spi W/Skull 2/3 Vw,694.0,520.5,644.38,644.38,1
+CPT,72100,Xr L-Spine 2-3 Views,776.0,582.0,135.24,738.75,8
+CPT,72110,Xr L-Spine 4+ Views,776.0,582.0,135.24,720.52,2
+CPT,72125,CT C-Spine W/O Contrast,2379.0,1784.25,135.24,2248.39,3
+CPT,72128,CT T-Spine W/O Contrast,2379.0,1784.25,1670.78,1670.78,2
+CPT,72131,CT L-Spine W/O Contrast,2377.0,1782.75,135.24,1670.78,3
+CPT,72141,MRI C-Spine W/O Cont,4538.0,3403.5,307.41,4288.86,7
+CPT,72146,MRI T-Spine W/O Cont,4551.0,3413.25,307.41,4225.6,4
+CPT,72148,MRI L-Spine W/O Cont,4511.0,3383.25,307.41,4263.35,8
+CPT,72156,MRI C-Spine W&W/O Cont,6628.0,4971.0,454.18,5730.46,2
+CPT,72157,MRI T-Spine W&W/O Cont,6113.0,4584.75,454.18,5730.46,2
+CPT,72158,MRI L-Spine W&W/O Cont,6552.0,4914.0,454.18,5730.46,3
+CPT,72170,Xr Pelvis 1-2 Views,648.0,486.0,135.24,502.85,2
+CPT,72192,CT Pelvis W/O Contrast,2228.0,1671.0,126.29,126.29,1
+CPT,72193,CT Pelvis W/Contrast,2729.0,2046.75,226.4,2995.87,2
+CPT,72195,MRI Pelvis W/O Cont,5091.0,3818.25,307.41,3950.62,3
+CPT,72197,MRI Pelvis W&W/O Cont,6834.0,5125.5,454.18,6458.81,6
+CPT,72220,Xr Sacrum/Coccyx 2+ Views,710.0,532.5,111.98,671.02,3
+CPT,73030,Xr Shoulder Cmp 2+ Views,682.0,511.5,111.98,111.98,1
+CPT,73080,Xr Elbow Cmpl 3+ Views,646.0,484.5,111.98,111.98,1
+CPT,73110,Xr Wrist Cmpl 3+ Views,668.0,501.0,620.24,620.24,1
+CPT,73221,MRI Upr Ext Joint W/O Cont,4806.0,3604.5,307.41,307.41,1
+CPT,73502,Radex Hip Unilateral With Pelvis 2-3 Views,450.0,337.5,111.98,393.3,3
+CPT,73521,Radex Hips Bilateral With Pelvis 2 Views,422.0,316.5,126.27,126.27,1
+CPT,73523,Radex Hips Bilateral With Pelvis Minimum 5 Views,607.0,455.25,135.24,135.24,2
+CPT,73560,Xr Knee 1-2 Views,538.0,403.5,111.98,111.98,2
+CPT,73562,Xr Knee 3 Views,702.0,526.5,111.98,111.98,1
+CPT,73564,Xr Knee Cmpl 4+ Views,762.0,571.5,135.24,665.99,2
+CPT,73590,Xr Tibia/Fibula 2 Views,668.0,501.0,620.24,620.24,1
+CPT,73630,Xr Foot Cmpl 3+ Views,599.0,449.25,111.98,111.98,1
+CPT,73721,MRI Lwr Ext Joint W/O Cont,4898.0,3673.5,307.41,307.41,1
+CPT,74018,Radiologic Exam Abdomen 1 View,332.0,249.0,111.98,313.77,3
+CPT,74019,Radiologic Exam Abdomen 2 Views,535.0,401.25,135.24,496.75,3
+CPT,74021,Radiologic Exam Abdomen 3+ Views,540.0,405.0,510.35,510.35,1
+CPT,74160,CT Abdomen W/Contrast,3161.0,2370.75,226.4,2995.87,2
+CPT,74170,CT Abdomen W&W/O Contrast,4274.0,3205.5,226.4,2995.87,2
+CPT,74174,CT Abd/Pelvis W/Wocontrast Post,4626.0,3469.5,454.18,5730.46,3
+CPT,74175,Cta Abdomen W&W/O Contrast,4417.0,3312.75,211.39,4174.51,3
+CPT,74176,CT Abdomen & Pelvis W/O Contrast,4486.0,3364.5,307.41,4165.25,7
+CPT,74177,CT Abdomen & Pevis With Contrast,5893.0,4419.75,454.18,5610.14,7
+CPT,74178,CT Abdomen & Pelvis W/O&W Contras,7844.0,5883.0,454.18,7283.15,3
+CPT,74181,MRI Abdomen W/O Cont,4446.0,3334.5,307.41,4232.59,3
+CPT,74183,MRI Abdomen W&W/O Cont,6847.0,5135.25,454.18,6518.34,9
+CPT,74220,Xr Esophagus,1733.0,1299.75,226.4,1609.09,3
+CPT,74230,Xr Swallow Cine/Video,1291.0,968.25,226.4,1001.82,3
+CPT,74240,Xr Ugi W/O Kub,1499.0,1124.25,1163.22,1163.22,1
+CPT,74248,Radiologic Small Intestine Follow-Through Study,704.0,528.0,546.3,546.3,1
+CPT,75571,CT Hrt W/O Cntrst W/Ca Test,525.0,393.75,925.12,925.12,2
+CPT,75572,CT Hrt W/3d Image,937.0,702.75,454.18,454.18,1
+CPT,75574,CT Angio Hrt W/3d Image,4268.0,3201.0,454.18,4063.14,5
+CPT,75580,N-Invas Est C Ffr Augmnt Sw Alys Cta I&R Phy/Qhp,6807.0,5105.25,1293.86,6480.26,3
+CPT,75635,Cta Abd Aorta W/&W/O Runoff,4732.0,3549.0,211.39,211.39,1
+CPT,76080,Xr Abscess Sinus/Fistula Study,969.0,726.75,651.07,651.07,1
+CPT,76497,Whole Body CT Myeloma Survey,3699.0,2774.25,111.98,111.98,1
+CPT,76536,US Soft Tissue Head & Neck Real Time Imge Docm,128.0,96.0,99.33,321.65,11
+CPT,76536,US Soft Tissue Head/Neck,1311.0,983.25,135.24,1248.07,11
+CPT,76604,US Chest,747.0,560.25,135.24,321.65,2
+CPT,76604,US Chest|REDUCED SERVICES,747.0,560.25,135.24,135.24,1
+CPT,76604,"US, Chest, Real Time",137.0,102.75,135.24,321.65,2
+CPT,76604,"US, Chest, Real Time|REDUCED SERVICES",137.0,102.75,135.24,135.24,1
+CPT,76642,US Breast Uni Real Time With Image Limited,398.0,298.5,128.48,376.15,4
+CPT,76700,US Abdomen Cmpl,1339.0,1004.25,135.24,1265.49,7
+CPT,76705,US Abdomen Ltd,1332.0,999.0,135.24,1268.06,11
+CPT,76705,US Abdominal Real Time W/Image Limited,133.0,99.75,103.21,321.65,11
+CPT,76706,US Abdominal Aorta Real Time Screen Study Aaa,398.0,298.5,135.24,321.65,3
+CPT,76770,US Retroperitioneal Cmpl,1332.0,999.0,135.24,1268.06,10
+CPT,76801,US Pregnancy <14 Weeks Single,1042.0,781.5,135.24,991.98,9
+CPT,76801,US Pregnant Uterus 14 Wk Transabdl 1/1st Gestat,95.0,71.25,73.72,321.65,9
+CPT,76805,US Pregnancy >14 Weeks Single,1220.0,915.0,321.65,1132.77,4
+CPT,76805,"US, OB >/= 14 Wks, Sngl Fetus",154.0,115.5,119.5,321.65,4
+CPT,76811,US Preg Uterus W/Detail Fetal Anat 1st Gestation,235.0,176.25,182.36,659.15,5
+CPT,76811,US Pregnancy Detailed Single,1542.0,1156.5,659.15,1457.34,5
+CPT,76811,"US,Preg Uter,Fet & Mat,+ Detl Fet Exm",235.0,176.25,182.36,659.15,5
+CPT,76813,US Pregnancy Nuchal Meas Sgl/1st,880.0,660.0,682.88,837.76,3
+CPT,76813,"US,Preg Uter,Nuchal Meas, 1st Trimest, Singleton",271.0,203.25,210.3,257.99,3
+CPT,76815,US Pregnancy Ltd,742.0,556.5,575.79,688.95,2
+CPT,76815,US Pregnant Uterus Limited 1/> Fetuses,95.0,71.25,73.72,88.21,2
+CPT,76816,US Preg Uterus Real Time F/U Trnsabdl per Fetus,95.0,71.25,73.72,89.78,3
+CPT,76816,US Pregnancy Followup per Fetus,988.0,741.0,766.69,933.76,3
+CPT,76817,US Preg Uterus Real Time W/Image Dcmtn Transvag,95.0,71.25,73.72,321.65,5
+CPT,76817,US Pregnancy Transvaginal,832.0,624.0,321.65,786.32,5
+CPT,76819,Fetal Biophysical Profile W/O Non-Stress Testing,153.0,114.75,118.73,142.06,3
+CPT,76819,US Fetal Biophysical Profile W/O,725.0,543.75,562.6,673.16,3
+CPT,76830,US Transvaginal,1050.0,787.5,135.24,999.6,7
+CPT,76831,US Saline Infus Son Incl Color Flow,774.0,580.5,659.15,659.15,1
+CPT,76856,US Pelvis Non OB,1123.0,842.25,135.24,1069.1,7
+CPT,76857,Sono Pelvis Limited,116.0,87.0,90.02,321.65,6
+CPT,76857,US Pelvis Non OB Ltd,907.0,680.25,135.24,857.21,6
+CPT,76870,US Scrotum,1037.0,777.75,135.24,980.07,6
+CPT,76870,Ultrasound Scrotum & Contents,140.0,105.0,108.64,321.65,6
+CPT,76882,US Lmtd Jt/Fcl Eval Nonvasc Xtr Strux R-T W/Img,212.0,159.0,135.24,135.24,2
+CPT,77002,Pf Xr Fluoro Biopsy/Aspiration,133.0,99.75,103.21,125.7,3
+CPT,77002,Xr Fluoro Needle Placement,929.0,696.75,720.9,878.0,3
+CPT,77048,MRI Breast W/Out&With Contrast W/Cad Unilateral,2029.0,1521.75,1574.5,1574.5,1
+CPT,77049,MRI Breast Without&With Contrast W/Cad Bilateral,2019.0,1514.25,1566.74,6776.35,7
+CPT,77062,Digital Breast Tomosynthesis Bilateral,316.0,237.0,245.22,300.83,4
+CPT,77063,Screening Digital Breast Tomosynthesis Bi,316.0,237.0,112.35,300.83,8
+CPT,77072,Xr Bone Age,648.0,486.0,502.85,601.67,2
+CPT,77080,Xr Bone Density Axial,979.0,734.25,135.24,932.01,8
+CPT,77080,Xr Bone Density Axial|UNUSUAL SEPARATE SERVICE,979.0,734.25,126.27,126.27,1
+CPT,77081,Xr Bone Density Appendicular,676.0,507.0,104.55,104.55,1
+CPT,80048,Basic Metabolic Panel,143.0,107.25,110.97,136.14,7
+CPT,80050,General Health Panel,220.0,165.0,170.72,209.44,5
+CPT,80053,Comprehensive Metabolic Panel,253.0,189.75,196.33,240.86,7
+CPT,80055,Obstetric Panel,465.0,348.75,425.99,438.4,2
+CPT,80061,Lipid Panel,140.0,105.0,108.64,133.28,8
+CPT,80069,Renal Function Panel,226.0,169.5,175.38,213.59,2
+CPT,80074,Acute Hepatitis Panel,626.0,469.5,485.78,581.24,3
+CPT,80076,Hepatic Function Panel,145.0,108.75,112.52,138.04,6
+CPT,80143,Drug Assay Acetaminophen,167.0,125.25,145.96,145.96,1
+CPT,80164,Drug Screen Quant Dipropylacetic Acid Total,122.0,91.5,94.67,113.28,2
+CPT,80175,Drug Screen Quan Lamotrigine,141.0,105.75,109.42,109.42,1
+CPT,80178,Lithium,71.0,53.25,55.1,67.59,2
+CPT,80179,Drug Assay Salicylate,167.0,125.25,145.96,145.96,1
+CPT,80197,Tacrolimus (Fk-506),157.0,117.75,148.38,148.38,1
+CPT,80202,Vancomycin,135.0,101.25,104.76,104.76,1
+CPT,80299,Adalimumab Qn,203.0,152.25,157.53,191.86,2
+CPT,80299,Tda Nos Eslicarbazepine (Eg. Aptiom),109.0,81.75,84.58,103.02,2
+CPT,80299,Therapeutic Drug Assay Other,214.0,160.5,166.06,202.25,2
+CPT,80299,"Thiopurine Metabolites, Whole Blood",218.0,163.5,169.17,206.03,2
+CPT,80299,Vedolizumab Level,357.0,267.75,277.03,337.4,2
+CPT,80306,Presumptive Drug Test Read by Instrument Assisted Direct Optical Observation,140.0,105.0,108.64,133.28,4
+CPT,80307,Presumptive Drug Test by Instrument Chemistry Analyzer,558.0,418.5,531.22,531.22,1
+CPT,80400,Acth Stimulation Panel Adrenal,377.0,282.75,355.44,355.44,1
+CPT,81001,Urinalysis Auto W/Micro,57.0,42.75,44.23,54.26,8
+CPT,81003,Urinalysis Auto W/O Micro,38.0,28.5,29.49,36.18,6
+CPT,81025,Urine Pregnancy Visual,79.0,59.25,61.3,75.21,6
+CPT,81256,Analysis Gene Hfe Common Variants,292.0,219.0,255.21,255.21,1
+CPT,81270,Analysis Gene Jak2 V617f Variant,648.0,486.0,610.93,610.93,1
+CPT,81515,Nfct Ds Bct Vaginosis&Vaginitis Mult Amp Probe,921.0,690.75,714.7,876.79,4
+CPT,82024,Adrenocorticotropic (Acth),282.0,211.5,246.47,246.47,1
+CPT,82040,Albumin Serum/Plasma/Blood,37.0,27.75,28.71,34.35,2
+CPT,82043,Microalbumin Qn Urine,92.0,69.0,71.39,86.95,5
+CPT,82085,Aldolase,85.0,63.75,65.96,80.33,3
+CPT,82088,Aldosterone,290.0,217.5,225.04,225.04,1
+CPT,82103,Alpha-1 Antitrypsin Total,109.0,81.75,95.27,95.27,1
+CPT,82105,Alpha Fetoprotein Serum,138.0,103.5,107.09,107.09,1
+CPT,82108,Aluminum,308.0,231.0,293.22,293.22,1
+CPT,82139,Amino Acids 6 or More Acids Qn,603.0,452.25,574.06,574.06,1
+CPT,82140,Ammonia,104.0,78.0,98.29,98.29,1
+CPT,82150,Amylase,67.0,50.25,51.99,51.99,1
+CPT,82157,Androstenedione,223.0,167.25,173.05,173.05,1
+CPT,82164,Angiotensin I Enzyme (Ace),127.0,95.25,98.55,98.55,1
+CPT,82166,Assay of Anti-Mullerian Hormone,341.0,255.75,264.62,324.63,7
+CPT,82172,Apolipoprotein,114.0,85.5,99.64,107.74,4
+CPT,82247,Bilirubin Total,43.0,32.25,33.37,40.64,3
+CPT,82248,Bilirubin Direct,42.0,31.5,32.59,39.0,2
+CPT,82270,Occult Blood Feces Cancer Screen,31.0,23.25,27.09,27.09,1
+CPT,82272,Occult Blood Feces Ql Other Single,36.0,27.0,27.94,33.43,2
+CPT,82306,Vitamin D 25 Hydroxy Inc Fraction,227.0,170.25,176.15,216.1,6
+CPT,82310,Calcium Total,38.0,28.5,35.28,36.18,2
+CPT,82330,Calcium Ionized,115.0,86.25,89.24,106.78,2
+CPT,82340,Calcium Qn Timed Urine,69.0,51.75,53.54,64.07,2
+CPT,82378,Carcinoembryonic Antigen (Cea),140.0,105.0,108.64,122.36,2
+CPT,82384,Catecholamines Fraction,178.0,133.5,169.46,169.46,1
+CPT,82390,Ceruloplasmin,109.0,81.75,95.27,95.27,1
+CPT,82480,Cholinesterase Serum,91.0,68.25,86.63,86.63,1
+CPT,82523,Collagen Cross Links,92.0,69.0,86.95,87.58,2
+CPT,82525,Copper,94.0,70.5,82.16,89.49,2
+CPT,82530,Cortisol Free,135.0,101.25,104.76,127.59,3
+CPT,82533,Cortisol Total,151.0,113.25,117.18,143.75,5
+CPT,82542,Col-Chr/Ms Nondrug Analyte Nes Qual/Quan Ea Spec,228.0,171.0,176.93,217.06,2
+CPT,82542,"HC Nch Perfluoroalkyl Substances (Pfas), Serum/Plasma",228.0,171.0,176.93,217.06,2
+CPT,82542,"Porphoryns, Total, Plasma",228.0,171.0,176.93,217.06,2
+CPT,82550,Creatine Kinase (Cpk) Total,58.0,43.5,45.01,55.22,5
+CPT,82565,Creatinine Blood,38.0,28.5,29.49,29.49,1
+CPT,82570,Creatinine Other Source,55.0,41.25,42.68,52.36,6
+CPT,82570,Fractionated Catecholamines - 24 Hr Urine,55.0,41.25,42.68,52.36,6
+CPT,82595,Cryoglobulin Ql or Sqn,78.0,58.5,73.72,73.72,1
+CPT,82607,Vitamin B-12 (Cyancobalamin),123.0,92.25,95.45,117.1,5
+CPT,82627,Dhea-S,226.0,169.5,175.38,215.15,5
+CPT,82638,Dibucaine Number,151.0,113.25,143.75,143.75,1
+CPT,82642,Dihydrotestosterone (Dht),289.0,216.75,268.34,268.34,1
+CPT,82653,Elastase Pancreatic Fecal Quantitative,207.0,155.25,192.2,195.16,2
+CPT,82670,Assay of Total Estradiol,248.0,186.0,192.45,236.1,6
+CPT,82671,Estrogen Fractionated,401.0,300.75,350.47,378.99,2
+CPT,82672,Estrogen Total,195.0,146.25,181.06,184.29,2
+CPT,82679,Estrone,176.0,132.0,153.82,166.34,2
+CPT,82725,Fatty Acids Nonesterified,93.0,69.75,86.35,86.35,1
+CPT,82728,Ferritin,128.0,96.0,99.33,121.86,7
+CPT,82735,Fluoride,230.0,172.5,218.96,218.96,1
+CPT,82746,Folic Acid Serum,130.0,97.5,100.88,123.76,5
+CPT,82784,Gammaglobulin Igm Iga Igd or Igg,86.0,64.5,66.74,81.87,5
+CPT,82785,Gammaglobulin Ige,158.0,118.5,122.61,149.33,2
+CPT,82805,Blood Gas W/O2 Sat,351.0,263.25,272.38,334.15,5
+CPT,82947,Glucose Blood,123.0,92.25,114.21,117.1,3
+CPT,82950,Glucose Post Dose,248.0,186.0,192.45,234.38,3
+CPT,82955,G6pd Enzyme Qn,176.0,132.0,136.58,136.58,1
+CPT,82962,Glucose by Device,31.0,23.25,24.06,29.3,4
+CPT,82977,Ggt/Ggtp,70.0,52.5,54.32,66.64,4
+CPT,82985,Glycated Protein (Fructosamine),179.0,134.25,166.2,166.2,1
+CPT,83001,Follicle Stimulating Hormone (Fsh),95.0,71.25,73.72,90.44,5
+CPT,83002,Luteinizing Hormone (Lh),128.0,96.0,99.33,121.86,5
+CPT,83010,Haptoglobin Qn,130.0,97.5,120.71,120.71,1
+CPT,83020,Hemoglobin Electrophoresis,158.0,118.5,138.09,138.09,1
+CPT,83021,Hemoglobin Fract Qn,158.0,118.5,138.09,138.09,1
+CPT,83036,Hemoglobin Glycosylated (A1c),86.0,64.5,66.74,81.87,7
+CPT,83088,Histamine,134.0,100.5,103.98,103.98,1
+CPT,83090,Homocystine,142.0,106.5,110.19,135.18,4
+CPT,83497,Hydroxyindolacetic 5-(Hiaa),117.0,87.75,90.79,90.79,1
+CPT,83498,Hydroxyprogesterone 17-D,205.0,153.75,159.08,179.17,2
+CPT,83519,Immuno Qn Ria,184.0,138.0,175.17,175.17,1
+CPT,83520,"Adalimumab Ab, S",201.0,150.75,155.98,186.63,3
+CPT,83520,Immuno Qn Other,201.0,150.75,155.98,186.63,3
+CPT,83520,Pancreatic Elastase-1,201.0,150.75,155.98,186.63,3
+CPT,83520,Tryptase,201.0,150.75,155.98,186.63,3
+CPT,83521,Immunoglobulin Light Chains Free Each,153.0,114.75,142.06,144.6,2
+CPT,83525,Insulin Total,105.0,78.75,81.48,99.96,5
+CPT,83540,IRON,67.0,50.25,51.99,63.78,6
+CPT,83550,Iron Binding Capacity,76.0,57.0,58.98,72.35,6
+CPT,83605,Lactate/Lactic Acid,106.0,79.5,82.26,100.91,5
+CPT,83615,Lactate Dehydrogenase (Ldh),46.0,34.5,35.7,43.79,5
+CPT,83631,Lactoferrin Fecal Qn,216.0,162.0,204.14,204.14,1
+CPT,83655,LEAD,97.0,72.75,75.27,92.34,4
+CPT,83690,Lipase,69.0,51.75,53.54,65.69,5
+CPT,83695,Assay of Lipoprotein A,140.0,105.0,108.64,132.31,4
+CPT,83698,Assay Lipoprotein Pla2,237.0,177.75,220.05,220.05,1
+CPT,83700,Lipoprotein Electrophoresis Bld Qn,78.0,58.5,73.72,73.72,1
+CPT,83704,Lipoprotein Blood by Nmr,223.0,167.25,207.06,207.06,1
+CPT,83735,Magnesium,51.0,38.25,39.58,48.55,5
+CPT,83825,Mercury,138.0,103.5,131.38,131.38,1
+CPT,83835,Metanephrines,145.0,108.75,112.52,138.04,2
+CPT,83880,Natriuretic Peptide,243.0,182.25,225.63,231.34,3
+CPT,83921,Organic Acid Single Qn,223.0,167.25,173.05,210.76,3
+CPT,83930,Osmolality Blood,50.0,37.5,38.8,38.8,1
+CPT,83935,Osmolality Urine,59.0,44.25,45.78,45.78,1
+CPT,83937,Osteocalcin,207.0,155.25,197.06,197.06,1
+CPT,83970,Parathormone (Pth),293.0,219.75,227.37,278.94,4
+CPT,84075,Phosphatase Alkaline,46.0,34.5,43.47,43.47,1
+CPT,84080,Phosphatase Alkaline Isoenzyme,131.0,98.25,114.49,124.71,2
+CPT,84100,Phosphorus,38.0,28.5,29.49,36.18,5
+CPT,84105,Phosphorus Urine,62.0,46.5,59.02,59.02,1
+CPT,84112,Eval Cervicovag Pamg-1 Pp12 Alpha-F,740.0,555.0,687.09,699.37,2
+CPT,84132,Potassium Serum/ Plasma/ Blood,34.0,25.5,32.37,32.37,1
+CPT,84134,Prealbumin,104.0,78.0,96.56,96.56,1
+CPT,84140,Pregnenolone,264.0,198.0,245.12,251.33,2
+CPT,84144,Progesterone,175.0,131.25,135.8,166.6,6
+CPT,84146,Prolactin,201.0,150.75,155.98,191.35,5
+CPT,84153,Prostatic Specific Antigen Total,139.0,104.25,107.86,132.33,6
+CPT,84154,Prostatic Specific Antigen Free,137.0,102.75,106.31,129.48,3
+CPT,84155,Protein Total Xcpt Refra Serum Plas,40.0,30.0,31.04,37.8,3
+CPT,84156,Protein Total Urine,59.0,44.25,45.78,56.17,5
+CPT,84165,Protein Electrophoresis,109.0,81.75,84.58,103.02,4
+CPT,84166,Protein Electrophoretic Other Fluid,127.0,95.25,98.55,120.03,3
+CPT,84207,Vitamin B-6 (Pyridoxal Phosphate),194.0,145.5,184.69,184.69,1
+CPT,84270,Sex Hormone Binding Globulin,174.0,130.5,135.02,164.45,4
+CPT,84300,Sodium Urine,42.0,31.5,32.59,32.59,1
+CPT,84402,Testosterone Free,187.0,140.25,145.11,178.02,5
+CPT,84403,Testosterone Total,229.0,171.75,177.7,218.01,5
+CPT,84425,Vitamin B1 (Thiamine),151.0,113.25,140.2,142.71,2
+CPT,84432,Thyroglobulin,208.0,156.0,161.41,161.41,1
+CPT,84436,Thyroxine (T-4) Total,101.0,75.75,78.38,95.46,3
+CPT,84439,Thyroxine (T-4) Free,103.0,77.25,79.93,98.06,6
+CPT,84442,Thyroid Activity (Tbg),129.0,96.75,119.78,119.78,1
+CPT,84443,Thyroid Stimulating Hormone (Tsh),148.0,111.0,114.85,140.9,6
+CPT,84445,Thyroid Stimulating Immun Globulin,390.0,292.5,302.64,362.12,2
+CPT,84450,Ast/Sgot,41.0,30.75,31.82,38.75,3
+CPT,84460,Alt/Sgpt,43.0,32.25,33.37,40.64,3
+CPT,84478,Triglycerides,59.0,44.25,54.78,54.78,1
+CPT,84480,Triiodothyronine (T-3) Total,175.0,131.25,135.8,166.6,6
+CPT,84481,Triiodothyronine (T-3) Free,195.0,146.25,151.32,185.64,5
+CPT,84482,Triiodothyronine (T-3) Reverse,344.0,258.0,300.66,327.49,4
+CPT,84484,Troponin Qn,114.0,85.5,88.46,108.53,5
+CPT,84520,Urea Nitrogen Quantitative,35.0,26.25,27.16,27.16,1
+CPT,84550,Uric Acid Blood,40.0,30.0,31.04,38.08,5
+CPT,84630,ZINC,97.0,72.75,84.78,92.34,3
+CPT,84681,C-Peptide,169.0,126.75,159.72,159.72,1
+CPT,84702,Hcg Qn,150.0,112.5,116.4,142.8,6
+CPT,84703,Hcg Ql,85.0,63.75,65.96,80.92,6
+CPT,85007,Blood Smear W/Manual Diff Wbc,55.0,41.25,42.68,52.36,4
+CPT,85014,Blood Count Hematocrit (Hct),26.0,19.5,20.18,24.75,4
+CPT,85018,Blood Count Hemoglobin (Hgb),31.0,23.25,24.06,29.51,4
+CPT,85025,Blood Count Cbc Auto W/Auto Diff,74.0,55.5,57.42,70.45,6
+CPT,85027,Blood Count Cbc Auto W/O Diff,56.0,42.0,43.46,53.31,7
+CPT,85045,Blood Count Reticulocyte Auto,48.0,36.0,44.57,44.57,1
+CPT,85240,Factor VIII Ahg,287.0,215.25,222.71,222.71,1
+CPT,85245,Factor VIII Vw Ristocetin Cofactor,253.0,189.75,196.33,196.33,1
+CPT,85246,Factor VIII Vw Antigen,331.0,248.25,256.86,256.86,1
+CPT,85300,Antithrombin III Activity,238.0,178.5,220.98,220.98,1
+CPT,85303,Protein C Activity,321.0,240.75,298.05,298.05,1
+CPT,85306,Protein S Free,311.0,233.25,288.76,288.76,1
+CPT,85379,Fibrin Degradation D-Dimer Qn,118.0,88.5,91.57,112.34,5
+CPT,85384,Fibrinogen Activity,71.0,53.25,65.92,67.1,2
+CPT,85610,Prothrombin Time (Pt),45.0,33.75,34.92,42.84,5
+CPT,85613,Russell Viper Venom Diluted,153.0,114.75,118.73,118.73,1
+CPT,85651,Sed Rate RBC Non Auto,39.0,29.25,30.26,36.86,4
+CPT,85652,Sed Rate RBC Auto,33.0,24.75,25.61,31.42,6
+CPT,85730,Partial Thromboplastin Time (Ptt),62.0,46.5,48.11,59.02,4
+CPT,86003,Rast Allergen Ige Qn Sq Ea,76.0,57.0,71.83,71.83,1
+CPT,86008,Allergen Spec Ige Recombinant/Purified Compnt Ea,199.0,149.25,154.42,188.07,3
+CPT,86015,Actin Smooth Muscle Antibody Each,103.0,77.25,90.02,90.02,1
+CPT,86036,Antineutrophil Cytoplasmic Antb Screen Ea Antb,108.0,81.0,100.28,100.28,1
+CPT,86039,Antinuclear Antibodies (Ana) Titer,85.0,63.75,65.96,80.92,5
+CPT,86060,Antistreptolysin O Titer,93.0,69.75,72.17,72.17,1
+CPT,86140,C-Reactive Protein,70.0,52.5,54.32,66.64,6
+CPT,86141,C-Reactive Protein High Sensitivity,122.0,91.5,94.67,116.14,5
+CPT,86146,Beta 2 Glycoprotein I Antibody Ea,157.0,117.75,121.83,121.83,1
+CPT,86147,Cardiolipin Antibody Ea Ig Class,164.0,123.0,127.26,152.27,3
+CPT,86160,Complement Antigen Ea Component,104.0,78.0,80.7,96.56,3
+CPT,86162,Complement Total (Ch50),202.0,151.5,187.56,187.56,1
+CPT,86200,Cyclic Citrulli Pept (CCP) Antibody,144.0,108.0,111.74,125.86,2
+CPT,86215,Deoxyribonuclease (Dna) Antibody,109.0,81.75,84.58,84.58,1
+CPT,86225,Dna Double Strand Antibody,122.0,91.5,94.67,113.28,3
+CPT,86235,Extract Nuclear Antigen,128.0,96.0,99.33,120.97,4
+CPT,86258,Gliadin Antibody Each Immunoglobulin Class,103.0,77.25,79.93,79.93,1
+CPT,86300,Immunoassay Tumor Antigen Ca 15-3,147.0,110.25,128.48,128.48,1
+CPT,86301,Immunoassay Tumor Antigen Ca 19-9,147.0,110.25,114.07,114.07,1
+CPT,86304,Immunoassay Tumor Antigen Ca 125,182.0,136.5,141.23,173.26,2
+CPT,86308,Heterophile Antibody Screen,94.0,70.5,72.94,89.49,5
+CPT,86317,HC Immunoassay Infectious Agent Antibody Quan,106.0,79.5,100.18,100.18,1
+CPT,86317,"Streptococcus Pneumoniae Igg Antibodies, 23 Serotypes, Serum",106.0,79.5,100.18,100.18,1
+CPT,86334,Immunofixation Electrophores Serum,160.0,120.0,124.16,151.22,2
+CPT,86337,Insulin Antibody,332.0,249.0,313.77,313.77,1
+CPT,86341,Islet Cell Antibody,209.0,156.75,197.53,197.53,1
+CPT,86360,T Cells Cd4 & Cd8 W/Ratio,165.0,123.75,155.94,155.94,1
+CPT,86364,Tissue Transglutaminase Ea Immunoglobulin Class,103.0,77.25,79.93,98.06,5
+CPT,86376,Microsomal Antibody,145.0,108.75,112.52,138.04,5
+CPT,86431,Rheumatoid Factor Qn,92.0,69.0,71.39,86.95,4
+CPT,86480,TB Test Cell Imm Ag Meas Gam Interf,668.0,501.0,518.37,635.94,6
+CPT,86592,Syphilis Vdrl/Rpr Ql,51.0,38.25,39.58,48.55,5
+CPT,86611,Bartonella Antibody,114.0,85.5,108.53,108.53,1
+CPT,86617,Lyme Disease Antibody Confirm,194.0,145.5,150.54,184.69,6
+CPT,86618,Lyme Disease Antibody,153.0,114.75,118.73,145.66,7
+CPT,86644,Cytomegalovirus (Cmv) Antibody,154.0,115.5,119.5,145.55,2
+CPT,86645,Cytomegalovirus (Cmv) Antibody Igm,168.0,126.0,130.37,130.37,1
+CPT,86664,Epstein-Barr Ebna Ag Antibody,101.0,75.75,78.38,96.15,4
+CPT,86665,Epstein-Barr Vca Ag Antibody,106.0,79.5,82.26,100.91,4
+CPT,86666,Ehrlichia Antibody,139.0,104.25,107.86,132.33,3
+CPT,86668,Francisella Tularensis Antibody,143.0,107.25,110.97,135.15,2
+CPT,86695,Herpes Simplex Type I Antibody,101.0,75.75,78.38,96.15,2
+CPT,86696,Herpes Simplex Type II Antibody,138.0,103.5,107.09,131.38,2
+CPT,86704,Hepatitis B Core Antibody Igm Igg,115.0,86.25,89.24,109.48,5
+CPT,86706,Hepatitis B Surface Antibody,101.0,75.75,78.38,96.15,5
+CPT,86708,HEPATITIS A ANTIBODY (HAAb) TOTAL,112.0,84.0,86.91,86.91,1
+CPT,86735,Mumps Antibody,144.0,108.0,133.7,136.09,2
+CPT,86738,Mycoplasma Antibody,115.0,86.25,108.69,108.69,1
+CPT,86747,Parvovirus Antibody,140.0,105.0,108.64,108.64,1
+CPT,86753,Protozoa Antibody Not Specified,93.0,69.75,72.17,88.54,2
+CPT,86757,Rickettsia Antibody,173.0,129.75,163.5,163.5,1
+CPT,86762,Rubella Antibody,118.0,88.5,91.57,112.34,6
+CPT,86765,Rubeola Antibody,131.0,98.25,101.66,124.71,6
+CPT,86769,Antibody Sars-Cov-2,200.0,150.0,189.02,189.02,1
+CPT,86780,Treponema Pallidum Antibody,146.0,109.5,113.3,138.99,5
+CPT,86787,Varicella-Zoster Antibody,133.0,99.75,103.21,126.62,6
+CPT,86790,Virus Not Elsewhere Specified,123.0,92.25,116.25,116.25,1
+CPT,86800,Thyroglobulin Antibody,120.0,90.0,93.12,114.24,4
+CPT,86803,Hepatitis C Antibody,127.0,95.25,98.55,120.9,5
+CPT,86812,Hla Typing Single Antigen a/B/C,250.0,187.5,194.0,232.13,2
+CPT,86850,RBC Antibody Screen,123.0,92.25,95.45,117.1,6
+CPT,86880,Coombs Direct,62.0,46.5,75.54,75.54,1
+CPT,86900,Blood Typing Serologic Abo,55.0,41.25,42.68,163.93,9
+CPT,86901,HC Blood Typing Serologic Rh (D),49.0,36.75,38.02,46.65,6
+CPT,86920,Crossmatch Immediate Spin,248.0,186.0,217.93,230.27,2
+CPT,87040,Culture Blood Aerobic,130.0,97.5,100.88,122.86,4
+CPT,87045,Culture Stool Salmonella & Shigella,119.0,89.25,92.34,112.47,6
+CPT,87046,Culture Stool Other,68.0,51.0,52.77,64.27,6
+CPT,87070,Culture Bacterial Other Source,109.0,81.75,84.58,103.77,6
+CPT,87077,Culture Aerobic ID,68.0,51.0,52.77,64.74,5
+CPT,87081,Culture Screen Single Organism,80.0,60.0,62.08,74.28,2
+CPT,87086,Culture Urine W/Colony Count,91.0,68.25,70.62,86.63,7
+CPT,87101,Culture Fungus Skin/Hair/Nail,96.0,72.0,90.73,90.73,1
+CPT,87102,Culture Fungus Other,91.0,68.25,86.63,86.63,1
+CPT,87150,Cult Type Amp Prb Cult/Isol Ea,317.0,237.75,245.99,299.6,5
+CPT,87177,Smear Ova & Parasite Concent/Ident,128.0,96.0,99.33,120.97,6
+CPT,87186,Susceptibility Mic per Plate,108.0,81.0,83.81,102.82,5
+CPT,87205,Smear Gram or Geimsa Stain,49.0,36.75,38.02,46.65,5
+CPT,87207,Spec Stain Incls Bodies/Parasites,88.0,66.0,68.29,76.91,2
+CPT,87209,Complex Special Stain O/P Trich/Iro,183.0,137.25,142.01,172.95,6
+CPT,87324,Eia Ql C Difficile Toxin(S) Antigen,160.0,120.0,148.56,148.56,1
+CPT,87328,Eia Ql Cryptosporidium Antigen,92.0,69.0,71.39,71.39,1
+CPT,87329,Eia Ql Giardia Antigen,115.0,86.25,89.24,108.69,3
+CPT,87340,Eia Ql Hepatitis B Ag,118.0,88.5,91.57,112.34,5
+CPT,87427,Eia Ql Multi Shiga-Like Toxin Ag,115.0,86.25,106.78,106.78,1
+CPT,87449,Eia Ql Multi Antigen,113.0,84.75,87.69,104.92,3
+CPT,87468,Iadna Anaplasma Phagocytophilum Amplifed Prb Tq,310.0,232.5,240.56,295.12,6
+CPT,87469,Iadna Babesia Microti Amplified Probe Technique,310.0,232.5,240.56,295.12,6
+CPT,87478,Iadna Borrelia Miyamotoi Amplified Prb Technique,310.0,232.5,287.84,295.12,2
+CPT,87484,Iadna Ehrlichia Chaffeensis Amplified Probe Tq,310.0,232.5,240.56,295.12,6
+CPT,87491,Nucleic Acid Amp Chlamydia Trach,184.0,138.0,142.78,175.17,7
+CPT,87493,Nucleic Acid Amp Probe Clostridium,276.0,207.0,214.18,260.85,5
+CPT,87497,Nucleic Acid Qn Cmv,310.0,232.5,240.56,292.98,2
+CPT,87513,Iadna H Pylori Clarithromycin Resist Amp Prb Tq,312.0,234.0,242.11,294.87,4
+CPT,87517,Nucleic Acid Qn Hepatitis B,306.0,229.5,237.46,284.12,2
+CPT,87522,Nucleic Acid Rev Trans Qn Hepatitis,526.0,394.5,500.75,500.75,1
+CPT,87529,Nucleic Acid Amp Probe Herpes Smpx,601.0,450.75,466.38,572.15,6
+CPT,87532,Nucleic Acid Amp Probe Herpes 6,323.0,242.25,305.27,305.27,1
+CPT,87536,Nucleic Acid Rev Trans Qn Hiv-1,405.0,303.75,376.04,376.04,1
+CPT,87581,Nucleic Acid Amp Myco Pneum,319.0,239.25,301.49,301.49,1
+CPT,87591,Nucleic Acid Amp N Gonorrhoeae,184.0,138.0,142.78,175.17,7
+CPT,87637,Iadna Sarscov2 & Inf a&B & Rsv Mult Amp Probe Tq,519.0,389.25,402.74,494.09,6
+CPT,87641,Nuc Acid Stph Aureus Amplified,323.0,242.25,250.65,299.91,2
+CPT,87661,Iadna Trichomonas Vaginalis Amplified Probe Tech,282.0,211.5,218.83,261.84,2
+CPT,87798,Babesia Microtiter Dna Pcr,321.0,240.75,249.1,305.59,7
+CPT,87798,Her Anaplasma Det Pcr,321.0,240.75,249.1,305.59,7
+CPT,87798,Nucleic Acid Amp Infectious,321.0,240.75,249.1,305.59,7
+CPT,87801,Nucleic Acid Amp Multi Org,370.0,277.5,287.12,343.55,3
+CPT,87806,Iaadiadoo Hiv1 Antigen W/Hiv1 & Hiv2 Antibodies,118.0,88.5,91.57,112.34,6
+CPT,87880,Immunoassay Optical Strep A,91.0,68.25,70.62,86.63,7
+CPT,87999,Microbiology Unlstd Proc,130.0,97.5,123.76,123.76,1
+CPT,87999,Quest Anaerobic ID Org,26.0,19.5,24.75,24.75,1
+CPT,88120,Cyto Urne 3-5 Probe Ea Spec Man,115.0,86.25,217.93,217.93,1
+CPT,88184,Flow Cytometry 1st Marker Tc,157.0,117.75,457.47,457.47,1
+CPT,89055,Leukocyte Assess Fecal Qn/Semi Qn,78.0,58.5,60.53,73.72,4
+CPT,89060,Crystal ID Light Microscopy,70.0,52.5,54.32,54.32,1
+CPT,90471,Immune Admin One Vacc Im/Sub-Q/ID,33.0,24.75,25.61,25.61,1
+CPT,90471,Vfc Imadm Prq ID Subq/Im Njxs 1 Vaccine,23.0,17.25,17.85,17.85,1
+CPT,90480,Imm Admn Sarscov2 Vaccine Single Dose,75.0,56.25,52.8,70.71,2
+CPT,90480,Vfc Im Admn Sarscov2 Vaccine Sngl Dose,23.0,17.25,21.68,52.8,2
+CPT,92507,St Treatment Speech/Lang/Comm Ind,785.0,588.75,609.16,686.09,2
+CPT,92522,Evaluate Speech Production,457.0,342.75,354.63,354.63,1
+CPT,92523,Speech Sound Lang Comprehen,1045.0,783.75,810.92,810.92,1
+CPT,92611,St Eval Swallow Video/Fluoro,535.0,401.25,415.16,415.16,1
+CPT,93005,Ekg Routine Tracing Only,275.0,206.25,75.54,261.8,9
+CPT,93010,12 Lead Ecg Interpretation and Report Only,41.0,30.75,31.82,39.03,5
+CPT,93225,Ecg Monitor/Report Up to 48 Hrs Rec,888.0,666.0,824.51,824.51,1
+CPT,93225,Ecg Monitor/Report Up to 48 Hrs Rec|RCRDG/STRG IN SLD ST MEMORY,888.0,666.0,163.93,163.93,2
+CPT,93242,External Ecg Rec>48hr<7d Recording,1082.0,811.5,49.92,1022.6,6
+CPT,93246,External Ecg Rec>7d<15d Recording,1442.0,1081.5,49.92,1362.83,5
+CPT,93306,Echo Tthrc R-T 2d W/Wom-Mode Compl Spec&Colr D,1880.0,1410.0,697.3,1789.76,7
+CPT,93308,Echo Transthoracic W/WO Fol W/Cont|PROFESSIONAL COMPONENT,944.0,708.0,307.41,307.41,2
+CPT,93308,Echo Transthorc R-T 2d W/WO M-Mode Rec F-Up/Lmtd|PROFESSIONAL COMPONENT,944.0,708.0,307.41,307.41,2
+CPT,93308,US Cardiac Echo Limited|PROFESSIONAL COMPONENT,115.0,86.25,307.41,307.41,2
+CPT,93880,Duplex Extracranial/Carotid Bilat,2196.0,1647.0,307.41,2075.44,3
+CPT,93970,Duplex Venous Extremity Bilat,2227.0,1670.25,307.41,2104.74,3
+CPT,93975,Duplex Abd/Pel/Retro Cmpl,3256.0,2442.0,3023.2,3023.2,1
+CPT,93978,Duplex Aorta/Ivc/Graft Cmpl,2162.0,1621.5,307.41,2043.31,3
+CPT,94010,Pf Spirometry Smp,39.0,29.25,163.46,163.46,1
+CPT,94010,Spirometry/Pft Smp,628.0,471.0,163.46,163.46,1
+CPT,94060,Pf Spirometry/Pft Pre & Post B,69.0,51.75,396.02,396.02,4
+CPT,94060,Spirometry/Pft Pre & Post Bronch,1134.0,850.5,396.02,396.02,4
+CPT,94640,Nonpressurized Inhalation Treatment,380.0,285.0,258.66,294.88,2
+CPT,94664,Aerosol Neb/Mdi/Ippb Demo/Eval,289.0,216.75,212.49,212.49,1
+CPT,96360,IV Infus Hydration Initial 31 Min-1 Hour - 96360,532.0,399.0,267.94,502.79,5
+CPT,96361,IV Infus Hydration Ea Additional Hour - 96361,242.0,181.5,58.68,230.38,6
+CPT,96365,IV Infus Non-Chemo Initial Up to 1 Hr - 96365,651.0,488.25,267.94,619.75,8
+CPT,96366,IV Infus Non-Chemo Same Drug Ea Hr - 96366,242.0,181.5,58.68,230.38,5
+CPT,96367,IV Infus Non-Chemo Ea Add�L Seq Diff Drug Up to 1 Hr - 96367,319.0,239.25,90.51,301.49,3
+CPT,96368,IV Non-Chemo Concurrent Infus - 96368,214.0,160.5,166.06,166.06,1
+CPT,96372,Therapeutic Prophylactic/Diagnostic Inj Sc/Im - 96372,193.0,144.75,90.51,182.4,9
+CPT,96374,Ivp/ IV < 16 Min Initial Drug - 96374,518.0,388.5,267.94,493.14,9
+CPT,96375,Ivp/ IV <16min Ea Addl Seg Diff Drug - 96375,218.0,163.5,58.68,207.54,7
+CPT,96376,Ivp/ IV <16 Min Ea Add�L Seq Same Drug - 96376,654.0,490.5,507.5,622.61,3
+CPT,96401,Inj Sc/Im Chemo Non-Hormonal Anti-Neoplastic - 96401,292.0,219.0,90.51,90.51,1
+CPT,96402,Inj Sc/Im Chemo Hormonal Anti-Neoplastic � 96402,292.0,219.0,90.51,275.97,6
+CPT,96409,Chem Ivp/ IV <16 Min Initial Single Drug -96409,341.0,255.75,264.62,421.83,2
+CPT,96411,Chemotx Admn Ivp/ IV <16 Min Ea Add�L Seq Diff Drug - 96411,604.0,453.0,90.51,570.84,3
+CPT,96413,Chemo IV Infus Initial Up to 1 Hr - 96413,1415.0,1061.25,421.83,1337.32,5
+CPT,96415,Chemo IV Infus Same Drug Ea Add�L Hr > or = to 31 Min - 96415,221.0,165.75,90.51,208.87,4
+CPT,96416,Chemo IV Infusion Prolong W/Pump,1616.0,1212.0,1254.02,1254.02,1
+CPT,96416,Chemo Infus > 8 External Pmp,1616.0,1212.0,1254.02,1254.02,1
+CPT,96417,Chem IV Infus Tq Ea Add�L Seq Diff Drug Up to 1 Hr - 96417,697.0,522.75,90.51,658.73,3
+CPT,96523,Irrigat Implant Ven Access Dvc,255.0,191.25,75.54,222.87,4
+CPT,97012,Ot Traction Mechanical,168.0,126.0,130.37,130.37,1
+CPT,97012,Pt Traction Mechanical,168.0,126.0,130.37,130.37,1
+CPT,97014,"97014 E-Stim, Unattended",130.0,97.5,100.88,100.88,1
+CPT,97014,Bwh Electrical Stim (Unattended) Non Time Based Pt,130.0,97.5,100.88,100.88,1
+CPT,97032,Ot E-Stim Attended 15 Min,168.0,126.0,14.66,130.37,2
+CPT,97032,Pt E-Stim Attended 15 Min,168.0,126.0,14.66,130.37,2
+CPT,97035,Ot Ultrasound 15 Min,168.0,126.0,14.37,146.83,3
+CPT,97035,Pt Ultrasound 15 Min,168.0,126.0,14.37,146.83,3
+CPT,97110,Ot Exercise Therapeutic 15 Min,166.0,124.5,29.82,156.89,6
+CPT,97110,Pt Exercise Therapeutic 15 Min,166.0,124.5,29.82,156.89,6
+CPT,97112,Ot Neuromuscular Re-ED 15 Min,195.0,146.25,33.18,184.29,4
+CPT,97112,Pt Neuromuscular Re-ED 15 Min,195.0,146.25,33.18,184.29,4
+CPT,97116,Pt Gait Training 15 Min,168.0,126.0,130.37,130.37,1
+CPT,97124,Ot Massage 15 Min,168.0,126.0,30.99,30.99,1
+CPT,97124,Pt Massage 15 Min,168.0,126.0,30.99,30.99,1
+CPT,97140,Ot Manual Therapy 15 Min,153.0,114.75,28.13,142.06,4
+CPT,97140,Pt Manual Therapy 15 Min,153.0,114.75,28.13,142.06,4
+CPT,97161,"Physical Therapy Evaluation, Low Complexity",408.0,306.0,101.45,385.6,5
+CPT,97162,"Physical Therapy Evaluation, Moderate Complexity",408.0,306.0,101.45,375.36,4
+CPT,97163,"Physical Therapy Evaluation, High Complexity",408.0,306.0,316.61,316.61,1
+CPT,97164,Physical Therapy Re-Eval Est Plan Care 20 Mins,408.0,306.0,316.61,316.61,1
+CPT,97165,"Occupational Therapy Evaluation, Low Complexity",408.0,306.0,104.2,316.61,2
+CPT,97530,Ot Therapeutic Activity 15 Min,195.0,146.25,36.01,184.29,4
+CPT,97530,Pt Therapeutic Activity 15 Min,195.0,146.25,36.01,184.29,4
+CPT,97535,Ot Home Instruction/Program 15min,279.0,209.25,216.5,216.5,1
+CPT,97535,Pt Home Instruction/Program 15min,279.0,209.25,216.5,216.5,1
+CPT,97802,Nutrition Therapy Eval 15 Min,97.0,72.75,75.27,92.34,5
+CPT,97803,Nutrition Therapy Re-Eval 15 Min,97.0,72.75,75.27,92.34,4
+CPT,99195,Phlebotomy Therapeutic,354.0,265.5,163.93,334.57,4
+CPT,99211,"Office Visit, Established Pat",41.0,30.75,31.04,31.82,2
+CPT,99213,"Office Visit, Established Pat",211.0,158.25,163.74,196.84,6
+CPT,99213,"Office Visit, Established Pat|SIGNIFICANT, SEPARATELY IDENTIFIABLE EVALUATION AND MANAGEMENT SERVICE BY THE SAME PHYSICIAN ON THE SAME DAY OF THE PROCEDURE OR OTHER SERVICE",211.0,158.25,166.9,167.69,2
+CPT,99221,1st Hospital IP/Obs Care Sf/Low Mdm 40 Minutes,440.0,330.0,403.08,418.88,5
+CPT,99221,Initial Observation Care/Day 30 Minutes,434.0,325.5,397.59,413.17,5
+CPT,99221,Initial Observation Care/Day 50 Minutes,441.0,330.75,404.0,419.83,5
+CPT,99221,Initial Observation Care/Day 70 Minutes,617.0,462.75,565.23,587.38,5
+CPT,99222,1st Hospital IP/Obs Care Moderate Mdm 55 Minutes,601.0,450.75,466.38,572.15,5
+CPT,99223,1st Hospital IP/Obs Care High Mdm 75 Minutes,882.0,661.5,684.43,839.66,5
+CPT,99231,Sbsq Hospital IP/Obs Care Sf/Low Mdm 25 Minutes,98.0,73.5,85.65,92.62,3
+CPT,99231,Sbsq Observation Care/Day 15 Minutes,123.0,92.25,107.5,116.25,3
+CPT,99231,Sbsq Observation Care/Day 25 Minutes,219.0,164.25,191.41,206.98,3
+CPT,99231,Sbsq Observation Care/Day 35 Minutes,455.0,341.25,397.67,430.02,3
+CPT,99232,Sbsq Hospital IP/Obs Care Mod Mdm 35 Minutes,321.0,240.75,249.1,305.59,3
+CPT,99235,Hospital IP/Obs Care Same Date Mod Mdm 70 Min,759.0,569.25,704.73,704.73,1
+CPT,99238,Hospital IP/Obs Discharge Day Mgmt 30 Min/<,319.0,239.25,247.54,303.69,5
+CPT,99238,Observation Care Discharge Management,286.0,214.5,221.94,272.27,5
+CPT,99239,Hospital IP/Obs Discharge Day Mgmt > 30 Min,454.0,340.5,352.3,444.58,10
+CPT,99284,Emergency Department Visit Moderate Mdm,995.0,746.25,505.69,505.69,2
+CPT,99284,"Emergency Department Visit Moderate Mdm|SIGNIFICANT, SEPARATELY IDENTIFIABLE EVALUATION AND MANAGEMENT SERVICE BY THE SAME PHYSICIAN ON THE SAME DAY OF THE PROCEDURE OR OTHER SERVICE",995.0,746.25,505.64,505.64,2
+CPT,99285,Emergency Department Visit High Mdm,1195.0,896.25,391.1,1137.64,20
+CPT,99291,Critical Care Ill/Injured Patient Init 30-74 Min,556.0,417.0,431.46,1000.55,9
+CPT,99291,HC Critical Care; First 30-74 Minutes,1564.0,1173.0,1000.55,1488.93,9
+CPT,99292,Critical Care Ill/Injured Patient Addl 30 Min,276.0,207.0,241.22,260.85,2
+CPT,99292,Critical Care; Ea Add 30 Minutes,431.0,323.25,376.69,407.34,2
 DRG,133,"Respiratory Failure,MODERATE",14390.94,,6533.19,6533.19,1
 DRG,139,"Other Pneumonia,MINOR",12666.8,,3946.87,3946.87,1
 DRG,139,"Other Pneumonia,MODERATE",12819.45,,5101.81,5101.81,1
@@ -876,6 +1539,156 @@ DRG,720,"Septicemia And Disseminated Infections,MINOR",20305.42,,4604.88,4604.88
 DRG,720,"Septicemia And Disseminated Infections,MODERATE",25125.27,,6160.78,6160.78,2
 DRG,721,"Post-Operative, Post-Traumatic, Other Device Infections,MODERATE",32635.26,,7452.8,7452.8,1
 DRG,724,"Other Infectious And Parasitic Diseases,MODERATE",29763.17,,6570.89,6570.89,1
+HCPCS,77066,Diagnostic Mammo Bilat 2d Digital (Incl. Cad),721.0,540.75,559.5,686.39,5
+HCPCS,77067,Mammogram Screen Bilat Digital (Incl. Cad),610.0,457.5,442.83,580.72,8
+HCPCS,C1713,ANCHOR SUTURE 2.6MM PRESSFIT ONE STRAND,821.25,615.94,762.53,762.53,1
+HCPCS,C1713,ANCHOR SUTURE 2.8MM POPLOK 1 HI-FI,1599.36,1199.52,1485.01,1485.01,1
+HCPCS,C1713,ANCHOR SUTURE 3.5MM POPLOK ENDOSCOPY KNOTLESS PEEK SUB CORTICAL WING SHOULDER,1521.57,1141.18,1412.78,1412.78,1
+HCPCS,C1713,ANCHOR SUTURE 4.5MM POPLOK ENDOSCOPY KNOTLESS PEEK SUB CORTICAL WING SHOULDER,1586.28,1189.71,1472.86,1472.86,1
+HCPCS,C1713,ANCHOR SUTURE 4.75X19.1MM SWIVELOCK IMPLANT ARTHROSCOPY SPEEDBRIDGE BIOCOMPOSITE,4350.0,3262.5,4038.98,4038.98,1
+HCPCS,C1713,ANCHOR SUTURE 6.5MM TRIPLE FIT - DISCONTINUED PER SUPPLIER/CONTRACTS,1359.66,1019.74,1262.44,1262.44,1
+HCPCS,C1713,ANCHOR SUTURE PRESSFIT HI FI TWO STRAND 3.5 METRIC,907.77,680.83,842.86,842.86,1
+HCPCS,C1713,ANCHOR SUTURE SIZE 2 LENGTH2.8MM ARTHROSCOPY Y KNOT RC ALL DOUBLE LOADED HI FI,926.88,695.16,860.61,860.61,1
+HCPCS,C1713,ANCHOR TISSUE 2.7MM POLYETHER ETHER KETONE NONBIOABSORBABLE,1014.0,760.5,941.5,941.5,1
+HCPCS,C1713,ANKLE PLATE 9 HOLE BONE TITANIUM LOCKING LATERAL FIBULA,2946.0,2209.5,2735.36,2735.36,1
+HCPCS,C1713,ANKLE PLATE LOCKING PEG HOOK 3 HOLE,2085.0,1563.75,1935.92,1935.92,1
+HCPCS,C1713,ANKLE PLATE MEDIAL ANTI GLIDE 4 HOLE,1821.0,1365.75,1690.8,1690.8,1
+HCPCS,C1713,ANTERIOR PLATE 5 HOLE BONE TIBIAL LOW PROFILE LOCKING,2766.0,2074.5,2568.23,2568.23,1
+HCPCS,C1713,ANTERIOR PLATE 95X11MM 8 HOLE TITANIUM LOCKING,3579.0,2684.25,3323.1,3323.1,1
+HCPCS,C1713,ARTICULAR PLATE BONE ACU LOC TITANIUM LOCKING EXTRA STANDARD,2607.0,1955.25,2420.6,2420.6,1
+HCPCS,C1713,BONE PLATE 1/3 TUBULAR 10 HOLE,294.0,220.5,272.98,272.98,1
+HCPCS,C1713,BONE PLATE 1/3 TUBULAR 12 HOLE,309.0,231.75,286.91,286.91,1
+HCPCS,C1713,BONE PLATE 1/3 TUBULAR 3 HOLE,204.0,153.0,189.41,189.41,1
+HCPCS,C1713,BONE PLATE 1/3 TUBULAR 4 HOLE,219.0,164.25,203.34,203.34,1
+HCPCS,C1713,BONE PLATE 1/3 TUBULAR 5 HOLE,234.0,175.5,217.27,217.27,1
+HCPCS,C1713,BONE PLATE 1/3 TUBULAR 6 HOLE,249.0,186.75,231.2,231.2,1
+HCPCS,C1713,BONE PLATE 1/3 TUBULAR 7 HOLE,264.0,198.0,245.12,245.12,1
+HCPCS,C1713,BONE PLATE 1/3 TUBULAR 8 HOLE 7008-0108,279.0,209.25,259.05,259.05,1
+HCPCS,C1713,BONE PLATE 2.7MM FRAGMENT T SHAPE 7010-0108N,1020.0,765.0,947.07,947.07,1
+HCPCS,C1713,CLAVICLE PLATE 101X11 14MM 16 HOLE BONE TITANIUM LOCKING DISTAL RIGHT,3300.0,2475.0,3064.05,3064.05,1
+HCPCS,C1713,CLAVICLE PLATE 3.5X68MM 9 HOLE BONE TITANIUM LOCKING DISTAL LEFT,3603.0,2702.25,3345.39,3345.39,1
+HCPCS,C1713,DISTAL PLATE 59MM BONE ARM ACULOC 2 TITANIUM VOLAR RADIUS LT WIDE,3475.0,2606.25,3226.54,3226.54,1
+HCPCS,C1713,ELBOW PLATE 14 HOLE BONE LOCKING LATERAL LEFT,3327.5,2495.62,3089.58,3089.58,1
+HCPCS,C1713,ELBOW PLATE 88MM 8 HOLE MEDIAL TITANIUM LOCKING DISTAL HUMERUS,3522.0,2641.5,3270.18,3270.18,1
+HCPCS,C1713,ELBOW PLATE CORONOID STANDARD RIGHT,3865.0,2898.75,3588.65,3588.65,1
+HCPCS,C1713,ELBOW PLATE SM CORONOID RIGHT,3865.0,2898.75,3588.65,3588.65,1
+HCPCS,C1713,FIBULA PLATE 4HOLE POSTEROLATERAL DISTAL TIBIA RIGHT,2688.0,2016.0,2495.81,2495.81,1
+HCPCS,C1713,FIBULA PLATE LATERAL 9 HOLE RIGHT,2859.0,2144.25,2654.58,2654.58,1
+HCPCS,C1713,FIBULA PLATE LATERAL LOW PROFILE 9 HOLE,2670.0,2002.5,2479.1,2479.1,1
+HCPCS,C1713,FIBULA PLATE POSTEROLATERAL 4 HOLE RIGHT,2718.0,2038.5,2523.66,2523.66,1
+HCPCS,C1713,FIBULA PLATE POSTEROLATERAL 6 HOLE RIGHT,2814.0,2110.5,2612.8,2612.8,1
+HCPCS,C1713,HUMERAL PLATE EXTRA LONG IMAL LT TITANIUM,4205.0,3153.75,3904.34,3904.34,1
+HCPCS,C1713,HUMERUS PLATE 103MM 7 HOLE BONE ARM POST LATERAL DISTAL LT,3437.5,2578.12,3191.72,3191.72,1
+HCPCS,C1713,HUMERUS PLATE 152MM 11 HOLE BONE ARM DISTAL POSTERIOR LATERAL RIGHT,3437.5,2578.12,3191.72,3191.72,1
+HCPCS,C1713,HUMERUS PLATE 203MM 15 HOLE BONE ARM POSTEROLATERAL DISTAL RIGHT,3830.0,2872.5,3556.16,3556.16,1
+HCPCS,C1713,HUMERUS PLATE 75MM 5 HOLE BONE ARM POST LAT DISTAL RT,3639.0,2729.25,3378.81,3378.81,1
+HCPCS,C1713,HUMERUS PLATE LG BONE HUMERAL PROXIMALIMAL POLARUS ROD SYSTEM RIGHT,3427.5,2570.62,3182.43,3182.43,1
+HCPCS,C1713,Implant Pin/Wire/Peg T1,25.0,18.75,23.21,23.21,1
+HCPCS,C1713,KIT LABORATORY PLATE SCREW ACU SINCH,3447.0,2585.25,3200.54,3200.54,1
+HCPCS,C1713,KIT SCREW 8X20 3.5MM BONE CANNULATED INTERFERENCE PROPEL PINN ACL GUIDE SYSTEM,426.0,319.5,395.54,395.54,1
+HCPCS,C1713,KIT SET TRACTION FIXATION TIGHTROPE SYNDESMOSIS REPAIR TITANIUM,3525.0,2643.75,3272.96,3272.96,1
+HCPCS,C1713,LATERAL PLATE 13 HOLE BONE FIBULA LOW PROFILE,2670.0,2002.5,2479.1,2479.1,1
+HCPCS,C1713,LATERAL PLATE 7 HOLE BONE FIBULA TITANIUM LOCKING LOW PROFILE,2670.0,2002.5,2479.1,2479.1,1
+HCPCS,C1713,OLECRANON PLATE 110MM 7 HOLE ELBOW TITANIUM STANDARD LEFT,3615.0,2711.25,3356.53,3356.53,1
+HCPCS,C1713,OLECRANON PLATE 90MM 5 HOLE BONE ELBOW LOCKING MIDSHAFT SUPERIOR TITANIUM LOW PROFILE LEFT,3822.0,2866.5,3548.73,3548.73,1
+HCPCS,C1713,PASSER SUTURE 1.8MM 45DEGREE LEFT NITINOL LF PRELOADED STERILE DISPOSABLE,420.0,315.0,389.97,389.97,1
+HCPCS,C1713,PEG BONE 2.3MM 14 CORTICAL ACU LOC 2 TITANIUM VOLAR DISTAL PLATING LOCKING SMOOTH BRONZE,375.0,281.25,348.19,348.19,1
+HCPCS,C1713,PEG CORTICAL 2.3X36MM LOCKING,375.0,281.25,348.19,348.19,1
+HCPCS,C1713,PEG HOOK LOCKING 2 HOLE,1977.0,1482.75,1835.64,1835.64,1
+HCPCS,C1713,PLATE HUMERUS SIZE 0 PROXIMAL STANDARD LEFT,5096.0,3822.0,4731.64,4731.64,1
+HCPCS,C1713,PLUG TIBIAL 2.4MM TUNNELER - DISCONTINUED PER NO USAGE,197.88,148.41,183.73,183.73,1
+HCPCS,C1713,RADIUS PLATE 63MM LONG BONE ACU LOC 2 ARM TITANIUM VOLAR DISTAL NARROW PROXIMALIMAL LEFT,3475.0,2606.25,3226.54,3226.54,1
+HCPCS,C1713,RADIUS PLATE ACU LOC 2 TITANIUM STANDARD LEFT,2706.0,2029.5,2512.52,2512.52,1
+HCPCS,C1713,RADIUS PLATE BONE RADIAL STYLOID DIVERGENT DISTAL FIXATION SYSTEM ACU LOC 2,3132.0,2349.0,2908.06,2908.06,1
+HCPCS,C1713,RADIUS PLATE XLONG BONE ACU LOC WRIST TITANIUM VOLAR DISTAL RIGHT,3084.0,2313.0,2863.49,2863.49,1
+HCPCS,C1713,SCAPULA PLATE 10 HOLE BONE R LOCKING LATERAL BORDER LEFT,4068.0,3051.0,3777.14,3777.14,1
+HCPCS,C1713,SCAPULA PLATE 4 HOLE BONE GLENOID LOCKING LEFT,3402.0,2551.5,3158.76,3158.76,1
+HCPCS,C1713,SCAPULA PLATE 4 HOLE BONE GLENOID LOCKING RIGHT,3402.0,2551.5,3158.76,3158.76,1
+HCPCS,C1713,SCAPULA PLATE ACROMION 6 HOLE LEFT,3965.0,2973.75,3681.5,3681.5,1
+HCPCS,C1713,SCAPULA PLATE MEDIAL LOCKING 9 HOLE LEFT,3774.0,2830.5,3504.16,3504.16,1
+HCPCS,C1713,SCREW BONE 10X25MM INTERFERENCE GENESYS MATRYX BIOCOMPOSITE,714.9,536.17,663.78,663.78,1
+HCPCS,C1713,SCREW BONE 10X30MM INTERFERENCE GENESYS MATRYX BIOCOMPOSITE,1067.73,800.8,991.39,991.39,1
+HCPCS,C1713,SCREW BONE 11X30MM INTERFERENCE GENESYS MATRYX BIOCOMPOSITE,714.9,536.17,663.78,663.78,1
+HCPCS,C1713,SCREW BONE 12X2.7MM TAP LOC HEXALOBE TITANIUM VARIABLE ANGLE LOCKING FULL THREAD DISTAL,420.0,315.0,389.97,389.97,1
+HCPCS,C1713,SCREW BONE 12X3.5MM RADIUS TAP LOC HEXALOBE TITANIUM VOLAR DISTAL PLATING NONLOCKING FULL THREAD,213.0,159.75,197.77,197.77,1
+HCPCS,C1713,SCREW BONE 12X4.0MM CANCELLOUS TITANIUM,237.0,177.75,220.05,220.05,1
+HCPCS,C1713,SCREW BONE 14X3.5MM CORTICAL ACU LOC 2 TITANIUM,183.0,137.25,169.92,169.92,1
+HCPCS,C1713,SCREW BONE 14X3.5MM CORTICAL ACU LOC 2 TITANIUM VOLAR DISTAL PLATING LOCKING THREAD,390.0,292.5,362.12,362.12,1
+HCPCS,C1713,SCREW BONE 16X2.3MM CORTICAL ACU LOC 2 TITANIUM VOLAR DISTAL PLATING NONTOGGLING,258.0,193.5,239.55,239.55,1
+HCPCS,C1713,SCREW BONE 18X2.3MM CORTICAL ACU LOC 2 TITANIUM VOLAR DISTAL PLATING LOCKING FULL THREAD GOLD,375.0,281.25,348.19,348.19,1
+HCPCS,C1713,SCREW BONE 2.3X18MM ACU LOC HEXALOBE VARIABLE ANGLE TI LOCKING DISTAL,477.0,357.75,442.89,442.89,1
+HCPCS,C1713,SCREW BONE 2.7X10MM CORTICAL TITANIUM FULL THREAD DISTAL ROUNDED HEAD NONLOCKING,201.0,150.75,186.63,186.63,1
+HCPCS,C1713,SCREW BONE 2.7X38MM NON LOCKING HEXALOBE TITANIUM FULL THREAD,213.0,159.75,197.77,197.77,1
+HCPCS,C1713,SCREW BONE 2.7X44MM LOCKING HEXALOBE TITANIUM FULL THREAD,420.0,315.0,389.97,389.97,1
+HCPCS,C1713,SCREW BONE 26X2.3MM CORTICAL ACU LOC 2 TITANIUM VOLAR DISTAL PLATING NONTOGGLING,258.0,193.5,239.55,239.55,1
+HCPCS,C1713,SCREW BONE 3.5MM TAP SURGICAL LOCKING FOREFOOT PLATING SYSTEM CORTICAL HARD,387.0,290.25,359.33,359.33,1
+HCPCS,C1713,SCREW BONE 3.5X10MM RADIUS TAP LOC HEXALOBE TI VOLAR DISTAL PLATING LOCKING,510.0,382.5,473.54,473.54,1
+HCPCS,C1713,SCREW BONE 3.5X50MM TAP LOC HEXALOBE TITANIUM VARIABLE ANGLE LOCKING FULL THREAD DISTAL,510.0,382.5,473.54,473.54,1
+HCPCS,C1713,SCREW BONE 3.5X60MM VARIABLE ANGLE HEXALOBE,477.0,357.75,442.89,442.89,1
+HCPCS,C1713,SCREW BONE 30MM ACUTWIST COMPRESSION,627.0,470.25,582.17,582.17,1
+HCPCS,C1713,SCREW BONE 4.5X20MM LOCKING CORTICAL SELF TAPPING,228.0,171.0,211.7,211.7,1
+HCPCS,C1713,SCREW BONE 48X4MM CANNULATED LONG THREADED,741.0,555.75,688.02,688.02,1
+HCPCS,C1713,SCREW BONE 4X45MM CANCELLOUS PARTIAL THREAD HEXALOBE,210.0,157.5,194.99,194.99,1
+HCPCS,C1713,SCREW BONE 4X60MM CANCELLOUS PARTIAL THREAD HEXALOBE,258.0,193.5,239.55,239.55,1
+HCPCS,C1713,SCREW BONE 5.0X40MM CANCELLOUS TITANIUM POLARUS,612.0,459.0,568.24,568.24,1
+HCPCS,C1713,SCREW BONE 5.7X38MM HUMERAL TAP LOC HEXALOBE TITANIUM VAIRABLE ANGLE LOCKING FULL THREAD DISTAL,663.0,497.25,615.6,615.6,1
+HCPCS,C1713,SCREW BONE 55X2.7MM TAP LOC HEXALOBE TITANIUM VARIABLE ANGLE NONLOCKING FULL THREAD DISTAL,279.0,209.25,259.05,259.05,1
+HCPCS,C1713,SCREW BONE 55X3.5MM RADIUS TAP LOC HEXALOBE TITANIUM VOLAR DISTAL PLATING NONLOCKING FULL THREAD,279.0,209.25,259.05,259.05,1
+HCPCS,C1713,SCREW BONE 9X25MM INTERFERENCE GENESYS MATRYX BIOCOMPOSITE,1067.73,800.8,991.39,991.39,1
+HCPCS,C1713,SCREW BONE COMPRESSION FRAG LOC SS 30-0371,471.0,353.25,437.32,437.32,1
+HCPCS,C1713,SCREW BONE SLEEVE COMPRESSION FRAG LOC,780.0,585.0,724.23,724.23,1
+HCPCS,C1713,SCREW SPINAL 3.5X80MM ANTHEM TI NONLOCKING,132.0,99.0,122.56,122.56,1
+HCPCS,C1713,SET BALL 3/8IN 3 3/32 .045 PIN BONE JURGAN SYSTEM W SERIES GENERAL,690.0,517.5,640.67,640.67,1
+HCPCS,C1713,SUTURE HI-FI 2 36IN POLYESTER CO-BRAIDEDED 1STRAND NO NEEDLE BLUE WHITE BX/12EA,81.78,61.33,75.93,75.93,1
+HCPCS,C1713,SUTURE HI-FI 2 HC-5 40IN POLYESTER BRAIDED TAPER 1STRAND 1/2 CIRCLE HIGH STRENGTH WHITE BX/12EA,66.75,50.06,61.98,61.98,1
+HCPCS,C1713,TIBIA PLATE DISTAL POSTEROLATERAL 3 HOLE RIGHT,2568.0,1926.0,2384.39,2384.39,1
+HCPCS,C1713,ULNA PLATE 80MM 6 HOLE ARM TITANIUM MIDHSHAFT,2334.0,1750.5,2167.12,2167.12,1
+HCPCS,C1713,ULNA PLATE WRIST ACU LOC TITANIUM VOLAR DISTAL STANDARD LEFT,2826.0,2119.5,2623.94,2623.94,1
+HCPCS,C1713,WASHER SCREW 7MM ODX3.6MM ID CANNULATED,171.0,128.25,158.77,158.77,1
+HCPCS,C1713,WIRE BONE 5IN 0.062 CERCLAGE SS SPADE TIP DUAL END,21.01,15.76,19.51,19.51,1
+HCPCS,C1713,WRIST PLATE BONE ACU LOC TITANIUM VOLAR DISTAL RADIUS STANDARD RIGHT,2706.0,2029.5,2512.52,2512.52,1
+HCPCS,C1713,WRIST PLATE BONE STD DORSAL PLATING SYSTEM LT ACU LOC,3153.0,2364.75,2927.56,2927.56,1
+HCPCS,C1726,BALLOON HERCULES 12MM 5.5CM 240 .035IN GUIDEWIRE 3 STAGE ENDOSCOPIC GASTROINTESTINAL OBLONG FILL WATER,786.0,589.5,609.94,729.8,2
+HCPCS,C1726,DILATOR COLONIC 14MM DIA 5.5CM 7FR 240 BALLOON INFLATE CATHETER,975.0,731.25,756.6,905.29,2
+HCPCS,C1758,CATHETER DOVER ROB-NEL 14FR 14IN URETHRAL SMOOTH ROUNDED TIP CS/100EA,1.47,1.1,1.14,1.36,3
+HCPCS,C1781,GRAFT MESH 1.7IN VENTRALEX EPTFE PATCH UMBILICAL HERNIA REPR SELF EXPAND STRAP CIRCLE SM CS/2EA,1605.0,1203.75,1490.24,1490.24,1
+HCPCS,C1781,GRAFT MESH 10.5CM 16CM 3DMAX POLYPROPYLENE MONOFILAMENT PATCH LAPAROSCOPY HERNIA REPAIR RIGHT CS/1EA,780.0,585.0,724.23,724.23,1
+HCPCS,C1781,GRAFT MESH 15CMX10 SYNTHETIC ABDOMINAL ABSORBABLE COATED ELLIPSE POLYPROPYLENE SEPRA VENTRALIGHT ST CS/1EA,2220.0,1665.0,2061.27,2061.27,1
+HCPCS,C1781,GRAFT MESH 6.0IN VENTRALIGHT ST POLYPROPYLENE HERNIA SEPRA HYDROGEL BIORESORBABLE CIRCLE CS/1EA,3166.8,2375.1,2940.37,2940.37,1
+HCPCS,C1781,GRAFT MESH 8.5CM 13.5CM 3DMAX POLYPROPYLENE MONOFILAMENT PATCH LAPAROSCOPY HERNIA REPAIR LEFT CS/1EA,720.0,540.0,668.52,668.52,1
+HCPCS,C1781,MESH GRAFT 1.6X1.9IN 4.1 4.8CM LG PERFIX POLYPROPYLENE MONOFILAMENT PLUG INGUINAL HERNIA SOFT TISSUE REPAIR CS/2EA,666.86,500.14,619.18,619.18,1
+HCPCS,C1781,MESH GRAFT 15CMX10 PROGRIP PET PLA LAPAROSCOPY TACK FREE CONTOURED RESORBABLE RIGHT,1033.44,775.08,959.55,959.55,1
+HCPCS,C1781,MESH GRAFT 15CMX10 PROGRIP PET PLA LAPAROSCOPY TACK FREE RECTANGLE RESORBABLE FLAT SHEET,865.2,648.9,803.34,803.34,1
+HCPCS,C1781,MESH HERNIA 2.0MMX10 15CM DUAL BIOMATERIAL OVAL,2835.0,2126.25,2632.3,2632.3,1
+HCPCS,C1781,MESH SEPARATING 2.4X5.4IN PROLENE TISSUE POLYPROPYLENE NONABSORBABLE PRESHAPED KEYHOLE HERNIA REPAIR BX/6EA,231.6,173.7,215.04,215.04,1
+HCPCS,C1781,MESH SURGICAL 1.8X4.0IN SM HERNIA PROLENE POLYPROPYLENE NONABSORBABLE PRESHAPED KEYHOLE REPAIR BX/3EA,403.71,302.78,374.84,374.84,1
+HCPCS,C1781,MESH SYNTHETIC 6.0 XIN ABDOMINAL NON ABSORBABLE SQUARE POLYPROPYLENE BX/6EA,193.42,145.06,179.59,179.59,1
+HCPCS,C1781,Mesh T2,4063.19,3047.39,3772.67,3772.67,1
+HCPCS,C1781,STRAP POCKET 1.7IN SM GRAFT MESH VENTRALEX ST POLYPROPYLENE PGA PATCH HERNIA FIBER HYDROGEL BIORESORBABLE CIRCLE CA/1EA,1695.0,1271.25,1573.81,1573.81,1
+HCPCS,C1781,STRAP POCKET 2.5IN MED GRAFT MESH VENTRALEX ST POLYPROPYLENE PGA PATCH HERNIA FIBER HYDROGEL BIORESORBABLE CIRCLE CS/1EA,2040.0,1530.0,1894.14,1894.14,1
+HCPCS,C1781,STRAP POCKET 3.2I N LARGE GRAFT MESH VENTRALEX POLYPROPYLENE PGA PATCH HERNIA FIBER HYDROGEL BIORESORBABLE CIRCLE CA/1EA,2610.0,1957.5,2423.39,2423.39,1
+HCPCS,C1788,KIT PORT 6.0FR INFUSION VASCULAR MRI POWER ISP PLASTIC ATTACHABLE POLYURETHANE CATHETER ATTACHED SUTURE PLUG,1044.0,783.0,810.14,810.14,1
+HCPCS,C1788,PORT POWERPORT CLEARVUE ISP 8FR CATHETER POLYURETHANE IMPLANTABLE SINGLE LUMEN INTERMEDIATE VALVED INTRODUCER,1260.0,945.0,977.76,977.76,1
+HCPCS,C8902,Mra Abdomen W&W/O Cont,4897.0,3672.75,424.11,424.11,1
+HCPCS,C8908,MRI Breast Bilat W&W/O Cont,8060.0,6045.0,454.18,454.18,1
+HCPCS,C8911,Mra Chest W&W/O Contrast,4875.0,3656.25,424.07,4607.36,2
+HCPCS,G0008,Admin of Influenza Vaccine,33.0,24.75,58.68,58.68,1
+HCPCS,G0008,Vfc Admin Influenza Virus Vac,23.0,17.25,58.68,58.68,1
+HCPCS,G0103,Prostate Cancer Screen Psa,227.0,170.25,198.4,198.4,1
+HCPCS,G0105,Colon Cancer Scr Colonoscopy,1913.0,1434.75,1159.47,1159.47,1
+HCPCS,G0105,Colorectal Scrn; Hi Risk Ind,293.0,219.75,1159.47,1159.47,1
+HCPCS,G0121,Colon Ca Scrn Not Hi Rsk Ind,305.0,228.75,1159.47,1159.47,1
+HCPCS,G0121,Colon Cancer Scr Non-Hr,1913.0,1434.75,1159.47,1159.47,1
+HCPCS,G0378,Observation 1 Hr,134.0,100.5,103.98,127.57,24
+HCPCS,G0378,Observation Carve Out (10000 - 29999) - Integumentary/Musculoskeletal,134.0,100.5,103.98,127.57,4
+HCPCS,G0378,Observation Carve Out (50000 - 59999) - Urinary/Male/Female/Maternity,134.0,100.5,103.98,127.57,4
+HCPCS,G0378,Observation Carve Out (60000 - 69999) - Endo/Nervous/Eye/Auditory,134.0,100.5,103.98,127.57,4
+HCPCS,G0378,Observation Carve Out (90785 - 98965) - Medicine,134.0,100.5,103.98,127.57,4
+HCPCS,J7296,SYSTEM KYLEENA 19.5MG LEVONORGESTREL-RELEASING INTRAUTERINE,2915.1,2186.32,2706.67,2706.67,1
+HCPCS,P9016,Red Cells L/R Ea,771.0,578.25,194.92,715.87,3
+HCPCS,P9040,Red Cells L/R Irr Ea,1510.0,1132.5,273.96,273.96,1
+HCPCS,P9073,"Platelets, Pheresis, Pathogen-Reduced, Each Unit",3413.0,2559.75,587.28,587.28,1
+HCPCS,S9485,Crisis Intervention Mental Health Services,3211.0,2408.25,2491.74,2491.74,1
 MS-DRG,057,Degenerative Nervous System Disorders Without McC,26081.37,19561.03,13605.98,13605.98,2
 MS-DRG,058,Multiple Sclerosis And Cerebellar Ataxia With McC,42014.18,31510.63,17254.99,17254.99,2
 MS-DRG,059,Multiple Sclerosis And Cerebellar Ataxia With Cc,31874.46,23905.84,13123.74,13123.74,2

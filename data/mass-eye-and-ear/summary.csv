@@ -1772,6 +1772,853 @@ CDM,SUP-ITM-10339055,IMPLANT MIDFACE 60MMX40MMX4MM CONTOUR LEFT,1590.0,1192.5,81
 CDM,SUP-ITM-10339057,LENS IMPLANTABLE COLLAMER EVO+ VISIAN TORIC VTICM5 13.2 -7.50(+1.00)(092),3735.0,2801.25,2427.75,2427.75,1
 CDM,SUP-ITM-10339065,LENS INTRAOCULAR ENVISTA ETE U 300 +17.5,1275.0,956.25,652.8,988.13,5
 CDM,SUP-ITM-10339121,CEMENT BONE 5CC INJECTABLE SUBSTITUTE SELF SET HYDROSET CALCIUM PHOSPHATE,3960.8,2970.6,2027.93,3069.62,4
+CPT,0241U,Nfct Ds Rna 4 Targets Upper Respiratory Specimen,478.0,358.5,315.0,315.0,1
+CPT,10005,Fine Needle Aspiration Bx W/US Gdn 1st Lesion,782.0,586.5,400.38,835.47,18
+CPT,10006,Fine Needle Aspiration Bx W/US Gdn Ea Addl,391.0,293.25,200.19,303.03,4
+CPT,10009,Fine Needle Aspiration Bx W/CT Gdn 1st Lesion,782.0,586.5,662.51,835.47,2
+CPT,10021,Aspiration Fine Needle W/O Imaging,290.0,217.5,359.17,474.42,2
+CPT,10021,Pf Aspirat Fine Needle W/O Imaging,498.0,373.5,474.42,474.42,1
+CPT,10030,Image-Guided Catheter Fluid Collection Drainage,314.0,235.5,835.47,835.47,1
+CPT,10060,I&D Abscess Smp,317.0,237.75,162.3,235.94,4
+CPT,10120,Incision/Remove FB Subq Smp,545.0,408.75,279.04,413.55,3
+CPT,10140,I&D Hematoma/Seroma/Fluid,1668.0,1251.0,1237.95,1923.94,3
+CPT,10140,Pf I&D Hematoma/Seroma/Fluid,554.0,415.5,1237.95,1923.94,2
+CPT,10160,Aspiration Abscess/Hema/Bulla/Cyst,317.0,237.75,359.17,359.17,1
+CPT,11042,Debride Skin/Subq Tissue,1980.0,1485.0,359.17,1386.79,6
+CPT,11042,Pf Debr Skin/Subq Tissue,362.0,271.5,253.54,474.42,5
+CPT,11044,Debride Skin/Subq Tissu/Muscle/Bone,2613.0,1959.75,1337.86,1923.94,3
+CPT,11044,Debridement Bone Muscle &/Fascia 20 Sq Cm/<,1333.0,999.75,682.5,1923.94,2
+CPT,11102,Tangential Biopsy Skin Single Lesion,271.0,203.25,138.75,235.94,13
+CPT,11104,Punch Biopsy Skin Single Lesion,271.0,203.25,138.75,474.42,9
+CPT,11106,Incisional Biopsy Skin Single Lesion,271.0,203.25,726.87,726.87,1
+CPT,11200,Remove Tag Skin <15,1117.0,837.75,201.78,201.78,1
+CPT,11310,Shave Lesn Face/Ear/Lip <0.5cm,163.0,122.25,235.94,235.94,1
+CPT,11402,Exc Lesn Bgn Trunk/Arm/Leg 1.1-2.0,1117.0,837.75,662.51,835.47,2
+CPT,11404,Exc Lesn Bgn Trunk/Arm/Leg 3.1-4.0,2252.0,1689.0,1923.94,1923.94,1
+CPT,11420,Exc Lesn Bgn Sclp/Hnd/Gen <0.5cm,1071.0,803.25,1237.95,1923.94,3
+CPT,11421,Exc Lesn Bgn Sclp/Hnd/Gen 0.6-1.0cm,1261.0,945.75,579.34,883.2,3
+CPT,11421,Pf Exc Lesn Bgn Sclp/Hnd 0.6-1.0cm,530.0,397.5,371.21,579.34,2
+CPT,11422,Exc Lesn Bgn Sclp/Hnd/Gen 1.1-2.0cm,1261.0,945.75,645.63,1923.94,4
+CPT,11422,Pf Exc Lesn Bgn Sclp/Hnd 1.1-2.0cm,593.0,444.75,303.62,1923.94,3
+CPT,11423,Exc Lesn Bgn Sclp/Hnd/Gen 2.1-3.0cm,2252.0,1689.0,1153.02,1923.94,3
+CPT,11424,Exc Lesn Bgn Sclp/Hnd/Gen 3.1-4.0cm,2613.0,1959.75,1572.96,1923.94,2
+CPT,11426,Exc Lesn Bgn Sclp/Hnd/Gen >4.0cm,3535.0,2651.25,3398.51,3398.51,1
+CPT,11440,Exc Lesn Bgn Face/Ear/Lip <0.5cm,1117.0,837.75,571.9,847.58,7
+CPT,11441,Exc Lesn Bgn Face/Ear/Lip 0.6-1.0cm,1117.0,837.75,579.34,835.47,4
+CPT,11441,Pf Exc Lesn Bgn Face/Ear 0.6-1.0cm,560.0,420.0,579.34,835.47,3
+CPT,11442,Exc Lesn Bgn Face/Ear/Lip 1.1-2.0cm,1980.0,1485.0,579.34,835.47,4
+CPT,11443,Exc Lesn Bgn Face/Ear/Lip 2.1-3.0cm,1980.0,1485.0,1572.96,1923.94,2
+CPT,11446,Exc Lesn Bgn Face/Ear/Lip >4.0cm,3408.0,2556.0,2140.46,3398.51,3
+CPT,11602,Exc Lesn Mal Trunk/Arm/Leg 1.1-2.0,1117.0,837.75,474.42,474.42,1
+CPT,11603,Exc Lesn Mal Trunk/Arm/Leg 2.1-3.0,1261.0,945.75,579.34,835.47,3
+CPT,11604,Exc Lesn Mal Trunk/Arm/Leg 3.1-4.0,2613.0,1959.75,662.51,662.51,1
+CPT,11606,Exc Lesn Mal Trunk/Arm/Leg >4.0cm,3582.0,2686.5,1923.94,1923.94,1
+CPT,11622,Exc Lesn Mal Sclp/Hnd/Gen 1.1-2.0cm,1261.0,945.75,662.51,835.47,3
+CPT,11623,Exc Lesn Mal Sclp/Hnd/Gen 2.1-3.0cm,1980.0,1485.0,1923.94,1923.94,2
+CPT,11624,Exc Lesn Mal Sclp/Hnd/Gen 3.1-4.0cm,2613.0,1959.75,1237.95,1923.94,5
+CPT,11626,Exc Lesn Mal Sclp/Hnd/Gen >4.0cm,3582.0,2686.5,2140.46,3398.51,9
+CPT,11640,Exc Lesn Mal Face/Ear/Lip <0.5cm,1261.0,945.75,662.51,835.47,2
+CPT,11641,Exc Lesn Mal Face/Ear/Lip 0.6-1.0cm,1261.0,945.75,662.51,835.47,3
+CPT,11642,Exc Lesn Mal Face/Ear/Lip 1.1-2.0cm,1261.0,945.75,662.51,835.47,4
+CPT,11643,Exc Lesn Mal Face/Ear/Lip 2.1-3.0cm,1980.0,1485.0,1237.95,1923.94,5
+CPT,11644,Exc Lesn Mal Face/Ear/Lip 3.1-4.0cm,2252.0,1689.0,1572.96,1923.94,7
+CPT,11646,Exc Lesn Mal Face/Ear/Lip >4.0cm,3408.0,2556.0,1744.9,3398.51,6
+CPT,11900,Inject Intralesnal <7 Lesions,330.0,247.5,168.96,235.94,6
+CPT,11950,Fill Contour Defct <1 Cc,792.0,594.0,235.94,235.94,1
+CPT,11950,Fill Contour Defct <1cc,792.0,594.0,235.94,235.94,1
+CPT,12011,Rpr Lac Smp Face/Ear/Lip <2.5cm,610.0,457.5,201.78,462.87,3
+CPT,12020,Closure of Split Wound Simple - 12020,784.0,588.0,552.21,726.87,2
+CPT,12031,Rpr Lac Intermd Scalp/Axil <2.5cm,394.0,295.5,359.17,474.42,3
+CPT,12032,Rpr Lac Intermd Scalp/Axil 2.6-7.5,394.0,295.5,201.73,474.42,9
+CPT,12034,Rpr Lac Intermd Scalp/Axil 7.6-12.5,1117.0,837.75,314.08,847.58,4
+CPT,12041,Rpr Lac Intermd Hnd/Ft/Gen <2.5cm,610.0,457.5,314.08,359.17,2
+CPT,12042,Rpr Lac Intermd Hnd/Ft/Gen 2.6-7.5,1117.0,837.75,314.08,474.42,6
+CPT,12051,Rpr Lac Intermd Face/Ear/Lip <2.5cm,394.0,295.5,298.97,474.42,9
+CPT,12052,Rpr Lac Intermd Face/Ear/Lip2.6-5.0,394.0,295.5,275.96,474.42,4
+CPT,13121,Rpr Lac Cplx Scalp/Arm/Leg 2-7.5cm,1980.0,1485.0,552.21,726.87,4
+CPT,13131,Repair Complex 1.1-2.5 Cm - 13131,394.0,295.5,359.17,474.42,3
+CPT,13132,Repair Complex 2.6-7.5 Cm - 13132,1980.0,1485.0,482.89,1013.76,7
+CPT,13133,Rpr Lac Cplx Forehd/Hnd/Ft Add 5cm,1117.0,837.75,571.9,571.9,1
+CPT,13151,Rpr Lac Cplx Eye/Ear/Lip 1.1-2.5cm,811.0,608.25,552.21,726.87,2
+CPT,13152,Rpr Lac Cplx Eye/Ear/Lip 2.6-7.5cm,1980.0,1485.0,482.89,726.87,4
+CPT,13160,Closure Wound Cplx Secondary,3989.0,2991.75,2172.1,2172.1,2
+CPT,14000,Transfer Tissue Trunk <10cm,2657.0,1992.75,1548.96,1548.96,1
+CPT,14020,Trnsf Tissue Sclp/Arm/Lg <10cm,3582.0,2686.5,1548.96,2172.1,5
+CPT,14021,Trnsf Tissue Sclp/Arm/Lg 10-30cm,4192.0,3144.0,1548.96,2172.1,6
+CPT,14040,Trnsf Tissue Head/Hand/Foot <10cm,2613.0,1959.75,1337.86,2172.1,12
+CPT,14041,Trnsf Tissue Head/Hand/Foot 10-30cm,2613.0,1959.75,1771.32,2172.1,7
+CPT,14060,Trnsf Tissue Eye/Nose/Ear/Lip <10cm,2613.0,1959.75,1337.86,2172.1,10
+CPT,14061,Trnsf Tissue Eye/Nose/Ear/Lip 10-30,3582.0,2686.5,1771.32,2172.1,4
+CPT,14301,Trnsf Tissue Any Area 30.1-60 Sqcm,7160.0,5370.0,3163.23,5433.01,7
+CPT,14302,Trnsf Tissue Any Area Ea Addl 30,376.0,282.0,192.51,373.2,3
+CPT,15004,Prep Wound F/Nhf/G 1st 100cm Child,811.0,608.25,415.23,726.87,11
+CPT,15120,Graft Split Face 1st 100 Sq Cm Chld,963.0,722.25,493.06,3163.23,7
+CPT,15200,Graft Full Trunk <20cm,4329.0,3246.75,2172.1,2172.1,2
+CPT,15220,Graft Full Scalp/Arm/Leg <20cm,2690.0,2017.5,1548.96,2172.1,6
+CPT,15240,Graft Full Forehd/Chin/Mth <20cm,2613.0,1959.75,1771.32,2172.1,3
+CPT,15260,Graft Full Eye/Ns/Ear/Lip <20cm,2690.0,2017.5,1377.28,2172.1,9
+CPT,15275,Gft Skin Sub F/S/E </=100cm 1st 25,2657.0,1992.75,1771.32,2172.1,2
+CPT,15576,Flap Pedicle Eye/Nose/Ear/Lip,3389.0,2541.75,2172.1,2172.1,1
+CPT,15630,Flap Delay/Section Eye/Nose/Ear,4320.0,3240.0,1548.96,3278.02,6
+CPT,15730,Midface Flap W/Preservation of Vascular Pedicles,4329.0,3246.75,2216.45,3354.98,4
+CPT,15733,Musc Myoq/Fscq Flap Head&Neck W/Named Vasc Pedcl,4387.0,3290.25,3072.65,4347.18,6
+CPT,15760,Graft Composite Skin,4258.0,3193.5,1771.32,2180.1,4
+CPT,15769,Grafting of Autologous Soft Tiss by Direct Exc,2702.0,2026.5,1383.42,4347.18,9
+CPT,15770,Derma-Fat-Fascia Graft,3362.0,2521.5,2360.46,2360.46,1
+CPT,15773,Grafting of Autologous Fat by Lipo 25 Cc or Less,2760.0,2070.0,2172.1,2172.1,2
+CPT,15822,Blepharoplasty Upper Eyelid|BILATERAL PROCEDURE,4354.0,3265.5,2172.1,2656.98,6
+CPT,15823,Blepharoplasty Upper Excess Skin,2613.0,1959.75,1548.96,2172.1,4
+CPT,15823,Blepharoplasty Upper Excess Skin|BILATERAL PROCEDURE,2613.0,1959.75,2172.1,2656.98,10
+CPT,15829,"Facelift, (Full) Posterior, Unilateral",4143.0,3107.25,3143.71,3143.71,1
+CPT,15840,"Graft Face Nerve Paralysis, Fascia (Uni)",5616.0,4212.0,2875.39,4261.42,3
+CPT,15845,Skin & Muscle Repair Face,4435.0,3326.25,3113.81,3113.81,1
+CPT,15851,Removal Sutures/Staples Requiring Anesthesia,437.0,327.75,306.82,306.82,1
+CPT,17000,Dest Lesn Premalignant 1st Lesion,330.0,247.5,176.45,235.94,3
+CPT,17004,Dest Lesn Premalignant 15+ Lesions,1117.0,837.75,571.9,571.9,1
+CPT,17110,Destruct Benign Lesion Up to 14 Les,1117.0,837.75,201.78,201.78,1
+CPT,17250,Cautery Chemical Tissue Granulat,610.0,457.5,176.45,312.32,3
+CPT,17250,Pf Cautery Chemical Tissue Gran,281.0,210.75,143.87,176.45,2
+CPT,17262,Dest Lesn Mal Trunk/Arm/Leg 1.1-2.0,330.0,247.5,235.94,235.94,1
+CPT,17271,Dest Lesn Mal Sclp/Hnd/Gen 0.6-1.0,603.0,452.25,235.94,235.94,1
+CPT,17311,Chemosurg/Mohs 1st Stg H/N/Hf/G <5,857.0,642.75,438.78,726.87,15
+CPT,17312,Chemosurg/Mohs Ea Addl H/N/Hf/G <5,448.0,336.0,229.38,339.94,3
+CPT,17313,Chemosurg/Mohs 1st Stage T/a/L < 5,857.0,642.75,482.89,726.87,9
+CPT,17314,Chemosurg/Mohs Ea Addl Stg T/a/L <5,2613.0,1959.75,1982.74,1982.74,1
+CPT,17380,Hair Remov Electrolysis Ea 1/2 Hr,250.0,187.5,175.53,175.53,1
+CPT,17999,"Derm, Laser Resur, Scar Rev. Over 2 Hrs.",3865.0,2898.75,235.94,2713.62,2
+CPT,17999,"Derm, Laser Resur, Scar Rev. Up to 1 Hr.",2576.0,1932.0,235.94,1808.61,2
+CPT,17999,"Derm, Laser Resur, Scar Rev. Up to 1.5 Hrs.",3218.0,2413.5,235.94,2259.36,2
+CPT,17999,"Derm, Laser Resurf, Scar Rev. Up to 2 Hrs.",3477.0,2607.75,235.94,2441.2,2
+CPT,17999,Laser Scar Revision - 1,140.0,105.0,98.29,235.94,2
+CPT,17999,Laser Scar Revision - 2,269.0,201.75,188.86,235.94,2
+CPT,17999,Laser Scar Revision - 3,331.0,248.25,232.4,235.94,2
+CPT,17999,Minor Cosmetic Procedure - 1,125.0,93.75,87.76,235.94,2
+CPT,17999,Minor Cosmetic Procedure - 2,250.0,187.5,175.53,235.94,2
+CPT,17999,Minor Cosmetic Procedure - 3,300.0,225.0,210.63,235.94,2
+CPT,17999,Skin/Muc Mem/Subq Tissue Unlstd,1720.0,1290.0,235.94,1207.61,2
+CPT,17999,Static Facial Suspension,5616.0,4212.0,235.94,3942.99,2
+CPT,20206,Biopsy Muscle Needle Perc,1379.0,1034.25,706.05,1923.94,5
+CPT,20206,Pf Biopsy Muscle Needle Perc,847.0,635.25,433.66,1923.94,5
+CPT,20552,Inject Trigger Point 1-2 Muscle(S),392.0,294.0,283.01,283.01,1
+CPT,20670,Remove Impl Wire Superfic,745.0,558.75,1923.94,1923.94,1
+CPT,20680,Rem Impl Wire Deep,3139.0,2354.25,1607.17,3398.51,4
+CPT,20924,Remv Tendon for Graft,2481.0,1860.75,1741.91,1741.91,1
+CPT,20999,Depressor Anguli Oris Dao Excision,3064.0,2298.0,284.84,2324.96,4
+CPT,21011,Exc Tumor Tiss Face/Scalp Subq< 2cm,3539.0,2654.25,1572.96,2478.72,2
+CPT,21012,Exc Tumr Face/Scalp Subq 2+Cm,1229.0,921.75,1572.96,1923.94,4
+CPT,21013,Exc Tum Soft Tiss Face/Scalp Subfas,1229.0,921.75,1572.96,1923.94,2
+CPT,21014,Exc Tum Face/Scalp Subfasc 2 +,1257.0,942.75,643.58,3398.51,5
+CPT,21025,Excision of Bone Lower Jaw,6699.0,5024.25,5059.36,5059.36,1
+CPT,21026,Excision of Facial Bone(S),2720.0,2040.0,3981.81,7024.49,4
+CPT,21029,Contour of Face Bone Lesion,3233.0,2424.75,2269.89,2269.89,1
+CPT,21235,Graft Ear Crtlg Autogenous Nose/Ear,2311.0,1733.25,1183.23,7024.49,13
+CPT,21315,Closed Tx Nasal Bone Fx W/Mnpj W/O Stabilization,1080.0,810.0,788.4,1462.72,4
+CPT,21320,Closed Tx Nasal Bone Fx W/Mnpj W/Stabilization,2392.0,1794.0,1224.7,3850.95,10
+CPT,21337,Tx Fx Nasal Septal Closed,2202.0,1651.5,1546.02,1546.02,1
+CPT,21501,I&D Abscess Neck/Thorax,3071.0,2303.25,2719.71,3398.51,2
+CPT,21501,I&D Deep Absc/Hematoma Neck/Chest,1869.0,1401.75,3398.51,3398.51,1
+CPT,21550,Biopsy Soft Tissue Neck/Chest,872.0,654.0,446.46,1923.94,4
+CPT,21550,Biopsy Soft Tissue Neck/Thorax,2221.0,1665.75,1137.15,1923.94,5
+CPT,21552,Exc Tum Tiss Neck/Ant Thx Subq 3+,3365.0,2523.75,2140.46,3398.51,3
+CPT,21555,Exc Tumor Neck/Thorax Sq <3cm,3436.0,2577.0,1237.95,1923.94,5
+CPT,21555,Pf Exc Tumr Neck/Chest Sq <3cm,1526.0,1144.5,1237.95,1923.94,4
+CPT,30020,Drain Abscess/Hematoma Nasal Septum,497.0,372.75,557.06,557.06,1
+CPT,30100,Biopsy Intranasal,1117.0,837.75,1151.19,1758.93,4
+CPT,30100,Pf Biopsy Intranasal,498.0,373.5,1151.19,1758.93,3
+CPT,30117,Exc Lesion Intranasal Internal Appr,2392.0,1794.0,1224.7,3850.95,4
+CPT,30124,"Excis Nasal Dermoid,Simple,Subcut",3562.0,2671.5,2500.88,2500.88,1
+CPT,30140,"Excision Turbinate,Submucous",3671.0,2753.25,1879.55,3850.95,5
+CPT,30140,"Excision Turbinate,Submucous|BILATERAL PROCEDURE",3671.0,2753.25,3827.37,4732.78,3
+CPT,30410,Rhinoplasty,3103.0,2327.25,2178.62,2178.62,1
+CPT,30450,"Rhinoplasty, Revision Major",3104.0,2328.0,2179.32,2179.32,1
+CPT,30465,Repair Nasal Cavity Stenosis,6828.0,5121.0,2731.2,5181.09,6
+CPT,30469,Rpr Nsl Vlv Collapse Lw Nrg Subq/Sbmcsl Rmdlg,882.0,661.5,619.25,7024.49,2
+CPT,30520,Mee Septoplasty or Submucous Resection,1800.0,1350.0,720.0,1365.84,8
+CPT,30801,Ablate Inf Turbinate Superf,1073.0,804.75,1462.72,1462.72,1
+CPT,30802,"Cauter Turbinate Mucosa,Intramural",2406.0,1804.5,1151.19,1825.67,7
+CPT,30901,Control Nosebleed Ant Smp,167.0,125.25,106.48,126.72,2
+CPT,30901,Control Nosebleed Ant Smp|BILATERAL PROCEDURE,167.0,125.25,182.66,182.66,1
+CPT,30901,Pf Control Nosebleed Ant Smp,324.0,243.0,106.48,245.85,2
+CPT,30903,Control Nosebleed Ant Cplx,167.0,125.25,153.06,153.06,1
+CPT,30903,Control Nosebleed Ant Cplx|BILATERAL PROCEDURE,167.0,125.25,182.66,182.66,1
+CPT,30905,Control Nosebleed Posterior Initial,168.0,126.0,153.06,153.06,1
+CPT,30930,Fx Inferior Turbinate Nasal Therap,644.0,483.0,329.73,329.73,1
+CPT,30999,Clarifix,2327.0,1745.25,930.8,1765.73,5
+CPT,30999,Newborn Manual Nasal Dorsal Remodeling,118.0,88.5,47.2,89.54,5
+CPT,30999,Rhinaer Posterior Nasal Nerve Rf,3171.0,2378.25,1268.4,2406.15,5
+CPT,30999,Vivaer Nasal Tissue Remodeling Rf,3171.0,2378.25,1268.4,2406.15,5
+CPT,31231,Endo Nasal Diagnostic,397.0,297.75,163.97,404.92,29
+CPT,31231,Pf Endo Nasal,809.0,606.75,163.97,613.87,28
+CPT,31237,Endo Nasal/Sinus W/Bx/Polyp/Debr,2387.0,1790.25,1222.14,2047.7,12
+CPT,31237,Endo Nasal/Sinus W/Bx/Polyp/Debr|BILATERAL PROCEDURE,2387.0,1790.25,2348.79,4732.78,3
+CPT,31237,Pf Endo Nasal/Sinus W/Biopsy,1058.0,793.5,541.7,2047.7,11
+CPT,31237,Pf Endo Nasal/Sinus W/Biopsy|BILATERAL PROCEDURE,1058.0,793.5,4732.78,4732.78,2
+CPT,31238,Endo Nasal/Sinus W/Control Bleeding,2402.0,1801.5,1229.82,2047.7,5
+CPT,31238,Endo Nasal/Sinus W/Control Bleeding|BILATERAL PROCEDURE,2402.0,1801.5,2348.79,4378.03,3
+CPT,31240,"Nasal/Sinus Endoscopy,Rmv Concha Bull",822.0,616.5,420.86,420.86,1
+CPT,31242,Nasal/Sinus Ndsc Dstrj Rf Ablation Pst Nsl Nrv,923.0,692.25,7024.49,7024.49,4
+CPT,31253,Nasal/Sinus Ndsc Tot W/Frnt Sins Expl Tiss Rmvl,3602.0,2701.5,2733.2,2733.2,1
+CPT,31254,"Nasal/Sinus Endoscopy, Remv Part Ethmoid",3578.0,2683.5,2714.99,2714.99,1
+CPT,31255,"Nasal/Sinus Endoscopy,Remv Totl Ethmoid",2036.0,1527.0,1042.43,1042.43,1
+CPT,31256,"Mee Nasal/Sinus Endoscopy,Open Maxill Sinus",3498.0,2623.5,1790.98,2654.28,3
+CPT,31256,"Mee Nasal/Sinus Endoscopy,Open Maxill Sinus|BILATERAL PROCEDURE",3498.0,2623.5,4701.15,4732.78,2
+CPT,31257,Nasal/Sinus Ndsc Total With Sphenoidotomy,3602.0,2701.5,2733.2,2791.55,2
+CPT,31259,Nasal/Sinus Ndsc Tot W/Sphendt W/Sphen Tiss Rmvl,3602.0,2701.5,2733.2,2733.2,1
+CPT,31267,"Mee Nasal/Sinus Endoscopy, Rmv Tiss Maxill Sinus",3416.0,2562.0,1748.99,2592.06,2
+CPT,31276,"Nasal/Sinus Endoscopy, Explor Frontal Sinus",5733.0,4299.75,4350.2,4350.2,1
+CPT,31502,Change Tube Tracheotomy,268.0,201.0,235.73,275.75,3
+CPT,31505,Laryngoscopy Indirect,282.0,211.5,163.97,230.53,6
+CPT,31525,Laryngoscopy,2334.0,1750.5,1195.01,2047.7,6
+CPT,31526,Laryngoscopy Direct Dx W/Micro/Tele,2285.0,1713.75,1169.92,1733.86,3
+CPT,31528,Laryngoscopy Direct With Dilation Initial,3535.0,2651.25,1809.92,4378.03,14
+CPT,31528,"Laryngoscopy Direct, Dilation, Initial",3535.0,2651.25,1809.92,4378.03,14
+CPT,31529,"Laryngoscopy Direct,Dilation, Subsequent",4318.0,3238.5,2466.59,4378.03,5
+CPT,31530,Laryngoscopy OP Remove FB,2402.0,1801.5,1686.44,1686.44,1
+CPT,31535,Laryngoscopy Direct With Biopsy,3442.0,2581.5,1762.3,2611.79,4
+CPT,31540,"Mee Laryngoscopy Direct Operative, Exc Tumor",5100.0,3825.0,2611.2,3580.71,3
+CPT,31541,"Laryngoscopy,Dirct,OP Scop,Exc Tumr",1619.0,1214.25,828.93,4378.03,11
+CPT,31541,"Laryngosocopy,Dir,Opr,Exc Tumor,W/Scope",3713.0,2784.75,1901.06,4378.03,11
+CPT,31545,"Laryngoscopy,Dir,OP,Exc Tumr,Lcl Flap",2373.0,1779.75,1214.98,1800.63,2
+CPT,31551,Laryngoplasty Laryngeal Sten W/O Stent < 12 Yrs,526.0,394.5,369.3,369.3,1
+CPT,31553,Laryngoplasty Laryngeal Sten W/Stent < 12 Yrs,526.0,394.5,369.3,407.65,2
+CPT,31570,Laryngoscopy OP W/Inj Cord,2349.0,1761.75,1645.24,4378.03,8
+CPT,31571,Laryngoscopy OP W/Inj Cord W/Mic/Te,3693.0,2769.75,1890.82,4378.03,11
+CPT,31571,"Laryngoscopy,Direct,Scope,Inj Cords",2242.0,1681.5,1147.9,4378.03,11
+CPT,31572,Laryngoscopy Flexible Ablatj Destj Lesion(S) Uni,3993.0,2994.75,2044.42,4378.03,11
+CPT,31572,Laryngoscopy Flexible Ablatj Destj Lesion(S) Uni|BILATERAL PROCEDURE,3993.0,2994.75,4701.15,4701.15,1
+CPT,31573,Laryngoscopy Flexible Therapeutic Injection Uni,3462.0,2596.5,2047.7,2683.05,4
+CPT,31573,Laryngoscopy Flexible Therapeutic Injection Uni|BILATERAL PROCEDURE,3462.0,2596.5,2348.79,2348.79,1
+CPT,31574,Laryngoscopy Flexible W/Injection Agmntj Uni,3462.0,2596.5,1232.36,2626.97,7
+CPT,31574,Laryngoscopy Flexible W/Injection Agmntj Uni|BILATERAL PROCEDURE,3462.0,2596.5,2348.79,2348.79,1
+CPT,31575,Laryngoscopy Flex,299.0,224.25,153.09,404.92,29
+CPT,31575,Pf Laryngosc Fiberoptic,645.0,483.75,163.97,489.43,28
+CPT,31576,Laryngoscopy Flex Fiber W/Bx,3582.0,2686.5,1232.36,2718.02,10
+CPT,31578,"Laryngoscopy,Flex Fib-OP;Remove Lesion",2372.0,1779.0,3134.1,3134.1,1
+CPT,31579,Laryngoscopy Stroboscopy,1117.0,837.75,386.5,847.58,26
+CPT,31579,Pf Laryngosc W/Stroboscopy,679.0,509.25,347.65,844.56,25
+CPT,31611,Create T-E Fistula+Speech Prosthesis,2990.0,2242.5,1530.88,3850.95,5
+CPT,31611,Rpr Fist Trachoesophageal W/Prosth,3671.0,2753.25,1879.55,3850.95,5
+CPT,31613,"Trach Revision,Simple",2492.0,1869.0,3850.95,3850.95,1
+CPT,31613,"Tracheostoma Rev,Simple, W/O Flap Rotate",3535.0,2651.25,3850.95,3850.95,1
+CPT,31615,Bronchoscopy Thru Tracheostomy,1980.0,1485.0,487.13,604.7,6
+CPT,31615,Scope Thru Tracheostomy,934.0,700.5,487.13,604.7,5
+CPT,31622,Bronchosc Dx W/W/O Fluorosco & Wash,1864.0,1398.0,954.37,2047.7,6
+CPT,31625,Bronchoscopy W/Bx Sgl/Multi Sites,1939.0,1454.25,1565.86,1565.86,1
+CPT,31641,Bronchoscopy W/Destruction Tumor,1345.0,1008.75,688.64,3134.1,5
+CPT,31899,Tracheotomy Tube Change,65.0,48.75,230.53,230.53,1
+CPT,36415,Venipuncture,5.0,3.75,2.56,3.88,5
+CPT,36569,Insert Cath Periph Cv W/O Port >5,1647.0,1235.25,1250.63,1250.63,1
+CPT,37609,Ligate/Biopsy Artery Temporal|BILATERAL PROCEDURE,2252.0,1689.0,3398.51,3398.51,1
+CPT,38999,Methylene Blue Injection Non-Sentinel,521.0,390.75,365.79,519.13,2
+CPT,38999,Percutaneous Rf Ablation Lymph System,5166.0,3874.5,519.13,3627.05,2
+CPT,38999,Sclerotherapy Inject Lymphnode,264.0,198.0,185.35,519.13,2
+CPT,40490,Biopsy Lip,610.0,457.5,206.14,462.87,8
+CPT,40799,Commissuroplasty (for Oral Incompetence),2205.0,1653.75,275.75,1548.13,2
+CPT,40806,Incision of Lip Fold,512.0,384.0,388.51,844.56,3
+CPT,40808,Biopsy Mouth Vestibule,1117.0,837.75,487.13,604.7,8
+CPT,40808,Pf Biopsy Mouth Vestibule,655.0,491.25,487.13,604.7,7
+CPT,40810,Exc Lesion Vestib Mouth W/O Rpr,2284.0,1713.0,1169.41,3850.95,5
+CPT,40812,Exc Lesion Vestib Mouth W/Rpr Smp,2578.0,1933.5,1319.94,2551.58,6
+CPT,40819,Exc Frenum/Labial/Buccal,2577.0,1932.75,1462.72,1758.93,2
+CPT,40819,Excise Lip or Cheek Fold,1058.0,793.5,1758.93,1758.93,1
+CPT,41010,Frenotomy Lingual Frenum,1980.0,1485.0,1013.76,1502.42,5
+CPT,41010,Incision of Tongue Fold,731.0,548.25,374.27,1151.19,4
+CPT,41100,Biopsy Tongue Anterior 2/3,1117.0,837.75,487.13,604.7,4
+CPT,41100,Pf Biopsy Tongue Anterior 2/3,550.0,412.5,487.13,604.7,3
+CPT,41105,Biopsy Tongue Post 1/3,2392.0,1794.0,1675.36,3850.95,3
+CPT,41105,Pf Biopsy Tongue Posterior 1/3,560.0,420.0,392.22,3850.95,3
+CPT,41108,Biopsy Mouth Floor,1261.0,945.75,645.63,1923.94,4
+CPT,41108,Pf Biopsy Mouth Floor,498.0,373.5,254.98,1923.94,4
+CPT,41110,Exc Lesion Tongue W/O Clsr,2383.0,1787.25,1808.22,3850.95,3
+CPT,41112,Exc Lesion Tongue W/Clsr Ant 2/3,2579.0,1934.25,2551.58,3850.95,2
+CPT,41113,Exc Lesion Tongue Postior 1/3,2353.0,1764.75,2008.14,3850.95,3
+CPT,41115,Excis Tongue Fold,872.0,654.0,610.75,661.67,2
+CPT,41115,Frenectomy,1117.0,837.75,782.35,1462.72,3
+CPT,41116,Exc Lesn Floor Mouth,1133.0,849.75,580.1,580.1,1
+CPT,41116,Excis Floor Mouth Lesion,1121.0,840.75,573.95,573.95,1
+CPT,41120,"Part Removal Tongue,<1/2",7003.0,5252.25,3585.54,5313.88,4
+CPT,42100,Biopsy Palate/Uvula,1117.0,837.75,782.35,1462.72,4
+CPT,42104,Exc Lesion Palate Uvula,2613.0,1959.75,1830.15,2551.58,3
+CPT,42106,Exc Lesion Palate Uvula Closure,2319.0,1739.25,1187.33,1187.33,1
+CPT,42140,Excision of Uvula,2839.0,2129.25,2008.14,2551.58,3
+CPT,42145,Upp/P (Ncs- Non-Covered Service),3035.0,2276.25,1553.92,2130.87,2
+CPT,42300,Drainage Abscess Parotid Simple,1072.0,804.0,1462.72,1462.72,1
+CPT,42330,Sialot Submndblr Sublngl/Prtd Uncomp Intraoral,2406.0,1804.5,1685.16,2551.58,4
+CPT,42335,"Removal Submand Stone,Complicated",3620.0,2715.0,1853.44,2551.58,3
+CPT,42400,Biopsy Gland Salivary Needle,1363.0,1022.25,662.51,835.47,3
+CPT,42405,Biopsy Gland Salivary Incisional,3485.0,2613.75,1758.93,2551.58,2
+CPT,42500,Repair Salivary Duct Simple,1783.0,1337.25,912.9,7024.49,8
+CPT,42505,Repair Salivary Duct Complicated,2354.0,1765.5,1648.74,7024.49,4
+CPT,42550,Inject Sialogram,607.0,455.25,310.78,425.14,2
+CPT,42650,Dilation Salivary Duct,2353.0,1764.75,1151.19,1758.93,5
+CPT,42660,Dilation/Cath of Salivary Duct,413.0,309.75,313.38,604.7,5
+CPT,42699,Sialendoscopy Diagnostic,1055.0,791.25,275.75,817.63,11
+CPT,42699,Sialendoscopy W/ Dilation,4787.0,3590.25,275.75,3709.93,11
+CPT,42699,Sialendoscopy W/ Sialolithotomy,4787.0,3590.25,275.75,3709.93,11
+CPT,42699,"Sialendoscopy W/ Stent Placement (Sialolithotomy or Dilation), Complex",5565.0,4173.75,275.75,4312.88,11
+CPT,42699,Sialendoscopy W/Lithotripsy,3279.0,2459.25,275.75,2541.23,11
+CPT,42699,"Sialendoscopy With Stent Placement and/or Sialodochoplasty, Simple",5553.0,4164.75,275.75,4303.58,11
+CPT,42700,I&D Abscess Peritonsillar,517.0,387.75,235.73,235.73,1
+CPT,42720,I&D Absc Rtrphrngl/Parapharyngeal Intraoral,2375.0,1781.25,1667.49,1667.49,1
+CPT,42800,Biopsy Oropharynx,2613.0,1959.75,1337.86,2551.58,9
+CPT,42800,Pf Biopsy Oropharynx,560.0,420.0,286.72,2008.14,8
+CPT,42804,Biopsy Lesion Nasopharynx Smp,2613.0,1959.75,1337.86,3850.95,6
+CPT,42808,Mee Excise Pharynx Lesion,3420.0,2565.0,2008.14,3850.95,4
+CPT,42960,Control Hemorr Oropharyngeal Smp,168.0,126.0,67.2,127.48,4
+CPT,42999,"Laryngoscopy, Flexible; W/ Injection(S) Augmentation Pharynx, Unilateral",3462.0,2596.5,275.75,2430.67,8
+CPT,42999,Needle Aspirate/Biopsy Peritonsillar Collection,517.0,387.75,264.7,362.99,8
+CPT,42999,Transnasal Pharyngeal Stenosis Balloon Dilation W/O Injection,3535.0,2651.25,275.75,2481.92,8
+CPT,42999,Transnasal Pharyngeal Stenosis Balloon Dilation With Injection,6998.0,5248.5,275.75,4913.3,8
+CPT,43226,Esophagoscopy W/Dilate Guide Wire,1899.0,1424.25,1335.02,2252.56,2
+CPT,43246,Egd Flex W/Place Gastrostomy Tube,1830.0,1372.5,1696.3,1696.3,1
+CPT,43249,Egd Flex W/Balloon Dilation <30mm,1977.0,1482.75,1696.3,1696.3,1
+CPT,43450,Dilate Esophagus Sound or Bougie,1317.0,987.75,674.3,1113.3,3
+CPT,43762,Perq Replacement Gtube Not Req Revj Gstrst Trc,503.0,377.25,288.8,288.8,1
+CPT,60100,Biopsy Thyroid Needle Perc,2002.0,1501.5,579.34,835.47,5
+CPT,60300,Aspiration/Inject Cyst Thyroid,892.0,669.0,662.51,662.51,1
+CPT,60660,Abltj 1/+Thyroid Nodule 1 Lobe/Isthmus Perq Rf,5166.0,3874.5,1923.94,4003.65,7
+CPT,60699,Alcohol (Etoh) Ablation of Thyroid Nodule,666.0,499.5,438.89,6927.95,3
+CPT,60699,Radiofreq Ablation Adrenal Tmr,5166.0,3874.5,3404.39,6927.95,3
+CPT,61782,"Stereotactic Comp Assist Proc,Cranial,Extradural",317.0,237.75,162.3,240.54,5
+CPT,64408,Inject Anes Nerve Vagus,433.0,324.75,221.7,350.52,3
+CPT,64408,Inject Anes Nerve Vagus|BILATERAL PROCEDURE,433.0,324.75,350.52,424.52,3
+CPT,64568,Inc for Impltj Cranial Nrc Nstim,49293.0,36969.75,25238.02,38202.08,3
+CPT,64611,Chemodenerv Saliv Glands Bilateral,396.0,297.0,247.48,350.52,8
+CPT,64612,Chemdnrvtn/Dest Nerve Neurlytic Fac,396.0,297.0,202.75,350.52,12
+CPT,64612,Chemdnrvtn/Dest Nerve Neurlytic Fac|BILATERAL PROCEDURE,396.0,297.0,350.52,1266.85,15
+CPT,64612,Pf Chemodnrv/Destr Nrve Nrlytic Fac,797.0,597.75,247.48,604.76,11
+CPT,64612,Pf Chemodnrv/Destr Nrve Nrlytic Fac|BILATERAL PROCEDURE,797.0,597.75,350.52,1266.85,14
+CPT,64615,Chemdnrvtn Mscl Facial Trige Cerv,610.0,457.5,247.48,312.32,3
+CPT,64616,Chemodenerv Musc Neck Dyston,800.0,600.0,350.52,607.04,4
+CPT,64617,Chemodenervation Muscle Larynx Unilat W/Emg,696.0,522.0,247.48,822.33,5
+CPT,64617,Chemodenervation Muscle Larynx Unilat W/Emg|BILATERAL PROCEDURE,696.0,522.0,424.52,822.33,8
+CPT,64716,Revision of Cranial Nerve,2672.0,2004.0,1368.06,2027.51,3
+CPT,65205,Remove FB Conjuctival Superficial,153.0,114.75,107.16,107.16,1
+CPT,65220,Remove FB Corneal W/O Slit Lamp|BILATERAL PROCEDURE,153.0,114.75,597.21,597.21,1
+CPT,65222,Remove FB Corneal W/Slit Lamp,153.0,114.75,107.16,107.16,1
+CPT,65222,Remove FB Corneal W/Slit Lamp|BILATERAL PROCEDURE,153.0,114.75,182.66,182.66,1
+CPT,65286,Apply Tissue Glue to Wound Cornea/Sclera,1473.0,1104.75,2708.23,2708.23,1
+CPT,65410,Biopsy of Cornea,2186.0,1639.5,2770.25,2770.25,1
+CPT,65435,Remove Epithel Cornea,1980.0,1485.0,807.29,807.29,1
+CPT,65436,Rem Corneal Epithelium; Chelating Agent,2348.0,1761.0,2770.25,2770.25,1
+CPT,65600,Multiple Punctures of Anterior Cornea,2848.0,2136.0,2770.25,2770.25,1
+CPT,65772,Inc Corneal Relax Astigmatism,1909.0,1431.75,1150.08,1150.08,1
+CPT,65778,Application of Prokea (Exploding Code),2614.0,1960.5,1150.08,1150.08,1
+CPT,65778,Application of Prokea (Exploding Code)|BILATERAL PROCEDURE,2614.0,1960.5,1384.77,1384.77,1
+CPT,65800,Paracentesis W/Asp Aqueous Dx,1473.0,1104.75,2708.23,2708.23,1
+CPT,65855,Trabeculoplasty by Laser Surgery,839.0,629.25,429.57,651.43,3
+CPT,66250,Revise/Repair Wound Anter Segment,2358.0,1768.5,1789.25,2770.25,3
+CPT,66761,Iridotomy/Irridectomy Laser Surg per Session,848.0,636.0,496.18,651.43,2
+CPT,66761,Iridotomy/Irridectomy Laser Surg per Session|BILATERAL PROCEDURE,848.0,636.0,651.43,851.12,5
+CPT,66762,Iridoplasty Photocoag 1/More Sessn,839.0,629.25,651.43,651.43,1
+CPT,66821,Discission Cataract Sec Mem Laser,2078.0,1558.5,496.18,1455.43,5
+CPT,66984,"Remove Cataract, Insert Lens",3190.0,2392.5,1633.28,1633.28,1
+CPT,66999,HC Mee Lasek,300.0,225.0,2708.23,2708.23,2
+CPT,66999,Mee Hyperopic Lasik,323.0,242.25,2708.23,2708.23,2
+CPT,66999,Mee Lasik,330.0,247.5,2708.23,2708.23,2
+CPT,66999,Mee Park,323.0,242.25,2708.23,2708.23,2
+CPT,66999,Mee Prk,335.0,251.25,2708.23,2708.23,2
+CPT,66999,Mee Ptk,1141.0,855.75,2708.23,2708.23,2
+CPT,66999,Mee Refractive After Ecce,323.0,242.25,2708.23,2708.23,2
+CPT,66999,Mee Retreat After 1 Year,330.0,247.5,2708.23,2708.23,2
+CPT,66999,Mitomycin Intravasc Chemoembo (Mice),2359.0,1769.25,2708.23,2708.23,2
+CPT,66999,Proc. Ant/Seg Laser Suture Lysis,118.0,88.5,2708.23,2708.23,2
+CPT,66999,Revision Xen Gel Stent W/Laser,2358.0,1768.5,2708.23,2708.23,2
+CPT,66999,Sp Mee Ctak Laser,882.0,661.5,2708.23,2708.23,2
+CPT,67015,"Aspiration, Pars Plana Approach",6043.0,4532.25,2708.23,2708.23,1
+CPT,67028,Inject Medication Intravitreal,502.0,376.5,257.02,393.86,6
+CPT,67028,Inject Medication Intravitreal|BILATERAL PROCEDURE,502.0,376.5,393.86,1266.85,16
+CPT,67105,Rpr Retinal Dtchmnt 1/> Ses Pc Incl Subreti Drg,848.0,636.0,651.43,651.43,1
+CPT,67141,Proph Retinal Dtchmnt W/O Drg Crtx Diathermy,850.0,637.5,283.52,354.96,2
+CPT,67145,Proph Retinal Dtchmnt W/O Drg Photocoagulation,839.0,629.25,429.57,651.43,3
+CPT,67145,Proph Retinal Dtchmnt W/O Drg Photocoagulation|BILATERAL PROCEDURE,839.0,629.25,651.43,851.12,2
+CPT,67221,Dest Lesion Choroid Phytodynam,850.0,637.5,496.18,496.18,1
+CPT,67228,Treatment Extensive Retinopathy Photocoagulation,1680.0,1260.0,496.18,1274.78,5
+CPT,67228,Treatment Extensive Retinopathy Photocoagulation|BILATERAL PROCEDURE,1680.0,1260.0,651.43,1985.53,4
+CPT,67345,Chemodenervation of Extraocular Muscle,1213.0,909.75,354.96,354.96,1
+CPT,67345,Chemodenervation of Extraocular Muscle|BILATERAL PROCEDURE,1213.0,909.75,486.33,486.33,1
+CPT,67400,"Orbitotomy WO Bone Flap,Explore; W/WO Bx",4373.0,3279.75,4477.84,4477.84,1
+CPT,67400,"Orbitotomy WO Bone Flap,Explore; W/WO Bx|BILATERAL PROCEDURE",4373.0,3279.75,5103.59,7406.87,2
+CPT,67500,Injection Eye Socket,359.0,269.25,251.44,251.44,1
+CPT,67515,Inj Therapy Tenons Cap,502.0,376.5,283.52,354.96,3
+CPT,67516,Supchrdl Njx of Rx Agt W/O Supply of Medication,530.0,397.5,393.86,393.86,1
+CPT,67700,Blepharotomy Eyelid Drain Abscess,492.0,369.0,354.96,354.96,1
+CPT,67800,Exc Chalazion Sgl,505.0,378.75,258.56,354.96,4
+CPT,67805,"Excision Chalazion; Multiple, Diff Lids",2063.0,1547.25,283.52,354.96,2
+CPT,67805,"Excision Chalazion; Multiple, Diff Lids|BILATERAL PROCEDURE",2063.0,1547.25,486.33,486.33,1
+CPT,67810,Biopsy Eyelid Incis W/Margin,610.0,457.5,283.52,354.96,2
+CPT,67810,Biopsy Eyelid Incis W/Margin|BILATERAL PROCEDURE,610.0,457.5,354.96,486.33,3
+CPT,67820,Correct Trichiasis W/Forceps,162.0,121.5,82.94,153.06,3
+CPT,67820,Correct Trichiasis W/Forceps|BILATERAL PROCEDURE,162.0,121.5,182.66,182.66,1
+CPT,67825,Correct Trichiasis W/O Forceps,502.0,376.5,354.96,354.96,4
+CPT,67825,Correct Trichiasis W/O Forceps|BILATERAL PROCEDURE,502.0,376.5,354.96,486.33,4
+CPT,67840,Exc Lesn Eyelid Not Chalazion,1265.0,948.75,647.68,1150.08,3
+CPT,67840,Exc Lesn Eyelid Not Chalazion|BILATERAL PROCEDURE,1265.0,948.75,1150.08,1384.77,3
+CPT,67875,Close Eyelid Suture Temporary,1272.0,954.0,1150.08,1150.08,1
+CPT,67880,Construct Intermarg Adh/ Tarsorr/Cantorr,2342.0,1756.5,2770.25,2770.25,1
+CPT,67900,Repair of Brow Ptosis,3901.0,2925.75,2770.25,2960.08,2
+CPT,67900,Repair of Brow Ptosis|BILATERAL PROCEDURE,3901.0,2925.75,3109.35,3109.35,1
+CPT,67903,Rpr Blepharoptosis Levator Rescj/Advmnt Internal,2234.0,1675.5,2770.25,2770.25,1
+CPT,67903,Rpr Blepharoptosis Levator Rescj/Advmnt Internal|BILATERAL PROCEDURE,2234.0,1675.5,3109.35,3109.35,1
+CPT,67904,"(Tarso)Levator Resec/Advanc,External App",2848.0,2136.0,1458.18,2770.25,3
+CPT,67904,"(Tarso)Levator Resec/Advanc,External App|BILATERAL PROCEDURE",2848.0,2136.0,3109.35,3109.35,1
+CPT,67908,"Fix Lid Ptosis, Fasanella-Servat",2745.0,2058.75,1405.44,2770.25,3
+CPT,67908,"Fix Lid Ptosis, Fasanella-Servat|BILATERAL PROCEDURE",2745.0,2058.75,3109.35,3109.35,1
+CPT,67908,Rpr Blpos Conjunctivo-Tarso-Musc-Levator Rescj,2745.0,2058.75,1405.44,2770.25,3
+CPT,67908,Rpr Blpos Conjunctivo-Tarso-Musc-Levator Rescj|BILATERAL PROCEDURE,2745.0,2058.75,3109.35,3109.35,1
+CPT,67911,Correct Lid Retractn,2864.0,2148.0,2770.25,2770.25,1
+CPT,67911,Correct Lid Retractn|BILATERAL PROCEDURE,2864.0,2148.0,3109.35,7406.87,2
+CPT,67912,Correction Eyelid With Implant,4373.0,3279.75,2770.25,2770.25,1
+CPT,67917,Rpr Ectropion Extensive,2848.0,2136.0,2161.06,2770.25,3
+CPT,67917,Rpr Ectropion Extensive|BILATERAL PROCEDURE,2848.0,2136.0,3109.35,3109.35,1
+CPT,67921,Rpr Entropion/ Uture,2864.0,2148.0,2770.25,2770.25,1
+CPT,67924,Repair Entropion Extensive,3657.0,2742.75,2770.25,2770.25,1
+CPT,67950,Canthoplasty,2848.0,2136.0,2770.25,2770.25,2
+CPT,67961,Exc/Repair Eyelid <1/4 Lid Margin,2848.0,2136.0,2770.25,2770.25,1
+CPT,67961,Exc/Repair Eyelid <1/4 Lid Margin|BILATERAL PROCEDURE,2848.0,2136.0,3109.35,3109.35,1
+CPT,67966,Exc/Repair Eyelid > 1/4 Lid Margin,2848.0,2136.0,2770.25,2770.25,1
+CPT,67971,"Reconstruc Eyelid,<2/3,One Stage",4376.0,3282.0,2770.25,2770.25,1
+CPT,67975,"Reconstruct Eyelid,Full Thick; 2nd Stage",2848.0,2136.0,2770.25,2770.25,2
+CPT,67999,Mee Lipiflow Service,530.0,397.5,354.96,354.96,2
+CPT,67999,"Meibomian Gland Probing, 1 Lid",147.0,110.25,354.96,354.96,2
+CPT,67999,"Meibomian Gland Probing, 2 Lids",245.0,183.75,354.96,354.96,2
+CPT,67999,"Meibomian Gland Probing, 3 Lids",343.0,257.25,354.96,354.96,2
+CPT,67999,"Meibomian Gland Probing, 4 Lids",434.0,325.5,354.96,354.96,2
+CPT,67999,Removal of Eyelid Weight,858.0,643.5,354.96,354.96,2
+CPT,67999,Revision of Eyelid With Implant Removal,2301.0,1725.75,354.96,354.96,2
+CPT,68100,Biopsy Conjunctiva,1265.0,948.75,2770.25,2770.25,1
+CPT,68100,Biopsy Conjunctiva|BILATERAL PROCEDURE,1265.0,948.75,3109.35,3109.35,1
+CPT,68110,Exc Lesn Conjunctiva <1cm,2348.0,1761.0,1631.41,2770.25,3
+CPT,68115,Exc Lesn Conjunctiva > 1cm,2754.0,2065.5,2770.25,2770.25,1
+CPT,68115,Exc Lesn Conjunctiva > 1cm|BILATERAL PROCEDURE,2754.0,2065.5,3109.35,3109.35,1
+CPT,68135,Dest Lesion Conjunctiva,1249.0,936.75,2770.25,2770.25,1
+CPT,68200,Subconjunctival Injection,375.0,281.25,473.84,473.84,1
+CPT,68440,Inc Snip Punctum Lacrimal,1117.0,837.75,354.96,354.96,1
+CPT,68440,Inc Snip Punctum Lacrimal|BILATERAL PROCEDURE,1117.0,837.75,354.96,354.96,2
+CPT,68700,Plastic Repair of Canaliculi|BILATERAL PROCEDURE,2864.0,2148.0,3109.35,3109.35,1
+CPT,68760,Close Lacrimal Punctum; Thermo/Lig/Laser,1117.0,837.75,283.52,847.58,6
+CPT,68760,Close Lacrimal Punctum; Thermo/Lig/Laser|BILATERAL PROCEDURE,1117.0,837.75,354.96,486.33,6
+CPT,68761,Close Punctum Lacrimal Plug,505.0,378.75,258.56,383.19,11
+CPT,68761,Close Punctum Lacrimal Plug|BILATERAL PROCEDURE,505.0,378.75,354.96,486.33,9
+CPT,68810,Probe Duct Nasolacrimal|BILATERAL PROCEDURE,505.0,378.75,354.96,354.96,1
+CPT,68815,"Probe Nasolac Duct,Insert Tube/Stent",2864.0,2148.0,1631.41,2770.25,4
+CPT,68815,"Probe Nasolac Duct,Insert Tube/Stent|BILATERAL PROCEDURE",2864.0,2148.0,3109.35,3109.35,1
+CPT,68840,Probing Canaliculi Lacrimal,360.0,270.0,252.14,354.96,8
+CPT,68840,Probing Canaliculi Lacrimal|BILATERAL PROCEDURE,360.0,270.0,354.96,486.33,10
+CPT,69100,Biopsy Ext Ear,1117.0,837.75,275.75,275.75,3
+CPT,69105,Biopsy External Auditory Canal,2392.0,1794.0,1758.93,1758.93,1
+CPT,69140,"Excise Exostosis(Es),External Aud Canal",6906.0,5179.5,3535.87,3535.87,1
+CPT,69145,Exc Lesn Canal Auditor Soft Tiss,1980.0,1485.0,1445.4,3398.51,4
+CPT,69200,Pf Rem FB Canal Aud Ext,453.0,339.75,153.06,343.74,4
+CPT,69200,Remove FB Ext Auditory Canal W/O,105.0,78.75,53.76,153.06,4
+CPT,69210,Pf Remove Cerumen Impacted Unilate,259.0,194.25,70.53,196.53,12
+CPT,69210,Pf Remove Cerumen Impacted Unilate|BILATERAL PROCEDURE,259.0,194.25,302.16,302.16,1
+CPT,69210,Remove Cerumen Impacted Unilate,103.0,77.25,52.74,78.16,13
+CPT,69210,Remove Cerumen Impacted Unilate|BILATERAL PROCEDURE,103.0,77.25,95.88,302.16,2
+CPT,69220,"Debride Mastoid Cavity,Simple",468.0,351.0,176.45,355.12,11
+CPT,69220,Debridement Mastoidectomy Cavity Simple,166.0,124.5,84.99,235.94,11
+CPT,69220,Debridement Mastoidectomy Cavity Simple|BILATERAL PROCEDURE,166.0,124.5,302.67,302.67,1
+CPT,69222,"Debride Mastoid Cavity,Complex",1072.0,804.0,389.12,604.7,10
+CPT,69222,"Debride Mastoid Cavity,Complex|BILATERAL PROCEDURE",1072.0,804.0,835.59,835.59,1
+CPT,69399,Aspiration Ext Ear Canal Abscess,317.0,237.75,162.3,240.54,5
+CPT,69399,"Cosmetic Earwell Ear Molding, per Ear",824.0,618.0,421.89,625.25,5
+CPT,69399,"Tissue Expansion, Ear",4738.0,3553.5,2425.86,3595.19,5
+CPT,69420,Myringotomy W/Asp/Eust Tube,517.0,387.75,264.7,275.75,3
+CPT,69420,Myringotomy W/Asp/Eust Tube|BILATERAL PROCEDURE,517.0,387.75,275.75,353.6,2
+CPT,69433,Tympanostomy W/Local Anes,1072.0,804.0,487.13,813.43,9
+CPT,69433,Tympanostomy W/Local Anes|BILATERAL PROCEDURE,1072.0,804.0,604.7,835.59,6
+CPT,69436,"Create Eardrum Opening,Gen Anesth",2407.0,1805.25,1151.19,1826.43,6
+CPT,69436,"Create Eardrum Opening,Gen Anesth|BILATERAL PROCEDURE",2407.0,1805.25,2194.08,4732.78,3
+CPT,69610,Tympanic Memb Rpr W/WO Prepj Perfor Patch,3651.0,2738.25,2008.14,2008.14,1
+CPT,69610,Tympanic Memb Rpr W/WO Prepj Perfor Patch|BILATERAL PROCEDURE,3651.0,2738.25,3827.37,3827.37,1
+CPT,69799,"Transtympanic Blood Patch, Unilateral",2406.0,1804.5,1231.87,1864.65,4
+CPT,69801,Labyrinthotomy W/Perfu of Vestib,2406.0,1804.5,1151.19,1825.67,9
+CPT,69801,Labyrinthotomy W/Perfu of Vestib|BILATERAL PROCEDURE,2406.0,1804.5,2194.08,2194.08,1
+CPT,70120,Xr Mastoids <3 Views,369.0,276.75,188.93,188.93,1
+CPT,70250,Xr Skull Ltd <4 Views,584.0,438.0,443.14,443.14,1
+CPT,70336,MRI Tmj Unilat or Bilat,2250.0,1687.5,230.56,784.65,5
+CPT,70360,Xr Neck Soft Tissue,484.0,363.0,367.26,375.1,2
+CPT,70390,Xr Sialogram,921.0,690.75,713.78,713.78,1
+CPT,70450,CT Head W/O Contrast,917.0,687.75,112.51,382.89,11
+CPT,70460,CT Head W/Contrast,1216.0,912.0,201.74,686.56,9
+CPT,70470,CT Head W&W/O Contrast,1468.0,1101.0,201.74,686.56,6
+CPT,70480,CT Orb/Fos/Sel/Ear W/O Contrast,1545.0,1158.75,112.51,1004.25,22
+CPT,70481,CT Orb/Fos/Sel/Ear W/Contrast,1802.0,1351.5,201.74,686.56,8
+CPT,70482,CT Orb/Fos/Sel/Ear W&W/O Contrast,2051.0,1538.25,211.39,211.39,1
+CPT,70486,CT Max/Facial W/O Contrast,1252.0,939.0,112.51,813.8,21
+CPT,70487,CT Max/Facial W/Contrast,1531.0,1148.25,201.74,686.56,9
+CPT,70488,CT Max/Facial W&W/O Contrast,1880.0,1410.0,686.56,686.56,1
+CPT,70490,CT Neck W/O Contrast,1229.0,921.75,112.51,629.25,10
+CPT,70491,CT Neck W/Contrast,1491.0,1118.25,201.74,1088.43,25
+CPT,70492,CT Neck W&W/O Contrast,1830.0,1372.5,201.74,686.56,8
+CPT,70496,Cta Head W&W/O Contrast,3018.0,2263.5,201.74,686.56,10
+CPT,70498,Cta Neck W&W/O Contrast,3035.0,2276.25,201.74,1553.92,7
+CPT,70540,MRI Orbit/Face/Neck W/O Cont,2533.0,1899.75,230.56,784.65,5
+CPT,70542,MRI Orbit/Face/Neck W/Cont,2744.0,2058.0,385.88,1313.25,3
+CPT,70543,MRI Orbit/Face/Neck W&W/O Cont,3428.0,2571.0,385.88,1755.14,22
+CPT,70544,Mra Head W/O Cont,2531.0,1898.25,230.56,784.65,7
+CPT,70547,Mra Neck W/O Cont,2528.0,1896.0,784.65,784.65,1
+CPT,70548,Mra Neck W/Cont,2650.0,1987.5,1288.54,1313.25,2
+CPT,70549,Mra Neck W&W/O Cont,3814.0,2860.5,385.88,1313.25,4
+CPT,70551,MRI Brain W/O Cont,2610.0,1957.5,230.56,1336.32,16
+CPT,70551,MRI Brain W/O Cont|REDUCED SERVICES,2610.0,1957.5,287.03,287.03,2
+CPT,70552,MRI Brain W/Cont,2840.0,2130.0,385.88,1313.25,8
+CPT,70553,MRI Brain W&W/O Cont,3390.0,2542.5,385.88,2474.7,24
+CPT,71045,Radiologic Exam Chest Single View,140.0,105.0,98.06,108.5,6
+CPT,71046,Radiologic Exam Chest 2 Views,140.0,105.0,71.68,108.5,11
+CPT,71250,Diagnostic Computed Tomography Thorax W/O Cntrst,1210.0,907.5,112.51,619.52,11
+CPT,71260,Diagnostic Computed Tomography Thorax W/Contrast,1471.0,1103.25,201.74,956.15,16
+CPT,71275,Cta Chest (Noncor) W&W/O Contrast,2165.0,1623.75,686.56,686.56,1
+CPT,72141,MRI C-Spine W/O Cont,2308.0,1731.0,230.56,784.65,3
+CPT,72146,MRI T-Spine W/O Cont,2314.0,1735.5,230.56,287.03,3
+CPT,72156,MRI C-Spine W&W/O Cont,3373.0,2529.75,385.88,1726.98,5
+CPT,72157,MRI T-Spine W&W/O Cont,3110.0,2332.5,385.88,1313.25,4
+CPT,72158,MRI L-Spine W&W/O Cont,3332.0,2499.0,424.07,1313.25,2
+CPT,73706,Cta Lwr Ext W&W/O Contrast,2262.0,1696.5,211.39,211.39,1
+CPT,73706,Cta Lwr Ext W&W/O Contrast Lt,1325.0,993.75,211.39,211.39,1
+CPT,73706,Cta Lwr Ext W&W/O Contrast Rt,1325.0,993.75,211.39,211.39,1
+CPT,74018,Radiologic Exam Abdomen 1 View,140.0,105.0,104.55,104.55,1
+CPT,74160,CT Abdomen W/Contrast,1607.0,1205.25,211.39,211.39,1
+CPT,74174,CT Abd/Pelvis W/Wocontrast Post,2309.0,1731.75,424.07,424.07,1
+CPT,74176,CT Abdomen & Pelvis W/O Contrast,912.0,684.0,287.03,784.65,2
+CPT,74177,CT Abdomen & Pevis With Contrast,1463.0,1097.25,385.88,424.07,5
+CPT,74220,Xr Esophagus,1700.0,1275.0,211.39,1317.5,9
+CPT,74221,Radiologic Exam Esophagus Double Contrast Study,1058.0,793.5,211.39,802.81,7
+CPT,74230,Xr Swallow Cine/Video,1700.0,1275.0,211.39,1317.5,17
+CPT,76510,US Eye a/B-Scan,429.0,321.75,325.53,325.53,1
+CPT,76512,US Eye B-Scan,337.0,252.75,112.51,261.18,6
+CPT,76513,Dx Ophthalmic US Ant Segment Immersion Uni/Bi,337.0,252.75,112.51,261.18,10
+CPT,76514,US Eye Thickness Unilat or Bilat,116.0,87.0,29.08,89.9,13
+CPT,76516,US Eye Biometry a-Scan,557.0,417.75,112.51,422.65,7
+CPT,76536,US Soft Tissue Head/Neck,451.0,338.25,112.51,349.53,20
+CPT,76942,US Guided Needle Placement,395.0,296.25,299.73,299.73,1
+CPT,80048,Basic Metabolic Panel,383.0,287.25,196.1,296.83,2
+CPT,80053,Comprehensive Metabolic Panel,596.0,447.0,305.15,461.9,2
+CPT,80061,Lipid Panel,292.0,219.0,149.5,226.3,2
+CPT,80076,Hepatic Function Panel,287.0,215.25,146.94,222.43,2
+CPT,80145,Drug Assay Adalimumab,268.0,201.0,188.16,188.16,1
+CPT,80230,Drug Assay Infliximab,268.0,201.0,188.16,188.16,1
+CPT,81001,Urinalysis Auto W/Micro,37.0,27.75,18.94,18.94,1
+CPT,81003,Urinalysis Auto W/O Micro,10.0,7.5,5.12,5.12,1
+CPT,81025,Urine Pregnancy Visual,97.0,72.75,49.66,75.18,2
+CPT,82024,Adrenocorticotropic (Acth),479.0,359.25,245.25,245.25,1
+CPT,82040,Albumin Serum/Plasma/Blood,32.0,24.0,16.38,24.8,4
+CPT,82164,Angiotensin I Enzyme (Ace),232.0,174.0,118.78,179.8,2
+CPT,82166,Assay of Anti-Mullerian Hormone,340.0,255.0,238.71,238.71,1
+CPT,82175,Arsenic,229.0,171.75,177.48,177.48,1
+CPT,82300,Cadmium,276.0,207.0,213.9,213.9,1
+CPT,82306,Vitamin D 25 Hydroxy Inc Fraction,924.0,693.0,473.09,716.1,4
+CPT,82308,Calcitonin,588.0,441.0,301.06,455.7,2
+CPT,82310,Calcium Total,72.0,54.0,36.86,55.8,4
+CPT,82378,Carcinoembryonic Antigen (Cea),185.0,138.75,94.72,94.72,1
+CPT,82390,Ceruloplasmin,183.0,137.25,118.95,141.83,2
+CPT,82525,Copper,287.0,215.25,146.94,146.94,1
+CPT,82533,Cortisol Total,177.0,132.75,90.62,90.62,1
+CPT,82550,Creatine Kinase (Cpk) Total,119.0,89.25,60.93,60.93,1
+CPT,82565,Creatinine Blood,72.0,54.0,36.86,55.8,4
+CPT,82565,Creatinine Blood (Qw),16.0,12.0,8.19,12.4,4
+CPT,82570,Creatinine Other Source,108.0,81.0,55.3,83.7,2
+CPT,82607,Vitamin B-12 (Cyancobalamin),270.0,202.5,138.24,209.25,3
+CPT,82728,Ferritin,182.0,136.5,93.18,93.18,1
+CPT,82746,Folic Acid Serum,239.0,179.25,122.37,185.23,3
+CPT,82784,Gammaglobulin Igm Iga Igd or Igg,139.0,104.25,71.17,107.73,2
+CPT,82785,Gammaglobulin Ige,182.0,136.5,93.18,93.18,1
+CPT,82787,Immunoglobulin Subclasses Ea,429.0,321.75,219.65,332.48,2
+CPT,83020,Hemoglobin Electrophoresis,273.0,204.75,211.58,211.58,1
+CPT,83036,Hemoglobin Glycosylated (A1c),167.0,125.25,85.5,85.5,1
+CPT,83516,Immuno Ql/Sq Multi,139.0,104.25,71.17,90.35,2
+CPT,83519,Immuno Qn Ria,423.0,317.25,216.58,216.58,1
+CPT,83519,Mee S50480 Interleukin 10 Fluid 83519,423.0,317.25,216.58,216.58,1
+CPT,83520,Immuno Qn Other,70.0,52.5,35.84,54.25,2
+CPT,83521,Immunoglobulin Light Chains Free Each,151.0,113.25,77.31,117.03,4
+CPT,83525,Insulin Total,141.0,105.75,72.19,72.19,1
+CPT,83529,Assay of Interleukin-6 (Il-6),151.0,113.25,99.51,99.51,1
+CPT,83540,IRON,31.0,23.25,15.87,24.03,2
+CPT,83550,Iron Binding Capacity,167.0,125.25,85.5,129.43,2
+CPT,83615,Lactate Dehydrogenase (Ldh),81.0,60.75,41.47,41.47,1
+CPT,83655,LEAD,208.0,156.0,161.2,161.2,1
+CPT,83735,Magnesium,182.0,136.5,93.18,141.05,4
+CPT,83825,Mercury,194.0,145.5,150.35,150.35,1
+CPT,83835,Metanephrines,102.0,76.5,52.22,79.05,2
+CPT,83970,Parathormone (Pth),545.0,408.75,279.04,422.38,4
+CPT,83993,Calprotectin,241.0,180.75,123.39,186.78,2
+CPT,84075,Phosphatase Alkaline,32.0,24.0,16.38,24.8,4
+CPT,84100,Phosphorus,31.0,23.25,15.87,24.03,4
+CPT,84146,Prolactin,472.0,354.0,241.66,241.66,1
+CPT,84165,Protein Electrophoresis,105.0,78.75,53.76,81.38,2
+CPT,84207,Vitamin B-6 (Pyridoxal Phosphate),588.0,441.0,455.7,455.7,1
+CPT,84252,Vitamin B-2 (Riboflavin),244.0,183.0,189.1,189.1,1
+CPT,84425,Vitamin B1 (Thiamine),108.0,81.0,55.3,83.7,3
+CPT,84432,Thyroglobulin,33.0,24.75,16.9,25.58,3
+CPT,84436,Thyroxine (T-4) Total,121.0,90.75,93.78,93.78,1
+CPT,84439,Thyroxine (T-4) Free,132.0,99.0,67.58,102.3,3
+CPT,84442,Thyroid Activity (Tbg),296.0,222.0,151.55,151.55,1
+CPT,84443,Thyroid Stimulating Hormone (Tsh),226.0,169.5,115.71,175.15,4
+CPT,84445,Thyroid Stimulating Immun Globulin,213.0,159.75,109.06,165.08,2
+CPT,84446,Vitamin E,319.0,239.25,207.35,247.23,2
+CPT,84450,Ast/Sgot,32.0,24.0,16.38,16.38,1
+CPT,84460,Alt/Sgpt,62.0,46.5,31.74,31.74,1
+CPT,84480,Triiodothyronine (T-3) Total,104.0,78.0,53.25,80.6,3
+CPT,84520,Urea Nitrogen Quantitative,50.0,37.5,25.6,38.75,4
+CPT,84630,ZINC,140.0,105.0,91.0,91.0,1
+CPT,84702,Hcg Qn,73.0,54.75,37.38,56.58,2
+CPT,85007,Blood Smear W/Manual Diff Wbc,59.0,44.25,45.73,45.73,1
+CPT,85025,Blood Count Cbc Auto W/Auto Diff,100.0,75.0,51.2,51.2,1
+CPT,85027,Blood Count Cbc Auto W/O Diff,119.0,89.25,60.93,92.23,2
+CPT,85240,Factor VIII Ahg,448.0,336.0,229.38,229.38,1
+CPT,85245,Factor VIII Vw Ristocetin Cofactor,491.0,368.25,251.39,251.39,1
+CPT,85246,Factor VIII Vw Antigen,1148.0,861.0,587.78,587.78,1
+CPT,85300,Antithrombin III Activity,374.0,280.5,289.85,289.85,1
+CPT,85520,Heparin Assay,127.0,95.25,65.02,65.02,1
+CPT,85549,Muramidase,279.0,209.25,142.85,216.23,2
+CPT,85610,Prothrombin Time (Pt),63.0,47.25,32.26,48.83,2
+CPT,85613,Russell Viper Venom Diluted,74.0,55.5,37.89,57.35,2
+CPT,85652,Sed Rate RBC Auto,63.0,47.25,32.26,48.83,2
+CPT,85730,Partial Thromboplastin Time (Ptt),63.0,47.25,32.26,48.83,2
+CPT,86003,Allergen Specific Ige Quan/Semiquan Ea Allergen,73.0,54.75,37.38,37.38,1
+CPT,86003,Rast Allergen Ige Qn Sq Ea,73.0,54.75,37.38,37.38,1
+CPT,86015,Actin Smooth Muscle Antibody Each,102.0,76.5,67.22,67.22,1
+CPT,86036,Antineutrophil Cytoplasmic Antb Screen Ea Antb,106.0,79.5,54.27,82.15,6
+CPT,86037,Antineutrophil Cytoplasmic Antb Titer Ea Antb,106.0,79.5,54.27,69.85,2
+CPT,86038,Antinuclear Antibodies (Ana) Screen,205.0,153.75,104.96,158.88,2
+CPT,86039,Antinuclear Antibodies (Ana) Titer,218.0,163.5,111.62,168.95,2
+CPT,86041,Acetylcholine Receptor Binding Antibody,163.0,122.25,83.46,126.33,4
+CPT,86042,Acetylcholine Receptor Blocking Antibody,163.0,122.25,83.46,126.33,3
+CPT,86043,Acetylcholine Receptor Modulating Antibody,106.0,79.5,54.27,82.15,4
+CPT,86053,Aquaporin-4 Antibody Flow Cytometry Each,106.0,79.5,54.27,82.15,5
+CPT,86140,C-Reactive Protein,111.0,83.25,56.83,86.03,2
+CPT,86141,C-Reactive Protein High Sensitivity,226.0,169.5,115.71,175.15,2
+CPT,86146,Beta 2 Glycoprotein I Antibody Ea,116.0,87.0,59.39,89.9,2
+CPT,86147,Cardiolipin Antibody Ea Ig Class,132.0,99.0,67.58,102.3,2
+CPT,86161,Complement Functional Activity,357.0,267.75,182.78,182.78,1
+CPT,86200,Cyclic Citrulli Pept (CCP) Antibody,305.0,228.75,156.16,236.38,2
+CPT,86225,Dna Double Strand Antibody,170.0,127.5,87.04,87.04,1
+CPT,86235,Extract Nuclear Antigen,450.0,337.5,230.4,348.75,2
+CPT,86255,Fluorescent Antibody Scrn,678.0,508.5,347.14,525.45,2
+CPT,86255,Mee Anti-Neuronal Antibodies,678.0,508.5,347.14,525.45,2
+CPT,86317,HC Immunoassay Infectious Agent Antibody Quan,228.0,171.0,176.7,176.7,1
+CPT,86341,Islet Cell Antibody,239.0,179.25,155.35,155.35,1
+CPT,86363,Mog-Igg1 Antibody Flow Cytometry Each,106.0,79.5,69.85,82.15,4
+CPT,86366,Muscle-Specific Kinase Antibody,163.0,122.25,107.42,126.33,2
+CPT,86376,Microsomal Antibody,101.0,75.75,51.71,78.28,2
+CPT,86431,Rheumatoid Factor Qn,81.0,60.75,41.47,62.78,2
+CPT,86481,TB Test Cell Imm Ag Meas Gam Interf,167.0,125.25,85.5,129.43,2
+CPT,86611,Bartonella Antibody,80.0,60.0,40.96,62.0,2
+CPT,86618,Lyme Disease Antibody,176.0,132.0,90.11,136.4,2
+CPT,86644,Cytomegalovirus (Cmv) Antibody,155.0,116.25,79.36,79.36,1
+CPT,86645,Cytomegalovirus (Cmv) Antibody Igm,155.0,116.25,79.36,79.36,1
+CPT,86664,Epstein-Barr Ebna Ag Antibody,84.0,63.0,43.01,65.1,2
+CPT,86665,Epstein-Barr Vca Ag Antibody,80.0,60.0,40.96,62.0,2
+CPT,86684,Haemophilus Influenza Antibody,501.0,375.75,388.28,388.28,1
+CPT,86695,Herpes Simplex Type I Antibody,310.0,232.5,158.72,240.25,2
+CPT,86696,Herpes Simplex Type II Antibody,237.0,177.75,121.34,183.68,2
+CPT,86698,Histoplasma Antibody,152.0,114.0,77.82,77.82,1
+CPT,86704,Hepatitis B Core Antibody Igm Igg,231.0,173.25,118.27,179.03,2
+CPT,86706,Hepatitis B Surface Antibody,81.0,60.75,41.47,62.78,2
+CPT,86777,Toxoplasma Antibody,299.0,224.25,153.09,231.73,2
+CPT,86780,Treponema Pallidum Antibody,256.0,192.0,131.07,198.4,2
+CPT,86787,Varicella-Zoster Antibody,208.0,156.0,161.2,161.2,1
+CPT,86788,West Nile Virus Antibody Igm,176.0,132.0,90.11,136.4,2
+CPT,86803,Hepatitis C Antibody,208.0,156.0,106.5,161.2,3
+CPT,86812,Hla Typing Single Antigen a/B/C,146.0,109.5,74.75,74.75,1
+CPT,86850,RBC Antibody Screen,149.0,111.75,115.48,115.48,1
+CPT,86900,Blood Typing Serologic Abo,94.0,70.5,72.85,72.85,1
+CPT,86901,HC Blood Typing Serologic Rh (D),80.0,60.0,62.0,62.0,1
+CPT,86923,Compatibility Test Ea Unit Electron,158.0,118.5,203.48,203.48,1
+CPT,87070,Culture Bacterial Other Source,151.0,113.25,77.31,117.03,6
+CPT,87075,Culture Anaerobic,153.0,114.75,78.34,118.58,4
+CPT,87076,Culture Anaerobic ID,166.0,124.5,84.99,107.9,3
+CPT,87077,Culture Aerobic ID,166.0,124.5,84.99,128.65,5
+CPT,87081,Culture Screen Single Organism,128.0,96.0,65.54,99.2,3
+CPT,87102,Culture Fungus Other,237.0,177.75,121.34,183.68,6
+CPT,87106,Culture Fungus ID Yeast,110.0,82.5,80.3,80.3,1
+CPT,87106,Mee ID Susceptibility Uni Tex,110.0,82.5,80.3,80.3,1
+CPT,87107,Culture Fungus ID Mold,375.0,281.25,192.0,192.0,1
+CPT,87116,Culture Afb/TB/Mycobacteria,48.0,36.0,24.58,37.2,2
+CPT,87147,Culture Typing Serologic,187.0,140.25,95.74,144.93,2
+CPT,87186,"Mee Aerobic Sensitivity, Gram POS Mic (Spec)",254.0,190.5,130.05,196.85,5
+CPT,87186,Susceptibility Mic per Plate,254.0,190.5,130.05,196.85,5
+CPT,87205,Smear Gram or Geimsa Stain,123.0,92.25,62.98,95.33,5
+CPT,87206,Smear Acid Fast/Fluorescent Stain,241.0,180.75,123.39,186.78,2
+CPT,87338,Eia Ql H Pylori Antigen Stool,179.0,134.25,91.65,91.65,1
+CPT,87340,Eia Ql Hepatitis B Ag,217.0,162.75,111.1,168.18,2
+CPT,87529,Nucleic Acid Amp Probe Herpes Smpx,313.0,234.75,160.26,160.26,1
+CPT,87798,Mee Varicella Zoster Pcr Vitreous,250.0,187.5,128.0,193.75,2
+CPT,87798,Mgh Nonvirus Rna Rt Pcr,250.0,187.5,128.0,193.75,2
+CPT,87798,Nucleic Acid Amp Infectious,250.0,187.5,128.0,193.75,2
+CPT,87801,Nucleic Acid Amp Multi Org,605.0,453.75,468.88,468.88,1
+CPT,88313,Special Stain II Iron,105.0,78.75,53.76,153.06,11
+CPT,88331,Consult Path Surgery W/Frozen,586.0,439.5,203.48,454.15,4
+CPT,88342,Imhistochem/Cytchm Init Antibody Stain Procedure,421.0,315.75,203.48,326.28,11
+CPT,88364,In Situ Hybridization Ea Addl Probe Stain,596.0,447.0,305.15,461.9,3
+CPT,89051,Cell Count Body Fluid W/Diff,50.0,37.5,25.6,38.75,2
+CPT,90471,Immune Admin One Vacc Im/Sub-Q/ID,33.0,24.75,16.9,25.58,4
+CPT,90651,9vhpv Vacc 2/3 Dose Sched Im Use,537.72,403.29,408.02,408.02,1
+CPT,90656,Iiv3 Vacc Preservative Free 0.5 Ml Dosage Im Use,32.39,24.29,16.58,25.1,3
+CPT,90677,Pcv20 Vaccine for Intramuscular Use,441.82,331.36,287.18,291.16,3
+CPT,90714,Td Vaccine Prsrv Free 7 Yrs or Older for Im Use,132.76,99.57,67.97,67.97,1
+CPT,92012,Eye Exam Estab Intermediate,166.0,124.5,84.99,153.03,19
+CPT,92014,Eye Exam Estab Comprehensive,166.0,124.5,84.99,153.03,26
+CPT,92018,Eua Ophthalmological Cmpl,647.0,485.25,490.94,490.94,1
+CPT,92020,Gonioscopy,224.0,168.0,114.69,173.6,9
+CPT,92025,Topography Comp Corneal Uni or Bila,200.0,150.0,70.53,155.0,12
+CPT,92060,Sensorimotor Exam Ocular,314.0,235.5,70.53,243.35,7
+CPT,92071,Fitting of Contact Lens Tx Oc Dis,221.0,165.75,113.15,171.28,4
+CPT,92072,Fitting of Contact Lens Manage Kera,421.0,315.75,294.87,319.45,2
+CPT,92081,Visual Field Exam Ltd,193.0,144.75,70.53,149.58,8
+CPT,92082,Visual Field Exam Intermediate,218.0,163.5,70.53,168.95,5
+CPT,92083,Visual Field Exam Exd,236.0,177.0,120.83,182.9,20
+CPT,92100,Serial Tonometry,100.0,75.0,75.88,75.88,1
+CPT,92132,Scan Cptrized Oph Dx Img Anterior,142.0,106.5,70.53,110.05,7
+CPT,92133,Opthalmic Scan Optice Nrv Uni/Bi,142.0,106.5,70.53,110.05,19
+CPT,92134,Opthalmic Scan Retina Uni/Bi,142.0,106.5,70.53,110.05,24
+CPT,92136,Ophthalmic Biometry W/Iol Calc,218.0,163.5,111.62,168.95,13
+CPT,92137,Cptrizd Oph Dx Img Pst Sgm Uni/Bi RTA Oct Angrph,156.0,117.0,79.87,369.77,7
+CPT,92201,Opscpy Extnd RTA Drawing & Scl Deprsn I&R Uni/Bi,127.0,95.25,65.02,98.43,8
+CPT,92202,Opscpy Extnd Optic Nrv/Macula Drawing I&R Uni/Bi,238.0,178.5,70.53,184.45,9
+CPT,92235,Eye Exam W/Photos Multi Frame,509.0,381.75,260.61,394.48,18
+CPT,92240,Icg Angiography,509.0,381.75,369.77,394.48,4
+CPT,92242,Fluorescein Icg Angrph W/Multiframe I&R Uni/Bi,1598.0,1198.5,369.77,1238.45,14
+CPT,92250,Eye Exam W/Fundus Photos,277.0,207.75,141.82,214.68,12
+CPT,92273,Full Field Electroretinography W/I&R,473.0,354.75,242.18,369.77,15
+CPT,92274,Multifocal Electroretinography W/I&R,473.0,354.75,185.79,366.58,10
+CPT,92283,Color Vision Testing,218.0,163.5,165.42,168.95,2
+CPT,92284,Dx Dark Adaptation Exam Interpretation & Report,464.0,348.0,473.84,473.84,1
+CPT,92285,External Ocular Photography,168.0,126.0,46.61,130.2,11
+CPT,92286,Ant Sgm Imaging W/Microscopy Endothelial Analy,155.0,116.25,79.36,153.06,9
+CPT,92286,Int Eye Imaging W/Interp,218.0,163.5,111.62,168.95,9
+CPT,92313,Prescriptn Lens Corneoscleral,1293.0,969.75,153.06,153.06,1
+CPT,92326,Replacement Contact Lens,130.0,97.5,100.75,100.75,1
+CPT,92504,Binocular Microscopy,28.0,21.0,14.34,21.25,7
+CPT,92504,Ear Microscopy Examination,106.0,79.5,54.27,80.43,7
+CPT,92507,St Treatment Speech/Lang/Comm Ind,512.0,384.0,83.02,388.51,5
+CPT,92511,Nasopharyngoscopy W/Endo,422.0,316.5,163.97,327.05,17
+CPT,92511,Pf St Nasopharyngoscopy,560.0,420.0,163.97,434.0,17
+CPT,92517,Cervical Vemp Testing W/I&R,245.0,183.75,125.44,189.88,11
+CPT,92520,Laryngeal Function Study,199.0,149.25,153.06,154.23,4
+CPT,92523,Speech Sound Lang Comprehen,886.0,664.5,247.31,453.63,3
+CPT,92524,Behavral Qualit Analys Voice,886.0,664.5,117.66,672.3,5
+CPT,92526,St Treat Swallow/Oral,200.0,150.0,92.11,92.11,1
+CPT,92537,Caloric Vestibular Test W/Rec Bi Bithermal,284.0,213.0,184.6,220.1,15
+CPT,92538,Caloric Vestibular Test W/Rec Bi Monothermal,284.0,213.0,185.79,220.1,6
+CPT,92538,Caloric Vestibular Test W/Rec Bi Monothermal|REDUCED SERVICES,284.0,213.0,185.79,185.79,3
+CPT,92540,Aud Basic Vstblr Spont Nystag Min 4,1129.0,846.75,185.79,874.98,18
+CPT,92544,Aud Optokinetic Nystagmus W/Record,284.0,213.0,185.79,185.79,1
+CPT,92545,Aud Oscillating Tracking W/Record,284.0,213.0,369.77,369.77,1
+CPT,92546,Aud Sinusoidal Vertical Axis Rotate,387.0,290.25,185.79,299.93,14
+CPT,92548,Aud Computer Dynamic Posturography,284.0,213.0,153.06,220.1,5
+CPT,92549,Cdp-Sot 6 Conditions W/I&R W/Mct & Adt,111.0,83.25,77.74,86.03,3
+CPT,92550,Aud Tympan/Reflex Thres Measurement,281.0,210.75,143.87,196.81,4
+CPT,92550,Aud Tympan/Reflex Thres Measurement|REDUCED SERVICES,281.0,210.75,185.79,185.79,1
+CPT,92552,Aud Pure Tone Air Only,370.0,277.5,153.06,286.75,6
+CPT,92552,Aud Pure Tone Air Only|REDUCED SERVICES,370.0,277.5,153.06,153.06,2
+CPT,92553,Aud Pure Tone Air & Bone,285.0,213.75,145.92,185.79,7
+CPT,92555,Aud Speech Threshold,201.0,150.75,70.53,155.78,5
+CPT,92556,Aud Speech Threshold W/Recognition,147.0,110.25,70.53,113.93,3
+CPT,92557,Aud Eval Comp Threshold/Recognition,635.0,476.25,185.79,492.13,21
+CPT,92557,Aud Eval Comp Threshold/Recognition|REDUCED SERVICES,635.0,476.25,185.79,185.79,5
+CPT,92557,Comprehensive Hearing Test,210.0,157.5,107.52,185.79,23
+CPT,92557,Comprehensive Hearing Test|REDUCED SERVICES,210.0,157.5,185.79,185.79,5
+CPT,92567,Aud Tympanometry Impedance Test,276.0,207.0,46.61,213.9,12
+CPT,92567,Aud Tympanometry Impedance Test|REDUCED SERVICES,276.0,207.0,46.61,46.61,2
+CPT,92567,Tympanometry,276.0,207.0,35.84,213.9,26
+CPT,92567,Tympanometry|REDUCED SERVICES,276.0,207.0,46.61,46.61,4
+CPT,92579,Aud Visual Reinforcement Audiometry,285.0,213.75,145.92,220.88,6
+CPT,92579,Visual Audiometry (Vra),150.0,112.5,76.8,185.79,7
+CPT,92582,Aud Conditioning Play Audiometry,602.0,451.5,185.79,466.55,8
+CPT,92582,Conditioning Play Audiometry,312.0,234.0,159.74,241.8,9
+CPT,92583,Aud Select Picture Audiometry,111.0,83.25,56.83,86.03,2
+CPT,92587,Aud Distort Evoked Oto Emiss Ltd/Tr,221.0,165.75,113.15,369.77,6
+CPT,92587,Aud Distort Evoked Oto Emiss Ltd/Tr|REDUCED SERVICES,221.0,165.75,369.77,369.77,1
+CPT,92588,Aud Distort Evoked Otoac Emiss Comp,524.0,393.0,268.29,406.1,9
+CPT,92590,Aud Hearing Aid Exam Monaural,240.0,180.0,122.88,186.0,5
+CPT,92591,Aud Hearing Aid Exam Binaural,240.0,180.0,122.88,186.0,8
+CPT,92592,Aud Hearing Aid Check Monaural,60.0,45.0,30.72,46.5,6
+CPT,92593,Aud Hearing Aid Check Binaural,60.0,45.0,30.72,46.5,7
+CPT,92594,Aud Eval Electroacoustic Monaural,60.0,45.0,30.72,46.5,5
+CPT,92595,Aud Eval Electroacoustic Binaural,60.0,45.0,30.72,46.5,7
+CPT,92596,Aud Ear Protect Attenuation Measure,147.0,110.25,46.61,46.61,1
+CPT,92597,St Evaluation Voice Prosthetic,1408.0,1056.0,78.47,986.16,4
+CPT,92601,Cochlear Implant <7yrs W/Program,393.0,294.75,201.22,201.22,1
+CPT,92602,Cochlear Implant <7yrs Reprogram,393.0,294.75,201.22,201.22,2
+CPT,92603,Cochlear Implant 7+Yrs W/Program,393.0,294.75,185.79,304.58,10
+CPT,92604,Cochlear Implant 7+Yrs Reprogram,393.0,294.75,185.79,304.58,19
+CPT,92610,"Eval,Oral & Pharyngeal Swallow Function",263.0,197.25,134.66,184.21,4
+CPT,92610,St Eval Oral/Swallow Function,180.0,135.0,92.16,126.07,2
+CPT,92611,St Eval Swallow Video/Fluoro,210.0,157.5,107.52,147.08,3
+CPT,92612,St Eval Swallow Endo Cine/Video,244.0,183.0,160.8,160.8,1
+CPT,92613,St Eval Swall Endo C/V,391.0,293.25,273.86,273.86,1
+CPT,92622,Dx Aly Prgrmg&Verif Aud Oi Sound Processr 1st 60,387.0,290.25,185.79,185.79,1
+CPT,92626,Aud Assessment Rehab First Hr,437.0,327.75,185.79,338.68,10
+CPT,92630,Aud Rehabilitation Pre-Lingual,512.0,384.0,262.14,262.14,1
+CPT,92640,Aud Analysis Brainstm Implnt per Hr,285.0,213.75,145.92,220.88,3
+CPT,92650,Aep Scr Auditory Potential W/Stimuli Auto Alys,177.0,132.75,129.21,129.21,1
+CPT,92651,Aep Hearing Status Deter Broadband Stimuli I&R,543.0,407.25,369.77,369.77,3
+CPT,92652,Aep Threshold Estimation Mlt Frequencies I&R,708.0,531.0,362.5,548.7,6
+CPT,92653,Aep Neurodiagnostic Interpretation and Report,523.0,392.25,267.78,369.77,8
+CPT,92700,Bone Conduction Check,60.0,45.0,29.08,46.5,10
+CPT,92700,Bone Conduction Fitting Fee,240.0,180.0,29.08,186.0,10
+CPT,92700,Flexible Fiberoptic/Endoscopic Eval of Swallowing W/Out Video,299.0,224.25,29.08,231.73,11
+CPT,92700,HC Cochlear Device Troubleshooting,60.0,45.0,29.08,46.5,10
+CPT,92700,Mee Video Head Impulse Test (Vhit),322.0,241.5,29.08,249.55,11
+CPT,92700,Ns Unlisted Orl Serv or Proc,349.0,261.75,29.08,270.48,11
+CPT,93005,Ekg Routine Tracing Only,181.0,135.75,70.53,140.28,9
+CPT,94010,Spirometry/Pft Smp,247.0,185.25,187.42,191.43,2
+CPT,94640,Nonpressurized Inhalation Treatment,342.0,256.5,259.51,259.51,1
+CPT,95782,Polysom <6 Yrs Sleep Stage 4/> Addl,2367.0,1775.25,1211.9,1834.43,4
+CPT,95810,Psg 6 Yrs or Older 4+ Parameters,2367.0,1775.25,1208.09,1834.43,10
+CPT,95811,Psg 6/> Yrs 4+ Parameters W/ Cpap,2439.0,1829.25,1208.09,1890.23,4
+CPT,95976,Elec Alys Implt Smpl Cn Npgt Prgrmg,221.0,165.75,44.28,171.28,9
+CPT,95977,Elec Alys Implt Cplx Cn Npgt Prgrmg,295.0,221.25,109.0,228.63,12
+CPT,95992,Canalith Repositioning Proc,86.0,64.5,44.03,44.03,1
+CPT,95992,Canalith Repositioning Procedure,94.0,70.5,48.13,48.13,1
+CPT,95992,Pt Canalith Repositioning per Day,94.0,70.5,48.13,48.13,1
+CPT,96040,Genetic Counseling 30 Min,376.0,282.0,247.78,263.99,2
+CPT,96041,Dfci Telegenetics,335.0,251.25,171.52,259.63,5
+CPT,96041,Med Genetics&Genetic Counseling Svcs Each 30 Min,335.0,251.25,171.52,259.63,5
+CPT,96361,IV Infus Hydration Ea Additional Hour - 96361,81.0,60.75,56.73,56.73,1
+CPT,96365,IV Infus Non-Chemo Initial Up to 1 Hr - 96365,469.0,351.75,240.13,363.48,9
+CPT,96365,IV Infusion Therapy/Prophylaxis /Dx 1st to 1 Hr,451.0,338.25,230.91,349.53,9
+CPT,96366,IV Infus Non-Chemo Same Drug Ea Hr - 96366,82.0,61.5,54.79,63.55,4
+CPT,96372,Injection Subq or Im,115.0,86.25,84.51,84.51,1
+CPT,96372,Therapeutic Prophylactic/Diagnostic Inj Sc/Im - 96372,125.0,93.75,84.51,84.51,1
+CPT,96372,Therapeutic Prophylactic/Dx Injection Subq/Im,115.0,86.25,84.51,84.51,1
+CPT,96374,Ivp/ IV < 16 Min Initial Drug - 96374,295.0,221.25,223.85,250.18,5
+CPT,96375,Ivp/ IV <16min Ea Addl Seg Diff Drug - 96375,137.0,102.75,54.79,106.18,5
+CPT,96405,Chemo Intralesional 1-7 Lesions,353.0,264.75,84.51,84.51,1
+CPT,96409,Chem Ivp/ IV <16 Min Initial Single Drug -96409,478.0,358.5,393.86,393.86,1
+CPT,96413,Chemo IV Infus Initial Up to 1 Hr - 96413,843.0,632.25,393.86,393.86,5
+CPT,96415,Chemo IV Infus Same Drug Ea Add�L Hr > or = to 31 Min - 96415,126.0,94.5,84.51,84.51,3
+CPT,96573,Pdt Dstr Prmlg Les Skn Illum/Activj by Phys/Qhp,135.0,101.25,102.44,235.94,5
+CPT,97110,Ot Exercise Therapeutic 15 Min,218.0,163.5,32.11,111.62,2
+CPT,97110,Pt Exercise Therapeutic 15 Min,218.0,163.5,32.11,111.62,2
+CPT,97112,"Neuromusc Reeducat,1+ Areas, Ea 15 Min",112.0,84.0,35.73,84.99,5
+CPT,97112,Pt Neuromuscular Re-ED 15 Min,135.0,101.25,35.73,102.44,4
+CPT,97140,Manual Therapy Tqs 1/> Regions Each 15 Minutes,119.0,89.25,30.27,60.93,3
+CPT,97140,Pt Manual Therapy 15 Min,119.0,89.25,30.27,60.93,3
+CPT,97161,"Physical Therapy Evaluation, Low Complexity",268.0,201.0,109.2,187.71,4
+CPT,97162,"Physical Therapy Evaluation, Moderate Complexity",268.0,201.0,109.2,187.71,3
+CPT,97535,Ot Home Instruction/Program 15min,142.0,106.5,35.98,72.7,3
+CPT,97535,Pt Home Instruction/Program 15min,142.0,106.5,35.98,72.7,3
+CPT,99199,Sp Follow-Up Tinnitus Management,50.0,37.5,25.6,25.6,1
+CPT,99199,Sp Individual Tinnitus Management,250.0,187.5,128.0,128.0,1
+CPT,99201,Hcpr New Pt - Level 1 Visit,127.0,95.25,96.37,96.37,1
+CPT,99201,New Pt - Low Level Visit (99201),93.0,69.75,70.57,70.57,1
+CPT,99211,"Office Visit, Established Pat",166.0,124.5,35.84,128.65,16
+CPT,99213,"Office Visit, Established Pat",166.0,124.5,84.99,183.68,21
+CPT,99215,"Office Visit, Established Pat",166.0,124.5,84.99,352.63,12
+CPT,99221,1st Hospital IP/Obs Care Sf/Low Mdm 40 Minutes,324.0,243.0,226.93,226.93,1
+CPT,99221,Initial Observation Care/Day 30 Minutes,303.0,227.25,212.22,212.22,1
+CPT,99221,Initial Observation Care/Day 50 Minutes,418.0,313.5,292.77,292.77,1
+CPT,99221,Initial Observation Care/Day 70 Minutes,576.0,432.0,403.43,403.43,1
+CPT,99285,Emergency Department Visit High Mdm,1190.0,892.5,609.28,728.02,3
+CPT,99499,Mee Mal-De-Debarquement Treatment,100.0,75.0,51.2,51.2,1
+CPT,C1783,SYSTEM TREATMENT 6MM GLAUCOMA XEN 45 GEL STENT PORCINE DERMIS CROSS-LINKED GLUTARALDEHYDE,5104.0,3828.0,3317.6,3574.84,2
+CPT,G0277,Hyperbaric Oxygen Supervision 30 Min,789.0,591.75,163.75,598.69,9
+CPT,J0736,Inj Clindamycin Phosphate 300 Mg,1.63,1.22,1.06,1.26,3
+CPT,J2782,Inj Avancincaptad Pegol/Izervay 0.1mg,166.95,125.21,105.12,110.02,3
+CPT,J3465,"Injection, Voriconazole, 10 Mg",2.16,1.62,1.67,1.67,1
+CPT,J7060,"5% Dextrose/Water, 500 Ml = 1 Unit",7.95,5.96,4.07,6.16,4
 DRG,021,"Open Craniotomy Except Trauma,MAJOR",63815.94,,93218.25,93218.25,1
 DRG,021,"Open Craniotomy Except Trauma,MINOR",46431.8,,34573.59,48948.6,2
 DRG,021,"Open Craniotomy Except Trauma,MODERATE",64275.58,,48345.42,62307.52,3
@@ -1910,6 +2757,904 @@ DRG,950,"Extensive O.R. Procedure Unrelated To Principal Diagnosis,MODERATE",490
 DRG,951,"Moderately Extensive O.R. Procedure Unrelated To Principal Diagnosis,MINOR",42057.21,,16933.29,16933.29,1
 DRG,951,"Moderately Extensive O.R. Procedure Unrelated To Principal Diagnosis,MODERATE",24515.71,,23205.43,26852.36,2
 DRG,952,"Non-Extensive O.R. Procedure Unrelated To Principal Diagnosis,MODERATE",42046.49,,30895.38,30895.38,1
+HCPCS,87635,Iadna Sars-Cov-2 Covid-19 Amplified Probe Tq,150.0,112.5,76.8,76.8,1
+HCPCS,A4262,Dura Plug;Temp Punc Plug 90 Day; Prolong,40.0,30.0,20.48,31.0,5
+HCPCS,A4262,Mee Dura Plug;Temp Punc Plug 90 Day; Prolong,40.0,30.0,20.48,31.0,5
+HCPCS,A4262,Mee Punc Plug 7 Days Soft Plug Collagen,17.0,12.75,8.7,13.18,5
+HCPCS,A4262,Temp Punctal Plug,3.0,2.25,1.54,2.33,5
+HCPCS,A4263,Mee Punc Plug Perma Hydrogel,80.0,60.0,40.96,62.0,4
+HCPCS,A4263,"Mee Tube, Jones",151.0,113.25,77.31,117.03,8
+HCPCS,A4263,Perm Punctal Plug,81.0,60.75,41.47,62.78,4
+HCPCS,A4263,TUBE INTRODUCER SET STOP LOSS JONES,450.0,337.5,230.4,348.75,4
+HCPCS,A4263,TUBE JONES 3.5MM 24MM TEAR DUCT FROSTED SUTURE HOLE,309.0,231.75,158.21,239.48,4
+HCPCS,A4263,TUBE JONES 3.5X17MM TEAR DUCT STANDARD,141.0,105.75,72.19,109.28,4
+HCPCS,A4263,TUBE JONES 4MM 18MM TEAR DUCT FROSTED STERILE,171.0,128.25,87.55,132.53,4
+HCPCS,A4263,TUBE JONES 4X18MM STOP LOSS,750.0,562.5,384.0,581.25,4
+HCPCS,A4263,TUBE JONES 4X24MM FROSTED SUTURE HOLE,309.0,231.75,158.21,239.48,4
+HCPCS,A4263,TUBE JONES FROSTED WITH SUTURE H,324.0,243.0,165.89,251.1,4
+HCPCS,A4263,TUBE JONES STANDARD 4.0X17,165.0,123.75,84.48,127.88,4
+HCPCS,A7505,"Mee A7505 Tracheostoma Housing, Reusable, WO Adhes",19.0,14.25,14.42,14.42,1
+HCPCS,A7505,Mee Trach Valve Housing (Reusable),40.0,30.0,30.35,30.35,1
+HCPCS,A7508,Mee A7508 Housing & Integrated Adhesiv,241.0,180.75,123.39,182.87,2
+HCPCS,A7508,Mee Baseplate (Inhealth or Bmc),10.0,7.5,5.12,7.59,2
+HCPCS,A7508,Mee Regular and Flexiderm,11.0,8.25,5.63,8.35,2
+HCPCS,A7508,Mee Stabilibase,23.0,17.25,11.78,17.45,2
+HCPCS,A7508,Mee Stabilibase Optiderm,46.0,34.5,23.55,34.9,2
+HCPCS,A7508,Mee Xtrabase Optiderm,19.0,14.25,9.73,14.42,2
+HCPCS,C1713,ABUTMENT HEALING 3X5 RP CONICAL CONNECTION,136.8,102.6,70.04,106.02,4
+HCPCS,C1713,ACTIVE NOBEL 4.3X10,968.4,726.3,495.82,750.51,4
+HCPCS,C1713,ANCHOR SUTURE SIZE 3 0 NEEDLEV4 LENGTH1.3MM ARTHROSCOPY ETHIBOND QUICK MICRO,885.0,663.75,453.12,685.88,4
+HCPCS,C1713,BONE PLATE .4X24MM 4 HOLE CRANIAL MATRIXNEURO TI STRAIGHT RIGID,83.43,62.57,42.72,64.66,4
+HCPCS,C1713,BONE PLATE 0.4MM 20 HOLE CRANIAL MATRIXNEURO TI ADAPTION RIGID,494.61,370.96,253.24,383.32,4
+HCPCS,C1713,BONE PLATE 0.4MM CRANIAL MATRIXNEURO TI XSHAPE RIGID,318.69,239.02,163.17,246.98,4
+HCPCS,C1713,BONE PLATE 0.4X12MM 2 HOLE CRANIAL MATRIXNEURO TI STRAIGHT RIGID,59.76,44.82,30.6,46.31,4
+HCPCS,C1713,BONE PLATE 0.4X18MM 6 HOLE CRANIAL MATRIXNEURO TI DOUBLE Y SHAPE RIGID,505.47,379.1,258.8,391.74,4
+HCPCS,C1713,BONE PLATE 1.25MM 12 HOLE CRANIAL MATRIXMANDIBLE TI ADAPTION,1503.9,1127.92,770.0,1165.52,4
+HCPCS,C1713,BONE PLATE 1.25MM 3X3 HOLE COMPRESSION MATRIXMANDIBLE TITANIUM ANGLE,1122.96,842.22,574.96,870.29,4
+HCPCS,C1713,BONE PLATE 1.5MM 20 HOLE CRANIAL MATRIXMANDIBLE TI STRAIGHT,2397.81,1798.36,1227.68,1858.3,4
+HCPCS,C1713,BONE PLATE 1.5MM 3X3 HOLE COMPRESSION CRANIOMAXILLOFACIAL MATRIXMANDIBLE TITANIUM DISTAL,1130.4,847.8,578.76,876.06,4
+HCPCS,C1713,BONE PLATE 14X0.4MM CRANIAL MATRIXNEURO TI SHAPE RIGID,311.25,233.44,159.36,241.22,4
+HCPCS,C1713,BONE PLATE 1MM 12 HOLE CRANIAL MATRIXMANDIBLE TI ADAPTION,1401.84,1051.38,717.74,1086.43,4
+HCPCS,C1713,BONE PLATE 1MM 20 HOLE CRANIAL MATRIXMANDIBLE TI ADAPTION,1038.3,778.72,531.61,804.68,4
+HCPCS,C1713,BONE PLATE 1MM 4 HOLE CRANIAL MATRIXMANDIBLE TI SQUARE MALLEABLE,612.54,459.4,313.62,474.72,4
+HCPCS,C1713,BONE PLATE 1MM 6 HOLE CRANIOMAXILLOFACIAL TI H SHAPE BRIDGE,423.3,317.47,216.73,328.06,4
+HCPCS,C1713,BONE PLATE 1MM 8 HOLE CRANIAL MATRIXMANDIBLE TI STRUT CURVED MALLEABLE,921.27,690.95,471.69,713.98,4
+HCPCS,C1713,BONE PLATE 1MM 8 HOLE CRANIAL MATRIXMANDIBLE TI STRUT MALLEABLE,1207.59,905.69,618.29,935.88,4
+HCPCS,C1713,BONE PLATE 2.5MM 12 HOLE CRANIAL MATRIXMANDIBLE TI RECONSTRUCTION STRAIGHT,1715.58,1286.68,878.38,1329.57,4
+HCPCS,C1713,BONE PLATE 2.5MM 20 HOLE CRANIAL MATRIXMANDIBLE TI STRAIGHT RECONSTRUCTION,2377.89,1783.42,1217.48,1842.86,4
+HCPCS,C1713,BONE PLATE 2.5MM SM CRANIAL MATRIXMANDIBLE TI PREFORMED RECONSTRUCTION LEFT,4423.76,3317.82,2264.97,3428.41,4
+HCPCS,C1713,BONE PLATE 2.8MM 12 HOLE CRANIAL MATRIXMANDIBLE TI STRAIGHT RECONSTRUCTION,2522.31,1891.73,1291.42,1954.79,4
+HCPCS,C1713,BONE PLATE 2.8MM 20 HOLE CRANIAL MATRIXMANDIBLE TI STRAIGHT RECONSTRUCTION,3692.55,2769.41,1890.59,2861.73,4
+HCPCS,C1713,BONE PLATE 2MM 20 HOLE CRANIAL MATRIXMANDIBLE TI STRAIGHT,2455.08,1841.31,1257.0,1902.69,4
+HCPCS,C1713,BONE PLATE 2MM 6 HOLE CRANIAL MATRIXMANDIBLE TI STRAIGHT,1040.76,780.57,532.87,806.59,4
+HCPCS,C1713,BONE PLATE 2MM CRANIOMAXILLOFACIAL TI FIXATION CONDYLAR HEAD,572.67,429.5,293.21,443.82,4
+HCPCS,C1713,BONE PLATE 2X1.25MM HOLE CRANIAL MATRIXMANDIBLE TI COMPRESSION,664.8,498.6,340.38,515.22,4
+HCPCS,C1713,BONE PLATE 2X1.5MM 10 HOLE CRANIAL RAPIDSORB POLYMER STRUT SCALLOPED,802.89,602.17,411.08,622.24,4
+HCPCS,C1713,BONE PLATE 3.5X137MM 10 HOLE LCP SS LOCKING STRAIGHT BX/2EA,803.64,602.73,411.46,622.82,4
+HCPCS,C1713,BONE PLATE 3X1.25MM DISTAL HOLE CRANIAL MATRIXMANDIBLE TITANIUM CRESCENT COMPRESSION,824.16,618.12,421.97,638.72,4
+HCPCS,C1713,BONE PLATE 3X1.5MM HOLE CRANIAL MATRIXMANDIBLE TI CRESCENT,2089.05,1566.79,1069.59,1619.01,4
+HCPCS,C1713,BONE PLATE 3X2MM HOLE CRANIAL MATRIXMANDIBLE TI ANGLE BROAD CENTRE,1737.96,1303.47,889.84,1346.92,4
+HCPCS,C1713,BONE PLATE 4X20 LIGHT BLUE 2.5MM SM HOLE CRANIAL MATRIXMANDIBLE TI DOUBLE ANGLE RECONSTRUCTION,3456.83,2592.62,1769.9,2679.04,4
+HCPCS,C1713,BONE PLATE 59X1.5MM 12 HOLE TI STRAIGHT,893.55,670.16,457.5,692.5,4
+HCPCS,C1713,BONE PLATE 6X24 2.5MM LG HOLE CRANIAL MATRIXMANDIBLE TI DOUBLE ANGLE RECONSTRUCTION,3851.08,2888.31,1971.75,2984.59,4
+HCPCS,C1713,BONE PLATE 7X2.5MM 23 HOLE CRANIAL MATRIXMANDIBLE TI ANGLE RECONSTRUCTION RIGHT,3583.02,2687.26,1834.51,2776.84,4
+HCPCS,C1713,BONE PLATE 7X2.8MM 23 HOLE CRANIAL MATRIXMANDIBLE TI ANGLE RECONSTRUCTION RIGHT,3658.52,2743.89,1873.16,2835.35,4
+HCPCS,C1713,BONE PLATE 7X23 H 2MM 23H MATRIXMANDIBLE TI LEFT,8696.12,6522.09,4452.41,6739.49,4
+HCPCS,C1713,BONE PLATE 7X2MM 23 HOLE CRANIAL MATRIXMANDIBLE TI ANGLE RECONSTRUCTION RIGHT,3363.9,2522.92,1722.32,2607.02,4
+HCPCS,C1713,BONE PLATE 8X11MM DOUBLE 6 HOLE LOW PROFILE Y SHAPE TI,639.47,479.6,327.41,495.59,4
+HCPCS,C1713,BONE PLATE C TYPE FOR CMF DISTRACTORTI CONDYLAR HEAD DISTRACTOR,4201.75,3151.31,2151.3,3256.36,4
+HCPCS,C1713,BONE PLATE COMPRESSION 1.5MM 2 HOLE CRANIAL MATRIX TI,943.68,707.76,483.16,731.35,4
+HCPCS,C1713,BONE PLATE SHORT 10 HOLE MAXILLOFACIAL MATRIXWAVE MAXILLOMANDIBULAR FIXATION TI,641.7,481.27,328.55,497.32,4
+HCPCS,C1713,BONE SCREW CRANIOMAXILLOFACIAL SET MATRIXMANDIBLE TI SLOTTED,354.78,266.08,181.65,274.95,4
+HCPCS,C1713,CEMENT BONE 5CC INJECTABLE SUBSTITUTE SELF SET HYDROSET CALCIUM PHOSPHATE,3960.8,2970.6,2027.93,3069.62,4
+HCPCS,C1713,CEMENT HYDROXYAPATITE 3ML GRAFT BONE HYDROSET NEURO SYNTHETIC INJECTABLE,2961.45,2221.09,1516.26,2295.12,4
+HCPCS,C1713,COVER BURR 17MM HOLE MATRIXNERUO TITANIUM,302.58,226.93,154.92,234.5,4
+HCPCS,C1713,COVER SCREW 4X5.5MM COCHLEAR BAHA TITANIUM CONICAL HEXAGON B1300,535.08,401.31,273.96,414.69,4
+HCPCS,C1713,CRANIAL PLATE 2MM 4 HOLE MAXILLOFACIALXDCP TITANIUM,415.83,311.87,212.9,322.27,4
+HCPCS,C1713,CRANIAL PLATE 2MM 5 HOLE DCP Y SHAPE TITANIUM ARM X,445.71,334.28,228.2,345.43,4
+HCPCS,C1713,CRANIAL PLATE 8 HOLE UNIVERSAL STRAIGHT NO BAR NEURO III,512.66,384.49,262.48,397.31,4
+HCPCS,C1713,CRANIOFACIAL IMPLANT 20MM SPHERE ORBITAL CRANIOMAXILLOFACIAL MEDPOR POLYETHYLENE BIOCOMPATIBLE POROUS,1891.89,1418.92,968.65,1466.21,4
+HCPCS,C1713,CRANIOFACIAL IMPLANT 50X76X.85MM ORBITAL FLOOR BIOMATERIAL SHEET MEDPOR,2009.63,1507.22,1028.93,1557.46,4
+HCPCS,C1713,CRANIOFACIAL PLATE .8MM CRANIOMAXILLOFACIAL SYNPOR POLYETHYLENE TITANIUM REINFORCED POROUS FAN EXPOSED,1500.72,1125.54,768.37,1163.06,4
+HCPCS,C1713,CRANIOFACIAL WEDGE 22X31 7MM CRANIOMAXILLOFACIAL MEDPOR ENDOPHTHALMOS REGULAR LEFT,2050.79,1538.09,1050.0,1589.36,4
+HCPCS,C1713,CRANIOMAXILLOFACIAL PLATE 1.5MM 10 HOLE ORBITAL RAPIDSORB POLYMER RIM,455.4,341.55,233.16,352.94,4
+HCPCS,C1713,CRANIOMAXILLOFACIAL PLATE 1MM UNIVERSAL BONE ORBITAL FLOOR TI,5380.0,4035.0,2754.56,4169.5,4
+HCPCS,C1713,CRANIOMAXILLOFACIAL PLATE 2MM 12 HOLE BONE ORBITAL DCP RIM TI,463.14,347.35,237.13,358.93,4
+HCPCS,C1713,CRANIOMAXILLOFACIAL PLATE 2X25MM 2 HOLE 3 SHAFT 100DEG OBLIQUE TI ARM BRIDGE L SHAPE LEFT,438.21,328.66,224.36,339.61,4
+HCPCS,C1713,CRANIOMAXILLOFACIAL SCREW AXS ST 1.7X4MM 5P,317.79,238.34,162.71,246.29,4
+HCPCS,C1713,DEVICE BROW 3.5MM IMPLANT FIXATION BIOABSORBABLE TINE HEIGHT ENDOTINE FOREHEAD IMPLANTABLE PK/2EA,905.23,678.92,463.48,701.55,4
+HCPCS,C1713,DISTRACTOR BODY TI MULTI VECTOR MANDIBLE,4810.54,3607.9,2463.0,3728.17,4
+HCPCS,C1713,DISTRACTOR MANDIBLE 15MM ARM TITANIUM MULTI VECTOR,388.41,291.31,198.87,301.02,4
+HCPCS,C1713,DISTRACTOR SURGICAL BONE 1.2X3MM 5MM TI CRANIOFACIAL INTERNAL PK/4EA,3345.21,2508.91,1712.75,2592.54,4
+HCPCS,C1713,DRIVER IMPLANT 28MM RP CONICAL CONNECTION,190.8,143.1,97.69,147.87,4
+HCPCS,C1713,FIBERSTITCH 1.5 STRAIGHT,1650.0,1237.5,844.8,1278.75,4
+HCPCS,C1713,FILLER CEMENT 2.0G BONE EAR OTOMIMIX HYDROXYAPATITE DILUTE CITRIC ACID POWDER LIQUID,1146.54,859.9,587.03,888.57,4
+HCPCS,C1713,GRAFT CRANIOMAXILLOFACIAL 38X50X.85MM MEDPOR LATEX FREE POLYETHYLENE ULTRATHIN SHEET STERILE DISPOSABLE,1433.98,1075.48,734.2,1111.33,4
+HCPCS,C1713,GRANULES BONALIVE 0. 5-0. 8MM 5CC ORTHOPEDICS,5730.0,4297.5,2933.76,4440.75,4
+HCPCS,C1713,IMPLANT 30MM FLEX ACTIVATION ARM ONLY CARDANIC FOR DISTRACTORS,3554.93,2666.2,1820.12,2755.07,4
+HCPCS,C1713,IMPLANT ANATOMICAL CHIN MEDIIM AC-M,825.0,618.75,422.4,639.38,4
+HCPCS,C1713,IMPLANT EYE 14MM SPHERE ORBITAL STERILE SILICONE,195.0,146.25,99.84,151.13,4
+HCPCS,C1713,IMPLANT FIXATION 3MM ENDOTINE TRANSBLEPH FOREHEAD BROW,915.0,686.25,468.48,709.13,4
+HCPCS,C1713,IMPLANT IPS CRANIAL PEEK 00021,16150.0,12112.5,8268.8,12516.25,4
+HCPCS,C1713,IMPLANT IPS CRANIAL PEEK 00022,21250.0,15937.5,10880.0,16468.75,4
+HCPCS,C1713,IMPLANT IPS MANDIBLE TITANIUM 00063TI-6AL-4V,13600.0,10200.0,6963.2,10540.0,4
+HCPCS,C1713,IMPLANT IPS MANDIBLE TITANIUM 00065TI-6AL-4V,18020.0,13515.0,9226.24,13965.5,4
+HCPCS,C1713,IMPLANT IPS MIDFACE LOCKING LARGE LP TI-6AL-4V,28664.0,21498.0,14675.97,22214.6,4
+HCPCS,C1713,IMPLANT IPS MIDFACE LOCKING SMALL LP TI-6AL-4V,21188.0,15891.0,10848.26,16420.7,4
+HCPCS,C1713,IMPLANT MANDIBLE SM PRINTED 3D TI TRUMATCH MIDFACE SD980.106,11383.68,8537.76,5828.44,8822.35,4
+HCPCS,C1713,IMPLANT MIDFACE 60MMX40MMX4MM CONTOUR LEFT,1590.0,1192.5,814.08,1232.25,4
+HCPCS,C1713,IMPLANT MIDFACE LOCKING MED LP 6AL-4V,23680.0,17760.0,12124.16,18352.0,4
+HCPCS,C1713,IMPLANT ORBIT PRINTED 3D TI TRUMATCH MIDFACE MANDIBLE,8870.4,6652.8,4541.64,6874.56,4
+HCPCS,C1713,IMPLANT WEDGE 28X40X7.5MM ENOPTHALMOUS LT LG,1510.5,1132.87,773.38,1170.64,4
+HCPCS,C1713,K-WIRE BONE 2X15 150MM CALIBRATED TIP PARTIALLY THREADED TROCAR POINT PK/5EA,99.59,74.69,50.99,77.18,4
+HCPCS,C1713,KIT 3D MANDIBLE MIDFACE TRUMATCH TI PRINT ORBITAL WITHOUT PLAN,8038.8,6029.1,4115.87,6230.07,4
+HCPCS,C1713,KIT CUSTOM CRANIOMAXILLOFACIAL PEEK SD800.410,10506.0,7879.5,5379.07,8142.15,4
+HCPCS,C1713,KIT PLAN INSTRUMENT IMT BASIC MADIBLE RECONSTRUCTION CUSTOM,3783.7,2837.77,1937.25,2932.37,4
+HCPCS,C1713,KIT PLAN RECONSTRUCTION PRO CMF MANDIBLE MIDFACE PATIENT SPECIFIC CUSTOM,5695.9,4271.92,2916.3,4414.32,4
+HCPCS,C1713,KIT TRUMATCH ORTHOGNATHICS BASIC MAXILLARY,7539.84,5654.88,3860.4,5843.38,4
+HCPCS,C1713,MANDIBLE DISTRACTION 20MM 36 HOLE INTERNAL MICRO ZURICH 2 MID DRIVE RATCHET 1.0-1.2MM SCREW EA/1,21529.92,16147.44,11023.32,16685.69,4
+HCPCS,C1713,MANDIBLE DISTRACTION 30MM 24 HOLE INTERNAL HYPERDRIVE MICRO RATCHET 1.0-1.2MM SCREW EA/1 51-528-30-09,23129.1,17346.82,11842.1,17925.05,4
+HCPCS,C1713,MANDIBLE DISTRACTION 30MM 24 HOLE INTERNAL HYPERDRIVE MICRO RATCHET 1.0-1.2MM SCREW EA/1 51-528-30-71,23321.1,17490.82,11940.4,18073.85,4
+HCPCS,C1713,MANDIBLE DISTRACTION 30MM 54 HOLE INTERNAL MICRO ZURICH 2 LYPKA END DRIVE 70 RATCHET 1.0-1.2MM SCREW,22253.46,16690.09,11393.77,17246.43,4
+HCPCS,C1713,MESH DYNAMIC 90X90X0.6MM FOR 1.5/1.7MM SCREW,5308.38,3981.28,2717.89,4113.99,4
+HCPCS,C1713,MESH SYNTHETIC 0.6X100MM PLATE CRANIOMAXILLOFACIAL MATRIXNEURO CONTOUR EXTRA RIGID TI,3799.44,2849.58,1945.31,2944.57,4
+HCPCS,C1713,MODEL ANATOMICAL IPS HALF EP 6,2715.69,2036.77,1390.43,2104.66,4
+HCPCS,C1713,MODEL ANATOMICAL IPS MAXILLA CRYSTAL,4590.0,3442.5,2350.08,3557.25,4
+HCPCS,C1713,MODEL ANATOMICAL IPS SUPPLEMENTAL HALF SKULL 00132,3690.0,2767.5,1889.28,2859.75,4
+HCPCS,C1713,MODEL PLANNED ADULT OUTCOME MAXILLA / ORBITS ACRYLIC,3837.4,2878.05,1964.75,2973.99,4
+HCPCS,C1713,Mee 2111204 Screw Self Drill 1.2mmx4mm,118.0,88.5,60.42,91.45,4
+HCPCS,C1713,Mee 2120046 Plate Micro 13mm Rt L,340.0,255.0,174.08,263.5,4
+HCPCS,C1713,Mee 310153 Plating System,339.0,254.25,173.57,262.73,4
+HCPCS,C1713,Mee 40005x Screw Slf Drlng 1.5mm Rcss,154.0,115.5,78.85,119.35,4
+HCPCS,C1713,Mee 40045x Screw Slf Drlng 1.3mm Rcss,183.0,137.25,93.7,141.83,4
+HCPCS,C1713,Mee 40062x Plating Screws,174.0,130.5,89.09,134.85,4
+HCPCS,C1713,Mee 400784e Screw Emergency 2.0x4mm,128.0,96.0,65.54,99.2,4
+HCPCS,C1713,Mee 40106x Screw Slf Drlng 2.0mm Rcss,148.0,111.0,75.78,114.7,4
+HCPCS,C1713,Mee 401156e Screw Selftap Titn 2.0x6mm,128.0,96.0,65.54,99.2,4
+HCPCS,C1713,Mee 40116x Screw Selftap Titn 2.0mm,128.0,96.0,65.54,99.2,4
+HCPCS,C1713,Mee 420070 Plating System,1558.0,1168.5,797.7,1207.45,4
+HCPCS,C1713,Mee 420100 Plating System,1247.0,935.25,638.46,966.43,4
+HCPCS,C1713,Mee 420210 Plating System,553.0,414.75,283.14,428.58,4
+HCPCS,C1713,Mee 420620 Plating System,500.0,375.0,256.0,387.5,4
+HCPCS,C1713,Mee 420840 Plating System,473.0,354.75,242.18,366.58,4
+HCPCS,C1713,Mee 421010 Plating System,1293.0,969.75,662.02,1002.08,4
+HCPCS,C1713,Mee 421021 Plating System,516.0,387.0,264.19,399.9,4
+HCPCS,C1713,Mee 421052 Plating System,516.0,387.0,264.19,399.9,4
+HCPCS,C1713,Mee 421053 Plating System,516.0,387.0,264.19,399.9,4
+HCPCS,C1713,Mee 421061 Plating System,467.0,350.25,239.1,361.93,4
+HCPCS,C1713,Mee 421081 Plating System,467.0,350.25,239.1,361.93,4
+HCPCS,C1713,Mee 421095 Plating System,457.0,342.75,233.98,354.18,4
+HCPCS,C1713,Mee 421099 Plating System,1700.0,1275.0,870.4,1317.5,4
+HCPCS,C1713,Mee 446100 Plating System,768.0,576.0,393.22,595.2,4
+HCPCS,C1713,Mee 446220 Plating System,695.0,521.25,355.84,538.63,4
+HCPCS,C1713,Mee 446500 Plating System,500.0,375.0,256.0,387.5,4
+HCPCS,C1713,Mee 446510 Plating System,553.0,414.75,283.14,428.58,4
+HCPCS,C1713,Mee 446520 Plating System,583.0,437.25,298.5,451.83,4
+HCPCS,C1713,Mee 446530 Plating System,568.0,426.0,290.82,440.2,4
+HCPCS,C1713,Mee 446610 Plating System,553.0,414.75,283.14,428.58,4
+HCPCS,C1713,Mee 447100 Plating System,948.0,711.0,485.38,734.7,4
+HCPCS,C1713,Mee 447520 Plating System,525.0,393.75,268.8,406.88,4
+HCPCS,C1713,"Mee Countersink, Wide,3mm",467.0,350.25,239.1,361.93,4
+HCPCS,C1713,"Mee Hydroset, 10cc",4255.0,3191.25,2178.56,3297.63,4
+HCPCS,C1713,Mee Mesh Contour Ti Matrixneuro,3595.0,2696.25,1840.64,2786.13,4
+HCPCS,C1713,Mee Mesh Dynamic,1516.0,1137.0,776.19,1174.9,4
+HCPCS,C1713,Mee Osteomed Microorbital Plate,933.0,699.75,477.7,723.08,4
+HCPCS,C1713,Mee Plate,670.0,502.5,343.04,519.25,4
+HCPCS,C1713,Mee Plate 12 Hole 2.0mm,1413.0,1059.75,723.46,1095.08,4
+HCPCS,C1713,Mee Plate 20 Hole,1783.0,1337.25,912.9,1381.83,4
+HCPCS,C1713,Mee Plate 6 Hole 2.0mm,1549.0,1161.75,793.09,1200.48,4
+HCPCS,C1713,Mee Plate Angle 3x3hole Broad 2.0mm,1543.0,1157.25,790.02,1195.83,4
+HCPCS,C1713,Mee Plate Angle Recon 7x23 Hole 2.0mm,2889.0,2166.75,1479.17,2238.98,4
+HCPCS,C1713,Mee Plate Crescent 2x2hoel 2.0mm,1092.0,819.0,559.1,846.3,4
+HCPCS,C1713,Mee Plate Low Profile 5305212,167.0,125.25,85.5,129.43,4
+HCPCS,C1713,Mee Plate Low Profile 5305228,262.0,196.5,134.14,203.05,4
+HCPCS,C1713,Mee Plate Low Profile 5305xxx,355.0,266.25,181.76,275.13,4
+HCPCS,C1713,Mee Plate Low Profile 5306212,150.0,112.5,76.8,116.25,4
+HCPCS,C1713,Mee Plate Oblique L Rt Titn 4/6hl,574.0,430.5,293.89,444.85,4
+HCPCS,C1713,Mee Plate Recon 12 Hole 2.5mm,1522.0,1141.5,779.26,1179.55,4
+HCPCS,C1713,Mee Plate Recon 20 Hole,2108.0,1581.0,1079.3,1633.7,4
+HCPCS,C1713,Mee Plate Recon 20hole 2.8mm Thick,2416.0,1812.0,1236.99,1872.4,4
+HCPCS,C1713,Mee Plate Recon 7x23 Hole Left 2.5mm,3174.0,2380.5,1625.09,2459.85,4
+HCPCS,C1713,Mee Plate Recon 7x23hole Right 2.5mm,3174.0,2380.5,1625.09,2459.85,4
+HCPCS,C1713,Mee Plate Recon Double Angle Large,4093.0,3069.75,2095.62,3172.08,4
+HCPCS,C1713,Mee Plate Recon Double Angle Medium,3878.0,2908.5,1985.54,3005.45,4
+HCPCS,C1713,Mee Plate Y Ti Matrix,605.0,453.75,309.76,468.88,4
+HCPCS,C1713,"Mee Plate, Countourable Mesh",2660.0,1995.0,1361.92,2061.5,4
+HCPCS,C1713,"Mee Plate,Adaption,Resorb,1.5mm,20 (22450)",681.0,510.75,348.67,527.78,4
+HCPCS,C1713,"Mee Plate,Box,Ti Mx 10mmx16mm",575.0,431.25,294.4,445.63,4
+HCPCS,C1713,"Mee Plate,Pds,Flexible",634.0,475.5,324.61,491.35,4
+HCPCS,C1713,"Mee Plate,Ti,Matrix,2hls,12mm",165.0,123.75,84.48,127.88,4
+HCPCS,C1713,"Mee Plate,Y,Double,6hls",605.0,453.75,309.76,468.88,4
+HCPCS,C1713,Mee Screw Auto Drive 1.2mmx5mm 2111205,145.0,108.75,74.24,112.38,4
+HCPCS,C1713,Mee Screw Cortex Rapid Resorbable,660.0,495.0,337.92,511.5,4
+HCPCS,C1713,Mee Screw Cortex Self-Drilling,117.0,87.75,59.9,90.68,4
+HCPCS,C1713,Mee Screw Cortex Self-Tapping,203.0,152.25,77.31,157.33,8
+HCPCS,C1713,Mee Screw Cortex Tap F/1 Resorbable,680.0,510.0,348.16,527.0,4
+HCPCS,C1713,Mee Screw Cover,387.0,290.25,198.14,299.93,4
+HCPCS,C1713,Mee Screw Cover Space,393.0,294.75,201.22,304.58,4
+HCPCS,C1713,Mee Screw Emergency,134.0,100.5,68.61,142.6,12
+HCPCS,C1713,Mee Screw Emergency Self-Tapping,225.0,168.75,115.2,174.38,4
+HCPCS,C1713,Mee Screw Emergency W/Fluted,178.0,133.5,91.14,137.95,4
+HCPCS,C1713,Mee Screw Locking Self-Tapping,381.0,285.75,144.38,295.28,12
+HCPCS,C1713,Mee Screw Mitek Depuy,815.0,611.25,417.28,631.63,4
+HCPCS,C1713,Mee Screw Self Drill 1.2mmx3mm 2111203,118.0,88.5,60.42,91.45,4
+HCPCS,C1713,Mee Screw Self Drilling,115.0,86.25,58.88,89.13,4
+HCPCS,C1713,Mee Screw Self Drilling 1.5xx,70.0,52.5,35.84,54.25,4
+HCPCS,C1713,Mee Screw Self-Drilling 1.0mm Rcss 400.423e,198.0,148.5,101.38,153.45,4
+HCPCS,C1713,Mee Screw Selftap Titn,128.0,96.0,65.54,99.2,4
+HCPCS,C1713,Mee Screw Selftap Titn 1.5mm 40073x,112.0,84.0,57.34,86.8,4
+HCPCS,C1713,Mee Screw Selftap Titn 1.5mm 40074x,126.0,94.5,64.51,97.65,4
+HCPCS,C1713,Mee Screw Selftap Titn 2.0x4mm 401154,128.0,96.0,65.54,99.2,4
+HCPCS,C1713,Mee Screw Selftap Titn 2.0x8mm 401158,115.0,86.25,58.88,89.13,4
+HCPCS,C1713,Mee Screw Selftap W/Flutes,186.0,139.5,95.23,144.15,4
+HCPCS,C1713,Mee Screw Slf Drling 3m Ti Mx,199.0,149.25,65.54,154.23,8
+HCPCS,C1713,Mee Screw Slf-Drling,175.0,131.25,79.36,135.63,8
+HCPCS,C1713,Mee Screw Titn Coarse Ptch,121.0,90.75,61.95,93.78,4
+HCPCS,C1713,"Mee Screw, Titn,Xxxmm, 40050x",139.0,104.25,71.17,107.73,4
+HCPCS,C1713,"Mee Screw,Slf-Drlng Ti Mx 4mm",196.0,147.0,100.35,151.9,4
+HCPCS,C1713,"Mee Screw,Slf-Drlng,Ti Ma4 Mm",196.0,147.0,100.35,151.9,4
+HCPCS,C1713,NUT ACTIVATION TI MULTI VECTOR DISTRACTOR,173.04,129.78,88.6,134.11,4
+HCPCS,C1713,PLATE 2.0MM MED TI PSPC MATRIXMANDIBLE DOUBLE RECON PL THICK,10628.04,7971.03,5441.56,8236.73,4
+HCPCS,C1713,PLATE 2.0MM THICK TITANIUM PATIENT SPECIFIC MANDIBLE NO ANGLE,6338.28,4753.71,3245.2,4912.17,4
+HCPCS,C1713,PLATE BONE 112X3.5MM 8 HOLE LCP SS RECONSTRUCTION,1176.6,882.45,602.42,911.87,4
+HCPCS,C1713,PLATE BONE 124X3.5MM 9 HOLE LCP SS LOCKING STRAIGHT BX/2EA,780.33,585.25,399.53,604.76,4
+HCPCS,C1713,PLATE BONE 7 HOLE LOW PROFILE T SHAPE NO BAR,1067.91,800.93,546.77,827.63,4
+HCPCS,C1713,PLATE BONE 7 HOLE UPPERFACE DOUBLE Y SHAPE TITANIUM,521.43,391.07,266.97,404.11,4
+HCPCS,C1713,PLATE BOX 2X2 HOLE LG CRANIOMAXILLOFACIAL UNIVERSAL NEURO III TITANIUM,906.38,679.78,464.07,702.44,4
+HCPCS,C1713,PLATE BURR HOLE COVER 10MM W/TAB CRANIOMAXILLOFACIAL UNIVERSAL NEURO III TITANIUM,726.83,545.12,372.14,563.29,4
+HCPCS,C1713,PLATE CRANIAL 2X1.5MM 18 HOLE RAPIDSORB POLYMER STRUT SCALLOPED,990.0,742.5,506.88,767.25,4
+HCPCS,C1713,PLATE CRANIAL UNIVERSAL NEURO III X SHAPE 4 HOLE,842.62,631.96,431.42,653.03,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL .5MM 2X2 HOLE MED 90DEG MATRIXORTHOGNATHIC TITANIUM L REVERSIBLE,515.4,386.55,263.88,399.44,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 1.25MM 2X2 HOLE MATRIXMANDIBLE TITANIUM CRESCENT,774.36,580.77,396.47,600.13,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 1.2X50X2MM RAPIDSORB POLYMER MESH CONTOURABLE,2475.0,1856.25,1267.2,1918.13,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 1.2X78X78X2MM RAPIDSORB POLYMER MESH,3542.22,2656.66,1813.62,2745.22,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 1.3MM 1X3 HOLE TITANIUM Y SHAPE,400.86,300.64,205.24,310.67,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 1.3X100X100MM MESH CONTOURABLE RIGID TITANIUM FOR SCREW,3606.23,2704.67,1846.39,2794.83,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 1.3X100X100MM MESH INTERNAL FIXATION FOR SCREW,2178.69,1634.02,1115.49,1688.48,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 1.3X13MM 4 HOLE TITANIUM,388.41,291.31,198.87,301.02,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 1.3X35MM 9 HOLE ORBITAL RIM ADAPTION TITANIUM,428.28,321.21,219.28,331.92,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 1.3X95MM 24 HOLE TITANIUM ADAPTION,598.35,448.76,306.36,463.72,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 1.5MM 20 HOLE RAPIDSORB POLYMER ADAPTION SCALLOPED,493.02,369.76,252.43,382.09,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 1.5MM 6 HOLE MATRIXMANDIBLE TITANIUM STRAIGHT,1516.35,1137.26,776.37,1175.17,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 1.5X.9X90MM 20 HOLE TITANIUM ADAPTION,639.9,479.92,327.63,495.92,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 1.5X100X.8MM RAPIDSORB POLYMER MESH CONTOURABLE,4121.7,3091.27,2110.31,3194.32,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 1.5X22X11MM 5 HOLE TITANIUM Y SHAPE,468.09,351.07,239.66,362.77,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 1.5X22X9MM 5 HOLE 100DEG TITANIUM OBLIQUE RIGID ANGLED RIGHT,460.62,345.46,235.84,356.98,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 1.5X24X24MM RAPIDSORB POLYMER ORBITAL FLOOR,1230.57,922.93,630.05,953.69,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 1.5X30X30MM RAPIDSORB POLYMER ORBITAL FLOOR,1282.05,961.54,656.41,993.59,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 1.5X50X.8MM RAPIDSORB POLYMER MESH CONTOURABLE,2268.09,1701.07,1161.26,1757.77,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 100X100MM MATRIXNEURO TITANIUM CONTOURABLE MESH MALLEABLE SILVER,3242.97,2432.23,1660.4,2513.3,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 12MM 2HOLE TAB NEURO 3 TITANIUM UNIVERSAL DOG,411.31,308.48,210.59,318.77,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 1MM 4 HOLE 5 SHAFT BONE L SHAPE BASE TITANIUM LEFT,443.19,332.39,226.91,343.47,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 1MM 5 HOLE TITANIUMXSHAPE,398.4,298.8,203.98,308.76,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 1MM 6 HOLE TITANIUM DOUBLE Y SHAPE,470.61,352.96,240.95,364.72,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 1X100MM 36 HOLE ADAPTION INTERNAL FIXATION TITANIUM,1120.47,840.35,573.68,868.36,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 1X33MM 11 HOLE BONE TITANIUM ORBITAL RIM,495.48,371.61,253.69,384.0,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 1X50X100MM 4 HOLE MESH TITANIUM,3022.77,2267.08,1547.66,2342.65,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 2.5MM LG CRANIAL MATRIXMANDIBLE TITANIUM PREFORMED RECONSTRUCTION LEFT,4755.76,3566.82,2434.95,3685.71,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 2.5MM MD 5X22X5 HOLE MATRIXMANDIBLE TITANIUM DOUBLE ANGLE RECONSTRUCTION,3649.8,2737.35,1868.7,2828.6,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 2.5MM MED MATRIXMANDIBLE TITANIUM PREFORMED RECONSTRUCTION LEFT,4589.76,3442.32,2349.96,3557.06,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 2.5MM MED MATRIXMANDIBLE TITANIUM PREFORMED RECONSTRUCTION RIGHT,4589.76,3442.32,2349.96,3557.06,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 2.5MM SM CRANIAL MATRIXMANDIBLE TITANIUM PREFORMED RECONSTRUCTION RIGHT,4423.76,3317.82,2264.97,3428.41,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 27X13MM 7 HOLE 100DEG TITANIUM OBLIQUE ANGLED GOLD LEFT,485.52,364.14,248.59,376.28,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 2MM 12 HOLE MATRIXMANDIBLE TITANIUM STRAIGHT,1406.82,1055.11,720.29,1090.29,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 2X193MM 30 HOLE ADAPTION DCP BROAD SPACED TITANIUM,918.78,689.08,470.42,712.05,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 2X40MM 4 HOLE 6 SHAFT 100DEG TITANIUM OBLIQUE ARM BRIDGE L SHAPE RIGHT,510.45,382.84,261.35,395.6,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 2X4MM 5 HOLE CHIN DOUBLE BEND OFFSET TITANIUM,565.23,423.92,289.4,438.05,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 2X8MM 5 HOLE CHIN DOUBLE BEND OFFSET TITANIUM,597.57,448.18,305.96,463.12,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 30MM MATRIXNEURO TITANIUM MESH CONTOUR MALLEABLE SILVER,1470.24,1102.68,752.76,1139.44,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 41X42X.5X.1MM MEDPOR TITAN POLYETHYLENE ORBITAL RIGHT STERILE,3408.0,2556.0,1744.9,2641.2,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL 5X1.3X43MM 18 HOLE TITANIUM STRUT SPACED,916.29,687.22,469.14,710.12,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL LG ORBITAL MATRIXORBITAL INSERT TITANIUM PREFORMED LEFT,3174.66,2380.99,1625.43,2460.36,4
+HCPCS,C1713,PLATE CRANIOMAXILLOFACIAL SM MATRIXNEURO TITANIUM MESH CONTOUR MALLEABLE MASTOID SILVER,1424.22,1068.16,729.2,1103.77,4
+HCPCS,C1713,PLATE CRANIUM 1.5X49MM 12 HOLE TITANIUM ORBITAL RIM RIGID,577.68,433.26,295.77,447.7,4
+HCPCS,C1713,PLATE CRANIUM 2X100MM 20 HOLE MANDIBULAR TITANIUM LOCKING,797.16,597.87,408.15,617.8,4
+HCPCS,C1713,PLATE CRANIUM SM MATRIXMANDIBLE TITANIUM ORBITAL PREFORMED LEFT DARK,3050.16,2287.62,1561.68,2363.87,4
+HCPCS,C1713,PLATE DOGBONE 2 HOLE RIGID W/O,474.11,355.58,242.74,367.44,4
+HCPCS,C1713,PLATE LEVEL ONE CMF LI MMF FIXATION 2.0MM L1 MMF SCREW 7 HOLE 102,1371.0,1028.25,701.95,1062.53,4
+HCPCS,C1713,PLATE MANDIBLE 1MM 2X2 HOLE PREBENT TENSION BAND TITANIUM MATRIXMANDIBLE LEFT,913.8,685.35,467.87,708.2,4
+HCPCS,C1713,PLATE MANDIBLE 1MM MINI 2X2 HOLE BROAD MALLEABLE TENSION BAND TITANIUM MATRIXMANDIBLE,978.54,733.9,501.01,758.37,4
+HCPCS,C1713,PLATE MANDIBLE 1MM MINI 2X2 HOLE NARROW MALLEABLE TENSION BAND TITANIUM MATRIXMANDIBLE,781.83,586.37,400.3,605.92,4
+HCPCS,C1713,PLATE MANDIBLE 1MM MINI 2X2 HOLE NARROW TENSION BAND TITANIUM MATRIXMANDIBLE,530.37,397.78,271.55,411.04,4
+HCPCS,C1713,PLATE MANDIBLE 1MM MINI 2X3 HOLE BROAD MALLEABLE TENSION BAND TITANIUM MATRIXMANDIBLE,679.74,509.8,348.03,526.8,4
+HCPCS,C1713,PLATE MANDIBLE 1MM MINI 3X3 HOLE BROAD MALLEABLE TENSION BAND TITANIUM MATRIXMANDIBLE,729.54,547.15,373.52,565.39,4
+HCPCS,C1713,PLATE MANDIBLE 1MM MINI 3X3 HOLE NARROW TENSION BAND TITANIUM MATRIXMANDIBLE,854.04,640.53,437.27,661.88,4
+HCPCS,C1713,PLATE MANDIBLE 2MM RECONSTRUCTION TI PT SPECIFIC ANGLE CUSTOM,8706.68,6530.01,4457.82,6747.68,4
+HCPCS,C1713,PLATE MANDIBLE 3X1.25MM HOLE CRANIAL MATRIX TITANIUM COMPRESSION DISTAL,717.09,537.82,367.15,555.74,4
+HCPCS,C1713,PLATE MANDIBLE LG PRINTED 3D TI TRUMATCH MIDFACE,9313.92,6985.44,4768.73,7218.29,4
+HCPCS,C1713,PLATE MANDIBLE PRINTED 3D TI TRUMATCH MIDFACE,4482.33,3361.75,2294.95,3473.81,4
+HCPCS,C1713,PLATE MANDIBLE SM PRINTED 3D TI TRUMATCH MIDFACE,6652.8,4989.6,3406.23,5155.92,4
+HCPCS,C1713,PLATE PDS FLEXIBLE 0.15 X 50 X 40MM BX/3EA,1595.0,1196.25,816.64,1236.13,4
+HCPCS,C1713,PLATE PRINTED 3D MANDIBLE TITANIUM TRUMATCH MANDIBLE MEDIUM,7983.36,5987.52,4087.48,6187.1,4
+HCPCS,C1713,PLATE RECTANGLE 2X2 HOLE 1.5MM CRANIOMAXILLOFACIAL UNIVERSAL NEURO III LATEX FREE,890.44,667.83,455.91,690.09,4
+HCPCS,C1713,PLATE RETROSIGMOID MALLEABLE MED,2989.77,2242.33,1530.76,2317.07,4
+HCPCS,C1713,PLATE STRAIGHT HOLE 4 W/ BAR,402.17,301.63,205.91,311.68,4
+HCPCS,C1713,PLATE SUBOCCIPTAL MALLEABLE LRG,3265.48,2449.11,1671.93,2530.75,4
+HCPCS,C1713,PLATE SUBOCCIPTAL MALLEABLE SML,2725.54,2044.15,1395.48,2112.29,4
+HCPCS,C1713,PLATE UNIVERSAL BOX 2 X 2 HOLE SM,585.29,438.97,299.67,453.6,4
+HCPCS,C1713,PLATE-Y DOUBLE 6 HOLE W/BAR,943.31,707.48,482.97,731.07,4
+HCPCS,C1713,PLATE/RECON HEMISPHERE CRANIO LEFT 6 X 17MM,4863.47,3647.6,2490.1,3769.19,4
+HCPCS,C1713,SCERW UN3 EM 1.7X4MM PK/5EA,45.09,33.82,23.09,34.94,4
+HCPCS,C1713,SCREEN MESH 1.0MM 100XPLATE CRANIOFACIAL TITANIUM,4962.0,3721.5,2540.54,3845.55,4
+HCPCS,C1713,SCREW BONE 1.2X10MM PLUSDRIVE TITANIUM CORTEX SELF TAPPING RECESS SINGLE,169.29,126.97,86.68,131.2,4
+HCPCS,C1713,SCREW BONE 1.2X3MM EMERGENCY TITANIUM CRUCIFORM SELF TAPPING RECESS TEAL,166.83,125.12,85.42,129.29,4
+HCPCS,C1713,SCREW BONE 1.2X3MM SELF-TAPPING CROSS-PIN,187.84,140.88,96.17,145.58,4
+HCPCS,C1713,SCREW BONE 1.2X3MM TITANIUM CROSS PIN SELF DRILLING GOLD,273.8,205.35,140.19,212.2,4
+HCPCS,C1713,SCREW BONE 1.2X4MM TITANIUM EMERGENCY SELF TAPPING CRUCIFORM RECESS SINGLE TEAL,166.83,125.12,85.42,129.29,4
+HCPCS,C1713,SCREW BONE 1.2X5MM CORTEX PLUSDRIVE RECESS TITANIUM SELF TAPPING PK/5EA,169.31,126.98,86.69,131.22,4
+HCPCS,C1713,SCREW BONE 1.3X4MM CRANIAL CORTEX TITANIUM SELF TAPPING FLUTED TIP CRUCIFORM STARDRIVE RECESS GOLD,151.86,113.89,77.75,117.69,4
+HCPCS,C1713,SCREW BONE 1.3X8MM CORTEX TI SELF TAPPING CRUCIFORM RECESS,220.89,165.67,113.1,171.19,4
+HCPCS,C1713,SCREW BONE 1.5X3MM MATRIXNEURO TI SELF DRILLING,63.03,47.27,32.27,48.85,4
+HCPCS,C1713,SCREW BONE 1.5X4MM CORTEX SS RAPIDSORB RAPID RESORBABLE PK/4EA,136.37,102.28,69.82,105.69,4
+HCPCS,C1713,SCREW BONE 1.5X4MM SELF-DRILLING,293.7,220.27,150.37,227.62,4
+HCPCS,C1713,SCREW BONE 1.5X4MM TI SELF DRILLING MATRIXNEURO,63.03,47.27,32.27,48.85,4
+HCPCS,C1713,SCREW BONE 1.5X6MM CORTEX TITANIUM SELF DRILLING PLUSDRIVE RECESS SINGLE,134.46,100.84,68.84,104.21,4
+HCPCS,C1713,SCREW BONE 1.5X8MM CORTEX TITANIUM SELF TAPPING FLUTED TIP CRUCIFORM RECESS SINGLE,107.07,80.3,54.82,82.98,4
+HCPCS,C1713,SCREW BONE 1.5X8MM CRANIAL CORTEX TI SELF TAPPING FLUTED TIP CRUCIFORM STARDRIVE RECESS GOLD PK/5EA,107.07,80.3,54.82,82.98,4
+HCPCS,C1713,SCREW BONE 1.7X4MM AXS SD 5P,268.85,201.64,137.65,208.36,4
+HCPCS,C1713,SCREW BONE 1.7X6MM EMERGENCY TITANIUM CRUCIFORM RECESS TEAL SINGLE,159.36,119.52,81.59,123.5,4
+HCPCS,C1713,SCREW BONE 1.85X6MM MATRIXWAVE MAXILLOMANDIBULAR FIXATION TITANIUM SELF DRILLING,279.0,209.25,142.85,216.23,4
+HCPCS,C1713,SCREW BONE 1.8X3MM MATRIXNEURO TI EMERGENCY SELF TAPPING SINGLE,161.85,121.39,82.87,125.43,4
+HCPCS,C1713,SCREW BONE 14MM SPINEXCORE TITANIUM LOCKING MINI,450.0,337.5,230.4,348.75,4
+HCPCS,C1713,SCREW BONE 2.0X11MM MINI MAXDRIVE TI ALLOCKINGY TI6AL4V,173.7,130.27,88.93,134.62,4
+HCPCS,C1713,SCREW BONE 2.0X7MM MAXDRIVE LEVEL ONE CMF DRILL FREE TI 6AL 4V,499.2,374.4,255.59,386.88,4
+HCPCS,C1713,SCREW BONE 2.0X7MM MAXDRIVE TITANIUM DRILL FREE MINI TI6AL4V,99.84,74.88,51.12,77.38,4
+HCPCS,C1713,SCREW BONE 2.0X9MM MINI MAXDRIVE TI ALLOCKINGY TI6AL4V,173.7,130.27,88.93,134.62,4
+HCPCS,C1713,SCREW BONE 2.3X9MM MAXDRIVE EMERG TITANIUM SELF RETAIN ALLOY,220.23,165.17,112.76,170.68,4
+HCPCS,C1713,SCREW BONE 2.4X16MM MANDIBLE MATRIXMANDIBLE TITANIUM SELF TAPPING,214.14,160.6,109.64,165.96,4
+HCPCS,C1713,SCREW BONE 2.4X36MM CORTEX TI SELF TAPPING FULL THREAD CRUCIFORM RECESS PK/5EA,171.8,128.85,87.96,133.15,4
+HCPCS,C1713,SCREW BONE 2.4X40MM CORTEX TITANIUM SELF TAPPING FULL THREAD CRUCIFORM RECESS SINGLE,171.81,128.86,87.97,133.15,4
+HCPCS,C1713,SCREW BONE 2.4X6MM CRANIAL EMERGENCY MANDIBULAR TI CRUCIFORM PLUSDRIVE RECESS TEAL,124.5,93.37,63.74,96.49,4
+HCPCS,C1713,SCREW BONE 2.4X6MM MANDIBLE MATRIXMANDIBLE TITANIUM SELF TAPPING,214.14,160.6,109.64,165.96,4
+HCPCS,C1713,SCREW BONE 2.4X8MM MANDIBLE MATRIXMANDIBLE TITANIUM LOCKING SELF TAPPING,343.62,257.71,175.93,266.31,4
+HCPCS,C1713,SCREW BONE 2.5X4X22MM SCHANZ TI SELF DRILLING THREADED SYMPHYSIS,575.16,431.37,294.48,445.75,4
+HCPCS,C1713,SCREW BONE 2.7X5MM MANDIBLE MATRIXMANDIBLE TITANIUM EMERGENCY SELF TAPPING SINGLE,234.06,175.54,119.84,181.4,4
+HCPCS,C1713,SCREW BONE 2.9X10MM LOCKING MATRIXMANDIBLE TITANIUM SELF TAPPING,398.4,298.8,203.98,308.76,4
+HCPCS,C1713,SCREW BONE 2.9X12MM LOCKING MATRIXMANDIBLE TITANIUM SELF TAPPING,398.4,298.8,203.98,308.76,4
+HCPCS,C1713,SCREW BONE 2X14MM CORTEX TITANIUM SELF TAPPING CRUCIFORM RECESS SINGLE,117.03,87.77,59.92,90.7,4
+HCPCS,C1713,SCREW BONE 2X16MM SELF TAPPING CROSS-PIN,152.89,114.67,78.28,118.49,4
+HCPCS,C1713,SCREW BONE 2X4MM CORTEX TITANIUM SELF DRILLING PLUSDRIVE RECESS SINGLE,123.0,92.25,62.98,95.33,4
+HCPCS,C1713,SCREW BONE 2X4MM CRANIAL EMERGENCY TITANIUM CRUCIFORM RECESS TEAL,114.54,85.9,58.64,88.77,4
+HCPCS,C1713,SCREW BONE 2X5MM MATRIXMANDIBLE TITANIUM LOCKING SELF TAPPING,278.88,209.16,142.79,216.13,4
+HCPCS,C1713,SCREW BONE 2X5MM MAXDRIVE EMERGENC TITANIUM DRILL FREE MICRO,99.84,74.88,51.12,77.38,4
+HCPCS,C1713,SCREW BONE 2X6MM CORTEX SELF DRILLING WITH PLUSDRIVE RECESS TITANIUM PK/5EA,114.23,85.67,58.49,88.53,4
+HCPCS,C1713,SCREW BONE 2X8MM CORTICAL SS SELF DRILLING FULL THREAD,207.9,155.92,106.44,161.12,4
+HCPCS,C1713,SCREW BONE 3.5X12MM CORTEX SELF TAPPING FULLY THREADED HEX HEAD SS,51.63,38.72,26.43,40.01,4
+HCPCS,C1713,SCREW BONE 3.5X16MM CANNULATED SS FULL THREAD HEXAGONAL SOCKET FLAT HEAD,359.04,269.28,183.83,278.26,4
+HCPCS,C1713,SCREW BONE 3.5X24MM CORTEX SELF TAPPING FULLY THREADED HEX HEAD SS,71.04,53.28,36.37,55.06,4
+HCPCS,C1713,SCREW BONE 4X28MM CANCELLOUS SS SELF TAPPING FULLY THREADED,82.14,61.6,42.06,63.66,4
+HCPCS,C1713,SCREW BONE 5X2.3MM MAX DRIVE TITANIUM ALLOY LOCKING,299.37,224.53,153.28,232.01,4
+HCPCS,C1713,SCREW BONE 5X2MM L LOCKING SELF RETAINING MAXDRIVE TITANIUM,376.8,282.6,192.92,292.02,4
+HCPCS,C1713,SCREW BONE 6.5X60MM CANNULATED SS PARTIAL THREAD,1710.0,1282.5,875.52,1325.25,4
+HCPCS,C1713,SCREW BONE 6X2MM MATRIXMANDIBLE TITANIUM SELF TAPPING,149.4,112.05,76.49,115.79,4
+HCPCS,C1713,SCREW BONE 7X2.3MM L LOCKING TITANIUM,299.37,224.53,153.28,232.01,4
+HCPCS,C1713,SCREW BONE 8MM 2X6MM THREAD TI ALLOY CMF MAXDRIVE L1 MMF DRILL FREE PK/5EA,382.5,286.87,195.84,296.44,4
+HCPCS,C1713,SCREW CORTEX 1.0MM 4 PLUSDRIVE RECESS TITANIUM SELF TAPPING PK/5EA,164.33,123.25,84.14,127.36,4
+HCPCS,C1713,SCREW DISTRACTOR 1.0 1.2MM 25 36 HOLE MAXILLOFACIAL MICRO ZURICH MIDDLE DRIVEN MESHBODY W/RATCHETH TI6AL4V,21337.92,16003.44,10925.02,16536.89,4
+HCPCS,C1713,SCREW DRILL 2MMX6 FREE MAXDRIVE MINI TI 6AL4V,99.84,74.88,51.12,77.38,4
+HCPCS,C1713,SCREW SPINE 4.5X19MM ARCHON SELF TAPPING VARIABLE ANGLE,270.0,202.5,138.24,209.25,4
+HCPCS,C1713,SCREW UN3 SD 1.5X3MM,241.41,181.06,123.6,187.09,4
+HCPCS,C1713,SCREW UNIII 1.5X4MM AXS ST PK/5EA,58.74,44.05,30.07,45.52,4
+HCPCS,C1713,SCREWDRIVER INTERNAL DISTRACTION HEX PATIENT 1 MM/TURN,1738.17,1303.63,889.94,1347.08,4
+HCPCS,C1713,SET PUTTY 3ML GRAFT BONE CRANIOS REINCED FAST TING SYRINGE,1263.0,947.25,646.66,978.83,4
+HCPCS,C1713,SET PUTTY 5ML GRAFT BONE CRANIOS REINCED FAST TING SYRINGE,1891.08,1418.31,968.23,1465.59,4
+HCPCS,C1713,SPINE PLATE 110MM CERVICAL 5 LEVEL ARCHON,2700.0,2025.0,1382.4,2092.5,4
+HCPCS,C1713,SPINE PLATE 34MM CERVICAL 1 LEVEL ARCHON,1500.0,1125.0,768.0,1162.5,4
+HCPCS,C1713,SPINE PLATE 54MM CERVICAL 2 LEVEL ARCHON,1770.0,1327.5,906.24,1371.75,4
+HCPCS,C1713,SPINE PLATE 68MM CERVICAL 3 LEVEL ARCHON,2025.0,1518.75,1036.8,1569.38,4
+HCPCS,C1713,SPINE PLATE 90MM CERVICAL 4 LEVEL ARCHON,2220.0,1665.0,1136.64,1720.5,4
+HCPCS,C1713,SYSTEM INTUBATION MONOKA SELF THREADING RITLENG TYPE BX/3EA,360.0,270.0,184.32,279.0,4
+HCPCS,C1713,SYSTEM SUSPENSION ENCORE TONGUE HYOID,5400.0,4050.0,2764.8,4185.0,4
+HCPCS,C1726,CATHETER AERIS 9X30MMX55CM 17ATM BALLOON AIRWAY DILATION,1782.45,1336.84,912.61,1352.52,5
+HCPCS,C1726,CATHETER DILATION 32MM O.D X 55ML ESOPHAGEAL INFINITY,2132.1,1599.07,1091.64,1617.84,5
+HCPCS,C1726,CATHETER DILATOR 15 18MM 5.5CM 75 20 30 3.5ATM .035IN ENDO BALLOON PULM DIA OBLONG FILL NACL GUID,806.49,604.87,412.92,611.96,5
+HCPCS,C1726,CATHETER HERCULES 100 24-27-30FR 8-9-10MM TRANSNASAL ESOPHAGEAL BALLOON,1050.0,787.5,537.6,796.74,5
+HCPCS,C1726,CATHETER RELIEVA SPINPLUS 6X16MM BALLOON SINUPLASTY SYSTEM W/ IRRIGATION BX/5EA,4095.0,3071.25,2096.64,3107.29,5
+HCPCS,C1726,KIT CATHETER 5X16MM SINUPLASTY SPINPLUS BALLOON FRONTAL MAX AND SPHEN BX/5EA,4095.0,3071.25,2096.64,3107.29,5
+HCPCS,C1726,"Mee Catheter, Lacricath 3mm",589.0,441.75,301.57,446.93,5
+HCPCS,C1726,"Mee Catheter, Lacricath, 5mm",768.0,576.0,393.22,582.76,5
+HCPCS,C1726,"Mee Catheter,Balloon Sinus",1533.0,1149.75,784.9,1163.24,5
+HCPCS,C1726,"Mee Catheter,Balloon Sinus,Frontal",2397.0,1797.75,1227.26,1818.84,5
+HCPCS,C1726,Mee Dilator Air Balloon,1389.0,1041.75,711.17,1118.47,10
+HCPCS,C1726,"Mee Dilator, Balloon Pulmonary, 15-16.5-18mm",851.0,638.25,435.71,645.74,5
+HCPCS,C1726,"Mee Dilator,Balloon Pulmonary,15-1 (22527)",721.0,540.75,369.15,547.09,5
+HCPCS,C1726,SET CATHETER 2MM ADVANCE BALLOON SALIVARY DUCT,1320.0,990.0,675.84,1001.62,5
+HCPCS,C1726,TUBE EUSTACHIAN 6X16MM AERA BALLOON DILATION PK/5EA,4125.0,3093.75,2112.0,3130.05,5
+HCPCS,C1763,CONNECTOR 4.0X15MM REPAIR NERVE AXOGUARD COAPTATION AID PERIPHERAL,4322.5,3241.87,3027.48,3349.94,2
+HCPCS,C1763,CONNECTOR REPAIR 10X3.0MM NERVE AXOGUARD COAPTATION AID PERIPHERAL,3513.0,2634.75,2460.51,2722.58,2
+HCPCS,C1763,GRAFT DURAL 2X2IN COLLAGEN DURAMATRIX ONLAY,2090.81,1568.11,1464.4,1620.38,2
+HCPCS,C1763,GRAFT DURAL 7.5 XCM DURAMATRIX ONLAY TYPE I COLLAGEN SUBSTITUTE MEMBRANE RESORBABLE,3237.89,2428.42,2267.82,2509.36,2
+HCPCS,C1763,GRAFT TISSUE 2.0 XIN DURAGEN PLUS ULTRA PURE COLLAGEN REGENERATION MATRIX DURAL CA/1EA,853.2,639.9,597.58,661.23,2
+HCPCS,C1763,IMPLANT BIODESIGN 2.5X2.5CM OTOLOGIC,885.0,663.75,619.85,685.88,2
+HCPCS,C1763,IMPLANT BIODESIGN 5X5CM OTOLOGIC,1425.0,1068.75,998.07,1104.38,2
+HCPCS,C1763,IMPLANT BIODESIGN 6X9MM OTOLOGIC PRECUT,735.0,551.25,514.79,569.63,2
+HCPCS,C1763,Mee Duramatrix 2x2,1258.0,943.5,881.1,974.95,2
+HCPCS,C1763,Mee Duramatrix 3x3,1276.0,957.0,893.71,988.9,2
+HCPCS,C1763,PROTECTOR GRAFT 40X7.0MM NERVE AXOGUARD PORCINE 3D EXTRACELLULAR MATRIX FLEXIBLE WRAP TRANSLUCENT PERIPHERAL,5476.0,4107.0,3835.39,4243.9,2
+HCPCS,C1763,PROTECTOR NERVE 2CMX4CM AXOGUARD HA PLUS,5756.0,4317.0,4031.5,4460.9,2
+HCPCS,C1767,GENERATOR PULSE IMPLANTABLE INSPIRE VAGUS NERVE STIMULATION,36450.0,27337.5,18662.4,28248.75,4
+HCPCS,C1767,INSPIRE V IMPLANTABLE PULSE GENERATOR,43200.0,32400.0,22118.4,33480.0,4
+HCPCS,C1769,GUIDEWIRE PULMONARY 180CM .035 JAGWIRE STIFF SHAFT STRAIGHT TIP BX/2EA,369.29,276.97,189.08,258.65,2
+HCPCS,C1769,GUIDEWIRE SALIVARY .018INX40CM DUCT ACCESS LF SS STRAIGHT TIP SURGICAL,95.1,71.32,48.69,66.61,2
+HCPCS,C1769,ILLUMINATOR SINUS 100CM RELIEVA LUMA SENTRY SYSTEM SINUPLASTY BX/5EA,1351.35,1013.51,691.89,946.49,2
+HCPCS,C1769,KIT LABORATORY LINE ARTERIAL ACCESS CS/5EA,127.89,95.92,65.48,89.57,2
+HCPCS,C1769,Mee Guide Wire,133.0,99.75,68.1,93.15,2
+HCPCS,C1769,Mee Jagwire Pulmonary Guidewire C1769,276.0,207.0,141.31,193.31,2
+HCPCS,C1778,LEAD RESPIRATORY SENSING,6750.0,5062.5,3456.0,5231.25,4
+HCPCS,C1778,LEAD STIMULATION,3900.0,2925.0,1996.8,3022.5,4
+HCPCS,C1778,Lead Neurostimulator T1,3900.0,2925.0,1996.8,3022.5,4
+HCPCS,C1783,MICROSTENT GLAUCOMA HYDRUS SYSTEM DELIVERY,3784.2,2838.15,2459.73,2650.45,2
+HCPCS,C1783,Mee Glaucoma Implant-Baerveldt-Glaucoma,1635.0,1226.25,1062.75,1145.15,2
+HCPCS,C1783,Mee Glaucoma Valve-Ahmed,1081.0,810.75,702.65,757.13,2
+HCPCS,C1783,Microstent Hydrus (Ivantis),1470.0,1102.5,955.5,1029.59,2
+HCPCS,C1783,STENT INTRAOCULAR .33MM ISTENT TI HEPARIN COATED TRABECULAR MICRO BYPASS RIGHT,3750.0,2812.5,2437.5,2626.5,2
+HCPCS,C1783,SYSTEM IMPLANT MICRO-BYPASS TRABECULAR ISTENT INFINITE,5200.0,3900.0,3380.0,3642.08,2
+HCPCS,C1784,CIRCLING BAND 2MM STYLE 40 SCLERAL BUCKLING PERMANENT BX/5EA,91.8,68.85,47.0,71.15,5
+HCPCS,C1784,IMPLANT ASYMMETRICAL TIRE 278 BX/5EA - DISCONTINUED PER SUPPLIER,157.08,117.81,80.42,121.74,5
+HCPCS,C1784,Mee Scleral Buckle,56.0,42.0,28.67,43.4,5
+HCPCS,C1784,SLEEVE 1.0MM ID STYLE 70 SCLERAL BUCKLING BX/5EA,68.85,51.64,35.25,53.36,5
+HCPCS,C1784,SPONGE 5X2.5MM STYLE 510 SCLERAL BUCKLING HALF CYLINDER SILICONE BX/5EA,303.45,227.59,155.37,235.17,5
+HCPCS,C1784,STRIP 10.5MM STYLE 106 SCLERAL BUCKLING MERIDIONAL BX/5EA,104.55,78.41,53.53,81.03,5
+HCPCS,C1784,STRIP 2.5X6MM STYLE 220 SCLERAL BUCKLING GROOVED SOLID BX/5EA,76.5,57.37,39.17,59.29,5
+HCPCS,C1784,STRIP 4MM S2971 (STYLE 42) SCLERAL BUCKLING SILICONE BX/5EA,82.8,62.1,42.39,64.17,5
+HCPCS,C1784,STRIP SCLERAL BUCKLSTRIP 4MM STYLE 42 SCLERAL BUCKLING BX/5EAING 3.5MM BX/5EA,94.35,70.76,48.31,73.12,5
+HCPCS,C1784,TIRE 2.5X6MM S2994 (STYLE 275) SCLERAL BUCKLING ASYMMETRICAL BX/5EA,66.02,49.51,33.8,51.17,5
+HCPCS,C1784,TIRE 2.5X7MM STYLE 276 SCLERAL BUCKLING GROOVED ASYMMETRICAL BX/5EA,151.93,113.95,77.79,117.75,5
+HCPCS,C1787,REMOTE SLEEP BLUETOOTH PATIENT HANDHELD INSPIRE IPG COMPATIBLE,3500.0,2625.0,2451.4,2712.5,3
+HCPCS,C1814,KIT ACCESSORY 5ML PROCEDURAL LIQUID PERFLUORON BX/3EA,1263.78,947.83,958.96,979.43,2
+HCPCS,C1814,Mee Perfluoron 5ml,989.0,741.75,750.45,766.48,2
+HCPCS,C1814,Mee Silicon Oil 1000,677.0,507.75,513.71,524.68,2
+HCPCS,C1814,Mee Silicon Oil 5000,846.0,634.5,641.94,655.65,2
+HCPCS,C1814,SOLUTION OPHTHALMIC 10ML SILICONE OIL 5000 ADATO STERILE,1379.85,1034.89,1047.03,1069.38,2
+HCPCS,C1814,SOLUTION OPHTHALMIC 8.5ML OIL SILICONE SILKON 1000 INTRAOCULAR FLUID,1192.26,894.19,904.69,924.0,2
+HCPCS,C1878,CORD VOCAL SIZE 11 SYSTEM SURGICAL THYROPLASTY MONTGOMERY SILICONE MALE,1125.0,843.75,576.0,871.88,4
+HCPCS,C1878,CORD VOCAL SIZE 6 SYSTEM SURGICAL THYROPLASTY MONTGOMERY SILICONE FEMALE,1200.0,900.0,614.4,930.0,4
+HCPCS,C1878,CORD VOCAL SIZE 7 SYSTEM SURGICAL THYROPLASTY MONTGOMERY SILICONE FEMALE,1338.0,1003.5,685.06,1036.95,4
+HCPCS,C1878,CORD VOCAL SIZE 8 SYSTEM SURGICAL THYROPLASTY MONTGOMERY SILICONE MALE,1275.0,956.25,652.8,988.13,4
+HCPCS,C1878,FILLER COSMETIC 1ML JUVEDERM XC ULTRA LIDOCAINE PRESERV,1884.6,1413.45,964.92,1460.57,4
+HCPCS,C1878,IMPLANT VOICE 1.5CC RENU HYDROGEL INJECTABLE SYRINGE FOLD - DISCONTINUED PER CONTRACTS/SUPPLIER,1020.0,765.0,522.24,790.5,4
+HCPCS,C1878,KIT IMPLANT VOCAL 1CC INJECTABLE X2 PLUS CATHETER - DISCONTINUED PER SUPPLIER/CONTRACTS,2100.0,1575.0,1075.2,1627.5,4
+HCPCS,C1878,Mee Injectable Radiesse Voice Gel,1133.0,849.75,580.1,878.08,4
+HCPCS,C1878,Mee Prolaryn/Radiesse/Juvederm 1cc Syringe,1200.0,900.0,614.4,930.0,4
+HCPCS,C1878,Mee Renu Vocal Cord Medializ Implantable,552.0,414.0,282.62,427.8,4
+HCPCS,C1878,SYRINGE CARBOXYMETHYLCELLULOSE 1.0 CC AUGMENT VOCAL FOLD RADIESSE VOICE PROLARYN GEL SODIUM,2205.0,1653.75,1128.96,1708.88,4
+HCPCS,C1886,STYLUS INSTRUMENT RHINAER PK/5EA,3700.0,2775.0,1894.4,2591.48,3
+HCPCS,C1886,Vivaer/Rhinaer Tissue Ablation Probe,1850.0,1387.5,947.2,1295.74,3
+HCPCS,C1886,WAND ARIS TURBINATE REDUCTION,1034.55,775.91,529.69,724.6,3
+HCPCS,C1886,WAND HALO COBLATION,1136.49,852.37,581.88,796.0,3
+HCPCS,C1889,Allograft Cartilage T3,1266.0,949.5,648.19,981.15,4
+HCPCS,C1889,CARTILAGE COSTAL (2) <= 0.8 CM WIDTH <= 5.0CM LENGTH SALINE SUSPENSION,2091.0,1568.25,1070.59,1620.53,4
+HCPCS,C1889,CARTILAGE COSTAL 5-8CM FF,3351.0,2513.25,1715.71,2597.03,4
+HCPCS,C1889,CARTILAGE COSTAL > 0.8 CM WIDTH <= 5.0CM LENGTH SALINE SUSPENSION 4932-25,2196.0,1647.0,1124.35,1701.9,4
+HCPCS,C1889,CARTILAGE COSTAL > 0.8 CM WIDTH <= 5.0CM LENGTH SALINE SUSPENSION 4938-25,2196.0,1647.0,1124.35,1701.9,4
+HCPCS,C1889,CARTILAGE COSTAL > 0.8 CM WIDTH <= 5.0CM LENGTH SALINE SUSPENSION 4944-25,2094.0,1570.5,1072.13,1622.85,4
+HCPCS,C1889,CARTILAGE COSTAL > 0.8 CM WIDTH > 5.0 - 8.0CM LENGTH SALINE SUSPENSION 4939-25,2814.0,2110.5,1440.77,2180.85,4
+HCPCS,C1889,CARTILAGE COSTAL > 0.8 CM WIDTH > 5.0 - 8.0CM LENGTH SALINE SUSPENSION 4945-25,2685.0,2013.75,1374.72,2080.88,4
+HCPCS,C1889,CHIN IMPLANT SM CURVILINEAR SILICONE CONFORM EXTENDED ANATOMICAL,1050.0,787.5,537.6,813.75,4
+HCPCS,C1889,COUPLER ANASTOMOSIS 2.5MM VESSELXORTHOPEDIC FAST SAFE MICROVASCULAR POLYETHYLENE S/S BX/6EA,1047.5,785.62,536.32,811.81,4
+HCPCS,C1889,DEVICE OMNI SURGICAL SYSTEM ERGO SERIES,4322.5,3241.87,2213.12,3349.94,4
+HCPCS,C1889,DISTRACTION INTERNAL 16MM EXTENSION STERILE CARDANIC FOR ACT ARM,3772.58,2829.43,1931.56,2923.75,4
+HCPCS,C1889,DISTRACTION INTERNAL 33MM STERILEACT ARM RIGID REMOTE DETACH,4193.4,3145.05,2147.02,3249.89,4
+HCPCS,C1889,DISTRACTOR SURGICAL BONE 1.2X5MM 7MM TI CRANIOFACIAL INTERNAL PK/4EA,3355.68,2516.76,1718.11,2600.65,4
+HCPCS,C1889,ENDCAP CAP 14MM 12 END SPINAL MINI ROUND PARALLEL IMPLANT VERTEBRALXCORE OD,2280.0,1710.0,1167.36,1767.0,4
+HCPCS,C1889,EPIPATCH SMALL 8MM D X 0.1MM T DISC,675.0,506.25,345.6,523.13,4
+HCPCS,C1889,GRAFT BONE 1CC DBX ALLO DBM DEMINERALIZED MATRIX FREEZE DRIED PUTTY SYRINGE,432.12,324.09,221.25,334.89,4
+HCPCS,C1889,GRAFT BONE 5CC VESUVIUS DEMINERALIZED CORTICAL FIBER CANCELLOUS CHIP OSTEOCONDUCTIVE OSTEOGENIC,1275.0,956.25,652.8,988.13,4
+HCPCS,C1889,GRAFT BONE 5ML DBX ALLO DBM DEMINERALIZED MATRIX FREEZE DRIED PUTTY SYRINGE,1779.96,1334.97,911.34,1379.47,4
+HCPCS,C1889,GRAFT NERVE 2 TO 3X70MM AVANCE ALLO DECELLULARIZED EXTRACELLULAR MATRIX PERIPHERAL,13594.0,10195.5,6960.13,10535.35,4
+HCPCS,C1889,GRAFT NERVE 3.0 TO 4.0X70MM PERIPH ALLO AVANCE IMPLANTABLE,14894.0,11170.5,7625.73,11542.85,4
+HCPCS,C1889,GRAFT SCLERA 10X10MM HALO,885.0,663.75,453.12,685.88,4
+HCPCS,C1889,IMPLANT ENOPHTHALMOUS 24MMX33.5MM WEDGE REG LT,1407.6,1055.7,720.69,1090.89,4
+HCPCS,C1889,IMPLANT FIXATION 3MM ULTRATINE FOREHEAD SOFT TISSUE BIOABSORBABLE PK/2EA,905.23,678.92,463.48,701.55,4
+HCPCS,C1889,IMPLANT NASAL 24MM LATERA PLLA POLYMER ABSORBABLE- ORDER IN QUANTITIES OF 3 OR 6 FOR PRICE DISCOUNTS,3990.0,2992.5,2042.88,3092.25,4
+HCPCS,C1889,"Implant, Ring Capsular Tension",528.0,396.0,270.34,409.2,4
+HCPCS,C1889,Nasal Renu Gel,552.0,414.0,282.62,427.8,4
+HCPCS,C1889,PLATE COVER BURR HOLE 20MM UN3 W/TAB,787.84,590.88,403.37,610.58,4
+HCPCS,C1889,PLATE COVER BURR HOLE 7MM UN3 W/TAB,723.23,542.42,370.29,560.5,4
+HCPCS,C1889,SCREW SPINE 12MM TITANIUM CAP,450.0,337.5,230.4,348.75,4
+HCPCS,C1889,SEALANT DURAL ADHERUS AUTOSPRAY EXTENDED TIP PK/5EA,2559.15,1919.36,1310.28,1983.34,4
+HCPCS,C1889,SPINE SPACER 14MM 17XCORE TITANIUM ENDCAP PARALLEL,2280.0,1710.0,1167.36,1767.0,4
+HCPCS,C1889,SPINE SPACER COREX12MM 15 20 TITANIUM ENDCAP MINI,8400.0,6300.0,4300.8,6510.0,4
+HCPCS,C1889,SYNTHECEL DURA REPAIR 14CM X 20CM 5.5,3397.5,2548.12,1739.52,2633.06,4
+HCPCS,C1889,SYSTEM DELIVERY DRUG VECTA BX/2EA,375.0,281.25,192.0,290.63,4
+HCPCS,C1889,TENSIONER RING CAPSULAR MR-2C,765.0,573.75,391.68,592.88,4
+HCPCS,C9363,MATRIX BOVINE 13CM 10 MESH BIOLOGICAL GLYCOSAMINOGLYCANSILICONE WOUND WIDTH,9009.02,6756.76,6981.99,6981.99,1
+HCPCS,G0008,Admin of Influenza Vaccine,40.0,30.0,54.79,54.79,6
+HCPCS,G0378,Observation 1 Hr,132.0,99.0,67.58,92.45,12
+HCPCS,G0378,Observation Carve Out (90785 - 98965) - Medicine,132.0,99.0,67.58,92.45,2
+HCPCS,G0379,Direct Admission of Patient for Hospital Observation Care,106.0,79.5,728.02,728.02,1
+HCPCS,J0131,Injection Acetaminophen 10mg,1.0,0.75,0.51,0.78,3
+HCPCS,J0177,Inj Afilbercept Hd per 1 Mg - Eylea Hd,521.72,391.29,311.38,343.81,2
+HCPCS,J0178,Injection Aflibercept 1 Mg,1566.0,1174.5,771.56,801.79,6
+HCPCS,J0295,Amp/Sulbac Vl 1.5gm,8.0,6.0,6.2,6.2,1
+HCPCS,J0585,"Injection,Onabotulinumtoxina",19.0,14.25,6.5,14.73,17
+HCPCS,J0586,Abobotulinum Toxin a Vl 5u,26.0,19.5,8.75,8.75,4
+HCPCS,J0588,"Injection, Incobotulinumtoxin a, 1 Unit",8.0,6.0,4.1,5.57,4
+HCPCS,J0713,Ceftazidime Vl 500mg,3.18,2.38,2.46,2.46,1
+HCPCS,J0713,Mee Ceftazidime per 500mg,3.0,2.25,2.33,2.33,1
+HCPCS,J1100,Dexameth Na Phos Inj 1mg,1.0,0.75,0.51,0.78,5
+HCPCS,J1745,Infliximab Injection,203.0,152.25,31.09,31.09,2
+HCPCS,J1885,Ketorolac Tromethane Inj 15 Mg,1.0,0.75,0.3,0.78,10
+HCPCS,J2001,Lidocaine Inj 10mg,8.0,6.0,4.1,5.62,2
+HCPCS,J2250,Midazolam Inj 1mg,1.0,0.75,0.51,0.78,5
+HCPCS,J2405,Ondansetron Hcl Injection,1.0,0.75,0.51,0.78,5
+HCPCS,J2777,Inj Faricimab-Svoa (Vabysmo) 0.1 Mg,54.75,41.06,33.88,36.08,3
+HCPCS,J2778,Ranibizumab Injection,585.0,438.75,86.38,86.38,1
+HCPCS,J2919,Inj Methylprednisolone Sodium Succinate 5 Mg,0.13,0.1,0.07,0.21,8
+HCPCS,J3010,Fentanyl Citrate Injeciton,3.0,2.25,1.54,2.33,5
+HCPCS,J3262,Tocilizumab Vl 1mg,11.51,8.63,5.71,5.89,5
+HCPCS,J3299,"Injection, Triamcinolone Acetonide (Xipere) Drug Only, 1 Mg",82.08,61.56,47.97,47.97,1
+HCPCS,J3299,"Injection, Triamcinolone Acetonide (Xipere), 1 Mg",82.08,61.56,47.97,47.97,1
+HCPCS,J3300,Triamcinolone a Inj Prs-Free,7.0,5.25,4.9,24.5,13
+HCPCS,J3301,Triamcinolone Ace Inj,2.0,1.5,1.02,1.55,4
+HCPCS,J3370,Mee Vancomycin 500 Mg,7.0,5.25,3.58,3.58,1
+HCPCS,J3370,Vancomycin Vl 500mg,7.06,5.29,3.61,3.61,1
+HCPCS,J3396,Verteporfin Injection,19.0,14.25,11.54,11.54,2
+HCPCS,J3473,Inj Hyluronidase Recombinant per 1 Usp Unit,0.79,0.59,0.58,0.58,1
+HCPCS,J3490,Inj Famotidine 20 Mg,1.0,0.75,0.78,0.78,1
+HCPCS,J7308,Aminolevulinic Acid Hcl Top,234.0,175.5,392.09,392.09,2
+HCPCS,J7312,Dexamethasone Intra Implant,303.0,227.25,204.61,204.61,2
+HCPCS,J7512,Prednisone Oral IR or Dr per 1 Mg,1.0,0.75,0.78,0.78,1
+HCPCS,J7999,Beviacizumab (Avastin) Compounded Noc,99.0,74.25,50.69,76.73,6
+HCPCS,J8540,Oral Dexamethasone,1.0,0.75,0.78,0.78,1
+HCPCS,J9190,Fluorouracil 500mg,6.0,4.5,3.07,3.07,1
+HCPCS,J9190,Fluorouracil 500mg/10ml Intraveneous Sol,17.0,12.75,8.7,8.7,1
+HCPCS,L7520,Repair Prosthesis per 15 Min,72.0,54.0,50.55,50.55,1
+HCPCS,L8509,Mee Prothesis (L8509),483.0,362.25,247.3,374.33,6
+HCPCS,L8509,Mee Tep BS Advantage,711.0,533.25,364.03,551.03,6
+HCPCS,L8509,Mee Tep BS Classic,526.0,394.5,269.31,407.65,6
+HCPCS,L8509,Mee Tep BS Duckbill,128.0,96.0,65.54,99.2,6
+HCPCS,L8509,Mee Tep BS Low Pressure,181.0,135.75,92.67,140.28,6
+HCPCS,L8509,Mee Tep BS Low Pressure - Special Order,268.0,201.0,137.22,207.7,6
+HCPCS,L8509,Mee Tep BS Special Order,636.0,477.0,325.63,492.9,6
+HCPCS,L8509,Mee Tep Provox Activalve,2725.0,2043.75,1395.2,2111.88,6
+HCPCS,L8509,Mee Tep Provox II,588.0,441.0,301.06,455.7,6
+HCPCS,L8509,Mee Tep Provox Nid,217.0,162.75,111.1,168.18,6
+HCPCS,L8509,Mee Tep Provox Vega,547.0,410.25,280.06,423.93,6
+HCPCS,L8509,Mee Tep Provox Vega Xtraseal,632.0,474.0,323.58,489.8,6
+HCPCS,L8509,Mee Tep vs Dual Valve,848.0,636.0,434.18,657.2,6
+HCPCS,L8509,Mee Voice Prosthesis,483.0,362.25,247.3,374.33,6
+HCPCS,L8509,PROSTHESIS VOICE 16FRX10MM INDWELLING BLOM SINGER CLASSIC SILICONE,870.0,652.5,445.44,674.25,6
+HCPCS,L8509,PROSTHESIS VOICE 20FR 10MM BLOM-SINGER INDWELLING IN2010-SO,870.0,652.5,445.44,674.25,6
+HCPCS,L8509,PROSTHESIS VOICE 8MM BLOM SINGER DUAL,1650.0,1237.5,844.8,1278.75,6
+HCPCS,L8511,Mee Insert for Indwelling Voice Prosthesis,133.0,99.75,68.1,68.1,1
+HCPCS,L8513,Mee Cleaning Device for Voice Prosthesis,20.0,15.0,10.24,10.24,1
+HCPCS,L8513,Mee Flushing Pipet for Voice Prosthesis,109.0,81.75,55.81,55.81,1
+HCPCS,L8513,"Mee Kit,Laryngectomy Pulmonary (Exploding)",28.0,21.0,14.34,14.34,1
+HCPCS,L8513,Mee Larytube Brush,19.0,14.25,9.73,9.73,1
+HCPCS,L8514,Dilator Tracheoesophageal Puncture Ea T1,126.0,94.5,64.51,64.51,1
+HCPCS,L8514,Mee Laryclip Kit,185.0,138.75,94.72,94.72,1
+HCPCS,L8514,"Mee Puncture Dilator, Replacement Only, Ea",126.0,94.5,64.51,64.51,1
+HCPCS,L8515,"Mee Gelatin Capsule, Application Device, Ea",193.0,144.75,98.82,149.58,5
+HCPCS,L8607,IMPLANT VOCAL 1CC SILKVOICE INJECTABLE - DISCONTINUED PER SUPPLIER,1050.0,787.5,813.75,813.75,1
+HCPCS,L8607,Implant Vocal 0.1ml Silkvoice Injectable,1050.0,787.5,813.75,813.75,1
+HCPCS,L8607,"Mee Injectable Agent for Vocal Cord, 0.1 Ml",1325.0,993.75,1026.88,1026.88,1
+HCPCS,L8610,ALLOGRAFT SCLERA 1CM 3CM TUTOPLAST NHPL PERI OP OPHTHALMOLOGICAL,1873.8,1405.35,959.39,1452.2,3
+HCPCS,L8610,BREAST EXPANDER 300 TO 480CC SOFTSPAN LG REMOTE PORT CURVILINEAR 10.25 TUBING SMOOTH FME-CX-300S,2475.0,1856.25,1267.2,1918.13,3
+HCPCS,L8610,BREAST EXPANDER 350 TO 700CC SOFTSPAN LG REMOTE PORT SMOOTH CRESCENT,1875.0,1406.25,960.0,1453.13,3
+HCPCS,L8610,CONFORMER JARDON MEDIUM,126.0,94.5,64.51,97.65,3
+HCPCS,L8610,CONFORMER LUCITE CVD MEDIUM,214.83,161.12,109.99,166.49,3
+HCPCS,L8610,CONFORMER LUCITE JARDON MEDIUM,105.0,78.75,53.76,81.38,3
+HCPCS,L8610,CRANIOFACIAL IMPLANT 38X50X.85MM SU-POR AUGMENTATION SHEET,1090.74,818.05,558.46,845.32,3
+HCPCS,L8610,CRANIOFACIAL IMPLANT 50X76X.45MM SU-POR AUGMENTATION SHEET,690.0,517.5,353.28,534.75,3
+HCPCS,L8610,CRANIOFACIAL IMPLANT 50X76X.85MM SU-POR AUGMENTATION SHEET,1363.23,1022.42,697.97,1056.5,3
+HCPCS,L8610,CRANIOMAXILLOFACIAL WEDGE 28X40X7.5MM LG MEDPOR ENDOPHTHALMOS RT,2050.79,1538.09,1050.0,1589.36,3
+HCPCS,L8610,EYELID IMPLANT 1.2GR THIN PROFILE PLATINUM STANDARD,1320.0,990.0,675.84,1023.0,3
+HCPCS,L8610,FOIL SURGICAL 4X4CM .35MM REPAIR ORBITAL FLOOR SUPRAFOIL NYLON SHEET BX/6EA,48.88,36.66,25.03,37.88,3
+HCPCS,L8610,FOIL SURGICAL 4X4CMX.2MM REPAIR ORBITAL FLOOR SMOOTH SUPRAFOIL NYLON BX/6EA - DISCONTINUED PER SUPPLIER,27.5,20.62,14.08,21.31,3
+HCPCS,L8610,GRAFT CRANIOMAXILLOFACIAL 76X127MM MEDPOR POLYETHYLENE ORBITAL FLOOR SHEET,2877.77,2158.33,1473.42,2230.27,3
+HCPCS,L8610,GRAFT TISSUE 1X4CM ALLOGRAFT SPACER EYELID TARSYS,1161.0,870.75,594.43,899.78,3
+HCPCS,L8610,IMPLANT CUSTOM PORIFEROUS MIDFACE MANDIBLE ORBITAL FLOOR CHIN EARS,6440.0,4830.0,3297.28,4991.0,3
+HCPCS,L8610,IMPLANT ENOPHTHALMOS 22X31X7MM SU-POR WEDGE RT REGULAR,1407.6,1055.7,720.69,1090.89,3
+HCPCS,L8610,IMPLANT EYELID 1.4GR GOLD THIN,975.0,731.25,499.2,755.63,3
+HCPCS,L8610,IMPLANT EYELID 1.4GR PLATINUM,1455.0,1091.25,744.96,1127.63,3
+HCPCS,L8610,IMPLANT EYELID 1.6GM PLATINUM,1695.0,1271.25,867.84,1313.63,3
+HCPCS,L8610,IMPLANT EYELID 1GM PLATINUM,1260.0,945.0,614.4,976.5,6
+HCPCS,L8610,IMPLANT MEMBRANE 38X50X1MM SU-POR POLYETHYLENE HEAT BONDED SHEET,1658.07,1243.55,848.93,1285.0,3
+HCPCS,L8610,IMPLANT MEMBRANE 50X76X1.6MM SU-POR POLYETHYLENE HEAT BONDEDSHEET,993.84,745.38,508.85,770.23,3
+HCPCS,L8610,IMPLANT MIDFACE 47X28X3MM SU-POR RIM LT,1415.88,1061.91,724.93,1097.31,3
+HCPCS,L8610,IMPLANT O-RING TANTALUM BX/20EA,121.76,91.32,62.34,94.36,3
+HCPCS,L8610,IMPLANT OCULAR 22MM SILICONE BALL,144.0,108.0,73.73,111.6,3
+HCPCS,L8610,IMPLANT OCULAR 22MM SU-POR COR TEC SPHERE,1811.64,1358.73,927.56,1404.02,3
+HCPCS,L8610,IMPLANT ORBITAL 16MM SPHERE SILICONE ENUCLEATION,195.0,146.25,99.84,151.13,3
+HCPCS,L8610,IMPLANT ORBITAL 22MM SU-POR SPHERE ENUCLEATION EVISCERATION,1474.95,1106.21,755.17,1143.09,3
+HCPCS,L8610,IMPLANT ORBITAL 22MM SU-POR SPHERE QUADRO PORT TUNNEL,1926.0,1444.5,986.11,1492.65,3
+HCPCS,L8610,IMPLANT SPHERE 20 MM SST-EZ MEDPOR,2488.13,1866.1,1273.92,1928.3,3
+HCPCS,L8610,Mee Conformer Lucite Cvd,132.0,99.0,67.58,102.3,3
+HCPCS,L8610,Mee Expand Hemis Osmed,1293.0,969.75,662.02,1002.08,3
+HCPCS,L8610,Mee Graft Eyelid Spacer 1 X 4 Cm,817.0,612.75,418.3,633.18,3
+HCPCS,L8610,Mee Implant Eyelid Weight,1350.0,1012.5,691.2,1046.25,3
+HCPCS,L8610,Mee Implant Globes & Conform. (Jardon,64.0,48.0,32.77,49.6,3
+HCPCS,L8610,Mee Implant Gold Weight,595.0,446.25,304.64,461.13,3
+HCPCS,L8610,Mee Implant Medpor 38x50x1.5,957.0,717.75,489.98,741.68,3
+HCPCS,L8610,Mee Implant Medpor Sheet 50x76x.85,1287.0,965.25,658.94,997.43,3
+HCPCS,L8610,Mee Implant Medpor Sheet Single Channel,1388.0,1041.0,710.66,1075.7,3
+HCPCS,L8610,Mee Implant Medpor Sphere or Cva,1121.0,840.75,573.95,868.78,3
+HCPCS,L8610,Mee Implant Medpor Ultra Thin Sheet,863.0,647.25,441.86,668.83,3
+HCPCS,L8610,Mee Implant Platinum Weight,992.0,744.0,507.9,768.8,3
+HCPCS,L8610,Mee Implant Platinum Weight 275,925.0,693.75,473.6,716.88,3
+HCPCS,L8610,Mee Implant Titn Orbit Btb,1761.0,1320.75,901.63,1364.78,3
+HCPCS,L8610,"Mee Implant, Sst, Ez, Xxmm",1390.0,1042.5,711.68,1077.25,3
+HCPCS,L8610,Mee Intacs Corneal Ring Instruments,1568.0,1176.0,802.82,1215.2,3
+HCPCS,L8610,Mee Ocular Implant (Platinum Weight),958.0,718.5,490.5,742.45,3
+HCPCS,L8610,Mee Rim Orbital Extended,1412.0,1059.0,722.94,1094.3,3
+HCPCS,L8610,"Mee Sphere, Hydroxy Appetite",1534.0,1150.5,785.41,1188.85,3
+HCPCS,L8610,Mee Supramid Foil,23.0,17.25,11.78,17.83,3
+HCPCS,L8610,Mee Tantalum Rings,47.0,35.25,24.06,36.43,3
+HCPCS,L8610,Mee Tutoplast Fascialata 3*12 (36 Scm),912.0,684.0,466.94,706.8,3
+HCPCS,L8610,Mee Tutoplast Procssd - Fsclt,1262.0,946.5,646.14,978.05,3
+HCPCS,L8610,Mee Tutoplast Sclera 5x8mm,562.0,421.5,287.74,435.55,3
+HCPCS,L8610,Mee Tutoplast Sclera Whole,1153.0,864.75,590.34,893.58,3
+HCPCS,L8610,"Mee Tutoplast,Procssd-Pericard,1.0 #22499",467.0,350.25,239.1,361.93,3
+HCPCS,L8610,Mee Wall Orbital Floor Titan Ofw,1497.0,1122.75,766.46,1160.18,3
+HCPCS,L8610,Mee Wedge Enophthalmos 954x,1185.0,888.75,606.72,918.38,3
+HCPCS,L8610,ORBITAL IMPLANT 43X18X3.2MM SU-POR INFERIOR RIM RT,1212.69,909.52,620.9,939.83,3
+HCPCS,L8610,ORBITAL PLATE .5X.6X41X42MM MEDPOR TITAN POLYETHYLENE,3408.01,2556.01,1744.9,2641.21,3
+HCPCS,L8610,SHEET CRANIOFACIAL 38X50 1.5MM IMPLANT ORBITAL FLOOR MEDPOR,1433.98,1075.48,734.2,1111.33,3
+HCPCS,L8610,SLING PTOSIS 300MM LENGTH 0.64DIA W/FRONTALIS SUSPENSION SILICONE TUBING BX/3EA,230.0,172.5,117.76,178.25,3
+HCPCS,L8610,SPACER EYELID 1X4CM TARSYS-BIO-ENGINEERED 12 LAYER,1220.4,915.3,624.84,945.81,3
+HCPCS,L8610,SPHERE EYE 10MM IMPLANT POLYMETHYLMETHACRYLATE PLASTIC LF NONSTERILE,27.0,20.25,13.82,20.93,3
+HCPCS,L8610,SPHERE EYE 18MM IMPLANT POLYMETHYLMETHACRYLATE PLASTIC LF NONSTERILE,264.0,198.0,135.17,204.6,3
+HCPCS,L8610,SPHERE EYE 20MM IMPLANT POLYMETHYLMETHACRYLATE PLASTIC LF NONSTERILE,51.0,38.25,26.11,39.53,3
+HCPCS,L8610,SPHERE EYE IMPLANT 16MM POLYMETHYLMETHACRYLATE PLASTIC,47.13,35.35,24.13,36.53,3
+HCPCS,L8610,SPHERE ORBITAL 22MM CRANIOMAXILLOFACIAL MEDPOR POLYETHYLENE BIOCOMPATIBLE POROUS STERILE,1891.89,1418.92,968.65,1466.21,3
+HCPCS,L8610,TITAN MEDPOR 41X42 0.5 0.85MM PLATE CRANIOMAXILLOFACIAL POLYETHYLENE ORBITAL LEFT,2899.51,2174.63,1484.55,2247.12,3
+HCPCS,L8610,TUTOPLAST PROCSSD - FSCLT .3X12CM,1517.4,1138.05,776.91,1175.99,3
+HCPCS,L8610,TUTOPLAST PROCSSD - PERICARD 1.0,815.4,611.55,417.48,631.94,3
+HCPCS,L8610,TUTOPLAST SCLERA 5X8MM,861.3,645.97,440.99,667.51,3
+HCPCS,L8610,TUTOPLAST SCLERA WHOLE,2678.4,2008.8,1371.34,2075.76,3
+HCPCS,L8610,WEIGHT CLOSURE .8GM PLATINUM EYELID,1230.0,922.5,629.76,953.25,3
+HCPCS,L8610,WEIGHT EYELID .6MM 1.8G PLATINUM THIN PROFILE SUTURE HOLE,1800.0,1350.0,921.6,1395.0,3
+HCPCS,L8610,WEIGHT EYELID .6MMX1.2GR GOLD THIN PROFILE SUTURE HOLE,915.0,686.25,468.48,709.13,3
+HCPCS,L8610,WEIGHT EYELID .6MMX1.6GR GOLD THIN PROFILE SUTURE HOLE,945.0,708.75,483.84,732.38,3
+HCPCS,L8610,WEIGHT EYELID .6MMX1GR GOLD THIN PROFILE SUTURE HOLE,855.0,641.25,437.76,662.63,3
+HCPCS,L8610,WEIGHT IMPLANTABLE EYELID 2.8G KONTOUR GOLD,2541.0,1905.75,1300.99,1969.28,3
+HCPCS,L8612,DEVICE DRAINAGE 245MM MOLTENO 3,1995.0,1496.25,1021.44,1546.13,4
+HCPCS,L8612,EXTENDER TUBE SURGICAL GALAUCOMA VALVE,375.0,281.25,192.0,290.63,4
+HCPCS,L8612,Mee Extender Tube(Te),265.0,198.75,135.68,205.38,4
+HCPCS,L8612,"Mee Implant, Ahmed Valve, Bi-Plate",1488.0,1116.0,761.86,1153.2,4
+HCPCS,L8612,"Mee Implant, Molteno",1193.0,894.75,610.82,924.58,4
+HCPCS,L8612,"Mee Shunt, Express Mini P-50",1424.0,1068.0,729.09,1103.6,4
+HCPCS,L8612,SHUNT EXPRESS MINI P-50,3784.26,2838.19,1937.54,2932.8,4
+HCPCS,L8612,SHUNT OPHTHALMOLOGY 350MM BAERVELDT ANTERIOR CHAMBER SILICONE SINGLE QUADRANT DRAINAGE TUBE,1800.0,1350.0,921.6,1395.0,4
+HCPCS,L8612,VALVE GLAUCOMA 9.6X10MM AHMED FLEXIBLE PLATE SILICONE PEDI,3562.5,2671.87,1824.0,2760.94,4
+HCPCS,L8613,CONNECTOR EAR .5MM OMEGA OSSICULAR PROSTHESIS,648.9,486.67,332.24,502.9,6
+HCPCS,L8613,IMPLANT EAR .06X11MM SCHUKNECHT CRESCENT FLUOROPLASTIC,176.49,132.37,90.36,136.78,6
+HCPCS,L8613,IMPLANT EAR .84X6MM RICHARDS CENTERED TORP HYDROXYLAPATITE,1015.92,761.94,520.15,787.34,6
+HCPCS,L8613,IMPLANT EAR .84X8MM RICHARDS CENTERED TORP HYDROXYLAPATITE,1006.86,755.14,515.51,780.32,6
+HCPCS,L8613,IMPLANT EAR .9X10.2X9X2.5MM LONG WEHRS II INCUS STAPES SINGLE NOTCH HYDROXYLAPATITE,975.27,731.45,499.34,755.83,6
+HCPCS,L8613,IMPLANT EAR .9X7.3X6.1X1.6X3.5MM MED WEHRS II INCUS STAPES DOUBLE NOTCH HYDROXYLAPATITE,1043.01,782.26,534.02,808.33,6
+HCPCS,L8613,IMPLANT EAR 1X1.2X2X2MM SM INCUS STAPES APPLEBAUM FULLY CANNULATED HYDROXYLAPATITE,1061.07,795.8,543.27,822.33,6
+HCPCS,L8613,IMPLANT EAR 1X2.5X2X1.2MM LG INCUS STAPES APPLEBAUM FULLY CANNULATED HYDROXYLAPATITE,1061.07,795.8,543.27,822.33,6
+HCPCS,L8613,IMPLANT EAR 2.1X.9X1.6X3.5MM SHORT WEHRS INCUS DOUBLE NOTCH HYDROXYLAPATITE,1117.5,838.12,572.16,866.06,6
+HCPCS,L8613,IMPLANT EAR 2.1X.9X2.5MM SHORT WEHRS INCUS SINGLE NOTCH HYDROXYLAPATITE,1000.08,750.06,512.04,775.06,6
+HCPCS,L8613,IMPLANT EAR 3.3X2.1X1.6X3.5MM MED WEHRS INCUS DOUBLE NOTCH HYDROXYLAPATITE,1094.94,821.2,560.61,848.58,6
+HCPCS,L8613,IMPLANT EAR 3.3X2.1X2.5MM MED WEHRS INCUS SINGLE NOTCH HYDROXYLAPATITE,991.08,743.31,507.43,768.09,6
+HCPCS,L8613,IMPLANT EAR 4.5X3.3X1.6X3.5MM LONG WEHRS INCUS DOUBLE NOTCH HYDROXYLAPATITE,1106.19,829.64,566.37,857.3,6
+HCPCS,L8613,IMPLANT EAR 4.5X3.3X2.5MM LONG WEHRS INCUS SINGLE NOTCH HYDROXYLAPATITE,1011.42,758.56,517.85,783.85,6
+HCPCS,L8613,IMPLANT EAR 4X1.17X5.1MM RICHARDS CENTERED PORP HYDROXYLAPATITE,1002.39,751.79,513.22,776.85,6
+HCPCS,L8613,IMPLANT EAR 4X3X6.6MM BLACK OVAL TOP PORP HYDROXYLAPATITE,1194.27,895.7,611.47,925.56,6
+HCPCS,L8613,INSTRUMENT PROSTHESIS 3-7MM TOTAL WILDCAT PRO ALTO HA TITANIUM MULTIDIRECTIONAL HEAD BX/1EA,1433.25,1074.94,733.82,1110.77,6
+HCPCS,L8613,"Mee Connector,Omega,Kurz",418.0,313.5,214.02,323.95,6
+HCPCS,L8613,Mee Ear Implant Applebaum Prothesis,630.0,472.5,322.56,488.25,6
+HCPCS,L8613,Mee Ear Implant Crescent Schuknecht,123.0,92.25,62.98,95.33,6
+HCPCS,L8613,Mee Ear Implant Piston Malleus,174.0,130.5,89.09,134.85,6
+HCPCS,L8613,Mee Ear Implant Piston Meei Custom,232.0,174.0,118.78,179.8,6
+HCPCS,L8613,Mee Ear Implant Piston Platinum,322.0,241.5,164.86,249.55,6
+HCPCS,L8613,Mee Ear Implant Porp/Torp Hydrox/Kurz,628.0,471.0,321.54,486.7,6
+HCPCS,L8613,"Mee Ear Implant,Kurz Bell,Aerial Vario",835.0,626.25,427.52,647.13,6
+HCPCS,L8613,Mee Piston Eclipse Nitinol,520.0,390.0,266.24,403.0,6
+HCPCS,L8613,Mee Piston Smart,494.0,370.5,252.93,382.85,6
+HCPCS,L8613,"Mee Piston, Smart Stapes, 5x X.Xxmm",472.0,354.0,241.66,365.8,6
+HCPCS,L8613,"Mee Piston,Smart Maleous",516.0,387.0,264.19,399.9,6
+HCPCS,L8613,PISTON CUSTOM MEEI .6X4.0MM,365.73,274.3,187.25,283.44,6
+HCPCS,L8613,PISTON EAR .4X6MM STAPES FISCH TYPE PLATINUM F,407.49,305.62,208.63,315.8,6
+HCPCS,L8613,PISTON EAR .5X4.25MM SMART 360 NITINOL FLUOROPLASTIC,798.69,599.02,408.93,618.98,6
+HCPCS,L8613,PISTON EAR .5X4.75MM SMART STAPEDECTOMY FLUOROPLASTIC NITINOL,752.91,564.68,385.49,583.51,6
+HCPCS,L8613,PISTON EAR .6X3.50MM STAPES SCHUKNECHT WIRE SS FLUOROPLASTIC,277.65,208.24,142.16,215.18,6
+HCPCS,L8613,PISTON EAR .6X3.75MM STAPES SCHUKNECHT WIRE SS FLUOROPLASTIC,274.29,205.72,140.44,212.57,6
+HCPCS,L8613,PISTON EAR .6X4.5MM SCHUKNECHT STAINLESS STEEL FLUOROPLASTIC STERILE,272.04,204.03,139.28,210.83,6
+HCPCS,L8613,PISTON EAR .6X4.75MM SMART STAPEDECTOMY NITINOL FLUOROPLASTIC,761.64,571.23,389.96,590.27,6
+HCPCS,L8613,PISTON EAR .6X5.5MM SMART MALLEUS NITINOL FLUOROPLASTIC,923.1,692.32,472.63,715.4,6
+HCPCS,L8613,PISTON EAR .6X5.5MM STAPES SCHUKNECHT MALLEUS SS FLUOROPLASTIC,287.82,215.86,147.36,223.06,6
+HCPCS,L8613,PISTON EAR .8X5.75MM STAPES SCHUKNECHT MALLEUS SS FLUOROPLASTIC,285.57,214.18,146.21,221.32,6
+HCPCS,L8613,PISTON RIBBON FLAT ECLIPSE .6MMX4.50MM L NITINOL FLUOROPLASTIC,1168.02,876.01,598.03,905.22,6
+HCPCS,L8613,PISTON STAPES 0.6X4.25MM PROSTHESIS FLUOROPLASTIC PLATINUM,658.17,493.63,336.98,510.08,6
+HCPCS,L8613,PROSTHESES HA LITE PARTIAL 1.75MM L BX/1EA,1251.0,938.25,640.51,969.53,6
+HCPCS,L8613,PROSTHESES HA LITE PARTIAL 2.00MM L BX/1EA,1313.55,985.16,672.54,1018.0,6
+HCPCS,L8613,PROSTHESES LIPPY BUCKET W/NOTCH .6 DIA X 3.75MM L BX/1EA,774.0,580.5,396.29,599.85,6
+HCPCS,L8613,PROSTHESES OSSICULAR 3X.8MM 3-7MM ADJUSTABLE LENGTH HA/TITANIUM HA LITE ALTO TOTAL BX/1EA,1404.9,1053.67,719.31,1088.8,6
+HCPCS,L8613,PROSTHESES OSSICULAR 5MM 1X1.75MM DISTAL END CENTERED HA/TITANIUM WILDCAT PRO BX/1EA,1354.5,1015.87,693.5,1049.74,6
+HCPCS,L8613,PROSTHESIS CLIP 2.5X3.50MM PARTIAL DRESEDE,1266.9,950.17,648.65,981.85,6
+HCPCS,L8613,PROSTHESIS CLIP PARTIAL DRESDE,1384.32,1038.24,708.77,1072.85,6
+HCPCS,L8613,PROSTHESIS EAR .5 X 4.25MM PISTON ECLIPSE NITINOL FLUOROPLASTIC,1053.0,789.75,539.14,816.08,6
+HCPCS,L8613,PROSTHESIS EAR 1.75 TO 4.50MM MIDDLE PARTIAL TTP VARIO BELL TI VARIABLE LENGTH,1334.88,1001.16,683.46,1034.53,6
+HCPCS,L8613,PROSTHESIS OSSICULAR ADJUSTABLE CENTERED ALTO CONCISE PARTIAL TOTAL TITANIUM 3.0 X 0.8MM,1228.5,921.37,628.99,952.09,6
+HCPCS,L8613,PROSTHESIS STAPES .6X4.75MM PISTON ECLIPSE NITINOL,819.0,614.25,419.33,634.73,6
+HCPCS,L8613,SIZER CENTERED ALTO CONCISE PARTIAL INCLUDED TI SILICONE,1244.25,933.19,637.06,964.29,6
+HCPCS,L8614,ABUTMENT HEARING 8.5MM BA210 AID TITANIUM FLANGE FIXTURE HEXAGONAL CONNECTION BAHA,4474.93,3356.2,2291.16,3395.58,4
+HCPCS,L8614,ABUTMENT TITANIUM 6MM 4 IMPLANT COCHLEAR BIA300 XSEC BAHA FAST SURGERY,5960.5,4470.37,3051.78,4522.83,4
+HCPCS,L8614,COCHLEAR IMPLANT SYNCHRONY 2 MI1250 PIN FLEX24 S-VECTOR MAGNET,39690.0,29767.5,20321.28,30116.77,4
+HCPCS,L8614,Cochlear External Add on Component,10295.0,7721.25,5271.04,7811.85,4
+HCPCS,L8614,ELECTRODE INSERTION FLEX 28 COCHLEAR,2880.0,2160.0,1474.56,2185.34,4
+HCPCS,L8614,IMPLANT COCHLEAR 3D ULTRA HIRES,29000.0,21750.0,14848.0,22005.2,4
+HCPCS,L8614,IMPLANT COCHLEAR HI-RES ULTRA CL HI-FOCIS SLIM J ELECTRODE - DISCONTINUED PER SUPPLIER/CONTRACTS,27000.0,20250.0,13824.0,20487.6,4
+HCPCS,L8614,IMPLANT COCHLEAR NUCLEUS PROFILE PLUS CONTOUR ADVANCE ELECTRODE,37399.88,28049.91,19148.74,28379.03,4
+HCPCS,L8614,IMPLANT COCHLEAR NUCLEUS PROFILE PLUS WITH SLIM MODIOLAR ELECTRODE,37398.02,28048.51,19147.79,28377.62,4
+HCPCS,L8614,MAGNET INSERT DUMMY - DISCONTINUED PER SUPPLIER/CONTRACTS,780.0,585.0,399.36,591.86,4
+HCPCS,L8614,Mee Coch Impl Internal Processor Partial Device,1.0,0.75,0.51,0.76,4
+HCPCS,L8614,Mee Coch Impl Internal Processor Warantee Replacement,1.0,0.75,0.51,0.76,4
+HCPCS,L8614,Mee Cochlear Device Int/Ext Comp,58074.0,43555.5,29733.89,44887.57,12
+HCPCS,L8614,Mee Sponsor Paid Cochlear,1.0,0.75,0.51,0.76,4
+HCPCS,L8624,HC Lithium Ion Battery Ear Level T3,550.0,412.5,362.45,362.45,2
+HCPCS,L8624,Mee Lithium Ion Battery Ear Level,225.0,168.75,148.28,148.28,2
+HCPCS,L8627,Mee Cid Ext Speech Process Repl,13537.0,10152.75,8920.88,8920.88,1
+HCPCS,L8627,PROSTHESES OSSICULAR 3.5MM 1X1.75MM DISTAL END CENTERED HA/TITANIUM WILDCAT PRO BX/1EA,1354.5,1015.87,892.62,892.62,1
+HCPCS,L8627,PROSTHESES PRECISE HA LITE TOTAL 4.00MM L BX/1EA,1313.55,985.16,865.63,865.63,1
+HCPCS,L8629,Mee Cid Transmit Coil and Cable,427.0,320.25,281.39,281.39,1
+HCPCS,L8629,Mee Cid Transmit Coil and Cable T2,743.0,557.25,489.64,489.64,1
+HCPCS,L8690,ABUTMENT COCHLEAR 6MM OTICON PONTO PRO,5174.76,3881.07,2649.48,3926.61,3
+HCPCS,L8690,ABUTMENT EAR 10MM COCHL DERMALOCK BAHA TWO STAGE SURGERY,4218.76,3164.07,2160.01,3201.2,3
+HCPCS,L8690,ABUTMENT HEALING L 6MM BA300 AID STD BAHA TITANIUM IMPLANTABLE,3805.62,2854.21,1948.48,2887.7,3
+HCPCS,L8690,ABUTMENT XSEC 6MM 3 IMPLANT COCHLEAR BIA300 BAHA FAST SURGERY TITANIUM,5960.5,4470.37,3051.78,4522.83,3
+HCPCS,L8690,Auditory Osseointegrated External Add on Component,3740.0,2805.0,1914.88,2837.91,3
+HCPCS,L8690,Bonebridge Bone Conduction Implant,13953.0,10464.75,7143.94,10587.54,3
+HCPCS,L8690,DEVICE COCHLEAR 12MM 4.0 BAHA DERMALOCK FAST TITANIUM HYDROXYAPATITE ABUTMENT BONE CONDUCTION,6579.3,4934.47,3368.6,4992.37,3
+HCPCS,L8690,DEVICE IMPLANT 3.0MM COCHLEAR BI300 TITANIUM BAHA SURGERY,3983.53,2987.65,2039.57,3022.7,3
+HCPCS,L8690,HC Auditory Osseointgrated Device Tier3,6678.0,5008.5,3419.14,5067.27,3
+HCPCS,L8690,IMPLANT COCHLEAR 3MM PONTO BIOHELIX,3920.0,2940.0,2007.04,2974.5,3
+HCPCS,L8690,IMPLANT COCHLEAR 4MM 14MM PONTO BIOHELIX WITH ABUTMENT,7787.52,5840.64,3987.21,5909.17,3
+HCPCS,L8690,IMPLANT CONDUCTION BONE BONEBRIDGE,11252.0,8439.0,5761.02,8538.02,3
+HCPCS,L8690,IMPLANT OSIA OSI300,9187.56,6890.67,4704.03,6971.52,3
+HCPCS,L8690,KIT IMPLANT BCI 602,12280.2,9210.15,6287.46,9318.22,3
+HCPCS,L8690,KIT IMPLANT TI SENTIO,8686.0,6514.5,4447.23,6590.94,3
+HCPCS,L8690,KIT SURGERY 3MM MIPS BACK UP PK/25EA,40.19,30.14,20.58,30.5,3
+HCPCS,L8690,KIT SURGERY 4MM MIPS KT/1EA,2121.0,1590.75,1085.95,1609.41,3
+HCPCS,L8690,MAGNET COCHLEAR 4.0MM BAHA 4 CONICAL BIM 400 SYSTEM,4986.0,3739.5,2552.83,3783.38,3
+HCPCS,L8690,Mee Baha Bone Anchor Hearing Aid,6678.0,5008.5,3419.14,5067.27,3
+HCPCS,L8690,Mee Fixture Flange St,2287.0,1715.25,1170.94,1735.38,3
+HCPCS,L8690,Mee Fixture Flange W/Abutment,3831.0,2873.25,1961.47,2906.96,3
+HCPCS,L8692,Ear Implant Osteointergated Abutment T3,3900.0,2925.0,1560.0,2738.19,3
+HCPCS,L8692,HC Ear Implant Non Osteointergated Abutment T2,4230.0,3172.5,1692.0,2969.88,3
+HCPCS,L8692,HC Ear Implant Non Osteointergated Abutment T3,4580.0,3435.0,1832.0,3215.62,3
+HCPCS,L8692,Mee Baha Incl Hdbnd/Ext Attachment,6837.0,5127.75,2734.8,4800.26,3
+HCPCS,L8699,Bilat Tula System Supply,1300.0,975.0,665.6,1007.5,6
+HCPCS,L8699,GRAFT BONE 38X5X1MM BARRIER CRANIOFACIAL MEDPOR ORBITAL FLOOR BIOMATERIAL SHEET SILASTIC,2191.93,1643.95,1122.27,1698.75,6
+HCPCS,L8699,KIT SYRINGE MULTI-USE BX/10EA,107.4,80.55,54.99,83.24,6
+HCPCS,L8699,Mee Ear Base Extended,1297.0,972.75,664.06,1005.18,6
+HCPCS,L8699,Mee Ear Tube,27.0,20.25,13.82,60.45,24
+HCPCS,L8699,Mee Ear Tubes,48.0,36.0,24.58,37.2,6
+HCPCS,L8699,Mee Free Latera,0.01,0.01,0.01,0.01,6
+HCPCS,L8699,"Mee Implant, Istent",1611.0,1208.25,824.83,1248.53,6
+HCPCS,L8699,"Mee Implant, Sphere, Sterile� Various Sizes",827.0,620.25,423.42,640.93,6
+HCPCS,L8699,"Mee Implant, Wedge, Enophthalmos, Sterile",742.0,556.5,379.9,575.05,6
+HCPCS,L8699,"Mee Implant,Orbital Floor",1463.0,1097.25,749.06,1133.83,6
+HCPCS,L8699,"Mee Plate, Adapt 20 Hole, Ti Mx",271.0,203.25,138.75,210.03,6
+HCPCS,L8699,Mee Rim Helical,1023.0,767.25,523.78,792.83,6
+HCPCS,L8699,Mee Thyroplasty Implant,755.0,566.25,386.56,585.13,6
+HCPCS,L8699,"Mee Tube,Baxter,Beveled Button",39.0,29.25,19.97,30.23,6
+HCPCS,L8699,SEPTAL BUTTON NASAL 2 PART 152,891.42,668.56,456.41,690.85,6
+HCPCS,L8699,SPLINT POSISEP 0.5INX1.5IN X INTRANASAL BX/5EA,339.0,254.25,173.57,262.73,6
+HCPCS,L8699,SPLINT POSISEP 0.6INX2IN INTRANASAL BX/5EA,360.0,270.0,184.32,279.0,6
+HCPCS,L8699,TUBE ARMSTRONG V GROMMET VENT PK/5EA,63.76,47.82,32.65,49.41,6
+HCPCS,L8699,TUBE EAR .75MM VENTILATION REUTER BOBBIN FLUOROPLASTIC BX/6EA,40.53,30.4,20.75,31.41,6
+HCPCS,L8699,TUBE EAR 1.14MM 2.4MM MYRINGOTOMY GROMMET FLUOROPLASTIC TAB BLUE PK/5EA,44.75,33.56,22.91,34.68,6
+HCPCS,L8699,TUBE EAR 1MM VENTILATION GROMMET SHEPARD FLUOROPLASTIC BX/6EA,26.63,19.97,13.63,20.64,6
+HCPCS,L8699,TUBE EAR 1MM VENTILATION REUTER BOBBIN TB OUT SS BX/6EA,95.47,71.6,48.88,73.99,6
+HCPCS,L8699,TUBE VENTILATION 8.5CMX1.27MM EAR BEVELED CURVED PK/5EA,127.1,95.32,65.08,98.5,6
+HCPCS,L8699,Unilat Tula System Supply,1000.0,750.0,512.0,775.0,6
+HCPCS,Q4116,GRAFT TISSUE 4X12CM MED HUMAN ALLODERM REGENERATIVE,3897.0,2922.75,3020.18,3020.18,1
+HCPCS,Q4116,MATRIX TISSUE 2X4CM MED 1.6-.4MM THICKNESS RANGE RECTANGLE ALLODERM SELECT REGENERATIVE,1296.0,972.0,1004.4,1004.4,1
+HCPCS,Q4116,MATRIX TISSUE 2X4CM THICK 2.4-.4MM THICKNESS RANGE RECTANGLE ALLODERM SELECT REGENERATIVE,1296.0,972.0,1004.4,1004.4,1
+HCPCS,Q4116,MATRIX TISSUE 4X7CM MED 1.6-.4MM THICKNESS RANGE RECTANGLE ALLODERM SELECT REGENERATIVE,2283.0,1712.25,1769.33,1769.33,1
+HCPCS,Q5124,"Inj Ranibizumab-Nuna, Biosimilar, Byooviz per 0.1 Mg",341.76,256.32,61.8,61.8,2
+HCPCS,V2523,"Cl, Soft, Extended Wear",257.0,192.75,131.58,199.18,6
+HCPCS,V2599,Duette,265.0,198.75,186.06,186.06,1
+HCPCS,V2599,Synergeyes A,371.0,278.25,260.48,260.48,1
+HCPCS,V2599,"Synergeyes Kc, Ps, Clearcone, Ultrahealt",583.0,437.25,409.32,409.32,1
+HCPCS,V2630,LENS INTRAOCULAR AC L122UV 20.0D,900.0,675.0,460.8,697.5,4
+HCPCS,V2630,LENS INTRAOCULAR AC MTA3U0 15.5D,255.0,191.25,130.56,197.63,4
+HCPCS,V2630,LENS INTRAOCULAR AC MTA3U0 20.0D,255.0,191.25,130.56,197.63,4
+HCPCS,V2630,LENS INTRAOCULAR CT LUCIA 602 8.0D,435.0,326.25,222.72,337.13,4
+HCPCS,V2630,LENS INTRAOCULAR ENVISTA ASPIRE 23.0D,750.0,562.5,384.0,581.25,4
+HCPCS,V2630,LENS INTRAOCULAR ENVISTA MONOFOCAL MX60PL 15.5D,387.0,290.25,198.14,299.93,4
+HCPCS,V2630,LENS INTRAOCULAR ENVISTA MX60 15.5D,357.0,267.75,182.78,276.68,4
+HCPCS,V2630,LENS INTRAOCULAR MA60AC 30.0D,447.0,335.25,228.86,346.43,4
+HCPCS,V2630,LENS INTRAOCULAR RAYONE ASPHERIC PRE-LOADED RAO600C 18.5D,195.0,146.25,99.84,151.13,4
+HCPCS,V2630,LENS INTRAOCULAR RAYONE EMV US W01-RAO200E 18.0D,450.0,337.5,230.4,348.75,4
+HCPCS,V2630,LENS INTRAOCULAR SN60AT 22.5D,447.0,335.25,228.86,346.43,4
+HCPCS,V2630,LENS INTRAOCULAR SN60WF 22.5D,402.0,301.5,205.82,311.55,4
+HCPCS,V2630,LENS INTRAOCULAR SN60WF 30.0D,402.0,301.5,205.82,311.55,4
+HCPCS,V2630,LENS INTRAOCULAR SOFPORT LI61AO 19.5D,339.0,254.25,173.57,262.73,4
+HCPCS,V2630,LENS INTRAOCULAR SOFPORT LI61AO 9.5D,339.0,254.25,173.57,262.73,4
+HCPCS,V2630,LENS INTRAOCULAR TECNIS ZCB00 9.5D,405.0,303.75,207.36,313.88,4
+HCPCS,V2630,"Mee Iol, Monofocal",318.0,238.5,162.82,246.45,4
+HCPCS,V2632,LENS IMPLANTABLE COLLAMER VISIAN MICL 12.6 - 10.0D,3312.5,2484.37,1696.0,2567.19,5
+HCPCS,V2632,LENS INTRAOCULAR AKREOS AO60 7.0D,339.0,254.25,173.57,262.73,5
+HCPCS,V2632,LENS INTRAOCULAR CLAREON CLEAR CC60WF 6.0D,402.0,301.5,205.82,311.55,5
+HCPCS,V2632,LENS INTRAOCULAR CLAREON PRE-LOADED CNA0T0 6.0D,447.0,335.25,228.86,346.43,5
+HCPCS,V2632,LENS INTRAOCULAR CZ70BD 20.5D,150.0,112.5,76.8,116.25,5
+HCPCS,V2632,LENS INTRAOCULAR EC-3 PAL 33.0D - DISCONTINUED PER SUPPLIER/CONTRACTS,435.0,326.25,222.72,337.13,5
+HCPCS,V2632,LENS INTRAOCULAR ENVISTA ASPIRE 18.0D,450.0,337.5,230.4,348.75,5
+HCPCS,V2632,LENS INTRAOCULAR ENVISTA EE U +20.00,357.0,267.75,182.78,276.68,5
+HCPCS,V2632,LENS INTRAOCULAR ENVISTA ETE U 300 +17.5,1275.0,956.25,652.8,988.13,5
+HCPCS,V2632,LENS INTRAOCULAR SENSAR ACRYLIC AR40E 21.0D,345.0,258.75,176.64,267.38,5
+HCPCS,V2632,LENS INTRAOCULAR TECNIS PRE-LOADED DCB00 17.5D,405.0,303.75,207.36,313.88,5
+HCPCS,V2632,LENS INTRAOCULAR TMICL 12.6 (-8.0/1.5/090),3735.0,2801.25,1912.32,2894.63,5
+HCPCS,V2632,Lens Iol Posterior Chamber T1,1443.0,1082.25,738.82,1118.33,5
+HCPCS,V2632,Upgradeable Lens Iol Posterior Chamber,445.81,334.36,228.25,345.5,5
+HCPCS,V2785,CTAK Corneal Tissue,3900.0,2925.0,1996.8,3022.5,10
+HCPCS,V2785,GRAFT ALLOGRAFT 9MM TANZGRAFT SPILT THICKNESS HALF MOON,1050.0,787.5,537.6,813.75,10
+HCPCS,V2785,Mee Allograft Tissue Human,4150.0,3112.5,2124.8,3216.25,9
+HCPCS,V2785,Mee Cornea Allograft Half Moon,647.0,485.25,331.26,501.43,9
+HCPCS,V2785,Mee Tissue Cornea Whole Irradiated,3936.0,2952.0,2015.23,3050.4,9
+HCPCS,V2785,Mee Tissue Corneal V2785,4274.0,3205.5,2188.29,3312.35,9
+HCPCS,V2785,Mee Tissue Precut Corneal V2785,5705.0,4278.75,2920.96,4421.38,9
+HCPCS,V2785,TISSUE CORNEA WHOLE IRRADIATED,3750.0,2812.5,1920.0,2906.25,10
+HCPCS,V2785,TISSUE CORNEAL,5973.34,4480.0,3058.35,4629.34,10
+HCPCS,V2785,TISSUE CORNEAL PRE-LOADED,7950.0,5962.5,4070.4,6161.25,10
+HCPCS,V2785,TISSUE CORNEAL PRECUT,7973.34,5980.0,4082.35,6179.34,10
+HCPCS,V2787,LENS IMPLANTABLE COLLAMER EVO+ VISIAN TORIC VTICM5 13.2 -7.50(+1.00)(092),3735.0,2801.25,2427.75,2427.75,1
+HCPCS,V2787,LENS IMPLANTABLE COLLMAER EVO+ VISIAN TORIC 12.6 -11.0 1.0 CYL,3312.5,2484.37,2153.13,2153.13,1
+HCPCS,V2787,LENS INTRAOCULAR AKREOS AO60 27.0D,339.0,254.25,220.35,220.35,1
+HCPCS,V2787,LENS INTRAOCULAR CLAREON TORIC CCW0T3 6.0D,1515.0,1136.25,984.75,984.75,1
+HCPCS,V2787,LENS INTRAOCULAR CLAREON VIVITY TORIC CLEAR CCWET5 9.0D,3045.0,2283.75,1979.25,1979.25,1
+HCPCS,V2787,LENS INTRAOCULAR ENVISTA TORIC MX60T 3.5CYL 9.5D,1275.0,956.25,828.75,828.75,1
+HCPCS,V2787,LENS INTRAOCULAR RXLAL LIGHT ADJUSTABLE 60005 18.0D,3000.0,2250.0,1950.0,1950.0,1
+HCPCS,V2787,LENS INTRAOCULAR TECNIS EYHANCE TORIC DIU450 12.0D,1785.0,1338.75,1160.25,1160.25,1
+HCPCS,V2787,LENS INTRAOCULAR TECNIS EYHANCE TORIC II DIU150 18.0D,1785.0,1338.75,1160.25,1160.25,1
+HCPCS,V2787,LENS INTRAOCULAR TMICL 13.2 -10.0,3312.5,2484.37,2153.13,2153.13,1
+HCPCS,V2787,LENS INTRAOCULAR TMICL 13.7 (-16.00/2.0/111),4187.5,3140.62,2721.88,2721.88,1
+HCPCS,V2787,LENS INTRAOCULAR TMICL VTICM5 12.6 -9.5/111/0-6.1,4187.5,3140.62,2721.88,2721.88,1
+HCPCS,V2787,LENS INTRAOCULAR TORIC MX60E 6.0D,357.0,267.75,232.05,232.05,1
+HCPCS,V2787,LENS INTRAOCULAR TORIC SN6AT4 21.0D,1485.0,1113.75,965.25,965.25,1
+HCPCS,V2787,LENS INTRAOCULAR TRULIGN TORIC BL1UT 2.75 CYL 20.0D,2385.0,1788.75,1550.25,1550.25,1
+HCPCS,V2787,LENS TECNIS ODYSSEY SIMPLICITY TORIC II DRT150 21.0D,2985.0,2238.75,1940.25,1940.25,1
+HCPCS,V2787,Mee Iol Femto Toric,318.0,238.5,206.7,206.7,1
+HCPCS,V2787,Mee Iol Toric,318.0,238.5,206.7,206.7,1
+HCPCS,V2790,ALLOGRAFT OCULAR 3X4CM AMNIOGUARD FROZEN,3885.0,2913.75,2721.05,3010.88,3
+HCPCS,V2790,GRAFT ALLO AMNIO 1.5X1.0CM TISSUE AMNIOTIC MEMBRANE OCULAR SHEET FROZEN,1485.0,1113.75,1040.09,1150.88,3
+HCPCS,V2790,GRAFT ALLO AMNIO 3.5 XCM TISSUE OCULAR AMNIOTIC MEMBRANE FROZEN,2385.0,1788.75,1670.45,1848.38,3
+HCPCS,V2790,GRAFT ALLO OCULAR 2.0X1.5CM TISSUE AMINO AMNIOTIC MEMBRANE FROZEN,1785.0,1338.75,1250.21,1383.38,3
+HCPCS,V2790,GRAFT ALLO TISSUE 2.5X2.0CM OCULAR AMNIORAFT,2085.0,1563.75,1460.33,1615.88,3
+HCPCS,V2790,GRAFT AMINO 10.X 5.0CM CRYOPRESERVED HUMAN AMNIOTIC MEMBRANE,6090.0,4567.5,4265.44,4719.75,3
+HCPCS,V2790,GRAFT AMNIOTIC 100UM 3CMXW2CM MEMBRANE THICK AMBIO5,1914.3,1435.72,1340.78,1483.58,3
+HCPCS,V2790,GRAFT MEMBRANE 12MM AMNIOTIC AMBIODISK SUTURELESS DEHYDRATED,1642.2,1231.65,1150.2,1272.71,3
+HCPCS,V2790,GRAFT OPHTHALMIC 16MM AMNIOTIC MEMBRANE OCULAR PROKERA IMPLANTABLE,2847.0,2135.25,1994.04,2206.43,3
+HCPCS,V2790,MATRIX AMBIODRY 5 1.5X2CM GRAFT HUMAN BIOLOGIC,1630.8,1223.1,1142.21,1263.87,3
+HCPCS,V2790,MESH BIOLOGIC 4X4CM ALLOGRAFT GRAFT TISSUE AMNIOTIC AMBIODRY 5,2254.5,1690.87,1579.05,1747.24,3
+HCPCS,V2790,Mee Ambiodry 1x2cm,1433.0,1074.75,1003.67,1110.58,3
+HCPCS,V2790,Mee Amniotic Membrane,1474.0,1105.5,1032.39,1142.35,3
+HCPCS,V2790,"Mee Amniotic Membrane(Prokera),per Procedure",1282.0,961.5,897.91,993.55,3
+HCPCS,V2790,Mee Calec Corneal Tissue,1.0,0.75,0.7,0.78,3
+HCPCS,V2790,TISSUE PLUS TRANSPLANT CORNEA PROKERA REPLACEMENT,3147.0,2360.25,2204.16,2438.93,3
+HCPCS,V5011,Hearing Aid Consultation - Prepaid,240.0,180.0,96.0,186.0,8
+HCPCS,V5014,Mee Service Lab Fee � in House Ha Repair,53.0,39.75,34.93,34.93,1
+HCPCS,V5014,Repair/Modification of a Hearing Aid,255.0,191.25,168.05,168.05,1
+HCPCS,V5020,Conformity Evaluation,90.0,67.5,36.0,69.75,10
+HCPCS,V5040,Body Aid Bone Conduction,2162.0,1621.5,1106.94,1106.94,1
+HCPCS,V5160,"Dispensing Fee, Binaural",660.0,495.0,264.0,500.81,8
+HCPCS,V5160,"Mee Dispensing Fee, Binaural",660.0,495.0,264.0,500.81,8
+HCPCS,V5181,Hearing Aid Monaural Bte (V5181),469.0,351.75,328.49,328.49,1
+HCPCS,V5181,Hearing Aid Monaural Bte T2(V5181),588.0,441.0,411.84,411.84,1
+HCPCS,V5181,Hearing Aid Monaural Bte T3(V5181),679.0,509.25,475.57,475.57,1
+HCPCS,V5200,"Dispensing Fee, Cros",330.0,247.5,231.13,231.69,2
+HCPCS,V5200,"Mee Dispensing Fee, Cros",330.0,247.5,231.13,231.69,2
+HCPCS,V5221,Hearing Aid Binaural Bte/Bte (V5221),1370.0,1027.5,701.44,961.88,5
+HCPCS,V5221,Hearing Aid Binaural Bte/Bte T2 (V5221),1586.0,1189.5,812.03,1113.53,5
+HCPCS,V5221,Hearing Aid Binaural Bte/Bte T3 (V5221),2009.0,1506.75,1028.61,1410.52,5
+HCPCS,V5240,"Dispensing Fee, Bicros",330.0,247.5,168.96,231.69,5
+HCPCS,V5241,"Dispensing Fee, Monaural",330.0,247.5,217.47,250.4,4
+HCPCS,V5241,"Mee Dispensing Fee, Monaural",330.0,247.5,217.47,250.4,4
+HCPCS,V5256,HC Ha Digital Monaural Ite T2,1048.0,786.0,735.8,735.8,1
+HCPCS,V5256,HC Ha Digital Monaural Ite T3,1556.0,1167.0,1092.47,1092.47,1
+HCPCS,V5256,Ha Digital Monaural Ite,785.0,588.75,551.15,551.15,1
+HCPCS,V5257,HC Ha Digital Monaural Bte T2,1049.0,786.75,537.09,795.98,6
+HCPCS,V5257,HC Ha Digital Monaural Bte T3,1486.0,1114.5,760.83,1127.58,6
+HCPCS,V5257,Ha Digital Monaural Bte,784.0,588.0,401.41,594.9,6
+HCPCS,V5258,HC Ha Digital Binaural Cic T2,2184.0,1638.0,1439.26,1533.39,2
+HCPCS,V5258,HC Ha Digital Binaural Cic T3,3353.0,2514.75,2209.63,2354.14,2
+HCPCS,V5258,Ha Digital Binaural Cic,1413.0,1059.75,931.17,992.07,2
+HCPCS,V5259,HC Ha Digital Binaural Itc T2,2028.0,1521.0,1336.45,1336.45,1
+HCPCS,V5259,HC Ha Digital Binaural Itc T3,2956.0,2217.0,1948.0,1948.0,1
+HCPCS,V5259,Ha Digital Binaural Itc,1528.0,1146.0,1006.95,1006.95,1
+HCPCS,V5260,HC Ha Digital Binaural Ite T2,2095.0,1571.25,1380.61,1380.61,2
+HCPCS,V5260,HC Ha Digital Binaural Ite T3,3112.0,2334.0,2050.81,2050.81,2
+HCPCS,V5260,Ha Digital Binaural Ite,1570.0,1177.5,1034.63,1034.63,2
+HCPCS,V5261,HC Ha Digital Binaural Bte T1,1568.0,1176.0,802.82,1568.0,9
+HCPCS,V5261,HC Ha Digital Binaural Bte T2,2098.0,1573.5,1074.18,2098.0,9
+HCPCS,V5261,HC Ha Digital Binaural Bte T3,2972.0,2229.0,1521.66,2972.0,9
+HCPCS,V5264,Earmold Receiver,63.0,47.25,32.26,63.0,8
+HCPCS,V5264,HC Earmold Receiver T2,76.0,57.0,38.91,76.0,8
+HCPCS,V5264,HC Earmold Receiver T3,105.0,78.75,53.76,105.0,8
+HCPCS,V5265,Mee Earmold Disposable,2.25,1.69,1.58,2.25,2
+HCPCS,V5266,"Hearing Aid Battery, Each",1.0,0.75,0.51,0.7,3
+HCPCS,V5275,"Ear Impression, Each",50.0,37.5,35.11,35.11,1
+HCPCS,V5282,"Personal Fm/Dm System, Binaural",1470.0,1102.5,1029.59,1032.09,2
+HCPCS,V5290,"Transmitter Microphone, Any Type",216.0,162.0,151.65,151.65,1
+HCPCS,V5299,Service Plan 1 Year,500.0,375.0,351.05,351.05,1
+HCPCS,V5299,Service Plan 2 Years,650.0,487.5,456.37,456.37,1
+HCPCS,V5299,Service Plan 3 Years,800.0,600.0,561.68,561.68,1
 MS-DRG,003,"Ecmo Or Tracheostomy With Mv >96 Hours Or Principal Diagnosis Except Face, Mouth And Neck With Major O.R. Procedures",99127.94,74345.95,199005.18,199005.18,1
 MS-DRG,011,"Tracheostomy For Face, Mouth And Neck Diagnoses Or Laryngectomy With McC",133166.52,99874.89,53058.41,53058.41,7
 MS-DRG,012,"Tracheostomy For Face, Mouth And Neck Diagnoses Or Laryngectomy With Cc",122580.82,91935.61,54214.05,54214.05,6
