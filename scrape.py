@@ -894,8 +894,12 @@ def main():
     (ROOT / "commit_message.txt").write_text(("; ".join(parts) or "No changes") + "\n")
     (ROOT / "changed_slugs.txt").write_text(
         "".join(s + "\n" for s in REWRITTEN))
-    if len(failures) > len(hospitals) / 2:
-        sys.exit(1)  # majority failing means the problem is ours, not theirs
+    # Majority failing on a FULL run means the problem is ours (runner IP
+    # block, network) — bail before committing spurious failure streaks.
+    # An ONLY run is often deliberately scoped to failing hospitals, where
+    # the heuristic is meaningless and would discard whatever recovered.
+    if not only and len(failures) > len(hospitals) / 2:
+        sys.exit(1)
 
 
 if __name__ == "__main__":
