@@ -10,5 +10,10 @@
   "transfer_fingerprint": "134503bdfe39d5be311d39b3c1b915d872a780cb73d3d19f825750700b790474",
   "status": "stored",
   "first_seen": "2026-08-25T05:46:30Z",
-  "last_changed": "2026-08-25T05:46:30Z"
+  "last_changed": "2026-08-25T05:46:30Z",
+  "fetch_failures": {
+    "first_failed": "2026-08-26T07:24:15Z",
+    "last_error": "Command '['/home/runner/work/_temp/ci/curl_chrome145', '-sS', '-L', '--compressed', '--max-time', '3600', '-D', '/tmp/tmpqjtsqrrv.hdrs', '-o', '-', '--fail', 'https://www.hopkinsmedicine.org/cms-hpt.t",
+    "last_attempt": "2026-08-26T07:24:15Z"
+  }
 }
