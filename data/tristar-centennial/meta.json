@@ -5,15 +5,11 @@
   "source_filename": "62-1113737_TRISTAR-CENTENNIAL-MEDICAL-CENTER_standardcharges.json",
   "sha256": "840c0b127143f8e887fc1647991bcbdf7a7af14186c854f31271636b408828a1",
   "size_bytes": 654308152,
-  "source_last_modified": "Wed, 27 May 2026 22:30:33 GMT",
-  "source_etag": "\"0x8DEBC3F90B751B1\"",
+  "source_last_modified": null,
+  "source_etag": null,
   "transfer_fingerprint": "b9d74a2953c06f435ae3b30d968a163e9bec883e52db2f8338ff040ed7f1130c",
   "status": "summarized",
   "first_seen": "2026-08-14T03:44:21Z",
-  "last_changed": "2026-08-14T03:44:21Z",
-  "fetch_failures": {
-    "first_failed": "2026-08-25T07:17:38Z",
-    "last_error": "HTTP Error 403: This request is not authorized to perform this operation.",
-    "last_attempt": "2026-08-25T07:17:38Z"
-  }
+  "last_changed": "2026-08-26T20:59:46Z",
+  "note": "ingested from a local fetch (see README notes)"
 }

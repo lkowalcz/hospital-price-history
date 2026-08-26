@@ -1,7 +1,16 @@
 {
-  "fetch_failures": {
-    "first_failed": "2026-08-14T03:57:26Z",
-    "last_error": "HTTP Error 404: Not Found",
-    "last_attempt": "2026-08-21T07:15:08Z"
-  }
+  "system": "Yale New Haven Health",
+  "location_name": "Yale New Haven Hospital",
+  "mrf_url": "https://www.ynhh.org/-/media/Files/YNHHS/sc/06-0646652-Yale_New_Haven_Hospital_Standard_Charges011025.ashx",
+  "source_filename": "06-0646652-Yale_New_Haven_Hospital_Standard_Charges011025.csv",
+  "sha256": "0676e7ecf386574041708e66368f9f54a9d5d096ae6ae5f8a5f0e01874bda304",
+  "size_bytes": 129638692,
+  "source_last_modified": null,
+  "source_etag": null,
+  "transfer_fingerprint": "fc2542d25d77f7b23e405301687b5472a908ac14f03512a6ba1fa4c006766e97",
+  "status": "sharded",
+  "first_seen": "2026-08-26T20:59:52Z",
+  "last_changed": "2026-08-26T20:59:52Z",
+  "note": "ingested from a local fetch (see README notes)",
+  "raw_commit": "579c114cb5afe9e5194f71b338b023667676ebc5"
 }

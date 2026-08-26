@@ -5,16 +5,12 @@
   "source_filename": "65-0260078_HCA-FLORIDA-KENDALL-HOSPITAL_standardcharges.json",
   "sha256": "55753e39d2b7ffccdf70c59c26818e796e5e41aa9bb1dcf9a94bebfb90518286",
   "size_bytes": 559414952,
-  "source_last_modified": "Wed, 22 Apr 2026 21:09:27 GMT",
-  "source_etag": "\"0x8DEA0B370480BB5\"",
+  "source_last_modified": null,
+  "source_etag": null,
   "transfer_fingerprint": "645612b2034f98f46949e4c34702b55901f835f238906939f909a6e166a196ef",
   "status": "sharded",
   "first_seen": "2026-08-14T03:43:37Z",
-  "last_changed": "2026-08-14T03:43:37Z",
-  "fetch_failures": {
-    "first_failed": "2026-08-25T07:17:34Z",
-    "last_error": "HTTP Error 403: This request is not authorized to perform this operation.",
-    "last_attempt": "2026-08-25T07:17:34Z"
-  },
-  "raw_commit": "bab8eacfb818b8516f93aa201c07f4b5688a6d3e"
+  "last_changed": "2026-08-26T20:59:32Z",
+  "note": "ingested from a local fetch (see README notes)",
+  "raw_commit": "579c114cb5afe9e5194f71b338b023667676ebc5"
 }

@@ -11,10 +11,5 @@
   "status": "sharded",
   "first_seen": "2026-08-14T05:20:01Z",
   "last_changed": "2026-08-14T05:20:01Z",
-  "fetch_failures": {
-    "first_failed": "2026-08-25T07:21:21Z",
-    "last_error": "Command '['/home/runner/work/_temp/ci/curl_chrome145', '-sS', '-L', '--compressed', '--max-time', '3600', '-D', '/tmp/tmpkk0vbh2q.hdrs', '-o', '-', '--fail', 'https://www.orlandohealth.com/cms-hpt.txt",
-    "last_attempt": "2026-08-25T07:21:21Z"
-  },
   "raw_commit": "bab8eacfb818b8516f93aa201c07f4b5688a6d3e"
 }
