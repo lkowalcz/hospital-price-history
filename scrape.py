@@ -58,6 +58,7 @@ RAW_DATA = Path(os.environ.get(
     "RAW_REPO_DIR", ROOT.parent / "hospital-price-history-raw")) / "data"
 MAX_STORED_BYTES = 45 * 1024 * 1024   # above this, shard
 MAX_SHARD_TOTAL = 600 * 1024 * 1024   # above this, summarize
+MAX_SHARD_FILE = 90 * 1024 * 1024     # no single shard may exceed GitHub's 100 MB cap
 SHARD_COUNT = 32
 SAMPLE_BYTES = 1024 * 1024            # per-offset sample for fingerprinting
 
@@ -376,19 +377,40 @@ def ext_of(name):
 def csv_records(lines):
     """Group physical lines into CSV records.
 
-    A quoted field can contain newlines, so a record is complete only when
-    its double-quote count balances; fragmenting such records across shards
-    would scramble the file's row structure. Single-line records pass
-    through byte-identical, keeping shards stable for the common case.
+    A quoted field can contain newlines, so a record is complete only on a
+    line that leaves quoting closed; fragmenting such records across shards
+    would scramble the file's row structure. Quote state follows real CSV
+    semantics — a quote opens a field only at a field boundary — because
+    files with stray literal quotes inside unquoted fields (Geisinger:
+    sizes like 5") would otherwise glue thousands of rows into one giant
+    record. Single-line records pass through byte-identical.
     """
-    buf, quotes = [], 0
+    buf = []
+    in_quotes = False
     for line in lines:
+        if '"' not in line:
+            if in_quotes:      # quoteless continuation inside a quoted field
+                buf.append(line)
+            else:
+                yield line
+            continue
+        i, n = 0, len(line)
+        while i < n:
+            c = line[i]
+            if in_quotes:
+                if c == '"':
+                    if i + 1 < n and line[i + 1] == '"':
+                        i += 1  # escaped ""
+                    else:
+                        in_quotes = False
+            elif c == '"' and (i == 0 or line[i - 1] == ","):
+                in_quotes = True  # field boundary: this quote opens a field
+            i += 1
         buf.append(line)
-        quotes += line.count('"')
-        if quotes % 2 == 0:
+        if not in_quotes:
             yield "\n".join(buf)
-            buf, quotes = [], 0
-    if buf:  # unbalanced trailer (malformed CSV): keep the bytes anyway
+            buf = []
+    if buf:  # unterminated quote (malformed CSV): keep the bytes anyway
         yield "\n".join(buf)
 
 
@@ -403,6 +425,14 @@ def shard_lines(lines):
     for bucket in buckets:
         bucket.sort()
     return buckets
+
+
+def oversized(buckets):
+    """True if any bucket would exceed GitHub's per-file limit — e.g. a
+    pathological file whose records mostly hash to one bucket, or a huge
+    mis-grouped record. Such files must not be sharded at all."""
+    return max((sum(len(l) + 1 for l in b) for b in buckets if b), default=0) \
+        > MAX_SHARD_FILE
 
 
 def write_shards(outdir, header_name, header_text, buckets, ext):
@@ -432,7 +462,10 @@ def store_sharded(outdir, name, payload):
         header_line_count = reader.line_num
         header_text = "\n".join(lines[:header_line_count]) + "\n"
         body = [r for r in csv_records(lines[header_line_count:]) if r]
-        write_shards(outdir, "_header.csv", header_text, shard_lines(body), ".csv")
+        buckets = shard_lines(body)
+        if oversized(buckets):
+            return "metadata-only"
+        write_shards(outdir, "_header.csv", header_text, buckets, ".csv")
         return "sharded"
     if lower.endswith(".json"):
         try:
@@ -446,7 +479,10 @@ def store_sharded(outdir, name, payload):
             return "metadata-only"
         header_text = json.dumps(obj, indent=1, sort_keys=True) + "\n"
         lines = [json.dumps(item, sort_keys=True, separators=(",", ":")) for item in items]
-        write_shards(outdir, "_header.json", header_text, shard_lines(lines), ".jsonl")
+        buckets = shard_lines(lines)
+        if oversized(buckets):
+            return "metadata-only"
+        write_shards(outdir, "_header.json", header_text, buckets, ".jsonl")
         return "sharded"
     return "metadata-only"
 
@@ -747,6 +783,11 @@ def process(hospital, scratch, impersonate=None):
             mode = "stored"
         elif payload is not None:
             mode = store_sharded(RAW_DATA / slug, name, payload)
+            if mode == "metadata-only":
+                # unshardable (unparseable, or a bucket over the per-file
+                # cap): fall back to the summary layer rather than lose
+                # the price data entirely
+                mode = store_summarized(outdir, name, payload_path)
         else:
             mode = store_summarized(outdir, name, payload_path)
         if mode in ("stored", "sharded"):

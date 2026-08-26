@@ -49,6 +49,8 @@ def main():
             mode = "stored"
         else:
             mode = store_sharded(RAW_DATA / slug, name, payload)
+            if mode == "metadata-only":
+                mode = store_summarized(outdir, name, path)
         if mode in ("stored", "sharded"):
             store_summarized(outdir, name, path)
     else:

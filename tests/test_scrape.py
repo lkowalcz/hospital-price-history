@@ -102,6 +102,20 @@ class TestCsvRecords(unittest.TestCase):
         self.assertEqual(list(scrape.csv_records(['ok,1', '"dangling'])),
                          ["ok,1", '"dangling'])
 
+    def test_literal_quotes_in_unquoted_fields(self):
+        # Geisinger-style: a stray inch-mark inside an unquoted field is
+        # literal, not a field opener — naive parity counting would glue
+        # every following row into one giant record.
+        lines = ['CATHETER 5" X 2,C123,10.50',
+                 'PIPE 3" ELBOW,C124,4.25',
+                 '"quoted, field",C125,1.00']
+        self.assertEqual(list(scrape.csv_records(lines)), lines)
+
+    def test_quote_after_comma_still_opens_field(self):
+        lines = ['a,"multi', 'line",b', 'plain,1']
+        self.assertEqual(list(scrape.csv_records(lines)),
+                         ['a,"multi\nline",b', "plain,1"])
+
 
 class TestSharding(unittest.TestCase):
     def shard_and_reconstruct(self, payload, tmp):
@@ -142,6 +156,18 @@ class TestSharding(unittest.TestCase):
             hits = [s for s in (outdir / "shards").glob("*.csv")
                     if "Multi\nline description drug" in s.read_text()]
             self.assertEqual(len(hits), 1)
+
+    def test_oversized_bucket_refuses_to_shard(self):
+        # A file whose records would put >MAX_SHARD_FILE bytes in one shard
+        # must not be sharded (GitHub rejects files over 100 MB); the
+        # pipeline then falls back to the summary layer.
+        payload = (FIXTURES / "wide.csv").read_bytes()
+        with tempfile.TemporaryDirectory() as tmp, \
+                unittest.mock.patch.object(scrape, "MAX_SHARD_FILE", 10):
+            outdir = Path(tmp) / "s"
+            self.assertEqual(scrape.store_sharded(outdir, "f.csv", payload),
+                             "metadata-only")
+            self.assertFalse(outdir.exists())  # nothing half-written
 
     def test_json_shards_and_unparseable(self):
         doc = {"version": "3.0.0",
