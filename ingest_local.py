@@ -38,12 +38,20 @@ def main():
     name = path.name
     size = path.stat().st_size
 
-    clear_content(outdir)
-    shutil.rmtree(RAW_DATA / slug, ignore_errors=True)
+    import hashlib
     if size <= MAX_SHARD_TOTAL:
         payload = normalize_payload(name, path.read_bytes())
-        import hashlib
         sha = hashlib.sha256(payload).hexdigest()
+    else:
+        payload = None
+        sha = sha256_file(path)
+    if sha == old_meta.get("sha256"):
+        print(f"{slug}: content identical to the stored snapshot; nothing to do")
+        return
+
+    clear_content(outdir)
+    shutil.rmtree(RAW_DATA / slug, ignore_errors=True)
+    if payload is not None:
         if len(payload) <= MAX_STORED_BYTES:
             (outdir / f"standardcharges{ext_of(name)}").write_bytes(payload)
             mode = "stored"
@@ -54,7 +62,6 @@ def main():
         if mode in ("stored", "sharded"):
             store_summarized(outdir, name, path)
     else:
-        sha = sha256_file(path)
         mode = store_summarized(outdir, name, path)
 
     meta = {
