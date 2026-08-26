@@ -1,0 +1,90 @@
+﻿{
+ "hospital_name": "Golden General Hospital",
+ "version": "3.0.0",
+ "last_updated_on": "2026-08-01",
+ "standard_charge_information": [
+  {
+   "description": "Colonoscopy, diagnostic",
+   "code_information": [
+    {
+     "code": "45378",
+     "type": "CPT"
+    },
+    {
+     "code": "0001200",
+     "type": "LOCAL"
+    }
+   ],
+   "standard_charges": [
+    {
+     "gross_charge": 4000,
+     "discounted_cash": 1500,
+     "payers_information": [
+      {
+       "payer_name": "Acme Health",
+       "plan_name": "PPO",
+       "standard_charge_dollar": 1200
+      },
+      {
+       "payer_name": "Blue Sky",
+       "plan_name": "HMO",
+       "standard_charge_dollar": 1100
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "description": "Electrocardiogram, complete",
+   "code_information": [
+    {
+     "code": "93000",
+     "type": "CPT"
+    }
+   ],
+   "standard_charges": [
+    {
+     "gross_charge": 500,
+     "payers_information": [
+      {
+       "payer_name": "Acme Health",
+       "standard_charge_percentage": 80
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "description": "Major joint replacement",
+   "code_information": [
+    {
+     "code": "470",
+     "type": "MS-DRG"
+    },
+    {
+     "code": "27447",
+     "type": "CPT"
+    }
+   ],
+   "standard_charges": [
+    {
+     "gross_charge": 50000,
+     "discounted_cash": 30000,
+     "payers_information": [
+      {
+       "standard_charge_dollar": 25000
+      }
+     ]
+    },
+    {
+     "gross_charge": 52000,
+     "payers_information": [
+      {
+       "standard_charge_dollar": 27500
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

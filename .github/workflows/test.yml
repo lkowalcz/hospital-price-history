@@ -1,0 +1,35 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+    paths: ["*.py", "tests/**", "requirements.txt", ".github/workflows/test.yml"]
+  pull_request:
+    paths: ["*.py", "tests/**", "requirements.txt", ".github/workflows/test.yml"]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      # Tests never touch data/ — skip the ~1 GB of summaries entirely.
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: |
+            /*
+            !/data/
+          sparse-checkout-cone-mode: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run tests
+        run: python -m unittest discover -s tests -v

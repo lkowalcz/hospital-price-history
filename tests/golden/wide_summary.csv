@@ -1,0 +1,11 @@
+code_type,code,description,gross_charge,discounted_cash,min_negotiated,max_negotiated,payer_entries
+,,Aspirin 81mg tab,12.0,5.0,3.0,3.0,1
+CDM,4021,CT head w/o contrast,2000.0,900.0,650.0,700.0,2
+CPT,27447,Major joint replacement,50000.0,30000.0,25000.0,27500.0,2
+CPT,70450,CT head w/o contrast,2000.0,900.0,650.0,700.0,2
+CPT,70450,Zero and junk prices,0.0,,,,0
+HCPCS,J1234,"Multi
+line description drug",88.0,44.0,20.0,22.0,2
+HCPCS,Q9999,Duplicate code slots,60.0,25.0,18.0,18.0,1
+MS-DRG,470,Major joint replacement,50000.0,30000.0,25000.0,27500.0,2
+RC,0101,Room & board private,3500.0,2800.0,,,0

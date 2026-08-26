@@ -1,0 +1,3 @@
+code_type,code,description,gross_charge,discounted_cash,min_negotiated,max_negotiated,payer_entries
+CPT,45378,"Colonoscopy, diagnostic",4000.0,1500.0,1100.0,1200.0,2
+CPT,71046,"Chest X-ray, 2 views",300.0,120.0,95.0,95.0,1

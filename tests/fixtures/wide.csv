@@ -1,0 +1,11 @@
+hospital_name,last_updated_on,version
+"Golden General Hospital","2026-08-01","3.0.0"
+description,code|1,code|1|type,code|2,code|2|type,code|3,code|3|type,setting,standard_charge|gross,standard_charge|discounted_cash,standard_charge|Acme Health|PPO|negotiated_dollar,standard_charge|Acme Health|PPO|methodology,standard_charge|Blue Sky|HMO|negotiated_dollar
+"Major joint replacement",470,MS-DRG,27447,CPT,,,inpatient,50000,30000,25000,fee schedule,27500
+"CT head w/o contrast",4021,CDM,70450,CPT,,,outpatient,2000,900,700,percent of charge,650
+"Room & board private",0101,RC,PRIV1,CDM,,,inpatient,3500,2800,,,
+"Aspirin 81mg tab",,,,,,,outpatient,12,5,3,,
+"Multi
+line description drug",J1234,HCPCS,,,,,outpatient,88,44,22,,20
+"Zero and junk prices",70450,CPT,,,,,outpatient,0,abc,,not a number,
+"Duplicate code slots",Q9999,HCPCS,Q9999,HCPCS,,,outpatient,60,25,18,,

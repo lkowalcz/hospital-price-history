@@ -1,0 +1,120 @@
+"""Unit tests for the price-index chain math in compute_index.py."""
+
+import json
+import math
+import tempfile
+import unittest
+from pathlib import Path
+
+import compute_index as ci
+
+
+class TestCanon(unittest.TestCase):
+    def test_canon_type(self):
+        self.assertEqual(ci.canon_type("MS-DRG"), "MSDRG")
+        self.assertEqual(ci.canon_type("ms drg"), "MSDRG")
+        self.assertEqual(ci.canon_type(None), "")
+
+    def test_canon_code_leading_zeros(self):
+        self.assertEqual(ci.canon_code("003"), "3")
+        self.assertEqual(ci.canon_code(" 0470 "), "470")
+        self.assertEqual(ci.canon_code("000"), "0")
+
+    def test_to_float_positive_only(self):
+        # The index rejects zero/negative prices; the summarizer keeps them.
+        self.assertIsNone(ci.to_float("0"))
+        self.assertIsNone(ci.to_float("-5"))
+        self.assertIsNone(ci.to_float("n/a"))
+        self.assertEqual(ci.to_float("12.5"), 12.5)
+
+    def test_median(self):
+        self.assertEqual(ci.median([3, 1, 2]), 2)
+        self.assertEqual(ci.median([4, 1, 2, 3]), 2.5)
+
+    def test_geomean(self):
+        self.assertAlmostEqual(ci.geomean([2, 8]), 4.0)
+        self.assertIsNone(ci.geomean([]))
+
+
+class TestBasketPrices(unittest.TestCase):
+    """basket_prices reads data/<slug>/summary.csv under compute_index.ROOT."""
+
+    ITEMS = {"DRG|470": ("DRG", "470"), "DRG|003": ("DRG", "3"),
+             "CPT|70450": ("CPT", "70450")}
+
+    def setUp(self):
+        self._root = ci.ROOT
+        self._tmp = tempfile.TemporaryDirectory()
+        ci.ROOT = Path(self._tmp.name)
+
+    def tearDown(self):
+        ci.ROOT = self._root
+        self._tmp.cleanup()
+
+    def write_summary(self, slug, rows):
+        d = ci.ROOT / "data" / slug
+        d.mkdir(parents=True)
+        header = ("code_type,code,description,gross_charge,discounted_cash,"
+                  "min_negotiated,max_negotiated,payer_entries\n")
+        (d / "summary.csv").write_text(
+            header + "".join(",".join(map(str, r)) + "\n" for r in rows))
+
+    def test_matching_and_medians(self):
+        self.write_summary("h1", [
+            ("MS-DRG", "470", "Joint A", 100, 50, "", "", 0),
+            ("DRG", "0470", "Joint B", 300, 70, "", "", 0),    # DRG label + zeros
+            ("MS-DRG", "003", "ECMO", 900, 800, "", "", 0),    # basket code 3
+            ("HCPCS", "70450", "CT head", 200, 90, "", "", 0), # HCPCS matches CPT item
+            ("CPT", "70450", "CT head dup", 400, 0, "", "", 0),  # 0 cash filtered
+            ("LOCAL", "470", "chargemaster row", 999, 999, "", "", 0),  # wrong type
+        ])
+        prices = ci.basket_prices("h1", self.ITEMS)
+        self.assertEqual(prices["DRG|470"], {"cash": 60, "gross": 200})  # medians
+        self.assertEqual(prices["DRG|003"], {"cash": 800, "gross": 900})
+        self.assertEqual(prices["CPT|70450"], {"cash": 90, "gross": 300})
+
+    def test_missing_summary(self):
+        self.assertEqual(ci.basket_prices("nope", self.ITEMS), {})
+
+
+class TestChainMath(unittest.TestCase):
+    def test_single_hospital_relatives(self):
+        prev = {"h1": {"a": {"cash": 100}, "b": {"cash": 200}}}
+        cur = {"h1": {"a": {"cash": 110}, "b": {"cash": 180}}}
+        factor, pairs, hospitals = ci.series_factor(prev, cur, "cash")
+        self.assertAlmostEqual(factor, math.sqrt(1.1 * 0.9))
+        self.assertEqual((pairs, hospitals), (2, 1))
+
+    def test_hospitals_weighted_equally(self):
+        # geomean over hospitals of geomean over codes: h2's single 2x code
+        # counts as much as h1's two flat codes.
+        prev = {"h1": {"a": {"cash": 100}, "b": {"cash": 100}},
+                "h2": {"c": {"cash": 50}}}
+        cur = {"h1": {"a": {"cash": 100}, "b": {"cash": 100}},
+               "h2": {"c": {"cash": 100}}}
+        factor, pairs, hospitals = ci.series_factor(prev, cur, "cash")
+        self.assertAlmostEqual(factor, math.sqrt(2.0))
+        self.assertEqual((pairs, hospitals), (3, 2))
+
+    def test_entry_and_exit_ignored(self):
+        # A hospital or code present on only one side contributes nothing:
+        # chain-linking lets the panel change without breaking the series.
+        prev = {"h1": {"a": {"cash": 100}}, "gone": {"a": {"cash": 5}}}
+        cur = {"h1": {"a": {"cash": 100}, "new_code": {"cash": 7}},
+               "new_hospital": {"a": {"cash": 9}}}
+        factor, pairs, hospitals = ci.series_factor(prev, cur, "cash")
+        self.assertEqual((factor, pairs, hospitals), (1.0, 1, 1))
+
+    def test_empty_overlap(self):
+        factor, pairs, hospitals = ci.series_factor({}, {"h": {"a": {"cash": 1}}}, "cash")
+        self.assertEqual((factor, pairs, hospitals), (1.0, 0, 0))
+
+    def test_missing_field_skipped(self):
+        prev = {"h1": {"a": {"gross": 100}}}
+        cur = {"h1": {"a": {"gross": 100, "cash": 50}}}
+        self.assertEqual(ci.series_factor(prev, cur, "cash")[1:], (0, 0))
+        self.assertEqual(ci.series_factor(prev, cur, "gross")[1:], (1, 1))
+
+
+if __name__ == "__main__":
+    unittest.main()

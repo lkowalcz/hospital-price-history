@@ -1,0 +1,5 @@
+code_type,code,description,gross_charge,discounted_cash,min_negotiated,max_negotiated,payer_entries
+CPT,27447,Major joint replacement,50000.0,30000.0,25000.0,27500.0,2
+CPT,45378,"Colonoscopy, diagnostic",4000.0,1500.0,1100.0,1200.0,2
+CPT,93000,"Electrocardiogram, complete",500.0,,,,0
+MS-DRG,470,Major joint replacement,50000.0,30000.0,25000.0,27500.0,2

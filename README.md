@@ -98,6 +98,18 @@ Writes into `data/`, `commit_message.txt`, and (for sharded hospitals) the
 sibling raw clone — commit and push both, raw first. `RAW_REPO_DIR`
 overrides the raw clone location. `ONLY=slug1,slug2` limits the run.
 
+## Tests
+
+```sh
+python3 -m unittest discover -s tests
+```
+
+Golden-file tests for the parsers, summarizers, sharding round-trip, and
+index chain math, run by CI on every code push. The fixtures bake in the
+real-world pathologies listed under Notes; `tests/golden/` holds the
+expected `summary.csv` bytes — a diff there is a methodology change and
+should be reviewed as one.
+
 ## Notes
 
 - Hospital CDNs behind Cloudflare/Akamai often refuse non-browser

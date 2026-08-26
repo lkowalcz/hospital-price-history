@@ -1,0 +1,7 @@
+hospital_name,last_updated_on,version
+"Golden General Hospital","2026-08-01","3.0.0"
+description,code|1,code|1|type,payer_name,plan_name,standard_charge|gross,standard_charge|discounted_cash,standard_charge|negotiated_dollar,standard_charge|methodology
+"Colonoscopy, diagnostic",45378,CPT,Acme Health,PPO,4000,1500,1200,fee schedule
+"Colonoscopy, diagnostic",45378,CPT,Blue Sky,HMO,4000,1500,1100,fee schedule
+"Chest X-ray, 2 views",71046,CPT,Acme Health,PPO,300,120,95,fee schedule
+"Chest X-ray, 2 views",71046,CPT,Blue Sky,HMO,300,120,,percent of charge
