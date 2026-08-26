@@ -3,11 +3,7 @@
   "location_name": "Sanford USD Medical Center",
   "mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8368/460227855_sanford-usd-medical-center_standardcharges.csv",
   "source_filename": "460227855_sanford-usd-medical-center_standardcharges.csv",
-  "sha256": "2c94d6436b2e60819b7de8f46553b4a9cb9cfdc3f5f6e92c4b80ff54b340aedb",
   "size_bytes": 1007368312,
-  "source_last_modified": "Mon, 27 Apr 2026 22:03:50 GMT",
-  "source_etag": "0x8DEA4A8DD2657F7",
-  "transfer_fingerprint": "9391675b8a80b15d8b04b4ff20ad74f09eb6245a143ffeb904d367e169d3e046",
   "status": "summarized",
   "first_seen": "2026-08-14T03:57:22Z",
   "last_changed": "2026-08-14T03:57:22Z"

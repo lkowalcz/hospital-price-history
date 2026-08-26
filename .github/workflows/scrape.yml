@@ -90,6 +90,7 @@ jobs:
             echo "No raw changes."
           else
             git -C raw-repo commit -F "$GITHUB_WORKSPACE/commit_message.txt"
+            git -C raw-repo pull --rebase --quiet
             git -C raw-repo push
           fi
           echo "sha=$(git -C raw-repo rev-parse HEAD)" >> "$GITHUB_OUTPUT"
@@ -127,5 +128,8 @@ jobs:
               echo "Index tick $(date -u +%F)" > commit_message.txt
             fi
             git commit -F commit_message.txt
+            # a push that landed mid-run (e.g. a code change) must not
+            # sink the whole scrape's data commit
+            git pull --rebase --quiet
             git push
           fi
