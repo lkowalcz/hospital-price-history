@@ -10,10 +10,5 @@
   "transfer_fingerprint": "a96ba0e8ca43c16152c4f64b3e6d3992602833cbf1a952ea6367331d3abe23b5",
   "status": "summarized",
   "first_seen": "2026-08-25T16:01:04Z",
-  "last_changed": "2026-08-25T16:01:04Z",
-  "fetch_failures": {
-    "first_failed": "2026-08-26T07:29:41Z",
-    "last_error": "Command '['/home/runner/work/_temp/ci/curl_chrome145', '-sS', '-L', '--compressed', '--max-time', '3600', '-D', '/tmp/tmpbwxx05i_.hdrs', '-o', '-', '--fail', 'https://www.franciscanhealth.org/cms-hpt.",
-    "last_attempt": "2026-08-26T07:29:41Z"
-  }
+  "last_changed": "2026-08-25T16:01:04Z"
 }

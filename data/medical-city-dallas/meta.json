@@ -1,7 +1,7 @@
 {
   "system": "HCA Healthcare (Medical City)",
   "location_name": "MEDICAL CITY DALLAS HOSPITAL",
-  "mrf_url": "https://stctrprodsnsvc00455826e6.blob.core.windows.net/pt-final-posting-files/62-1682198_MEDICAL-CITY-DALLAS_standardcharges.json?si=pt-json-access-policy&spr=https&sv=2024-11-04&sr=c&sig=o5IofreS%2F7ETlsnhPakPWCwHVVUZRobywQ5wUKGjVuQ%3D",
+  "mrf_url": "https://stctrprodsnsvc00455826e6.blob.core.windows.net/pt-final-posting-files/62-1682198_MEDICAL-CITY-DALLAS_standardcharges.json?si=dpx-pt-json-access-policy&spr=https&sv=2026-02-06&sr=c&sig=ks%2BgfAjyEHlZmeP2PYJ%2f9NpMuCoRStjTb2bhIy9Y6LM%3D",
   "source_filename": "62-1682198_MEDICAL-CITY-DALLAS_standardcharges.json",
   "sha256": "6ac103cde294ec7efd21470ef2ec48c7f0f7756f2bde06d091567bf3ce211e06",
   "size_bytes": 1050715330,
@@ -10,10 +10,5 @@
   "transfer_fingerprint": "2cc53c26a3dc7ad2214246ec25fb71f654e87c295f3e49cac209e07472130d8d",
   "status": "summarized",
   "first_seen": "2026-08-14T03:44:05Z",
-  "last_changed": "2026-08-14T03:44:05Z",
-  "fetch_failures": {
-    "first_failed": "2026-08-25T07:17:36Z",
-    "last_error": "HTTP Error 403: This request is not authorized to perform this operation.",
-    "last_attempt": "2026-08-25T07:17:36Z"
-  }
+  "last_changed": "2026-08-26T20:29:27Z"
 }

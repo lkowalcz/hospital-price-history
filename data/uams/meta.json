@@ -10,10 +10,5 @@
   "transfer_fingerprint": "8cb8eacafb867736357a365f7cbe92e99bc0b365ffdfb7158729cebb6214d2af",
   "status": "summarized",
   "first_seen": "2026-08-25T15:53:09Z",
-  "last_changed": "2026-08-25T15:53:09Z",
-  "fetch_failures": {
-    "first_failed": "2026-08-26T07:28:34Z",
-    "last_error": "Remote end closed connection without response",
-    "last_attempt": "2026-08-26T07:28:34Z"
-  }
+  "last_changed": "2026-08-25T15:53:09Z"
 }

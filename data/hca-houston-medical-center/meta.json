@@ -1,7 +1,7 @@
 {
   "system": "HCA Healthcare (Houston)",
   "location_name": "HCA HOUSTON MEDICAL CENTER",
-  "mrf_url": "https://stctrprodsnsvc00455826e6.blob.core.windows.net/pt-final-posting-files/82-1635538_HCA-HOUSTON-HEALTHCARE-MEDICAL-CENTER_standardcharges.json?si=pt-json-access-policy&spr=https&sv=2024-11-04&sr=c&sig=o5IofreS%2F7ETlsnhPakPWCwHVVUZRobywQ5wUKGjVuQ%3D",
+  "mrf_url": "https://stctrprodsnsvc00455826e6.blob.core.windows.net/pt-final-posting-files/82-1635538_HCA-HOUSTON-HEALTHCARE-MEDICAL-CENTER_standardcharges.json?si=dpx-pt-json-access-policy&spr=https&sv=2026-02-06&sr=c&sig=ks%2BgfAjyEHlZmeP2PYJ%2f9NpMuCoRStjTb2bhIy9Y6LM%3D",
   "source_filename": "82-1635538_HCA-HOUSTON-HEALTHCARE-MEDICAL-CENTER_standardcharges.json",
   "sha256": "a00333089cce48e58ddd36ff065c5aa370bf735a3499315d2522a119c1806547",
   "size_bytes": 606868134,
@@ -10,11 +10,6 @@
   "transfer_fingerprint": "1e39fd73d5e90a2479131e68e8245ad636779246e534f8fbec3fc1a38ad0ce68",
   "status": "sharded",
   "first_seen": "2026-08-14T03:44:51Z",
-  "last_changed": "2026-08-14T03:44:51Z",
-  "fetch_failures": {
-    "first_failed": "2026-08-25T07:17:39Z",
-    "last_error": "HTTP Error 403: This request is not authorized to perform this operation.",
-    "last_attempt": "2026-08-25T07:17:39Z"
-  },
-  "raw_commit": "bab8eacfb818b8516f93aa201c07f4b5688a6d3e"
+  "last_changed": "2026-08-26T20:31:31Z",
+  "raw_commit": "71a067819a419be201a1bb7ed4e2cdc4200d63f7"
 }

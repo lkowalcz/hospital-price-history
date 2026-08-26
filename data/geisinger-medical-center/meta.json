@@ -1,7 +1,16 @@
 {
-  "fetch_failures": {
-    "first_failed": "2026-08-14T04:06:19Z",
-    "last_error": "received an HTML page instead of an MRF (bot-block?)",
-    "last_attempt": "2026-08-21T07:14:12Z"
-  }
+  "system": "Geisinger",
+  "location_name": "Geisinger Medical Center",
+  "mrf_url": "https://www.geisinger.org/-/media/OneGeisinger/pdfs/ghs/patient-care/patients-and-visitors/billing-and-insurance/hosp-charges-csv/24-0795959_Geisinger-Medical-Center_standardcharges",
+  "source_filename": "24-0795959_Geisinger-Medical-Center_standardcharges.csv",
+  "sha256": "ee5b65858d414d2b1ba7496014d7eea87ed6b1436d705912adb78b36c6efe909",
+  "size_bytes": 358415194,
+  "source_last_modified": "Mon, 20 Jul 2026 20:14:49 GMT",
+  "source_etag": null,
+  "transfer_fingerprint": "6c08ff0d18d75c3488067c6c90446d5ef9fcaf7addba07f841968f70c9e55edb",
+  "status": "sharded",
+  "first_seen": "2026-08-26T20:32:57Z",
+  "last_changed": "2026-08-26T20:32:57Z",
+  "fetch_escalated": "2026-08-26T20:32:57Z",
+  "raw_commit": "71a067819a419be201a1bb7ed4e2cdc4200d63f7"
 }
