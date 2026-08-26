@@ -125,7 +125,8 @@ def main():
         idx_cash = idx_gross = 100.0
         pairs_c = sum(1 for p in cur_prices.values() for v in p.values() if v.get("cash"))
         pairs_g = sum(1 for p in cur_prices.values() for v in p.values() if v.get("gross"))
-        hosp_c = hosp_g = len(cur_prices)
+        hosp_c = sum(1 for p in cur_prices.values() if any(v.get("cash") for v in p.values()))
+        hosp_g = sum(1 for p in cur_prices.values() if any(v.get("gross") for v in p.values()))
 
     if not HISTORY.exists():
         HISTORY.write_text("date,index_cash,index_gross,pairs_cash,pairs_gross,"
