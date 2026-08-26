@@ -81,9 +81,9 @@ class TestChainMath(unittest.TestCase):
     def test_single_hospital_relatives(self):
         prev = {"h1": {"a": {"cash": 100}, "b": {"cash": 200}}}
         cur = {"h1": {"a": {"cash": 110}, "b": {"cash": 180}}}
-        factor, pairs, hospitals = ci.series_factor(prev, cur, "cash")
+        factor, pairs, hospitals, anomalies = ci.series_factor(prev, cur, "cash")
         self.assertAlmostEqual(factor, math.sqrt(1.1 * 0.9))
-        self.assertEqual((pairs, hospitals), (2, 1))
+        self.assertEqual((pairs, hospitals, anomalies), (2, 1, []))
 
     def test_hospitals_weighted_equally(self):
         # geomean over hospitals of geomean over codes: h2's single 2x code
@@ -92,7 +92,7 @@ class TestChainMath(unittest.TestCase):
                 "h2": {"c": {"cash": 50}}}
         cur = {"h1": {"a": {"cash": 100}, "b": {"cash": 100}},
                "h2": {"c": {"cash": 100}}}
-        factor, pairs, hospitals = ci.series_factor(prev, cur, "cash")
+        factor, pairs, hospitals, _ = ci.series_factor(prev, cur, "cash")
         self.assertAlmostEqual(factor, math.sqrt(2.0))
         self.assertEqual((pairs, hospitals), (3, 2))
 
@@ -102,18 +102,53 @@ class TestChainMath(unittest.TestCase):
         prev = {"h1": {"a": {"cash": 100}}, "gone": {"a": {"cash": 5}}}
         cur = {"h1": {"a": {"cash": 100}, "new_code": {"cash": 7}},
                "new_hospital": {"a": {"cash": 9}}}
-        factor, pairs, hospitals = ci.series_factor(prev, cur, "cash")
+        factor, pairs, hospitals, _ = ci.series_factor(prev, cur, "cash")
         self.assertEqual((factor, pairs, hospitals), (1.0, 1, 1))
 
     def test_empty_overlap(self):
-        factor, pairs, hospitals = ci.series_factor({}, {"h": {"a": {"cash": 1}}}, "cash")
+        factor, pairs, hospitals, _ = ci.series_factor({}, {"h": {"a": {"cash": 1}}}, "cash")
         self.assertEqual((factor, pairs, hospitals), (1.0, 0, 0))
 
     def test_missing_field_skipped(self):
         prev = {"h1": {"a": {"gross": 100}}}
         cur = {"h1": {"a": {"gross": 100, "cash": 50}}}
-        self.assertEqual(ci.series_factor(prev, cur, "cash")[1:], (0, 0))
-        self.assertEqual(ci.series_factor(prev, cur, "gross")[1:], (1, 1))
+        self.assertEqual(ci.series_factor(prev, cur, "cash")[1:3], (0, 0))
+        self.assertEqual(ci.series_factor(prev, cur, "gross")[1:3], (1, 1))
+
+    def test_extreme_relative_excluded_and_logged(self):
+        # A one-day 5x move is a suspected artifact: it must not compound
+        # into the chain, and it must be surfaced as an anomaly.
+        prev = {"h1": {"a": {"cash": 100}, "b": {"cash": 100}}}
+        cur = {"h1": {"a": {"cash": 500}, "b": {"cash": 110}}}
+        factor, pairs, hospitals, anomalies = ci.series_factor(prev, cur, "cash")
+        self.assertAlmostEqual(factor, 1.1)
+        self.assertEqual((pairs, hospitals), (1, 1))
+        self.assertEqual(anomalies, [("h1", "a", 100, 500)])
+
+    def test_extreme_drop_excluded_symmetrically(self):
+        prev = {"h1": {"a": {"cash": 100}}}
+        cur = {"h1": {"a": {"cash": 10}}}
+        factor, pairs, hospitals, anomalies = ci.series_factor(prev, cur, "cash")
+        self.assertEqual((factor, pairs, hospitals), (1.0, 0, 0))
+        self.assertEqual(anomalies, [("h1", "a", 100, 10)])
+
+    def test_limit_boundary_included(self):
+        # Exactly RELATIVE_LIMIT is still a (barely) admissible move.
+        prev = {"h1": {"a": {"cash": 100}}}
+        cur = {"h1": {"a": {"cash": 100 * ci.RELATIVE_LIMIT}}}
+        factor, pairs, hospitals, anomalies = ci.series_factor(prev, cur, "cash")
+        self.assertAlmostEqual(factor, ci.RELATIVE_LIMIT)
+        self.assertEqual((pairs, anomalies), (1, []))
+
+    def test_all_anomalous_hospital_contributes_nothing(self):
+        # A wholesale corrupt file (every item 10x) must leave the index flat.
+        prev = {"h1": {k: {"cash": 100} for k in "abc"},
+                "h2": {"z": {"cash": 100}}}
+        cur = {"h1": {k: {"cash": 1000} for k in "abc"},
+               "h2": {"z": {"cash": 105}}}
+        factor, pairs, hospitals, anomalies = ci.series_factor(prev, cur, "cash")
+        self.assertAlmostEqual(factor, 1.05)
+        self.assertEqual((pairs, hospitals, len(anomalies)), (1, 1, 3))
 
 
 if __name__ == "__main__":

@@ -10,6 +10,11 @@ Method:
     hospital, then the geometric mean across hospitals, and compounds it onto
     the running index (base 100 at first run). Chain-linking means hospitals
     and codes can enter or leave the panel without breaking the series.
+  - A relative outside [1/RELATIVE_LIMIT, RELATIVE_LIMIT] is excluded from
+    the chain and appended to index-anomalies.csv instead: a chained index
+    never recovers from compounding a one-day data artifact, and a >4x
+    day-over-day move in a *published list price* is more likely a file
+    glitch than a price. The excluded moves stay on the record as anomalies.
   - Appends one row per day to index-history.csv (skips if today already
     recorded). Cash and gross series are computed independently.
 
@@ -26,6 +31,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 STATE = ROOT / "index-state.json"
 HISTORY = ROOT / "index-history.csv"
+ANOMALIES = ROOT / "index-anomalies.csv"
+
+# Day-over-day relatives beyond this factor are excluded from the chain
+# (and logged): suspected data artifacts, not price changes.
+RELATIVE_LIMIT = 4.0
 
 DRG_TYPES = {"MSDRG", "DRG"}
 CPT_TYPES = {"CPT", "HCPCS", "CPTHCPCS"}
@@ -82,20 +92,29 @@ def geomean(xs):
 
 
 def series_factor(prev_prices, cur_prices, field):
-    """Chain factor: geomean over hospitals of geomean over codes of relatives."""
+    """Chain factor: geomean over hospitals of geomean over codes of relatives.
+
+    Returns (factor, pairs, hospitals, anomalies); anomalies are the
+    (slug, item_key, prev, cur) pairs whose relative fell outside
+    [1/RELATIVE_LIMIT, RELATIVE_LIMIT] and were excluded from the chain.
+    """
     hospital_relatives = []
     pairs = 0
+    anomalies = []
     for slug, cur in cur_prices.items():
         prev = prev_prices.get(slug, {})
         rels = []
         for key, vals in cur.items():
             a, b = prev.get(key, {}).get(field), vals.get(field)
             if a and b:
-                rels.append(b / a)
+                if b / a > RELATIVE_LIMIT or a / b > RELATIVE_LIMIT:
+                    anomalies.append((slug, key, a, b))
+                else:
+                    rels.append(b / a)
         if rels:
             hospital_relatives.append(geomean(rels))
             pairs += len(rels)
-    return (geomean(hospital_relatives) or 1.0), pairs, len(hospital_relatives)
+    return (geomean(hospital_relatives) or 1.0), pairs, len(hospital_relatives), anomalies
 
 
 def main():
@@ -115,10 +134,12 @@ def main():
         print(f"index: {today} already recorded")
         return
 
+    anomalies = []
     if STATE.exists():
         state = json.loads(STATE.read_text())
-        factor_cash, pairs_c, hosp_c = series_factor(state["prices"], cur_prices, "cash")
-        factor_gross, pairs_g, hosp_g = series_factor(state["prices"], cur_prices, "gross")
+        factor_cash, pairs_c, hosp_c, anom_c = series_factor(state["prices"], cur_prices, "cash")
+        factor_gross, pairs_g, hosp_g, anom_g = series_factor(state["prices"], cur_prices, "gross")
+        anomalies = [("cash", *a) for a in anom_c] + [("gross", *a) for a in anom_g]
         idx_cash = state["index_cash"] * factor_cash
         idx_gross = state["index_gross"] * factor_gross
     else:
@@ -127,6 +148,17 @@ def main():
         pairs_g = sum(1 for p in cur_prices.values() for v in p.values() if v.get("gross"))
         hosp_c = sum(1 for p in cur_prices.values() if any(v.get("cash") for v in p.values()))
         hosp_g = sum(1 for p in cur_prices.values() if any(v.get("gross") for v in p.values()))
+
+    if anomalies:
+        new_file = not ANOMALIES.exists()
+        with open(ANOMALIES, "a", newline="") as f:
+            w = csv.writer(f)
+            if new_file:
+                w.writerow(["date", "field", "hospital", "item", "prev", "cur"])
+            for field, slug, key, a, b in anomalies:
+                w.writerow([today, field, slug, key, a, b])
+        print(f"index: excluded {len(anomalies)} extreme relatives "
+              f"(logged in {ANOMALIES.name})")
 
     if not HISTORY.exists():
         HISTORY.write_text("date,index_cash,index_gross,pairs_cash,pairs_gross,"
