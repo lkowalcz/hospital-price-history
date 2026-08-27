@@ -3,9 +3,13 @@
   "location_name": "BAYLOR UNIVERSITY MEDICAL CENTER",
   "mrf_url": "https://wadcdn.azureedge.net/bswhealth/com/siteassets/pricing-transparency/751837454_baylor-university-medical-center_standardcharges.csv",
   "source_filename": "751837454_baylor-university-medical-center_standardcharges.csv",
+  "sha256": "3d20a7ece7e4192618599aa69fc4c5df978edb751679a3c583bd7aa1994020f6",
   "size_bytes": 580073597,
+  "source_last_modified": "Wed, 22 Jul 2026 14:54:47 GMT",
+  "source_etag": "0x8DEE8012CDF9728",
+  "transfer_fingerprint": "86ec81a8743b4b45d96ad5d5e7f47e1bf26e39b802cda17f3c7628d9dd169f64",
   "status": "sharded",
   "first_seen": "2026-08-14T03:46:25Z",
-  "last_changed": "2026-08-14T03:46:25Z",
-  "raw_commit": "e03c3ea8a1ceb8b9ba428f95890ede03de536cc2"
+  "last_changed": "2026-08-27T17:49:50Z",
+  "raw_commit": "6da6a71abd18743bd414fe104d71ae8c2f8e286b"
 }
