@@ -2,7 +2,7 @@
   "system": "Mayo Clinic",
   "location_name": "Mayo Clinic Florida",
   "mrf_url": "https://mcorgstatic.blob.core.windows.net/cms-price/590714831_mayo-clinic-florida_standardcharges.csv",
-  "source_filename": "590714831_mayo-clinic-florida_standardcharges.csv",
+  "source_filename": "mayo-florida.csv",
   "sha256": "94cf4907a6c8d45c72394113bee99c7978c7b7d21de4c25bdfa772216262977a",
   "size_bytes": 14771333430,
   "source_last_modified": "Fri, 14 Aug 2026 17:03:12 GMT",
@@ -10,6 +10,6 @@
   "transfer_fingerprint": "e0e9bcc20f3d9ebaa02a9be398ec42bb7174fa14a263eb5b18febbd7f2b4330b",
   "status": "summarized",
   "first_seen": "2026-08-25T18:31:19Z",
-  "last_changed": "2026-08-25T18:31:19Z",
+  "last_changed": "2026-08-27T19:48:51Z",
   "note": "ingested from a local fetch (see README notes)"
 }

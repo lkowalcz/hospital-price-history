@@ -2,7 +2,7 @@
   "system": "Mayo Clinic",
   "location_name": "Mayo Clinic Hospital-Rochester",
   "mrf_url": "https://mcorgstatic.blob.core.windows.net/cms-price/410944601_mayo-clinic-hospital-rochester_standardcharges.csv",
-  "source_filename": "mayo.csv",
+  "source_filename": "mayo-rochester.csv",
   "sha256": "68bedf7442ddd82ed1ae68ba4ceeb217a3a6305fd3a7a9c66e24c66107d0ce06",
   "size_bytes": 13350569463,
   "source_last_modified": "Fri, 14 Aug 2026 16:49:01 GMT",
@@ -10,6 +10,6 @@
   "transfer_fingerprint": "ed44db2701a3d538de998c4ec485e5efdb645d70bbcff446f6815cd5741fccd9",
   "status": "summarized",
   "first_seen": "2026-08-14T23:13:37Z",
-  "last_changed": "2026-08-14T23:13:37Z",
+  "last_changed": "2026-08-27T14:16:39Z",
   "note": "ingested from a local fetch (see README notes)"
 }
