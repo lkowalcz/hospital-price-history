@@ -1,1 +1,5 @@
 date,field,hospital,item,prev,cur
+2026-08-27,cash,hca-florida-kendall,CPT|80053,2703.0,531.0
+2026-08-27,cash,hca-houston-medical-center,CPT|72148,3227.76,18235.34
+2026-08-27,gross,hca-florida-kendall,CPT|80053,2703.0,531.0
+2026-08-27,gross,hca-houston-medical-center,CPT|72148,3227.76,18235.34

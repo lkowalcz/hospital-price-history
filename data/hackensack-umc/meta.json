@@ -3,8 +3,12 @@
   "location_name": "Hackensack University Medical Center",
   "mrf_url": "https://www.hackensackmeridianhealth.org/-/media/project/hmh/hmh/public/files/cdm/20260520/221487576-1457456279_hmh-hospitals-corporation_standardcharges.csv",
   "source_filename": "221487576-1457456279_hmh-hospitals-corporation_standardcharges.csv",
+  "sha256": "94eadf5d55bc3167e0d8630595a7b95eb5200e93934740805e0c4098905e8f80",
   "size_bytes": 2295205053,
+  "source_last_modified": null,
+  "source_etag": null,
+  "transfer_fingerprint": "7cf32f4f7dc13669e12667cf475622c4efb159710cddb964eea157a3c29a2858",
   "status": "summarized",
   "first_seen": "2026-08-25T14:02:17Z",
-  "last_changed": "2026-08-26T07:27:19Z"
+  "last_changed": "2026-08-27T00:36:30Z"
 }

@@ -3,8 +3,12 @@
   "location_name": "Froedtert Hospital",
   "mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7864/396105970_froedtert-memorial-lutheran-hospital-inc_standardcharges.csv",
   "source_filename": "396105970_froedtert-memorial-lutheran-hospital-inc_standardcharges.csv",
+  "sha256": "c98934176d9ee288acd7ab68f7a579780b5fdd13ebc70299355faee03d613d20",
   "size_bytes": 936972135,
+  "source_last_modified": "Tue, 17 Feb 2026 21:28:52 GMT",
+  "source_etag": "0x8DE6E6B8C2CFA00",
+  "transfer_fingerprint": "bb403fa1b696b904dd0f54c92ce201df058b9e4a45e48598e9857f14a56f8a15",
   "status": "summarized",
   "first_seen": "2026-08-25T15:31:00Z",
-  "last_changed": "2026-08-25T15:31:00Z"
+  "last_changed": "2026-08-27T00:37:59Z"
 }

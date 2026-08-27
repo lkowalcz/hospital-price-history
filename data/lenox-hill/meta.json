@@ -3,8 +3,12 @@
   "location_name": "Lenox Hill Hospital",
   "mrf_url": "https://www.northwell.edu/sites/northwell.edu/files/machine-readable-files/Lenox_Hill_Hospital_StandardCharges.zip",
   "source_filename": "Lenox_Hill_Hospital_StandardCharges.json",
+  "sha256": "fb7e89ebd2767dcd4e5810991f4f0663ea06254bdacbffbf86c59464c6f5bf79",
   "size_bytes": 693647840,
+  "source_last_modified": "Mon, 30 Mar 2026 17:17:29 GMT",
+  "source_etag": null,
+  "transfer_fingerprint": "b67ba30540210753857024689aad77f67734906c9e3a3d752e2f4cfe9d200d15",
   "status": "summarized",
   "first_seen": "2026-08-25T05:46:45Z",
-  "last_changed": "2026-08-25T05:46:45Z"
+  "last_changed": "2026-08-27T00:21:43Z"
 }

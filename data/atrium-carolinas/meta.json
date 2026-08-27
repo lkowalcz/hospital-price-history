@@ -3,8 +3,12 @@
   "location_name": "Atrium Health Carolinas Medical Center",
   "mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/11170/561398929-1295789907_carolinas-medical-center_standardcharges.csv",
   "source_filename": "561398929-1295789907_carolinas-medical-center_standardcharges.csv",
+  "sha256": "9d77955855b521c9e591d95093de161236d87c93e58ac984d0114677f1ffd658",
   "size_bytes": 2879551417,
+  "source_last_modified": "Sat, 28 Mar 2026 23:45:22 GMT",
+  "source_etag": "0x8DE8D2413FCA9A0",
+  "transfer_fingerprint": "fc8082464c32c2a416ec4948db572cdc9541ed7626a670dac4a2ba0d0c07bb90",
   "status": "summarized",
   "first_seen": "2026-08-12T06:12:42Z",
-  "last_changed": "2026-08-12T07:47:53Z"
+  "last_changed": "2026-08-27T00:19:12Z"
 }

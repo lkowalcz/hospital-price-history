@@ -3,8 +3,12 @@
   "location_name": "North Shore University Hospital",
   "mrf_url": "https://www.northwell.edu/sites/northwell.edu/files/machine-readable-files/North_Shore_University_Hospital_StandardCharges.zip",
   "source_filename": "North_Shore_University_Hospital_StandardCharges.json",
+  "sha256": "9dee78a475fc3c5b20f8109b74984249475174b348255c802b6bffddea1bc692",
   "size_bytes": 693249872,
+  "source_last_modified": "Mon, 30 Mar 2026 17:18:28 GMT",
+  "source_etag": null,
+  "transfer_fingerprint": "e7b11e12e4b6bfbb037673e5b85e6055e25055105baee695036bc4325515c4ea",
   "status": "summarized",
   "first_seen": "2026-08-12T05:45:49Z",
-  "last_changed": "2026-08-12T05:45:49Z"
+  "last_changed": "2026-08-27T00:17:12Z"
 }

@@ -3,8 +3,12 @@
   "location_name": "cleveland clinic florida weston hospital",
   "mrf_url": "https://clevelandclinic.pt.panaceainc.com/MRFDownload/clevelandclinic/weston",
   "source_filename": "650844880_cleveland-clinic-weston-hospital-nonprofit-corporation_standardcharges.csv",
+  "sha256": "21e7072a97db6551a68647a67faa7ca455861626efdd93a0e6e3f2100ebfa6e8",
   "size_bytes": 825933761,
+  "source_last_modified": null,
+  "source_etag": null,
+  "transfer_fingerprint": "2927c53ebbbd3a233ae78197598e4087891bf39ca04f392f82ce39e79b61c49d",
   "status": "summarized",
   "first_seen": "2026-08-25T05:46:28Z",
-  "last_changed": "2026-08-25T05:46:28Z"
+  "last_changed": "2026-08-27T00:21:28Z"
 }

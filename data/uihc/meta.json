@@ -3,8 +3,12 @@
   "location_name": "UNIVERSITY OF IOWA HEALTH CARE MEDICAL CENTER",
   "mrf_url": "https://www.healthcare.uiowa.edu/marcom/uihc/billing/426004813-1376544320_state-university-of-iowa_standardcharges.csv",
   "source_filename": "426004813-1376544320_state-university-of-iowa_standardcharges.csv",
+  "sha256": "7124f50a62cd7c4fa8a3c30440b9dbf75f0b1f5a3bed1f9c2d9b2a0012590aeb",
   "size_bytes": 1597353362,
+  "source_last_modified": "Mon, 29 Jun 2026 13:19:50 GMT",
+  "source_etag": "\"01fb7f6c97dd1:0\"",
+  "transfer_fingerprint": "abc48dd4083a0b2983635b4e006f6a9c10df44a6e13f213b5e755d5bcae93157",
   "status": "summarized",
   "first_seen": "2026-08-25T15:39:44Z",
-  "last_changed": "2026-08-25T15:39:44Z"
+  "last_changed": "2026-08-27T00:49:25Z"
 }

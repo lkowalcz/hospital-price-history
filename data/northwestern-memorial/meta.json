@@ -3,8 +3,12 @@
   "location_name": "Northwestern Memorial Hospital",
   "mrf_url": "https://www.nm.org/site_data/370960170_northwestern-memorial-hospital_standardcharges.json",
   "source_filename": "370960170_northwestern-memorial-hospital_standardcharges.json",
+  "sha256": "908ac958d68c74c252c25686c81efef67f558106efbc35877ee779550a993712",
   "size_bytes": 5019534101,
+  "source_last_modified": "Thu, 19 Mar 2026 18:54:53 GMT",
+  "source_etag": "\"3a1714dfd1b7dc1:0\"",
+  "transfer_fingerprint": "27d866ef7b7048c338cc47b25831facceba3d24c41542af09ff3d6ebc05ed134",
   "status": "summarized",
   "first_seen": "2026-08-12T05:42:30Z",
-  "last_changed": "2026-08-12T05:42:30Z"
+  "last_changed": "2026-08-27T00:16:56Z"
 }
