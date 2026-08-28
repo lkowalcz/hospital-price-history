@@ -23,8 +23,9 @@ Storage modes, chosen automatically by size:
                 price, min/max negotiated rate, payer count
   - metadata-only: unparseable; meta.json hash/size/timing still recorded
 
-Stdlib except `ijson` (streaming JSON parser), needed only for summarizing
-multi-GB JSON files; everything else degrades gracefully without it.
+Stdlib except `ijson` (streaming JSON parser), needed for summarizing
+multi-GB JSON files and for sharding large ones within a small host's
+memory; everything else degrades gracefully without it.
 """
 
 import csv
@@ -469,22 +470,94 @@ def store_sharded(outdir, name, payload):
         return "sharded"
     if lower.endswith(".json"):
         try:
-            obj = json.loads(payload.decode("utf-8-sig"))  # tolerate BOM
+            parsed = shard_json_streaming(payload)
+        except ImportError:
+            parsed = shard_json_in_memory(payload)
         except (ValueError, MemoryError):
             return "metadata-only"
-        if not isinstance(obj, dict):
+        if parsed is None:
             return "metadata-only"
-        items = obj.pop("standard_charge_information", None)
-        if not isinstance(items, list):
-            return "metadata-only"
-        header_text = json.dumps(obj, indent=1, sort_keys=True) + "\n"
-        lines = [json.dumps(item, sort_keys=True, separators=(",", ":")) for item in items]
-        buckets = shard_lines(lines)
+        header_text, buckets = parsed
         if oversized(buckets):
             return "metadata-only"
         write_shards(outdir, "_header.json", header_text, buckets, ".jsonl")
         return "sharded"
     return "metadata-only"
+
+
+JSON_ITEMS_KEY = "standard_charge_information"
+
+
+def json_item_line(item):
+    return json.dumps(item, sort_keys=True, separators=(",", ":"))
+
+
+def json_header_text(obj):
+    return json.dumps(obj, indent=1, sort_keys=True) + "\n"
+
+
+def shard_json_streaming(payload):
+    """(header_text, buckets) for a CMS v3 JSON, without ever holding the
+    parsed document: peak memory is the payload plus the item lines, not the
+    Python object graph (which runs 5-6x the file size and OOMs small hosts).
+
+    Two passes over the bytes: parse events for the top-level header (the
+    item array is skipped event by event), then `ijson.items` for the items
+    themselves, each serialized and dropped in turn. Produces byte-identical
+    shards to the in-memory path. Returns None when the document is not a
+    dict carrying a list under JSON_ITEMS_KEY. Raises ImportError without
+    ijson, ValueError (ijson.JSONError is mapped onto it) on malformed JSON.
+    """
+    import ijson
+    from ijson.common import ObjectBuilder
+    item_prefix = JSON_ITEMS_KEY + ".item"
+
+    def source():
+        f = io.BytesIO(payload)  # shares the buffer; no copy
+        if f.read(3) != b"\xef\xbb\xbf":  # tolerate BOM
+            f.seek(0)
+        return f
+
+    try:
+        header = ObjectBuilder()
+        first, saw_items = True, False
+        for prefix, event, value in ijson.parse(source(), use_float=True):
+            if first:
+                first = False
+                if event != "start_map":
+                    return None
+            if prefix == JSON_ITEMS_KEY:
+                if event == "start_array":
+                    saw_items = True
+                    continue
+                if event == "end_array":
+                    continue
+                return None  # present, but not a list
+            if prefix.startswith(item_prefix):
+                continue
+            if prefix == "" and event == "map_key" and value == JSON_ITEMS_KEY:
+                continue
+            header.event(event, value)
+        if not saw_items:
+            return None
+        header_text = json_header_text(header.value)
+        buckets = shard_lines(
+            json_item_line(item)
+            for item in ijson.items(source(), item_prefix, use_float=True))
+    except ijson.JSONError as exc:
+        raise ValueError(str(exc)) from exc
+    return header_text, buckets
+
+
+def shard_json_in_memory(payload):
+    """Fallback for hosts without ijson: same output, whole document parsed."""
+    obj = json.loads(payload.decode("utf-8-sig"))  # tolerate BOM
+    if not isinstance(obj, dict):
+        return None
+    items = obj.pop(JSON_ITEMS_KEY, None)
+    if not isinstance(items, list):
+        return None
+    return json_header_text(obj), shard_lines(json_item_line(i) for i in items)
 
 
 # --------------------------------------------------------------- summarizing

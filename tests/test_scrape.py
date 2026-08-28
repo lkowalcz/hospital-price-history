@@ -186,6 +186,36 @@ class TestSharding(unittest.TestCase):
             self.assertEqual(scrape.store_sharded(Path(tmp) / "u", "f.xml", b"<x/>"),
                              "metadata-only")
 
+    @unittest.skipUnless(HAVE_IJSON, "ijson not installed")
+    def test_json_streaming_matches_in_memory(self):
+        # The streaming sharder must produce the same header bytes and the
+        # same bucket contents as parsing the whole document; a divergence
+        # would surface as a bogus price change in every JSON hospital.
+        payload = (FIXTURES / "v3.json").read_bytes()
+        self.assertEqual(scrape.shard_json_streaming(payload),
+                         scrape.shard_json_in_memory(payload))
+        # BOM tolerated on both paths; header keys after the item array
+        # (and floats, ints, nested maps, unicode) survive the event walk.
+        doc = ('{"a": [1, 2.5, {"b": null}], "standard_charge_information": '
+               '[{"x": 1.0, "y": "\u00e9", "z": [true, {"k": 12345678901234}]}, '
+               '{"x": 2}], "after": {"n": -0.5, "s": "t"}}')
+        for prefix in (b"", b"\xef\xbb\xbf"):
+            self.assertEqual(scrape.shard_json_streaming(prefix + doc.encode()),
+                             scrape.shard_json_in_memory(doc.encode()))
+
+    @unittest.skipUnless(HAVE_IJSON, "ijson not installed")
+    def test_json_streaming_rejects_non_item_documents(self):
+        for raw in (b"[1]", b'{"version": "3"}',
+                    b'{"standard_charge_information": {"not": "a list"}}',
+                    b'{"standard_charge_information": 1}'):
+            self.assertIsNone(scrape.shard_json_streaming(raw), raw)
+        with self.assertRaises(ValueError):
+            scrape.shard_json_streaming(b'{"standard_charge_information": [1,')
+        with tempfile.TemporaryDirectory() as tmp:
+            self.assertEqual(scrape.store_sharded(Path(tmp) / "v", "f.json",
+                                                  b'{"standard_charge_information": [1,'),
+                             "metadata-only")
+
 
 class TestSummarizeGolden(unittest.TestCase):
     def check(self, fixture, golden, fn):
