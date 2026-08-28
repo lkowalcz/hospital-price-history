@@ -99,6 +99,21 @@ sibling raw clone — pull both repos first (the daily workflow also commits
 to them), then commit and push both, raw first. `RAW_REPO_DIR`
 overrides the raw clone location. `ONLY=slug1,slug2` limits the run.
 
+Neither clone needs history or old shards on disk — the scraper reads only
+`meta.json` and rewrites a hospital's raw directory from scratch — so on a
+small host (a Raspberry Pi running `local_refetch.py`) clone both with
+`--filter=blob:none` and make the raw clone sparse, as the workflow does:
+
+```sh
+git clone --filter=blob:none --no-checkout git@github.com:lkowalcz/hospital-price-history-raw ../hospital-price-history-raw
+cd ../hospital-price-history-raw
+git sparse-checkout init --no-cone && git sparse-checkout set '/*' '!/data/' && git checkout main
+```
+
+That is ~2 GB on disk instead of ~17. `local_refetch.py` stages each
+rewritten slug as an exact replacement of its index entries, so the sparse
+and full layouts commit identically.
+
 ## Tests
 
 ```sh

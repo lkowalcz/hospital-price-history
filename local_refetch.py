@@ -15,6 +15,12 @@ Two failure classes are covered (see README "Notes"):
 Commits and pushes both repos (raw first, pinning raw_commit), mirroring
 the CI workflow. Run from a machine with the raw repo as a sibling clone;
 designed for launchd/cron (see README "Running locally").
+
+The raw clone may be sparse (`data/` excluded) and blob-less, as in CI: the
+scraper only ever writes a slug's directory from scratch, so each rewritten
+slug is staged as an exact replacement of its index entries rather than via
+`git add -A`, which would not see files outside the sparse cone. The same
+commands are a no-op difference on a full checkout.
 """
 
 import json
@@ -50,6 +56,22 @@ def git(repo, *args, capture=False):
     r = subprocess.run(["git", "-C", str(repo), *map(str, args)], check=True,
                        capture_output=capture, text=True)
     return r.stdout.strip() if capture else None
+
+
+def stage_raw_slug(repo, slug):
+    """Stage data/<slug> in the raw repo as an exact replacement: drop its
+    index entries (old shards may be sparse — not on disk), then add whatever
+    the scraper wrote. Net effect includes deletion when a hospital leaves
+    sharded mode. Mirrors the "Commit raw repo" step in scrape.yml."""
+    git(repo, "rm", "-r", "-q", "--cached", "--sparse", "--ignore-unmatch",
+        f"data/{slug}")
+    if (Path(repo) / "data" / slug).is_dir():
+        git(repo, "add", "--sparse", f"data/{slug}")
+
+
+def staged_changes(repo):
+    return subprocess.run(["git", "-C", str(repo), "diff", "--cached", "--quiet"]
+                          ).returncode != 0
 
 
 def meta_of(slug):
@@ -106,9 +128,11 @@ def main():
 
     # 3) Commit raw first, pin raw_commit, then commit main.
     msg = "Local refetch: " + (", ".join(changed) or "no content changes")
-    if git(RAW_REPO, "status", "--porcelain", capture=True):
-        git(RAW_REPO, "add", "-A")
+    for slug in changed:
+        stage_raw_slug(RAW_REPO, slug)
+    if staged_changes(RAW_REPO):
         git(RAW_REPO, "commit", "-m", msg)
+        git(RAW_REPO, "pull", "--rebase", "--quiet")
         git(RAW_REPO, "push")
     raw_sha = git(RAW_REPO, "rev-parse", "HEAD", capture=True)
     for slug in changed:
