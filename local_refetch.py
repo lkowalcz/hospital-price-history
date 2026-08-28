@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Weekly local refetch for hospitals CI cannot reach: local_refetch.py.
+"""Scheduled local refetch for hospitals CI cannot reach: local_refetch.py.
 
 Two failure classes are covered (see README "Notes"):
   - Runner-IP blocks (Hopkins x4, Orlando Regional): their CDNs serve a
