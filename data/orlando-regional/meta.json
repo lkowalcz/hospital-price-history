@@ -11,10 +11,5 @@
   "status": "sharded",
   "first_seen": "2026-08-14T05:20:01Z",
   "last_changed": "2026-08-14T05:20:01Z",
-  "raw_commit": "e03c3ea8a1ceb8b9ba428f95890ede03de536cc2",
-  "fetch_failures": {
-    "first_failed": "2026-08-29T12:51:21Z",
-    "last_error": "HTTP Error 429: Too Many Requests",
-    "last_attempt": "2026-08-29T12:51:21Z"
-  }
+  "raw_commit": "e03c3ea8a1ceb8b9ba428f95890ede03de536cc2"
 }
