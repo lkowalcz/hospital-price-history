@@ -43,6 +43,8 @@ IP_BLOCKED = ["johns-hopkins", "hopkins-bayview", "hopkins-all-childrens",
               "sibley-memorial", "orlando-regional"]
 SAS_DONOR = "hca-houston-medical-center"
 STALE_SAS = ["hca-florida-kendall", "tristar-centennial"]
+# Everything this script owns; CI's scrape.yml SKIPs exactly this set.
+LOCAL_ONLY = IP_BLOCKED + STALE_SAS + ["yale-new-haven"]
 YALE_URL = ("https://www.ynhh.org/-/media/Files/YNHHS/sc/"
             "06-0646652-Yale_New_Haven_Hospital_Standard_Charges011025-1.ashx")
 
@@ -97,6 +99,9 @@ def refetch_workaround(slug, scratch):
     fp = scrape.remote_fingerprint(url)
     if fp and fp == meta_of(slug).get("transfer_fingerprint"):
         print(f"{slug}: unchanged (fingerprint match)", flush=True)
+        # A stale streak from CI trying the dead published link would keep
+        # the site badge on "unreachable"; the source is reachable from here.
+        scrape.clear_failure_record(slug)
         return False
     name = Path(urllib.parse.urlsplit(url).path).name or f"{slug}.bin"
     if slug == "yale-new-haven":
@@ -105,6 +110,7 @@ def refetch_workaround(slug, scratch):
     run("curl", "-sS", "-L", "--retry", "3", "-C", "-", "--max-time", "7200",
         "-A", scrape.USER_AGENT, "-o", dest, url)
     run(sys.executable, ROOT / "ingest_local.py", slug, dest)
+    scrape.clear_failure_record(slug)
     return True
 
 

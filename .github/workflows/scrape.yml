@@ -62,6 +62,10 @@ jobs:
           MAX_DOWNLOAD_BYTES: "10000000000"
           RAW_REPO_DIR: ${{ github.workspace }}/raw-repo
           ONLY: ${{ inputs.only }}
+          # Fetched daily by local_refetch.py from a residential IP instead
+          # (runner IPs are blocked or the published links are dead). Keep in
+          # sync with the lists there; tests/test_scrape.py checks this.
+          SKIP: johns-hopkins,hopkins-bayview,hopkins-all-childrens,sibley-memorial,orlando-regional,hca-florida-kendall,tristar-centennial,yale-new-haven
 
       - name: Compute price index
         run: python compute_index.py

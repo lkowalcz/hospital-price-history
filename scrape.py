@@ -955,12 +955,26 @@ def clear_failure_record(slug):
     return True
 
 
+def select_hospitals(hospitals, only, skip):
+    """ONLY=a,b restricts the run; otherwise SKIP=c,d excludes slugs.
+
+    SKIP is for hospitals another host owns (see local_refetch.py): CI
+    leaves them alone so it neither records a failure streak the other
+    host will clear hours later nor flags them "unreachable" meanwhile.
+    """
+    if only:
+        return [h for h in hospitals if h["slug"] in only.split(",")]
+    if skip:
+        drop = set(skip.split(","))
+        return [h for h in hospitals if h["slug"] not in drop]
+    return hospitals
+
+
 def main():
     scratch = Path(tempfile.mkdtemp(prefix="mrf-scrape-"))
     hospitals = json.loads((ROOT / "hospitals.json").read_text())
-    only = os.environ.get("ONLY")
-    if only:
-        hospitals = [h for h in hospitals if h["slug"] in only.split(",")]
+    hospitals = select_hospitals(hospitals, os.environ.get("ONLY"),
+                                 os.environ.get("SKIP"))
     changes, failures, recovered, escalated = [], [], [], []
     try:
         for hospital in hospitals:

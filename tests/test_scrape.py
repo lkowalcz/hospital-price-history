@@ -337,5 +337,25 @@ class TestFilenameFrom(unittest.TestCase):
                 "index.php.json")
 
 
+class TestSkipEnv(unittest.TestCase):
+    """The daily workflow SKIPs the hospitals local_refetch.py owns; the two
+    lists are maintained by hand, so pin them to each other here."""
+
+    def test_workflow_skip_matches_local_refetch(self):
+        import re
+        import local_refetch
+        yml = (Path(__file__).parent.parent / ".github" / "workflows" / "scrape.yml").read_text()
+        m = re.search(r"^\s*SKIP: (.+)$", yml, re.M)
+        self.assertIsNotNone(m, "scrape.yml no longer sets SKIP")
+        self.assertEqual(sorted(m.group(1).split(",")), sorted(local_refetch.LOCAL_ONLY))
+
+    def test_skip_filters_unless_only(self):
+        hospitals = [{"slug": "a"}, {"slug": "b"}, {"slug": "c"}]
+        slugs = lambda only, skip: [h["slug"] for h in scrape.select_hospitals(hospitals, only, skip)]
+        self.assertEqual(slugs(None, "b,c"), ["a"])
+        self.assertEqual(slugs("b", "b,c"), ["b"])  # ONLY wins over SKIP
+        self.assertEqual(slugs(None, None), ["a", "b", "c"])
+
+
 if __name__ == "__main__":
     unittest.main()

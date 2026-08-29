@@ -97,7 +97,10 @@ python3 scrape.py
 Writes into `data/`, `commit_message.txt`, and (for sharded hospitals) the
 sibling raw clone — pull both repos first (the daily workflow also commits
 to them), then commit and push both, raw first. `RAW_REPO_DIR`
-overrides the raw clone location. `ONLY=slug1,slug2` limits the run.
+overrides the raw clone location. `ONLY=slug1,slug2` limits the run;
+`SKIP=slug1,slug2` excludes slugs (ignored when `ONLY` is set). The daily
+workflow SKIPs the hospitals `local_refetch.py` owns, so CI never records a
+failure streak that the local run would clear a few hours later.
 
 Neither clone needs history or old shards on disk — the scraper reads only
 `meta.json` and rewrites a hospital's raw directory from scratch — so on a
@@ -139,9 +142,10 @@ should be reviewed as one.
 - UPMC, Houston Methodist, and Memorial Hermann serve a `cms-hpt.txt`
   containing prose instructions to click through their website instead of
   the machine-readable `mrf-url` blocks the CMS format specifies.
-- Yale New Haven's `cms-hpt.txt` points to a dead URL (404), and Geisinger's
-  MRF link resolves to a Radware CAPTCHA page — both tracked as ongoing
-  `fetch_failures` streaks in their `meta.json`. UAB's CDN blocks GitHub's
+- Yale New Haven's `cms-hpt.txt` points to a dead URL (404); the live
+  re-uploaded file is fetched by `local_refetch.py` instead. Geisinger's
+  MRF link resolves to a Radware CAPTCHA page, tracked as an ongoing
+  `fetch_failures` streak in its `meta.json`. UAB's CDN blocks GitHub's
   runner IPs (its snapshot was fetched locally). Rush publishes its
   `mrf-url` without an `https://` scheme; the scraper compensates.
 - Sutter Health serves its `cms-hpt.txt` as UTF-16; UCSF's JSON leads with
