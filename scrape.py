@@ -973,8 +973,8 @@ def select_hospitals(hospitals, only, skip):
 def main():
     scratch = Path(tempfile.mkdtemp(prefix="mrf-scrape-"))
     hospitals = json.loads((ROOT / "hospitals.json").read_text())
-    hospitals = select_hospitals(hospitals, os.environ.get("ONLY"),
-                                 os.environ.get("SKIP"))
+    only = os.environ.get("ONLY")
+    hospitals = select_hospitals(hospitals, only, os.environ.get("SKIP"))
     changes, failures, recovered, escalated = [], [], [], []
     try:
         for hospital in hospitals:

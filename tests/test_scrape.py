@@ -357,5 +357,21 @@ class TestSkipEnv(unittest.TestCase):
         self.assertEqual(slugs(None, None), ["a", "b", "c"])
 
 
+class TestMainSmoke(unittest.TestCase):
+    """Run main() end to end with every hospital SKIPped: exercises the
+    bookkeeping tail (commit_message.txt, changed_slugs.txt, the
+    majority-failure guard) without any network."""
+
+    def test_main_runs_with_everything_skipped(self):
+        slugs = [h["slug"] for h in json.loads((Path(__file__).parent.parent / "hospitals.json").read_text())]
+        with tempfile.TemporaryDirectory() as d, \
+             unittest.mock.patch.object(scrape, "ROOT", Path(d)), \
+             unittest.mock.patch.dict("os.environ", {"SKIP": ",".join(slugs), "ONLY": ""}):
+            (Path(d) / "hospitals.json").write_text(json.dumps([{"slug": s} for s in slugs]))
+            scrape.main()
+            self.assertEqual((Path(d) / "commit_message.txt").read_text(), "No changes\n")
+            self.assertEqual((Path(d) / "changed_slugs.txt").read_text(), "")
+
+
 if __name__ == "__main__":
     unittest.main()
