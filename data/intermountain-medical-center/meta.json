@@ -3,13 +3,13 @@
   "location_name": "Intermountain Health Intermountain Medical Center",
   "mrf_url": "https://intermountainhealthcare.org/-/media/files/intermountain-health/locations/hospital-prices/942854057_intermountain-medical-center_standardcharges.ashx",
   "source_filename": "942854057_intermountain-medical-center_standardcharges.csv",
-  "sha256": "f1ab97ea8623b50f9746404d62e0739f2e361e09e6a051999b60c20ebe9ba40b",
-  "size_bytes": 362750610,
-  "source_last_modified": "Thu, 26 Mar 2026 17:31:13 GMT",
+  "sha256": "61d054ac6f78ddc4ea1ba2feebb6d0f9e3b4cad6e56ecea0b43f636a3b32c158",
+  "size_bytes": 389540273,
+  "source_last_modified": "Mon, 31 Aug 2026 17:12:00 GMT",
   "source_etag": null,
-  "transfer_fingerprint": "dfc460fba17f116b8e71b74fe2ebd0f8c0fdd2d701998d6ccd5faf9ed051aebe",
+  "transfer_fingerprint": "dedf42525982bf9de6c8d0cdc55937a5a71f88985326fc0a5dfb6e4efd7c0216",
   "status": "sharded",
   "first_seen": "2026-08-14T03:45:54Z",
-  "last_changed": "2026-08-14T03:45:54Z",
-  "raw_commit": "e03c3ea8a1ceb8b9ba428f95890ede03de536cc2"
+  "last_changed": "2026-09-01T11:50:08Z",
+  "raw_commit": "7bea02986011006dc21f0883954070544df3dfd3"
 }
