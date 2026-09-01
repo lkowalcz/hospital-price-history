@@ -23,6 +23,7 @@ slug is staged as an exact replacement of its index entries rather than via
 commands are a no-op difference on a full checkout.
 """
 
+import datetime
 import json
 import os
 import subprocess
@@ -114,7 +115,13 @@ def refetch_workaround(slug, scratch):
     return True
 
 
+def stamp():
+    return datetime.datetime.now().astimezone().strftime("%Y-%m-%d %H:%M:%S %Z")
+
+
 def main():
+    # The cron log is append-only with no timestamps of its own.
+    print(f"=== {stamp()} local_refetch start", flush=True)
     for repo in (ROOT, RAW_REPO):
         git(repo, "pull", "--rebase", "--autostash", "--quiet")
 
@@ -155,7 +162,7 @@ def main():
         git(ROOT, "add", "data/")
         git(ROOT, "commit", "-m", msg)
         git(ROOT, "push")
-    print("done:", msg, flush=True)
+    print(f"=== {stamp()} done:", msg, flush=True)
 
 
 if __name__ == "__main__":
