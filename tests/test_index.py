@@ -176,6 +176,18 @@ class TestMethodChange(unittest.TestCase):
         kept, dropped = ci.drop_method_changes(self.PREV, self.CUR, {}, {"h1": 2})
         self.assertEqual(dropped, ["h1"])
 
+    def test_flagged_summary_reads_meta(self):
+        with tempfile.TemporaryDirectory() as tmp, \
+                unittest.mock.patch.object(ci, "ROOT", Path(tmp)):
+            d = Path(tmp) / "data" / "h1"
+            d.mkdir(parents=True)
+            self.assertFalse(ci.summary_flagged("h1"))
+            (d / "meta.json").write_text(json.dumps({"summary_version": 2}))
+            self.assertFalse(ci.summary_flagged("h1"))
+            (d / "meta.json").write_text(json.dumps(
+                {"summary_warning": {"at": "2026-09-02T00:00:00Z", "detail": "rows 9 -> 2"}}))
+            self.assertTrue(ci.summary_flagged("h1"))
+
     def test_summary_version_reads_meta(self):
         with tempfile.TemporaryDirectory() as tmp, \
                 unittest.mock.patch.object(ci, "ROOT", Path(tmp)):

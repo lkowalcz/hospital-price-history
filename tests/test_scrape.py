@@ -420,6 +420,7 @@ class ProcessHarness(unittest.TestCase):
             unittest.mock.patch.object(scrape, "ARCHIVED", []),
             unittest.mock.patch.object(scrape, "ARCHIVE_FAILED", []),
             unittest.mock.patch.object(scrape, "BACKFILLED", []),
+            unittest.mock.patch.object(scrape, "SUMMARY_WARNINGS", []),
             unittest.mock.patch.object(scrape, "discover_mrf_url", lambda h, imp: self.URL),
             unittest.mock.patch.object(scrape, "remote_fingerprint",
                                        lambda url, impersonate=False, max_time=None: None),
@@ -717,6 +718,54 @@ class TestSummaryUpgrade(ProcessHarness):
             self.assertIsNone(self.run_process())
         self.assertEqual(self.downloads, 1)
         self.assertEqual(self.meta()["summary_version"], scrape.SUMMARY_VERSION - 1)
+
+
+class TestSummaryCheck(ProcessHarness):
+    """A new summary far smaller than the one it replaces is recorded but
+    flagged; the flag persists while the file is unchanged and clears on
+    the next snapshot that passes."""
+
+    def test_stats_and_regression_rule(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            p = Path(tmp) / "s.csv"
+            self.assertIsNone(scrape.summary_stats(p))
+            scrape.summarize_csv(FIXTURES / "wide.csv", p)
+            self.assertEqual(scrape.summary_stats(p), (9, 8))  # the aspirin row is un-coded
+        reg = scrape.summary_regression
+        self.assertIsNone(reg(None, (5, 5)))                      # first snapshot
+        self.assertIsNone(reg((1000, 900), (600, 500)))           # 60%: a real change
+        self.assertEqual(reg((1000, 900), (400, 300)), "rows 1,000 -> 400")
+        self.assertEqual(reg((1000, 900), (950, 100)), "coded rows 900 -> 100")
+        self.assertIsNone(reg((50, 50), (1, 1)))                  # too small to judge
+        self.assertEqual(reg((1000, 900), None), "summary lost (was 1,000 rows)")
+
+    def test_shrunken_file_flagged_then_cleared(self):
+        full = self.body
+        self.run_process()
+        lines = full.decode().split("\n")
+        body = [r for r in scrape.csv_records(lines[3:]) if r]
+        self.body = ("\n".join(lines[:3] + body[:1]) + "\n").encode()  # one record survives
+        with unittest.mock.patch.object(scrape, "SUMMARY_CHECK_MIN_ROWS", 1):
+            msg = self.run_process({"ETag": '"v2"'})
+        self.assertIn("updated", msg)  # recorded as published, not refused
+        m = self.meta()
+        self.assertEqual(m["summary_warning"]["detail"], "rows 9 -> 2")
+        self.assertEqual(scrape.SUMMARY_WARNINGS, ["h1 (rows 9 -> 2)"])
+        # Same file again: the cheap skip leaves the flag standing.
+        self.assertIsNone(self.run_process({"ETag": '"v2"'}))
+        self.assertIn("summary_warning", self.meta())
+        # A full file again clears it without anyone touching meta.json.
+        self.body = full
+        with unittest.mock.patch.object(scrape, "SUMMARY_CHECK_MIN_ROWS", 1):
+            self.run_process({"ETag": '"v3"'})
+        self.assertNotIn("summary_warning", self.meta())
+        self.assertEqual(scrape.SUMMARY_WARNINGS, ["h1 (rows 9 -> 2)"])  # nothing new
+
+    def test_first_snapshot_never_flagged(self):
+        with unittest.mock.patch.object(scrape, "SUMMARY_CHECK_MIN_ROWS", 1):
+            self.run_process()
+        self.assertNotIn("summary_warning", self.meta())
+        self.assertEqual(scrape.SUMMARY_WARNINGS, [])
 
 
 class TestHeartbeat(unittest.TestCase):

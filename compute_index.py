@@ -19,6 +19,9 @@ Method:
     version (scrape.SUMMARY_VERSION, stamped in meta.json) than the one
     behind the previous run's prices is left out of that day's chain: its
     relatives would measure the methodology change, not prices.
+  - A hospital whose latest summary scrape.py flagged as a suspected
+    truncation or restructuring (summary_warning in meta.json) is left out
+    entirely until a snapshot passes the check.
   - Appends one row per day to index-history.csv (skips if today already
     recorded). Cash and gross series are computed independently.
 
@@ -100,6 +103,15 @@ def summary_version(slug):
     return json.loads(p.read_text()).get("summary_version", 1)
 
 
+def summary_flagged(slug):
+    """True while scrape.py's sanity check has flagged the hospital's latest
+    summary as a suspected truncation or restructuring (summary_warning in
+    meta.json). Its prices are left out of the chain until a snapshot
+    passes; a chained index cannot recover from compounding a bad file."""
+    p = ROOT / "data" / slug / "meta.json"
+    return p.exists() and bool(json.loads(p.read_text()).get("summary_warning"))
+
+
 def drop_method_changes(prev_prices, cur_prices, prev_versions, cur_versions):
     """Exclude hospitals whose summary was produced by a different summarizer
     version than the one behind the previous run's prices. Their relatives
@@ -153,12 +165,18 @@ def main():
     items = {f'{i["type"]}|{i["code"]}': (i["type"], canon_code(i["code"]))
              for i in basket["items"]}
     hospitals = json.loads((ROOT / "hospitals.json").read_text())
-    cur_prices, cur_versions = {}, {}
+    cur_prices, cur_versions, flagged = {}, {}, []
     for h in hospitals:
+        if summary_flagged(h["slug"]):
+            flagged.append(h["slug"])
+            continue
         prices = basket_prices(h["slug"], items)
         if prices:
             cur_prices[h["slug"]] = prices
             cur_versions[h["slug"]] = summary_version(h["slug"])
+    if flagged:
+        print(f"index: {len(flagged)} hospitals with a flagged summary left out: "
+              f"{', '.join(flagged)}")
 
     today = date.today().isoformat()
     if HISTORY.exists() and any(line.startswith(today) for line in

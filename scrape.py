@@ -880,6 +880,56 @@ def try_cold_store(slug, path, sha, meta, name=None):
         return False
 
 
+# ------------------------------------------------------------ sanity check
+
+# A new summary with far fewer rows (or far fewer coded rows) than the one
+# it replaces is more likely a truncated download or a restructured file
+# than a hospital dropping most of its services overnight. The snapshot is
+# still recorded — the archive's job is to show what was published — but
+# the drop is flagged in meta.json (summary_warning), in the commit
+# message, and on the site, and compute_index.py leaves the hospital out
+# of that day's chain. The flag clears itself on the next snapshot that
+# passes.
+SUMMARY_SHRINK_RATIO = 0.5    # flag when new < ratio * old
+SUMMARY_CHECK_MIN_ROWS = 100  # smaller previous summaries are too noisy to judge
+
+
+def summary_stats(path):
+    """(rows, coded rows) of a summary.csv, or None if there is none."""
+    if not path.exists():
+        return None
+    rows = coded = 0
+    with open(path, newline="") as f:
+        for row in csv.DictReader(f):
+            rows += 1
+            if row["code"]:
+                coded += 1
+    return rows, coded
+
+
+def summary_regression(old, new):
+    """Describe a collapse from old to new stats, or None if it looks sane."""
+    if old is None:
+        return None
+    if new is None:
+        return f"summary lost (was {old[0]:,} rows)"
+    for label, o, n in (("rows", old[0], new[0]), ("coded rows", old[1], new[1])):
+        if o >= SUMMARY_CHECK_MIN_ROWS and n < SUMMARY_SHRINK_RATIO * o:
+            return f"{label} {o:,} -> {n:,}"
+    return None
+
+
+def check_summary(slug, old_stats, outdir, meta):
+    """Compare the freshly written summary against old_stats; on a
+    regression, record it in meta (in place) and for the commit message."""
+    regression = summary_regression(old_stats, summary_stats(outdir / "summary.csv"))
+    if regression:
+        meta["summary_warning"] = {"at": utcnow(), "detail": regression}
+        SUMMARY_WARNINGS.append(f"{slug} ({regression})")
+        print(f"{slug}: WARNING summary {regression}", file=sys.stderr, flush=True)
+    return regression
+
+
 # ------------------------------------------------------------------ pipeline
 
 # Slugs whose content was rewritten this run. The workflow reads
@@ -890,6 +940,8 @@ REWRITTEN = []
 REFRESHED = []
 # Cold-storage bookkeeping for the commit message.
 ARCHIVED, ARCHIVE_FAILED = [], []
+# "slug (rows 120,000 -> 3,000)" entries from check_summary().
+SUMMARY_WARNINGS = []
 # Summarized hospitals re-downloaded this run only to archive their bytes.
 BACKFILLED = []
 # Snapshots are assembled under data/<STAGING>/<slug> (and the raw-repo
@@ -1089,6 +1141,7 @@ def process(hospital, scratch, impersonate=None):
             meta_path.write_text(json.dumps(old_meta, indent=2) + "\n")
             return None
 
+        old_stats = summary_stats(outdir / "summary.csv")
         mode = store_snapshot(slug, name, payload, payload_path)
 
         meta = {
@@ -1116,6 +1169,7 @@ def process(hospital, scratch, impersonate=None):
                 meta[key] = old_meta[key]  # same bytes (e.g. the URL moved)
         if mode == "summarized" and "cold_storage" not in meta and archiving_enabled():
             try_cold_store(slug, payload_path, sha, meta, name)
+        check_summary(slug, old_stats, outdir, meta)
         meta_path.write_text(json.dumps(meta, indent=2) + "\n")
         verb = ("updated" if old_meta.get("sha256") else "first snapshot") \
             if changed else "backfilled summary"
@@ -1249,6 +1303,8 @@ def main():
         parts.append("recovered: " + ", ".join(recovered))
     if escalated:
         parts.append("escalated to impersonate: " + ", ".join(escalated))
+    if SUMMARY_WARNINGS:
+        parts.append("summary shrank: " + ", ".join(SUMMARY_WARNINGS))
     if ARCHIVED:
         parts.append("archived originals: " + ", ".join(ARCHIVED))
     if ARCHIVE_FAILED:

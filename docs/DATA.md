@@ -63,6 +63,7 @@ compounded in as a price move. See `compute_index.py`.
 | `cold_storage` | For `summarized`: archive.org item URL, snapshot and file sha256, compressed size, date. |
 | `fetch_failures` | Present while the source is unreachable: first failure, last error, last attempt. |
 | `summary_version` | See above. |
+| `summary_warning` | Present while the latest summary has less than half the rows, or half the coded rows, of the one it replaced: `at` and a `detail` such as `rows 120,000 -> 3,000`. The snapshot is recorded as published, but the price index skips the hospital until a later file passes. Clears on the next snapshot that passes. |
 
 ## Citing
 

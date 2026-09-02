@@ -145,6 +145,15 @@ def hospital_page(h, meta, outdir):
         parts.append(f"<tr><th>{label}</th><td>{val}</td></tr>")
     parts.append("</table>")
 
+    sw = meta.get("summary_warning")
+    if sw:
+        parts.append(f'<div class="warn">⚠ The file published '
+                     f'{esc((meta.get("last_changed") or sw["at"])[:10])} has far fewer '
+                     f'priced codes than the previous one ({esc(sw["detail"])}). It may be '
+                     f'truncated or restructured; the previous snapshot remains in the '
+                     f'change history below, and this hospital is left out of the price '
+                     f'index until a later file passes the check.</div>')
+
     ff = meta.get("fetch_failures")
     if ff:
         parts.append(f'<div class="warn">⚠ This hospital&rsquo;s price file has been '

@@ -17,9 +17,10 @@ import sys
 from pathlib import Path
 
 from scrape import (DATA, ROOT, MAX_SHARD_TOTAL, SUMMARY_VERSION,
-                    archiving_enabled, discover_mrf_url, head,
+                    archiving_enabled, check_summary, discover_mrf_url, head,
                     local_fingerprint, normalize_payload, sha256_file,
-                    store_snapshot, try_cold_store, utcnow, wants_impersonate)
+                    store_snapshot, summary_stats, try_cold_store, utcnow,
+                    wants_impersonate)
 
 
 def main():
@@ -47,6 +48,7 @@ def main():
         print(f"{slug}: content identical to the stored snapshot; nothing to do")
         return
 
+    old_stats = summary_stats(outdir / "summary.csv")
     mode = store_snapshot(slug, name, payload, path)
 
     meta = {
@@ -70,6 +72,7 @@ def main():
         meta["fetch_escalated"] = old_meta["fetch_escalated"]
     if mode == "summarized" and archiving_enabled():
         try_cold_store(slug, path, sha, meta, name)
+    check_summary(slug, old_stats, outdir, meta)
     meta_path.write_text(json.dumps(meta, indent=2) + "\n")
     print(f"{slug}: ingested ({size:,} bytes, {mode})")
 

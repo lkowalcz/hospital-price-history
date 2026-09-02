@@ -49,6 +49,12 @@ regardless of how the full file is stored. Column semantics and the
 - Payloads are unzipped and normalized (line endings, sorted JSON keys), and
   written only when the content hash changed; the workflow commits only when
   there is a diff. `git log data/<slug>/` is a clean changelog per hospital.
+- A new file whose summary has less than half the rows (or coded rows) of
+  the one it replaces is recorded as published but flagged — in
+  `meta.json`, the commit message ("summary shrank: ..."), and on the
+  hospital's page — and the price index skips the hospital until a later
+  file passes. Truncated downloads and restructured layouts are more common
+  than hospitals halving their service list overnight.
 
 ### Storage modes (automatic, by size)
 

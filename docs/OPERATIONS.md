@@ -131,6 +131,24 @@ original files are preserved as items on archive.org named
 - **Checking**: `grep -L cold_storage data/*/meta.json` lists hospitals
   not yet archived, and each `cold_storage.url` opens the item.
 
+## When a commit says "summary shrank"
+
+The scraper flags a new summary that has less than half the rows, or half
+the coded rows, of the one it replaced. Nothing is blocked: the snapshot
+is committed as published, the hospital's page shows a warning, and the
+price index leaves the hospital out until a later file passes.
+
+- Open the hospital's `summary.csv` diff in that commit. A file that stops
+  mid-row, or whose rows now all lack codes, is a truncated download or a
+  restructured layout; a file that simply lists fewer services is a real
+  change.
+- Truncated or restructured: nothing to repair. The previous snapshot is
+  in git, and the hospital republishing a good file clears the flag on its
+  own. If the layout changed for good and the summarizer no longer reads
+  it, that is a summarizer fix, then `SUMMARY_VERSION` bump.
+- A real reduction that should count: delete `summary_warning` from the
+  hospital's `meta.json` and commit; the index picks it up the next day.
+
 ## Recovering from a bad run
 
 - **A hospital directory is empty or missing `summary.csv`**: snapshots are
