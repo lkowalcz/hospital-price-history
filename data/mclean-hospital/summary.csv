@@ -192,33 +192,33 @@ CPT,90869,Repet Ocd Tms Tx Subseq Motr Threshld W/Deliv & Mn,610.0,457.5,337.33,
 CPT,90869,Repet Ocd Tms Tx Subseq Motr Threshld W/Deliv & Mngt,914.0,685.5,369.77,505.44,4
 CPT,90869,Repet Tms Tx Subseq Motr Threshld W/Deliv & Mngt,914.0,685.5,369.77,505.44,4
 CPT,90869,Transcranial Mag Stim Ther Tx Redet,610.0,457.5,337.33,369.77,4
-CPT,90870,Electroconvulsive Therapy,852.0,639.0,92.38,630.06,15
+CPT,90870,Electroconvulsive Therapy,512.0,384.0,92.38,630.06,15
 CPT,93005,Ekg Routine Tracing Only,155.0,116.25,70.53,100.44,4
 CPT,95816,Eeg Awake/Drowsy,500.0,375.0,369.77,369.77,1
 CPT,95819,Eeg Awake/Asleep,580.0,435.0,369.77,369.77,2
 CPT,96116,Exam Neurobehavrl by Psych per Hr,448.0,336.0,240.62,268.8,3
 CPT,96116,Pf Exam Neurobehavrl by Psych / Hr,134.0,100.5,71.97,74.1,2
-CPT,96121,Neurobehavioral Status Xm Phys/Qhp Ea Addl Hour,401.0,300.75,66.06,240.6,6
-CPT,96130,Psychological Tst Eval Svc Phys/Qhp First Hour,559.0,419.25,95.12,309.13,2
-CPT,96131,Psychological Tst Eval Svc Phys/Qhp Ea Addl Hour,425.0,318.75,72.44,235.03,2
-CPT,96132,Neuropsychological Tst Eval Phys/Qhp 1st Hour,546.0,409.5,90.77,327.6,6
-CPT,96133,Neuropsychological Tst Eval Phys/Qhp Ea Addl Hr,419.0,314.25,69.29,251.4,6
-CPT,96136,Psyl/Nrpsycl Tst Phys/Qhp 2+ Tst 1st 30 Min,127.0,95.25,20.95,76.2,6
-CPT,96137,Psycl/Nrpsycl Tst Phys/Qhp 2+ Tst Ea Addl 30 Min,98.0,73.5,16.65,58.8,6
-CPT,96138,Psycl/Nrpsycl Tst Tech 2+ Tst 1st 30 Min,217.0,162.75,32.23,130.2,6
-CPT,96139,Psycl/Nrpsycl Tst Tech 2+ Tst Ea Addl 30 Min,217.0,162.75,32.23,130.2,6
+CPT,96121,Neurobehavioral Status Xm Phys/Qhp Ea Addl Hour,262.0,196.5,66.06,240.6,6
+CPT,96130,Psychological Tst Eval Svc Phys/Qhp First Hour,365.5,274.125,95.12,309.13,2
+CPT,96131,Psychological Tst Eval Svc Phys/Qhp Ea Addl Hour,278.0,208.5,72.44,235.03,2
+CPT,96132,Neuropsychological Tst Eval Phys/Qhp 1st Hour,357.5,268.125,90.77,327.6,6
+CPT,96133,Neuropsychological Tst Eval Phys/Qhp Ea Addl Hr,274.0,205.5,69.29,251.4,6
+CPT,96136,Psyl/Nrpsycl Tst Phys/Qhp 2+ Tst 1st 30 Min,83.0,62.25,20.95,76.2,6
+CPT,96137,Psycl/Nrpsycl Tst Phys/Qhp 2+ Tst Ea Addl 30 Min,64.5,48.375,16.65,58.8,6
+CPT,96138,Psycl/Nrpsycl Tst Tech 2+ Tst 1st 30 Min,138.5,103.875,32.23,130.2,6
+CPT,96139,Psycl/Nrpsycl Tst Tech 2+ Tst Ea Addl 30 Min,138.5,103.875,32.23,130.2,6
 CPT,96365,IV Infus Non-Chemo Initial Up to 1 Hr - 96365,800.0,600.0,250.18,608.0,8
-CPT,98000,Psych Synchronous Audio-Video Visit New Sf Mdm 15 Min,234.0,175.5,107.28,129.4,2
+CPT,98000,Psych Synchronous Audio-Video Visit New Sf Mdm 15 Min,214.0,160.5,107.28,129.4,2
 CPT,98000,Synchronous Audio-Video Visit New Sf Mdm 15 Min,234.0,175.5,129.4,129.4,1
-CPT,98002,Psych Synchronous Audio-Video Visit New Mod Mdm 45 Min,599.0,449.25,299.73,331.25,2
+CPT,98002,Psych Synchronous Audio-Video Visit New Mod Mdm 45 Min,570.5,427.875,299.73,331.25,2
 CPT,98002,Synchronous Audio-Video Visit New Mod Mdm 45 Min,599.0,449.25,331.25,331.25,1
-CPT,98005,Psych Synchronous Audio-Video Visit Est Low Mdm 20 Min,236.0,177.0,130.51,149.31,2
+CPT,98005,Psych Synchronous Audio-Video Visit Est Low Mdm 20 Min,253.0,189.75,130.51,149.31,2
 CPT,98005,Synchronous Audio-Video Visit Est Low Mdm 20 Min,236.0,177.0,130.51,130.51,1
-CPT,98006,Psych Synchronous Audio-Video Visit Est Mod Mdm 30 Min,367.0,275.25,202.95,221.75,2
+CPT,98006,Psych Synchronous Audio-Video Visit Est Mod Mdm 30 Min,384.0,288.0,202.95,221.75,2
 CPT,98006,Synchronous Audio-Video Visit Est Mod Mdm 30 Min,367.0,275.25,202.95,202.95,1
-CPT,98007,Psych Synchronous Audio-Video Vst Est High Mdm 40 Min,516.0,387.0,285.35,299.73,2
+CPT,98007,Psych Synchronous Audio-Video Vst Est High Mdm 40 Min,529.0,396.75,285.35,299.73,2
 CPT,98007,Synchronous Audio-Video Vst Est High Mdm 40 Min,516.0,387.0,285.35,285.35,1
-CPT,98013,Psych Synchronous Audio-Only Visit Est Low Mdm 20 Min,236.0,177.0,130.51,137.14,2
+CPT,98013,Psych Synchronous Audio-Only Visit Est Low Mdm 20 Min,242.0,181.5,130.51,137.14,2
 CPT,98013,Synchronous Audio-Only Visit Est Low Mdm 20 Min,236.0,177.0,130.51,130.51,1
 CPT,98014,Psych Synchronous Audio-Only Visit Est Mod Mdm 30 Min,367.0,275.25,220.2,220.2,2
 CPT,98014,Synchronous Audio-Only Visit Est Mod Mdm 30 Min,367.0,275.25,220.2,220.2,1
@@ -226,7 +226,7 @@ CPT,99211,Psych Est/ New Patient (99211) - Low Level (<15 Min),117.0,87.75,64.7,
 CPT,99213,"Office Visit, Established Pat",281.0,210.75,155.39,182.09,2
 CPT,99213,Psych Est Patient (99213) - Medium Level (16-45 Min),229.0,171.75,126.64,153.03,6
 CPT,99214,"Office Visit, Established Pat",415.0,311.25,222.9,229.5,2
-CPT,99215,"Office Visit, Established Pat",516.0,387.0,153.03,320.74,15
+CPT,99215,"Office Visit, Established Pat",548.0,411.0,153.03,320.74,15
 CPT,99231,Sbsq Hospital IP/Obs Care Sf/Low Mdm 25 Minutes,62.0,46.5,33.3,33.3,1
 CPT,99417,Psych - Prolonged Outpatient E/M Service Each 15 Minutes,128.0,96.0,70.78,70.78,1
 HCPCS,G0177,Opps/Php/Iop; Train & Educ Serv,179.0,134.25,96.14,107.4,2

@@ -21364,7 +21364,7 @@ CPT,12017,Rpr fe/e/en/l/m 20.1-30.0 cm,,,151.5,4275.0,64
 CPT,12018,Rpr f/e/e/n/l/m >30.0 cm,,,27.46,4275.0,64
 CPT,12018,Simple Repair F/E/E/N/L/M >30.0 Cm,2041.25,2041.25,302.1,1633.0,23
 CPT,12020,Tx supfc wnd dehsn smpl clsr,,,120.77,4275.0,64
-CPT,12020,Wound Dehiscence Simple Closur,4836.0,4836.0,357.86,3868.8,46
+CPT,12020,Wound Dehiscence Simple Closur,3627.0,3627.0,357.86,3868.8,46
 CPT,12021,Packing of Wound Dehisience,2168.9,2168.9,321.0,1735.12,23
 CPT,12021,Tx supfc wnd dehsn w/packing,,,83.78,4275.0,64
 CPT,12031,Int Rep Sclp Trnk Extrm <2.5cm,2041.25,2041.25,302.1,1633.0,23
@@ -24103,7 +24103,7 @@ CPT,33221,Insrt Pcmkr Gen Only Exist Multi,26240.0,26240.0,3883.52,20992.0,23
 CPT,33222,Relocation Skin Pkt for Pacemaker,7456.0,7456.0,1103.49,5964.8,23
 CPT,33222,Relocation pocket pacemaker,,,281.2,5612.5,63
 CPT,33223,Relocate pocket for defib,,,333.93,5612.5,63
-CPT,33223,Relocation Skin Pkt Cardiovert-Defib,7456.0,7456.0,912.86,5964.8,46
+CPT,33223,Relocation Skin Pkt Cardiovert-Defib,6812.0,6812.0,912.86,5964.8,46
 CPT,33224,Insert Lead to Prev Pcmkr / Icd,31511.0,31511.0,4663.63,25208.8,23
 CPT,33224,Insert pacing lead & connect,,,423.23,19263.28,61
 CPT,33225,L Ventr Pacing Lead Add +Pock,50601.0,50601.0,7488.95,40480.8,23
@@ -24139,7 +24139,7 @@ CPT,33244,Transvenous Removal Icd Lead,11934.7,11934.7,1766.34,9547.76,23
 CPT,33245,Insert epic eltrd pace-defib,,,1002.57,1002.57,6
 CPT,33246,Insert epic eltrd/generator,,,1350.05,1350.05,6
 CPT,33249,Insj/rplcmt defib w/lead(s),,,742.43,59014.98,61
-CPT,33249,Insrt/Repl Sgl/Dual Icd Ld/Gen,40394.0,40394.0,5978.31,57171.2,46
+CPT,33249,Insrt/Repl Sgl/Dual Icd Ld/Gen,55929.0,55929.0,5978.31,57171.2,46
 CPT,33250,Ablate heart dysrhythm focus,,,192.38,24872.68,96
 CPT,33251,Ablate heart dysrhythm focus,,,236.54,24872.68,96
 CPT,33254,Ablate atria lmtd,,,172.75,24872.68,96
@@ -26697,7 +26697,7 @@ CPT,54220,Treatment of Penis Lesion,2041.25,2041.25,302.1,1633.0,23
 CPT,54230,Njx corpora cavernosograpy,,,63.04,2438.0,45
 CPT,54231,Dynamic cavernosometry,,,103.62,4275.0,61
 CPT,54235,Njx corpora cavernosa rx agt,,,49.42,4275.0,63
-CPT,54235,Penile Injection,2041.25,2041.25,302.1,3113.28,46
+CPT,54235,Penile Injection,2966.425,2966.425,302.1,3113.28,46
 CPT,54240,Penile plethysmography,,,18.14,4275.0,99
 CPT,54250,Nctrnl pen tmscn&/rgdity tst,,,11.16,4275.0,99
 CPT,54300,Revision of penis,,,95.0,6860.0,99
@@ -27455,7 +27455,7 @@ CPT,62270,Dx lmbr spi pnxr,,,57.62,4275.0,64
 CPT,62272,Ther spi pnxr drg csf,,,73.97,4275.0,64
 CPT,62272,Therapeutic Lumbar Puncture W/O Imaging,2849.7,2849.7,421.76,2279.76,23
 CPT,62273,Inject epidural patch,,,106.09,4275.0,64
-CPT,62273,Injection Epidural Blood Patch,4400.0,4400.0,372.81,3520.0,46
+CPT,62273,Injection Epidural Blood Patch,3459.5,3459.5,372.81,3520.0,46
 CPT,62280,Treat spinal cord lesion,,,110.09,4275.0,64
 CPT,62281,Treat spinal cord lesion,,,111.63,4275.0,64
 CPT,62282,Treat spinal canal lesion,,,110.8,4275.0,64
@@ -30035,7 +30035,7 @@ CPT,80299,Infliximab Ibd (So),329.0,329.0,48.69,263.2,23
 CPT,80299,Infliximab Rd (So),329.0,329.0,48.69,263.2,23
 CPT,80299,Olanzapine/Zyprexa,247.0,247.0,36.56,197.6,23
 CPT,80299,Oxycarbazepine So,329.0,329.0,48.69,263.2,23
-CPT,80299,Quantitative Assay Drug,247.0,247.0,33.3,197.6,138
+CPT,80299,Quantitative Assay Drug,236.0,236.0,33.3,197.6,138
 CPT,80299,Quantitative assay drug,,,15.14,34.48,58
 CPT,80299,Rivaroxaban Quantitative Assay,329.0,329.0,48.69,263.2,23
 CPT,80305,Drug Test Presumptive Dir Opt Obs T-Cup,148.0,148.0,21.9,118.4,23
@@ -30986,7 +30986,7 @@ CPT,83500,Assay free hydroxyproline,,,22.65,41.9,58
 CPT,83505,Assay total hydroxyproline,,,24.3,44.96,58
 CPT,83516,Euromyelitis Optica(So),301.0,301.0,44.55,240.8,23
 CPT,83516,Gliadin Ab Igg,301.0,301.0,44.55,240.8,23
-CPT,83516,Immunoassay Nonantibody,248.0,248.0,36.7,230.4,69
+CPT,83516,Immunoassay Nonantibody,272.0,272.0,36.7,230.4,69
 CPT,83516,Immunoassay Nonantibody (So),195.0,195.0,28.86,156.0,23
 CPT,83516,Immunoassay nonantibody,,,11.53,21.33,58
 CPT,83516,MYOSITIS ASSESS AUTOAB (Q10185)Non AB,301.0,301.0,44.55,240.8,23
@@ -31011,7 +31011,7 @@ CPT,83520,Anti Gq1b Ab Titer,817.65,817.65,121.01,654.12,23
 CPT,83520,Ganglioside Gd1b Ab (So),358.0,358.0,52.98,286.4,23
 CPT,83520,Ganglioside Gq1b Antibody (Igg)(So),817.65,817.65,121.01,654.12,23
 CPT,83520,Hmgcr Antibody (Igg) - Qd (So),646.0,646.0,95.61,516.8,23
-CPT,83520,Immunoassay Quant Nos Nonab,317.0,317.0,46.92,286.4,69
+CPT,83520,Immunoassay Quant Nos Nonab,337.5,337.5,46.92,286.4,69
 CPT,83520,Immunoassay Quant Nos Nonab (So),195.0,195.0,28.86,156.0,23
 CPT,83520,Immunoassay quant nos nonab,,,16.28,31.95,58
 CPT,83520,Infliximab Ab Ibd (So),817.65,817.65,121.01,654.12,23
@@ -31096,7 +31096,7 @@ CPT,83789,"Ethambutol, Serum (Nms)",315.0,315.0,46.62,252.0,23
 CPT,83789,Levamisole,366.0,366.0,54.17,292.8,23
 CPT,83789,Mass spectrometry qual/quan,,,7.55,44.6,58
 CPT,83789,"Pyrazinamide, Serum (Nms)",460.0,460.0,68.08,368.0,23
-CPT,83789,"Quantitative, Each Specimen",362.0,362.0,31.52,289.6,46
+CPT,83789,"Quantitative, Each Specimen",287.5,287.5,31.52,289.6,46
 CPT,83825,Assay of mercury,,,16.26,30.08,58
 CPT,83825,"Mercury, 24-Hour Urine (So)",55.0,55.0,8.14,44.0,23
 CPT,83825,"Mercury, Blood (So)",73.0,73.0,10.8,58.4,23
@@ -31233,7 +31233,7 @@ CPT,84166,Protein e-phoresis/urine/csf,,,17.17,32.99,58
 CPT,84166,"Protein,Total and Electrophoresis,Qnt,CSF(So)",252.0,252.0,37.3,201.6,23
 CPT,84181,Western blot test,,,17.03,31.51,58
 CPT,84182,Myositis Specific 11 Ab Protein Western Blot (So),236.9,236.9,35.06,189.52,23
-CPT,84182,Protein Western Blot Test (So),2867.0,2867.0,174.27,2293.6,46
+CPT,84182,Protein Western Blot Test (So),2022.2649999999999,2022.2649999999999,174.27,2293.6,46
 CPT,84182,Protein western blot test,,,17.17,54.04,58
 CPT,84202,Assay rbc protoporphyrin,,,14.35,26.55,58
 CPT,84203,Test rbc protoporphyrin,,,9.74,18.02,58
@@ -31384,7 +31384,7 @@ CPT,84630,"Zinc, Serum",207.0,207.0,30.64,165.6,23
 CPT,84681,Assay of c-peptide,,,19.98,38.5,58
 CPT,84681,"C-Peptide, Random",370.0,370.0,54.76,296.0,23
 CPT,84702,"*Hcg, Serum, Quant",474.0,474.0,70.15,379.2,23
-CPT,84702,Chorionic Gonadotropin Test,338.1,338.1,35.96,270.48,46
+CPT,84702,Chorionic Gonadotropin Test,290.55,290.55,35.96,270.48,46
 CPT,84702,Chorionic gonadotropin test,,,8.07,27.84,58
 CPT,84702,D-Hcg Free & Intact,474.0,474.0,70.15,379.2,23
 CPT,84703,Chorionic gonadotropin assay,,,7.52,13.91,58
@@ -31515,7 +31515,7 @@ CPT,85475,Hemolysin acid,,,6.55,16.41,58
 CPT,85475,"Hemolysis, Sucrose",59.0,59.0,8.73,47.2,23
 CPT,85520,Anti-Xa Ds,435.0,435.0,64.38,348.0,23
 CPT,85520,Doac-Stop Anti-Xa,1173.0,1173.0,173.6,938.4,23
-CPT,85520,Heparin Assay,554.3,554.3,29.45,443.44,46
+CPT,85520,Heparin Assay,376.65,376.65,29.45,443.44,46
 CPT,85520,Heparin assay,,,13.09,24.22,58
 CPT,85525,Heparin neutralization,,,11.84,21.9,58
 CPT,85530,Heparin-protamine tolerance,,,13.09,24.22,58
@@ -31562,7 +31562,7 @@ CPT,85660,Donor Hgb S (Arc),231.15,231.15,34.21,184.92,23
 CPT,85660,Donor Hgb S-Arc,166.0,166.0,24.57,132.8,23
 CPT,85660,Donor Hgb S-Gmh,166.0,166.0,24.57,132.8,23
 CPT,85660,Rbc sickle cell test,,,5.51,10.19,58
-CPT,85660,Sickledex,231.15,231.15,24.57,184.92,46
+CPT,85660,Sickledex,198.575,198.575,24.57,184.92,46
 CPT,85670,Thrombin Time,145.0,145.0,21.46,116.0,23
 CPT,85670,Thrombin time plasma,,,5.77,10.67,58
 CPT,85675,Thrombin time titer,,,6.85,12.67,58
@@ -31603,7 +31603,7 @@ CPT,86003,Allegen - Mosquito Q,96.0,96.0,14.21,76.8,23
 CPT,86003,Allergen Specific (Enviro) Ige (So),46.0,46.0,6.81,36.8,23
 CPT,86003,Allergen Specific (Food) Ige (So),46.0,46.0,6.81,36.8,23
 CPT,86003,Allergen Specific (Mold Group),99.0,99.0,14.65,79.2,23
-CPT,86003,Allergen Specific Ige,99.0,99.0,4.74,79.2,276
+CPT,86003,Allergen Specific Ige,96.0,96.0,4.74,79.2,276
 CPT,86003,Allergen Specific Ige (So),40.0,40.0,5.92,32.0,23
 CPT,86003,Allergen Specific Ige Red Snapper-Qd (So),32.22,32.22,4.77,25.78,23
 CPT,86003,Allergen Specific Ige Tilapia (So),99.0,99.0,14.65,79.2,23
@@ -31713,12 +31713,12 @@ CPT,86021,Perinuclear Ab Scrn,326.0,326.0,48.25,260.8,23
 CPT,86021,Proteinase -3 Antibody (So),563.5,563.5,83.4,450.8,23
 CPT,86021,Proteinase-3 Antibody,206.0,206.0,30.49,164.8,23
 CPT,86021,Wbc Ab ID (Neutrophil) (So),236.0,236.0,34.93,188.8,23
-CPT,86021,Wbc Antibody Identification,29.0,29.0,4.29,73.6,69
+CPT,86021,Wbc Antibody Identification,31.0,31.0,4.29,73.6,69
 CPT,86021,Wbc antibody identification,,,15.05,27.84,58
 CPT,86022,Nait Platelet Ab (So),361.0,361.0,53.43,288.8,23
 CPT,86022,Platelet Ab Screen (Arc),493.0,493.0,72.96,394.4,23
 CPT,86022,Platelet Agg-Heprin,593.0,593.0,87.76,474.4,23
-CPT,86022,Platelet Antibodies,106.0,106.0,15.69,277.6,92
+CPT,86022,Platelet Antibodies,148.0,148.0,15.69,277.6,92
 CPT,86022,Platelet Antibody Screen Indirect (So),362.0,362.0,53.58,289.6,23
 CPT,86022,"Platelet Igg Ab,Indirect",301.0,301.0,44.55,240.8,23
 CPT,86022,Platelet antibodies,,,18.37,33.98,58
@@ -31736,7 +31736,7 @@ CPT,86037,Anca titer each antibody,,,9.64,22.29,58
 CPT,86038,Ana Ifa W/Reflex (So),323.15,323.15,47.83,258.52,23
 CPT,86038,Ana Ifa With Reflex (So),201.0,201.0,29.75,160.8,23
 CPT,86038,Ana Screen,291.0,291.0,43.07,232.8,23
-CPT,86038,Antinuclear Antibodies,72.0,72.0,3.55,57.6,46
+CPT,86038,Antinuclear Antibodies,48.0,48.0,3.55,57.6,46
 CPT,86038,Antinuclear antibodies,,,12.09,22.37,58
 CPT,86039,"Ana Screen Ifa, W/Titer and Pattern",142.0,142.0,21.02,113.6,23
 CPT,86039,Antinuclear antibodies (ana),,,11.16,20.65,58
@@ -31744,7 +31744,7 @@ CPT,86041,Acetylcholn rcptr bndng antb,,,14.72,34.04,58
 CPT,86042,Acetylcholn rcptr blckg antb,,,14.72,34.04,58
 CPT,86043,Acetylcholn rcptr modlg antb,,,9.64,22.29,58
 CPT,86051,Aquaporin-4 antb elisa,,,9.22,21.33,58
-CPT,86052,Aquaporin-4 Antb Cba (So),563.5,563.5,55.14,2026.4,115
+CPT,86052,Aquaporin-4 Antb Cba (So),545.75,545.75,55.14,2026.4,115
 CPT,86052,Aquaporin-4 antb cba each,,,9.64,22.29,58
 CPT,86053,Aqaprn-4 antb flo cytmtry ea,,,9.64,69.8,58
 CPT,86060,Antistreptolysin o titer,,,7.3,13.51,58
@@ -31761,12 +31761,12 @@ CPT,86141,C-reactive protein hs,,,12.95,23.96,58
 CPT,86141,"Crp-Hs,Micro",268.0,268.0,39.66,214.4,23
 CPT,86146,Beta-2 Glycoprotein Antibodies,339.25,339.25,50.21,271.4,23
 CPT,86146,Beta-2 glycoprotein antibody,,,25.45,47.08,58
-CPT,86146,Glycoprotein Antibody,107.0,107.0,13.76,85.6,46
+CPT,86146,Glycoprotein Antibody,100.0,100.0,13.76,85.6,46
 CPT,86147,Anti-Cardiolipin Igg,398.0,398.0,58.9,318.4,23
 CPT,86147,Anti-Cardiolipin Igm,398.0,398.0,58.9,318.4,23
 CPT,86147,Antiphospholipid Igg,398.0,398.0,58.9,318.4,23
 CPT,86147,Antiphospholipid Igm,398.0,398.0,58.9,318.4,23
-CPT,86147,Cardiolipin Antibody,53.0,53.0,7.84,203.32,46
+CPT,86147,Cardiolipin Antibody,153.575,153.575,7.84,203.32,46
 CPT,86147,Cardiolipin antibody ea ig,,,25.45,47.08,58
 CPT,86147,Cariolipin Antibody,53.0,53.0,7.84,42.4,23
 CPT,86148,Anti-phospholipid antibody,,,16.07,29.73,58
@@ -31812,7 +31812,7 @@ CPT,86235,Interstitial Lung Disease Panel (So),1946.0,1946.0,288.01,1556.8,23
 CPT,86235,"Jo-1 Ab Screen, Eia",395.6,395.6,58.55,316.48,23
 CPT,86235,Myositis Assess Autoab (Q10185)Nuc Ag Ab,320.0,320.0,47.36,256.0,23
 CPT,86235,Myositis Specific 11 Ab Nuclear Ag (So),219.65,219.65,32.51,175.72,23
-CPT,86235,Nuclear Antigen Antibody,71.0,71.0,10.51,115.2,69
+CPT,86235,Nuclear Antigen Antibody,76.0,76.0,10.51,115.2,69
 CPT,86235,Nuclear antigen antibody,,,17.93,33.17,58
 CPT,86235,Rnp Ab Screen,373.75,373.75,55.32,299.0,23
 CPT,86235,"Scl-70 Ab Screen, Eia",395.6,395.6,58.55,316.48,23
@@ -31827,7 +31827,7 @@ CPT,86255,Enceph Ab Screen CSF (So),360.0,360.0,53.28,288.0,23
 CPT,86255,"Fluor Noninfec Agnt Ab Scr,Ea",51.0,51.0,7.55,40.8,23
 CPT,86255,"Fluor Noninfect Agent Ab Scr, Ea Ab",85.0,85.0,12.58,68.0,23
 CPT,86255,Fluorescent Ab Screen (So),2043.0,2043.0,220.96,2681.6,115
-CPT,86255,Fluorescent Antibody Screen,171.0,171.0,4.0,309.6,253
+CPT,86255,Fluorescent Antibody Screen,72.0,72.0,4.0,309.6,253
 CPT,86255,Fluorescent antibody screen,,,12.05,27.47,58
 CPT,86255,Murine Typhus Igg,89.0,89.0,13.17,71.2,23
 CPT,86255,"Nmda -Receptor Antibody, Serum (Mml)",387.0,387.0,57.28,309.6,23
@@ -31847,7 +31847,7 @@ CPT,86256,Anna-2 (Mayo),56.0,56.0,8.29,44.8,23
 CPT,86256,Anna-3 (Mayo),56.0,56.0,8.29,44.8,23
 CPT,86256,Basement Mem Ab Scrn,239.2,239.2,35.4,191.36,23
 CPT,86256,Crmp-5-Igg,56.0,56.0,8.29,44.8,23
-CPT,86256,Fluorescent Antibody Titer,35.0,35.0,5.18,157.6,92
+CPT,86256,Fluorescent Antibody Titer,46.5,46.5,5.18,157.6,92
 CPT,86256,Fluorescent antibody titer,,,12.05,27.47,58
 CPT,86256,Mitochondrial Ab Titer,70.0,70.0,10.36,56.0,23
 CPT,86256,Paraneo Autoab Titer Ria(So),120.0,120.0,17.76,96.0,23
@@ -31878,7 +31878,7 @@ CPT,86309,Heterophile antibody titer,,,6.47,11.97,58
 CPT,86310,Heterophile antibody absrbj,,,7.37,13.63,58
 CPT,86316,"Chromgranin a,Ecl",329.0,329.0,48.69,263.2,23
 CPT,86316,"Chromogranin a, Rebaseline (So)",149.0,149.0,22.05,119.2,23
-CPT,86316,Immunoassay Tumor Other,326.0,326.0,26.34,260.8,92
+CPT,86316,Immunoassay Tumor Other,279.5,279.5,26.34,260.8,92
 CPT,86316,Immunoassay tumor other,,,20.81,38.5,58
 CPT,86316,"Immunoassay, Tumor Antigen, Quant",315.0,315.0,46.62,252.0,23
 CPT,86317,Diphtheria Ab,248.0,248.0,36.7,198.4,23
@@ -31926,13 +31926,13 @@ CPT,86341,Gad65 Neurological Syndrome Antibody Test (So),913.0,913.0,135.12,730.
 CPT,86341,Ia-2 Ab (So),193.0,193.0,28.56,154.4,23
 CPT,86341,Ia-2 Antibody (So),360.0,360.0,53.28,288.0,23
 CPT,86341,Ia-2 Islet Cell Ab (So),193.0,193.0,28.56,154.4,23
-CPT,86341,Islet Cell Ab (So),362.0,362.0,53.58,289.61,115
+CPT,86341,Islet Cell Ab (So),362.005,362.005,53.58,289.61,115
 CPT,86341,Islet Cell Antibody,234.0,234.0,34.63,187.2,23
 CPT,86341,Islet cell antibody,,,23.57,43.6,58
 CPT,86341,Pancreatic Islet Ab,280.6,280.6,41.53,224.48,23
 CPT,86341,Zinc Transporter 8 (Znt8) Antibody (So),168.0,168.0,24.86,134.4,23
 CPT,86343,Histamine Release -Cu (So),295.0,295.0,43.66,236.0,23
-CPT,86343,Leukocyte Histamine Release,235.0,235.0,7.1,188.0,115
+CPT,86343,Leukocyte Histamine Release,128.0,128.0,7.1,188.0,115
 CPT,86343,Leukocyte histamine release,,,12.46,23.05,58
 CPT,86344,Leukocyte phagocytosis,,,10.04,19.22,58
 CPT,86344,Phagocytic Charge,431.0,431.0,63.79,344.8,23
@@ -32002,7 +32002,7 @@ CPT,86592,"Vdrl,CSF",153.0,153.0,22.64,122.4,23
 CPT,86593,Rpr (Quant),173.0,173.0,25.6,138.4,23
 CPT,86593,Syphilis test non-trep quant,,,4.4,8.14,55
 CPT,86593,"Vdrl-CSF,Quant",173.0,173.0,25.6,138.4,23
-CPT,86596,Voltage-Gtd Ca Chnl Ab (So),452.0,452.0,47.8,361.6,69
+CPT,86596,Voltage-Gtd Ca Chnl Ab (So),449.0,449.0,47.8,361.6,69
 CPT,86596,Voltage-gtd ca chnl antb ea,,,12.05,33.9,58
 CPT,866,Anesth removal of adrenal,,,11639.38,24872.68,16
 CPT,86602,Antinomyces antibody,,,10.18,18.83,58
@@ -32096,7 +32096,7 @@ CPT,86666,Ehrlichia Igm,280.0,280.0,41.44,224.0,23
 CPT,86666,Ehrlichia antibody,,,10.18,18.83,58
 CPT,86668,Francisella tularensis,,,13.08,26.2,58
 CPT,86668,Tularemia Antibody,213.15,213.15,31.55,170.52,23
-CPT,86671,Fungus Antibody,71.0,71.0,10.51,119.2,46
+CPT,86671,Fungus Antibody,110.0,110.0,10.51,119.2,46
 CPT,86671,Fungus nes antibody,,,12.25,22.66,58
 CPT,86674,Giardia lamblia antibody,,,14.72,27.23,58
 CPT,86677,H.Pylori Iga,207.0,207.0,30.64,165.6,23
@@ -32105,7 +32105,7 @@ CPT,86677,Helicobacter pylori antibody,,,16.85,31.17,58
 CPT,86682,Cysticercus Igg,289.0,289.0,42.77,231.2,23
 CPT,86682,Echinococcus Igg,289.0,289.0,42.77,231.2,23
 CPT,86682,Filaria Ab,289.0,289.0,42.77,231.2,23
-CPT,86682,Helminth Antibody,226.0,226.0,15.39,180.8,46
+CPT,86682,Helminth Antibody,165.0,165.0,15.39,180.8,46
 CPT,86682,Helminth antibody,,,13.01,24.07,58
 CPT,86682,Schistosoma Igg,289.0,289.0,42.77,231.2,23
 CPT,86682,Strongyloides Igg,191.0,191.0,28.27,152.8,23
@@ -32223,7 +32223,7 @@ CPT,86790,Chikungunya Igg Titer(So),210.0,210.0,31.08,168.0,23
 CPT,86790,"Hepatitis E Virus (Hev) Ab (Igg, Igm) (So)",336.0,336.0,49.73,268.8,23
 CPT,86790,Hepatitis a Igg,328.0,328.0,48.54,262.4,23
 CPT,86790,Htlv I/II Ab,299.0,299.0,44.25,239.2,23
-CPT,86790,Virus Antibody Nos,267.0,267.0,39.52,239.2,46
+CPT,86790,Virus Antibody Nos,283.0,283.0,39.52,239.2,46
 CPT,86790,Virus antibody nos,,,12.88,23.83,58
 CPT,86793,Yersinia antibody,,,13.19,24.4,58
 CPT,86794,Zika virus igm antibody,,,16.64,31.17,58
@@ -32440,7 +32440,7 @@ CPT,87209,Smear complex stain,,,17.98,33.26,58
 CPT,87210,India Ink Prep,216.0,216.0,31.97,172.8,23
 CPT,87210,"O & P Direct, Smear",198.95,198.95,29.44,159.16,23
 CPT,87210,Smear wet mount saline/ink,,,5.36,10.77,58
-CPT,87210,Vaginal Wet Prep,216.0,216.0,25.46,172.8,46
+CPT,87210,Vaginal Wet Prep,194.0,194.0,25.46,172.8,46
 CPT,87220,Koh Level,198.0,198.0,29.3,158.4,23
 CPT,87220,Skin Prep: 10% Koh,198.0,198.0,29.3,158.4,23
 CPT,87220,Tissue exam for fungi,,,4.27,7.9,58
@@ -32659,7 +32659,7 @@ CPT,87797,Detect agent nos dna dir,,,24.8,55.56,58
 CPT,87798,Bordetella Parapertussis,301.3,301.3,44.59,241.04,23
 CPT,87798,Bordetella Pertussis,301.3,301.3,44.59,241.04,23
 CPT,87798,Bordetella Pertussis/Parapertussis Qual/Pcr(So),676.2,676.2,100.08,540.96,23
-CPT,87798,Detect Agent Nos Dna Amp,676.2,676.2,85.69,540.96,69
+CPT,87798,Detect Agent Nos Dna Amp,627.6,627.6,85.69,540.96,69
 CPT,87798,Detect agent nos dna amp,,,24.67,64.92,58
 CPT,87798,Detection Human Parechovirus (Hpev) Amplified Probe Tq,131.0,131.0,19.39,104.8,23
 CPT,87798,Detection Varicella Zoster (Vzv) Amplified Probe Tq,301.3,301.3,44.59,241.04,23
@@ -32675,7 +32675,7 @@ CPT,87798,"T.Pallidum Pcr Ql,CSF Q",676.2,676.2,100.08,540.96,23
 CPT,87798,Thyroid Perox Ab; Tpo,964.0,964.0,142.67,771.2,23
 CPT,87798,"Toxoplasma Gondii Dna,Qual,Pcr So",676.2,676.2,100.08,540.96,23
 CPT,87798,"Vzv Dna-Pcr,CSF",632.0,632.0,93.54,505.6,23
-CPT,87799,Detect Agent Nos Dna Quant,951.0,951.0,140.75,796.8,46
+CPT,87799,Detect Agent Nos Dna Quant,973.5,973.5,140.75,796.8,46
 CPT,87799,Detect agent nos dna quant,,,42.84,79.25,55
 CPT,87799,Eb Virus Dna Quant Pcr (So),1007.0,1007.0,149.04,805.6,23
 CPT,87799,Jc Polyoma Quant Pcr (So),884.0,884.0,130.83,707.2,23
@@ -32831,11 +32831,11 @@ CPT,88271,"Fish,Dup 22q11.2, 100-300 Cells",413.0,413.0,61.12,330.4,23
 CPT,88271,"Fish,Dup 22q11.2, Probe",413.0,413.0,61.12,330.4,23
 CPT,88271,"Fish,Mll,11g23,Gene Rearrang,100-300 Cells",413.0,413.0,61.12,330.4,23
 CPT,88271,Molecular Cytogen Dna Probe (So),413.0,413.0,61.12,330.4,23
-CPT,88271,Molecular Cytogen; Dna Probe (So),565.8,565.8,61.12,452.64,46
+CPT,88271,Molecular Cytogen; Dna Probe (So),489.4,489.4,61.12,452.64,46
 CPT,88271,Molecular Cytogenetics: Dna Probe (Fish) (So) Fol,585.0,585.0,86.58,468.0,23
 CPT,88271,Molecular Cytogenetics: Dna Probe (Fish) (So) Mn,413.0,413.0,61.12,330.4,23
 CPT,88271,Molecular Cytogenetics: Dna Probe (Fish) (So) Ros1,585.0,585.0,86.58,468.0,23
-CPT,88271,Molecular Cytogenetics; Dna Probe( Fish) (So),559.0,559.0,71.19,468.0,92
+CPT,88271,Molecular Cytogenetics; Dna Probe( Fish) (So),531.5,531.5,71.19,468.0,92
 CPT,88271,Molecular Cytogenetics; Dna Probe( Fish) (So)Cml,492.0,492.0,72.82,393.6,23
 CPT,88272,Cytogenetics 3-5,,,33.67,75.3,58
 CPT,88273,Cytogenetics 10-30,,,34.81,64.4,58
@@ -32852,7 +32852,7 @@ CPT,88275,"Fish,Aml, Aml1/Eto,Translocation8,21,Probe",520.0,520.0,76.96,416.0,2
 CPT,88275,"Fish,Mll,11g23,Gene Rearrang,Probe",397.0,397.0,58.76,317.6,23
 CPT,88275,Interphase Insitu Hybird (So),369.0,369.0,54.61,295.2,23
 CPT,88275,Interphase in Situ Hybird (So),520.0,520.0,76.96,416.0,23
-CPT,88275,Interphase in Situ Hybridization (100-300) Cells (So),322.0,322.0,47.66,416.0,69
+CPT,88275,Interphase in Situ Hybridization (100-300) Cells (So),421.0,421.0,47.66,416.0,69
 CPT,88275,Interphase in Situ Hybridization (100-300) Cells (So)Cml,520.0,520.0,76.96,416.0,23
 CPT,88275,Interphase in Situ Hybridization (So),754.4,754.4,111.65,603.52,23
 CPT,88275,Interphase in Situ Hybridization(100-300) Cells (So) Fol,322.0,322.0,47.66,257.6,23
@@ -33397,7 +33397,7 @@ CPT,90732,Pneumonia Vaccine Pneumovax,30.0,30.0,4.44,24.0,23
 CPT,90732,Ppsv23 vacc 2 yrs+ subq/im,,,10.0,220.23,43
 CPT,90733,Mpsv4 vaccine subq,,,0.01,0.01,3
 CPT,90734,Menacwyd/menacwycrm vacc im,,,10.0,170.72,7
-CPT,90734,Menveo Vaccine,413.0,413.0,60.68,330.4,46
+CPT,90734,Menveo Vaccine,411.5,411.5,60.68,330.4,46
 CPT,90736,Hzv vaccine live subq,,,0.01,0.01,3
 CPT,90738,Inactivated je vacc im,,,287.6,312.05,3
 CPT,90739,Hepb vacc 2/4 dose adult im,,,10.0,292.97,43
@@ -34635,7 +34635,7 @@ CPT,97139,Unlisted therapeutic px,,,32.49,32.49,1
 CPT,97140,Joint Mobilization Ea 15 Min,500.0,500.0,74.0,400.0,46
 CPT,97140,Manual Therapy Tqs 1/> Regions Each 15 Minutes,500.01,500.01,74.0,400.01,23
 CPT,97140,Manual therapy 1/> regions,,,22.98,160.0,48
-CPT,97150,Group Activity/Exercise,143.0,143.0,21.16,128.8,46
+CPT,97150,Group Activity/Exercise,152.0,152.0,21.16,128.8,46
 CPT,97150,Group therapeutic procedures,,,13.17,160.0,54
 CPT,97151,Bhv id assmt by phys/qhp,,,20.35,170.27,23
 CPT,97152,Bhv id suprt assmt by 1 tech,,,19.86,170.27,23
@@ -35325,7 +35325,7 @@ CPT,B4087,Kit Pg 18fr Lp Push 1stp Btn 3.4cm,447.0,447.0,66.16,357.6,23
 CPT,B4087,Kit Pg 18fr Lp Push 1stp Btn 4.4cm,447.0,447.0,66.16,357.6,23
 CPT,B4087,Kit Pg 18fr Sil Lp Anrflx V Rtrvl Snr Pul Evv,455.0,455.0,67.34,364.0,115
 CPT,B4087,Kit Pg 18fr Sil Lp Anrflx V Rtrvl Snr Pul Evv 1stp,440.0,440.0,65.12,352.0,115
-CPT,B4087,Kit Pg 18fr Sil Lp Anrflx V Rtrvl Snr Push Evv,440.0,440.0,65.12,364.0,92
+CPT,B4087,Kit Pg 18fr Sil Lp Anrflx V Rtrvl Snr Push Evv,447.5,447.5,65.12,364.0,92
 CPT,B4087,Kit Pg 20fr Pul Evv Enfit,227.0,227.0,33.6,181.6,23
 CPT,B4087,Kit Pg 20fr Pul Evv Enfit Std,155.0,155.0,22.94,124.0,23
 CPT,B4087,Kit Pg 20fr Push Evv Enfit,227.0,227.0,33.6,181.6,23
@@ -35339,7 +35339,7 @@ CPT,B4087,Kit Pg 24fr Pul Evv Enfit,227.0,227.0,33.6,181.6,23
 CPT,B4087,Kit Pg 24fr Sil Clmp Fenestrate Drp Push Evv Std,148.0,148.0,21.9,118.4,23
 CPT,B4087,Kit Pg 24fr Sil Lp Anrflx V Rtrvl Snr Pul Evv,455.0,455.0,67.34,364.0,92
 CPT,B4087,Kit Pg 24fr Sil Lp Anrflx V Rtrvl Snr Pul Evv 1stp,440.0,440.0,65.12,352.0,92
-CPT,B4087,Kit Pg 24fr Sil Lp Anrflx V Rtrvl Snr Push Evv,440.0,440.0,65.12,364.0,138
+CPT,B4087,Kit Pg 24fr Sil Lp Anrflx V Rtrvl Snr Push Evv,447.5,447.5,65.12,364.0,138
 CPT,B4087,Kit Pg 24fr Xlcn Sil Trocar Cannu Rnd Xtrn Blstr,219.0,219.0,32.41,175.2,23
 CPT,B4087,Tube 12fr Std PR Repl Bln Blstr Gstrm Evv Right,78.0,78.0,11.54,62.4,23
 CPT,B4087,Tube 12fr Std PR Repl Bln Blstr Gstrm Evv Str,68.0,68.0,10.06,54.4,23
@@ -35488,7 +35488,7 @@ CPT,C1725,"Balloon, Mini Trek Otw 1.50 X",652.0,652.0,96.5,521.6,23
 CPT,C1725,"Balloon, Mini Trek Otw 2.00 X",652.0,652.0,96.5,521.6,46
 CPT,C1725,Band Tr 24cm,123.0,123.0,18.2,98.4,23
 CPT,C1725,Band Tr 29cm,123.0,123.0,18.2,98.4,23
-CPT,C1725,Cat Bald .035in 6mm 75cm 60mm High Pres Lp,463.0,463.0,64.82,370.4,46
+CPT,C1725,Cat Bald .035in 6mm 75cm 60mm High Pres Lp,450.5,450.5,64.82,370.4,46
 CPT,C1725,Cat Bald .035in 7mm 75cm 60mm High Pres Lp,463.0,463.0,68.52,370.4,23
 CPT,C1725,Cat Bald .035in 8mm 75cm 60mm High Pre Lp,463.0,463.0,68.52,370.4,23
 CPT,C1725,Cat Bald 5fr 9mm 75cm 60mm High Pres Lp Infl,463.0,463.0,68.52,370.4,23
@@ -35622,11 +35622,11 @@ CPT,C1725,Catheter Baldilat 7mm 80cm 40mm Otw Drg Coat,3238.0,3238.0,479.22,2590
 CPT,C1725,Catheter Baldilat 7mm 80cm 60mm Otw Drg Coat,3238.0,3238.0,479.22,2590.4,23
 CPT,C1725,Catheter Baldilat 7mm 80cm 80mm Otw Drg Coat,3238.0,3238.0,479.22,2590.4,23
 CPT,C1725,Catheter Baldilat Lp 5.3fr 4mm 75cm 20mm High Pres,463.0,463.0,68.52,370.4,23
-CPT,C1725,Catheter Baldilat Lp 5.3fr 4mm 75cm 60mm High Pressure,463.0,463.0,64.82,370.4,46
+CPT,C1725,Catheter Baldilat Lp 5.3fr 4mm 75cm 60mm High Pressure,450.5,450.5,64.82,370.4,46
 CPT,C1725,Catheter Baldilat Lp 5.3fr 6mm 135cm 40mm High Pressure,500.0,500.0,74.0,400.0,23
 CPT,C1725,Catheter Baldilat Lp 5.3fr 8mm 75cm 20mm High Pressure,500.0,500.0,74.0,400.0,23
-CPT,C1725,Catheter Baldilat Ultra Lp 5fr 1.5mm 12mm 2 Lumen,300.0,300.0,37.0,240.0,46
-CPT,C1725,Catheter Baldilat Ultra Lp 5fr 1.5mm 15mm 2 Lumen,250.0,250.0,37.0,240.0,46
+CPT,C1725,Catheter Baldilat Ultra Lp 5fr 1.5mm 12mm 2 Lumen,275.0,275.0,37.0,240.0,46
+CPT,C1725,Catheter Baldilat Ultra Lp 5fr 1.5mm 15mm 2 Lumen,275.0,275.0,37.0,240.0,46
 CPT,C1725,Catheter Baldilat Ultra Lp 5fr 1.5mm 20mm 2 Lumen,300.0,300.0,44.4,240.0,23
 CPT,C1725,Catheter Baldilat Ultra Lp 5fr 1.5mm 8mm 2 Lumen R,300.0,300.0,44.4,240.0,23
 CPT,C1725,Catheter Baldilat Ultra Lp Taper 6fr 4mm 150cm 220mm Coyote,857.0,857.0,126.84,685.6,23
@@ -35803,21 +35803,21 @@ CPT,C1725,Catheter Intravenous Standard,9.0,9.0,1.33,7.2,23
 CPT,C1725,Catheter Pa 110cm 7fr 10mm Arw 1 Lum Bln Wdg Prss,168.0,168.0,24.86,134.4,23
 CPT,C1725,Catheter Vertebral 5fr,40.0,40.0,5.92,32.0,23
 CPT,C1725,Catr Bald 14 Atm Lp Taer 7fr 5mm 150cm 150mm,754.0,754.0,111.59,603.2,23
-CPT,C1725,Chocolate Ptca Balloon Catheter 2.0x10 Mm 5f,1875.0,1875.0,111.0,1500.0,46
-CPT,C1725,Chocolate Ptca Balloon Catheter 2.0x15 Mm 5f,750.0,750.0,111.0,1500.0,46
+CPT,C1725,Chocolate Ptca Balloon Catheter 2.0x10 Mm 5f,1312.5,1312.5,111.0,1500.0,46
+CPT,C1725,Chocolate Ptca Balloon Catheter 2.0x15 Mm 5f,1312.5,1312.5,111.0,1500.0,46
 CPT,C1725,Chocolate Ptca Balloon Catheter 2.0x20 Mm 5f,1875.0,1875.0,277.5,1500.0,23
-CPT,C1725,Chocolate Ptca Balloon Catheter 2.5x10 Mm 5f,788.0,788.0,116.62,1500.0,46
-CPT,C1725,Chocolate Ptca Balloon Catheter 2.5x15 Mm 5f,1875.0,1875.0,111.0,1500.0,46
-CPT,C1725,Chocolate Ptca Balloon Catheter 2.5x20 Mm 5f,1875.0,1875.0,111.0,1500.0,46
-CPT,C1725,Chocolate Ptca Balloon Catheter 3.0x10 Mm 6f,750.0,750.0,111.0,1500.0,46
-CPT,C1725,Chocolate Ptca Balloon Catheter 3.0x20 Mm 6f,1875.0,1875.0,111.0,1500.0,46
-CPT,C1725,Chocolate Ptca Balloon Catheter 3.5x10 Mm 6f,750.0,750.0,111.0,1500.0,46
-CPT,C1725,Chocolate Ptca Balloon Catheter 3.5x15 Mm 6f,1875.0,1875.0,111.0,1500.0,46
-CPT,C1725,Chocolate Ptca Balloon Catheter 3.5x20 Mm 6f,750.0,750.0,111.0,1500.0,46
+CPT,C1725,Chocolate Ptca Balloon Catheter 2.5x10 Mm 5f,1331.5,1331.5,116.62,1500.0,46
+CPT,C1725,Chocolate Ptca Balloon Catheter 2.5x15 Mm 5f,1312.5,1312.5,111.0,1500.0,46
+CPT,C1725,Chocolate Ptca Balloon Catheter 2.5x20 Mm 5f,1312.5,1312.5,111.0,1500.0,46
+CPT,C1725,Chocolate Ptca Balloon Catheter 3.0x10 Mm 6f,1312.5,1312.5,111.0,1500.0,46
+CPT,C1725,Chocolate Ptca Balloon Catheter 3.0x20 Mm 6f,1312.5,1312.5,111.0,1500.0,46
+CPT,C1725,Chocolate Ptca Balloon Catheter 3.5x10 Mm 6f,1312.5,1312.5,111.0,1500.0,46
+CPT,C1725,Chocolate Ptca Balloon Catheter 3.5x15 Mm 6f,1312.5,1312.5,111.0,1500.0,46
+CPT,C1725,Chocolate Ptca Balloon Catheter 3.5x20 Mm 6f,1312.5,1312.5,111.0,1500.0,46
 CPT,C1725,Conquest Dialation Balloon 10m,717.0,717.0,106.12,573.6,46
 CPT,C1725,Conquest Dialation Balloon 12m,717.0,717.0,106.12,573.6,23
 CPT,C1725,Conquest Dialation Balloon 5mm,717.0,717.0,106.12,573.6,23
-CPT,C1725,Conquest Dialation Balloon 6mm,717.0,717.0,68.52,573.6,46
+CPT,C1725,Conquest Dialation Balloon 6mm,590.0,590.0,68.52,573.6,46
 CPT,C1725,Conquest Dialation Balloon 7mm,717.0,717.0,106.12,573.6,23
 CPT,C1725,Conquest Dialation Balloon 8mm,717.0,717.0,106.12,573.6,46
 CPT,C1725,Conquest Pta Balloon Dilatatio,753.0,753.0,111.44,602.4,23
@@ -35925,7 +35925,7 @@ CPT,C1729,Catheter Drain .038in 14fr 25cm 6 Sideport Mac-Loc Locking,250.0,250.0
 CPT,C1729,Catheter Drain Lp Taper Spiral 5fr 19ga 10cm 4 Drain Hole,46.0,46.0,6.81,36.8,23
 CPT,C1729,Catheter External Drain Large 1.9mm Latex Free Bactiseal Evd,1229.0,1229.0,181.89,983.2,23
 CPT,C1729,Catheter Foley,34.0,34.0,5.03,27.2,23
-CPT,C1729,Catheter Foley 16fr,18.0,18.0,2.66,15.2,138
+CPT,C1729,Catheter Foley 16fr,18.5,18.5,2.66,15.2,138
 CPT,C1729,Catheter Foley 5cc 18fr,19.0,19.0,2.81,15.2,23
 CPT,C1729,Catheter Primafit Sage,27.0,27.0,4.0,21.6,23
 CPT,C1729,Catheter Sct 71 125cm Lg Bore,6750.0,6750.0,999.0,5400.0,23
@@ -35989,7 +35989,7 @@ CPT,C1733,Catheter Ep 110cm 7fr Safire Tx 2-5-2mm Spc 1mm,2125.0,2125.0,314.5,17
 CPT,C1733,Catheter Ep 115cm 7fr Safire Comfortgrip 2-5-2mm,1625.0,1625.0,240.5,1300.0,23
 CPT,C1733,Safire Cath 7f 4mm Lgcrl (US),2138.0,2138.0,316.42,1710.4,23
 CPT,C1733,Safire Cath 7f 5mm Lg Crl (US),2165.0,2165.0,320.42,1732.0,23
-CPT,C1733,Safire Tx Catheter 8mm Large Curl,1500.0,1500.0,222.0,2710.4,46
+CPT,C1733,Safire Tx Catheter 8mm Large Curl,2444.0,2444.0,222.0,2710.4,46
 CPT,C1735,Cath renal denerv radiofreq,,,,,0
 CPT,C1736,Cath renal denerv ultrasnd,,,,,0
 CPT,C1737,Si&pelvis fusn&fixn dev,,,,,0
@@ -36053,14 +36053,14 @@ CPT,C1750,Kit Cath Adlt 28cm 15.5fr Durathane Duramax Sfshth,587.5,587.5,86.95,4
 CPT,C1750,Kit Cath Adlt 28cm 15.5fr Pu Bioflo Duramax,750.0,750.0,111.0,600.0,23
 CPT,C1750,Kit Cath Adlt 28cm 15.5fr Pu Bioflo Duramax Endexo,863.0,863.0,127.72,690.4,23
 CPT,C1750,Kit Cath Adlt 32cm 15.5fr Durathane Drflw 2,375.0,375.0,55.5,300.0,23
-CPT,C1750,Kit Cath Adlt 32cm 15.5fr Durathane Drflw Embosafe,687.5,687.5,92.5,550.0,46
+CPT,C1750,Kit Cath Adlt 32cm 15.5fr Durathane Drflw Embosafe,656.25,656.25,92.5,550.0,46
 CPT,C1750,Kit Cath Adlt 32cm 15.5fr Durathane Duramax,375.0,375.0,55.5,300.0,46
 CPT,C1750,Kit Cath Adlt 32cm 15.5fr Durathane Duramax Sfshth,587.5,587.5,86.95,470.0,23
 CPT,C1750,Kit Cath Adlt 32cm 15.5fr Pu Bioflo Duramax,750.0,750.0,111.0,600.0,23
 CPT,C1750,Kit Cath Adlt 32cm 15.5fr Pu Bioflo Duramax Endexo,862.5,862.5,127.65,690.0,23
 CPT,C1750,Kit Cath Adlt 36cm 15.5fr Durathane Drflw 2,375.0,375.0,55.5,300.0,23
 CPT,C1750,Kit Cath Adlt 36cm 15.5fr Durathane Drflw 2 Basic,625.0,625.0,92.5,500.0,23
-CPT,C1750,Kit Cath Adlt 36cm 15.5fr Durathane Drflw Embosafe,625.0,625.0,92.5,550.0,46
+CPT,C1750,Kit Cath Adlt 36cm 15.5fr Durathane Drflw Embosafe,656.25,656.25,92.5,550.0,46
 CPT,C1750,Kit Cath Adlt 36cm 15.5fr Durathane Duramax,375.0,375.0,55.5,300.0,23
 CPT,C1750,Kit Cath Adlt 36cm 15.5fr Durathane Duramax Sfshth,587.5,587.5,86.95,470.0,23
 CPT,C1750,Kit Cath Adlt 36cm 15.5fr Pu Bioflo Duramax Basic,862.5,862.5,127.65,690.0,23
@@ -36124,7 +36124,7 @@ CPT,C1751,Cragg-Mcnamara 5-40-20 Infusio,315.0,315.0,46.62,252.0,23
 CPT,C1751,Cvp Kit Triple Lumen,569.0,569.0,84.21,455.2,23
 CPT,C1751,Dual Picc Line,307.0,307.0,45.44,245.6,23
 CPT,C1751,Injection Probe 7fr,431.0,431.0,63.79,344.8,23
-CPT,C1751,Kit Arterial Line .018in 20ga 22ga 1.75in Catheter Radiopq,29.0,29.0,4.29,30.4,46
+CPT,C1751,Kit Arterial Line .018in 20ga 22ga 1.75in Catheter Radiopq,33.5,33.5,4.29,30.4,46
 CPT,C1751,Kit Cath .014in 5ml/Sec 20ga 8cm 1.3in Powerglide Full Mdln,208.0,208.0,30.78,166.4,23
 CPT,C1751,Kit Cath .032in 8.5fr 18ga 16cm Lf 2.5in Blu Flxtp Arwg+Ard,349.0,349.0,51.65,279.2,23
 CPT,C1751,Kit Cath 1.4fr Lf Radopq Dehp-Fr Sft Stab Wng Pu Peri,1342.0,1342.0,198.62,1073.6,23
@@ -36161,7 +36161,7 @@ CPT,C1752,Set Catheter .035in 24cm 70cm Sidehole Removable S,375.0,375.0,55.5,30
 CPT,C1752,Temporary Dialysis Cath,315.0,315.0,46.62,252.0,23
 CPT,C1753,Catheter Baldilat 2.5mm 150cm 80mm Otw Ult Lp,417.5,417.5,61.79,334.0,23
 CPT,C1753,Catheter Baldilat 3.5mm 150cm 60mm Otw Ult Lp,425.0,425.0,62.9,340.0,23
-CPT,C1753,Catheter US Kodama,300.0,300.0,44.4,1200.0,46
+CPT,C1753,Catheter US Kodama,900.0,900.0,44.4,1200.0,46
 CPT,C1753,Catheter Ultrasound .035in 8.5fr 90cm 100cm Otw Radiopq,2500.0,2500.0,370.0,2000.0,46
 CPT,C1753,Catheter Ultrasound 20mhz 3.4fr 135cm Scanner Transducer,1688.0,1688.0,249.82,1350.4,23
 CPT,C1753,Catheter Ultrasound Eagle Eye Gold Od5 Fr Short Tip,1999.0,1999.0,295.85,1599.2,23
@@ -36369,9 +36369,9 @@ CPT,C1769,Guidewire Uro Strg .035in 180cm 7cm Amp Spst,101.48,101.48,15.02,81.18
 CPT,C1769,Guidewire Uro Strg .035in 260cm 7cm Amp Spst,106.14,106.14,15.71,84.91,23
 CPT,C1769,Guidewire Vasc .014in 130cm St,200.0,200.0,29.6,160.0,23
 CPT,C1769,Guidewire Vasc .014in 180cm Strl Lf Cnfnz Pro 12 Disp,333.0,333.0,49.28,266.4,46
-CPT,C1769,Guidewire Vasc .014in 180cm Strl Lf Fielder Fc Disp,198.0,198.0,29.3,160.0,46
+CPT,C1769,Guidewire Vasc .014in 180cm Strl Lf Fielder Fc Disp,199.0,199.0,29.3,160.0,46
 CPT,C1769,Guidewire Vasc .014in 180cm Strl Lf Mrclbrs 6 Disp,333.0,333.0,49.28,266.4,46
-CPT,C1769,Guidewire Vasc .014in 180cm Strl Lf P-H2o Disp,198.0,198.0,29.3,160.0,46
+CPT,C1769,Guidewire Vasc .014in 180cm Strl Lf P-H2o Disp,199.0,199.0,29.3,160.0,46
 CPT,C1769,Guidewire Vasc .014in 190cm St,208.0,208.0,30.78,166.4,23
 CPT,C1769,Guidewire Vasc .014in 190cm Strl Lf Asahi Sion Disp,333.0,333.0,49.28,266.4,23
 CPT,C1769,Guidewire Vasc .014in 215cm Strl Lf Synchro2 Hdrph Disp,1484.0,1484.0,219.63,1187.2,23
@@ -36402,7 +36402,7 @@ CPT,C1769,Guidewire Vasc 185cm .014in Flxb Intmd Tip Mdrt,159.0,159.0,23.53,127.
 CPT,C1769,Guidewire Vasc 185cm Strl Lf Verrata + Prss Disp,1688.0,1688.0,249.82,1350.4,46
 CPT,C1769,Guidewire Vasc 190cm .014in Core to Tip Radiopq,188.0,188.0,27.82,150.4,23
 CPT,C1769,Guidewire Vasc 190cm .014in Jointless Sprg Coil,188.0,188.0,27.82,150.4,23
-CPT,C1769,Guidewire Vasc 190cm .014in Strbl Radiopq Kink Rst,38.0,38.0,5.62,150.4,46
+CPT,C1769,Guidewire Vasc 190cm .014in Strbl Radiopq Kink Rst,113.0,113.0,5.62,150.4,46
 CPT,C1769,Guidewire Vasc 200cm .012-.014in Hbrd Radiopq Str,1035.0,1035.0,153.18,828.0,23
 CPT,C1769,Guidewire Vasc 200cm .014in Str 3cm Traxcess Ntnl,844.0,844.0,124.91,675.2,23
 CPT,C1769,Guidewire Vasc 220cm .008-.012in Distal Tip,1495.0,1495.0,221.26,1196.0,23
@@ -36419,7 +36419,7 @@ CPT,C1769,Guidewire Vasc 300cm .014in Radiopq Core to Tip,188.0,188.0,27.82,150.
 CPT,C1769,Guidewire Vasc 300cm Asahi Mrc,238.0,238.0,35.22,190.4,23
 CPT,C1769,Guidewire Vasc 325cm .012in Viperwire Adv Coron,488.0,488.0,72.22,390.4,23
 CPT,C1769,Guidewire Vasc 360 Orbtl,488.0,488.0,72.22,390.4,23
-CPT,C1769,Guidewire Vasc 3mm Rds J Crv .,26.0,26.0,3.85,165.6,46
+CPT,C1769,Guidewire Vasc 3mm Rds J Crv .,116.5,116.5,3.85,165.6,46
 CPT,C1769,Guidewire Vasc 60cm .018in Flpy Sftp Ang Tpr 7cm,98.0,98.0,14.5,78.4,23
 CPT,C1769,Guidewire Vasc 70cm .035in Evenmore 5cm J Fix Core,27.5,27.5,4.07,22.0,46
 CPT,C1769,Guidewire Vasc 80cm .014in Intmd Tip Radiopq Kink,608.0,608.0,89.98,486.4,23
@@ -36441,7 +36441,7 @@ CPT,C1769,Guidewire Vasc Strg .014in 185,159.0,159.0,23.53,127.2,23
 CPT,C1769,Guidewire Vasc Strg .035in 180cm 3cm Gldwr Shp Tip Hdrph,107.0,107.0,15.84,85.6,23
 CPT,C1769,Guidewire Vasc Strg .035in 260cm 6cm Hiwire Bntsn Atrm X,57.0,57.0,8.44,45.6,23
 CPT,C1769,Guidewire Vasc Strg .038in 145cm Strl 5cm Amptz Flxb Ult Stf,69.0,69.0,10.21,55.2,23
-CPT,C1769,Guidewire Vasc Strg Tpr .014in,333.0,333.0,8.88,266.4,46
+CPT,C1769,Guidewire Vasc Strg Tpr .014in,196.5,196.5,8.88,266.4,46
 CPT,C1769,Guidewire Vasc Strg Tpr .014in 190cm Strl Lf 16cm a Fldr,333.0,333.0,49.28,266.4,23
 CPT,C1769,Guidewire Vasc Strg Tpr .014in 300cm Aprch Smth Nvg Hdrph Ss,499.0,499.0,73.85,399.2,23
 CPT,C1769,Guidewire Vasc Traxcess 3x200 Ex,878.0,878.0,129.94,702.4,23
@@ -36696,7 +36696,7 @@ CPT,C1874,System Coron Stent 12mm 5mm Sng Megatron Lv Prox,2500.0,2500.0,370.0,2
 CPT,C1874,System Coron Stent 15mm 2.25mm Xience Srr,3000.0,3000.0,444.0,2400.0,46
 CPT,C1874,System Coron Stent 15mm 2.5mm Pk Papyrus Thk90um,7500.0,7500.0,1110.0,6000.0,23
 CPT,C1874,System Coron Stent 15mm 2.5mm Xience Srr,3000.0,3000.0,444.0,2400.0,46
-CPT,C1874,System Coron Stent 15mm 2.75mm Xience Srr,3000.0,3000.0,259.0,2400.0,46
+CPT,C1874,System Coron Stent 15mm 2.75mm Xience Srr,2375.0,2375.0,259.0,2400.0,46
 CPT,C1874,System Coron Stent 15mm 3.25mm Xience Srr,3000.0,3000.0,444.0,2400.0,23
 CPT,C1874,System Coron Stent 15mm 3.5mm Pk Papyrus Thk90um,7500.0,7500.0,1110.0,6000.0,23
 CPT,C1874,System Coron Stent 15mm 3.5mm Xience Srr,3000.0,3000.0,444.0,2400.0,46
@@ -36713,7 +36713,7 @@ CPT,C1874,System Coron Stent 16mm 5mm Sng Megatron Lv Prox,2500.0,2500.0,370.0,2
 CPT,C1874,System Coron Stent 18mm 2.25mm Xience Srr,3000.0,3000.0,444.0,2400.0,46
 CPT,C1874,System Coron Stent 18mm 2.5mm Xience Srr,3000.0,3000.0,444.0,2400.0,46
 CPT,C1874,System Coron Stent 18mm 2.75mm Xience Srr,3000.0,3000.0,444.0,2400.0,46
-CPT,C1874,System Coron Stent 18mm 3.25mm Xience Srr,1750.0,1750.0,259.0,2400.0,46
+CPT,C1874,System Coron Stent 18mm 3.25mm Xience Srr,2375.0,2375.0,259.0,2400.0,46
 CPT,C1874,System Coron Stent 18mm 3.5mm Xience Srr,3000.0,3000.0,444.0,2400.0,46
 CPT,C1874,System Coron Stent 18mm 3mm Xience Srr Everolimus,3000.0,3000.0,444.0,2400.0,46
 CPT,C1874,System Coron Stent 18mm 4mm Xience Srr Everolimus,3000.0,3000.0,444.0,2400.0,23
@@ -36992,7 +36992,7 @@ CPT,C1887,Catheter Angio Ang 4fr .041in 120cm Gldcath Gld Tch 2 Brd Ss,121.0,121
 CPT,C1887,Catheter Angio Jacky Radl 3.5 Crv 5fr 110cm Optitorque 2 Sd,88.0,88.0,13.02,70.4,23
 CPT,C1887,Catheter Angio Jacky Radl 3.5 Curve 5fr 110cm,88.0,88.0,13.02,70.4,23
 CPT,C1887,Catheter Angio Jl 4 Crv 5fr .047in 100cm Infnt Thrlmn Radopq,97.0,97.0,14.36,77.6,46
-CPT,C1887,Catheter Angio Radialtiger Curve 6fr 4mm 110cm,438.0,438.0,13.02,350.4,46
+CPT,C1887,Catheter Angio Radialtiger Curve 6fr 4mm 110cm,263.0,263.0,13.02,350.4,46
 CPT,C1887,Catheter Angio Sim 3 Crv 5fr,123.0,123.0,18.2,98.4,23
 CPT,C1887,Catheter Angiographic .035in Omni Flush 0 Curve 5fr 65cm,35.0,35.0,5.18,28.0,23
 CPT,C1887,Catheter Angiographic .038in 21ml/Sec Radial Tiger Curve Str,88.0,88.0,13.02,70.4,23
@@ -37083,7 +37083,7 @@ CPT,C1887,Catheter Infus Mic .027in Phenom,2000.0,2000.0,296.0,1600.0,23
 CPT,C1887,Catheter Infusion Asahi Sasuke L145 Cm Od3.3 Fr Sterile,1088.0,1088.0,161.02,870.4,23
 CPT,C1887,Catheter Interventional 6fr .07in .056in 145cm 20c,1183.0,1183.0,175.08,946.4,23
 CPT,C1887,Catheter Intvn .021in 750 Psi 2.4fr 150cm 90cm Progreat Mcth,775.0,775.0,114.7,620.0,23
-CPT,C1887,Catheter Intvn .021in Mic 2.4-2.9fr .022in 130cm Progreat,775.0,775.0,114.7,660.0,69
+CPT,C1887,Catheter Intvn .021in Mic 2.4-2.9fr .022in 130cm Progreat,800.0,800.0,114.7,660.0,69
 CPT,C1887,Catheter Intvn 5.1fr 150cm 13cm Trapliner Rx Gd Xtn Radopq,1625.0,1625.0,240.5,1300.0,23
 CPT,C1887,Catheter Intvn 5.7fr 150cm 13cm Trapliner Rx Gd Xtn Radopq,1625.0,1625.0,240.5,1300.0,23
 CPT,C1887,Catheter Intvn 5fr .056in .046in 150cm 25cm Rapex,1023.0,1023.0,151.4,818.4,46
@@ -37273,7 +37273,7 @@ CPT,C1894,Sheath Intro 8.8mm 24fr 33cm Gore Dryseal Flx Hdrph,1585.0,1585.0,234.
 CPT,C1894,Sheath Intro Lng .091in 90cm S,1363.0,1363.0,201.72,1090.4,23
 CPT,C1894,Sheath Intro Lng 7fr 30cm Traw Fnl Ulsmth Dil Tpr Ptfe,102.0,102.0,15.1,81.6,23
 CPT,C1894,Sheath Intro Lng Mp Crv 6fr 8fr .088in 80cm 4cm Neuron Mxss,1138.0,1138.0,168.42,910.4,23
-CPT,C1894,Sheath Introd 10cm 5fr Pncl Peri Ss Hydphi Ptfe,22.0,22.0,3.26,175.2,46
+CPT,C1894,Sheath Introd 10cm 5fr Pncl Peri Ss Hydphi Ptfe,120.5,120.5,3.26,175.2,46
 CPT,C1894,Sheath Introd 10cm 6fr Pncl Peri Snpon Dilat Lock,219.0,219.0,32.41,175.2,23
 CPT,C1894,Sheath Introd 10cm 8fr Pncl Peri Ss Hydphi Ptfe,219.0,219.0,32.41,175.2,23
 CPT,C1894,Sheath Introd 10cm 9fr Pncl Peri Ss Hydphi Ptfe,272.0,272.0,40.26,217.6,23
@@ -37362,7 +37362,7 @@ CPT,C2623,Catheter Blndil 5mm 40cm 100mm Lutonix Drg Coat Acpt .035in,3500.0,350
 CPT,C2623,Catheter Blndil 6mm 75cm 100mm Lutonix Drg Coat Acpt .035in,3500.0,3500.0,518.0,2800.0,23
 CPT,C2623,Catheter Blndil 7mm 40cm 60mm Lutonix Drg Coat Acpt .035in,3500.0,3500.0,518.0,2800.0,23
 CPT,C2623,Catheter Blndil 7mm 75cm 60mm Lutonix Drg Coat Acpt .035in,3500.0,3500.0,518.0,2800.0,23
-CPT,C2623,Catheter Blndil 8mm 75cm 60mm Lutonix Drg Coat Acpt .035in,4250.0,4250.0,518.0,3400.0,46
+CPT,C2623,Catheter Blndil 8mm 75cm 60mm Lutonix Drg Coat Acpt .035in,3875.0,3875.0,518.0,3400.0,46
 CPT,C2625,8.5fr-22cm Nephrour,361.0,361.0,53.43,288.8,23
 CPT,C2625,8.5fr-24cm Nephrour,350.0,350.0,51.8,280.0,23
 CPT,C2625,8.5fr-26cm Nephro-U,361.0,361.0,53.43,288.8,23
@@ -37589,7 +37589,7 @@ CPT,C9358,Matrix Tiss 12cmx8cmx.6mm Surgimend Thn Flat Rect,3600.0,3600.0,532.8,
 CPT,C9358,Matrix Tiss 15cmx10cmx.6mm Surgimend Thn Flat Ovl,6750.0,6750.0,999.0,5400.0,23
 CPT,C9358,Matrix Tiss 15cmx10cmx.6mm Surgimend Thn Flat Rect,5625.0,5625.0,832.5,4500.0,23
 CPT,C9358,Matrix Tiss 15cmx10cmx1mm Surgimend Flat Rect Bvn,5625.0,5625.0,832.5,4500.0,23
-CPT,C9358,Matrix Tiss 15cmx10cmx1mm Surgimend Flat Semioval,6750.0,6750.0,759.24,5400.0,46
+CPT,C9358,Matrix Tiss 15cmx10cmx1mm Surgimend Flat Semioval,5940.0,5940.0,759.24,5400.0,46
 CPT,C9358,Matrix Tiss 15cmx15cmx1mm Surgimend Flat Semioval,10125.0,10125.0,1498.5,8100.0,23
 CPT,C9358,Matrix Tiss 16cmx4cmx1mm Surgimend Flat Rect Bvn,2400.0,2400.0,355.2,1920.0,23
 CPT,C9358,Matrix Tiss 16cmx6cmx1mm Surgimend Flat Rect Bvn,3600.0,3600.0,532.8,2880.0,23

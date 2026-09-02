@@ -10,5 +10,6 @@
   "transfer_fingerprint": "0eb783cb6d33f69e205e6917672e29bb140d2f8a82389e1aaa7593c492537ceb",
   "status": "stored",
   "first_seen": "2026-08-25T05:46:04Z",
-  "last_changed": "2026-08-25T05:46:04Z"
+  "last_changed": "2026-08-25T05:46:04Z",
+  "summary_version": 2
 }

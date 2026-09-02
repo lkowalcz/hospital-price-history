@@ -4373,9 +4373,9 @@ CPT,0202U,Nfct Ds Bct/Vir Respir Dna/Rna 22 Trgt Sarscov2,2097.0,1572.75,1243.52
 CPT,0241U,Nfct Ds Rna 4 Targets Upper Respiratory Specimen,478.0,358.5,212.47,454.1,13
 CPT,0361U,Neurofilament Light Chain Digital Ia Plasma Quan,1808.0,1356.0,1054.06,1054.06,1
 CPT,0650T,Prgrmg Dev Eval Scrms Phys/Qhp Remote,726.0,544.5,43.39,44.28,2
-CPT,10005,Fine Needle Aspiration Bx W/US Gdn 1st Lesion,1201.0,900.75,168.91,942.18,24
-CPT,10006,Fine Needle Aspiration Bx W/US Gdn Ea Addl,968.0,726.0,150.41,759.4,4
-CPT,10009,Fine Needle Aspiration Bx W/CT Gdn 1st Lesion,1201.0,900.75,359.94,935.7,3
+CPT,10005,Fine Needle Aspiration Bx W/US Gdn 1st Lesion,790.5,592.875,168.91,942.18,24
+CPT,10006,Fine Needle Aspiration Bx W/US Gdn Ea Addl,613.0,459.75,150.41,759.4,4
+CPT,10009,Fine Needle Aspiration Bx W/CT Gdn 1st Lesion,831.5,623.625,359.94,935.7,3
 CPT,10030,Image-Guided Catheter Fluid Collection Drainage,782.0,586.5,662.51,835.47,2
 CPT,10035,Perq Sft Tiss Loc Device Plmt 1st Les W/Gdnce,436.0,327.0,254.19,254.19,1
 CPT,10036,Perq Sft Tiss Loc Device Plmt Add Les W/Gdnce,221.0,165.75,98.23,173.37,2
@@ -4389,7 +4389,7 @@ CPT,11012,Debride/Remove FB Skin/Muscle/Bone,2156.0,1617.0,1057.95,1278.51,4
 CPT,11042,Debride Skin/Subq Tissue,922.0,691.5,314.08,359.17,3
 CPT,11043,Debride Skin/Subq Tissue/Muscle,1145.0,858.75,482.89,726.87,4
 CPT,11044,Debride Skin/Subq Tissu/Muscle/Bone,2156.0,1617.0,1572.96,1885.46,2
-CPT,11104,Punch Biopsy Skin Single Lesion,366.0,274.5,121.57,474.42,16
+CPT,11104,Punch Biopsy Skin Single Lesion,285.5,214.125,121.57,474.42,16
 CPT,11200,Remove Tag Skin <15,340.0,255.0,201.78,201.78,1
 CPT,11400,Exc Lesn Bgn Trunk/Arm/Leg <0.5cm,1072.0,804.0,624.98,662.51,3
 CPT,11401,Exc Lesn Bgn Trunk/Arm/Leg .6-1.0cm,1306.0,979.5,314.08,761.4,3
@@ -4534,7 +4534,7 @@ CPT,27299,Iliac Bone Augmentation,1966.0,1474.5,284.84,1542.33,2
 CPT,27299,Tenex Procedure Hip,3016.0,2262.0,284.84,2366.05,2
 CPT,27380,Suture Tendon Infrapatellar Pri,8660.0,6495.0,6747.01,6747.01,1
 CPT,27599,Tenex Procedure Knee,7994.0,5995.5,284.84,284.84,1
-CPT,27599,Tenotomy Abductor Hip Percutaneous,3016.0,2262.0,284.84,284.84,2
+CPT,27599,Tenotomy Abductor Hip Percutaneous,2482.0,1861.5,284.84,284.84,2
 CPT,27650,Repair Primary Open/Prq Ruptured Achilles Tendon,13401.0,10050.75,7812.78,7812.78,1
 CPT,27792,Open Tx Distal Fibular Fracture Lat Malleolus,13868.0,10401.0,8085.04,8085.04,1
 CPT,28285,Correct Hammertoe,5661.0,4245.75,4250.12,4250.12,1
@@ -4576,7 +4576,7 @@ CPT,36430,Transfusion Blood/Comp,935.0,701.25,437.87,733.51,9
 CPT,36556,Insert Cath Cv Non-Tunl >5yrs,2621.0,1965.75,3662.72,3662.72,1
 CPT,36561,Insert Device Cv W/Port > 5 Yrs,5551.0,4163.25,2377.37,3737.47,5
 CPT,36569,Insert Cath Periph Cv W/O Port >5,2730.0,2047.5,1093.63,1844.62,7
-CPT,36573,Insertion Picc W/Rs&I 5 Yr/>,2202.0,1651.5,290.92,1844.62,5
+CPT,36573,Insertion Picc W/Rs&I 5 Yr/>,1350.5,1012.875,290.92,1844.62,5
 CPT,36581,Repl Cath Cv Tnl W/O Port,4743.0,3557.25,3737.47,3849.59,2
 CPT,36584,Repl Picc W/O Port/Pump,2794.0,2095.5,1250.63,1844.62,3
 CPT,36589,Rem Tnld Cv Cath W/O Port/Pump,1564.0,1173.0,709.02,734.15,2
@@ -4654,7 +4654,7 @@ CPT,43274,Ercp Duct Stent Placement,5548.0,4161.0,3289.96,7068.6,7
 CPT,43275,Ercp Remove Forgn Body Duct,4610.0,3457.5,2207.51,3230.19,3
 CPT,43276,Ercp Stent Exchange W/Dilate,5577.0,4182.75,4046.46,7068.6,6
 CPT,43277,Ercp Ea Duct/Ampulla Dilate,6501.0,4875.75,4517.65,4517.65,1
-CPT,43762,Perq Replacement Gtube Not Req Revj Gstrst Trc,480.0,360.0,231.42,288.8,9
+CPT,43762,Perq Replacement Gtube Not Req Revj Gstrst Trc,338.5,253.875,231.42,288.8,9
 CPT,43999,"Adjustment Gastric Band, via Port Injection/Aspiration",255.0,191.25,127.76,127.76,1
 CPT,43999,Bwh Transoral Gastric Vol Reduction,2493.0,1869.75,1248.99,1248.99,1
 CPT,43999,CT GUIDE GASTROSTOMY/GJ/J TUBE Exchange/Replacement,1283.0,962.25,642.78,642.78,1
@@ -4745,7 +4745,7 @@ CPT,49591,Rpr Aa Hernia 1st < 3 Cm Reducible,1618.0,1213.5,943.29,4488.08,6
 CPT,49592,Rpr Aa Hernia 1st < 3 Cm Ncrc8/Strangulated,2245.0,1683.75,1308.84,7419.84,9
 CPT,49593,Rpr Aa Hernia 1st 3-10 Cm Reducible,2704.0,2028.0,3934.87,7776.68,3
 CPT,49594,Rpr Aa Hernia 1st 3-10 Cm Ncrc8/Strangulated,3515.0,2636.25,2049.25,7419.84,4
-CPT,49613,Rpr Aa Hernia Recr < 3 Cm Reducible,2447.0,1835.25,911.82,1225.95,2
+CPT,49613,Rpr Aa Hernia Recr < 3 Cm Reducible,2133.5,1600.125,911.82,1225.95,2
 CPT,49615,Rpr Aa Hernia Recr 3-10 Cm Reducible,2752.0,2064.0,1378.75,1720.0,2
 CPT,50200,Biopsy Renal Needle Perc,2202.0,1651.5,1885.46,1885.46,1
 CPT,50387,Rmvl & Rplcmt Xtrnl Accessible Nephrourtrl Cath,4346.0,3259.5,1565.78,1565.78,1
@@ -4834,9 +4834,9 @@ CPT,62267,Asp Cyst Intervert Disc/Paravert,1382.0,1036.5,835.47,835.47,1
 CPT,62268,Aspiration Cyst Spinal Cord Perc,2252.0,1689.0,874.64,874.64,1
 CPT,62270,Lumbar Puncture Diagnostic,1159.0,869.25,598.81,684.77,4
 CPT,62273,Inject Epidural Blood/Clot Patch,1796.0,1347.0,598.81,1408.96,3
-CPT,62321,Njx Dx/Ther Sbst Intrlmnr Crv/Thrc W/Img Gdn,1804.0,1353.0,325.31,1415.24,22
-CPT,62322,Njx Dx/Ther Sbst Intrlmnr Lmbr/Sac W/O Img Gdn,2252.0,1689.0,260.33,1335.44,2
-CPT,62323,Njx Dx/Ther Sbst Intrlmnr Lmbr/Sac W/Img Gdn,1833.0,1374.75,300.83,1437.99,30
+CPT,62321,Njx Dx/Ther Sbst Intrlmnr Crv/Thrc W/Img Gdn,1181.0,885.75,325.31,1415.24,22
+CPT,62322,Njx Dx/Ther Sbst Intrlmnr Lmbr/Sac W/O Img Gdn,1345.5,1009.125,260.33,1335.44,2
+CPT,62323,Njx Dx/Ther Sbst Intrlmnr Lmbr/Sac W/Img Gdn,1174.5,880.875,300.83,1437.99,30
 CPT,63650,Impl Elect Neurostim Epidural Perc,10889.0,8166.75,5381.58,7793.05,3
 CPT,63662,Rmvl Spinal Nstim Eltrd Plate/Paddle Incl Fluor,6064.0,4548.0,4757.21,4757.21,1
 CPT,63688,Revise/Rem Generator/Receiver Neuro,7470.0,5602.5,5860.22,5860.22,1
@@ -4853,7 +4853,7 @@ CPT,64430,Injection Anesthetic Agent Pudendal Nerve,567.0,425.25,764.84,1036.02,
 CPT,64430,Injection Anesthetic Agent Pudendal Nerve|BILATERAL PROCEDURE,567.0,425.25,1036.02,1057.17,5
 CPT,64450,Inject Anes Nerve Peripheral Other,1189.0,891.75,598.81,932.77,5
 CPT,64450,Inject Anes Nerve Peripheral Other|BILATERAL PROCEDURE,1189.0,891.75,781.29,1027.16,4
-CPT,64454,Injection Aa&/Strd Genicular Nrv Branches W/Img,1132.0,849.0,805.88,805.88,2
+CPT,64454,Injection Aa&/Strd Genicular Nrv Branches W/Img,779.0,584.25,805.88,805.88,2
 CPT,64483,Njx Aa&/Strd Tfrml Epi Lumbar/Sacral 1 Level,1760.0,1320.0,764.84,1036.02,5
 CPT,64483,Njx Aa&/Strd Tfrml Epi Lumbar/Sacral 1 Level|BILATERAL PROCEDURE,1760.0,1320.0,1036.02,1311.96,3
 CPT,64490,HC Njx Dx/Ther Agt Pvrt Facet Jt Crv/Thrc 1 Level (Lt),2126.0,1594.5,1036.02,1036.02,1
@@ -4867,9 +4867,9 @@ CPT,64561,Impl Elect Neurostim Sacral Perc,16397.0,12297.75,6837.93,12863.45,4
 CPT,64561,Prq Impltj Neurostim Eltrd Sacral Nrve W/Imaging,1827.0,1370.25,1433.28,7793.05,3
 CPT,64585,Rev/Rem Elect Neurostim Peripherial,5753.0,4314.75,3293.22,4206.13,2
 CPT,64590,Insrt/Place Neurostim Gen per/Gas,5896.0,4422.0,2893.17,4625.41,3
-CPT,64595,Revision/Rmvl Peripheral/Gastric Npgr,7470.0,5602.5,581.16,3742.47,2
+CPT,64595,Revision/Rmvl Peripheral/Gastric Npgr,4315.0,3236.25,581.16,3742.47,2
 CPT,64615,Chemdnrvtn Mscl Facial Trige Cerv,680.0,510.0,247.48,533.46,13
-CPT,64624,Destruction Neurolytic Agt Genicular Nerve W/Img,2048.0,1536.0,2272.42,2272.42,2
+CPT,64624,Destruction Neurolytic Agt Genicular Nerve W/Img,1406.5,1054.875,2272.42,2272.42,2
 CPT,64633,Dest Nerve Cerv/Thor Sgl,4417.0,3312.75,2272.42,2272.42,1
 CPT,64633,Dest Nerve Cerv/Thor Sgl|BILATERAL PROCEDURE,4417.0,3312.75,2798.54,2798.54,1
 CPT,64635,Dest Nerve Lumbar/Sacral Sgl,3534.0,2650.5,2060.32,2272.42,2
@@ -4878,7 +4878,7 @@ CPT,64636,Dest Nerve Lumbar/Sacral Ea Add,2169.0,1626.75,1264.53,1264.53,1
 CPT,64646,Chemodenerv Trunk Musc 1-5,2682.0,2011.5,1563.61,1563.61,1
 CPT,64721,Neuroplasty &/Transpos Median Nrv Carpal Tunne,4905.0,3678.75,1468.33,2272.42,2
 CPT,64999,Anal Implt Peri Sq Field Stimul Gen,775.0,581.25,350.52,607.99,3
-CPT,64999,Bier Block,1671.0,1253.25,350.52,1310.9,6
+CPT,64999,Bier Block,1357.0,1017.75,350.52,1310.9,6
 CPT,64999,Facet Cyst Aspiration/Rupture,2319.0,1739.25,350.52,1819.26,3
 CPT,64999,Facet Denervation �<80 Degrees Celcius: Lumbar or Sacral; Each Additional,256.0,192.0,128.26,350.52,3
 CPT,64999,Facet Denervation� <80 Degrees Celcius: Cervical or Thoracic; Each Additional,295.0,221.25,147.8,350.52,3
@@ -4914,8 +4914,8 @@ CPT,70360,Xr Neck Soft Tissue,362.0,271.5,104.55,283.99,3
 CPT,70450,CT Head W/O Contrast,1475.0,1106.25,112.51,1076.75,16
 CPT,70460,CT Head W/Contrast,1857.0,1392.75,201.74,610.66,6
 CPT,70470,CT Head W&W/O Contrast,2379.0,1784.25,207.16,610.66,4
-CPT,70480,CT Orb/Fos/Sel/Ear W/O Contrast,1665.0,1248.75,112.51,626.93,48
-CPT,70481,CT Orb/Fos/Sel/Ear W/Contrast,2741.0,2055.75,201.74,610.66,12
+CPT,70480,CT Orb/Fos/Sel/Ear W/O Contrast,1714.5,1285.875,112.51,626.93,48
+CPT,70481,CT Orb/Fos/Sel/Ear W/Contrast,2822.0,2116.5,201.74,610.66,12
 CPT,70486,CT Max/Facial W/O Contrast,2029.0,1521.75,112.51,721.11,18
 CPT,70487,CT Max/Facial W/Contrast,2476.0,1857.0,201.74,879.97,5
 CPT,70488,CT Max/Facial W&W/O Contrast,3058.0,2293.5,211.39,211.39,1
@@ -4944,8 +4944,8 @@ CPT,71110,Xr Ribs 3 Views Bilat,522.0,391.5,126.27,309.55,2
 CPT,71111,Xr Ribs W/Cxr 4+ Views Bilat,686.0,514.5,126.27,538.17,2
 CPT,71120,Xr Sternum 2+ Views,306.0,229.5,104.55,240.06,2
 CPT,71250,Diagnostic Computed Tomography Thorax W/O Cntrst,1953.0,1464.75,112.51,1093.68,21
-CPT,71260,Diagnostic Computed Tomography Thorax W/Contrast,2367.0,1775.25,200.84,1727.91,40
-CPT,71270,Diagnostic Computed Tomography Thorax C-/C+,2783.0,2087.25,207.16,211.39,4
+CPT,71260,Diagnostic Computed Tomography Thorax W/Contrast,2304.0,1728.0,200.84,1727.91,40
+CPT,71270,Diagnostic Computed Tomography Thorax C-/C+,2764.0,2073.0,207.16,211.39,4
 CPT,71271,Low Dose CT Lung Screening,846.0,634.5,123.75,659.12,14
 CPT,71275,Cta Chest (Noncor) W&W/O Contrast,2681.0,2010.75,201.74,952.83,14
 CPT,71550,MRI Chest W/O Cont,4735.0,3551.25,230.56,697.91,3
@@ -5525,7 +5525,7 @@ CPT,84999,Bwf Fungitell Assay Titre,513.0,384.75,402.45,402.45,1
 CPT,84999,Bwf Oncotype Dx,18222.0,13666.5,14295.16,14295.16,1
 CPT,84999,Bwf Unlisted Chem Procedure,261.0,195.75,204.75,204.75,1
 CPT,84999,Bwf Unlisted Chemistry Test,261.0,195.75,204.75,204.75,1
-CPT,84999,Chemistry Unlstd Proc,7631.0,5723.25,200.05,5986.52,2
+CPT,84999,Chemistry Unlstd Proc,3943.0,2957.25,200.05,5986.52,2
 CPT,84999,Chromium on Fluid,683.0,512.25,535.81,535.81,1
 CPT,84999,"Cobalt, Fluid",640.0,480.0,502.08,502.08,1
 CPT,84999,"Estradiol Free, Serum (Includes Estradiol and Shbg)",1.0,0.75,0.78,0.78,1
@@ -5971,11 +5971,11 @@ CPT,95992,Pt Canalith Repositioning per Day,204.0,153.0,118.93,118.93,1
 CPT,96040,Genetic Counseling 30 Min,216.0,162.0,124.63,169.45,7
 CPT,96041,Dfci Telegenetics,334.0,250.5,148.46,262.02,10
 CPT,96041,Med Genetics&Genetic Counseling Svcs Each 30 Min,334.0,250.5,148.46,262.02,10
-CPT,96112,Developmental Tst Admin Phys/Qhp 1st Hour,666.0,499.5,306.08,388.28,3
+CPT,96112,Developmental Tst Admin Phys/Qhp 1st Hour,595.5,446.625,306.08,388.28,3
 CPT,96112,Developmental Tst Admin Phys/Qhp 1st Hour (Ot),666.0,499.5,388.28,388.28,1
 CPT,96112,Developmental Tst Admin Phys/Qhp 1st Hour (Pt),666.0,499.5,388.28,388.28,1
 CPT,96112,Developmental Tst Admin Phys/Qhp 1st Hour (St),666.0,499.5,388.28,388.28,1
-CPT,96113,Developmental Tst Admin Phys/Qhp Ea Addl 30 Min,313.0,234.75,125.35,182.48,3
+CPT,96113,Developmental Tst Admin Phys/Qhp Ea Addl 30 Min,264.0,198.0,125.35,182.48,3
 CPT,96113,Developmental Tst Admin Phys/Qhp Ea Addl 30 Min (Ot),313.0,234.75,182.48,182.48,1
 CPT,96113,Developmental Tst Admin Phys/Qhp Ea Addl 30 Min (Pt),313.0,234.75,182.48,182.48,1
 CPT,96113,Developmental Tst Admin Phys/Qhp Ea Addl 30 Min (St),313.0,234.75,182.48,182.48,1
@@ -6047,14 +6047,14 @@ CPT,99195,Phlebotomy Therapeutic,580.0,435.0,150.0,455.01,8
 CPT,99201,Hcpr Psych - New Pt - Level 1 Visit,108.0,81.0,84.73,84.73,1
 CPT,99201,New Patient Psych (99201) � Low Level (< 20 Min),119.0,89.25,93.36,93.36,1
 CPT,99201,New Pt - Low Level Visit (99201),119.0,89.25,93.36,93.36,1
-CPT,99203,"Office Visit, New Patient",357.0,267.75,208.13,256.88,6
+CPT,99203,"Office Visit, New Patient",384.0,288.0,208.13,256.88,6
 CPT,99203,Psych New Patient (99203) - Medium Level (16-45 Min),357.0,267.75,208.13,223.13,2
-CPT,99205,"Office Visit, New Patient",748.0,561.0,436.08,568.13,8
-CPT,99211,"Office Visit, Established Pat",120.0,90.0,22.04,94.14,17
+CPT,99205,"Office Visit, New Patient",828.5,621.375,436.08,568.13,8
+CPT,99211,"Office Visit, Established Pat",79.0,59.25,22.04,94.14,17
 CPT,99211,Psych Est/ New Patient (99211) - Low Level (<15 Min),120.0,90.0,69.6,94.14,10
-CPT,99213,"Office Visit, Established Pat",228.0,171.0,132.24,209.51,20
+CPT,99213,"Office Visit, Established Pat",257.5,193.125,132.24,209.51,20
 CPT,99213,Psych Est Patient (99213) - Medium Level (16-45 Min),228.0,171.0,132.24,166.44,8
-CPT,99215,"Office Visit, Established Pat",458.0,343.5,265.64,391.25,24
+CPT,99215,"Office Visit, Established Pat",542.0,406.5,265.64,391.25,24
 CPT,99221,1st Hospital IP/Obs Care Sf/Low Mdm 40 Minutes,407.0,305.25,199.71,317.09,6
 CPT,99283,Emergency Department Visit Low Mdm,1244.0,933.0,328.79,725.25,2
 CPT,99283,"Emergency Department Visit Low Mdm|SIGNIFICANT, SEPARATELY IDENTIFIABLE EVALUATION AND MANAGEMENT SERVICE BY THE SAME PHYSICIAN ON THE SAME DAY OF THE PROCEDURE OR OTHER SERVICE",1244.0,933.0,328.82,328.82,1
@@ -9218,7 +9218,7 @@ HCPCS,Q4116,GRAFT TISSUE 6X16CM THICK 2-2.79 HUMAN ALLODERM REGENERATIVE,5494.0,
 HCPCS,Q4116,GRAFT TISSUE 8X16CM ALLODERM ALLOGRAFT REGENERATIVE READY TO USE MATRIX THIN,7326.0,5494.5,3824.17,5707.69,3
 HCPCS,Q4116,GRAFT TISSUE LG TISSUE CONTOUR NON PERFORATED MEDIUM RTU ALLODERM REGENERATIVE MATRIX IMPLANTABLE,9384.0,7038.0,4898.45,7311.07,3
 HCPCS,Q4116,HC Alloderm 108 Sq Cm T3,6232.0,4674.0,3253.1,4855.35,3
-HCPCS,Q4116,HC Alloderm 160 Sq Cm T3,9262.0,6946.5,4833.72,7216.02,6
+HCPCS,Q4116,HC Alloderm 160 Sq Cm T3,9261.0,6945.75,4833.72,7216.02,6
 HCPCS,Q4116,HC Alloderm 192 Sq Cm T3,11114.0,8335.5,5801.51,8658.92,3
 HCPCS,Q4116,HC Alloderm 200 Sq Cm T3,11578.0,8683.5,6043.72,9020.42,3
 HCPCS,Q4116,HC Alloderm 240 Sq Cm T3,13894.0,10420.5,7252.67,10824.82,3
@@ -9229,7 +9229,7 @@ HCPCS,Q9967,Contrast Lowosmolar 300-399mg 10ml,8.6,6.45,4.49,6.28,5
 HCPCS,Q9967,Iodixanol Inj 320mg,460.0,345.0,240.12,335.8,5
 HCPCS,Q9967,Iodixanol Vl 320mg/Ml 1ml,167.0,125.25,87.17,121.91,5
 HCPCS,Q9967,Iohexol Vl 300mg/Ml Iodine 1ml,53.0,39.75,27.67,38.69,5
-HCPCS,Q9967,Iopamidol Inj,87.0,65.25,22.45,63.51,15
+HCPCS,Q9967,Iopamidol Inj,79.0,59.25,22.45,63.51,15
 HCPCS,Q9967,Iopamidol Vl 61% 300mg/Ml 50ml,40.0,30.0,20.88,29.2,5
 HCPCS,Q9967,Omnipaque 350 per 1 Ml,12.07,9.05,6.3,8.81,5
 HCPCS,Q9969,Non-Heu Tc-99m Add-on per Dose,1.0,0.75,0.58,10.3,9

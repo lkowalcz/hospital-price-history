@@ -11,5 +11,6 @@
   "first_seen": "2026-08-12T05:22:03Z",
   "last_changed": "2026-08-12T05:22:03Z",
   "transfer_fingerprint": "b94980641ef08f8c1b9fdb5f75e404cb852204fbe1f9db263210852c5fd4f517",
-  "raw_commit": "e03c3ea8a1ceb8b9ba428f95890ede03de536cc2"
+  "raw_commit": "e03c3ea8a1ceb8b9ba428f95890ede03de536cc2",
+  "summary_version": 2
 }

@@ -11,5 +11,6 @@
   "status": "sharded",
   "first_seen": "2026-08-14T03:43:37Z",
   "last_changed": "2026-08-28T18:52:55Z",
-  "raw_commit": "6da6a71abd18743bd414fe104d71ae8c2f8e286b"
+  "raw_commit": "6da6a71abd18743bd414fe104d71ae8c2f8e286b",
+  "summary_version": 2
 }

@@ -7240,7 +7240,7 @@ MS-DRG,645,Endocrine Disorders Without Cc/McC,17741.63,10644.98,6285.82,6285.82,
 MS-DRG,657,Kidney And Ureter Procedures For Neoplasm With Cc,65102.88,39061.73,14357.31,14357.31,1
 MS-DRG,658,Kidney And Ureter Procedures For Neoplasm Without Cc/McC,71228.19,42736.91,12242.34,12242.34,1
 MS-DRG,659,Kidney And Ureter Procedures For Non-Neoplasm With McC,54800.03,32880.02,19366.67,20354.77,4
-MS-DRG,660,Kidney And Ureter Procedures For Non-Neoplasm With Cc,46527.81,27916.69,10283.16,40001.62,6
+MS-DRG,660,Kidney And Ureter Procedures For Non-Neoplasm With Cc,46527.82,27916.695,10283.16,40001.62,6
 MS-DRG,661,Kidney And Ureter Procedures For Non-Neoplasm Without Cc/McC,37448.83,22469.3,8150.11,31336.67,5
 MS-DRG,662,Minor Bladder Procedures With McC,79742.32,47845.39,23719.72,23719.72,1
 MS-DRG,663,Minor Bladder Procedures With Cc,31493.09,18895.85,12002.1,12002.1,1
@@ -7338,7 +7338,7 @@ MS-DRG,867,Other Infectious And Parasitic Diseases Diagnoses With McC,39394.3,23
 MS-DRG,868,Other Infectious And Parasitic Diseases Diagnoses With Cc,44763.94,26858.36,8283.74,39181.9,3
 MS-DRG,869,Other Infectious And Parasitic Diseases Diagnoses Without Cc/McC,72129.31,43277.59,5992.37,5992.37,1
 MS-DRG,870,Septicemia Or Severe Sepsis With Mv >96 Hours,174797.23,104878.34,51931.56,54051.22,3
-MS-DRG,871,Septicemia Or Severe Sepsis Without Mv >96 Hours With McC,50882.88,30529.73,14908.35,73815.19,12
+MS-DRG,871,Septicemia Or Severe Sepsis Without Mv >96 Hours With McC,50883.03,30529.82,14908.35,73815.19,12
 MS-DRG,872,Septicemia Or Severe Sepsis Without Mv >96 Hours Without McC,28947.05,17368.23,8059.96,38885.5,9
 MS-DRG,876,O.R. Procedures With Principal Diagnosis Of Mental Illness,92941.5,55764.9,29827.51,29827.51,1
 MS-DRG,880,Acute Adjustment Reaction And Psychosocial Dysfunction,68043.12,40825.87,7744.72,7744.72,1

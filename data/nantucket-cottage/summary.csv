@@ -839,14 +839,14 @@ CPT,0001A,Imm Admn Sarscov2 30mcg/0.3ml Dil Recon 1st Dose,75.0,56.25,58.2,58.2,
 CPT,0002A,Imm Admn Sarscov2 30mcg/0.3ml Dil Recon 2nd Dose,75.0,56.25,58.2,58.2,1
 CPT,0077U,Ig Paraprotein Qual Imprcip&Ms Bld/UR W/Isotype,100.0,75.0,92.85,94.28,2
 CPT,0241U,Nfct Ds Rna 4 Targets Upper Respiratory Specimen,478.0,358.5,370.93,455.06,11
-CPT,10005,Fine Needle Aspiration Bx W/US Gdn 1st Lesion,400.0,300.0,273.93,894.79,6
-CPT,10030,Image-Guided Catheter Fluid Collection Drainage,798.0,598.5,662.51,835.47,3
+CPT,10005,Fine Needle Aspiration Bx W/US Gdn 1st Lesion,376.5,282.375,273.93,894.79,6
+CPT,10030,Image-Guided Catheter Fluid Collection Drainage,764.5,573.375,662.51,835.47,3
 CPT,10120,Incision/Remove FB Subq Smp,436.0,327.0,359.17,359.17,1
 CPT,10160,Aspiration Abscess/Hema/Bulla/Cyst,193.0,144.75,359.17,359.17,1
 CPT,11042,Debride Skin/Subq Tissue,200.0,150.0,359.17,474.42,2
 CPT,11042,Pf Debr Skin/Subq Tissue,223.0,167.25,474.42,474.42,1
-CPT,11102,Tangential Biopsy Skin Single Lesion,226.0,169.5,201.78,252.7,3
-CPT,11104,Punch Biopsy Skin Single Lesion,285.0,213.75,508.1,508.1,2
+CPT,11102,Tangential Biopsy Skin Single Lesion,216.5,162.375,201.78,252.7,3
+CPT,11104,Punch Biopsy Skin Single Lesion,271.5,203.625,508.1,508.1,2
 CPT,11200,Remove Tag Skin <15,111.0,83.25,201.78,201.78,1
 CPT,11300,Shave Lesn Trunk/Arm/Leg <0.5cm,131.0,98.25,201.78,201.78,1
 CPT,11400,Exc Lesn Bgn Trunk/Arm/Leg <0.5cm,1077.0,807.75,662.51,835.47,2
@@ -902,7 +902,7 @@ CPT,36590,Rem Tnld Cv Access W/Port/Pump,2965.0,2223.75,709.02,2802.22,3
 CPT,36591,Collect Blood Port/Access Dvc,138.0,103.5,121.77,163.93,3
 CPT,36592,HC Collect Blood From Catheter Venous,170.0,127.5,121.77,163.93,2
 CPT,36593,Declot Port Thrombolytic Agent,262.0,196.5,329.78,421.83,2
-CPT,38222,Diagnostic Bone Marrow Biopsies & Aspirations,442.0,331.5,3398.51,3398.51,2
+CPT,38222,Diagnostic Bone Marrow Biopsies & Aspirations,421.0,315.75,3398.51,3398.51,2
 CPT,40800,Drain Absc/Cyst Vestib Mouth Smp,1267.0,950.25,1160.7,1160.7,1
 CPT,40800,Drg Absc Cst Hmtma Vestibule Mouth Smpl,584.0,438.0,535.0,535.0,1
 CPT,43235,Egd Flex Dx W/Brushing/Washing,1913.0,1434.75,870.88,1807.98,7
@@ -918,10 +918,10 @@ CPT,45330,Sigmoidoscopy Flexible,1077.0,807.75,851.82,1159.47,3
 CPT,45331,Sigmoidoscopy Flx W/Biopsy Single/Multiple,850.0,637.5,789.23,1159.47,2
 CPT,45331,Sigmoidoscopy W/Biopsy,1913.0,1434.75,1159.47,1776.22,2
 CPT,45378,Colonoscopy Flexible,3451.0,2588.25,851.82,3285.35,8
-CPT,45378,Colonoscopy Flx Dx W/Collj Spec When Pfrmd,3451.0,2588.25,851.82,3285.35,14
-CPT,45380,Colonoscopy W/Biopsy Single/Multiple,2524.0,1893.0,1120.45,2385.43,16
+CPT,45378,Colonoscopy Flx Dx W/Collj Spec When Pfrmd,2336.0,1752.0,851.82,3285.35,14
+CPT,45380,Colonoscopy W/Biopsy Single/Multiple,2450.0,1837.5,1120.45,2385.43,16
 CPT,45385,Colonoscopy Flex W/Rem Tumor Snare,2524.0,1893.0,1120.45,2343.53,6
-CPT,45385,Colsc Flx W/Rmvl of Tumor Polyp Lesion Snare Tq,2524.0,1893.0,1120.45,2343.53,10
+CPT,45385,Colsc Flx W/Rmvl of Tumor Polyp Lesion Snare Tq,1979.0,1484.25,1120.45,2343.53,10
 CPT,46220,Excision Single External Papilla or Tag Anus,2234.0,1675.5,1120.45,1120.45,1
 CPT,46260,Hemorrhoidectomy Int & Xtrnl 2/> Column/Gro,2753.0,2064.75,2669.73,2669.73,1
 CPT,46930,"Dest Intrnl Hemrrhds, Thermal",698.0,523.5,1120.45,1499.49,2
@@ -952,7 +952,7 @@ CPT,59820,Surg Tx Abortion Missed 1st Trimest,5095.0,3821.25,2700.25,3953.72,2
 CPT,59820,Tx Missed Abortion First Trimester Surgical,1708.0,1281.0,1325.41,1325.41,1
 CPT,62270,Lumbar Puncture Diagnostic,716.0,537.0,822.33,822.33,2
 CPT,62270,Pf Puncture Spinal Lumbar Diag,182.0,136.5,822.33,822.33,2
-CPT,62323,Njx Dx/Ther Sbst Intrlmnr Lmbr/Sac W/Img Gdn,2392.0,1794.0,684.77,880.71,5
+CPT,62323,Njx Dx/Ther Sbst Intrlmnr Lmbr/Sac W/Img Gdn,1449.5,1087.125,684.77,880.71,5
 CPT,70150,Xr Facial Bones 3+ Views,1117.0,837.75,866.79,866.79,1
 CPT,70160,Xr Nasal Cmpl 3+ Views,681.0,510.75,528.46,632.31,2
 CPT,70220,Xr Sinuses 3+ Views,681.0,510.75,632.31,632.31,1
@@ -1052,7 +1052,7 @@ CPT,76604,US Chest,747.0,560.25,135.24,321.65,2
 CPT,76604,US Chest|REDUCED SERVICES,747.0,560.25,135.24,135.24,1
 CPT,76604,"US, Chest, Real Time",137.0,102.75,135.24,321.65,2
 CPT,76604,"US, Chest, Real Time|REDUCED SERVICES",137.0,102.75,135.24,135.24,1
-CPT,76642,US Breast Uni Real Time With Image Limited,398.0,298.5,128.48,376.15,4
+CPT,76642,US Breast Uni Real Time With Image Limited,272.5,204.375,128.48,376.15,4
 CPT,76700,US Abdomen Cmpl,1339.0,1004.25,135.24,1265.49,7
 CPT,76705,US Abdomen Ltd,1332.0,999.0,135.24,1268.06,11
 CPT,76705,US Abdominal Real Time W/Image Limited,133.0,99.75,103.21,321.65,11
@@ -1082,7 +1082,7 @@ CPT,76857,Sono Pelvis Limited,116.0,87.0,90.02,321.65,6
 CPT,76857,US Pelvis Non OB Ltd,907.0,680.25,135.24,857.21,6
 CPT,76870,US Scrotum,1037.0,777.75,135.24,980.07,6
 CPT,76870,Ultrasound Scrotum & Contents,140.0,105.0,108.64,321.65,6
-CPT,76882,US Lmtd Jt/Fcl Eval Nonvasc Xtr Strux R-T W/Img,212.0,159.0,135.24,135.24,2
+CPT,76882,US Lmtd Jt/Fcl Eval Nonvasc Xtr Strux R-T W/Img,165.0,123.75,135.24,135.24,2
 CPT,77002,Pf Xr Fluoro Biopsy/Aspiration,133.0,99.75,103.21,125.7,3
 CPT,77002,Xr Fluoro Needle Placement,929.0,696.75,720.9,878.0,3
 CPT,77048,MRI Breast W/Out&With Contrast W/Cad Unilateral,2029.0,1521.75,1574.5,1574.5,1
@@ -1473,9 +1473,9 @@ CPT,97535,Pt Home Instruction/Program 15min,279.0,209.25,216.5,216.5,1
 CPT,97802,Nutrition Therapy Eval 15 Min,97.0,72.75,75.27,92.34,5
 CPT,97803,Nutrition Therapy Re-Eval 15 Min,97.0,72.75,75.27,92.34,4
 CPT,99195,Phlebotomy Therapeutic,354.0,265.5,163.93,334.57,4
-CPT,99211,"Office Visit, Established Pat",41.0,30.75,31.04,31.82,2
-CPT,99213,"Office Visit, Established Pat",211.0,158.25,163.74,196.84,6
-CPT,99213,"Office Visit, Established Pat|SIGNIFICANT, SEPARATELY IDENTIFIABLE EVALUATION AND MANAGEMENT SERVICE BY THE SAME PHYSICIAN ON THE SAME DAY OF THE PROCEDURE OR OTHER SERVICE",211.0,158.25,166.9,167.69,2
+CPT,99211,"Office Visit, Established Pat",40.5,30.375,31.04,31.82,2
+CPT,99213,"Office Visit, Established Pat",211.5,158.625,163.74,196.84,6
+CPT,99213,"Office Visit, Established Pat|SIGNIFICANT, SEPARATELY IDENTIFIABLE EVALUATION AND MANAGEMENT SERVICE BY THE SAME PHYSICIAN ON THE SAME DAY OF THE PROCEDURE OR OTHER SERVICE",211.5,158.625,166.9,167.69,2
 CPT,99221,1st Hospital IP/Obs Care Sf/Low Mdm 40 Minutes,440.0,330.0,403.08,418.88,5
 CPT,99221,Initial Observation Care/Day 30 Minutes,434.0,325.5,397.59,413.17,5
 CPT,99221,Initial Observation Care/Day 50 Minutes,441.0,330.75,404.0,419.83,5
@@ -1490,10 +1490,10 @@ CPT,99232,Sbsq Hospital IP/Obs Care Mod Mdm 35 Minutes,321.0,240.75,249.1,305.59
 CPT,99235,Hospital IP/Obs Care Same Date Mod Mdm 70 Min,759.0,569.25,704.73,704.73,1
 CPT,99238,Hospital IP/Obs Discharge Day Mgmt 30 Min/<,319.0,239.25,247.54,303.69,5
 CPT,99238,Observation Care Discharge Management,286.0,214.5,221.94,272.27,5
-CPT,99239,Hospital IP/Obs Discharge Day Mgmt > 30 Min,454.0,340.5,352.3,444.58,10
-CPT,99284,Emergency Department Visit Moderate Mdm,995.0,746.25,505.69,505.69,2
-CPT,99284,"Emergency Department Visit Moderate Mdm|SIGNIFICANT, SEPARATELY IDENTIFIABLE EVALUATION AND MANAGEMENT SERVICE BY THE SAME PHYSICIAN ON THE SAME DAY OF THE PROCEDURE OR OTHER SERVICE",995.0,746.25,505.64,505.64,2
-CPT,99285,Emergency Department Visit High Mdm,1195.0,896.25,391.1,1137.64,20
+CPT,99239,Hospital IP/Obs Discharge Day Mgmt > 30 Min,460.5,345.375,352.3,444.58,10
+CPT,99284,Emergency Department Visit Moderate Mdm,658.0,493.5,505.69,505.69,2
+CPT,99284,"Emergency Department Visit Moderate Mdm|SIGNIFICANT, SEPARATELY IDENTIFIABLE EVALUATION AND MANAGEMENT SERVICE BY THE SAME PHYSICIAN ON THE SAME DAY OF THE PROCEDURE OR OTHER SERVICE",658.0,493.5,505.64,505.64,2
+CPT,99285,Emergency Department Visit High Mdm,849.5,637.125,391.1,1137.64,20
 CPT,99291,Critical Care Ill/Injured Patient Init 30-74 Min,556.0,417.0,431.46,1000.55,9
 CPT,99291,HC Critical Care; First 30-74 Minutes,1564.0,1173.0,1000.55,1488.93,9
 CPT,99292,Critical Care Ill/Injured Patient Addl 30 Min,276.0,207.0,241.22,260.85,2
