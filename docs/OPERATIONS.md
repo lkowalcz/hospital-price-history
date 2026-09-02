@@ -17,6 +17,13 @@ deploy keys exist only on the Pi.
 The Pi's commits push with a deploy key, so they trigger the push-based site
 deploy on their own.
 
+**Heartbeat.** Quiet days produce no commit, so after every run the Pi
+force-pushes an annotated tag `pi-heartbeat` whose tagger date is the
+completion time. The `pi-heartbeat.yml` workflow runs daily at 18:30 UTC and
+fails, which GitHub emails, when that date is more than 72 hours old or the
+tag is missing. A failure email means: run the health check below. Once the
+Pi is back, the next completed run clears it on its own.
+
 ## Why the Pi exists
 
 - **Runner-IP blocks**: the Johns Hopkins hospitals (four slugs) and Orlando
@@ -110,7 +117,7 @@ original files are preserved as items on archive.org named
   variables, Actions). While either is missing, archiving is simply off and
   the rest of the scrape is unaffected.
 - **What the daily run does**: uploads each new summarized snapshot right
-  after summarizing it, and re-downloads up to `IA_BACKFILL_PER_RUN` (2)
+  after summarizing it, and re-downloads up to `BACKFILL_PER_RUN` (2)
   not-yet-archived hospitals per run until every one within the download
   cap has a `cold_storage` record. Progress is visible in commit messages
   as "archived originals: ..." and failures as "cold storage failed: ...";

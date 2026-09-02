@@ -75,8 +75,9 @@ jobs:
           # docs/OPERATIONS.md for where the keys come from.
           IA_ACCESS_KEY_ID: ${{ secrets.IA_ACCESS_KEY_ID }}
           IA_SECRET_ACCESS_KEY: ${{ secrets.IA_SECRET_ACCESS_KEY }}
-          # Giants re-downloaded per run only to archive them (backfill).
-          IA_BACKFILL_PER_RUN: "2"
+          # Summarized giants re-downloaded per run only to archive them or
+          # to re-summarize them after a SUMMARY_VERSION bump (backfill).
+          BACKFILL_PER_RUN: "2"
 
       - name: Compute price index
         run: python compute_index.py

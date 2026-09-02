@@ -48,6 +48,10 @@ STALE_SAS = ["hca-florida-kendall", "tristar-centennial"]
 LOCAL_ONLY = IP_BLOCKED + STALE_SAS + ["yale-new-haven"]
 YALE_URL = ("https://www.ynhh.org/-/media/Files/YNHHS/sc/"
             "06-0646652-Yale_New_Haven_Hospital_Standard_Charges011025-1.ashx")
+# Annotated tag re-pointed after every run; .github/workflows/pi-heartbeat.yml
+# fails (and so emails) when its tagger date is more than three days old.
+# A tag rather than a commit: quiet days produce no commit to look for.
+HEARTBEAT_TAG = "pi-heartbeat"
 
 
 def run(*cmd, **kw):
@@ -119,6 +123,18 @@ def stamp():
     return datetime.datetime.now().astimezone().strftime("%Y-%m-%d %H:%M:%S %Z")
 
 
+def heartbeat():
+    """Tell CI this run completed: re-point HEARTBEAT_TAG at HEAD with a
+    fresh tagger date and force-push just that ref. Never fatal — the data
+    commits above already went out."""
+    try:
+        git(ROOT, "tag", "-f", "-a", HEARTBEAT_TAG, "-m",
+            f"local_refetch completed {stamp()}")
+        git(ROOT, "push", "-f", "--quiet", "origin", f"refs/tags/{HEARTBEAT_TAG}")
+    except subprocess.CalledProcessError as exc:
+        print(f"heartbeat tag push failed: {exc}", file=sys.stderr, flush=True)
+
+
 def main():
     # The cron log is append-only with no timestamps of its own.
     print(f"=== {stamp()} local_refetch start", flush=True)
@@ -169,6 +185,7 @@ def main():
         git(ROOT, "add", "data/")
         git(ROOT, "commit", "-m", msg)
         git(ROOT, "push")
+    heartbeat()
     print(f"=== {stamp()} done:", msg, flush=True)
 
 

@@ -257,6 +257,30 @@ class TestSummarizeGolden(unittest.TestCase):
             src.write_text("a,b\n1,2\ndescription,code|1\nX,470\n")  # no negotiated cols
             self.assertFalse(scrape.summarize_csv(src, Path(tmp) / "out.csv"))
 
+    def test_row_order_does_not_matter(self):
+        # v2: gross/cash are the median of the distinct values listed, so a
+        # hospital reordering its rows cannot move the summary (or the
+        # index). Records are regrouped so the multi-line row stays whole.
+        lines = (FIXTURES / "wide.csv").read_text().split("\n")
+        body = [r for r in scrape.csv_records(lines[3:]) if r]
+        with tempfile.TemporaryDirectory() as tmp:
+            src = Path(tmp) / "reversed.csv"
+            src.write_text("\n".join(lines[:3] + body[::-1]) + "\n")
+            out = Path(tmp) / "summary.csv"
+            self.assertTrue(scrape.summarize_csv(src, out))
+            self.assertEqual(out.read_bytes(), (GOLDEN / "wide_summary.csv").read_bytes())
+
+    def test_code_agg_pick(self):
+        a = scrape.CodeAgg()
+        self.assertIsNone(a.pick(a.gross))
+        for v in (0.0, 200.0, 100.0, 200.0, -5.0):
+            a.add(a.gross, v)
+        self.assertEqual(a.pick(a.gross), 150.0)  # median of distinct positives
+        z = scrape.CodeAgg()
+        z.add(z.cash, 0.0)
+        z.add(z.cash, None)
+        self.assertEqual(z.pick(z.cash), 0.0)  # placeholders only
+
     def test_internal_type_matching(self):
         self.assertTrue(scrape.internal_type("local"))
         self.assertTrue(scrape.internal_type("R.C."))
@@ -401,7 +425,7 @@ class ProcessHarness(unittest.TestCase):
                                        lambda url, impersonate=False, max_time=None: None),
             unittest.mock.patch.dict("os.environ", {"MAX_DOWNLOAD_BYTES": "",
                                                     "IA_ARCHIVE": "0",
-                                                    "IA_BACKFILL_PER_RUN": ""}),
+                                                    "BACKFILL_PER_RUN": ""}),
         ]
         for p in self.patches:
             p.start()
@@ -431,6 +455,11 @@ class ProcessHarness(unittest.TestCase):
 
     def write_meta(self, meta):
         (scrape.DATA / "h1" / "meta.json").write_text(json.dumps(meta) + "\n")
+
+    def summarized(self):
+        # Route the fixture through the giant path: no payload in memory,
+        # summary.csv only.
+        return unittest.mock.patch.object(scrape, "MAX_SHARD_TOTAL", 10)
 
 
 class TestProcess(ProcessHarness):
@@ -521,11 +550,6 @@ class TestColdStorage(ProcessHarness):
             return dict(self.RECORD, sha256=sha)
         return go
 
-    def summarized(self):
-        # Route the fixture through the giant path: no payload in memory,
-        # summary.csv only.
-        return unittest.mock.patch.object(scrape, "MAX_SHARD_TOTAL", 10)
-
     def test_new_summarized_snapshot_is_archived(self):
         calls = []
         with self.summarized(), unittest.mock.patch.dict("os.environ", {"IA_ARCHIVE": "1"}), \
@@ -571,7 +595,7 @@ class TestColdStorage(ProcessHarness):
                 "os.environ", {"IA_ARCHIVE": "1", "MAX_DOWNLOAD_BYTES": str(size - 1)}):
             self.assertIsNone(self.run_process())  # over the cap: never fetched
         with self.summarized(), unittest.mock.patch.dict(
-                "os.environ", {"IA_ARCHIVE": "1", "IA_BACKFILL_PER_RUN": "0"}):
+                "os.environ", {"IA_ARCHIVE": "1", "BACKFILL_PER_RUN": "0"}):
             self.assertIsNone(self.run_process())  # budget spent
         self.assertEqual(self.downloads, 1)
         self.assertNotIn("cold_storage", self.meta())
@@ -652,6 +676,54 @@ class TestColdStorage(ProcessHarness):
         with unittest.mock.patch.dict("os.environ", {"IA_ARCHIVE": "1", "IA_ACCESS_KEY_ID": "",
                                                      "IA_SECRET_ACCESS_KEY": ""}):
             self.assertTrue(scrape.archiving_enabled())
+
+
+class TestSummaryUpgrade(ProcessHarness):
+    """A summarized hospital's content exists nowhere but the source, so a
+    SUMMARY_VERSION bump is honored by re-downloading it within the same
+    per-run backfill budget cold storage uses."""
+
+    def test_stale_summary_rebuilt_by_backfill(self):
+        with self.summarized():
+            self.run_process()
+        m = self.meta()
+        m["summary_version"] = scrape.SUMMARY_VERSION - 1
+        self.write_meta(m)
+        (scrape.DATA / "h1" / "summary.csv").write_text("stale\n")
+        with self.summarized():
+            msg = self.run_process()  # same validators: would normally skip
+        self.assertIn("backfilled summary", msg)
+        self.assertEqual(self.downloads, 2)
+        self.assertEqual(scrape.BACKFILLED, ["h1"])
+        self.assertEqual((scrape.DATA / "h1" / "summary.csv").read_bytes(),
+                         (GOLDEN / "wide_summary.csv").read_bytes())
+        m2 = self.meta()
+        self.assertEqual(m2["summary_version"], scrape.SUMMARY_VERSION)
+        self.assertEqual(m2["last_changed"], m["last_changed"])  # not a content change
+
+    def test_current_summary_not_refetched(self):
+        with self.summarized():
+            self.run_process()
+            self.assertIsNone(self.run_process())
+        self.assertEqual(self.downloads, 1)
+
+    def test_upgrade_shares_the_backfill_budget(self):
+        with self.summarized():
+            self.run_process()
+        m = self.meta()
+        m["summary_version"] = scrape.SUMMARY_VERSION - 1
+        self.write_meta(m)
+        with self.summarized(), unittest.mock.patch.dict("os.environ", {"BACKFILL_PER_RUN": "0"}):
+            self.assertIsNone(self.run_process())
+        self.assertEqual(self.downloads, 1)
+        self.assertEqual(self.meta()["summary_version"], scrape.SUMMARY_VERSION - 1)
+
+
+class TestHeartbeat(unittest.TestCase):
+    def test_workflow_checks_the_tag_local_refetch_pushes(self):
+        import local_refetch
+        yml = (Path(__file__).parent.parent / ".github" / "workflows" / "pi-heartbeat.yml").read_text()
+        self.assertIn(f"git/ref/tags/{local_refetch.HEARTBEAT_TAG}", yml)
 
 
 class TestDownloadCap(unittest.TestCase):

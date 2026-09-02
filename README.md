@@ -34,7 +34,8 @@ per system:
 See `hospitals.json` for the exact list; each entry's current state lives in
 `data/<slug>/meta.json`, and every hospital gets a `summary.csv` — a uniform
 per-code digest (gross charge, cash price, min/max negotiated, payer count)
-regardless of how the full file is stored.
+regardless of how the full file is stored. Column semantics and the
+`meta.json` fields are documented in [docs/DATA.md](docs/DATA.md).
 
 ## How it works
 
@@ -80,7 +81,7 @@ under `cold_storage` (item URL, sha256, compressed size) and linked from
 the hospital's page. The daily run does this whenever `IA_ACCESS_KEY_ID`
 and `IA_SECRET_ACCESS_KEY` are present (repo secrets in CI; locally, run
 `ia configure` and set `IA_ARCHIVE=1`), and backfills hospitals captured
-before archiving existed at `IA_BACKFILL_PER_RUN` (default 2) re-downloads
+before archiving existed at `BACKFILL_PER_RUN` (default 2) re-downloads
 per run. A failed upload is retried a week later. Files over the CI
 download cap (the Mayo giants) are archived by hand with
 `archive_snapshot.py <slug> <file>` after a local ingest.
@@ -150,9 +151,12 @@ should be reviewed as one. When you make one, bump `SUMMARY_VERSION` in
 `scrape.py`: it is stamped into each `meta.json`, and `compute_index.py`
 leaves a hospital out of the day's chain when its summary was produced by a
 different version than the previous run's, so the change is not compounded
-into the index as a price move. Run `rebuild_summaries.py --force` to move
-every hospital to the new version at once rather than as their files
-happen to change.
+into the index as a price move. Run `rebuild_summaries.py --force` from a
+machine with a full raw checkout to move every `stored` and `sharded`
+hospital to the new version at once; `summarized` hospitals have no local
+content to rebuild from, so the daily run re-downloads them a few per run
+(`BACKFILL_PER_RUN`, shared with cold-storage backfill) until all are
+current.
 
 ## Notes
 

@@ -613,16 +613,43 @@ def internal_type(t):
 # means (which codes a row fans out to, how gross/cash are picked, ...).
 # It is stamped into meta.json as summary_version, and compute_index.py
 # refuses to chain a hospital across two versions: a methodology change
-# would otherwise compound into the index as a price move.
-SUMMARY_VERSION = 1
+# would otherwise compound into the index as a price move. History:
+#   1  first row's gross/cash per code (order-dependent)
+#   2  median of the distinct positive gross/cash values listed per code
+SUMMARY_VERSION = 2
+
+
+def median(vals):
+    vals = sorted(vals)
+    n = len(vals)
+    return vals[n // 2] if n % 2 else (vals[n // 2 - 1] + vals[n // 2]) / 2
 
 
 class CodeAgg:
+    """Per-(type, code, description) aggregate. A code often appears on
+    several rows (settings, modifiers, tall-format payer rows); gross and
+    cash collect the distinct values listed and report their median, so the
+    summary does not change when a hospital merely reorders its file."""
     __slots__ = ("gross", "cash", "lo", "hi", "n")
 
     def __init__(self):
-        self.gross = self.cash = self.lo = self.hi = None
+        self.gross, self.cash = set(), set()  # non-positive values kept as 0.0
+        self.lo = self.hi = None
         self.n = 0
+
+    @staticmethod
+    def add(values, v):
+        if v is not None:
+            values.add(v if v > 0 else 0.0)
+
+    @staticmethod
+    def pick(values):
+        """Median of the positive values; 0.0 if only placeholders were
+        listed; None if the code carried no value at all."""
+        positive = [v for v in values if v > 0]
+        if positive:
+            return median(positive)
+        return 0.0 if values else None
 
     def add_negotiated(self, v):
         self.lo = v if self.lo is None else min(self.lo, v)
@@ -645,7 +672,8 @@ def write_summary(agg, out_path):
         w.writerow(SUMMARY_COLUMNS)
         for (ctype, code, desc) in sorted(agg):
             a = agg[(ctype, code, desc)]
-            w.writerow([ctype, code, desc, a.gross, a.cash, a.lo, a.hi, a.n])
+            w.writerow([ctype, code, desc, a.pick(a.gross), a.pick(a.cash),
+                        a.lo, a.hi, a.n])
     return True
 
 
@@ -696,8 +724,8 @@ def summarize_csv(path, out_path):
             aggs = [agg.setdefault(k, CodeAgg()) for k in keys]
             gross, cash = to_float(cell(row, gross_i)), to_float(cell(row, cash_i))
             for a in aggs:
-                a.gross = a.gross or gross
-                a.cash = a.cash or cash
+                a.add(a.gross, gross)
+                a.add(a.cash, cash)
             for i in neg:
                 v = to_float(cell(row, i))
                 if v is not None:
@@ -730,8 +758,8 @@ def aggregate_items(items):
             gross = to_float(sc.get("gross_charge"))
             cash = to_float(sc.get("discounted_cash"))
             for a in aggs:
-                a.gross = a.gross or gross
-                a.cash = a.cash or cash
+                a.add(a.gross, gross)
+                a.add(a.cash, cash)
             for p in sc.get("payers_information") or []:
                 v = to_float(p.get("standard_charge_dollar"))
                 if v is not None:
@@ -977,25 +1005,30 @@ def process(hospital, scratch, impersonate=None):
     # what lands on disk.
     limit = int(os.environ.get("MAX_DOWNLOAD_BYTES") or 0)
 
-    # A summarized hospital whose original bytes are not yet in cold storage
-    # gets one forced download to archive them — this backfills the giants
-    # captured before archiving existed — a few per run so the daily job
-    # stays bounded. A failed attempt is retried weekly, not daily.
-    archive_needed = (
-        not upgrade_needed
-        and archiving_enabled()
-        and old_meta.get("status") == "summarized"
-        and bool(old_meta.get("sha256"))
+    # A summarized hospital gets one forced re-download when its summary
+    # predates the current summarizer (its content exists nowhere else to
+    # rebuild from) or its original bytes are not yet in cold storage —
+    # this is how the giants captured before either existed catch up — a
+    # few per run so the daily job stays bounded. A failed upload is
+    # retried weekly, not daily.
+    summarized = old_meta.get("status") == "summarized" and bool(old_meta.get("sha256"))
+    summary_stale = summarized and old_meta.get("summary_version", 1) != SUMMARY_VERSION
+    archive_wanted = (
+        summarized and archiving_enabled()
         and (old_meta.get("cold_storage") or {}).get("sha256") != old_meta.get("sha256")
         and not cold_attempt_recent(old_meta)
-        and (not limit or old_meta.get("size_bytes", 0) <= limit)
-        and len(BACKFILLED) < int(os.environ.get("IA_BACKFILL_PER_RUN") or 2)
     )
-    if archive_needed:
+    backfill = (
+        not upgrade_needed and (summary_stale or archive_wanted)
+        and (not limit or old_meta.get("size_bytes", 0) <= limit)
+        and len(BACKFILLED) < int(os.environ.get("BACKFILL_PER_RUN") or 2)
+    )
+    if backfill:
         BACKFILLED.append(slug)
+    resummarize = upgrade_needed or (backfill and summary_stale)
 
     mt = hospital.get("curl_max_time")
-    if not upgrade_needed and not archive_needed \
+    if not resummarize and not backfill \
             and mrf_url == old_meta.get("mrf_url") and old_meta.get("sha256"):
         h = head(mrf_url, impersonate=imp, max_time=mt)
         validators = (h.get("Last-Modified"), h.get("ETag"))
@@ -1041,7 +1074,7 @@ def process(hospital, scratch, impersonate=None):
             sha = sha256_file(payload_path)
 
         changed = sha != old_meta.get("sha256") or mrf_url != old_meta.get("mrf_url")
-        if not changed and not upgrade_needed:
+        if not changed and not resummarize:
             # Content identical but validators rotated; refresh them so the
             # cheap-skip paths work next run. The meta.json edit still lands
             # in a commit, so main() names it rather than calling the run
@@ -1049,7 +1082,7 @@ def process(hospital, scratch, impersonate=None):
             old_meta["source_last_modified"] = headers.get("Last-Modified")
             old_meta["source_etag"] = headers.get("ETag")
             old_meta["transfer_fingerprint"] = transfer_fp
-            if archive_needed:  # downloaded for cold storage only
+            if backfill:  # downloaded for cold storage only
                 try_cold_store(slug, payload_path, sha, old_meta, name)
             else:
                 REFRESHED.append(slug)

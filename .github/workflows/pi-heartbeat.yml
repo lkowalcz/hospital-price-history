@@ -1,0 +1,38 @@
+name: Pi heartbeat
+
+# local_refetch.py (the Raspberry Pi job, daily 13:00 New York) re-points
+# the annotated tag `pi-heartbeat` when it completes. Quiet days produce
+# no commit, so the tag's date is the only reliable sign of life. This
+# fails — and GitHub emails the failure — when that date is more than
+# three days old, or the tag has never been pushed. See docs/OPERATIONS.md.
+
+on:
+  schedule:
+    - cron: "30 18 * * *"  # 14:30 New York in summer, after the Pi's run
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check the age of the pi-heartbeat tag
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          MAX_AGE_HOURS: "72"
+        run: |
+          set -euo pipefail
+          if ! sha=$(gh api "repos/$REPO/git/ref/tags/pi-heartbeat" --jq .object.sha 2>/dev/null); then
+            echo "::error::no pi-heartbeat tag: local_refetch.py has never completed on the Pi (or never pushed the tag)"
+            exit 1
+          fi
+          when=$(gh api "repos/$REPO/git/tags/$sha" --jq .tagger.date)
+          age_h=$(( ( $(date -u +%s) - $(date -u -d "$when" +%s) ) / 3600 ))
+          echo "last local refetch completed $when (${age_h}h ago)"
+          if [ "$age_h" -gt "$MAX_AGE_HOURS" ]; then
+            echo "::error::Pi refetch job silent for ${age_h}h (limit ${MAX_AGE_HOURS}h). Health check: docs/OPERATIONS.md"
+            exit 1
+          fi
