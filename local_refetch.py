@@ -34,7 +34,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 os.chdir(ROOT)
-os.environ.setdefault("CURL_IMPERSONATE_BIN", str(ROOT / ".tools" / "curl_chrome145"))
+# Same wrapper the CI workflow uses (CI_WRAPPER in scrape.yml; a test pins
+# them). .tools/ holds the curl-impersonate release for this host.
+IMPERSONATE_WRAPPER = "curl_chrome150"
+os.environ.setdefault("CURL_IMPERSONATE_BIN", str(ROOT / ".tools" / IMPERSONATE_WRAPPER))
 
 import scrape  # noqa: E402  (needs CURL_IMPERSONATE_BIN set first)
 from scrape import RAW_DATA  # noqa: E402

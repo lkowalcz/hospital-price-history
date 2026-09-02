@@ -43,7 +43,7 @@ Rules that shape the rows:
 
 | Version | Change |
 |---------|--------|
-| 1 | Gross charge and cash price taken from the first row listing the code. Depended on row order. |
+| 1 | Gross charge and cash price taken from the first row listing the code. Depended on row order: the two 2026-08-27 entries in `index-anomalies.csv` (HCA Florida Kendall CPT 80053, HCA Houston CPT 72148) were files that reordered line items carrying two different gross charges, not price changes. |
 | 2 | Median of the distinct positive values listed for the code. Independent of row order. |
 
 When the version changes, the price index does not chain a hospital across

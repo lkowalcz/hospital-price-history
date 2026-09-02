@@ -55,10 +55,16 @@ jobs:
           command -v zstd >/dev/null || sudo apt-get install -y -q zstd >/dev/null
 
       - name: Install curl-impersonate
+        # Refresh twice a year with check_impersonate.py (docs/OPERATIONS.md).
+        # The wrapper name must match local_refetch.IMPERSONATE_WRAPPER;
+        # tests/test_scrape.py pins them. Last checked 2026-09-02.
+        env:
+          CI_VERSION: v2.2.2
+          CI_WRAPPER: curl_chrome150
         run: |
-          curl -sL -o ci.tar.gz https://github.com/lexiforest/curl-impersonate/releases/download/v2.1.0/curl-impersonate-v2.1.0.x86_64-linux-gnu.tar.gz
+          curl -sL -o ci.tar.gz "https://github.com/lexiforest/curl-impersonate/releases/download/$CI_VERSION/curl-impersonate-$CI_VERSION.x86_64-linux-gnu.tar.gz"
           mkdir -p "$RUNNER_TEMP/ci" && tar xzf ci.tar.gz -C "$RUNNER_TEMP/ci"
-          echo "CURL_IMPERSONATE_BIN=$RUNNER_TEMP/ci/curl_chrome145" >> "$GITHUB_ENV"
+          echo "CURL_IMPERSONATE_BIN=$RUNNER_TEMP/ci/$CI_WRAPPER" >> "$GITHUB_ENV"
 
       - name: Scrape
         run: python scrape.py

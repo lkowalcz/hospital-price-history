@@ -68,9 +68,10 @@ Pi OS 64-bit (Debian trixie) with `git` and `python3-venv` installed.
    git sparse-checkout init --no-cone && git sparse-checkout set '/*' '!/data/' && git checkout main
    ```
 3. In the main clone: `python3 -m venv .venv && .venv/bin/pip install -r requirements.txt`,
-   then install curl-impersonate where `local_refetch.py` expects it:
+   then install curl-impersonate where `local_refetch.py` expects it (use
+   the release the workflow's `CI_VERSION` names; v2.2.2 as of 2026-09-02):
    ```sh
-   mkdir .tools && cd .tools && curl -sL https://github.com/lexiforest/curl-impersonate/releases/download/v2.1.0/curl-impersonate-v2.1.0.aarch64-linux-gnu.tar.gz | tar xz
+   mkdir .tools && cd .tools && curl -sL https://github.com/lexiforest/curl-impersonate/releases/download/v2.2.2/curl-impersonate-v2.2.2.aarch64-linux-gnu.tar.gz | tar xz
    ```
 4. In both clones: `git config user.name price-history-pi` and
    `git config user.email lkowalcz@gmail.com`.
@@ -104,6 +105,33 @@ running `/opt/homebrew/bin/python3 <repo>/local_refetch.py` with
 and stdout and stderr to `~/Library/Logs/hospital-price-refetch.log`. Then
 `launchctl load` it, and unload it again once the Pi is back so the two do
 not race.
+
+## Refreshing curl-impersonate
+
+Fifteen hospitals are fetched through curl-impersonate because their CDNs
+block by TLS fingerprint. The fingerprint mimics a specific Chrome
+release, and CDN rules eventually start treating old releases as bots, so
+the build is refreshed about twice a year, or as soon as impersonated
+hospitals start failing together.
+
+1. Find the latest release at
+   https://github.com/lexiforest/curl-impersonate/releases and unpack the
+   macOS tarball somewhere temporary.
+2. Probe with the wrapper in use, then with the candidate (the newest
+   `curl_chromeNNN` in the new tarball):
+   ```sh
+   python3 check_impersonate.py .tools/curl_chrome150
+   python3 check_impersonate.py /tmp/new/curl_chromeNNN
+   ```
+   Every hospital that passes with the old wrapper must pass with the new.
+3. Switch everything together: `CI_VERSION` and `CI_WRAPPER` in
+   `scrape.yml`, `IMPERSONATE_WRAPPER` in `local_refetch.py` (a test pins
+   the two names to each other), the "Last checked" date in `scrape.yml`,
+   this Mac's `.tools/`, and the Pi's `.tools/` (step 3 of the rebuild,
+   over ssh). The Pi picks up the new wrapper name on its second run after
+   the pull, since it imports `local_refetch.py` before pulling.
+
+Last refreshed 2026-09-02: v2.2.2, `curl_chrome150`, 15/15 hospitals.
 
 ## Internet Archive cold storage
 

@@ -375,6 +375,14 @@ class TestSkipEnv(unittest.TestCase):
         self.assertIsNotNone(m, "scrape.yml no longer sets SKIP")
         self.assertEqual(sorted(m.group(1).split(",")), sorted(local_refetch.LOCAL_ONLY))
 
+    def test_workflow_wrapper_matches_local_refetch(self):
+        import re
+        import local_refetch
+        yml = (Path(__file__).parent.parent / ".github" / "workflows" / "scrape.yml").read_text()
+        m = re.search(r"^\s*CI_WRAPPER: (\S+)$", yml, re.M)
+        self.assertIsNotNone(m, "scrape.yml no longer sets CI_WRAPPER")
+        self.assertEqual(m.group(1), local_refetch.IMPERSONATE_WRAPPER)
+
     def test_skip_filters_unless_only(self):
         hospitals = [{"slug": "a"}, {"slug": "b"}, {"slug": "c"}]
         slugs = lambda only, skip: [h["slug"] for h in scrape.select_hospitals(hospitals, only, skip)]
