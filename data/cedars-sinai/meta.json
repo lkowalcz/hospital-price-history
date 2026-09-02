@@ -10,5 +10,12 @@
   "transfer_fingerprint": "bcf2d431d70b13590dcb16985e6c65da6204ec3c5b551d8c361840153283f613",
   "status": "summarized",
   "first_seen": "2026-08-12T05:15:41Z",
-  "last_changed": "2026-08-26T23:41:51Z"
+  "last_changed": "2026-08-26T23:41:51Z",
+  "cold_storage": {
+    "url": "https://archive.org/details/hospital-price-history-cedars-sinai-8c188ab3b029",
+    "sha256": "8c188ab3b02967785256d5867cf760778581e5e849f0fd1141955c2a2dcd2dbf",
+    "file_sha256": "8c188ab3b02967785256d5867cf760778581e5e849f0fd1141955c2a2dcd2dbf",
+    "compressed_bytes": 6932614,
+    "archived": "2026-09-02T17:00:22Z"
+  }
 }

@@ -10,5 +10,12 @@
   "transfer_fingerprint": "0c212b3719fa5d1d60d05cc6de1485c1080088c44fd1c3a6066e0f78df59d820",
   "status": "summarized",
   "first_seen": "2026-08-12T05:15:27Z",
-  "last_changed": "2026-08-26T23:41:34Z"
+  "last_changed": "2026-08-26T23:41:34Z",
+  "cold_storage": {
+    "url": "https://archive.org/details/hospital-price-history-cleveland-clinic-9f966fd58f5c",
+    "sha256": "9f966fd58f5cce12fa6a86e261e81dbf9a63121790443c7f97c82ca4fc313f6e",
+    "file_sha256": "9f966fd58f5cce12fa6a86e261e81dbf9a63121790443c7f97c82ca4fc313f6e",
+    "compressed_bytes": 38281877,
+    "archived": "2026-09-02T16:58:35Z"
+  }
 }
