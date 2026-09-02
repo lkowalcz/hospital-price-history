@@ -177,16 +177,36 @@ def head(url, impersonate=False, max_time=None):
     return with_retries(go)
 
 
-def download_to(url, dest, impersonate=False, max_time=None):
+def over_limit(size, limit):
+    return (f"file is {size:,} bytes, over MAX_DOWNLOAD_BYTES={limit:,}; "
+            "fetch from an uncapped environment")
+
+
+def download_to(url, dest, impersonate=False, max_time=None, limit=0):
+    """Stream url to dest; returns the response Headers. A non-zero limit
+    aborts the transfer (ValueError) once more bytes than that arrive."""
     if impersonate and IMPERSONATE_BIN:
         def go():
-            status, headers, _ = curl_fetch(url, dest=dest, extra=("--fail",), max_time=max_time)
+            extra = ("--fail",) + (("--max-filesize", str(limit)) if limit else ())
+            try:
+                status, headers, _ = curl_fetch(url, dest=dest, extra=extra, max_time=max_time)
+            except subprocess.CalledProcessError as exc:
+                if exc.returncode == 63:  # CURLE_FILESIZE_EXCEEDED: not transient
+                    raise ValueError(
+                        f"transfer exceeded MAX_DOWNLOAD_BYTES={limit:,}; "
+                        "fetch from an uncapped environment") from exc
+                raise
             return headers
         return with_retries(go)
 
     def go():
+        written = 0
         with request(url) as resp, open(dest, "wb") as f:
-            shutil.copyfileobj(resp, f, 1024 * 1024)
+            for chunk in iter(lambda: resp.read(1024 * 1024), b""):
+                f.write(chunk)
+                written += len(chunk)
+                if limit and written > limit:
+                    raise ValueError(over_limit(written, limit))
             return Headers(resp.headers.items())
     return with_retries(go)
 
@@ -318,8 +338,9 @@ def filename_from(headers, url, path):
     return name
 
 
-def materialize(tmp, headers, url, workdir):
-    """Return (filename, path) of the actual MRF, unzipping (on disk) if needed."""
+def materialize(tmp, headers, url, workdir, limit=0):
+    """Return (filename, path) of the actual MRF, unzipping (on disk) if
+    needed. A non-zero limit refuses to unpack a zip entry larger than it."""
     with open(tmp, "rb") as f:
         magic = f.read(4)
     if magic[:2] == b"\x1f\x8b":  # transfer-gzipped despite our requests
@@ -340,6 +361,9 @@ def materialize(tmp, headers, url, workdir):
         ]
         if len(names) != 1:
             raise ValueError(f"expected 1 file in zip, found {names}")
+        unpacked = zf.getinfo(names[0]).file_size
+        if limit and unpacked > limit:
+            raise ValueError("zip unpacks to " + over_limit(unpacked, limit))
         out = workdir / "extracted"
         with zf.open(names[0]) as src, open(out, "wb") as dst:
             shutil.copyfileobj(src, dst, 1024 * 1024)
@@ -585,6 +609,14 @@ def internal_type(t):
     return r
 
 
+# Bump whenever summarize_csv/aggregate_items change what a summary.csv row
+# means (which codes a row fans out to, how gross/cash are picked, ...).
+# It is stamped into meta.json as summary_version, and compute_index.py
+# refuses to chain a hospital across two versions: a methodology change
+# would otherwise compound into the index as a price move.
+SUMMARY_VERSION = 1
+
+
 class CodeAgg:
     __slots__ = ("gross", "cash", "lo", "hi", "n")
 
@@ -739,6 +771,12 @@ def store_summarized(outdir, name, path):
 # changed_slugs.txt to sync exactly these paths in the raw repo (whose old
 # shards are not on disk under its sparse checkout).
 REWRITTEN = []
+# Slugs whose meta.json validators were refreshed without a content change.
+REFRESHED = []
+# Snapshots are assembled under data/<STAGING>/<slug> (and the raw-repo
+# equivalent) and swapped into place only once complete. Git-ignored in
+# this repo; the raw repo's commit steps add data/<slug> paths only.
+STAGING = ".staging"
 
 
 def clear_content(outdir):
@@ -746,6 +784,59 @@ def clear_content(outdir):
         if path.name == "meta.json":
             continue
         shutil.rmtree(path) if path.is_dir() else path.unlink()
+
+
+def store_snapshot(slug, name, payload, payload_path):
+    """Write one hospital's content — a stored payload or raw-repo shards,
+    plus the companion summary.csv — and return the storage mode.
+
+    Everything is built in staging directories beside the destinations and
+    swapped in only when complete. Without that, a crash mid-way (disk
+    full, the OOM killer on a small host) left an emptied data/<slug> next
+    to an unchanged meta.json: the next run's validators matched, nothing
+    was re-fetched, and the workflow committed the emptiness as a deletion.
+    """
+    outdir = DATA / slug
+    stage = DATA / STAGING / slug
+    raw_stage = RAW_DATA / STAGING / slug
+    for d in (stage, raw_stage):
+        shutil.rmtree(d, ignore_errors=True)
+    stage.mkdir(parents=True)
+    try:
+        if payload is not None and len(payload) <= MAX_STORED_BYTES:
+            (stage / f"standardcharges{ext_of(name)}").write_bytes(payload)
+            mode = "stored"
+        elif payload is not None:
+            mode = store_sharded(raw_stage, name, payload)
+            if mode == "metadata-only":
+                # unshardable (unparseable, or a bucket over the per-file
+                # cap): fall back to the summary layer rather than lose
+                # the price data entirely
+                mode = store_summarized(stage, name, payload_path)
+        else:
+            mode = store_summarized(stage, name, payload_path)
+        if mode in ("stored", "sharded"):
+            # Companion summary so summary.csv is a uniform analytics layer
+            # across every hospital regardless of storage mode.
+            store_summarized(stage, name, payload_path)
+
+        # Swap. From here the old snapshot is gone and the new one complete;
+        # renames within a directory tree are atomic per path.
+        outdir.mkdir(parents=True, exist_ok=True)
+        clear_content(outdir)
+        for p in stage.iterdir():
+            p.rename(outdir / p.name)
+        # Raw-repo cleanup for local full checkouts; under the workflow's
+        # sparse checkout old shards aren't on disk, so the commit step
+        # re-syncs each rewritten slug's raw path from changed_slugs.txt.
+        shutil.rmtree(RAW_DATA / slug, ignore_errors=True)
+        if raw_stage.is_dir():
+            raw_stage.rename(RAW_DATA / slug)
+        REWRITTEN.append(slug)
+        return mode
+    finally:
+        for d in (stage, raw_stage):
+            shutil.rmtree(d, ignore_errors=True)
 
 
 def utcnow():
@@ -805,21 +896,23 @@ def process(hospital, scratch, impersonate=None):
             return None  # no Range support either: full refetch Sundays only
 
     # Runners have limited disk; oversized files (Mayo's 14.5 GB CSV) must be
-    # fetched from an environment without the cap (a local run).
-    limit = int(os.environ.get("MAX_DOWNLOAD_BYTES", 0))
+    # fetched from an environment without the cap (a local run). Content-
+    # Length is the cheap early exit; the cap is also enforced on the bytes
+    # actually received and on the unpacked size of a zip, since servers
+    # without HEAD support report nothing and a zip's payload is what lands
+    # on disk.
+    limit = int(os.environ.get("MAX_DOWNLOAD_BYTES") or 0)
     if limit:
         cl = int(head(mrf_url, impersonate=imp, max_time=mt).get("Content-Length") or 0)
         if cl > limit:
-            raise ValueError(
-                f"file is {cl:,} bytes, over MAX_DOWNLOAD_BYTES={limit:,}; "
-                "fetch from an uncapped environment")
+            raise ValueError(over_limit(cl, limit))
 
     workdir = Path(tempfile.mkdtemp(dir=scratch))
     try:
         tmp = workdir / "download"
-        headers = download_to(mrf_url, tmp, impersonate=imp, max_time=mt)
+        headers = download_to(mrf_url, tmp, impersonate=imp, max_time=mt, limit=limit)
         transfer_fp = local_fingerprint(tmp)
-        name, payload_path = materialize(tmp, headers, mrf_url, workdir)
+        name, payload_path = materialize(tmp, headers, mrf_url, workdir, limit=limit)
         size = payload_path.stat().st_size
 
         with open(payload_path, "rb") as f:
@@ -837,36 +930,18 @@ def process(hospital, scratch, impersonate=None):
 
         changed = sha != old_meta.get("sha256") or mrf_url != old_meta.get("mrf_url")
         if not changed and not upgrade_needed:
-            # Content identical but validators rotated; refresh them quietly
-            # so the cheap-skip paths work next run.
+            # Content identical but validators rotated; refresh them so the
+            # cheap-skip paths work next run. The meta.json edit still lands
+            # in a commit, so main() names it rather than calling the run
+            # "No changes".
             old_meta["source_last_modified"] = headers.get("Last-Modified")
             old_meta["source_etag"] = headers.get("ETag")
             old_meta["transfer_fingerprint"] = transfer_fp
             meta_path.write_text(json.dumps(old_meta, indent=2) + "\n")
+            REFRESHED.append(slug)
             return None
 
-        clear_content(outdir)
-        # Raw-repo cleanup for local full checkouts; under the workflow's
-        # sparse checkout old shards aren't on disk, so the commit step
-        # re-syncs each rewritten slug's raw path from changed_slugs.txt.
-        shutil.rmtree(RAW_DATA / slug, ignore_errors=True)
-        REWRITTEN.append(slug)
-        if payload is not None and len(payload) <= MAX_STORED_BYTES:
-            (outdir / f"standardcharges{ext_of(name)}").write_bytes(payload)
-            mode = "stored"
-        elif payload is not None:
-            mode = store_sharded(RAW_DATA / slug, name, payload)
-            if mode == "metadata-only":
-                # unshardable (unparseable, or a bucket over the per-file
-                # cap): fall back to the summary layer rather than lose
-                # the price data entirely
-                mode = store_summarized(outdir, name, payload_path)
-        else:
-            mode = store_summarized(outdir, name, payload_path)
-        if mode in ("stored", "sharded"):
-            # Companion summary so summary.csv is a uniform analytics layer
-            # across every hospital regardless of storage mode.
-            store_summarized(outdir, name, payload_path)
+        mode = store_snapshot(slug, name, payload, payload_path)
 
         meta = {
             "system": hospital["system"],
@@ -882,6 +957,8 @@ def process(hospital, scratch, impersonate=None):
             "first_seen": old_meta.get("first_seen") or utcnow(),
             "last_changed": utcnow() if changed else old_meta.get("last_changed"),
         }
+        if (outdir / "summary.csv").exists():
+            meta["summary_version"] = SUMMARY_VERSION
         if mode == "metadata-only" and size > MAX_SHARD_TOTAL:
             meta["summary_attempted_sha"] = sha
         if old_meta.get("fetch_escalated"):
@@ -1019,6 +1096,10 @@ def main():
         parts.append("recovered: " + ", ".join(recovered))
     if escalated:
         parts.append("escalated to impersonate: " + ", ".join(escalated))
+    if REFRESHED:
+        # meta.json edits that would otherwise be committed as "No changes"
+        # and show up as unexplained events in a hospital's change history.
+        parts.append("validators refreshed: " + ", ".join(REFRESHED))
     (ROOT / "commit_message.txt").write_text(("; ".join(parts) or "No changes") + "\n")
     (ROOT / "changed_slugs.txt").write_text(
         "".join(s + "\n" for s in REWRITTEN))

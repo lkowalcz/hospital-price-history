@@ -15,6 +15,10 @@ Method:
     never recovers from compounding a one-day data artifact, and a >4x
     day-over-day move in a *published list price* is more likely a file
     glitch than a price. The excluded moves stay on the record as anomalies.
+  - A hospital whose summary.csv was written by a different summarizer
+    version (scrape.SUMMARY_VERSION, stamped in meta.json) than the one
+    behind the previous run's prices is left out of that day's chain: its
+    relatives would measure the methodology change, not prices.
   - Appends one row per day to index-history.csv (skips if today already
     recorded). Cash and gross series are computed independently.
 
@@ -87,6 +91,33 @@ def basket_prices(slug, items):
     }
 
 
+def summary_version(slug):
+    """Which summarizer (scrape.SUMMARY_VERSION) wrote this summary.csv.
+    Summaries written before stamping began are version 1."""
+    p = ROOT / "data" / slug / "meta.json"
+    if not p.exists():
+        return 1
+    return json.loads(p.read_text()).get("summary_version", 1)
+
+
+def drop_method_changes(prev_prices, cur_prices, prev_versions, cur_versions):
+    """Exclude hospitals whose summary was produced by a different summarizer
+    version than the one behind the previous run's prices. Their relatives
+    would measure the methodology change, not a price move; they re-enter
+    the chain on the next run, when both sides share a version.
+
+    Returns (cur_prices without them, the excluded slugs).
+    """
+    kept, dropped = {}, []
+    for slug, prices in cur_prices.items():
+        if slug in prev_prices and \
+                prev_versions.get(slug, 1) != cur_versions.get(slug, 1):
+            dropped.append(slug)
+        else:
+            kept[slug] = prices
+    return kept, dropped
+
+
 def geomean(xs):
     return math.exp(sum(math.log(x) for x in xs) / len(xs)) if xs else None
 
@@ -122,11 +153,12 @@ def main():
     items = {f'{i["type"]}|{i["code"]}': (i["type"], canon_code(i["code"]))
              for i in basket["items"]}
     hospitals = json.loads((ROOT / "hospitals.json").read_text())
-    cur_prices = {}
+    cur_prices, cur_versions = {}, {}
     for h in hospitals:
         prices = basket_prices(h["slug"], items)
         if prices:
             cur_prices[h["slug"]] = prices
+            cur_versions[h["slug"]] = summary_version(h["slug"])
 
     today = date.today().isoformat()
     if HISTORY.exists() and any(line.startswith(today) for line in
@@ -137,8 +169,13 @@ def main():
     anomalies = []
     if STATE.exists():
         state = json.loads(STATE.read_text())
-        factor_cash, pairs_c, hosp_c, anom_c = series_factor(state["prices"], cur_prices, "cash")
-        factor_gross, pairs_g, hosp_g, anom_g = series_factor(state["prices"], cur_prices, "gross")
+        chained, dropped = drop_method_changes(
+            state["prices"], cur_prices, state.get("summary_versions", {}), cur_versions)
+        if dropped:
+            print(f"index: summarizer version changed for {len(dropped)} hospitals; "
+                  f"not chained today: {', '.join(dropped)}")
+        factor_cash, pairs_c, hosp_c, anom_c = series_factor(state["prices"], chained, "cash")
+        factor_gross, pairs_g, hosp_g, anom_g = series_factor(state["prices"], chained, "gross")
         anomalies = [("cash", *a) for a in anom_c] + [("gross", *a) for a in anom_g]
         idx_cash = state["index_cash"] * factor_cash
         idx_gross = state["index_gross"] * factor_gross
@@ -167,7 +204,8 @@ def main():
                 f"{hosp_c},{hosp_g}\n")
     STATE.write_text(json.dumps({
         "date": today, "index_cash": idx_cash, "index_gross": idx_gross,
-        "basket_version": basket["version"], "prices": cur_prices,
+        "basket_version": basket["version"], "summary_versions": cur_versions,
+        "prices": cur_prices,
     }, indent=1) + "\n")
     print(f"index: {today} cash={idx_cash:.2f} gross={idx_gross:.2f} "
           f"({hosp_c} hospitals, {pairs_c} cash pairs)")

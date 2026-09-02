@@ -11,16 +11,15 @@ push BOTH repos, raw first. Consider archiving the original download with
 archive_snapshot.py before deleting it.
 """
 
+import hashlib
 import json
 import sys
 from pathlib import Path
 
-import shutil
-
-from scrape import (DATA, RAW_DATA, ROOT, MAX_STORED_BYTES, MAX_SHARD_TOTAL,
-                    clear_content, discover_mrf_url, ext_of, head,
-                    local_fingerprint, normalize_payload, sha256_file,
-                    store_sharded, store_summarized, utcnow, wants_impersonate)
+from scrape import (DATA, ROOT, MAX_SHARD_TOTAL, SUMMARY_VERSION,
+                    discover_mrf_url, head, local_fingerprint,
+                    normalize_payload, sha256_file, store_snapshot, utcnow,
+                    wants_impersonate)
 
 
 def main():
@@ -32,13 +31,12 @@ def main():
     meta_path = outdir / "meta.json"
     old_meta = json.loads(meta_path.read_text()) if meta_path.exists() else {}
 
-    imp = wants_impersonate(hospital)
+    imp = wants_impersonate(hospital) or bool(old_meta.get("fetch_escalated"))
     mrf_url = discover_mrf_url(hospital, imp)
     h = head(mrf_url, impersonate=imp, max_time=hospital.get("curl_max_time"))
     name = path.name
     size = path.stat().st_size
 
-    import hashlib
     if size <= MAX_SHARD_TOTAL:
         payload = normalize_payload(name, path.read_bytes())
         sha = hashlib.sha256(payload).hexdigest()
@@ -49,20 +47,7 @@ def main():
         print(f"{slug}: content identical to the stored snapshot; nothing to do")
         return
 
-    clear_content(outdir)
-    shutil.rmtree(RAW_DATA / slug, ignore_errors=True)
-    if payload is not None:
-        if len(payload) <= MAX_STORED_BYTES:
-            (outdir / f"standardcharges{ext_of(name)}").write_bytes(payload)
-            mode = "stored"
-        else:
-            mode = store_sharded(RAW_DATA / slug, name, payload)
-            if mode == "metadata-only":
-                mode = store_summarized(outdir, name, path)
-        if mode in ("stored", "sharded"):
-            store_summarized(outdir, name, path)
-    else:
-        mode = store_summarized(outdir, name, path)
+    mode = store_snapshot(slug, name, payload, path)
 
     meta = {
         "system": hospital["system"],
@@ -79,6 +64,10 @@ def main():
         "last_changed": utcnow(),
         "note": "ingested from a local fetch (see README notes)",
     }
+    if (outdir / "summary.csv").exists():
+        meta["summary_version"] = SUMMARY_VERSION
+    if old_meta.get("fetch_escalated"):
+        meta["fetch_escalated"] = old_meta["fetch_escalated"]
     meta_path.write_text(json.dumps(meta, indent=2) + "\n")
     print(f"{slug}: ingested ({size:,} bytes, {mode})")
 

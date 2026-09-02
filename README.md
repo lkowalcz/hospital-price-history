@@ -54,7 +54,7 @@ regardless of how the full file is stored.
 | Mode | When | What's stored |
 |------|------|---------------|
 | `stored` | ≤ 45 MB | single normalized file |
-| `sharded` | ≤ 600 MB, parseable | 32 hash-bucketed, sorted shard files (CSV rows or JSONL items) plus a `_header` file — every shard is git-sized and a changed row touches only its bucket. Lives in the [companion raw repo](https://github.com/lkowalcz/hospital-price-history-raw) (see below) |
+| `sharded` | ≤ 600 MB, parseable | 32 hash-bucketed, sorted shard files (CSV rows or JSONL items) plus a `_header` file — every shard is git-sized, and a changed row shows up as one deletion and one insertion in the two buckets its old and new text hash to, never as a rewrite of the whole file. Lives in the [companion raw repo](https://github.com/lkowalcz/hospital-price-history-raw) (see below) |
 | `summarized` | larger, CMS v3 | `summary.csv`: per code — description, gross charge, discounted cash price, min/max negotiated rate, payer-entry count. Collapses the 0.7–5 GB files (Northwestern, Atrium, Penn, Cleveland Clinic, Duke, Cedars-Sinai, Northwell) into a few diffable MB |
 | `metadata-only` | unparseable | `meta.json` hash/size/timing only, so change *timing* is still captured |
 
@@ -101,6 +101,18 @@ overrides the raw clone location. `ONLY=slug1,slug2` limits the run;
 `SKIP=slug1,slug2` excludes slugs (ignored when `ONLY` is set). The daily
 workflow SKIPs the hospitals `local_refetch.py` owns, so CI never records a
 failure streak that the local run would clear a few hours later.
+`MAX_DOWNLOAD_BYTES` caps what a run will download or unpack (the workflow
+sets 10 GB; unset locally). Per-hospital, `"curl_max_time": <seconds>` in
+`hospitals.json` overrides the one-hour transfer timeout for impersonated
+fetches (`CURL_MAX_TIME` sets the default).
+
+Each snapshot is assembled under `data/.staging/` (and the raw clone's
+`data/.staging/`) and swapped into `data/<slug>/` only once complete, so an
+interrupted run never leaves a hospital half-written. Both are git-ignored
+or never staged; a leftover directory after a crash can simply be deleted.
+
+Operations for the scheduled local run (the Raspberry Pi cron job, its deploy
+keys, and how to rebuild it) are in [docs/OPERATIONS.md](docs/OPERATIONS.md).
 
 Neither clone needs history or old shards on disk — the scraper reads only
 `meta.json` and rewrites a hospital's raw directory from scratch — so on a
@@ -127,7 +139,13 @@ Golden-file tests for the parsers, summarizers, sharding round-trip, and
 index chain math, run by CI on every code push. The fixtures bake in the
 real-world pathologies listed under Notes; `tests/golden/` holds the
 expected `summary.csv` bytes — a diff there is a methodology change and
-should be reviewed as one.
+should be reviewed as one. When you make one, bump `SUMMARY_VERSION` in
+`scrape.py`: it is stamped into each `meta.json`, and `compute_index.py`
+leaves a hospital out of the day's chain when its summary was produced by a
+different version than the previous run's, so the change is not compounded
+into the index as a price move. Run `rebuild_summaries.py --force` to move
+every hospital to the new version at once rather than as their files
+happen to change.
 
 ## Notes
 

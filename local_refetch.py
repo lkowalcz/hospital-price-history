@@ -139,8 +139,15 @@ def main():
             except Exception as exc:
                 print(f"{slug}: workaround failed: {exc}", file=sys.stderr, flush=True)
 
-    # 3) Commit raw first, pin raw_commit, then commit main.
+    # 3) Commit raw first, pin raw_commit, then commit main. The scraper's
+    # own message carries the bookkeeping (fetch errors, recoveries,
+    # validator refreshes) that explains a meta.json-only commit.
     msg = "Local refetch: " + (", ".join(changed) or "no content changes")
+    scrape_msg = (ROOT / "commit_message.txt").read_text().strip()
+    extras = [p for p in scrape_msg.split("; ")
+              if p and p != "No changes" and not p.startswith("Update price files")]
+    if extras:
+        msg += "; " + "; ".join(extras)
     for slug in changed:
         stage_raw_slug(RAW_REPO, slug)
     if staged_changes(RAW_REPO):

@@ -4,6 +4,7 @@ import json
 import math
 import tempfile
 import unittest
+import unittest.mock
 from pathlib import Path
 
 import compute_index as ci
@@ -149,6 +150,40 @@ class TestChainMath(unittest.TestCase):
         factor, pairs, hospitals, anomalies = ci.series_factor(prev, cur, "cash")
         self.assertAlmostEqual(factor, 1.05)
         self.assertEqual((pairs, hospitals, len(anomalies)), (1, 1, 3))
+
+
+class TestMethodChange(unittest.TestCase):
+    """A summarizer version bump must not compound into the chain."""
+
+    PREV = {"h1": {"a": {"cash": 100}}, "h2": {"a": {"cash": 100}}}
+    CUR = {"h1": {"a": {"cash": 150}}, "h2": {"a": {"cash": 100}},
+           "new": {"a": {"cash": 7}}}
+
+    def test_changed_version_dropped_for_the_day(self):
+        kept, dropped = ci.drop_method_changes(
+            self.PREV, self.CUR, {"h1": 1, "h2": 1}, {"h1": 2, "h2": 1, "new": 2})
+        self.assertEqual(dropped, ["h1"])
+        self.assertEqual(set(kept), {"h2", "new"})  # newcomers chain from tomorrow
+        factor, pairs, hospitals, _ = ci.series_factor(self.PREV, kept, "cash")
+        self.assertEqual((factor, pairs, hospitals), (1.0, 1, 1))
+
+    def test_unstamped_summaries_are_version_one(self):
+        # State written before versions were recorded, meta.json without a
+        # stamp: both mean version 1, so nothing is dropped spuriously.
+        kept, dropped = ci.drop_method_changes(self.PREV, self.CUR, {}, {"h1": 1})
+        self.assertEqual(dropped, [])
+        self.assertEqual(kept, self.CUR)
+        kept, dropped = ci.drop_method_changes(self.PREV, self.CUR, {}, {"h1": 2})
+        self.assertEqual(dropped, ["h1"])
+
+    def test_summary_version_reads_meta(self):
+        with tempfile.TemporaryDirectory() as tmp, \
+                unittest.mock.patch.object(ci, "ROOT", Path(tmp)):
+            d = Path(tmp) / "data" / "h1"
+            d.mkdir(parents=True)
+            self.assertEqual(ci.summary_version("h1"), 1)
+            (d / "meta.json").write_text(json.dumps({"summary_version": 3}))
+            self.assertEqual(ci.summary_version("h1"), 3)
 
 
 if __name__ == "__main__":

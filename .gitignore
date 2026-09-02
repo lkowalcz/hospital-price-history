@@ -1,5 +1,6 @@
 commit_message.txt
 changed_slugs.txt
+.staging/
 __pycache__/
 .DS_Store
 .tools/

@@ -8,10 +8,12 @@ is a deliberate methodology change and should be reviewed as one.
 """
 
 import csv
+import io
 import json
 import tempfile
 import unittest
 import unittest.mock
+import zipfile
 from pathlib import Path
 
 import scrape
@@ -371,6 +373,156 @@ class TestMainSmoke(unittest.TestCase):
             scrape.main()
             self.assertEqual((Path(d) / "commit_message.txt").read_text(), "No changes\n")
             self.assertEqual((Path(d) / "changed_slugs.txt").read_text(), "")
+
+
+class TestProcess(unittest.TestCase):
+    """process() end to end with the network mocked out: first snapshot,
+    quiet validator refresh, and crash safety of the snapshot swap."""
+
+    HOSPITAL = {"slug": "h1", "system": "Sys", "location_name": "H1",
+                "hpt_txt": "https://x/cms-hpt.txt"}
+    URL = "https://x/charges.csv"
+
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        root = Path(self._tmp.name)
+        self.scratch = root / "scratch"
+        self.scratch.mkdir()
+        self.patches = [
+            unittest.mock.patch.object(scrape, "DATA", root / "data"),
+            unittest.mock.patch.object(scrape, "RAW_DATA", root / "raw" / "data"),
+            unittest.mock.patch.object(scrape, "REWRITTEN", []),
+            unittest.mock.patch.object(scrape, "REFRESHED", []),
+            unittest.mock.patch.object(scrape, "discover_mrf_url", lambda h, imp: self.URL),
+            unittest.mock.patch.object(scrape, "remote_fingerprint",
+                                       lambda url, impersonate=False, max_time=None: None),
+            unittest.mock.patch.dict("os.environ", {"MAX_DOWNLOAD_BYTES": ""}),
+        ]
+        for p in self.patches:
+            p.start()
+        self.body = (FIXTURES / "wide.csv").read_bytes()
+        self.validators = {"Last-Modified": "Mon, 01 Jan 2026 00:00:00 GMT", "ETag": '"v1"'}
+
+    def tearDown(self):
+        for p in reversed(self.patches):
+            p.stop()
+        self._tmp.cleanup()
+
+    def run_process(self, validators=None):
+        hdrs = scrape.Headers(list((validators or self.validators).items()))
+
+        def fake_download(url, dest, impersonate=False, max_time=None, limit=0):
+            Path(dest).write_bytes(self.body)
+            return hdrs
+        with unittest.mock.patch.object(scrape, "head",
+                                        lambda url, impersonate=False, max_time=None: hdrs), \
+                unittest.mock.patch.object(scrape, "download_to", fake_download):
+            return scrape.process(self.HOSPITAL, self.scratch)
+
+    def meta(self):
+        return json.loads((scrape.DATA / "h1" / "meta.json").read_text())
+
+    def test_first_snapshot_stored_with_summary(self):
+        msg = self.run_process()
+        self.assertIn("first snapshot", msg)
+        outdir = scrape.DATA / "h1"
+        self.assertTrue((outdir / "standardcharges.csv").exists())
+        self.assertEqual((outdir / "summary.csv").read_bytes(),
+                         (GOLDEN / "wide_summary.csv").read_bytes())
+        m = self.meta()
+        self.assertEqual(m["status"], "stored")
+        self.assertEqual(m["summary_version"], scrape.SUMMARY_VERSION)
+        self.assertEqual(m["source_etag"], '"v1"')
+        self.assertEqual(scrape.REWRITTEN, ["h1"])
+        self.assertFalse((scrape.DATA / scrape.STAGING / "h1").exists())
+
+    def test_validator_refresh_is_reported_not_silent(self):
+        self.run_process()
+        first = self.meta()
+        # Same bytes, rotated validators: no content change, but meta.json
+        # is rewritten and the run must say so.
+        result = self.run_process({"Last-Modified": "Tue, 02 Jan 2026 00:00:00 GMT",
+                                   "ETag": '"v2"'})
+        self.assertIsNone(result)
+        self.assertEqual(scrape.REFRESHED, ["h1"])
+        self.assertEqual(scrape.REWRITTEN, ["h1"])  # not rewritten twice
+        m = self.meta()
+        self.assertEqual(m["source_etag"], '"v2"')
+        self.assertEqual(m["last_changed"], first["last_changed"])
+        self.assertEqual(m["sha256"], first["sha256"])
+
+    def test_unchanged_validators_skip_download(self):
+        self.run_process()
+        with unittest.mock.patch.object(scrape, "download_to",
+                                        side_effect=AssertionError("must not download")):
+            hdrs = scrape.Headers(list(self.validators.items()))
+            with unittest.mock.patch.object(scrape, "head",
+                                            lambda url, impersonate=False, max_time=None: hdrs):
+                self.assertIsNone(scrape.process(self.HOSPITAL, self.scratch))
+        self.assertEqual(scrape.REFRESHED, [])
+
+    def test_crash_mid_write_keeps_previous_snapshot(self):
+        self.run_process()
+        outdir = scrape.DATA / "h1"
+        before = {p.name: p.read_bytes() for p in outdir.iterdir()}
+        # New content routed to the sharded path, where the sharder dies
+        # (disk full, OOM): the old snapshot must survive untouched.
+        self.body = self.body.replace(b"470", b"471")
+        with unittest.mock.patch.object(scrape, "MAX_STORED_BYTES", 10), \
+                unittest.mock.patch.object(scrape, "store_sharded",
+                                           side_effect=RuntimeError("boom")):
+            with self.assertRaises(RuntimeError):
+                self.run_process({"ETag": '"v2"'})
+        after = {p.name: p.read_bytes() for p in outdir.iterdir()}
+        self.assertEqual(after, before)
+        self.assertEqual(scrape.REWRITTEN, ["h1"])
+        self.assertFalse((scrape.DATA / scrape.STAGING / "h1").exists())
+        self.assertFalse((scrape.RAW_DATA / scrape.STAGING / "h1").exists())
+
+    def test_sharded_snapshot_lands_in_raw_repo(self):
+        with unittest.mock.patch.object(scrape, "MAX_STORED_BYTES", 10):
+            msg = self.run_process()
+        self.assertIn("sharded", msg)
+        rawdir = scrape.RAW_DATA / "h1"
+        self.assertTrue((rawdir / "_header.csv").exists())
+        self.assertEqual(len(list((rawdir / "shards").glob("*.csv"))), scrape.SHARD_COUNT)
+        self.assertFalse((scrape.DATA / "h1" / "standardcharges.csv").exists())
+        self.assertTrue((scrape.DATA / "h1" / "summary.csv").exists())
+        self.assertEqual(self.meta()["status"], "sharded")
+        self.assertFalse((scrape.RAW_DATA / scrape.STAGING).exists() and
+                         any((scrape.RAW_DATA / scrape.STAGING).iterdir()))
+
+
+class TestDownloadCap(unittest.TestCase):
+    def test_plain_download_aborts_past_limit(self):
+        class Resp(io.BytesIO):
+            headers = {"Content-Type": "text/csv"}
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *a):
+                return False
+        with tempfile.TemporaryDirectory() as tmp, \
+                unittest.mock.patch.object(scrape, "request",
+                                           lambda url, **kw: Resp(b"x" * 3000)):
+            dest = Path(tmp) / "dl"
+            with self.assertRaises(ValueError):
+                scrape.download_to("https://x/f", dest, limit=1000)
+            self.assertEqual(scrape.download_to("https://x/f", dest, limit=0)
+                             .get("Content-Type"), "text/csv")
+            self.assertEqual(dest.stat().st_size, 3000)
+
+    def test_zip_unpacked_size_capped(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            z = Path(tmp) / "f.zip"
+            with zipfile.ZipFile(z, "w", zipfile.ZIP_DEFLATED) as zf:
+                zf.writestr("charges.csv", "a,b\n" * 1000)  # 4000 B, tiny zipped
+            hdrs = scrape.Headers([("Content-Type", "application/zip")])
+            with self.assertRaises(ValueError):
+                scrape.materialize(z, hdrs, "https://x/f.zip", Path(tmp), limit=1000)
+            name, path = scrape.materialize(z, hdrs, "https://x/f.zip", Path(tmp), limit=10000)
+            self.assertEqual((name, path.stat().st_size), ("charges.csv", 4000))
 
 
 if __name__ == "__main__":

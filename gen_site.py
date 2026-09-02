@@ -9,6 +9,7 @@ workflow; never committed to the repo.
 import csv
 import html
 import json
+import re
 import subprocess
 import sys
 from datetime import date
@@ -92,11 +93,16 @@ def load_summary(slug):
         return list(csv.DictReader(f))
 
 
+def is_drg(code_type):
+    # Same labels compute_index.py accepts: "MS-DRG", "MSDRG", "DRG", ...
+    return re.sub(r"[^A-Z]", "", code_type.upper()) in {"MSDRG", "DRG"}
+
+
 def featured_rows(rows):
     out = []
+    wanted = {k.lstrip("0") for k in FEATURED_DRGS}
     for r in rows or []:
-        if r["code_type"].upper().startswith("MS-DRG") and r["code"].lstrip("0") in \
-                {k.lstrip("0") for k in FEATURED_DRGS}:
+        if is_drg(r["code_type"]) and r["code"].lstrip("0") in wanted:
             out.append(r)
     if not out and rows:
         out = sorted(rows, key=lambda r: -int(r["payer_entries"] or 0))[:6]

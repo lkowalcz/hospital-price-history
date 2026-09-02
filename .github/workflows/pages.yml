@@ -5,9 +5,13 @@ on:
     branches: [main]
     paths: ["data/**", "gen_site.py", "hospitals.json", "basket.json",
             "index-history.csv", ".github/workflows/pages.yml"]
-  schedule:
-    - cron: "45 8 * * *"  # daily, after the scrape: bot-token commits from the
-                          # scrape workflow cannot trigger push-based deploys
+  # The scrape workflow commits with the bot token, whose pushes never
+  # trigger push-based deploys; a fixed later cron used to stand in, but
+  # GitHub delays scheduled runs by hours and the scrape often started
+  # after it. Chaining on completion is exact.
+  workflow_run:
+    workflows: ["Scrape hospital price files"]
+    types: [completed]
   workflow_dispatch: {}
 
 permissions:
@@ -21,6 +25,8 @@ concurrency:
 
 jobs:
   build:
+    # A failed scrape commits nothing, so there is nothing new to render.
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
