@@ -17,9 +17,9 @@ import sys
 from pathlib import Path
 
 from scrape import (DATA, ROOT, MAX_SHARD_TOTAL, SUMMARY_VERSION,
-                    discover_mrf_url, head, local_fingerprint,
-                    normalize_payload, sha256_file, store_snapshot, utcnow,
-                    wants_impersonate)
+                    archiving_enabled, discover_mrf_url, head,
+                    local_fingerprint, normalize_payload, sha256_file,
+                    store_snapshot, try_cold_store, utcnow, wants_impersonate)
 
 
 def main():
@@ -68,6 +68,8 @@ def main():
         meta["summary_version"] = SUMMARY_VERSION
     if old_meta.get("fetch_escalated"):
         meta["fetch_escalated"] = old_meta["fetch_escalated"]
+    if mode == "summarized" and archiving_enabled():
+        try_cold_store(slug, path, sha, meta)
     meta_path.write_text(json.dumps(meta, indent=2) + "\n")
     print(f"{slug}: ingested ({size:,} bytes, {mode})")
 

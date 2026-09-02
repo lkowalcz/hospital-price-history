@@ -48,7 +48,11 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          pip install -r requirements.txt
+          # zstd compresses summarized originals before cold storage; it is
+          # preinstalled on ubuntu-latest, and this is a no-op then.
+          command -v zstd >/dev/null || sudo apt-get install -y -q zstd >/dev/null
 
       - name: Install curl-impersonate
         run: |
@@ -66,6 +70,13 @@ jobs:
           # (runner IPs are blocked or the published links are dead). Keep in
           # sync with the lists there; tests/test_scrape.py checks this.
           SKIP: johns-hopkins,hopkins-bayview,hopkins-all-childrens,sibley-memorial,orlando-regional,hca-florida-kendall,tristar-centennial,yale-new-haven
+          # Cold storage of summarized originals on the Internet Archive.
+          # Both empty (secrets unset) leaves archiving off; see
+          # docs/OPERATIONS.md for where the keys come from.
+          IA_ACCESS_KEY_ID: ${{ secrets.IA_ACCESS_KEY_ID }}
+          IA_SECRET_ACCESS_KEY: ${{ secrets.IA_SECRET_ACCESS_KEY }}
+          # Giants re-downloaded per run only to archive them (backfill).
+          IA_BACKFILL_PER_RUN: "2"
 
       - name: Compute price index
         run: python compute_index.py

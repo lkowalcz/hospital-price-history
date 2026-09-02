@@ -98,6 +98,32 @@ and stdout and stderr to `~/Library/Logs/hospital-price-refetch.log`. Then
 `launchctl load` it, and unload it again once the Pi is back so the two do
 not race.
 
+## Internet Archive cold storage
+
+The 29 `summarized` hospitals keep only a digest in the repo; their
+original files are preserved as items on archive.org named
+`hospital-price-history-<slug>-<sha256 prefix>`.
+
+- **Credentials**: an archive.org account's S3-style keys, from
+  https://archive.org/account/s3.php. In this repo they are the secrets
+  `IA_ACCESS_KEY_ID` and `IA_SECRET_ACCESS_KEY` (Settings, Secrets and
+  variables, Actions). While either is missing, archiving is simply off and
+  the rest of the scrape is unaffected.
+- **What the daily run does**: uploads each new summarized snapshot right
+  after summarizing it, and re-downloads up to `IA_BACKFILL_PER_RUN` (2)
+  not-yet-archived hospitals per run until every one within the download
+  cap has a `cold_storage` record. Progress is visible in commit messages
+  as "archived originals: ..." and failures as "cold storage failed: ...";
+  a failure is retried after seven days.
+- **Files over the CI cap** (Mayo Rochester, Florida, Arizona; 10 GB and
+  up): fetch locally, ingest with `ingest_local.py`, then run
+  `archive_snapshot.py <slug> <file>` with `ia configure` done on that
+  machine. Keep the download until the item shows up.
+- **Rotation**: generate new keys on the same page, replace the two secrets,
+  and the next run uses them. Locally, `ia configure` again.
+- **Checking**: `grep -L cold_storage data/*/meta.json` lists hospitals
+  not yet archived, and each `cold_storage.url` opens the item.
+
 ## Recovering from a bad run
 
 - **A hospital directory is empty or missing `summary.csv`**: snapshots are

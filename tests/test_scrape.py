@@ -375,9 +375,9 @@ class TestMainSmoke(unittest.TestCase):
             self.assertEqual((Path(d) / "changed_slugs.txt").read_text(), "")
 
 
-class TestProcess(unittest.TestCase):
-    """process() end to end with the network mocked out: first snapshot,
-    quiet validator refresh, and crash safety of the snapshot swap."""
+class ProcessHarness(unittest.TestCase):
+    """process() end to end with the network mocked out and data/ in a
+    temp dir. Archiving is off unless a test turns it on."""
 
     HOSPITAL = {"slug": "h1", "system": "Sys", "location_name": "H1",
                 "hpt_txt": "https://x/cms-hpt.txt"}
@@ -393,15 +393,21 @@ class TestProcess(unittest.TestCase):
             unittest.mock.patch.object(scrape, "RAW_DATA", root / "raw" / "data"),
             unittest.mock.patch.object(scrape, "REWRITTEN", []),
             unittest.mock.patch.object(scrape, "REFRESHED", []),
+            unittest.mock.patch.object(scrape, "ARCHIVED", []),
+            unittest.mock.patch.object(scrape, "ARCHIVE_FAILED", []),
+            unittest.mock.patch.object(scrape, "BACKFILLED", []),
             unittest.mock.patch.object(scrape, "discover_mrf_url", lambda h, imp: self.URL),
             unittest.mock.patch.object(scrape, "remote_fingerprint",
                                        lambda url, impersonate=False, max_time=None: None),
-            unittest.mock.patch.dict("os.environ", {"MAX_DOWNLOAD_BYTES": ""}),
+            unittest.mock.patch.dict("os.environ", {"MAX_DOWNLOAD_BYTES": "",
+                                                    "IA_ARCHIVE": "0",
+                                                    "IA_BACKFILL_PER_RUN": ""}),
         ]
         for p in self.patches:
             p.start()
         self.body = (FIXTURES / "wide.csv").read_bytes()
         self.validators = {"Last-Modified": "Mon, 01 Jan 2026 00:00:00 GMT", "ETag": '"v1"'}
+        self.downloads = 0
 
     def tearDown(self):
         for p in reversed(self.patches):
@@ -412,6 +418,7 @@ class TestProcess(unittest.TestCase):
         hdrs = scrape.Headers(list((validators or self.validators).items()))
 
         def fake_download(url, dest, impersonate=False, max_time=None, limit=0):
+            self.downloads += 1
             Path(dest).write_bytes(self.body)
             return hdrs
         with unittest.mock.patch.object(scrape, "head",
@@ -421,6 +428,13 @@ class TestProcess(unittest.TestCase):
 
     def meta(self):
         return json.loads((scrape.DATA / "h1" / "meta.json").read_text())
+
+    def write_meta(self, meta):
+        (scrape.DATA / "h1" / "meta.json").write_text(json.dumps(meta) + "\n")
+
+
+class TestProcess(ProcessHarness):
+    """First snapshot, quiet validator refresh, crash safety of the swap."""
 
     def test_first_snapshot_stored_with_summary(self):
         msg = self.run_process()
@@ -491,6 +505,151 @@ class TestProcess(unittest.TestCase):
         self.assertEqual(self.meta()["status"], "sharded")
         self.assertFalse((scrape.RAW_DATA / scrape.STAGING).exists() and
                          any((scrape.RAW_DATA / scrape.STAGING).iterdir()))
+
+
+class TestColdStorage(ProcessHarness):
+    """Summarized originals go to the Internet Archive: on capture, by
+    backfill for hospitals captured earlier, with weekly retry on failure."""
+
+    RECORD = {"url": "https://archive.org/details/x", "sha256": None,
+              "compressed_bytes": 5, "archived": "2026-01-01T00:00:00Z"}
+
+    def fake_cold_store(self, calls):
+        def go(slug, path, sha):
+            calls.append((slug, path.read_bytes(), sha))
+            return dict(self.RECORD, sha256=sha)
+        return go
+
+    def summarized(self):
+        # Route the fixture through the giant path: no payload in memory,
+        # summary.csv only.
+        return unittest.mock.patch.object(scrape, "MAX_SHARD_TOTAL", 10)
+
+    def test_new_summarized_snapshot_is_archived(self):
+        calls = []
+        with self.summarized(), unittest.mock.patch.dict("os.environ", {"IA_ARCHIVE": "1"}), \
+                unittest.mock.patch.object(scrape, "cold_store", self.fake_cold_store(calls)):
+            msg = self.run_process()
+        self.assertIn("summarized", msg)
+        m = self.meta()
+        self.assertEqual(calls, [("h1", self.body, m["sha256"])])  # the original bytes
+        self.assertEqual(m["cold_storage"]["sha256"], m["sha256"])
+        self.assertEqual(scrape.ARCHIVED, ["h1"])
+        self.assertEqual(scrape.BACKFILLED, [])
+
+    def test_archiving_off_leaves_meta_alone(self):
+        with self.summarized():
+            self.run_process()
+        self.assertNotIn("cold_storage", self.meta())
+
+    def test_backfill_downloads_only_to_archive(self):
+        with self.summarized():
+            self.run_process()  # captured before archiving existed
+        before = self.meta()
+        calls = []
+        with self.summarized(), unittest.mock.patch.dict("os.environ", {"IA_ARCHIVE": "1"}), \
+                unittest.mock.patch.object(scrape, "cold_store", self.fake_cold_store(calls)):
+            self.assertIsNone(self.run_process())  # same validators: would normally skip
+        self.assertEqual(self.downloads, 2)
+        self.assertEqual(len(calls), 1)
+        m = self.meta()
+        self.assertEqual(m["cold_storage"]["sha256"], before["sha256"])
+        self.assertEqual(m["last_changed"], before["last_changed"])
+        self.assertEqual((scrape.REWRITTEN, scrape.REFRESHED, scrape.ARCHIVED, scrape.BACKFILLED),
+                         (["h1"], [], ["h1"], ["h1"]))
+        # Archived now: the next run is back to the cheap skip.
+        with self.summarized(), unittest.mock.patch.dict("os.environ", {"IA_ARCHIVE": "1"}):
+            self.assertIsNone(self.run_process())
+        self.assertEqual(self.downloads, 2)
+
+    def test_backfill_respects_cap_and_per_run_budget(self):
+        with self.summarized():
+            self.run_process()
+        size = self.meta()["size_bytes"]
+        with self.summarized(), unittest.mock.patch.dict(
+                "os.environ", {"IA_ARCHIVE": "1", "MAX_DOWNLOAD_BYTES": str(size - 1)}):
+            self.assertIsNone(self.run_process())  # over the cap: never fetched
+        with self.summarized(), unittest.mock.patch.dict(
+                "os.environ", {"IA_ARCHIVE": "1", "IA_BACKFILL_PER_RUN": "0"}):
+            self.assertIsNone(self.run_process())  # budget spent
+        self.assertEqual(self.downloads, 1)
+        self.assertNotIn("cold_storage", self.meta())
+
+    def test_failed_upload_recorded_and_retried_weekly(self):
+        with self.summarized(), unittest.mock.patch.dict("os.environ", {"IA_ARCHIVE": "1"}), \
+                unittest.mock.patch.object(scrape, "cold_store",
+                                           side_effect=RuntimeError("503 slow down")):
+            msg = self.run_process()
+        self.assertIn("summarized", msg)  # the snapshot itself is fine
+        m = self.meta()
+        self.assertNotIn("cold_storage", m)
+        self.assertEqual(m["cold_storage_attempt"]["sha256"], m["sha256"])
+        self.assertIn("slow down", m["cold_storage_attempt"]["error"])
+        self.assertEqual(scrape.ARCHIVE_FAILED, ["h1"])
+        # Recent failure: no re-download.
+        with self.summarized(), unittest.mock.patch.dict("os.environ", {"IA_ARCHIVE": "1"}):
+            self.assertIsNone(self.run_process())
+        self.assertEqual(self.downloads, 1)
+        # A week later: retried, and success clears the attempt record.
+        m["cold_storage_attempt"]["at"] = "2026-01-01T00:00:00Z"
+        self.write_meta(m)
+        calls = []
+        with self.summarized(), unittest.mock.patch.dict("os.environ", {"IA_ARCHIVE": "1"}), \
+                unittest.mock.patch.object(scrape, "cold_store", self.fake_cold_store(calls)):
+            self.assertIsNone(self.run_process())
+        self.assertEqual((self.downloads, len(calls)), (2, 1))
+        m = self.meta()
+        self.assertIn("cold_storage", m)
+        self.assertNotIn("cold_storage_attempt", m)
+
+    def test_record_carried_when_only_url_moves(self):
+        calls = []
+        with self.summarized(), unittest.mock.patch.dict("os.environ", {"IA_ARCHIVE": "1"}), \
+                unittest.mock.patch.object(scrape, "cold_store", self.fake_cold_store(calls)):
+            self.run_process()
+            with unittest.mock.patch.object(scrape, "discover_mrf_url",
+                                            lambda h, imp: "https://x/moved.csv"):
+                self.assertIn("updated", self.run_process())
+        self.assertEqual(len(calls), 1)  # same bytes: not uploaded twice
+        self.assertEqual(self.meta()["cold_storage"]["url"], self.RECORD["url"])
+
+    def test_cold_store_commands(self):
+        ran = []
+
+        def fake_run(cmd, check=True, **kw):
+            ran.append(cmd)
+            if cmd[0] == "zstd":
+                Path(cmd[cmd.index("-o") + 1]).write_bytes(b"zst!")
+            return unittest.mock.Mock(returncode=0)
+        with tempfile.TemporaryDirectory() as tmp, \
+                unittest.mock.patch.object(scrape.subprocess, "run", fake_run):
+            src = Path(tmp) / "charges.csv"
+            src.write_bytes(b"a,b\n1,2\n")
+            rec = scrape.cold_store("h1", src, "abcdef123456789")
+        zstd, ia = ran
+        self.assertEqual((zstd[0], zstd[-1]), ("zstd", str(src)))
+        self.assertEqual(ia[:3], [scrape.IA_BIN, "upload", "hospital-price-history-h1-abcdef123456"])
+        self.assertIn("--checksum", ia)
+        self.assertIn("--no-derive", ia)
+        self.assertEqual(rec["sha256"], "abcdef123456789")
+        self.assertEqual(rec["file_sha256"], scrape.hashlib.sha256(b"a,b\n1,2\n").hexdigest())
+        self.assertEqual(rec["compressed_bytes"], 4)
+        self.assertTrue(rec["url"].endswith("/hospital-price-history-h1-abcdef123456"))
+        self.assertTrue(any(rec["file_sha256"] in a for a in ia))
+
+    def test_archiving_enabled_switches(self):
+        with unittest.mock.patch.dict("os.environ", {"IA_ARCHIVE": "", "IA_ACCESS_KEY_ID": "",
+                                                     "IA_SECRET_ACCESS_KEY": ""}):
+            self.assertFalse(scrape.archiving_enabled())
+        with unittest.mock.patch.dict("os.environ", {"IA_ARCHIVE": "", "IA_ACCESS_KEY_ID": "k",
+                                                     "IA_SECRET_ACCESS_KEY": "s"}):
+            self.assertTrue(scrape.archiving_enabled())
+        with unittest.mock.patch.dict("os.environ", {"IA_ARCHIVE": "0", "IA_ACCESS_KEY_ID": "k",
+                                                     "IA_SECRET_ACCESS_KEY": "s"}):
+            self.assertFalse(scrape.archiving_enabled())
+        with unittest.mock.patch.dict("os.environ", {"IA_ARCHIVE": "1", "IA_ACCESS_KEY_ID": "",
+                                                     "IA_SECRET_ACCESS_KEY": ""}):
+            self.assertTrue(scrape.archiving_enabled())
 
 
 class TestDownloadCap(unittest.TestCase):

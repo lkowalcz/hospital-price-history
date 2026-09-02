@@ -74,9 +74,16 @@ carries the complete shard history from the archive's first day — `git log
 data/<slug>/` there is the full payer-level changelog per hospital.
 
 For `summarized` giants, whose repo representation is lossy, the original
-multi-GB download can be preserved via `archive_snapshot.py`, which
-zstd-compresses it, uploads it to the Internet Archive, and records the
-item URL + sha256 in `meta.json` under `cold_storage`.
+bytes go to cold storage on the Internet Archive: each new snapshot is
+zstd-compressed and uploaded as its own item, recorded in `meta.json`
+under `cold_storage` (item URL, sha256, compressed size) and linked from
+the hospital's page. The daily run does this whenever `IA_ACCESS_KEY_ID`
+and `IA_SECRET_ACCESS_KEY` are present (repo secrets in CI; locally, run
+`ia configure` and set `IA_ARCHIVE=1`), and backfills hospitals captured
+before archiving existed at `IA_BACKFILL_PER_RUN` (default 2) re-downloads
+per run. A failed upload is retried a week later. Files over the CI
+download cap (the Mayo giants) are archived by hand with
+`archive_snapshot.py <slug> <file>` after a local ingest.
 
 ### Cheap change detection
 

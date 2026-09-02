@@ -1,1 +1,2 @@
 ijson>=3.2
+internetarchive>=5.11

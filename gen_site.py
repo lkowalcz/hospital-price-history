@@ -135,6 +135,12 @@ def hospital_page(h, meta, outdir):
             "Payer-level rates",
             f'<a href="{RAW_REPO}/tree/{esc(ref)}/data/{slug}">full data</a> &middot; '
             f'<a href="{RAW_REPO}/commits/main/data/{slug}">change diffs</a>'))
+    cs = meta.get("cold_storage")
+    if cs:
+        status_rows.append((
+            "Original file",
+            f'<a href="{esc(cs["url"])}">copy on the Internet Archive</a> '
+            f'(zstd, {cs.get("compressed_bytes", 0):,} bytes)'))
     for label, val in status_rows:
         parts.append(f"<tr><th>{label}</th><td>{val}</td></tr>")
     parts.append("</table>")

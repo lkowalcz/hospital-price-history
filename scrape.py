@@ -767,12 +767,101 @@ def store_summarized(outdir, name, path):
 
 # ------------------------------------------------------------------ pipeline
 
+# ------------------------------------------------------------- cold storage
+
+# `summarized` hospitals keep only a lossy digest in the repo, so the
+# original bytes are preserved on the Internet Archive: one item per
+# (hospital, snapshot sha), zstd-compressed, recorded in meta.json under
+# cold_storage. Needs the `zstd` binary and the `ia` CLI (pip install
+# internetarchive) with credentials in IA_ACCESS_KEY_ID/IA_SECRET_ACCESS_KEY
+# (CI secrets) or from `ia configure` locally (then IA_ARCHIVE=1).
+IA_BIN = os.environ.get("IA_BIN", "ia")
+
+
+def archiving_enabled():
+    if os.environ.get("IA_ARCHIVE") == "0":
+        return False
+    return os.environ.get("IA_ARCHIVE") == "1" or bool(
+        os.environ.get("IA_ACCESS_KEY_ID") and os.environ.get("IA_SECRET_ACCESS_KEY"))
+
+
+def cold_store(slug, path, sha):
+    """Compress path and upload it to archive.org; returns the cold_storage
+    record. `sha` is the snapshot's identity from meta.json (for giants the
+    file's own sha256; for a fallback-summarized smaller file, that of its
+    normalized payload), so the record can be matched against meta.json;
+    file_sha256 is always the hash of the bytes actually archived."""
+    zst = path.with_name(path.name + ".zst")
+    if not zst.exists():
+        subprocess.run(["zstd", "-q", "-T0", "-12", "--long=27", "-o", str(zst), str(path)],
+                       check=True)
+    file_sha = sha256_file(path)
+    # One item per (hospital, content hash): re-archiving a new snapshot
+    # creates a new item, so old snapshots stay retrievable.
+    item = f"hospital-price-history-{slug}-{sha[:12]}"
+    subprocess.run(
+        [IA_BIN, "upload", item, str(zst),
+         "--no-derive", "--checksum", "--retries", "10", "--sleep", "60",
+         "--size-hint", str(zst.stat().st_size),
+         # A dataset, not a text: archive.org files it with community data
+         # and skips the book-style processing it would try on "texts".
+         "--metadata", "mediatype:data",
+         "--metadata", f"title:Hospital price MRF snapshot: {slug} ({utcnow()[:10]})",
+         "--metadata", "subject:hospital price transparency",
+         "--metadata",
+         f"description:Raw machine-readable standard-charges file for {slug}, "
+         f"archived by https://github.com/lkowalcz/hospital-price-history. "
+         f"sha256 of the uncompressed file: {file_sha}"],
+        check=True)
+    return {
+        "url": f"https://archive.org/details/{item}",
+        "sha256": sha,
+        "file_sha256": file_sha,
+        "compressed_bytes": zst.stat().st_size,
+        "archived": utcnow(),
+    }
+
+
+def cold_attempt_recent(meta, days=7):
+    """True if archiving this exact snapshot failed within the last week:
+    the retry is a multi-GB re-download, so don't do it daily."""
+    attempt = meta.get("cold_storage_attempt") or {}
+    if attempt.get("sha256") != meta.get("sha256") or not attempt.get("at"):
+        return False
+    at = datetime.strptime(attempt["at"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+    return (datetime.now(timezone.utc) - at).days < days
+
+
+def try_cold_store(slug, path, sha, meta):
+    """Archive and record in meta (in place); a failure is recorded as an
+    attempt so process() retries it next week, and never fails the run:
+    the snapshot itself is already stored."""
+    try:
+        meta["cold_storage"] = cold_store(slug, path, sha)
+        meta.pop("cold_storage_attempt", None)
+        ARCHIVED.append(slug)
+        print(f"{slug}: archived original at {meta['cold_storage']['url']}", flush=True)
+        return True
+    except Exception as exc:
+        meta["cold_storage_attempt"] = {"sha256": sha, "at": utcnow(),
+                                        "error": str(exc)[:200]}
+        ARCHIVE_FAILED.append(slug)
+        print(f"{slug}: cold storage failed: {exc}", file=sys.stderr, flush=True)
+        return False
+
+
+# ------------------------------------------------------------------ pipeline
+
 # Slugs whose content was rewritten this run. The workflow reads
 # changed_slugs.txt to sync exactly these paths in the raw repo (whose old
 # shards are not on disk under its sparse checkout).
 REWRITTEN = []
 # Slugs whose meta.json validators were refreshed without a content change.
 REFRESHED = []
+# Cold-storage bookkeeping for the commit message.
+ARCHIVED, ARCHIVE_FAILED = [], []
+# Summarized hospitals re-downloaded this run only to archive their bytes.
+BACKFILLED = []
 # Snapshots are assembled under data/<STAGING>/<slug> (and the raw-repo
 # equivalent) and swapped into place only once complete. Git-ignored in
 # this repo; the raw repo's commit steps add data/<slug> paths only.
@@ -878,8 +967,34 @@ def process(hospital, scratch, impersonate=None):
         and old_meta.get("summary_attempted_sha") != old_meta.get("sha256")
     )
 
+    # Runners have limited disk; oversized files (Mayo's 14.5 GB CSV) must be
+    # fetched from an environment without the cap (a local run). Content-
+    # Length is the cheap early exit below; the cap is also enforced on the
+    # bytes actually received and on the unpacked size of a zip, since
+    # servers without HEAD support report nothing and a zip's payload is
+    # what lands on disk.
+    limit = int(os.environ.get("MAX_DOWNLOAD_BYTES") or 0)
+
+    # A summarized hospital whose original bytes are not yet in cold storage
+    # gets one forced download to archive them — this backfills the giants
+    # captured before archiving existed — a few per run so the daily job
+    # stays bounded. A failed attempt is retried weekly, not daily.
+    archive_needed = (
+        not upgrade_needed
+        and archiving_enabled()
+        and old_meta.get("status") == "summarized"
+        and bool(old_meta.get("sha256"))
+        and (old_meta.get("cold_storage") or {}).get("sha256") != old_meta.get("sha256")
+        and not cold_attempt_recent(old_meta)
+        and (not limit or old_meta.get("size_bytes", 0) <= limit)
+        and len(BACKFILLED) < int(os.environ.get("IA_BACKFILL_PER_RUN") or 2)
+    )
+    if archive_needed:
+        BACKFILLED.append(slug)
+
     mt = hospital.get("curl_max_time")
-    if not upgrade_needed and mrf_url == old_meta.get("mrf_url") and old_meta.get("sha256"):
+    if not upgrade_needed and not archive_needed \
+            and mrf_url == old_meta.get("mrf_url") and old_meta.get("sha256"):
         h = head(mrf_url, impersonate=imp, max_time=mt)
         validators = (h.get("Last-Modified"), h.get("ETag"))
         stored = (old_meta.get("source_last_modified"), old_meta.get("source_etag"))
@@ -895,13 +1010,6 @@ def process(hospital, scratch, impersonate=None):
                 and datetime.now(timezone.utc).weekday() != 6:
             return None  # no Range support either: full refetch Sundays only
 
-    # Runners have limited disk; oversized files (Mayo's 14.5 GB CSV) must be
-    # fetched from an environment without the cap (a local run). Content-
-    # Length is the cheap early exit; the cap is also enforced on the bytes
-    # actually received and on the unpacked size of a zip, since servers
-    # without HEAD support report nothing and a zip's payload is what lands
-    # on disk.
-    limit = int(os.environ.get("MAX_DOWNLOAD_BYTES") or 0)
     if limit:
         cl = int(head(mrf_url, impersonate=imp, max_time=mt).get("Content-Length") or 0)
         if cl > limit:
@@ -913,6 +1021,8 @@ def process(hospital, scratch, impersonate=None):
         headers = download_to(mrf_url, tmp, impersonate=imp, max_time=mt, limit=limit)
         transfer_fp = local_fingerprint(tmp)
         name, payload_path = materialize(tmp, headers, mrf_url, workdir, limit=limit)
+        if payload_path != tmp:
+            tmp.unlink()  # the zip has served its purpose; free runner disk
         size = payload_path.stat().st_size
 
         with open(payload_path, "rb") as f:
@@ -937,8 +1047,11 @@ def process(hospital, scratch, impersonate=None):
             old_meta["source_last_modified"] = headers.get("Last-Modified")
             old_meta["source_etag"] = headers.get("ETag")
             old_meta["transfer_fingerprint"] = transfer_fp
+            if archive_needed:  # downloaded for cold storage only
+                try_cold_store(slug, payload_path, sha, old_meta)
+            else:
+                REFRESHED.append(slug)
             meta_path.write_text(json.dumps(old_meta, indent=2) + "\n")
-            REFRESHED.append(slug)
             return None
 
         mode = store_snapshot(slug, name, payload, payload_path)
@@ -963,6 +1076,11 @@ def process(hospital, scratch, impersonate=None):
             meta["summary_attempted_sha"] = sha
         if old_meta.get("fetch_escalated"):
             meta["fetch_escalated"] = old_meta["fetch_escalated"]
+        for key in ("cold_storage", "cold_storage_attempt"):
+            if (old_meta.get(key) or {}).get("sha256") == sha:
+                meta[key] = old_meta[key]  # same bytes (e.g. the URL moved)
+        if mode == "summarized" and "cold_storage" not in meta and archiving_enabled():
+            try_cold_store(slug, payload_path, sha, meta)
         meta_path.write_text(json.dumps(meta, indent=2) + "\n")
         verb = ("updated" if old_meta.get("sha256") else "first snapshot") \
             if changed else "backfilled summary"
@@ -1096,6 +1214,10 @@ def main():
         parts.append("recovered: " + ", ".join(recovered))
     if escalated:
         parts.append("escalated to impersonate: " + ", ".join(escalated))
+    if ARCHIVED:
+        parts.append("archived originals: " + ", ".join(ARCHIVED))
+    if ARCHIVE_FAILED:
+        parts.append("cold storage failed: " + ", ".join(ARCHIVE_FAILED))
     if REFRESHED:
         # meta.json edits that would otherwise be committed as "No changes"
         # and show up as unexplained events in a hospital's change history.
