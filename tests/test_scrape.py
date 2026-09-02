@@ -515,7 +515,8 @@ class TestColdStorage(ProcessHarness):
               "compressed_bytes": 5, "archived": "2026-01-01T00:00:00Z"}
 
     def fake_cold_store(self, calls):
-        def go(slug, path, sha):
+        def go(slug, path, sha, name=None):
+            self.assertEqual(name, "charges.csv")  # the hospital's filename, not "download"
             calls.append((slug, path.read_bytes(), sha))
             return dict(self.RECORD, sha256=sha)
         return go
@@ -623,12 +624,13 @@ class TestColdStorage(ProcessHarness):
             return unittest.mock.Mock(returncode=0)
         with tempfile.TemporaryDirectory() as tmp, \
                 unittest.mock.patch.object(scrape.subprocess, "run", fake_run):
-            src = Path(tmp) / "charges.csv"
+            src = Path(tmp) / "download"
             src.write_bytes(b"a,b\n1,2\n")
-            rec = scrape.cold_store("h1", src, "abcdef123456789")
+            rec = scrape.cold_store("h1", src, "abcdef123456789", "Hospital_Charges.csv")
         zstd, ia = ran
         self.assertEqual((zstd[0], zstd[-1]), ("zstd", str(src)))
-        self.assertEqual(ia[:3], [scrape.IA_BIN, "upload", "hospital-price-history-h1-abcdef123456"])
+        self.assertEqual(ia[:4], [scrape.IA_BIN, "upload", "hospital-price-history-h1-abcdef123456",
+                                  str(Path(tmp) / "Hospital_Charges.csv.zst")])
         self.assertIn("--checksum", ia)
         self.assertIn("--no-derive", ia)
         self.assertEqual(rec["sha256"], "abcdef123456789")

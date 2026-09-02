@@ -785,13 +785,15 @@ def archiving_enabled():
         os.environ.get("IA_ACCESS_KEY_ID") and os.environ.get("IA_SECRET_ACCESS_KEY"))
 
 
-def cold_store(slug, path, sha):
+def cold_store(slug, path, sha, name=None):
     """Compress path and upload it to archive.org; returns the cold_storage
     record. `sha` is the snapshot's identity from meta.json (for giants the
     file's own sha256; for a fallback-summarized smaller file, that of its
     normalized payload), so the record can be matched against meta.json;
-    file_sha256 is always the hash of the bytes actually archived."""
-    zst = path.with_name(path.name + ".zst")
+    file_sha256 is always the hash of the bytes actually archived. `name`
+    is the hospital's own filename for the archived file — path is usually
+    a scratch file called "download" or "extracted"."""
+    zst = path.with_name((name or path.name) + ".zst")
     if not zst.exists():
         subprocess.run(["zstd", "-q", "-T0", "-12", "--long=27", "-o", str(zst), str(path)],
                        check=True)
@@ -832,12 +834,12 @@ def cold_attempt_recent(meta, days=7):
     return (datetime.now(timezone.utc) - at).days < days
 
 
-def try_cold_store(slug, path, sha, meta):
+def try_cold_store(slug, path, sha, meta, name=None):
     """Archive and record in meta (in place); a failure is recorded as an
     attempt so process() retries it next week, and never fails the run:
     the snapshot itself is already stored."""
     try:
-        meta["cold_storage"] = cold_store(slug, path, sha)
+        meta["cold_storage"] = cold_store(slug, path, sha, name)
         meta.pop("cold_storage_attempt", None)
         ARCHIVED.append(slug)
         print(f"{slug}: archived original at {meta['cold_storage']['url']}", flush=True)
@@ -1048,7 +1050,7 @@ def process(hospital, scratch, impersonate=None):
             old_meta["source_etag"] = headers.get("ETag")
             old_meta["transfer_fingerprint"] = transfer_fp
             if archive_needed:  # downloaded for cold storage only
-                try_cold_store(slug, payload_path, sha, old_meta)
+                try_cold_store(slug, payload_path, sha, old_meta, name)
             else:
                 REFRESHED.append(slug)
             meta_path.write_text(json.dumps(old_meta, indent=2) + "\n")
@@ -1080,7 +1082,7 @@ def process(hospital, scratch, impersonate=None):
             if (old_meta.get(key) or {}).get("sha256") == sha:
                 meta[key] = old_meta[key]  # same bytes (e.g. the URL moved)
         if mode == "summarized" and "cold_storage" not in meta and archiving_enabled():
-            try_cold_store(slug, payload_path, sha, meta)
+            try_cold_store(slug, payload_path, sha, meta, name)
         meta_path.write_text(json.dumps(meta, indent=2) + "\n")
         verb = ("updated" if old_meta.get("sha256") else "first snapshot") \
             if changed else "backfilled summary"

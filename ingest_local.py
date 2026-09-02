@@ -69,7 +69,7 @@ def main():
     if old_meta.get("fetch_escalated"):
         meta["fetch_escalated"] = old_meta["fetch_escalated"]
     if mode == "summarized" and archiving_enabled():
-        try_cold_store(slug, path, sha, meta)
+        try_cold_store(slug, path, sha, meta, name)
     meta_path.write_text(json.dumps(meta, indent=2) + "\n")
     print(f"{slug}: ingested ({size:,} bytes, {mode})")
 
