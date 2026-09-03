@@ -85,7 +85,12 @@ Pi OS 64-bit (Debian trixie) with `git` and `python3-venv` installed.
 7. Point only the push URLs at the keyed hosts; fetch stays HTTPS:
    `git remote set-url --push origin git@github-hph:lkowalcz/hospital-price-history.git`
    and the `github-hph-raw` equivalent in the raw clone.
-8. Run `.venv/bin/python local_refetch.py` once by hand, check the log, then
+8. Archive.org credentials, so the Pi archives its own summarized
+   hospitals: either `.venv/bin/ia configure` on the Pi with the
+   lkowalcz@gmail.com account, or copy `~/.config/internetarchive/ia.ini`
+   from the Mac (`chmod 600`). The job prints "cold storage: on" at the
+   start of each run when it found them.
+9. Run `.venv/bin/python local_refetch.py` once by hand, check the log, then
    install the crontab line above.
 
 ## Revoke or rotate keys
@@ -160,15 +165,18 @@ original files are preserved as items on archive.org named
   Mayo serves a few MB/s, so allow a couple of hours; then commit the
   three `meta.json` and `summary.csv` files. An already-downloaded file
   can instead go through `archive_snapshot.py <slug> <file>`.
-- **TriStar Centennial** is Pi-owned (CI skips it) and its published link
-  is dead, so CI's backfill never reaches it. Until the Pi has archive.org
-  credentials, archive it from the Mac when the Pi's commit log shows it
-  changed: download via `local_refetch.workaround_url("tristar-centennial")`,
-  then `IA_ARCHIVE=1 IA_BIN=... python3 ingest_local.py tristar-centennial <file> --force`
-  (`--force` re-runs the pipeline on content identical to the snapshot).
-  Archived 2026-09-02.
+- **Pi-owned hospitals** (the workflow's `SKIP` list) never pass through
+  CI, so the Pi archives them itself: `local_refetch.py` turns cold
+  storage on whenever `~/.config/internetarchive/ia.ini` exists there and
+  the venv has the `ia` client. Today only TriStar Centennial is large
+  enough to be summarized; HCA Kendall is close to the line. The daily
+  heartbeat workflow fails if any Pi-owned hospital is summarized without
+  an archived original, so a missing or expired credential surfaces as an
+  email. For a one-off from the Mac, `ingest_local.py <slug> <file> --force`
+  re-runs the pipeline on content identical to the snapshot and archives it.
 - **Rotation**: generate new keys on the same page, replace the two secrets,
-  and the next run uses them. Locally, `ia configure` again.
+  and the next run uses them. Then `ia configure` again on the Mac and on
+  the Pi (or copy the Mac's `ia.ini` over), since both hold the old keys.
 - **Checking**: `grep -L cold_storage data/*/meta.json` lists hospitals
   not yet archived, and each `cold_storage.url` opens the item.
 

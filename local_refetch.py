@@ -39,7 +39,28 @@ os.chdir(ROOT)
 IMPERSONATE_WRAPPER = "curl_chrome150"
 os.environ.setdefault("CURL_IMPERSONATE_BIN", str(ROOT / ".tools" / IMPERSONATE_WRAPPER))
 
-import scrape  # noqa: E402  (needs CURL_IMPERSONATE_BIN set first)
+# Cold storage. This host archives summarized originals itself when it
+# has archive.org credentials (`ia configure`, which writes IA_CONFIG);
+# CI's backfill never reaches the hospitals this script owns. The ia CLI
+# comes with `pip install -r requirements.txt` into the venv.
+IA_CONFIG = Path.home() / ".config" / "internetarchive" / "ia.ini"
+
+
+def find_ia_bin():
+    import shutil
+    import sysconfig
+    for candidate in (Path(sys.executable).parent / "ia",
+                      Path(sysconfig.get_path("scripts", "posix_user")) / "ia",
+                      shutil.which("ia")):
+        if candidate and Path(candidate).exists():
+            return str(candidate)
+    return None
+
+
+if (ia_bin := find_ia_bin()):
+    os.environ.setdefault("IA_BIN", ia_bin)  # scrape reads it at import
+
+import scrape  # noqa: E402  (needs CURL_IMPERSONATE_BIN / IA_BIN set first)
 from scrape import RAW_DATA  # noqa: E402
 
 RAW_REPO = RAW_DATA.parent
@@ -141,6 +162,11 @@ def heartbeat():
 def main():
     # The cron log is append-only with no timestamps of its own.
     print(f"=== {stamp()} local_refetch start", flush=True)
+    if os.environ.get("IA_ARCHIVE") is None and IA_CONFIG.exists() and os.environ.get("IA_BIN"):
+        os.environ["IA_ARCHIVE"] = "1"  # inherited by the scrape/ingest subprocesses
+        print("cold storage: on (archive.org credentials found)", flush=True)
+    else:
+        print(f"cold storage: {'on' if scrape.archiving_enabled() else 'off'}", flush=True)
     for repo in (ROOT, RAW_REPO):
         git(repo, "pull", "--rebase", "--autostash", "--quiet")
 

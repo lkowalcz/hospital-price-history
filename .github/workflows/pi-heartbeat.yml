@@ -4,7 +4,10 @@ name: Pi heartbeat
 # the annotated tag `pi-heartbeat` when it completes. Quiet days produce
 # no commit, so the tag's date is the only reliable sign of life. This
 # fails — and GitHub emails the failure — when that date is more than
-# three days old, or the tag has never been pushed. See docs/OPERATIONS.md.
+# three days old, or the tag has never been pushed. It also fails when a
+# hospital the Pi owns is stored only as a summary with no archived
+# original: CI's cold-storage backfill skips those hospitals, so the Pi
+# must archive them itself (docs/OPERATIONS.md).
 
 on:
   schedule:
@@ -18,6 +21,35 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: |
+            /*
+            !/data/
+            /data/*/meta.json
+          sparse-checkout-cone-mode: false
+
+      - name: Pi-owned hospitals kept only as summaries must have an archived original
+        run: |
+          python3 - <<'EOF'
+          import json, re, sys
+          from pathlib import Path
+          yml = Path(".github/workflows/scrape.yml").read_text()
+          skip = re.search(r"^\s*SKIP: (.+)$", yml, re.M).group(1).split(",")
+          bad = []
+          for slug in skip:
+              p = Path("data") / slug / "meta.json"
+              m = json.loads(p.read_text()) if p.exists() else {}
+              if m.get("status") == "summarized" and not (m.get("cold_storage") or {}).get("sha256") == m.get("sha256"):
+                  bad.append(f"{slug} ({(m.get('cold_storage_attempt') or {}).get('error', 'never attempted')[:80]})")
+          if bad:
+              print("::error::Pi-owned hospitals summarized with no archived original: " + "; ".join(bad)
+                    + ". The Pi needs archive.org credentials (docs/OPERATIONS.md), or archive by hand.")
+              sys.exit(1)
+          print(f"all {len(skip)} Pi-owned hospitals are fully preserved")
+          EOF
+
       - name: Check the age of the pi-heartbeat tag
         env:
           GH_TOKEN: ${{ github.token }}

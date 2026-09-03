@@ -782,6 +782,17 @@ class TestHeartbeat(unittest.TestCase):
         yml = (Path(__file__).parent.parent / ".github" / "workflows" / "pi-heartbeat.yml").read_text()
         self.assertIn(f"git/ref/tags/{local_refetch.HEARTBEAT_TAG}", yml)
 
+    def test_importing_local_refetch_does_not_switch_archiving_on(self):
+        # Detection of credentials happens in main(), never at import: the
+        # tests import the module and must not start uploading.
+        with unittest.mock.patch.dict("os.environ", {"IA_ARCHIVE": ""}):
+            import importlib
+            import local_refetch
+            importlib.reload(local_refetch)
+            self.assertEqual(__import__("os").environ.get("IA_ARCHIVE"), "")
+            self.assertTrue(local_refetch.find_ia_bin() is None
+                            or Path(local_refetch.find_ia_bin()).exists())
+
 
 class TestDownloadCap(unittest.TestCase):
     def test_plain_download_aborts_past_limit(self):
