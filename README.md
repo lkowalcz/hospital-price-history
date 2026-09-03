@@ -52,9 +52,8 @@ regardless of how the full file is stored. Column semantics and the
 - A new file whose summary has less than half the rows (or coded rows) of
   the one it replaces is recorded as published but flagged — in
   `meta.json`, the commit message ("summary shrank: ..."), and on the
-  hospital's page — and the price index skips the hospital until a later
-  file passes. Truncated downloads and restructured layouts are more common
-  than hospitals halving their service list overnight.
+  hospital's page. Truncated downloads and restructured layouts are more
+  common than hospitals halving their service list overnight.
 
 ### Storage modes (automatic, by size)
 
@@ -68,7 +67,7 @@ regardless of how the full file is stored. Column semantics and the
 ### Where the data lives
 
 This repo is the product layer — `hospitals.json`, per-hospital `meta.json`
-and `summary.csv`, small (`stored`) payloads, the price index, and the site.
+and `summary.csv`, small (`stored`) payloads, and the site.
 Payer-level sharded content lives in a companion repo,
 [hospital-price-history-raw](https://github.com/lkowalcz/hospital-price-history-raw),
 under the same `data/<slug>/` layout, so this repo stays a ~1 GB clone
@@ -163,6 +162,20 @@ hospital to the new version at once; `summarized` hospitals have no local
 content to rebuild from, so the daily run re-downloads them a few per run
 (`BACKFILL_PER_RUN`, shared with cold-storage backfill) until all are
 current.
+
+### Price index (experimental, not published)
+
+`compute_index.py` runs after each daily scrape and appends to
+`index-history.csv`: a chain-linked Jevons index of cash prices and gross
+charges over the fixed basket in `basket.json`, with day-over-day moves
+beyond 4× logged to `index-anomalies.csv` instead of compounded. It is not
+shown on the site. Hospitals revise these files roughly once a year, so
+the series is a flat line with occasional steps, and with only weeks of
+history the anomaly log has been more useful than the index — as a check
+that a summarizer change did not register as a price move. The index is
+fully recomputable from the committed `summary.csv` history, so keeping it
+running costs nothing and publishing it can wait until it has something
+to say.
 
 ## Notes
 

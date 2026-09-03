@@ -2,7 +2,7 @@
 """Generate the static GitHub Pages site: gen_site.py <output_dir>.
 
 One page per hospital (price digest, change history from git, dataset
-markup for Google Dataset Search) plus an index. Deployed by the Pages
+markup for Google Dataset Search) plus a homepage listing them. Deployed by the Pages
 workflow; never committed to the repo.
 """
 
@@ -151,8 +151,7 @@ def hospital_page(h, meta, outdir):
                      f'{esc((meta.get("last_changed") or sw["at"])[:10])} has far fewer '
                      f'priced codes than the previous one ({esc(sw["detail"])}). It may be '
                      f'truncated or restructured; the previous snapshot remains in the '
-                     f'change history below, and this hospital is left out of the price '
-                     f'index until a later file passes the check.</div>')
+                     f'change history below.</div>')
 
     ff = meta.get("fetch_failures")
     if ff:
@@ -210,116 +209,6 @@ def hospital_page(h, meta, outdir):
     return canonical
 
 
-def svg_chart(rows, field, color):
-    """Simple line chart of an index series; rows are index-history dicts."""
-    if len(rows) < 2:
-        return '<p class="muted">Chart appears once the series has more than one day.</p>'
-    vals = [float(r[field]) for r in rows]
-    w, h, pad = 640, 180, 30
-    lo, hi = min(vals), max(vals)
-    if hi - lo < 1e-9:
-        lo, hi = lo - 1, hi + 1
-    pts = " ".join(
-        f"{pad + i * (w - 2 * pad) / (len(vals) - 1):.1f},"
-        f"{h - pad - (v - lo) * (h - 2 * pad) / (hi - lo):.1f}"
-        for i, v in enumerate(vals))
-    return (f'<svg viewBox="0 0 {w} {h}" role="img" style="max-width:100%">'
-            f'<polyline fill="none" stroke="{color}" stroke-width="2" points="{pts}"/>'
-            f'<text x="{pad}" y="12" font-size="11" fill="#666">{esc(rows[0]["date"])}'
-            f' → {esc(rows[-1]["date"])} &middot; {vals[-1]:.2f}</text></svg>')
-
-
-def price_index_page(outdir):
-    hist_path = ROOT / "index-history.csv"
-    rows = []
-    if hist_path.exists():
-        with open(hist_path) as f:
-            rows = list(csv.DictReader(f))
-    basket = json.loads((ROOT / "basket.json").read_text())
-    canonical = f"{BASE}/price-index/"
-    hosp_count = rows[-1]["hospitals_cash"] if rows else "the archive's"
-    body = [f'<p class="muted"><a href="{BASE}/">&larr; All hospitals</a></p>',
-            "<h1>Hospital List Price Index</h1>",
-            f'<p>A chain-linked index of what {hosp_count} major US hospitals '
-            'publish as their <strong>cash prices</strong> and <strong>gross charges</strong> '
-            'for a fixed basket of common procedures, imaging, visits, and labs.'
-            + (' Base 100 = ' + esc(rows[0]["date"]) + '.' if rows else '') + '</p>']
-    if rows:
-        last = rows[-1]
-        body += [
-            f'<h2>Cash price index: {float(last["index_cash"]):.2f}</h2>',
-            svg_chart(rows, "index_cash", "#0b5fa5"),
-            f'<h2>Gross charge index: {float(last["index_gross"]):.2f}</h2>',
-            svg_chart(rows, "index_gross", "#a5350b"),
-            '<p class="muted">Raw series: <a href="https://raw.githubusercontent.com/'
-            'lkowalcz/hospital-price-history/main/index-history.csv">index-history.csv</a></p>']
-    else:
-        body.append('<div class="warn">The series has not started yet: base 100 will be '
-                    'set on the first daily computation, once the current roster '
-                    'expansion completes. The basket and methodology below are final.</div>')
-    body.append(
-        "<h2>What the basket covers</h2>"
-        "<p>The basket spans the main ways people encounter a hospital bill: "
-        "planned surgery and childbirth, common medical admissions, emergency and "
-        "office visits, imaging, outpatient procedures, and routine lab work — "
-        "30 services in six categories. Items were chosen because they are "
-        "<em>standardized</em> (billed under the same national code everywhere), "
-        "<em>high-volume</em>, and <em>priced by most hospitals</em>, which is what "
-        "makes an apples-to-apples index possible.</p>"
-        "<p><strong>What it deliberately leaves out:</strong> drugs and chemotherapy, "
-        "cancer treatment, mental-health and substance-use care, trauma and ICU "
-        "stays, rare or highly specialized surgery, and physician (professional) "
-        "fees. These are excluded not because they don't matter but because "
-        "hospitals code them too inconsistently for clean comparison — including "
-        "them would make the index measure coding differences rather than price "
-        "changes. The basket is fixed and versioned; any change to its membership "
-        "is itself a recorded, versioned event.</p>")
-    cats = basket.get("categories", {})
-    by_cat = {}
-    for item in basket["items"]:
-        by_cat.setdefault(item.get("category", "other"), []).append(item)
-    for cat_id, items_in_cat in by_cat.items():
-        cat = cats.get(cat_id, {"name": cat_id.title(), "blurb": ""})
-        body.append(f"<h2>{esc(cat['name'])} <span class=\"muted\">({len(items_in_cat)})</span></h2>")
-        if cat.get("blurb"):
-            body.append(f"<p class=\"muted\">{esc(cat['blurb'])}</p>")
-        body.append("<table><tr><th>Service</th><th>Billing name</th><th>Code</th></tr>")
-        for item in items_in_cat:
-            body.append(f'<tr><td>{esc(item.get("plain", item["label"]))}</td>'
-                        f'<td class="muted">{esc(item["label"])}</td>'
-                        f'<td>{esc(item["type"])} {esc(item["code"])}</td></tr>')
-        body.append("</table>")
-    body.append(
-        "<h2>Methodology</h2>"
-        "<p>For each hospital, each basket item's price is the median across matching "
-        "rows of its price-file digest. Daily, each (hospital, item) pair present on "
-        "consecutive observations contributes a price relative; relatives are combined "
-        "by geometric mean within each hospital (Jevons), then across hospitals, and "
-        "the result is compounded onto the running index. Chain-linking lets hospitals "
-        "and codes enter or leave the panel without breaking the series. A day-over-day "
-        "relative larger than 4&times; (or smaller than &frac14;) is excluded from the "
-        "chain as a suspected data artifact rather than compounded into the index, and "
-        "is logged in <a href=\"https://raw.githubusercontent.com/lkowalcz/"
-        "hospital-price-history/main/index-anomalies.csv\">index-anomalies.csv</a>.</p>"
-        "<p><strong>Caveats:</strong> these are published list and cash prices, not "
-        "negotiated transaction prices; the panel is this archive's roster, not a "
-        "random sample; long flat stretches reflect the fact that hospitals revise "
-        "these files infrequently — the steps are the news.</p>")
-    desc = ("A daily chain-linked index of US hospital cash prices and gross charges "
-            "over a fixed basket of common services, built from price transparency files.")
-    jsonld = {"@context": "https://schema.org", "@type": "Dataset",
-              "name": "Hospital List Price Index", "description": desc, "url": canonical,
-              "creator": {"@type": "Person", "name": "Lucas Kowalczyk"},
-              "distribution": [{"@type": "DataDownload", "encodingFormat": "text/csv",
-                                "contentUrl": "https://raw.githubusercontent.com/lkowalcz/hospital-price-history/main/index-history.csv"}],
-              "keywords": ["hospital prices", "price index", "healthcare inflation"]}
-    d = outdir / "price-index"
-    d.mkdir(parents=True, exist_ok=True)
-    (d / "index.html").write_text(
-        page("Hospital List Price Index", desc, "\n".join(body), canonical, jsonld))
-    return canonical
-
-
 def index_page(hospitals, metas, outdir):
     body = ["<h1>Hospital Price History</h1>",
             '<p>A public archive tracking the machine-readable price files US hospitals '
@@ -327,8 +216,7 @@ def index_page(hospitals, metas, outdir):
             'Files are checked daily; every change — a revised rate, a republished file, '
             'a file quietly taken down — is recorded in '
             f'<a href="{REPO}">version-controlled history</a>, with full payer-level '
-            f'rate data in a <a href="{RAW_REPO}">companion raw-data repo</a>. '
-            f'See also the <a href="{BASE}/price-index/">Hospital List Price Index</a>.</p>',
+            f'rate data in a <a href="{RAW_REPO}">companion raw-data repo</a>.</p>',
             "<div class=\"wrap\"><table><tr><th>Hospital</th><th>System</th>"
             "<th>Last changed</th><th>Status</th></tr>"]
     for h in sorted(hospitals, key=lambda x: x["location_name"].casefold()):
@@ -370,9 +258,6 @@ def main():
         metas[h["slug"]] = json.loads(mp.read_text()) if mp.exists() else {}
     for h in hospitals:
         urls.append(hospital_page(h, metas[h["slug"]], outdir))
-    pi = price_index_page(outdir)
-    if pi:
-        urls.append(pi)
     index_page(hospitals, metas, outdir)
     (outdir / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
