@@ -11,6 +11,7 @@
   "status": "summarized",
   "first_seen": "2026-08-12T05:15:41Z",
   "last_changed": "2026-08-26T23:41:51Z",
+  "summary_version": 2,
   "cold_storage": {
     "url": "https://archive.org/details/hospital-price-history-cedars-sinai-8c188ab3b029",
     "sha256": "8c188ab3b02967785256d5867cf760778581e5e849f0fd1141955c2a2dcd2dbf",

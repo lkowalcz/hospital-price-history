@@ -1,8 +1,117 @@
 {
- "date": "2026-09-02",
+ "date": "2026-09-03",
  "index_cash": 99.93591162638795,
  "index_gross": 99.9349259722852,
  "basket_version": 1,
+ "summary_versions": {
+  "mgh": 2,
+  "brigham-and-womens": 2,
+  "bwh-faulkner": 2,
+  "marthas-vineyard": 2,
+  "nyp-columbia": 2,
+  "stanford": 2,
+  "cleveland-clinic": 2,
+  "cedars-sinai": 2,
+  "nyu-langone-tisch": 2,
+  "uchicago": 2,
+  "ucsf-parnassus": 2,
+  "ucla-ronald-reagan": 2,
+  "duke": 1,
+  "md-anderson": 2,
+  "northwestern-memorial": 1,
+  "penn-hup": 1,
+  "northwell-north-shore": 1,
+  "emory-university-hospital": 2,
+  "kaiser-oakland": 2,
+  "atrium-carolinas": 1,
+  "boston-medical-center": 2,
+  "hca-florida-kendall": 2,
+  "medical-city-dallas": 1,
+  "tristar-centennial": 2,
+  "hca-houston-medical-center": 2,
+  "dmc-harper": 2,
+  "providence-portland": 2,
+  "adventhealth-orlando": 2,
+  "cpmc-van-ness": 2,
+  "intermountain-medical-center": 2,
+  "baylor-university-medical": 2,
+  "ochsner-medical-center": 1,
+  "banner-university-phoenix": 2,
+  "geisinger-medical-center": 2,
+  "ohiohealth-riverside": 2,
+  "novant-presbyterian": 2,
+  "rush-university": 2,
+  "michigan-medicine": 2,
+  "uab-hospital": 2,
+  "parkland": 2,
+  "grady": 2,
+  "jackson-memorial": 2,
+  "denver-health": 2,
+  "tampa-general": 2,
+  "baptist-hospital-miami": 2,
+  "wellstar-kennestone": 2,
+  "corewell-butterworth": 2,
+  "sanford-usd": 1,
+  "musc-charleston": 2,
+  "yale-new-haven": 2,
+  "jefferson-tjuh": 2,
+  "johns-hopkins": 2,
+  "uw-medical-center": 2,
+  "mayo-rochester": 2,
+  "mount-sinai": 2,
+  "unc-hospitals": 2,
+  "orlando-regional": 2,
+  "salem-hospital": 2,
+  "newton-wellesley": 2,
+  "mass-eye-and-ear": 2,
+  "mclean-hospital": 2,
+  "wentworth-douglass": 2,
+  "nantucket-cottage": 2,
+  "cleveland-clinic-akron": 1,
+  "cleveland-clinic-weston": 1,
+  "mayo-arizona": 2,
+  "mayo-florida": 2,
+  "hopkins-bayview": 2,
+  "hopkins-all-childrens": 2,
+  "lenox-hill": 1,
+  "rex-hospital": 2,
+  "nm-central-dupage": 1,
+  "ucla-santa-monica": 2,
+  "nyu-langone-brooklyn": 2,
+  "nyp-weill-cornell": 2,
+  "nyp-brooklyn-methodist": 2,
+  "mount-sinai-brooklyn": 2,
+  "harborview": 2,
+  "duke-regional": 1,
+  "kaiser-la-sunset": 2,
+  "providence-alaska": 2,
+  "pennsylvania-hospital": 2,
+  "sibley-memorial": 2,
+  "sanford-fargo": 1,
+  "providence-st-patrick": 2,
+  "banner-wyoming": 2,
+  "banner-churchill": 2,
+  "hackensack-umc": 1,
+  "rhode-island-hospital": 2,
+  "uvm-medical-center": 2,
+  "maine-medical-center": 1,
+  "christiana-hospital": 2,
+  "sentara-norfolk": 2,
+  "wvu-hospitals": 2,
+  "uk-chandler": 2,
+  "froedtert": 1,
+  "mu-health": 1,
+  "uihc": 1,
+  "nebraska-medical-center": 2,
+  "university-of-kansas": 1,
+  "ou-medical-center": 1,
+  "uams": 1,
+  "ummc-jackson": 2,
+  "presbyterian-abq": 2,
+  "st-lukes-boise": 2,
+  "queens-honolulu": 2,
+  "franciscan-indianapolis": 1
+ },
  "prices": {
   "mgh": {
    "CPT|36415": {
@@ -155,12 +264,12 @@
     "gross": 3193.0
    },
    "CPT|99213": {
-    "cash": 249.75,
-    "gross": 333.0
+    "cash": 241.125,
+    "gross": 321.5
    },
    "CPT|99214": {
-    "cash": 380.25,
-    "gross": 507.0
+    "cash": 364.3125,
+    "gross": 485.75
    },
    "CPT|99283": {
     "cash": 1409.25,
@@ -305,8 +414,8 @@
     "gross": 2020.0
    },
    "CPT|45378": {
-    "cash": 2783.25,
-    "gross": 3711.0
+    "cash": 2324.25,
+    "gross": 3099.0
    },
    "CPT|70450": {
     "cash": 1611.75,
@@ -349,20 +458,20 @@
     "gross": 1457.0
    },
    "CPT|99213": {
-    "cash": 117.0,
-    "gross": 156.0
+    "cash": 119.8125,
+    "gross": 159.75
    },
    "CPT|99214": {
-    "cash": 166.5,
-    "gross": 222.0
+    "cash": 192.0,
+    "gross": 256.0
    },
    "CPT|99283": {
-    "cash": 732.0,
-    "gross": 976.0
+    "cash": 545.625,
+    "gross": 727.5
    },
    "CPT|99284": {
-    "cash": 1266.75,
-    "gross": 1689.0
+    "cash": 897.375,
+    "gross": 1196.5
    },
    "DRG|194": {
     "gross": 39629.77
@@ -447,12 +556,12 @@
     "gross": 124.0
    },
    "CPT|99213": {
-    "cash": 341.0,
-    "gross": 682.0
+    "cash": 261.25,
+    "gross": 363.0
    },
    "CPT|99214": {
-    "cash": 404.5,
-    "gross": 809.0
+    "cash": 325.0,
+    "gross": 491.0
    },
    "CPT|99283": {
     "cash": 1995.2,
@@ -527,16 +636,16 @@
     "gross": 3093.0
    },
    "CPT|36415": {
-    "cash": 40.95,
-    "gross": 63.0
+    "cash": 33.475,
+    "gross": 51.5
    },
    "CPT|43239": {
-    "cash": 2803.45,
-    "gross": 4313.0
+    "cash": 1743.625,
+    "gross": 2682.5
    },
    "CPT|45378": {
-    "cash": 2726.1,
-    "gross": 4194.0
+    "cash": 1829.1,
+    "gross": 2814.0
    },
    "CPT|66984": {
     "cash": 2102.1,
@@ -555,8 +664,8 @@
     "gross": 1668.0
    },
    "CPT|74177": {
-    "cash": 1861.925,
-    "gross": 2864.5
+    "cash": 1601.6,
+    "gross": 2464.0
    },
    "CPT|76700": {
     "cash": 477.1,
@@ -583,8 +692,8 @@
     "gross": 54.0
    },
    "CPT|93000": {
-    "cash": 269.75,
-    "gross": 415.0
+    "cash": 159.25,
+    "gross": 245.0
    },
    "CPT|93306": {
     "cash": 2049.45,
@@ -599,12 +708,12 @@
     "gross": 515.0
    },
    "CPT|99283": {
-    "cash": 1242.15,
-    "gross": 1911.0
+    "cash": 849.875,
+    "gross": 1307.5
    },
    "CPT|99284": {
-    "cash": 1909.7,
-    "gross": 2938.0
+    "cash": 1346.8,
+    "gross": 2072.0
    },
    "DRG|194": {},
    "DRG|291": {},
@@ -616,8 +725,8 @@
   },
   "cedars-sinai": {
    "CPT|29881": {
-    "cash": 14074.695,
-    "gross": 21653.375
+    "cash": 5068.8475,
+    "gross": 7798.225
    },
    "CPT|36415": {
     "cash": 1500.28,
@@ -628,12 +737,12 @@
     "gross": 5226.9
    },
    "CPT|45378": {
-    "cash": 4803.82,
-    "gross": 7390.49
+    "cash": 5068.8475,
+    "gross": 7798.225
    },
    "CPT|66984": {
-    "cash": 3289.71,
-    "gross": 5061.09
+    "cash": 5068.8475,
+    "gross": 7798.225
    },
    "CPT|70450": {
     "cash": 4336.56,
@@ -677,16 +786,16 @@
    },
    "CPT|93000": {},
    "CPT|93306": {
-    "cash": 5278.36,
-    "gross": 8120.55
+    "cash": 5674.41,
+    "gross": 8729.86
    },
    "CPT|99213": {
-    "cash": 382.13,
-    "gross": 587.89
+    "cash": 455.14,
+    "gross": 700.2149999999999
    },
    "CPT|99214": {
-    "cash": 623.29,
-    "gross": 958.91
+    "cash": 636.01,
+    "gross": 978.48
    },
    "CPT|99283": {
     "cash": 5680.03,
@@ -792,8 +901,8 @@
     "gross": 2569.0
    },
    "CPT|45378": {
-    "cash": 3880.0,
-    "gross": 3880.0
+    "cash": 4577.5,
+    "gross": 4577.5
    },
    "CPT|66984": {},
    "CPT|70450": {
@@ -825,8 +934,8 @@
     "gross": 298.5
    },
    "CPT|81001": {
-    "cash": 140.0,
-    "gross": 140.0
+    "cash": 85.0,
+    "gross": 85.0
    },
    "CPT|84443": {
     "cash": 161.0,
@@ -891,8 +1000,8 @@
     "gross": 8272.0
    },
    "CPT|76700": {
-    "cash": 375.3,
-    "gross": 1251.0
+    "cash": 647.7,
+    "gross": 2159.0
    },
    "CPT|77067": {
     "cash": 201.0,
@@ -1425,56 +1534,56 @@
     "gross": 11309.0
    },
    "CPT|36415": {
-    "cash": 39.0,
-    "gross": 39.0
+    "cash": 36.0,
+    "gross": 36.0
    },
    "CPT|43239": {
-    "cash": 2149.0,
-    "gross": 2149.0
+    "cash": 3597.0,
+    "gross": 3597.0
    },
    "CPT|45378": {
-    "cash": 3307.0,
-    "gross": 3307.0
+    "cash": 3649.5,
+    "gross": 3649.5
    },
    "CPT|66984": {
     "cash": 10558.0,
     "gross": 10558.0
    },
    "CPT|70450": {
-    "cash": 1031.0,
-    "gross": 1031.0
+    "cash": 1160.0,
+    "gross": 1160.0
    },
    "CPT|71046": {
-    "cash": 289.0,
-    "gross": 289.0
+    "cash": 260.0,
+    "gross": 260.0
    },
    "CPT|72148": {
-    "cash": 1837.0,
-    "gross": 1837.0
+    "cash": 2066.5,
+    "gross": 2066.5
    },
    "CPT|74177": {
-    "cash": 3167.0,
-    "gross": 3167.0
+    "cash": 3563.0,
+    "gross": 3563.0
    },
    "CPT|76700": {
     "cash": 2352.0,
     "gross": 2352.0
    },
    "CPT|77067": {
-    "cash": 255.0,
-    "gross": 255.0
+    "cash": 229.5,
+    "gross": 229.5
    },
    "CPT|80053": {
-    "cash": 264.0,
-    "gross": 264.0
+    "cash": 287.0,
+    "gross": 287.0
    },
    "CPT|81001": {
-    "cash": 68.0,
-    "gross": 68.0
+    "cash": 74.0,
+    "gross": 74.0
    },
    "CPT|84443": {
-    "cash": 185.0,
-    "gross": 185.0
+    "cash": 201.5,
+    "gross": 201.5
    },
    "CPT|85025": {
     "cash": 114.0,
@@ -1763,8 +1872,8 @@
     "gross": 16182.0
    },
    "CPT|71046": {
-    "cash": 302.0,
-    "gross": 302.0
+    "cash": 1591.5,
+    "gross": 1591.5
    },
    "CPT|72148": {
     "cash": 15466.0,
@@ -1783,8 +1892,8 @@
     "gross": 652.0
    },
    "CPT|80053": {
-    "cash": 531.0,
-    "gross": 531.0
+    "cash": 1617.0,
+    "gross": 1617.0
    },
    "CPT|81001": {
     "cash": 1327.0,
@@ -1801,12 +1910,12 @@
     "gross": 14826.0
    },
    "CPT|99213": {
-    "cash": 433.0,
-    "gross": 433.0
+    "cash": 414.0,
+    "gross": 414.0
    },
    "CPT|99214": {
-    "cash": 475.0,
-    "gross": 475.0
+    "cash": 509.5,
+    "gross": 509.5
    },
    "CPT|99283": {
     "cash": 5859.0,
@@ -1983,24 +2092,24 @@
    "CPT|45378": {},
    "CPT|66984": {},
    "CPT|70450": {
-    "cash": 10014.44,
-    "gross": 10014.44
+    "cash": 10014.155,
+    "gross": 10014.155
    },
    "CPT|71046": {
-    "cash": 1933.47,
-    "gross": 1933.47
+    "cash": 1933.62,
+    "gross": 1933.62
    },
    "CPT|72148": {
-    "cash": 18235.34,
-    "gross": 18235.34
+    "cash": 10731.55,
+    "gross": 10731.55
    },
    "CPT|74177": {
-    "cash": 33231.87,
-    "gross": 33231.87
+    "cash": 33231.979999999996,
+    "gross": 33231.979999999996
    },
    "CPT|76700": {
-    "cash": 5487.26,
-    "gross": 5487.26
+    "cash": 5487.485000000001,
+    "gross": 5487.485000000001
    },
    "CPT|77067": {},
    "CPT|80053": {
@@ -2008,12 +2117,12 @@
     "gross": 1136.79
    },
    "CPT|81001": {
-    "cash": 708.0,
-    "gross": 708.0
+    "cash": 560.49,
+    "gross": 560.49
    },
    "CPT|84443": {
-    "cash": 65.95,
-    "gross": 65.95
+    "cash": 1594.42,
+    "gross": 1594.42
    },
    "CPT|85025": {},
    "CPT|93000": {},
@@ -2078,12 +2187,12 @@
     "gross": 66.0
    },
    "CPT|84443": {
-    "cash": 60.23,
-    "gross": 80.3
+    "cash": 264.865,
+    "gross": 353.15
    },
    "CPT|85025": {
-    "cash": 81.0,
-    "gross": 108.0
+    "cash": 132.0,
+    "gross": 176.0
    },
    "CPT|93000": {
     "cash": 232.5,
@@ -2096,8 +2205,8 @@
    "CPT|99213": {},
    "CPT|99214": {},
    "CPT|99283": {
-    "cash": 1397.625,
-    "gross": 1863.5
+    "cash": 1455.0,
+    "gross": 1940.0
    },
    "CPT|99284": {
     "cash": 3233.25,
@@ -2115,8 +2224,8 @@
   "providence-portland": {
    "CPT|29881": {},
    "CPT|36415": {
-    "cash": 19.875,
-    "gross": 26.5
+    "cash": 19.6875,
+    "gross": 26.25
    },
    "CPT|43239": {
     "cash": 1548.0,
@@ -2202,8 +2311,8 @@
     "gross": 18284.0
    },
    "CPT|36415": {
-    "cash": 15.0,
-    "gross": 15.0
+    "cash": 21.5,
+    "gross": 21.5
    },
    "CPT|43239": {
     "cash": 3055.0,
@@ -2218,20 +2327,20 @@
     "gross": 9892.0
    },
    "CPT|70450": {
-    "cash": 3168.0,
-    "gross": 3168.0
+    "cash": 4178.0,
+    "gross": 4178.0
    },
    "CPT|71046": {
     "cash": 777.0,
     "gross": 777.0
    },
    "CPT|72148": {
-    "cash": 6184.0,
-    "gross": 6184.0
+    "cash": 7373.5,
+    "gross": 7373.5
    },
    "CPT|74177": {
-    "cash": 9216.0,
-    "gross": 9216.0
+    "cash": 12149.0,
+    "gross": 12149.0
    },
    "CPT|76700": {
     "cash": 2465.0,
@@ -2242,28 +2351,28 @@
     "gross": 784.0
    },
    "CPT|80053": {
-    "cash": 70.0,
-    "gross": 70.0
+    "cash": 414.0,
+    "gross": 414.0
    },
    "CPT|81001": {
-    "cash": 236.0,
-    "gross": 236.0
+    "cash": 292.0,
+    "gross": 292.0
    },
    "CPT|84443": {
-    "cash": 520.0,
-    "gross": 520.0
+    "cash": 550.0,
+    "gross": 550.0
    },
    "CPT|85025": {
-    "cash": 51.0,
-    "gross": 51.0
+    "cash": 299.0,
+    "gross": 299.0
    },
    "CPT|93306": {
     "cash": 5002.0,
     "gross": 5002.0
    },
    "CPT|99213": {
-    "cash": 87.0,
-    "gross": 87.0
+    "cash": 395.5,
+    "gross": 395.5
    },
    "CPT|99214": {
     "cash": 916.0,
@@ -2288,44 +2397,44 @@
   },
   "cpmc-van-ness": {
    "CPT|36415": {
-    "cash": 46.0,
-    "gross": 46.0
+    "cash": 39.5,
+    "gross": 39.5
    },
    "CPT|70450": {
-    "cash": 3819.0,
-    "gross": 3819.0
+    "cash": 3988.0,
+    "gross": 3988.0
    },
    "CPT|71046": {
-    "cash": 474.0,
-    "gross": 474.0
+    "cash": 590.0,
+    "gross": 590.0
    },
    "CPT|72148": {
-    "cash": 4696.0,
-    "gross": 4696.0
+    "cash": 4773.5,
+    "gross": 4773.5
    },
    "CPT|74177": {
-    "cash": 7562.0,
-    "gross": 7562.0
+    "cash": 7719.5,
+    "gross": 7719.5
    },
    "CPT|76700": {
-    "cash": 744.0,
-    "gross": 744.0
+    "cash": 1672.0,
+    "gross": 1672.0
    },
    "CPT|77067": {
-    "cash": 467.5,
-    "gross": 467.5
+    "cash": 483.75,
+    "gross": 483.75
    },
    "CPT|80053": {
-    "cash": 433.0,
-    "gross": 433.0
+    "cash": 377.5,
+    "gross": 377.5
    },
    "CPT|81001": {
-    "cash": 132.0,
-    "gross": 132.0
+    "cash": 118.0,
+    "gross": 118.0
    },
    "CPT|84443": {
-    "cash": 287.0,
-    "gross": 287.0
+    "cash": 276.5,
+    "gross": 276.5
    },
    "CPT|85025": {
     "cash": 203.0,
@@ -2863,56 +2972,56 @@
   "novant-presbyterian": {
    "CPT|29881": {},
    "CPT|36415": {
-    "cash": 3393.25,
-    "gross": 6786.5
+    "cash": 3393.5,
+    "gross": 6787.0
    },
    "CPT|43239": {},
    "CPT|45378": {},
    "CPT|66984": {},
    "CPT|70450": {
-    "cash": 849.0,
-    "gross": 1698.0
+    "cash": 961.5,
+    "gross": 1923.0
    },
    "CPT|71046": {
-    "cash": 770.25,
-    "gross": 1540.5
+    "cash": 755.125,
+    "gross": 1510.25
    },
    "CPT|72148": {
-    "cash": 1961.0,
-    "gross": 3922.0
+    "cash": 1755.75,
+    "gross": 3511.5
    },
    "CPT|74177": {
-    "cash": 2229.5,
-    "gross": 4459.0
+    "cash": 2524.75,
+    "gross": 5049.5
    },
    "CPT|76700": {
-    "cash": 661.0,
-    "gross": 1322.0
+    "cash": 591.75,
+    "gross": 1183.5
    },
    "CPT|77067": {
     "cash": 182.5,
     "gross": 365.0
    },
    "CPT|80053": {
-    "cash": 65.5,
-    "gross": 131.0
+    "cash": 80.375,
+    "gross": 160.75
    },
    "CPT|81001": {
-    "cash": 25.5,
-    "gross": 51.0
+    "cash": 16.25,
+    "gross": 32.5
    },
    "CPT|84443": {
-    "cash": 39.5,
-    "gross": 79.0
+    "cash": 79.75,
+    "gross": 159.5
    },
    "CPT|85025": {
-    "cash": 786.25,
-    "gross": 1572.5
+    "cash": 436.75,
+    "gross": 873.5
    },
    "CPT|93000": {},
    "CPT|93306": {
-    "cash": 1409.0,
-    "gross": 2818.0
+    "cash": 1249.875,
+    "gross": 2499.75
    },
    "CPT|99213": {
     "cash": 123.25,
@@ -3050,52 +3159,52 @@
     "gross": 26.0
    },
    "CPT|43239": {
-    "cash": 1692.4,
-    "gross": 4231.0
+    "cash": 1307.1,
+    "gross": 3267.75
    },
    "CPT|45378": {
-    "cash": 400.0,
-    "gross": 1000.0
+    "cash": 1273.8,
+    "gross": 3184.5
    },
    "CPT|66984": {
     "cash": 1199.4,
     "gross": 2998.5
    },
    "CPT|70450": {
-    "cash": 454.59999999999997,
-    "gross": 1136.5
+    "cash": 513.8000000000001,
+    "gross": 1284.5
    },
    "CPT|71046": {
     "cash": 71.4,
     "gross": 178.5
    },
    "CPT|72148": {
-    "cash": 885.8,
-    "gross": 2214.5
+    "cash": 1086.8,
+    "gross": 2717.0
    },
    "CPT|74177": {
-    "cash": 2129.2,
-    "gross": 5323.0
+    "cash": 1622.9,
+    "gross": 4057.25
    },
    "CPT|76700": {
-    "cash": 432.2,
-    "gross": 1080.5
+    "cash": 465.0,
+    "gross": 1162.5
    },
    "CPT|77067": {
     "cash": 165.8,
     "gross": 414.5
    },
    "CPT|80053": {
-    "cash": 70.8,
-    "gross": 177.0
+    "cash": 50.4,
+    "gross": 126.0
    },
    "CPT|81001": {
     "cash": 10.6,
     "gross": 26.5
    },
    "CPT|84443": {
-    "cash": 16.6,
-    "gross": 41.5
+    "cash": 25.9,
+    "gross": 64.75
    },
    "CPT|85025": {
     "cash": 33.2,
@@ -3106,16 +3215,16 @@
     "gross": 147.5
    },
    "CPT|93306": {
-    "cash": 743.2,
-    "gross": 1858.0
+    "cash": 1072.0,
+    "gross": 2680.0
    },
    "CPT|99213": {
     "cash": 35.2,
     "gross": 88.0
    },
    "CPT|99214": {
-    "cash": 78.2,
-    "gross": 195.5
+    "cash": 64.9,
+    "gross": 162.25
    },
    "CPT|99283": {
     "cash": 436.6,
@@ -3135,7 +3244,7 @@
   },
   "uab-hospital": {
    "CPT|36415": {
-    "gross": 46.0
+    "gross": 39.25
    },
    "CPT|43239": {
     "gross": 4844.0
@@ -3162,16 +3271,16 @@
     "gross": 319.0
    },
    "CPT|80053": {
-    "gross": 456.0
+    "gross": 387.75
    },
    "CPT|81001": {
-    "gross": 153.0
+    "gross": 150.0
    },
    "CPT|84443": {
-    "gross": 231.0
+    "gross": 194.5
    },
    "CPT|85025": {
-    "gross": 190.0
+    "gross": 161.5
    },
    "CPT|93306": {
     "gross": 3861.0
@@ -3200,24 +3309,24 @@
     "gross": 5816.75
    },
    "CPT|43239": {
-    "cash": 3547.22,
-    "gross": 8868.05
+    "cash": 2541.21,
+    "gross": 6353.025
    },
    "CPT|45378": {
-    "cash": 2181.92,
-    "gross": 5454.8
+    "cash": 2012.93,
+    "gross": 5032.327499999999
    },
    "CPT|66984": {
-    "cash": 13026.67,
-    "gross": 32566.68
+    "cash": 12803.315,
+    "gross": 32008.285
    },
    "CPT|70450": {
-    "cash": 861.6,
-    "gross": 2154.0
+    "cash": 1415.6,
+    "gross": 3539.0
    },
    "CPT|71046": {
-    "cash": 146.0,
-    "gross": 365.0
+    "cash": 83.2,
+    "gross": 208.0
    },
    "CPT|72148": {
     "cash": 2750.0,
@@ -3240,36 +3349,36 @@
     "gross": 592.0
    },
    "CPT|81001": {
-    "cash": 79.2,
-    "gross": 198.0
+    "cash": 81.0,
+    "gross": 202.5
    },
    "CPT|84443": {
-    "cash": 153.6,
-    "gross": 384.0
+    "cash": 133.2,
+    "gross": 333.0
    },
    "CPT|85025": {
-    "cash": 104.8,
-    "gross": 262.0
+    "cash": 103.8,
+    "gross": 259.5
    },
    "CPT|93306": {
     "cash": 1047.6,
     "gross": 2619.0
    },
    "CPT|99213": {
-    "cash": 200.4,
-    "gross": 501.0
+    "cash": 151.6,
+    "gross": 379.0
    },
    "CPT|99214": {
-    "cash": 231.2,
-    "gross": 578.0
+    "cash": 190.0,
+    "gross": 475.0
    },
    "CPT|99283": {
-    "cash": 590.0,
-    "gross": 1475.0
+    "cash": 424.0,
+    "gross": 1060.0
    },
    "CPT|99284": {
-    "cash": 923.2,
-    "gross": 2308.0
+    "cash": 654.6,
+    "gross": 1636.5
    },
    "DRG|194": {
     "cash": 19274.3,
@@ -3374,11 +3483,11 @@
   "jackson-memorial": {
    "CPT|70450": {
     "cash": 116.0,
-    "gross": 1479.0
+    "gross": 1520.0
    },
    "CPT|71046": {
     "cash": 86.0,
-    "gross": 534.0
+    "gross": 556.0
    },
    "CPT|72148": {
     "cash": 245.0,
@@ -3386,11 +3495,11 @@
    },
    "CPT|74177": {
     "cash": 392.0,
-    "gross": 5999.0
+    "gross": 6088.0
    },
    "CPT|76700": {
     "cash": 116.0,
-    "gross": 1481.0
+    "gross": 1520.0
    },
    "CPT|77067": {
     "gross": 395.0
@@ -3409,7 +3518,7 @@
    },
    "CPT|93306": {
     "cash": 514.0,
-    "gross": 2573.0
+    "gross": 2708.0
    },
    "CPT|99213": {
     "cash": 65.0,
@@ -3440,24 +3549,24 @@
     "gross": 64684.04
    },
    "DRG|392": {
-    "cash": 14239902.06,
-    "gross": 37889.21
+    "cash": 18058984.29,
+    "gross": 48050.94
    },
    "DRG|470": {
     "cash": 41361431.18,
     "gross": 110053.56
    },
    "DRG|603": {
-    "cash": 11462853.45,
-    "gross": 30500.1
+    "cash": 10677359.05,
+    "gross": 28410.08
    },
    "DRG|788": {
-    "cash": 14110052.75,
-    "gross": 37543.71
+    "cash": 14986529.02,
+    "gross": 39875.82
    },
    "DRG|807": {
-    "cash": 8646603.18,
-    "gross": 23006.69
+    "cash": 9010158.53,
+    "gross": 23974.03
    }
   },
   "denver-health": {
@@ -3609,12 +3718,12 @@
     "gross": 6500.0
    },
    "CPT|99213": {
-    "cash": 262.5,
-    "gross": 750.0
+    "cash": 186.9,
+    "gross": 534.0
    },
    "CPT|99214": {
-    "cash": 347.2,
-    "gross": 992.0
+    "cash": 235.55,
+    "gross": 673.0
    },
    "CPT|99283": {
     "cash": 599.9,
@@ -3641,8 +3750,8 @@
    "CPT|43239": {},
    "CPT|45378": {},
    "CPT|70450": {
-    "cash": 3054.35,
-    "gross": 4699.0
+    "cash": 3155.75,
+    "gross": 4855.0
    },
    "CPT|71046": {
     "cash": 402.675,
@@ -3704,8 +3813,8 @@
   "wellstar-kennestone": {
    "CPT|29881": {},
    "CPT|36415": {
-    "cash": 12.48,
-    "gross": 32.0
+    "cash": 10.07,
+    "gross": 25.82
    },
    "CPT|43239": {
     "cash": 1405.56,
@@ -3714,48 +3823,48 @@
    "CPT|45378": {},
    "CPT|66984": {},
    "CPT|70450": {
-    "cash": 1418.82,
-    "gross": 3638.0
+    "cash": 763.035,
+    "gross": 1956.5
    },
    "CPT|71046": {
-    "cash": 294.06,
-    "gross": 754.0
+    "cash": 159.705,
+    "gross": 409.5
    },
    "CPT|72148": {
-    "cash": 202.8,
-    "gross": 520.0
+    "cash": 989.235,
+    "gross": 2536.5
    },
    "CPT|74177": {
-    "cash": 2737.8,
-    "gross": 7020.0
+    "cash": 1471.275,
+    "gross": 3772.5
    },
    "CPT|76700": {
-    "cash": 97.5,
-    "gross": 250.0
+    "cash": 414.765,
+    "gross": 1063.5
    },
    "CPT|77067": {
-    "cash": 331.5,
-    "gross": 850.0
+    "cash": 195.0,
+    "gross": 500.0
    },
    "CPT|80053": {
-    "cash": 138.255,
-    "gross": 354.5
+    "cash": 70.325,
+    "gross": 180.32
    },
    "CPT|81001": {
-    "cash": 3.9,
-    "gross": 10.0
+    "cash": 8.5,
+    "gross": 21.8
    },
    "CPT|84443": {
-    "cash": 170.82,
-    "gross": 438.0
+    "cash": 64.3,
+    "gross": 164.88
    },
    "CPT|85025": {
-    "cash": 39.195,
-    "gross": 100.5
+    "cash": 40.82,
+    "gross": 104.66499999999999
    },
    "CPT|93306": {
-    "cash": 1835.34,
-    "gross": 4706.0
+    "cash": 662.805,
+    "gross": 1699.5
    },
    "CPT|99214": {
     "cash": 168.09,
@@ -3781,8 +3890,8 @@
   "corewell-butterworth": {
    "CPT|29881": {},
    "CPT|36415": {
-    "cash": 18.0,
-    "gross": 18.0
+    "cash": 20.5,
+    "gross": 20.5
    },
    "CPT|43239": {
     "cash": 866.79,
@@ -3794,65 +3903,65 @@
    },
    "CPT|66984": {},
    "CPT|70450": {
-    "cash": 592.0,
-    "gross": 592.0
+    "cash": 846.0,
+    "gross": 846.0
    },
    "CPT|71046": {
-    "cash": 292.0,
-    "gross": 292.0
+    "cash": 305.5,
+    "gross": 305.5
    },
    "CPT|72148": {
-    "cash": 1526.0,
-    "gross": 1526.0
+    "cash": 1652.0,
+    "gross": 1652.0
    },
    "CPT|74177": {
-    "cash": 1938.0,
-    "gross": 1938.0
+    "cash": 2769.0,
+    "gross": 2769.0
    },
    "CPT|76700": {
-    "cash": 1300.0,
-    "gross": 1300.0
+    "cash": 1394.0,
+    "gross": 1394.0
    },
    "CPT|77067": {
     "cash": 412.0,
     "gross": 412.0
    },
    "CPT|80053": {
-    "cash": 52.0,
-    "gross": 52.0
+    "cash": 59.0,
+    "gross": 59.0
    },
    "CPT|81001": {
-    "cash": 17.0,
-    "gross": 17.0
+    "cash": 19.5,
+    "gross": 19.5
    },
    "CPT|84443": {
-    "cash": 58.0,
-    "gross": 58.0
+    "cash": 67.0,
+    "gross": 67.0
    },
    "CPT|85025": {
-    "cash": 41.0,
-    "gross": 41.0
+    "cash": 33.5,
+    "gross": 33.5
    },
    "CPT|93000": {},
    "CPT|93306": {
-    "cash": 1169.0,
-    "gross": 1169.0
+    "cash": 1292.0,
+    "gross": 1292.0
    },
    "CPT|99213": {
     "cash": 114.33,
     "gross": 114.33
    },
    "CPT|99214": {
-    "cash": 202.01999999999998,
-    "gross": 202.01999999999998
+    "cash": 180.51999999999998,
+    "gross": 180.51999999999998
    },
    "CPT|99283": {
-    "cash": 682.0,
-    "gross": 682.0
+    "cash": 986.0,
+    "gross": 986.0
    },
    "CPT|99284": {
-    "cash": 1325.0,
-    "gross": 1325.0
+    "cash": 1725.0,
+    "gross": 1725.0
    },
    "DRG|194": {},
    "DRG|247": {},
@@ -4117,15 +4226,15 @@
    "CPT|29881": {},
    "CPT|36415": {
     "cash": 10.74,
-    "gross": 9.0
+    "gross": 20.5
    },
    "CPT|43239": {
     "cash": 1071.57,
-    "gross": 895.0
+    "gross": 1827.0
    },
    "CPT|45378": {
     "cash": 1098.72,
-    "gross": 2843.0
+    "gross": 1873.0
    },
    "CPT|66984": {},
    "CPT|70450": {
@@ -4146,7 +4255,7 @@
    },
    "CPT|76700": {
     "cash": 123.52,
-    "gross": 112.0
+    "gross": 945.5
    },
    "CPT|77067": {
     "cash": 109.22,
@@ -4171,13 +4280,13 @@
    "CPT|93000": {},
    "CPT|93306": {
     "cash": 645.57,
-    "gross": 3798.0
+    "gross": 2171.5
    },
    "CPT|99213": {
-    "gross": 137.0
+    "gross": 128.25
    },
    "CPT|99214": {
-    "gross": 150.0
+    "gross": 140.0
    },
    "CPT|99283": {
     "cash": 322.51,
@@ -4212,56 +4321,56 @@
   },
   "johns-hopkins": {
    "CPT|36415": {
-    "cash": 29.5,
-    "gross": 29.5
+    "cash": 23.6875,
+    "gross": 23.6875
    },
    "CPT|43239": {
     "cash": 2500.0,
     "gross": 2500.0
    },
    "CPT|70450": {
-    "cash": 2250.0,
-    "gross": 2250.0
+    "cash": 1199.36,
+    "gross": 1199.36
    },
    "CPT|71046": {
-    "cash": 698.0,
-    "gross": 698.0
+    "cash": 465.605,
+    "gross": 465.605
    },
    "CPT|72148": {
-    "cash": 4237.0,
-    "gross": 4237.0
+    "cash": 3702.0,
+    "gross": 3702.0
    },
    "CPT|74177": {
-    "cash": 6610.0,
-    "gross": 6610.0
+    "cash": 3524.55,
+    "gross": 3524.55
    },
    "CPT|76700": {
-    "cash": 1756.0,
-    "gross": 1756.0
+    "cash": 1414.365,
+    "gross": 1414.365
    },
    "CPT|77067": {
-    "cash": 569.0,
-    "gross": 569.0
+    "cash": 937.465,
+    "gross": 937.465
    },
    "CPT|80053": {
     "cash": 94.0,
     "gross": 94.0
    },
    "CPT|81001": {
-    "cash": 84.0,
-    "gross": 84.0
+    "cash": 36.25,
+    "gross": 36.25
    },
    "CPT|84443": {
     "cash": 139.5,
     "gross": 139.5
    },
    "CPT|85025": {
-    "cash": 123.25,
-    "gross": 123.25
+    "cash": 70.5,
+    "gross": 70.5
    },
    "CPT|93306": {
-    "cash": 656.75,
-    "gross": 656.75
+    "cash": 2388.875,
+    "gross": 2388.875
    },
    "CPT|99213": {
     "cash": 97.0,
@@ -4276,8 +4385,8 @@
     "gross": 502.0
    },
    "CPT|99284": {
-    "cash": 1585.0,
-    "gross": 1585.0
+    "cash": 1294.465,
+    "gross": 1294.465
    },
    "DRG|194": {},
    "DRG|247": {},
@@ -4340,8 +4449,8 @@
     "gross": 81.91
    },
    "CPT|85025": {
-    "cash": 68.43,
-    "gross": 97.76
+    "cash": 55.52250000000001,
+    "gross": 79.32000000000001
    },
    "CPT|93306": {
     "cash": 1832.56,
@@ -4386,28 +4495,28 @@
     "gross": 4283.0
    },
    "CPT|70450": {
-    "cash": 950.52,
-    "gross": 1068.0
+    "cash": 607.87,
+    "gross": 683.0
    },
    "CPT|71046": {
-    "cash": 188.68,
-    "gross": 212.0
+    "cash": 131.72,
+    "gross": 148.0
    },
    "CPT|72148": {
-    "cash": 2126.21,
-    "gross": 2389.0
+    "cash": 1381.28,
+    "gross": 1552.0
    },
    "CPT|74177": {
-    "cash": 2227.67,
-    "gross": 2503.0
+    "cash": 1621.58,
+    "gross": 1822.0
    },
    "CPT|76700": {
-    "cash": 590.96,
-    "gross": 664.0
+    "cash": 390.265,
+    "gross": 438.5
    },
    "CPT|77067": {
-    "cash": 469.92,
-    "gross": 528.0
+    "cash": 341.76,
+    "gross": 384.0
    },
    "CPT|80053": {
     "cash": 101.46,
@@ -4430,8 +4539,8 @@
     "gross": 258.0
    },
    "CPT|93306": {
-    "cash": 4671.61,
-    "gross": 5249.0
+    "cash": 2574.325,
+    "gross": 2892.5
    },
    "CPT|99213": {
     "cash": 182.45,
@@ -4497,20 +4606,20 @@
     "gross": 800.0
    },
    "CPT|80053": {
-    "cash": 180.0,
-    "gross": 200.0
+    "cash": 173.25,
+    "gross": 192.5
    },
    "CPT|81001": {
-    "cash": 63.0,
-    "gross": 70.0
+    "cash": 58.5,
+    "gross": 65.0
    },
    "CPT|84443": {
-    "cash": 193.5,
-    "gross": 215.0
+    "cash": 178.875,
+    "gross": 198.75
    },
    "CPT|85025": {
-    "cash": 83.7,
-    "gross": 93.0
+    "cash": 84.15,
+    "gross": 93.5
    },
    "CPT|93000": {},
    "CPT|93306": {
@@ -4629,12 +4738,12 @@
   "orlando-regional": {
    "CPT|29881": {},
    "CPT|36415": {
-    "cash": 7.6,
-    "gross": 19.0
+    "cash": 11.2,
+    "gross": 28.0
    },
    "CPT|43239": {
-    "cash": 2140.4,
-    "gross": 5351.0
+    "cash": 2067.6,
+    "gross": 5169.0
    },
    "CPT|45378": {
     "cash": 3344.0,
@@ -4642,20 +4751,20 @@
    },
    "CPT|66984": {},
    "CPT|70450": {
-    "cash": 1095.2,
-    "gross": 2738.0
+    "cash": 1460.0,
+    "gross": 3650.0
    },
    "CPT|71046": {
     "cash": 298.4,
     "gross": 746.0
    },
    "CPT|72148": {
-    "cash": 1360.0,
-    "gross": 3400.0
+    "cash": 1813.4,
+    "gross": 4533.5
    },
    "CPT|74177": {
-    "cash": 2581.6,
-    "gross": 6454.0
+    "cash": 3442.6000000000004,
+    "gross": 8606.5
    },
    "CPT|76700": {
     "cash": 804.0,
@@ -4666,20 +4775,20 @@
     "gross": 232.0
    },
    "CPT|80053": {
-    "cash": 8.8,
-    "gross": 22.0
+    "cash": 75.2,
+    "gross": 188.0
    },
    "CPT|81001": {
-    "cash": 2.8,
-    "gross": 7.0
+    "cash": 33.0,
+    "gross": 82.5
    },
    "CPT|84443": {
-    "cash": 23.0,
-    "gross": 57.5
+    "cash": 47.599999999999994,
+    "gross": 119.0
    },
    "CPT|85025": {
-    "cash": 6.4,
-    "gross": 16.0
+    "cash": 48.6,
+    "gross": 121.5
    },
    "CPT|93306": {
     "cash": 2290.0,
@@ -4760,12 +4869,12 @@
     "gross": 2457.0
    },
    "CPT|99213": {
-    "cash": 171.0,
-    "gross": 228.0
+    "cash": 182.0625,
+    "gross": 242.75
    },
    "CPT|99214": {
-    "cash": 268.5,
-    "gross": 358.0
+    "cash": 292.5,
+    "gross": 390.0
    },
    "CPT|99283": {
     "cash": 933.0,
@@ -4861,8 +4970,8 @@
     "gross": 2457.0
    },
    "CPT|99213": {
-    "cash": 171.0,
-    "gross": 228.0
+    "cash": 182.0625,
+    "gross": 242.75
    },
    "CPT|99283": {
     "cash": 933.0,
@@ -4942,8 +5051,8 @@
     "gross": 100.0
    },
    "CPT|99213": {
-    "cash": 124.5,
-    "gross": 166.0
+    "cash": 151.125,
+    "gross": 201.5
    },
    "DRG|194": {
     "cash": 8265.17,
@@ -5088,8 +5197,8 @@
     "gross": 1807.0
    },
    "CPT|45378": {
-    "cash": 2588.25,
-    "gross": 3451.0
+    "cash": 2170.125,
+    "gross": 2893.5
    },
    "CPT|70450": {
     "cash": 1353.75,
@@ -5132,12 +5241,12 @@
     "gross": 1880.0
    },
    "CPT|99213": {
-    "cash": 158.25,
-    "gross": 211.0
+    "cash": 158.625,
+    "gross": 211.5
    },
    "CPT|99284": {
-    "cash": 746.25,
-    "gross": 995.0
+    "cash": 493.5,
+    "gross": 658.0
    },
    "DRG|194": {
     "cash": 12962.26,
@@ -5359,40 +5468,40 @@
     "gross": 29.0
    },
    "CPT|43239": {
-    "cash": 2100.375,
-    "gross": 2800.5
+    "cash": 2007.0,
+    "gross": 2676.0
    },
    "CPT|45378": {
-    "cash": 2064.375,
-    "gross": 2752.5
+    "cash": 1987.125,
+    "gross": 2649.5
    },
    "CPT|66984": {
     "cash": 3136.5,
     "gross": 4182.0
    },
    "CPT|70450": {
-    "cash": 695.25,
-    "gross": 927.0
+    "cash": 584.8125,
+    "gross": 779.75
    },
    "CPT|71046": {
-    "cash": 170.25,
-    "gross": 227.0
+    "cash": 147.75,
+    "gross": 197.0
    },
    "CPT|72148": {
-    "cash": 1617.75,
-    "gross": 2157.0
+    "cash": 1357.5,
+    "gross": 1810.0
    },
    "CPT|74177": {
-    "cash": 1827.75,
-    "gross": 2437.0
+    "cash": 1505.625,
+    "gross": 2007.5
    },
    "CPT|76700": {
-    "cash": 485.25,
-    "gross": 647.0
+    "cash": 431.25,
+    "gross": 575.0
    },
    "CPT|77067": {
-    "cash": 547.5,
-    "gross": 730.0
+    "cash": 345.75,
+    "gross": 461.0
    },
    "CPT|80053": {
     "cash": 281.25,
@@ -5503,8 +5612,8 @@
   },
   "hopkins-bayview": {
    "CPT|36415": {
-    "cash": 12.0,
-    "gross": 12.0
+    "cash": 10.0,
+    "gross": 10.0
    },
    "CPT|70450": {
     "cash": 129.6,
@@ -5531,32 +5640,32 @@
     "gross": 1180.22
    },
    "CPT|80053": {
-    "cash": 10.56,
-    "gross": 10.56
+    "cash": 22.5,
+    "gross": 22.5
    },
    "CPT|81001": {
-    "cash": 18.84,
-    "gross": 18.84
+    "cash": 11.5,
+    "gross": 11.5
    },
    "CPT|84443": {
     "cash": 30.0,
     "gross": 30.0
    },
    "CPT|85025": {
-    "cash": 8.0,
-    "gross": 8.0
+    "cash": 12.0,
+    "gross": 12.0
    },
    "CPT|93306": {
     "cash": 964.34,
     "gross": 964.34
    },
    "CPT|99213": {
-    "cash": 97.02,
-    "gross": 97.02
+    "cash": 140.96,
+    "gross": 140.96
    },
    "CPT|99214": {
-    "cash": 330.27,
-    "gross": 330.27
+    "cash": 176.19,
+    "gross": 176.19
    },
    "CPT|99283": {
     "cash": 321.33,
@@ -5785,12 +5894,12 @@
     "gross": 2229.0
    },
    "CPT|99213": {
-    "cash": 132.89999999999998,
-    "gross": 221.5
+    "cash": 130.35,
+    "gross": 217.25
    },
    "CPT|99214": {
-    "cash": 199.8,
-    "gross": 333.0
+    "cash": 204.15,
+    "gross": 340.25
    },
    "CPT|99283": {
     "cash": 835.8,
@@ -6181,20 +6290,20 @@
     "gross": 800.0
    },
    "CPT|80053": {
-    "cash": 180.0,
-    "gross": 200.0
+    "cash": 173.25,
+    "gross": 192.5
    },
    "CPT|81001": {
-    "cash": 54.0,
-    "gross": 60.0
+    "cash": 58.5,
+    "gross": 65.0
    },
    "CPT|84443": {
-    "cash": 164.25,
-    "gross": 182.5
+    "cash": 178.875,
+    "gross": 198.75
    },
    "CPT|85025": {
-    "cash": 84.6,
-    "gross": 94.0
+    "cash": 84.15,
+    "gross": 93.5
    },
    "CPT|93306": {
     "cash": 3280.5,
@@ -6232,8 +6341,8 @@
     "gross": 4218.9
    },
    "CPT|66984": {
-    "cash": 4787.18,
-    "gross": 6838.83
+    "cash": 3989.315,
+    "gross": 5699.025
    },
    "CPT|70450": {
     "cash": 1238.46,
@@ -6272,8 +6381,8 @@
     "gross": 105.315
    },
    "CPT|85025": {
-    "cash": 44.07,
-    "gross": 62.96
+    "cash": 57.705,
+    "gross": 82.44
    },
    "CPT|93306": {
     "cash": 3531.32,
@@ -6646,12 +6755,12 @@
   "sibley-memorial": {
    "CPT|29881": {},
    "CPT|36415": {
-    "cash": 19.5,
-    "gross": 19.5
+    "cash": 27.5,
+    "gross": 27.5
    },
    "CPT|43239": {
-    "cash": 2500.0,
-    "gross": 2500.0
+    "cash": 2041.0,
+    "gross": 2041.0
    },
    "CPT|45378": {},
    "CPT|66984": {},
@@ -6664,8 +6773,8 @@
     "gross": 698.0
    },
    "CPT|72148": {
-    "cash": 3702.0,
-    "gross": 3702.0
+    "cash": 3969.5,
+    "gross": 3969.5
    },
    "CPT|74177": {
     "cash": 6610.0,
@@ -6680,20 +6789,20 @@
     "gross": 569.0
    },
    "CPT|80053": {
-    "cash": 273.0,
-    "gross": 273.0
+    "cash": 190.5,
+    "gross": 190.5
    },
    "CPT|81001": {
-    "cash": 84.0,
-    "gross": 84.0
+    "cash": 67.0,
+    "gross": 67.0
    },
    "CPT|84443": {
-    "cash": 335.0,
-    "gross": 335.0
+    "cash": 240.0,
+    "gross": 240.0
    },
    "CPT|85025": {
-    "cash": 123.5,
-    "gross": 123.5
+    "cash": 99.5,
+    "gross": 99.5
    },
    "CPT|93000": {},
    "CPT|93306": {
@@ -6713,8 +6822,8 @@
     "gross": 1039.0
    },
    "CPT|99284": {
-    "cash": 1317.0,
-    "gross": 1317.0
+    "cash": 1451.0,
+    "gross": 1451.0
    },
    "DRG|194": {},
    "DRG|247": {},
@@ -7223,28 +7332,28 @@
     "gross": 2242.0
    },
    "CPT|70450": {
-    "cash": 2125.5,
-    "gross": 2125.5
+    "cash": 2045.5,
+    "gross": 2045.5
    },
    "CPT|71046": {
-    "cash": 375.5,
-    "gross": 375.5
+    "cash": 348.75,
+    "gross": 348.75
    },
    "CPT|72148": {
-    "cash": 2842.5,
-    "gross": 2842.5
+    "cash": 2990.25,
+    "gross": 2990.25
    },
    "CPT|74177": {
-    "cash": 3471.5,
-    "gross": 3471.5
+    "cash": 3737.5,
+    "gross": 3737.5
    },
    "CPT|76700": {
-    "cash": 1209.5,
-    "gross": 1209.5
+    "cash": 1118.75,
+    "gross": 1118.75
    },
    "CPT|77067": {
-    "cash": 682.5,
-    "gross": 682.5
+    "cash": 576.25,
+    "gross": 576.25
    },
    "CPT|80053": {
     "cash": 85.5,
@@ -7375,39 +7484,39 @@
   "christiana-hospital": {
    "CPT|29881": {},
    "CPT|36415": {
-    "cash": 40.53,
-    "gross": 40.53
+    "cash": 37.735,
+    "gross": 37.735
    },
    "CPT|43239": {},
    "CPT|45378": {},
    "CPT|66984": {},
    "CPT|70450": {
-    "cash": 691.2,
-    "gross": 691.2
+    "cash": 622.3625000000001,
+    "gross": 622.3625000000001
    },
    "CPT|71046": {
-    "cash": 138.035,
-    "gross": 138.035
+    "cash": 125.1075,
+    "gross": 125.1075
    },
    "CPT|72148": {
-    "cash": 1340.465,
-    "gross": 1340.465
+    "cash": 1327.0099999999998,
+    "gross": 1327.0099999999998
    },
    "CPT|74177": {
-    "cash": 1711.2250000000001,
-    "gross": 1711.2250000000001
+    "cash": 1537.3750000000002,
+    "gross": 1537.3750000000002
    },
    "CPT|76700": {
-    "cash": 437.85499999999996,
-    "gross": 437.85499999999996
+    "cash": 397.8425,
+    "gross": 397.8425
    },
    "CPT|77067": {
     "cash": 160.735,
     "gross": 160.735
    },
    "CPT|80053": {
-    "cash": 105.23,
-    "gross": 105.23
+    "cash": 349.64,
+    "gross": 349.64
    },
    "CPT|81001": {
     "cash": 51.04,
@@ -7418,12 +7527,12 @@
     "gross": 126.505
    },
    "CPT|85025": {
-    "cash": 110.43,
-    "gross": 110.43
+    "cash": 89.04,
+    "gross": 89.04
    },
    "CPT|93306": {
-    "cash": 1982.03,
-    "gross": 1982.03
+    "cash": 1516.255,
+    "gross": 1516.255
    },
    "CPT|99283": {
     "cash": 1050.43,
@@ -7519,32 +7628,32 @@
   },
   "wvu-hospitals": {
    "CPT|29881": {
-    "cash": 5558.63,
-    "gross": 11117.25
+    "cash": 5236.25,
+    "gross": 10472.5
    },
    "CPT|36415": {
-    "cash": 8.0,
-    "gross": 16.0
+    "cash": 10.0,
+    "gross": 20.0
    },
    "CPT|43239": {
-    "cash": 891.585,
-    "gross": 1783.165
+    "cash": 1068.25,
+    "gross": 2136.5
    },
    "CPT|45378": {
-    "cash": 963.085,
-    "gross": 1926.165
+    "cash": 1061.75,
+    "gross": 2123.5
    },
    "CPT|66984": {
-    "cash": 3418.25,
-    "gross": 6836.5
+    "cash": 3132.835,
+    "gross": 6265.665
    },
    "CPT|70450": {
     "cash": 1019.5,
     "gross": 2039.0
    },
    "CPT|71046": {
-    "cash": 152.75,
-    "gross": 305.5
+    "cash": 155.625,
+    "gross": 311.25
    },
    "CPT|72148": {
     "cash": 1012.75,
@@ -7559,32 +7668,32 @@
     "gross": 875.0
    },
    "CPT|77067": {
-    "cash": 193.5,
-    "gross": 387.0
+    "cash": 219.0,
+    "gross": 438.0
    },
    "CPT|80053": {
-    "cash": 49.0,
-    "gross": 98.0
+    "cash": 38.75,
+    "gross": 77.5
    },
    "CPT|81001": {
-    "cash": 54.0,
-    "gross": 108.0
+    "cash": 43.125,
+    "gross": 86.25
    },
    "CPT|84443": {
-    "cash": 53.25,
-    "gross": 106.5
+    "cash": 60.125,
+    "gross": 120.25
    },
    "CPT|85025": {
     "cash": 53.5,
     "gross": 107.0
    },
    "CPT|93306": {
-    "cash": 1610.75,
-    "gross": 3221.5
+    "cash": 1676.75,
+    "gross": 3353.5
    },
    "CPT|99213": {
-    "cash": 67.5,
-    "gross": 135.0
+    "cash": 66.0,
+    "gross": 132.0
    },
    "CPT|99214": {
     "cash": 67.5,
@@ -7938,60 +8047,60 @@
     "gross": 2690.1
    },
    "CPT|36415": {
-    "cash": 7.8,
-    "gross": 12.0
+    "cash": 37.7,
+    "gross": 58.0
    },
    "CPT|43239": {
-    "cash": 1381.25,
-    "gross": 2125.0
+    "cash": 989.625,
+    "gross": 1522.5
    },
    "CPT|45378": {
-    "cash": 1456.0,
-    "gross": 2240.0
+    "cash": 1069.25,
+    "gross": 1645.0
    },
    "CPT|66984": {
-    "cash": 3514.88,
-    "gross": 5407.5
+    "cash": 2942.455,
+    "gross": 4526.85
    },
    "CPT|70450": {
-    "cash": 650.0,
-    "gross": 1000.0
+    "cash": 523.965,
+    "gross": 806.1
    },
    "CPT|71046": {
-    "cash": 169.0,
-    "gross": 260.0
+    "cash": 109.525,
+    "gross": 168.5
    },
    "CPT|72148": {
-    "cash": 1121.25,
-    "gross": 1725.0
+    "cash": 1028.82,
+    "gross": 1582.8
    },
    "CPT|74177": {
     "cash": 1023.75,
     "gross": 1575.0
    },
    "CPT|76700": {
-    "cash": 332.15,
-    "gross": 511.0
+    "cash": 310.04999999999995,
+    "gross": 477.0
    },
    "CPT|77067": {
-    "cash": 165.75,
-    "gross": 255.0
+    "cash": 191.07,
+    "gross": 293.95
    },
    "CPT|80053": {
     "cash": 33.8,
     "gross": 52.0
    },
    "CPT|81001": {
-    "cash": 18.3,
-    "gross": 28.16
+    "cash": 9.75,
+    "gross": 15.0
    },
    "CPT|84443": {
-    "cash": 53.95,
-    "gross": 83.0
+    "cash": 31.4,
+    "gross": 48.3
    },
    "CPT|85025": {
-    "cash": 22.75,
-    "gross": 35.0
+    "cash": 19.5,
+    "gross": 30.0
    },
    "CPT|93000": {
     "cash": 39.0,
@@ -8002,20 +8111,20 @@
     "gross": 1350.0
    },
    "CPT|99213": {
-    "cash": 276.25,
-    "gross": 425.0
+    "cash": 143.0,
+    "gross": 220.0
    },
    "CPT|99214": {
-    "cash": 162.5,
-    "gross": 250.0
+    "cash": 201.5,
+    "gross": 310.0
    },
    "CPT|99283": {
-    "cash": 650.0,
-    "gross": 1000.0
+    "cash": 383.5,
+    "gross": 590.0
    },
    "CPT|99284": {
-    "cash": 975.0,
-    "gross": 1500.0
+    "cash": 593.125,
+    "gross": 912.5
    },
    "DRG|194": {
     "cash": 17951.39,
@@ -8364,8 +8473,8 @@
     "gross": 264.0
    },
    "CPT|81001": {
-    "cash": 44.0,
-    "gross": 110.0
+    "cash": 42.6,
+    "gross": 106.5
    },
    "CPT|84443": {
     "cash": 71.2,
@@ -8480,12 +8589,12 @@
   },
   "st-lukes-boise": {
    "CPT|29881": {
-    "cash": 11063.0,
-    "gross": 11063.0
+    "cash": 11436.75,
+    "gross": 11436.75
    },
    "CPT|36415": {
-    "cash": 32.0,
-    "gross": 32.0
+    "cash": 34.0,
+    "gross": 34.0
    },
    "CPT|43239": {
     "cash": 2526.0,
@@ -8500,20 +8609,20 @@
     "gross": 8398.5
    },
    "CPT|70450": {
-    "cash": 819.0,
-    "gross": 819.0
+    "cash": 1090.0,
+    "gross": 1090.0
    },
    "CPT|71046": {
     "cash": 365.0,
     "gross": 365.0
    },
    "CPT|72148": {
-    "cash": 1857.0,
-    "gross": 1857.0
+    "cash": 2472.0,
+    "gross": 2472.0
    },
    "CPT|74177": {
-    "cash": 3763.0,
-    "gross": 3763.0
+    "cash": 3013.0,
+    "gross": 3013.0
    },
    "CPT|76700": {
     "cash": 441.0,
@@ -8524,20 +8633,20 @@
     "gross": 337.0
    },
    "CPT|80053": {
-    "cash": 81.0,
-    "gross": 81.0
+    "cash": 64.0,
+    "gross": 64.0
    },
    "CPT|81001": {
-    "cash": 14.0,
-    "gross": 14.0
+    "cash": 19.0,
+    "gross": 19.0
    },
    "CPT|84443": {
-    "cash": 129.0,
-    "gross": 129.0
+    "cash": 102.0,
+    "gross": 102.0
    },
    "CPT|85025": {
-    "cash": 60.0,
-    "gross": 60.0
+    "cash": 47.5,
+    "gross": 47.5
    },
    "CPT|93306": {
     "cash": 2729.0,
@@ -8594,20 +8703,20 @@
     "gross": 9385.5
    },
    "CPT|36415": {
-    "cash": 17.85,
-    "gross": 25.5
+    "cash": 22.4,
+    "gross": 32.0
    },
    "CPT|43239": {
     "cash": 936.25,
     "gross": 1337.5
    },
    "CPT|45378": {
-    "cash": 2736.65,
-    "gross": 3909.5
+    "cash": 2643.55,
+    "gross": 3776.5
    },
    "CPT|66984": {
-    "cash": 4096.4,
-    "gross": 5852.0
+    "cash": 4256.0,
+    "gross": 6080.0
    },
    "CPT|70450": {
     "cash": 1284.5,
@@ -8622,8 +8731,8 @@
     "gross": 2330.0
    },
    "CPT|74177": {
-    "cash": 2625.0,
-    "gross": 3750.0
+    "cash": 2549.575,
+    "gross": 3642.25
    },
    "CPT|76700": {
     "cash": 558.6,
@@ -8654,16 +8763,16 @@
     "gross": 1242.0
    },
    "CPT|99213": {
-    "cash": 220.15,
-    "gross": 314.5
+    "cash": 225.4,
+    "gross": 322.0
    },
    "CPT|99214": {
     "cash": 250.25,
     "gross": 357.5
    },
    "CPT|99283": {
-    "cash": 3017.0,
-    "gross": 4310.0
+    "cash": 2262.75,
+    "gross": 3232.5
    },
    "CPT|99284": {
     "cash": 2195.2,

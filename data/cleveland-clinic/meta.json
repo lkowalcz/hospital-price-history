@@ -11,6 +11,7 @@
   "status": "summarized",
   "first_seen": "2026-08-12T05:15:27Z",
   "last_changed": "2026-08-26T23:41:34Z",
+  "summary_version": 2,
   "cold_storage": {
     "url": "https://archive.org/details/hospital-price-history-cleveland-clinic-9f966fd58f5c",
     "sha256": "9f966fd58f5cce12fa6a86e261e81dbf9a63121790443c7f97c82ca4fc313f6e",
