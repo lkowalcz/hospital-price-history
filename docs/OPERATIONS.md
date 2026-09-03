@@ -150,10 +150,23 @@ original files are preserved as items on archive.org named
   cap has a `cold_storage` record. Progress is visible in commit messages
   as "archived originals: ..." and failures as "cold storage failed: ...";
   a failure is retried after seven days.
-- **Files over the CI cap** (Mayo Rochester, Florida, Arizona; 10 GB and
-  up): fetch locally, ingest with `ingest_local.py`, then run
-  `archive_snapshot.py <slug> <file>` with `ia configure` done on that
-  machine. Keep the download until the item shows up.
+- **Files over the CI cap** (Mayo Rochester, Florida, Arizona; 13 to 22
+  GB): archived from the Mac. With `ia configure` done there, a local
+  scrape run does the whole thing, re-download included:
+  ```sh
+  IA_ARCHIVE=1 IA_BIN=~/Library/Python/3.10/bin/ia ONLY=mayo-rochester,mayo-florida,mayo-arizona \
+    BACKFILL_PER_RUN=3 CURL_IMPERSONATE_BIN=.tools/curl_chrome150 CURL_MAX_TIME=14400 python3 scrape.py
+  ```
+  Mayo serves a few MB/s, so allow a couple of hours; then commit the
+  three `meta.json` and `summary.csv` files. An already-downloaded file
+  can instead go through `archive_snapshot.py <slug> <file>`.
+- **TriStar Centennial** is Pi-owned (CI skips it) and its published link
+  is dead, so CI's backfill never reaches it. Until the Pi has archive.org
+  credentials, archive it from the Mac when the Pi's commit log shows it
+  changed: download via `local_refetch.workaround_url("tristar-centennial")`,
+  then `IA_ARCHIVE=1 IA_BIN=... python3 ingest_local.py tristar-centennial <file> --force`
+  (`--force` re-runs the pipeline on content identical to the snapshot).
+  Archived 2026-09-02.
 - **Rotation**: generate new keys on the same page, replace the two secrets,
   and the next run uses them. Locally, `ia configure` again.
 - **Checking**: `grep -L cold_storage data/*/meta.json` lists hospitals

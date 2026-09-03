@@ -11,5 +11,13 @@
   "status": "summarized",
   "first_seen": "2026-08-14T03:44:21Z",
   "last_changed": "2026-08-26T20:59:46Z",
-  "note": "ingested from a local fetch (see README notes)"
+  "note": "ingested from a local fetch (see README notes)",
+  "summary_version": 2,
+  "cold_storage": {
+    "url": "https://archive.org/details/hospital-price-history-tristar-centennial-840c0b127143",
+    "sha256": "840c0b127143f8e887fc1647991bcbdf7a7af14186c854f31271636b408828a1",
+    "file_sha256": "840c0b127143f8e887fc1647991bcbdf7a7af14186c854f31271636b408828a1",
+    "compressed_bytes": 12505775,
+    "archived": "2026-09-03T02:00:36Z"
+  }
 }
