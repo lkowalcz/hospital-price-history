@@ -2,7 +2,7 @@
   "system": "Mayo Clinic",
   "location_name": "Mayo Clinic Arizona",
   "mrf_url": "https://mcorgstatic.blob.core.windows.net/cms-price/860800150_mayo-clinic-arizona_standardcharges.csv",
-  "source_filename": "mayo-arizona.csv",
+  "source_filename": "860800150_mayo-clinic-arizona_standardcharges.csv",
   "sha256": "b0e330c5bbf9f4b41bca0cadb5b2433d7151659d4f69d698c9c21b9c20d3eb5d",
   "size_bytes": 21529997739,
   "source_last_modified": "Fri, 14 Aug 2026 17:21:00 GMT",
@@ -11,5 +11,12 @@
   "status": "summarized",
   "first_seen": "2026-08-25T21:08:20Z",
   "last_changed": "2026-08-27T19:10:03Z",
-  "note": "ingested from a local fetch (see README notes)"
+  "summary_version": 2,
+  "cold_storage": {
+    "url": "https://archive.org/details/hospital-price-history-mayo-arizona-b0e330c5bbf9",
+    "sha256": "b0e330c5bbf9f4b41bca0cadb5b2433d7151659d4f69d698c9c21b9c20d3eb5d",
+    "file_sha256": "b0e330c5bbf9f4b41bca0cadb5b2433d7151659d4f69d698c9c21b9c20d3eb5d",
+    "compressed_bytes": 356891158,
+    "archived": "2026-09-03T00:07:01Z"
+  }
 }
