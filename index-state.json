@@ -1,5 +1,5 @@
 {
- "date": "2026-09-03",
+ "date": "2026-09-04",
  "index_cash": 99.93591162638795,
  "index_gross": 99.9349259722852,
  "basket_version": 1,
@@ -16,9 +16,9 @@
   "uchicago": 2,
   "ucsf-parnassus": 2,
   "ucla-ronald-reagan": 2,
-  "duke": 1,
+  "duke": 2,
   "md-anderson": 2,
-  "northwestern-memorial": 1,
+  "northwestern-memorial": 2,
   "penn-hup": 1,
   "northwell-north-shore": 1,
   "emory-university-hospital": 2,
@@ -1093,8 +1093,8 @@
     "gross": 2290.5
    },
    "CPT|66984": {
-    "cash": 978.75,
-    "gross": 3625.0
+    "cash": 1076.625,
+    "gross": 3987.5
    },
    "CPT|70450": {
     "cash": 452.25,
@@ -1149,8 +1149,8 @@
     "gross": 223.0
    },
    "CPT|99214": {
-    "cash": 159.0,
-    "gross": 318.0
+    "cash": 191.0,
+    "gross": 382.0
    },
    "CPT|99283": {
     "cash": 232.985,
@@ -1253,24 +1253,24 @@
   },
   "northwestern-memorial": {
    "CPT|29881": {
-    "cash": 25663.99,
-    "gross": 36662.84
+    "cash": 15267.295000000002,
+    "gross": 21810.42
    },
    "CPT|36415": {
-    "cash": 493.15000000000003,
-    "gross": 704.5
+    "cash": 264.075,
+    "gross": 377.25
    },
    "CPT|43239": {
-    "cash": 10335.13,
-    "gross": 14764.47
+    "cash": 6776.514999999999,
+    "gross": 9680.735
    },
    "CPT|45378": {
-    "cash": 4336.6,
-    "gross": 6195.14
+    "cash": 3430.75,
+    "gross": 4901.07
    },
    "CPT|66984": {
-    "cash": 10852.99,
-    "gross": 15504.27
+    "cash": 8787.545,
+    "gross": 12553.635
    },
    "CPT|70450": {
     "cash": 2474.5,
@@ -1325,12 +1325,12 @@
     "gross": 402.0
    },
    "CPT|99283": {
-    "cash": 1346.8,
-    "gross": 1924.0
+    "cash": 1548.925,
+    "gross": 2212.75
    },
    "CPT|99284": {
-    "cash": 4049.15,
-    "gross": 5784.5
+    "cash": 3287.025,
+    "gross": 4695.75
    },
    "DRG|194": {
     "cash": 17421.42,

@@ -10,5 +10,13 @@
   "transfer_fingerprint": "27d866ef7b7048c338cc47b25831facceba3d24c41542af09ff3d6ebc05ed134",
   "status": "summarized",
   "first_seen": "2026-08-12T05:42:30Z",
-  "last_changed": "2026-08-27T00:16:56Z"
+  "last_changed": "2026-08-27T00:16:56Z",
+  "summary_version": 2,
+  "cold_storage": {
+    "url": "https://archive.org/details/hospital-price-history-northwestern-memorial-908ac958d68c",
+    "sha256": "908ac958d68c74c252c25686c81efef67f558106efbc35877ee779550a993712",
+    "file_sha256": "908ac958d68c74c252c25686c81efef67f558106efbc35877ee779550a993712",
+    "compressed_bytes": 68027642,
+    "archived": "2026-09-04T11:49:42Z"
+  }
 }

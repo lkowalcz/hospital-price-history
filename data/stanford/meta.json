@@ -11,5 +11,6 @@
   "first_seen": "2026-08-12T05:15:07Z",
   "last_changed": "2026-08-12T05:15:07Z",
   "raw_commit": "e03c3ea8a1ceb8b9ba428f95890ede03de536cc2",
-  "summary_version": 2
+  "summary_version": 2,
+  "fetch_escalated": "2026-09-04T11:30:34Z"
 }

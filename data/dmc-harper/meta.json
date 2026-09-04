@@ -3,14 +3,14 @@
   "location_name": "DMC Harper University Hospital",
   "mrf_url": "https://mrfs.hyvehealthcare.com/TenetHealth/272844767-1427360700_vhs-harper-hutzel-hospital-inc_standardcharges.json",
   "source_filename": "272844767-1427360700_vhs-harper-hutzel-hospital-inc_standardcharges.json",
-  "sha256": "6babeda6af729fdd31e91a640626051b2639ad7e1b5955b1cd9f83ab91e7386c",
-  "size_bytes": 137986342,
-  "source_last_modified": "Fri, 21 Aug 2026 19:54:55 GMT",
-  "source_etag": "\"0x8DEFFBE127E8A28\"",
-  "transfer_fingerprint": "2347772eb970e22ca40728af5f0c87be3eab12646441108f204241e9eb16c444",
+  "sha256": "9dc7464eaa385731ef0b33938a3492e588c03bd4ea2295d43813a7ae05763dd5",
+  "size_bytes": 137986961,
+  "source_last_modified": "Thu, 03 Sep 2026 22:06:07 GMT",
+  "source_etag": "\"0x8DF0A078E0D9B2C\"",
+  "transfer_fingerprint": "ea41ce423a019dc4f76a359562201ce0871395dd2de3093084c0d1dcb3e90653",
   "status": "sharded",
   "first_seen": "2026-08-14T03:45:00Z",
-  "last_changed": "2026-08-26T07:17:51Z",
-  "raw_commit": "e03c3ea8a1ceb8b9ba428f95890ede03de536cc2",
-  "summary_version": 2
+  "last_changed": "2026-09-04T11:50:07Z",
+  "summary_version": 2,
+  "raw_commit": "c8a2cc87fbde6b709b598b167b84a3ee4c368da0"
 }

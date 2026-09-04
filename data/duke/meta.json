@@ -10,5 +10,13 @@
   "transfer_fingerprint": "cc8fefb6a3d9ee340deec35af3113d66b040fe90adc8e800eb752407e8b2e2ed",
   "status": "summarized",
   "first_seen": "2026-08-12T05:21:16Z",
-  "last_changed": "2026-08-26T23:42:29Z"
+  "last_changed": "2026-08-26T23:42:29Z",
+  "summary_version": 2,
+  "cold_storage": {
+    "url": "https://archive.org/details/hospital-price-history-duke-4a3676408e3b",
+    "sha256": "4a3676408e3bb040c132f4d3e3c2630fa01e7c24890c93a7a2d4e1482624bb98",
+    "file_sha256": "4a3676408e3bb040c132f4d3e3c2630fa01e7c24890c93a7a2d4e1482624bb98",
+    "compressed_bytes": 12453495,
+    "archived": "2026-09-04T11:31:54Z"
+  }
 }
