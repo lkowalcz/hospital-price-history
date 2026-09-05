@@ -10,5 +10,13 @@
   "transfer_fingerprint": "e7b11e12e4b6bfbb037673e5b85e6055e25055105baee695036bc4325515c4ea",
   "status": "summarized",
   "first_seen": "2026-08-12T05:45:49Z",
-  "last_changed": "2026-08-27T00:17:12Z"
+  "last_changed": "2026-08-27T00:17:12Z",
+  "summary_version": 2,
+  "cold_storage": {
+    "url": "https://archive.org/details/hospital-price-history-northwell-north-shore-9dee78a475fc",
+    "sha256": "9dee78a475fc3c5b20f8109b74984249475174b348255c802b6bffddea1bc692",
+    "file_sha256": "9dee78a475fc3c5b20f8109b74984249475174b348255c802b6bffddea1bc692",
+    "compressed_bytes": 21792873,
+    "archived": "2026-09-05T10:48:35Z"
+  }
 }

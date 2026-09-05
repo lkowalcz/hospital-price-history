@@ -10,5 +10,13 @@
   "transfer_fingerprint": "1aeba2b94771f545a8b82bb03c30e645fdb11b98a83eb415a9e6acd7b029b2eb",
   "status": "summarized",
   "first_seen": "2026-08-12T05:45:47Z",
-  "last_changed": "2026-08-28T18:52:17Z"
+  "last_changed": "2026-08-28T18:52:17Z",
+  "summary_version": 2,
+  "cold_storage": {
+    "url": "https://archive.org/details/hospital-price-history-penn-hup-84201ae3ef0e",
+    "sha256": "84201ae3ef0e7ae026102ebb731ffc06134e5d626e48f755c20b0f750ec282b2",
+    "file_sha256": "84201ae3ef0e7ae026102ebb731ffc06134e5d626e48f755c20b0f750ec282b2",
+    "compressed_bytes": 7543840,
+    "archived": "2026-09-05T10:47:51Z"
+  }
 }

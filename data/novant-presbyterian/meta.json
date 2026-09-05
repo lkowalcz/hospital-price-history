@@ -12,5 +12,10 @@
   "first_seen": "2026-08-14T03:47:29Z",
   "last_changed": "2026-08-14T03:47:29Z",
   "raw_commit": "e03c3ea8a1ceb8b9ba428f95890ede03de536cc2",
-  "summary_version": 2
+  "summary_version": 2,
+  "fetch_failures": {
+    "first_failed": "2026-09-05T10:49:54Z",
+    "last_error": "Command '['/home/runner/work/_temp/ci/curl_chrome150', '-sS', '-L', '--compressed', '--max-time', '3600', '-D', '/tmp/tmp9b8zkdxu.hdrs', '-o', '-', '--fail', 'https://www.novanthealth.org/cms-hpt.txt'",
+    "last_attempt": "2026-09-05T10:49:54Z"
+  }
 }

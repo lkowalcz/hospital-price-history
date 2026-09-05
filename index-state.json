@@ -1,5 +1,5 @@
 {
- "date": "2026-09-04",
+ "date": "2026-09-05",
  "index_cash": 99.93591162638795,
  "index_gross": 99.9349259722852,
  "basket_version": 1,
@@ -19,8 +19,8 @@
   "duke": 2,
   "md-anderson": 2,
   "northwestern-memorial": 2,
-  "penn-hup": 1,
-  "northwell-north-shore": 1,
+  "penn-hup": 2,
+  "northwell-north-shore": 2,
   "emory-university-hospital": 2,
   "kaiser-oakland": 2,
   "atrium-carolinas": 1,
@@ -1363,8 +1363,8 @@
   },
   "penn-hup": {
    "CPT|36415": {
-    "cash": 61.0,
-    "gross": 61.0
+    "cash": 60.0,
+    "gross": 60.0
    },
    "CPT|43239": {
     "cash": 4134.0,
