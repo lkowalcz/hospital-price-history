@@ -10,5 +10,13 @@
   "transfer_fingerprint": "2cc53c26a3dc7ad2214246ec25fb71f654e87c295f3e49cac209e07472130d8d",
   "status": "summarized",
   "first_seen": "2026-08-14T03:44:05Z",
-  "last_changed": "2026-08-26T20:29:27Z"
+  "last_changed": "2026-08-26T20:29:27Z",
+  "summary_version": 2,
+  "cold_storage": {
+    "url": "https://archive.org/details/hospital-price-history-medical-city-dallas-6ac103cde294",
+    "sha256": "6ac103cde294ec7efd21470ef2ec48c7f0f7756f2bde06d091567bf3ce211e06",
+    "file_sha256": "6ac103cde294ec7efd21470ef2ec48c7f0f7756f2bde06d091567bf3ce211e06",
+    "compressed_bytes": 24555078,
+    "archived": "2026-09-06T11:14:05Z"
+  }
 }

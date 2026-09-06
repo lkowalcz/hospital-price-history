@@ -10,5 +10,13 @@
   "transfer_fingerprint": "fc8082464c32c2a416ec4948db572cdc9541ed7626a670dac4a2ba0d0c07bb90",
   "status": "summarized",
   "first_seen": "2026-08-12T06:12:42Z",
-  "last_changed": "2026-08-27T00:19:12Z"
+  "last_changed": "2026-08-27T00:19:12Z",
+  "summary_version": 2,
+  "cold_storage": {
+    "url": "https://archive.org/details/hospital-price-history-atrium-carolinas-9d77955855b5",
+    "sha256": "9d77955855b521c9e591d95093de161236d87c93e58ac984d0114677f1ffd658",
+    "file_sha256": "9d77955855b521c9e591d95093de161236d87c93e58ac984d0114677f1ffd658",
+    "compressed_bytes": 153772412,
+    "archived": "2026-09-06T11:12:31Z"
+  }
 }

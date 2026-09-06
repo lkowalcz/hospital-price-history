@@ -1,5 +1,5 @@
 {
- "date": "2026-09-05",
+ "date": "2026-09-06",
  "index_cash": 99.93591162638795,
  "index_gross": 99.9349259722852,
  "basket_version": 1,
@@ -23,10 +23,10 @@
   "northwell-north-shore": 2,
   "emory-university-hospital": 2,
   "kaiser-oakland": 2,
-  "atrium-carolinas": 1,
+  "atrium-carolinas": 2,
   "boston-medical-center": 2,
   "hca-florida-kendall": 2,
-  "medical-city-dallas": 1,
+  "medical-city-dallas": 2,
   "tristar-centennial": 2,
   "hca-houston-medical-center": 2,
   "dmc-harper": 2,
@@ -1960,8 +1960,8 @@
     "gross": 10324.95
    },
    "CPT|76700": {
-    "cash": 2144.91,
-    "gross": 2144.91
+    "cash": 1673.5099999999998,
+    "gross": 1673.5099999999998
    },
    "CPT|77067": {
     "cash": 992.61,
@@ -1982,12 +1982,12 @@
    "CPT|85025": {},
    "CPT|93000": {},
    "CPT|93306": {
-    "cash": 7097.19,
-    "gross": 7097.19
+    "cash": 8343.4,
+    "gross": 8343.4
    },
    "CPT|99213": {
-    "cash": 860.5,
-    "gross": 860.5
+    "cash": 814.12,
+    "gross": 814.12
    },
    "CPT|99214": {
     "cash": 1098.47,
