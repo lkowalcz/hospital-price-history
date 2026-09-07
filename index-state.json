@@ -1,5 +1,5 @@
 {
- "date": "2026-09-06",
+ "date": "2026-09-07",
  "index_cash": 99.93591162638795,
  "index_gross": 99.9349259722852,
  "basket_version": 1,
@@ -35,7 +35,7 @@
   "cpmc-van-ness": 2,
   "intermountain-medical-center": 2,
   "baylor-university-medical": 2,
-  "ochsner-medical-center": 1,
+  "ochsner-medical-center": 2,
   "banner-university-phoenix": 2,
   "geisinger-medical-center": 2,
   "ohiohealth-riverside": 2,
@@ -51,7 +51,7 @@
   "baptist-hospital-miami": 2,
   "wellstar-kennestone": 2,
   "corewell-butterworth": 2,
-  "sanford-usd": 1,
+  "sanford-usd": 2,
   "musc-charleston": 2,
   "yale-new-haven": 2,
   "jefferson-tjuh": 2,
@@ -2637,8 +2637,8 @@
     "gross": 1205.0
    },
    "CPT|71046": {
-    "cash": 45.76,
-    "gross": 208.0
+    "cash": 48.620000000000005,
+    "gross": 221.0
    },
    "CPT|72148": {
     "cash": 524.26,
@@ -2657,20 +2657,20 @@
     "gross": 388.0
    },
    "CPT|80053": {
-    "cash": 14.52,
-    "gross": 66.0
+    "cash": 16.39,
+    "gross": 74.5
    },
    "CPT|81001": {
-    "cash": 3.52,
-    "gross": 16.0
+    "cash": 3.96,
+    "gross": 18.0
    },
    "CPT|84443": {
-    "cash": 27.28,
-    "gross": 124.0
+    "cash": 30.69,
+    "gross": 139.5
    },
    "CPT|85025": {
-    "cash": 10.56,
-    "gross": 48.0
+    "cash": 11.879999999999999,
+    "gross": 54.0
    },
    "CPT|93306": {
     "cash": 495.66,

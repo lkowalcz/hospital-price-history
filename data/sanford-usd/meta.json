@@ -10,5 +10,13 @@
   "transfer_fingerprint": "9391675b8a80b15d8b04b4ff20ad74f09eb6245a143ffeb904d367e169d3e046",
   "status": "summarized",
   "first_seen": "2026-08-14T03:57:22Z",
-  "last_changed": "2026-08-27T00:20:51Z"
+  "last_changed": "2026-08-27T00:20:51Z",
+  "summary_version": 2,
+  "cold_storage": {
+    "url": "https://archive.org/details/hospital-price-history-sanford-usd-2c94d6436b2e",
+    "sha256": "2c94d6436b2e60819b7de8f46553b4a9cb9cfdc3f5f6e92c4b80ff54b340aedb",
+    "file_sha256": "2c94d6436b2e60819b7de8f46553b4a9cb9cfdc3f5f6e92c4b80ff54b340aedb",
+    "compressed_bytes": 46143490,
+    "archived": "2026-09-07T13:04:54Z"
+  }
 }

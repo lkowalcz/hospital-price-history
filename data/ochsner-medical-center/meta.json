@@ -10,5 +10,13 @@
   "transfer_fingerprint": "1a5dc9b8c3a5a3ddea42e06cb2719ae54ac22f3188e3a3fbd8613fc316888a41",
   "status": "summarized",
   "first_seen": "2026-08-14T03:47:05Z",
-  "last_changed": "2026-08-27T00:20:04Z"
+  "last_changed": "2026-08-27T00:20:04Z",
+  "summary_version": 2,
+  "cold_storage": {
+    "url": "https://archive.org/details/hospital-price-history-ochsner-medical-center-2645739710ff",
+    "sha256": "2645739710ff580494dc609a060a99ac3c3aed023b1f249106d2e39346b159b3",
+    "file_sha256": "2645739710ff580494dc609a060a99ac3c3aed023b1f249106d2e39346b159b3",
+    "compressed_bytes": 6500359,
+    "archived": "2026-09-07T12:50:17Z"
+  }
 }
