@@ -1,5 +1,5 @@
 {
- "date": "2026-09-07",
+ "date": "2026-09-08",
  "index_cash": 99.93591162638795,
  "index_gross": 99.9349259722852,
  "basket_version": 1,
@@ -67,8 +67,8 @@
   "mclean-hospital": 2,
   "wentworth-douglass": 2,
   "nantucket-cottage": 2,
-  "cleveland-clinic-akron": 1,
-  "cleveland-clinic-weston": 1,
+  "cleveland-clinic-akron": 2,
+  "cleveland-clinic-weston": 2,
   "mayo-arizona": 2,
   "mayo-florida": 2,
   "hopkins-bayview": 2,
@@ -5298,20 +5298,20 @@
     "gross": 734.0
    },
    "CPT|71046": {
-    "cash": 395.2,
-    "gross": 608.0
+    "cash": 380.25,
+    "gross": 585.0
    },
    "CPT|72148": {
     "cash": 1084.2,
     "gross": 1668.0
    },
    "CPT|74177": {
-    "cash": 1861.925,
-    "gross": 2864.5
+    "cash": 1572.675,
+    "gross": 2419.5
    },
    "CPT|76700": {
-    "cash": 477.1,
-    "gross": 734.0
+    "cash": 354.25,
+    "gross": 545.0
    },
    "CPT|77067": {
     "cash": 395.85,
@@ -5334,8 +5334,8 @@
     "gross": 54.0
    },
    "CPT|93000": {
-    "cash": 269.75,
-    "gross": 415.0
+    "cash": 159.25,
+    "gross": 245.0
    },
    "CPT|93306": {
     "cash": 2049.45,
@@ -5350,12 +5350,12 @@
     "gross": 187.0
    },
    "CPT|99283": {
-    "cash": 1242.15,
-    "gross": 1911.0
+    "cash": 849.875,
+    "gross": 1307.5
    },
    "CPT|99284": {
-    "cash": 1909.7,
-    "gross": 2938.0
+    "cash": 1346.8,
+    "gross": 2072.0
    },
    "DRG|194": {},
    "DRG|291": {},
@@ -5371,12 +5371,12 @@
     "gross": 3093.0
    },
    "CPT|36415": {
-    "cash": 13.0,
-    "gross": 20.0
+    "cash": 18.525,
+    "gross": 28.5
    },
    "CPT|43239": {
-    "cash": 3504.15,
-    "gross": 5391.0
+    "cash": 2093.975,
+    "gross": 3221.5
    },
    "CPT|45378": {
     "cash": 1071.2,
@@ -5387,24 +5387,24 @@
     "gross": 3234.0
    },
    "CPT|70450": {
-    "cash": 718.25,
-    "gross": 1105.0
+    "cash": 569.075,
+    "gross": 875.5
    },
    "CPT|71046": {
     "cash": 494.0,
     "gross": 760.0
    },
    "CPT|72148": {
-    "cash": 1547.65,
-    "gross": 2381.0
+    "cash": 1208.8375,
+    "gross": 1859.75
    },
    "CPT|74177": {
     "cash": 2002.0,
     "gross": 3080.0
    },
    "CPT|76700": {
-    "cash": 712.4000000000001,
-    "gross": 1096.0
+    "cash": 563.225,
+    "gross": 866.5
    },
    "CPT|77067": {
     "cash": 494.65,
@@ -5443,12 +5443,12 @@
     "gross": 768.0
    },
    "CPT|99283": {
-    "cash": 1552.85,
-    "gross": 2389.0
+    "cash": 1005.2249999999999,
+    "gross": 1546.5
    },
    "CPT|99284": {
-    "cash": 2387.45,
-    "gross": 3673.0
+    "cash": 1585.675,
+    "gross": 2439.5
    },
    "DRG|194": {},
    "DRG|291": {},

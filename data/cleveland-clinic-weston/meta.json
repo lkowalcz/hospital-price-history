@@ -10,5 +10,13 @@
   "transfer_fingerprint": "2927c53ebbbd3a233ae78197598e4087891bf39ca04f392f82ce39e79b61c49d",
   "status": "summarized",
   "first_seen": "2026-08-25T05:46:28Z",
-  "last_changed": "2026-08-27T00:21:28Z"
+  "last_changed": "2026-08-27T00:21:28Z",
+  "summary_version": 2,
+  "cold_storage": {
+    "url": "https://archive.org/details/hospital-price-history-cleveland-clinic-weston-21e7072a97db",
+    "sha256": "21e7072a97db6551a68647a67faa7ca455861626efdd93a0e6e3f2100ebfa6e8",
+    "file_sha256": "21e7072a97db6551a68647a67faa7ca455861626efdd93a0e6e3f2100ebfa6e8",
+    "compressed_bytes": 19230297,
+    "archived": "2026-09-08T11:32:10Z"
+  }
 }
