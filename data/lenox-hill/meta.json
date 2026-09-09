@@ -10,5 +10,13 @@
   "transfer_fingerprint": "b67ba30540210753857024689aad77f67734906c9e3a3d752e2f4cfe9d200d15",
   "status": "summarized",
   "first_seen": "2026-08-25T05:46:45Z",
-  "last_changed": "2026-08-27T00:21:43Z"
+  "last_changed": "2026-08-27T00:21:43Z",
+  "summary_version": 2,
+  "cold_storage": {
+    "url": "https://archive.org/details/hospital-price-history-lenox-hill-fb7e89ebd276",
+    "sha256": "fb7e89ebd2767dcd4e5810991f4f0663ea06254bdacbffbf86c59464c6f5bf79",
+    "file_sha256": "fb7e89ebd2767dcd4e5810991f4f0663ea06254bdacbffbf86c59464c6f5bf79",
+    "compressed_bytes": 21859386,
+    "archived": "2026-09-09T11:56:51Z"
+  }
 }

@@ -10,5 +10,13 @@
   "transfer_fingerprint": "acc1c87cfce014dfa67bd0e8e35cea3df8ba253e321f53ccb8b9917195a0aab3",
   "status": "summarized",
   "first_seen": "2026-08-25T05:59:06Z",
-  "last_changed": "2026-08-27T00:33:40Z"
+  "last_changed": "2026-08-27T00:33:40Z",
+  "summary_version": 2,
+  "cold_storage": {
+    "url": "https://archive.org/details/hospital-price-history-nm-central-dupage-c03047159f9b",
+    "sha256": "c03047159f9bff464d090a5c3569cdff21158429ac81373175345f7e6cfe4f33",
+    "file_sha256": "c03047159f9bff464d090a5c3569cdff21158429ac81373175345f7e6cfe4f33",
+    "compressed_bytes": 31353469,
+    "archived": "2026-09-09T12:09:23Z"
+  }
 }
