@@ -10,5 +10,13 @@
   "transfer_fingerprint": "1379d75bfe103cee3f2d1e9985460dc97d731222140510ae3e03f40fc3f42920",
   "status": "summarized",
   "first_seen": "2026-08-25T13:58:35Z",
-  "last_changed": "2026-08-27T00:34:52Z"
+  "last_changed": "2026-08-27T00:34:52Z",
+  "summary_version": 2,
+  "cold_storage": {
+    "url": "https://archive.org/details/hospital-price-history-sanford-fargo-486e71eb8e33",
+    "sha256": "486e71eb8e3320a8b7d1a3d7a645f0f4ea6d5a5138936f9d4f9154baea1ebc2c",
+    "file_sha256": "486e71eb8e3320a8b7d1a3d7a645f0f4ea6d5a5138936f9d4f9154baea1ebc2c",
+    "compressed_bytes": 50047075,
+    "archived": "2026-09-10T11:37:12Z"
+  }
 }

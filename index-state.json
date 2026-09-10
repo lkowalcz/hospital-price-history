@@ -1,5 +1,5 @@
 {
- "date": "2026-09-09",
+ "date": "2026-09-10",
  "index_cash": 100.04428545380333,
  "index_gross": 100.04548929013622,
  "basket_version": 1,
@@ -82,12 +82,12 @@
   "nyp-brooklyn-methodist": 2,
   "mount-sinai-brooklyn": 2,
   "harborview": 2,
-  "duke-regional": 1,
+  "duke-regional": 2,
   "kaiser-la-sunset": 2,
   "providence-alaska": 2,
   "pennsylvania-hospital": 2,
   "sibley-memorial": 2,
-  "sanford-fargo": 1,
+  "sanford-fargo": 2,
   "providence-st-patrick": 2,
   "banner-wyoming": 2,
   "banner-churchill": 2,
@@ -6410,8 +6410,8 @@
     "gross": 24.0
    },
    "CPT|43239": {
-    "cash": 750.1,
-    "gross": 2192.5
+    "cash": 758.975,
+    "gross": 2210.25
    },
    "CPT|45378": {
     "cash": 787.9449999999999,

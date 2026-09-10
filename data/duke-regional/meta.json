@@ -10,5 +10,13 @@
   "transfer_fingerprint": "7d430bcc59cdbdd92b12546b9d70d5eb3689c91519b47f22b52cdac4586391bd",
   "status": "summarized",
   "first_seen": "2026-08-25T06:04:22Z",
-  "last_changed": "2026-08-27T00:34:05Z"
+  "last_changed": "2026-08-27T00:34:05Z",
+  "summary_version": 2,
+  "cold_storage": {
+    "url": "https://archive.org/details/hospital-price-history-duke-regional-f51869a54067",
+    "sha256": "f51869a54067aac7069433be1a49e03884266b01532583c8bb0767fe855831ff",
+    "file_sha256": "f51869a54067aac7069433be1a49e03884266b01532583c8bb0767fe855831ff",
+    "compressed_bytes": 8867859,
+    "archived": "2026-09-10T11:35:44Z"
+  }
 }
