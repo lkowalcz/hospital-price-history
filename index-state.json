@@ -1,5 +1,5 @@
 {
- "date": "2026-09-10",
+ "date": "2026-09-11",
  "index_cash": 100.04428545380333,
  "index_gross": 100.04548929013622,
  "basket_version": 1,
@@ -91,10 +91,10 @@
   "providence-st-patrick": 2,
   "banner-wyoming": 2,
   "banner-churchill": 2,
-  "hackensack-umc": 1,
+  "hackensack-umc": 2,
   "rhode-island-hospital": 2,
   "uvm-medical-center": 2,
-  "maine-medical-center": 1,
+  "maine-medical-center": 2,
   "christiana-hospital": 2,
   "sentara-norfolk": 2,
   "wvu-hospitals": 2,
@@ -7145,7 +7145,7 @@
    },
    "CPT|36415": {
     "cash": 9.09,
-    "gross": 130.0
+    "gross": 705.0
    },
    "CPT|43239": {
     "cash": 1104.13,
@@ -7197,12 +7197,12 @@
    },
    "CPT|85025": {
     "cash": 7.77,
-    "gross": 130.0
+    "gross": 154.0
    },
    "CPT|93000": {},
    "CPT|93306": {
     "cash": 645.71,
-    "gross": 4021.0
+    "gross": 3552.5
    },
    "CPT|99213": {
     "gross": 385.0

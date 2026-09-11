@@ -10,5 +10,13 @@
   "transfer_fingerprint": "d48bae6dc160e61e26435e8caeef297dc4b6faf03492fd7efc93248458aae15b",
   "status": "summarized",
   "first_seen": "2026-08-25T14:16:18Z",
-  "last_changed": "2026-08-27T00:37:19Z"
+  "last_changed": "2026-08-27T00:37:19Z",
+  "summary_version": 2,
+  "cold_storage": {
+    "url": "https://archive.org/details/hospital-price-history-maine-medical-center-541ed4bc440f",
+    "sha256": "541ed4bc440f38a1f7de88d21b2fe9787309b076a5d6e332f984c7ab7e8bce17",
+    "file_sha256": "541ed4bc440f38a1f7de88d21b2fe9787309b076a5d6e332f984c7ab7e8bce17",
+    "compressed_bytes": 42306272,
+    "archived": "2026-09-11T11:38:49Z"
+  }
 }
