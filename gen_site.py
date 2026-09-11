@@ -67,9 +67,9 @@ def page(title, description, body, canonical, jsonld):
 <script type="application/ld+json">{json.dumps(jsonld)}</script>
 <style>{CSS}</style></head><body><main>
 {body}
-<footer>Data: hospital machine-readable files published under 45 CFR § 180.50,
-archived daily. <a href="{REPO}">Method &amp; raw history on GitHub</a>.
-Generated {date.today().isoformat()}.</footer>
+<footer>Source: hospital price files published under 45 CFR § 180.50.
+<a href="{REPO}">About the archive and its data</a>.
+Page generated {date.today().isoformat()}.</footer>
 </main></body></html>"""
 
 
@@ -124,9 +124,9 @@ def hospital_page(h, meta, outdir):
     parts.append("<h2>Tracking status</h2><table>")
     status_rows = [
         ("Monitored since", (meta.get("first_seen") or "")[:10]),
-        ("File last changed", (meta.get("last_changed") or "")[:10]),
+        ("Last change recorded", (meta.get("last_changed") or "")[:10]),
         ("File size", f'{meta.get("size_bytes", 0):,} bytes' if meta.get("size_bytes") else "—"),
-        ("Billing codes in summary", f"{len(rows):,}" if rows else "—"),
+        ("Rows in summary", f"{len(rows):,}" if rows else "—"),
         ("Source file", f'<a href="{esc(meta.get("mrf_url", ""))}" rel="nofollow">machine-readable file</a>'
          if meta.get("mrf_url") else "—")]
     if meta.get("status") == "sharded":
@@ -134,7 +134,7 @@ def hospital_page(h, meta, outdir):
         status_rows.append((
             "Payer-level rates",
             f'<a href="{RAW_REPO}/tree/{esc(ref)}/data/{slug}">full data</a> &middot; '
-            f'<a href="{RAW_REPO}/commits/main/data/{slug}">change diffs</a>'))
+            f'<a href="{RAW_REPO}/commits/main/data/{slug}">change history</a>'))
     cs = meta.get("cold_storage")
     if cs:
         status_rows.append((
@@ -147,18 +147,17 @@ def hospital_page(h, meta, outdir):
 
     sw = meta.get("summary_warning")
     if sw:
-        parts.append(f'<div class="warn">⚠ The file published '
-                     f'{esc((meta.get("last_changed") or sw["at"])[:10])} has far fewer '
-                     f'priced codes than the previous one ({esc(sw["detail"])}). It may be '
-                     f'truncated or restructured; the previous snapshot remains in the '
-                     f'change history below.</div>')
+        parts.append(f'<div class="warn">⚠ The summary recorded on '
+                     f'{esc((meta.get("last_changed") or sw["at"])[:10])} has fewer than half '
+                     f'the rows or coded rows of the previous summary ({esc(sw["detail"])}). '
+                     f'The source file may be incomplete or its layout may have changed. '
+                     f'You can find the previous snapshot in the change history below.</div>')
 
     ff = meta.get("fetch_failures")
     if ff:
-        parts.append(f'<div class="warn">⚠ This hospital&rsquo;s price file has been '
-                     f'unreachable since {esc(ff["first_failed"][:10])} '
-                     f'(<code>{esc(ff["last_error"][:90])}</code>). The failure streak '
-                     f'is recorded in the archive.</div>')
+        parts.append(f'<div class="warn">⚠ The archive has been unable to download '
+                     f'this hospital&rsquo;s price file since {esc(ff["first_failed"][:10])}. '
+                     f'Latest error: <code>{esc(ff["last_error"][:90])}</code>.</div>')
 
     if rows:
         feat = featured_rows(rows)
@@ -177,7 +176,7 @@ def hospital_page(h, meta, outdir):
                              f'<td class=num>{neg}</td>'
                              f'<td class=num>{r["payer_entries"]}</td></tr>')
             parts.append("</table></div>"
-                         f'<p class="muted">Full digest of all {len(rows):,} codes: '
+                         f'<p class="muted">Download the full summary ({len(rows):,} rows): '
                          f'<a href="https://raw.githubusercontent.com/lkowalcz/hospital-price-history/main/data/{slug}/summary.csv">summary.csv</a></p>')
 
     parts.append("<h2>Change history</h2>")
@@ -189,8 +188,8 @@ def hospital_page(h, meta, outdir):
     else:
         parts.append('<p class="muted">No recorded events yet.</p>')
 
-    desc = (f"Price transparency history for {name} ({h['system']}): standard charges, "
-            f"cash prices and negotiated rates, archived daily with full change history.")
+    desc = (f"Archived price files for {name} ({h['system']}), with summaries of gross "
+            f"charges, cash prices and negotiated rates, and a history of recorded changes.")
     jsonld = {
         "@context": "https://schema.org", "@type": "Dataset",
         "name": f"{name} — hospital price history",
@@ -211,14 +210,16 @@ def hospital_page(h, meta, outdir):
 
 def index_page(hospitals, metas, outdir):
     body = ["<h1>Hospital Price History</h1>",
-            '<p>A public archive tracking the machine-readable price files US hospitals '
-            'must publish under federal price transparency rules (45 CFR § 180.50). '
-            'Files are checked daily; every change — a revised rate, a republished file, '
-            'a file quietly taken down — is recorded in '
-            f'<a href="{REPO}">version-controlled history</a>, with full payer-level '
-            f'rate data in a <a href="{RAW_REPO}">companion raw-data repo</a>.</p>',
+            '<p>This archive collects the machine-readable price files US hospitals '
+            'publish under federal price transparency rules (45 CFR § 180.50). '
+            'Scheduled checks save new versions as hospitals update their files. '
+            'Choose a hospital below to see example prices, download a summary, '
+            'or browse its recorded changes.</p>'
+            f'<p>The <a href="{REPO}">GitHub repository</a> contains the archive data '
+            'and documentation. Larger files stored in shards, including their '
+            f'payer-level rates, are in a <a href="{RAW_REPO}">separate repository</a>.</p>',
             "<div class=\"wrap\"><table><tr><th>Hospital</th><th>System</th>"
-            "<th>Last changed</th><th>Status</th></tr>"]
+            "<th>Last change recorded</th><th>Status</th></tr>"]
     for h in sorted(hospitals, key=lambda x: x["location_name"].casefold()):
         m = metas[h["slug"]]
         name = h["location_name"] if len(h["location_name"]) < 60 else h["slug"].replace("-", " ").title()
@@ -228,9 +229,8 @@ def index_page(hospitals, metas, outdir):
                     f'<td>{(m.get("last_changed") or "—")[:10]}</td>'
                     f'<td>{esc(status)}</td></tr>')
     body.append("</table></div>")
-    desc = (f"Daily archive of price transparency files from {len(hospitals)} major US "
-            "hospitals — standard charges, cash prices, negotiated rates — with full "
-            "change history.")
+    desc = (f"Archived price transparency files from {len(hospitals)} US hospitals, "
+            "with price summaries, downloadable data and a history of recorded changes.")
     jsonld = {
         "@context": "https://schema.org", "@type": "Dataset",
         "name": "Hospital Price History",

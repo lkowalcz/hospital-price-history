@@ -1,19 +1,19 @@
 # hospital-price-history
 
-A [git-scraping](https://simonwillison.net/2020/Oct/9/git-scraping/) archive of
-hospital price transparency machine-readable files (MRFs), which US hospitals
-are required to publish under 45 CFR § 180.50.
+This project archives the machine-readable price files (MRFs) that US
+hospitals publish under 45 CFR § 180.50. It uses
+[git-scraping](https://simonwillison.net/2020/Oct/9/git-scraping/) to save
+successive versions so you can compare a hospital's published prices over
+time.
 
-Aggregations of these files exist. **A public record of how they change over
-time does not.** Every commit here is a timestamped snapshot: when a hospital
-revises a negotiated rate, republishes its file, or quietly removes it, the
-git history shows exactly when.
+The archive records when it finds revised files, changed download URLs, or
+links removed from a hospital's listing. Hospital pages include available
+price summaries and a history of recorded changes.
 
 ## Coverage
 
-107 hospitals chosen for breadth of ownership type and geography (see
-`hospitals.json` for the full roster). The founding cohort, one flagship
-per system:
+The archive tracks 107 hospitals across ownership types and regions. The
+full roster is in [hospitals.json](hospitals.json). It includes:
 
 - **Academic medical centers**: MGH, Brigham and Women's (+2 MGB community
   hospitals), NYP Columbia, Stanford, Cleveland Clinic, Cedars-Sinai, NYU
@@ -24,81 +24,86 @@ per system:
   Centennial, HCA Houston), Tenet (DMC Harper University)
 - **Public safety-net hospitals**: Parkland, Grady, Jackson Memorial,
   Denver Health, Boston Medical Center
-- **Large nonprofit/regional systems**: Kaiser Oakland, Providence Portland,
-  AdventHealth Orlando, Sutter CPMC Van Ness, Intermountain, Baylor
-  University Medical Center, Ochsner, OhioHealth Riverside, Novant
+- **Large nonprofit and regional systems**: Kaiser Oakland, Providence
+  Portland, AdventHealth Orlando, Sutter CPMC Van Ness, Intermountain,
+  Baylor University Medical Center, Ochsner, OhioHealth Riverside, Novant
   Presbyterian, Northwell North Shore, Atrium Carolinas, Tampa General,
   Baptist Miami, Wellstar Kennestone, Corewell Butterworth, Sanford USD,
   Martha's Vineyard
 
-See `hospitals.json` for the exact list; each entry's current state lives in
-`data/<slug>/meta.json`, and every hospital gets a `summary.csv` — a uniform
-per-code digest (gross charge, cash price, min/max negotiated, payer count)
-regardless of how the full file is stored. Column semantics and the
-`meta.json` fields are documented in [docs/DATA.md](docs/DATA.md).
+For each hospital, `data/<slug>/meta.json` records the current status.
+`summary.csv` lists gross charges, cash prices, minimum and maximum
+negotiated rates, and payer-entry counts by billing code. Summaries use the
+same columns regardless of how the source file is stored. See
+[docs/DATA.md](docs/DATA.md) for field definitions and aggregation rules.
 
 ## How it works
 
-- `scrape.py` (stdlib-only Python) runs daily via GitHub Actions. For each
-  hospital it fetches the CMS-standard `/cms-hpt.txt` discovery file and
-  follows the listed MRF URL — so URL changes and delistings are themselves
-  recorded.
-- A `HEAD` request short-circuits the download when the server's
-  `Last-Modified`/`ETag` still match the stored copy, keeping daily runs
-  cheap even with hundreds of MB under watch.
-- Payloads are unzipped and normalized (line endings, sorted JSON keys), and
-  written only when the content hash changed; the workflow commits only when
-  there is a diff. `git log data/<slug>/` is a clean changelog per hospital.
-- A new file whose summary has less than half the rows (or coded rows) of
-  the one it replaces is recorded as published but flagged — in
-  `meta.json`, the commit message ("summary shrank: ..."), and on the
-  hospital's page. Truncated downloads and restructured layouts are more
-  common than hospitals halving their service list overnight.
+`scrape.py` runs daily through GitHub Actions. It checks each hospital's
+`/cms-hpt.txt` discovery file and follows the listed MRF URL, recording
+changes to the URL or its removal from the listing.
 
-### Storage modes (automatic, by size)
+Downloads are unzipped and normalized, including line endings and JSON key
+order. The scraper writes a new snapshot when the content hash changes,
+and the workflow commits when there is a diff. To see a hospital's
+history, run `git log data/<slug>/`.
+
+If a new summary has fewer than half the rows or coded rows of its
+predecessor, the scraper saves it and adds a warning to `meta.json`, the
+commit message ("summary shrank: ..."), and the hospital's page. This can
+happen when a download is truncated or a hospital changes its file layout.
+
+### Storage modes
+
+The scraper chooses a storage mode based on file size and format:
 
 | Mode | When | What's stored |
 |------|------|---------------|
-| `stored` | ≤ 45 MB | single normalized file |
-| `sharded` | ≤ 600 MB, parseable | 32 hash-bucketed, sorted shard files (CSV rows or JSONL items) plus a `_header` file — every shard is git-sized, and a changed row shows up as one deletion and one insertion in the two buckets its old and new text hash to, never as a rewrite of the whole file. Lives in the [companion raw repo](https://github.com/lkowalcz/hospital-price-history-raw) (see below) |
-| `summarized` | larger, CMS v3 | `summary.csv`: per code — description, gross charge, discounted cash price, min/max negotiated rate, payer-entry count. Collapses the 0.7–5 GB files (Northwestern, Atrium, Penn, Cleveland Clinic, Duke, Cedars-Sinai, Northwell) into a few diffable MB |
-| `metadata-only` | unparseable | `meta.json` hash/size/timing only, so change *timing* is still captured |
+| `stored` | ≤ 45 MB | A single normalized file in this repo. |
+| `sharded` | ≤ 600 MB, parseable | 32 sorted shard files (CSV rows or JSONL items) and a `_header` file in the [raw repo](https://github.com/lkowalcz/hospital-price-history-raw). |
+| `summarized` | Larger, CMS v3 | A `summary.csv` with descriptions, gross charges, cash prices, minimum and maximum negotiated rates, and payer-entry counts by code. Files of 0.7–5 GB can produce summaries of a few MB. |
+| `metadata-only` | Unparseable | Hash, size, and timestamps in `meta.json`, which still allow file changes to be tracked. |
+
+Sharded files are split into buckets by a hash of each row's contents. A
+changed row appears in the diff as a deletion and an insertion, keeping
+diffs readable and individual files small enough for git.
 
 ### Where the data lives
 
-This repo is the product layer — `hospitals.json`, per-hospital `meta.json`
-and `summary.csv`, small (`stored`) payloads, and the site.
-Payer-level sharded content lives in a companion repo,
+This repo contains the hospital roster, metadata, summaries, small source
+files, and website generator. Larger files stored as shards are in
 [hospital-price-history-raw](https://github.com/lkowalcz/hospital-price-history-raw),
-under the same `data/<slug>/` layout, so this repo stays a ~1 GB clone
-while the raw record grows freely.
+under the same `data/<slug>/` layout. Keeping them separate limits this
+repo to roughly a 1 GB clone.
 
-A daily snapshot is therefore a **pair of commits**: the raw repo is
-committed first, and each sharded hospital's `meta.json` in the main commit
-pins the exact raw commit (`raw_commit`) holding its shards. The raw repo
-carries the complete shard history from the archive's first day — `git log
-data/<slug>/` there is the full payer-level changelog per hospital.
+The raw repo is committed first. Each sharded hospital's `meta.json` then
+records the exact raw commit containing its files in `raw_commit`. The
+raw repo includes shard history from the archive's first day; run
+`git log data/<slug>/` there to see changes to payer-level data.
 
-For `summarized` giants, whose repo representation is lossy, the original
-bytes go to cold storage on the Internet Archive: each new snapshot is
-zstd-compressed and uploaded as its own item, recorded in `meta.json`
-under `cold_storage` (item URL, sha256, compressed size) and linked from
-the hospital's page. The daily run does this whenever `IA_ACCESS_KEY_ID`
-and `IA_SECRET_ACCESS_KEY` are present (repo secrets in CI; locally, run
-`ia configure` and set `IA_ARCHIVE=1`), and backfills hospitals captured
-before archiving existed at `BACKFILL_PER_RUN` (default 2) re-downloads
-per run. A failed upload is retried a week later. Files over the CI
-download cap (the Mayo giants) are archived by hand with
+For `summarized` hospitals, the original files are compressed with zstd
+and uploaded to the Internet Archive as separate items. The
+`cold_storage` field in `meta.json` records the item URL, SHA-256 hash, and
+compressed size. Each hospital's page links to its archived original.
+
+The daily run uploads originals when `IA_ACCESS_KEY_ID` and
+`IA_SECRET_ACCESS_KEY` are set as repository secrets. Locally, run
+`ia configure` and set `IA_ARCHIVE=1`. Files collected before archiving
+was enabled are re-downloaded at a rate of `BACKFILL_PER_RUN` per run
+(default 2); failed uploads are retried after a week. Files above the CI
+download cap, such as Mayo's, can be archived manually with
 `archive_snapshot.py <slug> <file>` after a local ingest.
 
-### Cheap change detection
+### Checking for changes
 
-Downloads are skipped when nothing changed, checked in escalating order of
-cost: `HEAD` `Last-Modified`/`ETag` when the server provides validators;
-otherwise a fingerprint hashed from ~1 MB Range-request samples at five
-fixed offsets (+ content length) — ~5 MB to check a 5 GB file. Servers
-supporting neither (Cedars-Sinai, Cleveland Clinic, Duke) get a full
-refetch weekly (Sundays) instead of daily.
+The scraper avoids full downloads where possible. It first sends a `HEAD`
+request and compares `Last-Modified` or `ETag` with the saved values. If
+those are unavailable, it compares a fingerprint made from roughly 1 MB
+Range-request samples at five fixed offsets, plus the content length.
+This uses about 5 MB to check a 5 GB file.
+
+Servers that support neither method, including Cedars-Sinai, Cleveland
+Clinic, and Duke, are downloaded in full on Sundays instead of daily.
 
 ## Running locally
 
@@ -107,30 +112,37 @@ git clone https://github.com/lkowalcz/hospital-price-history-raw ../hospital-pri
 python3 scrape.py
 ```
 
-Writes into `data/`, `commit_message.txt`, and (for sharded hospitals) the
-sibling raw clone — pull both repos first (the daily workflow also commits
-to them), then commit and push both, raw first. `RAW_REPO_DIR`
-overrides the raw clone location. `ONLY=slug1,slug2` limits the run;
-`SKIP=slug1,slug2` excludes slugs (ignored when `ONLY` is set). The daily
-workflow SKIPs the hospitals `local_refetch.py` owns, so CI never records a
-failure streak that the local run would clear a few hours later.
-`MAX_DOWNLOAD_BYTES` caps what a run will download or unpack (the workflow
-sets 10 GB; unset locally). Per-hospital, `"curl_max_time": <seconds>` in
-`hospitals.json` overrides the one-hour transfer timeout for impersonated
-fetches (`CURL_MAX_TIME` sets the default).
+The scraper writes to `data/`, `commit_message.txt`, and the sibling raw
+clone. Pull both repos before running, since the daily workflow also
+commits to them. Commit and push the raw repo first, then the main repo.
 
-Each snapshot is assembled under `data/.staging/` (and the raw clone's
-`data/.staging/`) and swapped into `data/<slug>/` only once complete, so an
-interrupted run never leaves a hospital half-written. Both are git-ignored
-or never staged; a leftover directory after a crash can simply be deleted.
+Settings for local runs:
 
-Operations for the scheduled local run (the Raspberry Pi cron job, its deploy
-keys, and how to rebuild it) are in [docs/OPERATIONS.md](docs/OPERATIONS.md).
+- `RAW_REPO_DIR` overrides the raw clone location.
+- `ONLY=slug1,slug2` limits the run to specific hospitals.
+- `SKIP=slug1,slug2` excludes hospitals and is ignored when `ONLY` is set.
+  The daily workflow skips hospitals handled by `local_refetch.py` so CI
+  does not record download failures for hospitals fetched locally.
+- `MAX_DOWNLOAD_BYTES` caps download and unpacked size. The workflow sets
+  it to 10 GB; it is unset locally.
+- `CURL_MAX_TIME` sets the default timeout for impersonated fetches
+  (one hour). A hospital's `"curl_max_time": <seconds>` in `hospitals.json`
+  overrides it.
 
-Neither clone needs history or old shards on disk — the scraper reads only
-`meta.json` and rewrites a hospital's raw directory from scratch — so on a
-small host (a Raspberry Pi running `local_refetch.py`) clone both with
-`--filter=blob:none` and make the raw clone sparse, as the workflow does:
+Snapshots are assembled under `data/.staging/` in each clone and moved
+into `data/<slug>/` only when complete. An interrupted run therefore
+leaves the previous snapshot in place. Staging directories are ignored
+by git or excluded from staging; leftovers after a crash can be deleted.
+
+See [docs/OPERATIONS.md](docs/OPERATIONS.md) for the scheduled local run,
+including the Raspberry Pi cron job, deploy keys, and setup instructions.
+
+### Running with limited disk space
+
+The scraper reads `meta.json` and rebuilds each hospital's raw directory
+from scratch. It does not need old file contents on disk. On a small host,
+clone both repos with `--filter=blob:none` and use a sparse checkout for
+the raw repo, as the workflow does:
 
 ```sh
 git clone --filter=blob:none --no-checkout git@github.com:lkowalcz/hospital-price-history-raw ../hospital-price-history-raw
@@ -138,9 +150,9 @@ cd ../hospital-price-history-raw
 git sparse-checkout init --no-cone && git sparse-checkout set '/*' '!/data/' && git checkout main
 ```
 
-That is ~2 GB on disk instead of ~17. `local_refetch.py` stages each
-rewritten slug as an exact replacement of its index entries, so the sparse
-and full layouts commit identically.
+This uses roughly 2 GB on disk instead of 17 GB. `local_refetch.py`
+replaces the index entries for each updated hospital, producing the same
+commits with a sparse or full checkout.
 
 ## Tests
 
@@ -148,56 +160,55 @@ and full layouts commit identically.
 python3 -m unittest discover -s tests
 ```
 
-Golden-file tests for the parsers, summarizers, sharding round-trip, and
-index chain math, run by CI on every code push. The fixtures bake in the
-real-world pathologies listed under Notes; `tests/golden/` holds the
-expected `summary.csv` bytes — a diff there is a methodology change and
-should be reviewed as one. When you make one, bump `SUMMARY_VERSION` in
-`scrape.py`: it is stamped into each `meta.json`, and `compute_index.py`
-leaves a hospital out of the day's chain when its summary was produced by a
-different version than the previous run's, so the change is not compounded
-into the index as a price move. Run `rebuild_summaries.py --force` from a
-machine with a full raw checkout to move every `stored` and `sharded`
-hospital to the new version at once; `summarized` hospitals have no local
-content to rebuild from, so the daily run re-downloads them a few per run
-(`BACKFILL_PER_RUN`, shared with cold-storage backfill) until all are
-current.
+CI runs tests for parsing, summarization, sharding round-trips, and price
+index calculations on every code push. Fixtures cover the file-format
+issues described below. `tests/golden/` contains the expected
+`summary.csv` output; changes to those files should be reviewed as
+changes to the summarization method.
 
-### Price index (experimental, not published)
+When the summarization method changes, bump `SUMMARY_VERSION` in
+`scrape.py`. Each `meta.json` records that version. `compute_index.py`
+excludes a hospital from the day's calculation when its summary version
+differs from the previous run's, preventing a method change from being
+counted as a price change.
+
+Run `rebuild_summaries.py --force` from a machine with a full raw checkout
+to update all `stored` and `sharded` hospitals at once. For `summarized`
+hospitals, the daily run re-downloads files a few at a time until their
+summaries are current. This uses the same `BACKFILL_PER_RUN` allowance as
+cold-storage backfills.
+
+### Experimental price index
 
 `compute_index.py` runs after each daily scrape and appends to
-`index-history.csv`: a chain-linked Jevons index of cash prices and gross
-charges over the fixed basket in `basket.json`, with day-over-day moves
-beyond 4× logged to `index-anomalies.csv` instead of compounded. It is not
-shown on the site. Hospitals revise these files roughly once a year, so
-the series is a flat line with occasional steps, and with only weeks of
-history the anomaly log has been more useful than the index — as a check
-that a summarizer change did not register as a price move. The index is
-fully recomputable from the committed `summary.csv` history, so keeping it
-running costs nothing and publishing it can wait until it has something
-to say.
+`index-history.csv`. It calculates a chain-linked Jevons index of cash
+prices and gross charges for the fixed basket in `basket.json`.
+Day-over-day changes beyond 4× are logged to `index-anomalies.csv` and
+excluded from the calculation.
 
-## Notes
+The index is not published on the site. Hospitals tend to revise these
+files roughly once a year, so the series changes infrequently. So far,
+the anomaly log has mainly helped detect summarizer changes that would
+otherwise appear as price changes. The index can be recalculated from
+the committed `summary.csv` history.
 
-- Hospital CDNs behind Cloudflare/Akamai often refuse non-browser
-  User-Agents, despite the CMS requirement that these files be accessible to
-  automated searches; the scraper sends a browser UA, and hospitals whose
-  CDNs block by TLS fingerprint are fetched via `curl-impersonate`
-  (`"fetch": "impersonate"` in `hospitals.json`). When either transport
-  fails, the scraper automatically retries once with the other; a plain
-  fetch rescued by impersonation is remembered (`fetch_escalated` in
-  `meta.json`) so later runs go straight to what works.
-- UPMC, Houston Methodist, and Memorial Hermann serve a `cms-hpt.txt`
-  containing prose instructions to click through their website instead of
-  the machine-readable `mrf-url` blocks the CMS format specifies.
-- Yale New Haven's `cms-hpt.txt` points to a dead URL (404); the live
-  re-uploaded file is fetched by `local_refetch.py` instead. Geisinger's
-  MRF link resolves to a Radware CAPTCHA page, tracked as an ongoing
-  `fetch_failures` streak in its `meta.json`. UAB's CDN blocks GitHub's
-  runner IPs (its snapshot was fetched locally). Rush publishes its
-  `mrf-url` without an `https://` scheme; the scraper compensates.
-- Sutter Health serves its `cms-hpt.txt` as UTF-16; UCSF's JSON leads with
-  a UTF-8 BOM; several zips contain `__MACOSX` junk. The scraper tolerates
-  all of these.
-- The scraper re-discovers each MRF URL from `cms-hpt.txt` on every run, so a
-  URL change or a delisting is itself recorded in `meta.json`.
+## Source file issues
+
+- Hospital CDNs behind Cloudflare or Akamai often reject non-browser
+  User-Agents. The scraper sends a browser User-Agent and uses
+  `curl-impersonate` for hospitals that block by TLS fingerprint
+  (`"fetch": "impersonate"` in `hospitals.json`). If either transport fails,
+  it retries once with the other. When impersonation succeeds after a
+  plain fetch fails, `fetch_escalated` in `meta.json` tells later runs to
+  use impersonation first.
+- UPMC, Houston Methodist, and Memorial Hermann publish `cms-hpt.txt`
+  files with instructions for browsing their websites instead of the
+  machine-readable `mrf-url` blocks specified by the CMS format.
+- Yale New Haven's listed URL returns a 404; `local_refetch.py` fetches
+  the replacement file. Geisinger's link leads to a Radware CAPTCHA page,
+  recorded under `fetch_failures` in its `meta.json`. UAB's CDN blocks
+  GitHub runner IPs, so its snapshot was fetched locally. Rush omits the
+  `https://` scheme from its `mrf-url`; the scraper adds it.
+- The parser handles Sutter Health's UTF-16 discovery file, the UTF-8
+  byte order mark in UCSF's JSON, and ZIP files containing `__MACOSX`
+  metadata.
