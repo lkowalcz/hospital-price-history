@@ -10,5 +10,13 @@
   "transfer_fingerprint": "0e192b9ca27df1365d373134e3d7820a9c8b7f7c64952c2ff19ad3ba5ce64716",
   "status": "summarized",
   "first_seen": "2026-08-25T15:33:14Z",
-  "last_changed": "2026-08-27T00:38:27Z"
+  "last_changed": "2026-08-27T00:38:27Z",
+  "summary_version": 2,
+  "cold_storage": {
+    "url": "https://archive.org/details/hospital-price-history-mu-health-85fe4571ceef",
+    "sha256": "85fe4571ceeff6e07466f2651ecf371f8c2030559292779379d948776f470f17",
+    "file_sha256": "85fe4571ceeff6e07466f2651ecf371f8c2030559292779379d948776f470f17",
+    "compressed_bytes": 25206891,
+    "archived": "2026-09-12T11:02:43Z"
+  }
 }
