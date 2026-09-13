@@ -10,5 +10,13 @@
   "transfer_fingerprint": "abc48dd4083a0b2983635b4e006f6a9c10df44a6e13f213b5e755d5bcae93157",
   "status": "summarized",
   "first_seen": "2026-08-25T15:39:44Z",
-  "last_changed": "2026-08-27T00:49:25Z"
+  "last_changed": "2026-08-27T00:49:25Z",
+  "summary_version": 2,
+  "cold_storage": {
+    "url": "https://archive.org/details/hospital-price-history-uihc-7124f50a62cd",
+    "sha256": "7124f50a62cd7c4fa8a3c30440b9dbf75f0b1f5a3bed1f9c2d9b2a0012590aeb",
+    "file_sha256": "7124f50a62cd7c4fa8a3c30440b9dbf75f0b1f5a3bed1f9c2d9b2a0012590aeb",
+    "compressed_bytes": 61563109,
+    "archived": "2026-09-13T12:21:05Z"
+  }
 }

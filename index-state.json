@@ -1,5 +1,5 @@
 {
- "date": "2026-09-12",
+ "date": "2026-09-13",
  "index_cash": 100.04428545380333,
  "index_gross": 100.04548929013622,
  "basket_version": 1,
@@ -101,9 +101,9 @@
   "uk-chandler": 2,
   "froedtert": 2,
   "mu-health": 2,
-  "uihc": 1,
+  "uihc": 2,
   "nebraska-medical-center": 2,
-  "university-of-kansas": 1,
+  "university-of-kansas": 2,
   "ou-medical-center": 1,
   "uams": 1,
   "ummc-jackson": 2,
@@ -8252,8 +8252,8 @@
     "gross": 466.5
    },
    "CPT|80053": {
-    "cash": 9.8,
-    "gross": 49.0
+    "cash": 53.3,
+    "gross": 266.5
    },
    "CPT|81001": {
     "cash": 3.8,
@@ -8264,8 +8264,8 @@
     "gross": 77.0
    },
    "CPT|85025": {
-    "cash": 34.4,
-    "gross": 172.0
+    "cash": 27.6,
+    "gross": 138.0
    },
    "CPT|93306": {
     "cash": 1078.0,

@@ -10,5 +10,13 @@
   "transfer_fingerprint": "2c6aaa75acb5ef482ba205d81b61f00db4b02e8131ccd880fa5729ccf80dd2de",
   "status": "summarized",
   "first_seen": "2026-08-25T15:52:37Z",
-  "last_changed": "2026-08-27T00:50:10Z"
+  "last_changed": "2026-08-27T00:50:10Z",
+  "summary_version": 2,
+  "cold_storage": {
+    "url": "https://archive.org/details/hospital-price-history-university-of-kansas-7d526c5ef5cb",
+    "sha256": "7d526c5ef5cb9a827d374b429ab1e56b0c9541f36bb87c1de2ebc485ceaaf132",
+    "file_sha256": "7d526c5ef5cb9a827d374b429ab1e56b0c9541f36bb87c1de2ebc485ceaaf132",
+    "compressed_bytes": 38891739,
+    "archived": "2026-09-13T12:22:47Z"
+  }
 }
