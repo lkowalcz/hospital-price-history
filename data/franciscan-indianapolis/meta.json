@@ -10,5 +10,13 @@
   "transfer_fingerprint": "a96ba0e8ca43c16152c4f64b3e6d3992602833cbf1a952ea6367331d3abe23b5",
   "status": "summarized",
   "first_seen": "2026-08-25T16:01:04Z",
-  "last_changed": "2026-08-27T00:51:38Z"
+  "last_changed": "2026-08-27T00:51:38Z",
+  "summary_version": 2,
+  "cold_storage": {
+    "url": "https://archive.org/details/hospital-price-history-franciscan-indianapolis-05e013f69d9e",
+    "sha256": "05e013f69d9e8195c926bf713311d5ce623e97dfc36723c9535b1bbeea7d6887",
+    "file_sha256": "05e013f69d9e8195c926bf713311d5ce623e97dfc36723c9535b1bbeea7d6887",
+    "compressed_bytes": 31426190,
+    "archived": "2026-09-15T11:58:41Z"
+  }
 }

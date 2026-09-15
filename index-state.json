@@ -1,5 +1,5 @@
 {
- "date": "2026-09-14",
+ "date": "2026-09-15",
  "index_cash": 100.04428545380333,
  "index_gross": 100.04548929013622,
  "basket_version": 1,
@@ -110,7 +110,7 @@
   "presbyterian-abq": 2,
   "st-lukes-boise": 2,
   "queens-honolulu": 2,
-  "franciscan-indianapolis": 1
+  "franciscan-indianapolis": 2
  },
  "prices": {
   "mgh": {
