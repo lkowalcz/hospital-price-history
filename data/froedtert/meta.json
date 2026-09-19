@@ -12,9 +12,11 @@
   "first_seen": "2026-08-25T15:31:00Z",
   "last_changed": "2026-08-27T00:37:59Z",
   "summary_version": 2,
-  "cold_storage_attempt": {
+  "cold_storage": {
+    "url": "https://archive.org/details/hospital-price-history-froedtert-c98934176d9e",
     "sha256": "c98934176d9ee288acd7ab68f7a579780b5fdd13ebc70299355faee03d613d20",
-    "at": "2026-09-12T11:01:45Z",
-    "error": "Command '['ia', 'upload', 'hospital-price-history-froedtert-c98934176d9e', '/tmp/mrf-scrape-5zrjlv1r/tmpsolk77_u/396105970_froedtert-memorial-lutheran-hospital-inc_standardcharges.csv.zst', '--no-deri"
+    "file_sha256": "c98934176d9ee288acd7ab68f7a579780b5fdd13ebc70299355faee03d613d20",
+    "compressed_bytes": 34952191,
+    "archived": "2026-09-19T11:16:42Z"
   }
 }
