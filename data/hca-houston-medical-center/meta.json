@@ -3,14 +3,14 @@
   "location_name": "HCA HOUSTON MEDICAL CENTER",
   "mrf_url": "https://stctrprodsnsvc00455826e6.blob.core.windows.net/pt-final-posting-files/82-1635538_HCA-HOUSTON-HEALTHCARE-MEDICAL-CENTER_standardcharges.json?si=dpx-pt-json-access-policy&spr=https&sv=2026-02-06&sr=c&sig=ks%2BgfAjyEHlZmeP2PYJ%2f9NpMuCoRStjTb2bhIy9Y6LM%3D",
   "source_filename": "82-1635538_HCA-HOUSTON-HEALTHCARE-MEDICAL-CENTER_standardcharges.json",
-  "sha256": "a00333089cce48e58ddd36ff065c5aa370bf735a3499315d2522a119c1806547",
-  "size_bytes": 606868134,
-  "source_last_modified": "Wed, 18 Mar 2026 15:29:44 GMT",
-  "source_etag": "\"0x8DE85032EB958B5\"",
-  "transfer_fingerprint": "1e39fd73d5e90a2479131e68e8245ad636779246e534f8fbec3fc1a38ad0ce68",
+  "sha256": "e10658a2b338860a9f139739d9db9b1994109b0911a2451be030eab48d14e2bd",
+  "size_bytes": 494023672,
+  "source_last_modified": "Sun, 20 Sep 2026 02:55:45 GMT",
+  "source_etag": "\"0x8DF16C2AAB82180\"",
+  "transfer_fingerprint": "663c82b575408333430f76ad4326706b08a5b0be7a822a03db3b8345a15ab2f9",
   "status": "sharded",
   "first_seen": "2026-08-14T03:44:51Z",
-  "last_changed": "2026-08-26T20:31:31Z",
-  "raw_commit": "72e73e94d6e0c506b1d6ee45aee82c90b87fd142",
-  "summary_version": 2
+  "last_changed": "2026-09-20T11:38:52Z",
+  "summary_version": 2,
+  "raw_commit": "66c46a022b53e181345e5a39f0c12b5e6ba78b5c"
 }
