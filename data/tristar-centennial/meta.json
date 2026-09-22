@@ -3,21 +3,15 @@
   "location_name": "CENTENNIAL MEDICAL CENTER",
   "mrf_url": "https://stctrprodsnsvc00455826e6.blob.core.windows.net/pt-final-posting-files/62-1113737_TRISTAR-CENTENNIAL-MEDICAL-CENTER_standardcharges.json?si=dpx-pt-json-access-policy&spr=https&sv=2024-11-04&sr=c&sig=vdmkLz8lCE1qb%2BnsaFfL8tcI7Gg6B%2B3s%2Fny3TPZ1kqs%3D",
   "source_filename": "62-1113737_TRISTAR-CENTENNIAL-MEDICAL-CENTER_standardcharges.json",
-  "sha256": "840c0b127143f8e887fc1647991bcbdf7a7af14186c854f31271636b408828a1",
-  "size_bytes": 654308152,
+  "sha256": "0acf525f548ebac8a7c9c40b2e41fd1bd8247edc282e6df2fa346776905b72c6",
+  "size_bytes": 593274494,
   "source_last_modified": null,
   "source_etag": null,
-  "transfer_fingerprint": "b9d74a2953c06f435ae3b30d968a163e9bec883e52db2f8338ff040ed7f1130c",
-  "status": "summarized",
+  "transfer_fingerprint": "398c7804a5cdaf2e21b3a68feec8b9ac9f1c46177d054deb3ce741e9d89700da",
+  "status": "sharded",
   "first_seen": "2026-08-14T03:44:21Z",
-  "last_changed": "2026-08-26T20:59:46Z",
+  "last_changed": "2026-09-22T17:05:53Z",
   "note": "ingested from a local fetch (see README notes)",
   "summary_version": 2,
-  "cold_storage": {
-    "url": "https://archive.org/details/hospital-price-history-tristar-centennial-840c0b127143",
-    "sha256": "840c0b127143f8e887fc1647991bcbdf7a7af14186c854f31271636b408828a1",
-    "file_sha256": "840c0b127143f8e887fc1647991bcbdf7a7af14186c854f31271636b408828a1",
-    "compressed_bytes": 12505775,
-    "archived": "2026-09-03T02:00:36Z"
-  }
+  "raw_commit": "3d330e54bf33bcbb60843ba02bec55082f1eddbd"
 }
