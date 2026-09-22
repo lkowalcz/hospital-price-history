@@ -2,8 +2,9 @@
 """Scheduled local refetch for hospitals CI cannot reach: local_refetch.py.
 
 Two failure classes are covered (see README "Notes"):
-  - Runner-IP blocks (Hopkins x4, Orlando Regional): their CDNs serve a
-    residential IP fine, so the normal scrape pipeline just runs here.
+  - Runner-IP blocks (Hopkins x4, Orlando Regional, Jackson Memorial):
+    their CDNs serve a residential IP fine, so the normal scrape pipeline
+    just runs here.
   - Broken published links, fetched via documented workarounds:
       * HCA Kendall / TriStar Centennial: their cms-hpt.txt carries stale
         Azure SAS tokens; the container-scoped token HCA publishes for a
@@ -65,7 +66,7 @@ from scrape import RAW_DATA  # noqa: E402
 
 RAW_REPO = RAW_DATA.parent
 IP_BLOCKED = ["johns-hopkins", "hopkins-bayview", "hopkins-all-childrens",
-              "sibley-memorial", "orlando-regional"]
+              "sibley-memorial", "orlando-regional", "jackson-memorial"]
 SAS_DONOR = "hca-houston-medical-center"
 STALE_SAS = ["hca-florida-kendall", "tristar-centennial"]
 # Everything this script owns; CI's scrape.yml SKIPs exactly this set.

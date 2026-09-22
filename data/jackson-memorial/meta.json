@@ -12,10 +12,5 @@
   "first_seen": "2026-08-14T03:56:05Z",
   "last_changed": "2026-09-03T11:29:16Z",
   "summary_version": 2,
-  "raw_commit": "0cfc1e4ffe860de6b6d892f3b1d5bd6539c7a2b5",
-  "fetch_failures": {
-    "first_failed": "2026-09-20T11:40:09Z",
-    "last_error": "Command '['/home/runner/work/_temp/ci/curl_chrome150', '-sS', '-L', '--compressed', '--max-time', '3600', '-D', '/tmp/tmpjlf92jb5.hdrs', '-o', '-', '--fail', 'https://www.jacksonhealth.org/cms-hpt.txt",
-    "last_attempt": "2026-09-20T11:40:09Z"
-  }
+  "raw_commit": "0cfc1e4ffe860de6b6d892f3b1d5bd6539c7a2b5"
 }

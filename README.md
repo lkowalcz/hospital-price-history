@@ -209,6 +209,11 @@ the committed `summary.csv` history.
   recorded under `fetch_failures` in its `meta.json`. UAB's CDN blocks
   GitHub runner IPs, so its snapshot was fetched locally. Rush omits the
   `https://` scheme from its `mrf-url`; the scraper adds it.
+- Jackson Memorial's discovery file blocks GitHub runners; the daily Pi
+  job handles it from a residential connection. University of Kansas's
+  published file returns 404 as of 2026-09-22, with no verified replacement;
+  its previous snapshot remains available while daily checks continue.
+  See [known source outages](docs/OPERATIONS.md#known-source-outages).
 - The parser handles Sutter Health's UTF-16 discovery file, the UTF-8
   byte order mark in UCSF's JSON, and ZIP files containing `__MACOSX`
   metadata.

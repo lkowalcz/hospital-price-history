@@ -75,7 +75,7 @@ jobs:
           # Fetched daily by local_refetch.py from a residential IP instead
           # (runner IPs are blocked or the published links are dead). Keep in
           # sync with the lists there; tests/test_scrape.py checks this.
-          SKIP: johns-hopkins,hopkins-bayview,hopkins-all-childrens,sibley-memorial,orlando-regional,hca-florida-kendall,tristar-centennial,yale-new-haven
+          SKIP: johns-hopkins,hopkins-bayview,hopkins-all-childrens,sibley-memorial,orlando-regional,jackson-memorial,hca-florida-kendall,tristar-centennial,yale-new-haven
           # Cold storage of summarized originals on the Internet Archive.
           # Both empty (secrets unset) leaves archiving off; see
           # docs/OPERATIONS.md for where the keys come from.

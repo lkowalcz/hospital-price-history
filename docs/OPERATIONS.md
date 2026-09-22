@@ -27,14 +27,31 @@ updates the tag.
 
 ## Hospitals handled locally
 
-- **Runner IP blocks**: the Johns Hopkins hospitals (four slugs) and Orlando
-  Regional accept downloads from a residential IP but refuse GitHub's runners.
+- **Runner IP blocks**: the Johns Hopkins hospitals (four slugs), Orlando
+  Regional, and Jackson Memorial accept downloads from a residential IP
+  but refuse GitHub's runners. Jackson's discovery file began returning
+  HTTP 403 on runners on 2026-09-20; its discovery file and MRF were
+  verified from the Pi on 2026-09-22.
 - **Broken published links**: HCA Florida Kendall and TriStar Centennial
   publish stale Azure SAS tokens; the container-scoped token from HCA
   Houston's `mrf_url` can access the same container. If Houston's
   URL scheme changes, those two may start returning 403 errors. Yale New
   Haven's `cms-hpt.txt` points at a deleted file; the live upload carries
   the CMS `-1` suffix (`YALE_URL` in `local_refetch.py`).
+
+## Known source outages
+
+- **University of Kansas** (checked 2026-09-22): the Kansas City MRF URL
+  published in both `cms-hpt.txt` and the hospital's
+  [pricing page](https://www.kansashealthsystem.com/patient-visitor/financial/patient-bills/services-fees/charge-descriptions)
+  returns Azure `BlobNotFound` (HTTP 404), including from the residential
+  connection. Great Bend and Paola also return 404; Olathe's file is
+  reachable but belongs to a different hospital.
+  No replacement has been verified. CI continues checking the published
+  link daily and retains the previous summary and archived original;
+  do not clear `fetch_failures` until a live file is reachable. The
+  hospital's discovery file lists `ManagedCareContracting@kumc.edu` as
+  the contact for correcting the link.
 
 ## Health check
 
