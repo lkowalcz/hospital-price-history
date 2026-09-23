@@ -1,16 +1,16 @@
 {
   "system": "Ochsner Health",
   "location_name": "Ochsner Medical Center - (This file encompasses multiple facilities, including OMC \u2013 Jeff Hwy, OMC \u2013 Baptist, OMC \u2013 Clearview, Ochsner Hospital for Orthopedics & Sports Medicine, and OMC \u2013 West Bank Campus)",
-  "mrf_url": "https://ochsner-craft.s3.amazonaws.com/core/720502505_ochsner-clinic-foundation_standardcharges.csv_2026-03-26-204318_iros.csv",
-  "source_filename": "720502505_ochsner-clinic-foundation_standardcharges.csv_2026-03-26-204318_iros.csv",
+  "mrf_url": "https://ochsner-craft.s3.amazonaws.com/core/720502505_ochsner-clinic-foundation_standardcharges.csv.csv",
+  "source_filename": "720502505_ochsner-clinic-foundation_standardcharges.csv.csv",
   "sha256": "2645739710ff580494dc609a060a99ac3c3aed023b1f249106d2e39346b159b3",
   "size_bytes": 1323431553,
-  "source_last_modified": "Thu, 16 Apr 2026 16:50:37 GMT",
+  "source_last_modified": "Mon, 21 Sep 2026 21:12:42 GMT",
   "source_etag": "\"26cbd133888be2d1fcbde3c750c93b10\"",
   "transfer_fingerprint": "1a5dc9b8c3a5a3ddea42e06cb2719ae54ac22f3188e3a3fbd8613fc316888a41",
   "status": "summarized",
   "first_seen": "2026-08-14T03:47:05Z",
-  "last_changed": "2026-08-27T00:20:04Z",
+  "last_changed": "2026-09-23T11:52:36Z",
   "summary_version": 2,
   "cold_storage": {
     "url": "https://archive.org/details/hospital-price-history-ochsner-medical-center-2645739710ff",
@@ -18,10 +18,5 @@
     "file_sha256": "2645739710ff580494dc609a060a99ac3c3aed023b1f249106d2e39346b159b3",
     "compressed_bytes": 6500359,
     "archived": "2026-09-07T12:50:17Z"
-  },
-  "fetch_failures": {
-    "first_failed": "2026-09-22T11:53:54Z",
-    "last_error": "Command '['/home/runner/work/_temp/ci/curl_chrome150', '-sS', '-L', '--compressed', '--max-time', '3600', '-D', '/tmp/tmpyt34wy_2.hdrs', '-o', '/tmp/mrf-scrape-ak5icql0/tmprjfj5ie8/download', '-C', '-",
-    "last_attempt": "2026-09-22T11:53:54Z"
   }
 }

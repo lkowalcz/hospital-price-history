@@ -3,14 +3,14 @@
   "location_name": "Thomas Jefferson University Hospital",
   "mrf_url": "https://use2webtechstgpricelist.blob.core.windows.net/pricelist/Complete%20File/232829095_thomas-jefferson-university-hospital_standardcharges.csv",
   "source_filename": "232829095_thomas-jefferson-university-hospital_standardcharges.csv",
-  "sha256": "bffbc3b68df08ec8012d8a803bae749ce9efe56ee5a7198da15483c3521e0a4c",
-  "size_bytes": 284755787,
-  "source_last_modified": "Fri, 27 Mar 2026 18:34:16 GMT",
-  "source_etag": "0x8DE8C2F73AA7B6B",
-  "transfer_fingerprint": "4db51416b571040d519617f458b5113931389e07f89f3f908b5277f9ca37e8c8",
+  "sha256": "61babd9ae802306bdaeea4de1a442edc196c54e8738a0a6c4619f10f9b4bc2f8",
+  "size_bytes": 305119625,
+  "source_last_modified": "Tue, 22 Sep 2026 16:55:10 GMT",
+  "source_etag": "0x8DF18CA433DA66F",
+  "transfer_fingerprint": "1c38ac0d1c7f56d3111471457df26afc5f34504b2873fbc005801e25d75c022e",
   "status": "sharded",
   "first_seen": "2026-08-14T03:57:38Z",
-  "last_changed": "2026-08-27T17:52:50Z",
-  "raw_commit": "6da6a71abd18743bd414fe104d71ae8c2f8e286b",
-  "summary_version": 2
+  "last_changed": "2026-09-23T11:53:42Z",
+  "summary_version": 2,
+  "raw_commit": "b2f1a1fbe3a4fae21267ca8b03ac55f174efaf17"
 }
