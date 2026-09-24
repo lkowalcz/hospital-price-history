@@ -3,3 +3,11 @@ date,field,hospital,item,prev,cur
 2026-08-27,cash,hca-houston-medical-center,CPT|72148,3227.76,18235.34
 2026-08-27,gross,hca-florida-kendall,CPT|80053,2703.0,531.0
 2026-08-27,gross,hca-houston-medical-center,CPT|72148,3227.76,18235.34
+2026-09-24,cash,jackson-memorial,DRG|194,13096328.0,12700.0
+2026-09-24,cash,jackson-memorial,DRG|247,34012849.86,19227.0
+2026-09-24,cash,jackson-memorial,DRG|291,24310204.52,13262.4
+2026-09-24,cash,jackson-memorial,DRG|392,18058984.29,10486.8
+2026-09-24,cash,jackson-memorial,DRG|470,41361431.18,25338.0
+2026-09-24,cash,jackson-memorial,DRG|603,10677359.05,9145.8
+2026-09-24,cash,jackson-memorial,DRG|788,14986529.02,8500.0
+2026-09-24,cash,jackson-memorial,DRG|807,9010158.53,4000.0
