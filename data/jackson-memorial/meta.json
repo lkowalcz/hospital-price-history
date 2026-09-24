@@ -12,5 +12,10 @@
   "first_seen": "2026-08-14T03:56:05Z",
   "last_changed": "2026-09-23T17:02:21Z",
   "summary_version": 2,
-  "raw_commit": "343c1c9594b53e4792c025aaa7fc129912fc3114"
+  "raw_commit": "343c1c9594b53e4792c025aaa7fc129912fc3114",
+  "fetch_failures": {
+    "first_failed": "2026-09-24T17:02:03Z",
+    "last_error": "Command '['/home/lkowalcz/hospital-price-history/.tools/curl_chrome150', '-sS', '-L', '--compressed', '--max-time', '3600', '-D', '/tmp/tmp0f5vnzo9.hdrs', '-o', '/dev/null', '-I', 'https://apps.para-h",
+    "last_attempt": "2026-09-24T17:02:03Z"
+  }
 }
