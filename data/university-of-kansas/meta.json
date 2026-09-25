@@ -21,7 +21,7 @@
   },
   "fetch_failures": {
     "first_failed": "2026-09-18T11:32:34Z",
-    "last_error": "Command '['/home/runner/work/_temp/ci/curl_chrome150', '-sS', '-L', '--compressed', '--max-time', '3600', '-D', '/tmp/tmpi8eh8mry.hdrs', '-o', '/tmp/mrf-scrape-kl5raupa/tmpami39cu8/download', '-C', '-",
-    "last_attempt": "2026-09-18T11:32:34Z"
+    "last_error": "file is 36,723,422,290 bytes, over MAX_DOWNLOAD_BYTES=10,000,000,000; fetch from an uncapped environment",
+    "last_attempt": "2026-09-25T12:02:11Z"
   }
 }

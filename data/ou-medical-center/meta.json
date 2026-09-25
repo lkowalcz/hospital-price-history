@@ -19,5 +19,10 @@
     "compressed_bytes": 5947163,
     "archived": "2026-09-14T13:07:12Z"
   },
-  "fetch_escalated": "2026-09-16T11:51:40Z"
+  "fetch_escalated": "2026-09-16T11:51:40Z",
+  "fetch_failures": {
+    "first_failed": "2026-09-25T12:03:11Z",
+    "last_error": "HTTP Error 403: Forbidden",
+    "last_attempt": "2026-09-25T12:03:11Z"
+  }
 }
