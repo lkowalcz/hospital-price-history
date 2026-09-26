@@ -2,15 +2,15 @@
   "system": "Rush University System for Health",
   "location_name": "Rush University Medical Center",
   "mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbRUMCCHICAGOIL&type=CDMWithoutLabel&fileType=CSV",
-  "source_filename": "Reports.aspx.csv",
-  "sha256": "e1728c6154b8327561d43ff6c5c3817acee7cf846d5443c970cf239549864093",
-  "size_bytes": 65339453,
+  "source_filename": "362174823_rush-university-medical-center_standardcharges.csv",
+  "sha256": "a5bae6e92dc9f0d243c723af56ee75b1a3ce3f16748b94148bcf9d3d7b22fd47",
+  "size_bytes": 68804906,
   "source_last_modified": null,
   "source_etag": null,
-  "transfer_fingerprint": "31efe3855bed5a4bc69e90c5556e685e338f4a71945dc7644717a536fbe1276a",
+  "transfer_fingerprint": "7e6f808e1853131a9543fd3520c16d7aca4884f401dd2a8555d7e6cae621937d",
   "status": "sharded",
   "first_seen": "2026-08-14T04:06:53Z",
-  "last_changed": "2026-08-14T04:06:53Z",
-  "raw_commit": "e03c3ea8a1ceb8b9ba428f95890ede03de536cc2",
-  "summary_version": 2
+  "last_changed": "2026-09-26T11:36:21Z",
+  "summary_version": 2,
+  "raw_commit": "e41d119b6247dc576b7af5d064d1d6dd82c27e60"
 }

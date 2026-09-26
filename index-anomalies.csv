@@ -11,3 +11,5 @@ date,field,hospital,item,prev,cur
 2026-09-24,cash,jackson-memorial,DRG|603,10677359.05,9145.8
 2026-09-24,cash,jackson-memorial,DRG|788,14986529.02,8500.0
 2026-09-24,cash,jackson-memorial,DRG|807,9010158.53,4000.0
+2026-09-26,cash,corewell-butterworth,CPT|99213,114.33,488.0
+2026-09-26,gross,corewell-butterworth,CPT|99213,114.33,488.0
