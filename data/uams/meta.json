@@ -18,5 +18,10 @@
     "file_sha256": "88ce6bcc7f4b9662bd6374a79e0b09fc38c1e05d3b95ca05333f7dc155bc9e71",
     "compressed_bytes": 3586353,
     "archived": "2026-09-14T13:08:02Z"
+  },
+  "fetch_failures": {
+    "first_failed": "2026-10-01T13:39:17Z",
+    "last_error": "Command '['/home/runner/work/_temp/ci/curl_chrome150', '-sS', '-L', '--compressed', '--max-time', '3600', '-D', '/tmp/tmpr5gm8p6u.hdrs', '-o', '-', '--fail', 'https://uamshealth.com/cms-hpt.txt']' ret",
+    "last_attempt": "2026-10-01T13:39:17Z"
   }
 }
