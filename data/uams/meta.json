@@ -8,7 +8,7 @@
   "source_last_modified": null,
   "source_etag": null,
   "transfer_fingerprint": "8cb8eacafb867736357a365f7cbe92e99bc0b365ffdfb7158729cebb6214d2af",
-  "status": "summarized",
+  "status": "missing-from-hpt-txt",
   "first_seen": "2026-08-25T15:53:09Z",
   "last_changed": "2026-08-27T00:50:55Z",
   "summary_version": 2,
@@ -19,9 +19,5 @@
     "compressed_bytes": 3586353,
     "archived": "2026-09-14T13:08:02Z"
   },
-  "fetch_failures": {
-    "first_failed": "2026-10-01T13:39:17Z",
-    "last_error": "Command '['/home/runner/work/_temp/ci/curl_chrome150', '-sS', '-L', '--compressed', '--max-time', '3600', '-D', '/tmp/tmpr5gm8p6u.hdrs', '-o', '-', '--fail', 'https://uamshealth.com/cms-hpt.txt']' ret",
-    "last_attempt": "2026-10-01T13:39:17Z"
-  }
+  "status_changed": "2026-10-02T12:54:08Z"
 }
