@@ -18,5 +18,10 @@
     "file_sha256": "84201ae3ef0e7ae026102ebb731ffc06134e5d626e48f755c20b0f750ec282b2",
     "compressed_bytes": 7543840,
     "archived": "2026-09-05T10:47:51Z"
+  },
+  "fetch_failures": {
+    "first_failed": "2026-10-05T15:01:27Z",
+    "last_error": "Command '['/home/runner/work/_temp/ci/curl_chrome150', '-sS', '-L', '--compressed', '--max-time', '3600', '-D', '/tmp/tmpv4j6p7ty.hdrs', '-o', '/tmp/mrf-scrape-mdrtmgm6/tmp9ufd5k6f/download', '-C', '-",
+    "last_attempt": "2026-10-05T15:01:27Z"
   }
 }

@@ -11,5 +11,10 @@
   "status": "stored",
   "first_seen": "2026-08-25T14:17:17Z",
   "last_changed": "2026-08-25T14:17:17Z",
-  "summary_version": 2
+  "summary_version": 2,
+  "fetch_failures": {
+    "first_failed": "2026-10-05T15:06:54Z",
+    "last_error": "Command '['/home/runner/work/_temp/ci/curl_chrome150', '-sS', '-L', '--compressed', '--max-time', '3600', '-D', '/tmp/tmp44oaeaiz.hdrs', '-o', '/tmp/mrf-scrape-mdrtmgm6/tmp4a3yq9z6/download', '-C', '-",
+    "last_attempt": "2026-10-05T15:06:54Z"
+  }
 }
