@@ -12,10 +12,5 @@
   "first_seen": "2026-08-25T06:06:08Z",
   "last_changed": "2026-08-28T18:59:01Z",
   "raw_commit": "6da6a71abd18743bd414fe104d71ae8c2f8e286b",
-  "summary_version": 2,
-  "fetch_failures": {
-    "first_failed": "2026-10-05T15:05:08Z",
-    "last_error": "Command '['/home/runner/work/_temp/ci/curl_chrome150', '-sS', '-L', '--compressed', '--max-time', '3600', '-D', '/tmp/tmpkzfmt_vd.hdrs', '-o', '/tmp/mrf-scrape-mdrtmgm6/tmpxv6sar4z/download', '-C', '-",
-    "last_attempt": "2026-10-05T15:05:08Z"
-  }
+  "summary_version": 2
 }
