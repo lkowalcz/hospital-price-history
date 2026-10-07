@@ -3,14 +3,14 @@
   "location_name": "University of Texas MD Anderson Cancer Center",
   "mrf_url": "https://www.mdanderson.org/content/dam/mdanderson/documents/patients-and-family/becoming-our-patient/planning-for-care/74-6001118_MD%20Anderson%20Cancer%20Center_StandardCharges.csv",
   "source_filename": "74-6001118_MD%20Anderson%20Cancer%20Center_StandardCharges.csv",
-  "sha256": "16e46c82314aa33c948985a7d1c3f868a34c7bf963e0b0c61b3e8096739abf64",
-  "size_bytes": 126396116,
-  "source_last_modified": "Fri, 26 Jun 2026 17:29:46 GMT",
+  "sha256": "f0be29cae7583e1b2ddf906cdd45af4c415158356603f07665c54dafa602e292",
+  "size_bytes": 126385955,
+  "source_last_modified": "Tue, 06 Oct 2026 20:48:49 GMT",
   "source_etag": null,
+  "transfer_fingerprint": "e4f7049c2c8ee07fb6715a377d37041593cbfc1206f701665ce2327238c4c709",
   "status": "sharded",
   "first_seen": "2026-08-12T05:22:03Z",
-  "last_changed": "2026-08-12T05:22:03Z",
-  "transfer_fingerprint": "b94980641ef08f8c1b9fdb5f75e404cb852204fbe1f9db263210852c5fd4f517",
-  "raw_commit": "e03c3ea8a1ceb8b9ba428f95890ede03de536cc2",
-  "summary_version": 2
+  "last_changed": "2026-10-07T13:39:45Z",
+  "summary_version": 2,
+  "raw_commit": "27ee1c2271f885a62dcd7f5fb102b9b667ac8af0"
 }

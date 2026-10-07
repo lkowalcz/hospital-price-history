@@ -4,17 +4,6 @@ code_type,code,description,gross_charge,discounted_cash,min_negotiated,max_negot
 ,,Modifier description not available,,,,,0
 ,,"Non-excepted service provided at an off-campus, outpatient, provider-based department of a hospital",,,,,0
 ,,"Technical Component; represents the costs of equipment, supplies, and technician personnel for a procedure, excluding the physician's interpretation. It is used when only the technical portion of a te",,,,,0
-APC,0763,"Inj, bupivacaine liposome",,,,,0
-APC,0764,Ketorolac tromethamine inj,,,,,0
-APC,0784,"Inj, tyenne, 1 mg",,,,,0
-APC,0790,"Inj, methylpred acetate 1 mg",,,,,0
-APC,0792,"Inj, glycopyrrolate, 0.1 mg",,,,,0
-APC,0801,"Inj, methylpred sod succ 5mg",,,,,0
-APC,0814,"Inj, magtrace per study dose",,,,,0
-APC,0875,Euflexxa inj per dose,,,,,0
-APC,0902,"Injection,onabotulinumtoxinA",,,,,0
-APC,0963,"Albumin (human), 5%, 250 ml",,,,,0
-APC,0965,"Albumin (human), 25%, 50ml",,,,,0
 APC,1289,AbobotulinumtoxinA,,,,,0
 APC,1482,"Darbepoetin alfa, esrd use",,,,,0
 APC,1489,Inj vedolizumab iv 1 mg,,,,,0
@@ -177,7 +166,16 @@ APC,5821,Level 1 Health and Behavior Services,,,,,0
 APC,5822,Level 2 Health and Behavior Services,,,,,0
 APC,5823,Level 3 Health and Behavior Services,,,,,0
 APC,7048,Alteplase recombinant,,,,,0
+APC,763,"Inj, bupivacaine liposome",,,,,0
+APC,764,Ketorolac tromethamine inj,,,,,0
+APC,784,"Inj, tyenne, 1 mg",,,,,0
+APC,790,"Inj, methylpred acetate 1 mg",,,,,0
+APC,792,"Inj, glycopyrrolate, 0.1 mg",,,,,0
+APC,801,"Inj, methylpred sod succ 5mg",,,,,0
+APC,814,"Inj, magtrace per study dose",,,,,0
+APC,875,Euflexxa inj per dose,,,,,0
 APC,9011,Mmrv vaccine sc,,,,,0
+APC,902,"Injection,onabotulinumtoxinA",,,,,0
 APC,9025,"Inj glucagon hcl, fresenius",,,,,0
 APC,9042,Glucagon hydrochloride,,,,,0
 APC,9096,Inj retacrit esrd on dialysi,,,,,0
@@ -195,6 +193,8 @@ APC,9518,Washed red blood cells unit,,,,,0
 APC,9522,RBC leukoreduced irradiated,,,,,0
 APC,9525,"Platelets, hla-m, l/r, unit",,,,,0
 APC,9536,Platelets pheresis path redu,,,,,0
+APC,963,"Albumin (human), 5%, 250 ml",,,,,0
+APC,965,"Albumin (human), 25%, 50ml",,,,,0
 APC,N800,Clinical Diagnostic Lab Services,,,,,0
 APC,N801,Therapy Services,,,,,0
 APC,N804,Mammography Services,,,,,0
@@ -217,6 +217,15 @@ CDM,1280000001,HC REHABILITATION ROOM,2193.0,2193.0,,,0
 CDM,1610000007,HC HOSPITAL AT HOME ROOM,2495.0,2495.0,,,0
 CDM,1700000001,HC NEWBORN LEVEL I,1851.0,1851.0,,,0
 CDM,1720000001,HC NEWBORN LEVEL II,4161.0,4161.0,,,0
+CDM,2.72E+08,HC SU-TRANSDUCER W/SAFESET,97.65,97.65,,,0
+CDM,2.72E+09,HC TRANSDUCER SAFESET W/1PORT,97.65,97.65,,,0
+CDM,2.72E+10,HC SU-TRANSGASTRIC JEJUN FEED TUB,1005.19,1005.19,,,0
+CDM,2.72E+11,HC SU-TRAY CONTINUOUS EPIDURAL ANESTHESIA,131.08,131.08,,,0
+CDM,2.72E+12,HC SU-TRAY CONTINUOUS EPIDURAL ANESTHESIA,131.08,131.08,,,0
+CDM,2.72E+13,HC SU-TRAY EPIDURAL ARROW,159.39,159.39,,,0
+CDM,2.72E+14,HC TRAY EPIDURAL ARROW,159.39,159.39,,,0
+CDM,2.72E+15,HC SU-TRAY SONOPLEX 21G X 4,164.17,164.17,,,0
+CDM,2.72E+16,HC SU-TRAY SONOPLEX 21G X 4,164.17,164.17,,,0
 CDM,2010000001,HC ICU ROOM,5841.0,5841.0,,,0
 CDM,2030000001,HC PEDS ICU ROOM,10829.0,10829.0,,,0
 CDM,2060000001,HC GR INTERMEDIATE ROOM,2672.0,2672.0,,,0
@@ -744,15 +753,6 @@ CDM,27200000D6,HC SU-SONOSITE NEEDLE GUIDE KIT,104.74,104.74,,,0
 CDM,27200000D7,HC SU-SONOSITE NEEDLE GUIDE KIT,104.74,104.74,,,0
 CDM,27200000D8,HC SU-TRANSDUCER BIFURCATED KIT,154.26,154.26,,,0
 CDM,27200000D9,HC TRANSDUCER SAFESET W/2PORT,154.26,154.26,,,0
-CDM,27200000E1,HC SU-TRANSDUCER W/SAFESET,97.65,97.65,,,0
-CDM,27200000E2,HC TRANSDUCER SAFESET W/1PORT,97.65,97.65,,,0
-CDM,27200000E3,HC SU-TRANSGASTRIC JEJUN FEED TUB,1005.19,1005.19,,,0
-CDM,27200000E4,HC SU-TRAY CONTINUOUS EPIDURAL ANESTHESIA,131.08,131.08,,,0
-CDM,27200000E5,HC SU-TRAY CONTINUOUS EPIDURAL ANESTHESIA,131.08,131.08,,,0
-CDM,27200000E6,HC SU-TRAY EPIDURAL ARROW,159.39,159.39,,,0
-CDM,27200000E7,HC TRAY EPIDURAL ARROW,159.39,159.39,,,0
-CDM,27200000E8,HC SU-TRAY SONOPLEX 21G X 4,164.17,164.17,,,0
-CDM,27200000E9,HC SU-TRAY SONOPLEX 21G X 4,164.17,164.17,,,0
 CDM,27200000F1,HC SU-TRAY SONOPLEX 22G X 2,164.17,164.17,,,0
 CDM,27200000F2,HC SU-TRAY SONOPLEX 22G X 2,164.17,164.17,,,0
 CDM,27200000F3,HC SU-TRAY THORACENTESIS,154.39,154.39,,,0
@@ -22088,113 +22088,31 @@ HCPCS,V5230,Glasses bicros hearing aid,,,1679.86,2946.67,4
 HCPCS,V5240,Dispensing fee bicros,,,501.7,880.05,4
 HCPCS,V5264,HC EAR MOLD/INSERT,215.36,215.36,,,0
 HCPCS,V5275,HC EAR MOLD IMPRESSION,70.16,70.16,,,0
-MS-DRG,001,Heart Transplant Or Implant Of Heart Assist System With Mcc,,,243215.31,853302.37,19
-MS-DRG,002,Heart Transplant Or Implant Of Heart Assist System Without Mcc,,,98794.65,314193.68,19
-MS-DRG,003,"Ecmo Or Tracheostomy With Mv >96 Hours Or Principal Diagnosis Except Face, Mouth And Neck With Major",,,184392.71,654894.86,19
-MS-DRG,004,"Tracheostomy With Mv >96 Hours Or Principal Diagnosis Except Face, Mouth And Neck Without Major O.R.",,,120594.32,348500.39,19
-MS-DRG,005,Liver Transplant With Mcc Or Intestinal Transplant,,,89958.33,322637.22,19
-MS-DRG,006,Liver Transplant Without Mcc,,,40870.99,124118.29,19
-MS-DRG,007,Lung Transplant,,,112797.11,325826.25,19
-MS-DRG,008,Simultaneous Pancreas And Kidney Transplant,,,49242.71,141011.4,19
-MS-DRG,010,Pancreas Transplant,,,62835.92,180540.18,19
-MS-DRG,011,"Tracheostomy For Face, Mouth And Neck Diagnoses Or Laryngectomy With Mcc",,,47940.57,144069.42,19
-MS-DRG,012,"Tracheostomy For Face, Mouth And Neck Diagnoses Or Laryngectomy With Cc",,,37228.49,143930.14,19
-MS-DRG,013,"Tracheostomy For Face, Mouth And Neck Diagnoses Or Laryngectomy Without Cc/Mcc",,,25684.94,100852.42,19
-MS-DRG,014,Allogeneic Bone Marrow Transplant,,,104730.81,486950.24,19
-MS-DRG,016,Autologous Bone Marrow Transplant With Cc/Mcc,,,52055.48,309816.97,19
-MS-DRG,017,Autologous Bone Marrow Transplant Without Cc/Mcc,,,47751.96,158508.74,19
-MS-DRG,018,Chimeric Antigen Receptor (Car) T-Cell And Other Immunotherapies,,,235795.85,1086476.66,19
-MS-DRG,019,Simultaneous Pancreas And Kidney Transplant With Hemodialysis,,,62480.32,205120.56,19
-MS-DRG,020,Intracranial Vascular Procedures With Principal Diagnosis Hemorrhage With Mcc,,,68832.65,255705.2,19
-MS-DRG,021,Intracranial Vascular Procedures With Principal Diagnosis Hemorrhage With Cc,,,46553.65,186903.41,19
-MS-DRG,022,Intracranial Vascular Procedures With Principal Diagnosis Hemorrhage Without Cc/Mcc,,,28242.48,120772.21,19
-MS-DRG,023,Craniotomy With Major Device Implant Or Acute Complex Cns Principal Diagnosis With Mcc Or Antineopla,,,50330.27,156861.82,19
-MS-DRG,024,Craniotomy With Major Device Implant Or Acute Complex Cns Principal Diagnosis Without Mcc,,,34597.4,121848.11,19
-MS-DRG,025,Craniotomy And Endovascular Intracranial Procedures With Mcc,,,40089.72,134717.11,19
-MS-DRG,026,Craniotomy And Endovascular Intracranial Procedures With Cc,,,27652.41,100364.96,19
-MS-DRG,027,Craniotomy And Endovascular Intracranial Procedures Without Cc/Mcc,,,22579.72,90723.66,19
-MS-DRG,028,Spinal Procedures With Mcc,,,52735.53,151168.47,19
-MS-DRG,029,Spinal Procedures With Cc Or Spinal Neurostimulators,,,30268.79,89191.63,19
-MS-DRG,030,Spinal Procedures Without Cc/Mcc,,,19744.45,65295.55,19
-MS-DRG,031,Ventricular Shunt Procedures With Mcc,,,39516.95,137951.77,19
-MS-DRG,032,Ventricular Shunt Procedures With Cc,,,19188.99,59184.86,19
-MS-DRG,033,Ventricular Shunt Procedures Without Cc/Mcc,,,15138.97,54115.25,19
-MS-DRG,034,Carotid Artery Stent Procedures With Mcc,,,34240.94,97386.58,19
-MS-DRG,035,Carotid Artery Stent Procedures With Cc,,,21434.19,60144.84,19
-MS-DRG,036,Carotid Artery Stent Procedures Without Cc/Mcc,,,17560.68,48880.73,19
-MS-DRG,037,Extracranial Procedures With Mcc,,,29234.87,82829.04,19
-MS-DRG,038,Extracranial Procedures With Cc,,,14790.29,43558.22,19
-MS-DRG,039,Extracranial Procedures Without Cc/Mcc,,,10921.97,42078.42,19
-MS-DRG,040,"Peripheral, Cranial Nerve And Other Nervous System Procedures With Mcc",,,34158.74,97147.56,19
-MS-DRG,041,"Peripheral, Cranial Nerve And Other Nervous System Procedures With Cc Or Peripheral Neurostimulator",,,19774.73,63234.28,19
-MS-DRG,042,"Peripheral, Cranial Nerve And Other Nervous System Procedures Without Cc/Mcc",,,15699.62,54839.48,19
-MS-DRG,052,Spinal Disorders And Injuries With Cc/Mcc,,,16422.93,45572.2,19
-MS-DRG,053,Spinal Disorders And Injuries Without Cc/Mcc,,,9223.57,30348.0,19
-MS-DRG,054,Nervous System Neoplasms With Mcc,,,13962.29,38416.71,19
-MS-DRG,055,Nervous System Neoplasms Without Mcc,,,9573.12,33147.42,19
-MS-DRG,056,Degenerative Nervous System Disorders With Mcc,,,20851.05,63356.14,19
-MS-DRG,057,Degenerative Nervous System Disorders Without Mcc,,,11961.08,46664.05,19
-MS-DRG,058,Multiple Sclerosis And Cerebellar Ataxia With Mcc,,,15542.16,43010.92,19
-MS-DRG,059,Multiple Sclerosis And Cerebellar Ataxia With Cc,,,11487.81,40368.82,19
-MS-DRG,060,Multiple Sclerosis And Cerebellar Ataxia Without Cc/Mcc,,,8709.64,26618.91,19
-MS-DRG,061,"Ischemic Stroke, Precerebral Occlusion Or Transient Ischemia With Thrombolytic Agent With Mcc",,,24606.03,82482.07,19
-MS-DRG,062,"Ischemic Stroke, Precerebral Occlusion Or Transient Ischemia With Thrombolytic Agent With Cc",,,15954.86,51695.35,19
-MS-DRG,063,"Ischemic Stroke, Precerebral Occlusion Or Transient Ischemia With Thrombolytic Agent Without Cc/Mcc",,,12897.23,51308.87,19
-MS-DRG,064,Intracranial Hemorrhage Or Cerebral Infarction With Mcc,,,18150.75,52022.65,19
-MS-DRG,065,Intracranial Hemorrhage Or Cerebral Infarction With Cc Or Tpa In 24 Hours,,,9492.65,32471.94,19
-MS-DRG,066,Intracranial Hemorrhage Or Cerebral Infarction Without Cc/Mcc,,,6672.95,24627.28,19
-MS-DRG,067,Precerebral Occlusion Without Infarction With Mcc,,,13458.75,42639.0,19
-MS-DRG,068,Precerebral Occlusion Without Infarction Without Mcc,,,8230.32,25341.06,19
-MS-DRG,069,Transient Ischemia Without Thrombolytic,,,7662.75,25386.33,19
-MS-DRG,070,Other Cerebrovascular Disorders With Mcc,,,15155.41,49383.39,19
-MS-DRG,071,Other Cerebrovascular Disorders With Cc,,,9628.49,26754.7,19
-MS-DRG,072,Other Cerebrovascular Disorders Without Cc/Mcc,,,7294.17,21514.49,19
-MS-DRG,073,Cranial And Peripheral Nerve Disorders With Mcc,,,14631.96,40364.09,19
-MS-DRG,074,Cranial And Peripheral Nerve Disorders Without Mcc,,,9670.02,28676.7,19
-MS-DRG,075,Viral Meningitis With Cc/Mcc,,,17341.78,48244.18,19
-MS-DRG,076,Viral Meningitis Without Cc/Mcc,,,7891.16,20761.98,19
-MS-DRG,077,Hypertensive Encephalopathy With Mcc,,,,,0
-MS-DRG,078,Hypertensive Encephalopathy With Cc,,,,,0
-MS-DRG,079,Hypertensive Encephalopathy Without Cc/Mcc,,,14586.2,16774.13,2
-MS-DRG,080,Nontraumatic Stupor And Coma With Mcc,,,16411.69,45539.49,19
-MS-DRG,081,Nontraumatic Stupor And Coma Without Mcc,,,8500.26,31754.67,19
-MS-DRG,082,Traumatic Stupor And Coma >1 Hour With Mcc,,,20526.6,70319.89,19
-MS-DRG,083,Traumatic Stupor And Coma >1 Hour With Cc,,,12828.01,37687.78,19
-MS-DRG,084,Traumatic Stupor And Coma >1 Hour Without Cc/Mcc,,,9021.12,24167.67,19
-MS-DRG,085,Traumatic Stupor And Coma <1 Hour With Mcc,,,20408.06,57934.87,19
-MS-DRG,086,Traumatic Stupor And Coma <1 Hour With Cc,,,12022.51,32775.85,19
-MS-DRG,087,Traumatic Stupor And Coma <1 Hour Without Cc/Mcc,,,8665.52,23013.8,19
-MS-DRG,088,Concussion With Mcc,,,12447.32,57969.69,19
-MS-DRG,089,Concussion With Cc,,,10256.63,32228.21,19
-MS-DRG,090,Concussion Without Cc/Mcc,,,7873.86,30086.86,19
-MS-DRG,091,Other Disorders Of Nervous System With Mcc,,,15946.21,53760.1,19
-MS-DRG,092,Other Disorders Of Nervous System With Cc,,,9602.53,27371.0,19
-MS-DRG,093,Other Disorders Of Nervous System Without Cc/Mcc,,,7641.12,24797.89,19
-MS-DRG,094,Bacterial And Tuberculous Infections Of Nervous System With Mcc,,,31201.48,101802.97,19
-MS-DRG,095,Bacterial And Tuberculous Infections Of Nervous System With Cc,,,23066.83,86263.38,19
-MS-DRG,096,Bacterial And Tuberculous Infections Of Nervous System Without Cc/Mcc,,,23066.83,64892.52,19
-MS-DRG,097,Non-Bacterial Infection Of Nervous System Except Viral Meningitis With Mcc,,,32000.93,90872.67,19
-MS-DRG,098,Non-Bacterial Infection Of Nervous System Except Viral Meningitis With Cc,,,20607.06,57739.55,19
-MS-DRG,099,Non-Bacterial Infection Of Nervous System Except Viral Meningitis Without Cc/Mcc,,,12539.03,46173.1,19
+MS-DRG,1,Heart Transplant Or Implant Of Heart Assist System With Mcc,,,243215.31,853302.37,19
+MS-DRG,10,Pancreas Transplant,,,62835.92,180540.18,19
 MS-DRG,100,Seizures With Mcc,,,17508.76,48729.77,19
 MS-DRG,101,Seizures Without Mcc,,,8560.83,22709.36,19
 MS-DRG,102,Headaches With Mcc,,,10449.57,29348.7,19
 MS-DRG,103,Headaches Without Mcc,,,7987.2,26862.64,19
+MS-DRG,11,"Tracheostomy For Face, Mouth And Neck Diagnoses Or Laryngectomy With Mcc",,,47940.57,144069.42,19
 MS-DRG,113,Orbital Procedures With Cc/Mcc,,,21093.3,63422.3,19
 MS-DRG,114,Orbital Procedures Without Cc/Mcc,,,12457.71,41890.4,19
 MS-DRG,115,Extraocular Procedures Except Orbit,,,14031.51,38617.99,19
 MS-DRG,116,Intraocular Procedures With Cc/Mcc,,,16395.25,45491.69,19
 MS-DRG,117,Intraocular Procedures Without Cc/Mcc,,,10138.09,33352.85,19
+MS-DRG,12,"Tracheostomy For Face, Mouth And Neck Diagnoses Or Laryngectomy With Cc",,,37228.49,143930.14,19
 MS-DRG,121,Acute Major Eye Infections With Cc/Mcc,,,10816.41,29268.56,19
 MS-DRG,122,Acute Major Eye Infections Without Cc/Mcc,,,7550.27,19770.68,19
 MS-DRG,123,Neurological Eye Disorders,,,7661.02,29233.8,19
 MS-DRG,124,Other Disorders Of The Eye With Mcc Or Thrombolytic Agent,,,12199.01,33474.72,19
 MS-DRG,125,Other Disorders Of The Eye Without Mcc,,,7394.53,19317.8,19
+MS-DRG,13,"Tracheostomy For Face, Mouth And Neck Diagnoses Or Laryngectomy Without Cc/Mcc",,,25684.94,100852.42,19
 MS-DRG,135,Sinus And Mastoid Procedures With Cc/Mcc,,,19526.42,54597.07,19
 MS-DRG,136,Sinus And Mastoid Procedures Without Cc/Mcc,,,9535.91,28997.03,19
 MS-DRG,137,Mouth Procedures With Cc/Mcc,,,13670.72,37568.82,19
 MS-DRG,138,Mouth Procedures Without Cc/Mcc,,,8418.93,22296.74,19
 MS-DRG,139,Salivary Gland Procedures,,,11442.82,33896.02,19
+MS-DRG,14,Allogeneic Bone Marrow Transplant,,,104730.81,486950.24,19
 MS-DRG,140,Major Head And Neck Procedures With Mcc,,,37655.03,116684.49,19
 MS-DRG,141,Major Head And Neck Procedures With Cc,,,19622.46,89059.32,19
 MS-DRG,142,Major Head And Neck Procedures Without Cc/Mcc,,,14563.61,65859.61,19
@@ -22215,18 +22133,21 @@ MS-DRG,156,"Other Ear, Nose, Mouth And Throat Diagnoses Without Cc/Mcc",,,6730.9
 MS-DRG,157,Dental And Oral Diseases With Mcc,,,15605.32,71608.18,19
 MS-DRG,158,Dental And Oral Diseases With Cc,,,8623.12,26751.22,19
 MS-DRG,159,Dental And Oral Diseases Without Cc/Mcc,,,6881.47,19136.37,19
+MS-DRG,16,Autologous Bone Marrow Transplant With Cc/Mcc,,,52055.48,309816.97,19
 MS-DRG,163,Major Chest Procedures With Mcc,,,39528.2,112761.82,19
 MS-DRG,164,Major Chest Procedures With Cc,,,22589.24,70647.18,19
 MS-DRG,165,Major Chest Procedures Without Cc/Mcc,,,17313.23,56496.86,19
 MS-DRG,166,Other Respiratory System O.R. Procedures With Mcc,,,33090.22,94692.99,19
 MS-DRG,167,Other Respiratory System O.R. Procedures With Cc,,,16354.58,50438.4,19
 MS-DRG,168,Other Respiratory System O.R. Procedures Without Cc/Mcc,,,12573.64,41810.32,19
+MS-DRG,17,Autologous Bone Marrow Transplant Without Cc/Mcc,,,47751.96,158508.74,19
 MS-DRG,173,Ultrasound Accelerated And Other Thrombolysis With Principal Diagnosis Pulmonary Embolism,,,26503.42,75135.32,19
 MS-DRG,175,Pulmonary Embolism With Mcc Or Acute Cor Pulmonale,,,12635.94,36399.49,19
 MS-DRG,176,Pulmonary Embolism Without Mcc,,,7716.39,20856.41,19
 MS-DRG,177,Respiratory Infections And Inflammations With Mcc,,,14272.04,39317.44,19
 MS-DRG,178,Respiratory Infections And Inflammations With Cc,,,9195.89,26413.48,19
 MS-DRG,179,Respiratory Infections And Inflammations Without Cc/Mcc,,,7283.79,20591.79,19
+MS-DRG,18,Chimeric Antigen Receptor (Car) T-Cell And Other Immunotherapies,,,235795.85,1086476.66,19
 MS-DRG,180,Respiratory Neoplasms With Mcc,,,16031.0,45584.67,19
 MS-DRG,181,Respiratory Neoplasms With Cc,,,10017.83,28363.33,19
 MS-DRG,182,Respiratory Neoplasms Without Cc/Mcc,,,7273.41,18965.56,19
@@ -22237,6 +22158,7 @@ MS-DRG,186,Pleural Effusion With Mcc,,,14235.7,39211.77,19
 MS-DRG,187,Pleural Effusion With Cc,,,9309.23,24885.7,19
 MS-DRG,188,Pleural Effusion Without Cc/Mcc,,,6956.74,18520.08,19
 MS-DRG,189,Pulmonary Edema And Respiratory Failure,,,11440.23,31082.59,19
+MS-DRG,19,Simultaneous Pancreas And Kidney Transplant With Hemodialysis,,,62480.32,205120.56,19
 MS-DRG,190,Chronic Obstructive Pulmonary Disease With Mcc,,,10335.36,27869.67,19
 MS-DRG,191,Chronic Obstructive Pulmonary Disease With Cc,,,8045.17,23067.4,19
 MS-DRG,192,Chronic Obstructive Pulmonary Disease Without Cc/Mcc,,,6306.11,16925.38,19
@@ -22247,6 +22169,8 @@ MS-DRG,196,Interstitial Lung Disease With Mcc,,,17079.62,47481.84,19
 MS-DRG,197,Interstitial Lung Disease With Cc,,,8963.15,29063.19,19
 MS-DRG,198,Interstitial Lung Disease Without Cc/Mcc,,,6948.09,19171.19,19
 MS-DRG,199,Pneumothorax With Mcc,,,16014.56,44384.65,19
+MS-DRG,2,Heart Transplant Or Implant Of Heart Assist System Without Mcc,,,98794.65,314193.68,19
+MS-DRG,20,Intracranial Vascular Procedures With Principal Diagnosis Hemorrhage With Mcc,,,68832.65,255705.2,19
 MS-DRG,200,Pneumothorax With Cc,,,10262.68,27658.32,19
 MS-DRG,201,Pneumothorax Without Cc/Mcc,,,6938.57,17991.87,19
 MS-DRG,202,Bronchitis And Asthma With Cc/Mcc,,,9154.36,24435.33,19
@@ -22257,6 +22181,7 @@ MS-DRG,206,Other Respiratory System Diagnoses Without Mcc,,,8893.93,23678.02,19
 MS-DRG,207,Respiratory System Diagnosis With Ventilator Support >96 Hours,,,56424.76,192073.99,19
 MS-DRG,208,Respiratory System Diagnosis With Ventilator Support <=96 Hours,,,24533.35,69157.13,19
 MS-DRG,209,Complex Aortic Arch Procedures,,,98682.17,334687.98,19
+MS-DRG,21,Intracranial Vascular Procedures With Principal Diagnosis Hemorrhage With Cc,,,46553.65,186903.41,19
 MS-DRG,212,Concomitant Aortic And Mitral Valve Procedures,,,94834.61,330795.25,19
 MS-DRG,213,Endovascular Abdominal Aorta With Iliac Branch Procedures,,,50127.81,143585.26,19
 MS-DRG,215,Other Heart Assist System Implant,,,86899.83,261276.19,19
@@ -22264,10 +22189,12 @@ MS-DRG,216,Cardiac Valve And Other Major Cardiothoracic Procedures With Cardiac 
 MS-DRG,217,Cardiac Valve And Other Major Cardiothoracic Procedures With Cardiac Catheterization With Cc,,,57641.24,191450.73,19
 MS-DRG,218,Cardiac Valve And Other Major Cardiothoracic Procedures With Cardiac Catheterization Without Cc/Mcc,,,57641.24,165434.15,19
 MS-DRG,219,Cardiac Valve And Other Major Cardiothoracic Procedures Without Cardiac Catheterization With Mcc,,,67184.43,207505.64,19
+MS-DRG,22,Intracranial Vascular Procedures With Principal Diagnosis Hemorrhage Without Cc/Mcc,,,28242.48,120772.21,19
 MS-DRG,220,Cardiac Valve And Other Major Cardiothoracic Procedures Without Cardiac Catheterization With Cc,,,46891.08,154170.33,19
 MS-DRG,221,Cardiac Valve And Other Major Cardiothoracic Procedures Without Cardiac Catheterization Without Cc/M,,,44359.5,131841.08,19
 MS-DRG,228,Other Cardiothoracic Procedures With Mcc,,,43556.59,172363.11,19
 MS-DRG,229,Other Cardiothoracic Procedures Without Mcc,,,28001.09,101921.36,19
+MS-DRG,23,Craniotomy With Major Device Implant Or Acute Complex Cns Principal Diagnosis With Mcc Or Antineopla,,,50330.27,156861.82,19
 MS-DRG,231,Coronary Bypass With Ptca With Mcc,,,73687.3,213090.57,19
 MS-DRG,232,Coronary Bypass With Ptca Without Mcc,,,53205.34,190907.56,19
 MS-DRG,233,Coronary Bypass With Cardiac Catheterization Or Open Ablation With Mcc,,,66898.05,192352.77,19
@@ -22275,12 +22202,14 @@ MS-DRG,234,Coronary Bypass With Cardiac Catheterization Or Open Ablation Without
 MS-DRG,235,Coronary Bypass Without Cardiac Catheterization With Mcc,,,51526.84,147653.62,19
 MS-DRG,236,Coronary Bypass Without Cardiac Catheterization Without Mcc,,,36993.15,114302.89,19
 MS-DRG,239,Amputation For Circulatory System Disorders Except Upper Limb And Toe With Mcc,,,43334.23,123829.68,19
+MS-DRG,24,Craniotomy With Major Device Implant Or Acute Complex Cns Principal Diagnosis Without Mcc,,,34597.4,121848.11,19
 MS-DRG,240,Amputation For Circulatory System Disorders Except Upper Limb And Toe With Cc,,,25414.13,71718.41,19
 MS-DRG,241,Amputation For Circulatory System Disorders Except Upper Limb And Toe Without Cc/Mcc,,,12729.38,34831.42,19
 MS-DRG,242,Permanent Cardiac Pacemaker Implant With Mcc,,,28375.72,92969.46,19
 MS-DRG,243,Permanent Cardiac Pacemaker Implant With Cc,,,19188.13,61778.85,19
 MS-DRG,244,Permanent Cardiac Pacemaker Implant Without Cc/Mcc,,,16390.06,57663.28,19
 MS-DRG,245,Aicd Generator Procedures,,,40225.55,127481.78,19
+MS-DRG,25,Craniotomy And Endovascular Intracranial Procedures With Mcc,,,40089.72,134717.11,19
 MS-DRG,250,Percutaneous Cardiovascular Procedures Without Intraluminal Device With Mcc,,,19634.57,71253.03,19
 MS-DRG,251,Percutaneous Cardiovascular Procedures Without Intraluminal Device Without Mcc,,,13681.97,44693.31,19
 MS-DRG,252,Other Vascular Procedures With Mcc,,,30932.4,131311.84,19
@@ -22291,6 +22220,7 @@ MS-DRG,256,Upper Limb And Toe Amputation For Circulatory System Disorders With C
 MS-DRG,257,Upper Limb And Toe Amputation For Circulatory System Disorders Without Cc/Mcc,,,10201.25,27673.92,19
 MS-DRG,258,Cardiac Pacemaker Device Replacement With Mcc,,,27937.06,79055.05,19
 MS-DRG,259,Cardiac Pacemaker Device Replacement Without Mcc,,,18246.78,50875.91,19
+MS-DRG,26,Craniotomy And Endovascular Intracranial Procedures With Cc,,,27652.41,100364.96,19
 MS-DRG,260,Cardiac Pacemaker Revision Except Device Replacement With Mcc,,,28894.85,116444.25,19
 MS-DRG,261,Cardiac Pacemaker Revision Except Device Replacement With Cc,,,17108.18,63746.11,19
 MS-DRG,262,Cardiac Pacemaker Revision Except Device Replacement Without Cc/Mcc,,,14853.45,57739.88,19
@@ -22301,6 +22231,7 @@ MS-DRG,266,Endovascular Cardiac Valve Replacement And Supplement Procedures With
 MS-DRG,267,Endovascular Cardiac Valve Replacement And Supplement Procedures Without Mcc,,,41942.12,144163.43,19
 MS-DRG,268,Aortic And Heart Assist Procedures Except Pulsation Balloon With Mcc,,,60259.34,173047.55,19
 MS-DRG,269,Aortic And Heart Assist Procedures Except Pulsation Balloon Without Mcc,,,37290.78,106255.46,19
+MS-DRG,27,Craniotomy And Endovascular Intracranial Procedures Without Cc/Mcc,,,22579.72,90723.66,19
 MS-DRG,270,Other Major Cardiovascular Procedures With Mcc,,,46402.24,149908.52,19
 MS-DRG,271,Other Major Cardiovascular Procedures With Cc,,,31520.74,94912.35,19
 MS-DRG,272,Other Major Cardiovascular Procedures Without Cc/Mcc,,,22840.15,69317.11,19
@@ -22311,6 +22242,7 @@ MS-DRG,276,Cardiac Defibrillator Implant With Mcc Or Carotid Sinus Neurostimulat
 MS-DRG,277,Cardiac Defibrillator Implant Without Mcc,,,40710.93,157537.3,19
 MS-DRG,278,Ultrasound Accelerated And Other Thrombolysis Of Peripheral Vascular Structures With Mcc,,,48910.47,154149.44,19
 MS-DRG,279,Ultrasound Accelerated And Other Thrombolysis Of Peripheral Vascular Structures Without Mcc,,,31954.21,90736.81,19
+MS-DRG,28,Spinal Procedures With Mcc,,,52735.53,151168.47,19
 MS-DRG,280,"Acute Myocardial Infarction, Discharged Alive With Mcc",,,14630.23,40359.06,19
 MS-DRG,281,"Acute Myocardial Infarction, Discharged Alive With Cc",,,8703.59,27419.74,19
 MS-DRG,282,"Acute Myocardial Infarction, Discharged Alive Without Cc/Mcc",,,7007.79,23791.63,19
@@ -22321,6 +22253,7 @@ MS-DRG,286,"Circulatory Disorders Except Ami, With Cardiac Catheterization With 
 MS-DRG,287,"Circulatory Disorders Except Ami, With Cardiac Catheterization Without Mcc",,,10010.04,31998.4,19
 MS-DRG,288,Acute And Subacute Endocarditis With Mcc,,,24165.64,94142.86,19
 MS-DRG,289,Acute And Subacute Endocarditis With Cc,,,15519.66,42945.5,19
+MS-DRG,29,Spinal Procedures With Cc Or Spinal Neurostimulators,,,30268.79,89191.63,19
 MS-DRG,290,Acute And Subacute Endocarditis Without Cc/Mcc,,,8795.3,28627.95,19
 MS-DRG,291,Heart Failure And Shock With Mcc,,,11858.98,32300.33,19
 MS-DRG,292,Heart Failure And Shock With Cc,,,8097.08,21360.79,19
@@ -22331,6 +22264,8 @@ MS-DRG,296,"Cardiac Arrest, Unexplained With Mcc",,,14265.12,48875.04,19
 MS-DRG,297,"Cardiac Arrest, Unexplained With Cc",,,6236.89,16497.11,19
 MS-DRG,298,"Cardiac Arrest, Unexplained Without Cc/Mcc",,,4689.04,15149.63,19
 MS-DRG,299,Peripheral Vascular Disorders With Mcc,,,14877.68,41078.63,19
+MS-DRG,3,"Ecmo Or Tracheostomy With Mv >96 Hours Or Principal Diagnosis Except Face, Mouth And Neck With Major",,,184392.71,654894.86,19
+MS-DRG,30,Spinal Procedures Without Cc/Mcc,,,19744.45,65295.55,19
 MS-DRG,300,Peripheral Vascular Disorders With Cc,,,9987.55,26858.24,19
 MS-DRG,301,Peripheral Vascular Disorders Without Cc/Mcc,,,6978.37,22252.64,19
 MS-DRG,302,Atherosclerosis With Mcc,,,11104.53,41852.1,19
@@ -22341,6 +22276,7 @@ MS-DRG,306,Cardiac Congenital And Valvular Disorders With Mcc,,,14385.38,53937.6
 MS-DRG,307,Cardiac Congenital And Valvular Disorders Without Mcc,,,8652.54,29334.77,19
 MS-DRG,308,Cardiac Arrhythmia And Conduction Disorders With Mcc,,,11168.55,30292.57,19
 MS-DRG,309,Cardiac Arrhythmia And Conduction Disorders With Cc,,,7116.8,19355.73,19
+MS-DRG,31,Ventricular Shunt Procedures With Mcc,,,39516.95,137951.77,19
 MS-DRG,310,Cardiac Arrhythmia And Conduction Disorders Without Cc/Mcc,,,5649.42,14881.52,19
 MS-DRG,311,Angina Pectoris,,,6824.36,20664.91,19
 MS-DRG,312,Syncope And Collapse,,,8292.62,24286.06,19
@@ -22351,6 +22287,7 @@ MS-DRG,316,Other Circulatory System Diagnoses Without Cc/Mcc,,,6653.05,17161.6,1
 MS-DRG,317,Concomitant Left Atrial Appendage Closure And Cardiac Ablation,,,58603.34,168231.94,19
 MS-DRG,318,Percutaneous Coronary Atherectomy Without Intraluminal Device,,,21708.46,60942.41,19
 MS-DRG,319,Other Endovascular Cardiac Valve Procedures With Mcc,,,39364.67,112286.3,19
+MS-DRG,32,Ventricular Shunt Procedures With Cc,,,19188.99,59184.86,19
 MS-DRG,320,Other Endovascular Cardiac Valve Procedures Without Mcc,,,21562.24,82555.19,19
 MS-DRG,321,Percutaneous Cardiovascular Procedures With Intraluminal Device With Mcc Or 4+ Arteries/Intraluminal,,,24291.96,84651.27,19
 MS-DRG,322,Percutaneous Cardiovascular Procedures With Intraluminal Device Without Mcc,,,16005.04,58934.17,19
@@ -22361,6 +22298,7 @@ MS-DRG,326,"Stomach, Esophageal And Duodenal Procedures With Mcc",,,43902.67,126
 MS-DRG,327,"Stomach, Esophageal And Duodenal Procedures With Cc",,,21898.81,67241.91,19
 MS-DRG,328,"Stomach, Esophageal And Duodenal Procedures Without Cc/Mcc",,,14614.66,44362.53,19
 MS-DRG,329,Major Small And Large Bowel Procedures With Mcc,,,40520.59,115647.66,19
+MS-DRG,33,Ventricular Shunt Procedures Without Cc/Mcc,,,15138.97,54115.25,19
 MS-DRG,330,Major Small And Large Bowel Procedures With Cc,,,21492.16,60473.15,19
 MS-DRG,331,Major Small And Large Bowel Procedures Without Cc/Mcc,,,15312.01,44320.75,19
 MS-DRG,332,Rectal Resection With Mcc,,,32077.93,91096.59,19
@@ -22369,12 +22307,14 @@ MS-DRG,334,Rectal Resection Without Cc/Mcc,,,14922.67,52325.57,19
 MS-DRG,335,Peritoneal Adhesiolysis With Mcc,,,31647.06,89843.63,19
 MS-DRG,336,Peritoneal Adhesiolysis With Cc,,,18996.05,53054.77,19
 MS-DRG,337,Peritoneal Adhesiolysis Without Cc/Mcc,,,14032.38,45271.3,19
+MS-DRG,34,Carotid Artery Stent Procedures With Mcc,,,34240.94,97386.58,19
 MS-DRG,344,Minor Small And Large Bowel Procedures With Mcc,,,23097.98,74867.21,19
 MS-DRG,345,Minor Small And Large Bowel Procedures With Cc,,,13770.22,43081.2,19
 MS-DRG,346,Minor Small And Large Bowel Procedures Without Cc/Mcc,,,11014.55,40104.2,19
 MS-DRG,347,Anal And Stomal Procedures With Mcc,,,20613.12,94679.06,19
 MS-DRG,348,Anal And Stomal Procedures With Cc,,,12075.29,32976.81,19
 MS-DRG,349,Anal And Stomal Procedures Without Cc/Mcc,,,8283.96,30838.94,19
+MS-DRG,35,Carotid Artery Stent Procedures With Cc,,,21434.19,60144.84,19
 MS-DRG,350,Inguinal And Femoral Hernia Procedures With Mcc,,,22311.51,62696.05,19
 MS-DRG,351,Inguinal And Femoral Hernia Procedures With Cc,,,13941.53,41455.17,19
 MS-DRG,352,Inguinal And Femoral Hernia Procedures Without Cc/Mcc,,,10855.35,40964.22,19
@@ -22385,9 +22325,11 @@ MS-DRG,356,Other Digestive System O.R. Procedures With Mcc,,,38758.17,110522.58,
 MS-DRG,357,Other Digestive System O.R. Procedures With Cc,,,20871.81,58509.44,19
 MS-DRG,358,Other Digestive System O.R. Procedures Without Cc/Mcc,,,12846.18,46942.6,19
 MS-DRG,359,Percutaneous Coronary Atherectomy With Intraluminal Device With Mcc,,,30502.39,94940.2,19
+MS-DRG,36,Carotid Artery Stent Procedures Without Cc/Mcc,,,17560.68,48880.73,19
 MS-DRG,360,Percutaneous Coronary Atherectomy With Intraluminal Device Without Mcc,,,21640.11,73582.4,19
 MS-DRG,368,Major Esophageal Disorders With Mcc,,,14524.68,40285.26,19
 MS-DRG,369,Major Esophageal Disorders With Cc,,,9405.27,29212.91,19
+MS-DRG,37,Extracranial Procedures With Mcc,,,29234.87,82829.04,19
 MS-DRG,370,Major Esophageal Disorders Without Cc/Mcc,,,6814.85,20114.77,19
 MS-DRG,371,Major Gastrointestinal Disorders And Peritoneal Infections With Mcc,,,16092.43,45462.8,19
 MS-DRG,372,Major Gastrointestinal Disorders And Peritoneal Infections With Cc,,,9585.23,25688.3,19
@@ -22398,6 +22340,7 @@ MS-DRG,376,Digestive Malignancy Without Cc/Mcc,,,8748.58,23255.33,19
 MS-DRG,377,Gastrointestinal Hemorrhage With Mcc,,,16567.42,45992.37,19
 MS-DRG,378,Gastrointestinal Hemorrhage With Cc,,,9236.55,27677.4,19
 MS-DRG,379,Gastrointestinal Hemorrhage Without Cc/Mcc,,,6205.74,20407.25,19
+MS-DRG,38,Extracranial Procedures With Cc,,,14790.29,43558.22,19
 MS-DRG,380,Complicated Peptic Ulcer With Mcc,,,17728.53,55577.64,19
 MS-DRG,381,Complicated Peptic Ulcer With Cc,,,10125.98,27260.79,19
 MS-DRG,382,Complicated Peptic Ulcer Without Cc/Mcc,,,7678.32,20852.93,19
@@ -22408,6 +22351,7 @@ MS-DRG,386,Inflammatory Bowel Disease With Cc,,,9198.48,27116.82,19
 MS-DRG,387,Inflammatory Bowel Disease Without Cc/Mcc,,,6646.13,18547.93,19
 MS-DRG,388,Gastrointestinal Obstruction With Mcc,,,13528.83,37156.2,19
 MS-DRG,389,Gastrointestinal Obstruction With Cc,,,7584.88,19871.32,19
+MS-DRG,39,Extracranial Procedures Without Cc/Mcc,,,10921.97,42078.42,19
 MS-DRG,390,Gastrointestinal Obstruction Without Cc/Mcc,,,5458.21,14226.93,19
 MS-DRG,391,"Esophagitis, Gastroenteritis And Miscellaneous Digestive Disorders With Mcc",,,11724.88,31910.35,19
 MS-DRG,392,"Esophagitis, Gastroenteritis And Miscellaneous Digestive Disorders Without Mcc",,,7496.63,19614.69,19
@@ -22417,12 +22361,15 @@ MS-DRG,395,Other Digestive System Diagnoses Without Cc/Mcc,,,6366.67,19547.23,19
 MS-DRG,397,Appendix Procedures With Mcc,,,21472.26,60255.54,19
 MS-DRG,398,Appendix Procedures With Cc,,,13847.22,40051.97,19
 MS-DRG,399,Appendix Procedures Without Cc/Mcc,,,10655.49,33708.0,19
+MS-DRG,4,"Tracheostomy With Mv >96 Hours Or Principal Diagnosis Except Face, Mouth And Neck Without Major O.R.",,,120594.32,348500.39,19
+MS-DRG,40,"Peripheral, Cranial Nerve And Other Nervous System Procedures With Mcc",,,34158.74,97147.56,19
 MS-DRG,402,Single Level Combined Anterior And Posterior Spinal Fusion Except Cervical,,,35537.01,101155.54,19
 MS-DRG,405,"Pancreas, Liver And Shunt Procedures With Mcc",,,48082.47,137637.45,19
 MS-DRG,406,"Pancreas, Liver And Shunt Procedures With Cc",,,25844.14,94174.19,19
 MS-DRG,407,"Pancreas, Liver And Shunt Procedures Without Cc/Mcc",,,19955.56,62541.38,19
 MS-DRG,408,Biliary Tract Procedures Except Only Cholecystectomy With Or Without C.D.E. With Mcc,,,31601.2,134135.64,19
 MS-DRG,409,Biliary Tract Procedures Except Only Cholecystectomy With Or Without C.D.E. With Cc,,,19589.58,82966.05,19
+MS-DRG,41,"Peripheral, Cranial Nerve And Other Nervous System Procedures With Cc Or Peripheral Neurostimulator",,,19774.73,63234.28,19
 MS-DRG,410,Biliary Tract Procedures Except Only Cholecystectomy With Or Without C.D.E. Without Cc/Mcc,,,14488.34,53140.33,19
 MS-DRG,411,Cholecystectomy With C.D.E. With Mcc,,,29331.77,83110.83,19
 MS-DRG,412,Cholecystectomy With C.D.E. With Cc,,,18942.41,52898.77,19
@@ -22433,6 +22380,7 @@ MS-DRG,416,Cholecystectomy Except By Laparoscope Without C.D.E. Without Cc/Mcc,,
 MS-DRG,417,Laparoscopic Cholecystectomy Without C.D.E. With Mcc,,,21398.72,60041.68,19
 MS-DRG,418,Laparoscopic Cholecystectomy Without C.D.E. With Cc,,,15387.29,46973.94,19
 MS-DRG,419,Laparoscopic Cholecystectomy Without C.D.E. Without Cc/Mcc,,,12568.45,41886.92,19
+MS-DRG,42,"Peripheral, Cranial Nerve And Other Nervous System Procedures Without Cc/Mcc",,,15699.62,54839.48,19
 MS-DRG,420,Hepatobiliary Diagnostic Procedures With Mcc,,,30229.85,116538.26,19
 MS-DRG,421,Hepatobiliary Diagnostic Procedures With Cc,,,15784.41,55918.86,19
 MS-DRG,422,Hepatobiliary Diagnostic Procedures Without Cc/Mcc,,,12860.03,46152.21,19
@@ -22507,6 +22455,7 @@ MS-DRG,496,Local Excision And Removal Of Internal Fixation Devices Except Hip An
 MS-DRG,497,Local Excision And Removal Of Internal Fixation Devices Except Hip And Femur Without Cc/Mcc,,,11205.76,38568.7,19
 MS-DRG,498,Local Excision And Removal Of Internal Fixation Devices Of Hip And Femur With Cc/Mcc,,,26852.96,76792.69,19
 MS-DRG,499,Local Excision And Removal Of Internal Fixation Devices Of Hip And Femur Without Cc/Mcc,,,18183.62,57102.7,19
+MS-DRG,5,Liver Transplant With Mcc Or Intestinal Transplant,,,89958.33,322637.22,19
 MS-DRG,500,Soft Tissue Procedures With Mcc,,,28133.47,115424.06,19
 MS-DRG,501,Soft Tissue Procedures With Cc,,,15876.13,47628.53,19
 MS-DRG,502,Soft Tissue Procedures Without Cc/Mcc,,,12396.28,40180.8,19
@@ -22527,9 +22476,11 @@ MS-DRG,516,Other Musculoskeletal System And Connective Tissue O.R. Procedures Wi
 MS-DRG,517,Other Musculoskeletal System And Connective Tissue O.R. Procedures Without Cc/Mcc,,,14047.08,42308.23,19
 MS-DRG,518,Back And Neck Procedures Except Spinal Fusion With Mcc Or Disc Device Or Neurostimulator,,,33086.76,94030.24,19
 MS-DRG,519,Back And Neck Procedures Except Spinal Fusion With Cc,,,18057.3,57228.05,19
+MS-DRG,52,Spinal Disorders And Injuries With Cc/Mcc,,,16422.93,45572.2,19
 MS-DRG,520,Back And Neck Procedures Except Spinal Fusion Without Cc/Mcc,,,13676.78,45375.76,19
 MS-DRG,521,Hip Replacement With Principal Diagnosis Of Hip Fracture With Mcc,,,25584.58,105006.3,19
 MS-DRG,522,Hip Replacement With Principal Diagnosis Of Hip Fracture Without Mcc,,,19073.92,59898.64,19
+MS-DRG,53,Spinal Disorders And Injuries Without Cc/Mcc,,,9223.57,30348.0,19
 MS-DRG,533,Fractures Of Femur With Mcc,,,14315.3,39443.24,19
 MS-DRG,534,Fractures Of Femur Without Mcc,,,7725.91,20717.14,19
 MS-DRG,535,Fractures Of Hip And Pelvis With Mcc,,,11843.41,32255.04,19
@@ -22537,6 +22488,7 @@ MS-DRG,536,Fractures Of Hip And Pelvis Without Mcc,,,7738.88,20319.17,19
 MS-DRG,537,"Sprains, Strains, And Dislocations Of Hip, Pelvis And Thigh With Cc/Mcc",,,9008.14,42343.05,19
 MS-DRG,538,"Sprains, Strains, And Dislocations Of Hip, Pelvis And Thigh Without Cc/Mcc",,,6983.56,21354.32,19
 MS-DRG,539,Osteomyelitis With Mcc,,,17793.42,49557.53,19
+MS-DRG,54,Nervous System Neoplasms With Mcc,,,13962.29,38416.71,19
 MS-DRG,540,Osteomyelitis With Cc,,,11967.14,32614.83,19
 MS-DRG,541,Osteomyelitis Without Cc/Mcc,,,7564.11,19810.94,19
 MS-DRG,542,Pathological Fractures And Musculoskeletal And Connective Tissue Malignancy With Mcc,,,16035.32,66667.4,19
@@ -22547,6 +22499,7 @@ MS-DRG,546,Connective Tissue Disorders With Cc,,,10730.76,35769.27,19
 MS-DRG,547,Connective Tissue Disorders Without Cc/Mcc,,,7986.33,29073.63,19
 MS-DRG,548,Septic Arthritis With Mcc,,,17457.72,48581.33,19
 MS-DRG,549,Septic Arthritis With Cc,,,11196.24,30373.08,19
+MS-DRG,55,Nervous System Neoplasms Without Mcc,,,9573.12,33147.42,19
 MS-DRG,550,Septic Arthritis Without Cc/Mcc,,,8314.25,21992.3,19
 MS-DRG,551,Medical Back Problems With Mcc,,,15253.18,42496.25,19
 MS-DRG,552,Medical Back Problems Without Mcc,,,9068.7,24432.3,19
@@ -22557,6 +22510,7 @@ MS-DRG,556,Signs And Symptoms Of Musculoskeletal System And Connective Tissue Wi
 MS-DRG,557,"Tendonitis, Myositis And Bursitis With Mcc",,,13616.21,45191.22,19
 MS-DRG,558,"Tendonitis, Myositis And Bursitis Without Mcc",,,8479.5,22472.86,19
 MS-DRG,559,"Aftercare, Musculoskeletal System And Connective Tissue With Mcc",,,16886.68,66232.17,19
+MS-DRG,56,Degenerative Nervous System Disorders With Mcc,,,20851.05,63356.14,19
 MS-DRG,560,"Aftercare, Musculoskeletal System And Connective Tissue With Cc",,,10494.56,28332.61,19
 MS-DRG,561,"Aftercare, Musculoskeletal System And Connective Tissue Without Cc/Mcc",,,7706.87,20285.39,19
 MS-DRG,562,"Fracture, Sprain, Strain And Dislocation Except Femur, Hip, Pelvis And Thigh With Mcc",,,13078.92,35847.88,19
@@ -22564,6 +22518,7 @@ MS-DRG,563,"Fracture, Sprain, Strain And Dislocation Except Femur, Hip, Pelvis A
 MS-DRG,564,Other Musculoskeletal System And Connective Tissue Diagnoses With Mcc,,,14106.78,51047.73,19
 MS-DRG,565,Other Musculoskeletal System And Connective Tissue Diagnoses With Cc,,,9182.04,24515.85,19
 MS-DRG,566,Other Musculoskeletal System And Connective Tissue Diagnoses Without Cc/Mcc,,,7234.47,18852.34,19
+MS-DRG,57,Degenerative Nervous System Disorders Without Mcc,,,11961.08,46664.05,19
 MS-DRG,570,Skin Debridement With Mcc,,,26198.01,73997.9,19
 MS-DRG,571,Skin Debridement With Cc,,,15369.12,42507.72,19
 MS-DRG,572,Skin Debridement Without Cc/Mcc,,,10669.33,28840.84,19
@@ -22574,12 +22529,14 @@ MS-DRG,576,Skin Graft Except For Skin Ulcer Or Cellulitis With Mcc,,,43156.86,15
 MS-DRG,577,Skin Graft Except For Skin Ulcer Or Cellulitis With Cc,,,23685.45,101733.34,19
 MS-DRG,578,Skin Graft Except For Skin Ulcer Or Cellulitis Without Cc/Mcc,,,14650.13,50532.41,19
 MS-DRG,579,"Other Skin, Subcutaneous Tissue And Breast Procedures With Mcc",,,28771.12,81480.47,19
+MS-DRG,58,Multiple Sclerosis And Cerebellar Ataxia With Mcc,,,15542.16,43010.92,19
 MS-DRG,580,"Other Skin, Subcutaneous Tissue And Breast Procedures With Cc",,,15702.22,59076.92,19
 MS-DRG,581,"Other Skin, Subcutaneous Tissue And Breast Procedures Without Cc/Mcc",,,13237.25,57064.4,19
 MS-DRG,582,Mastectomy For Malignancy With Cc/Mcc,,,17420.51,110305.7,19
 MS-DRG,583,Mastectomy For Malignancy Without Cc/Mcc,,,15671.07,99741.71,19
 MS-DRG,584,"Breast Biopsy, Local Excision And Other Breast Procedures With Cc/Mcc",,,19272.92,88982.72,19
 MS-DRG,585,"Breast Biopsy, Local Excision And Other Breast Procedures Without Cc/Mcc",,,17442.14,77638.78,19
+MS-DRG,59,Multiple Sclerosis And Cerebellar Ataxia With Cc,,,11487.81,40368.82,19
 MS-DRG,592,Skin Ulcers With Mcc,,,17495.79,48692.03,19
 MS-DRG,593,Skin Ulcers With Cc,,,11015.41,29847.24,19
 MS-DRG,594,Skin Ulcers Without Cc/Mcc,,,8251.09,21808.64,19
@@ -22588,6 +22545,8 @@ MS-DRG,596,Major Skin Disorders Without Mcc,,,10117.33,27235.64,19
 MS-DRG,597,Malignant Breast Disorders With Mcc,,,15175.31,47391.76,19
 MS-DRG,598,Malignant Breast Disorders With Cc,,,10539.55,28463.44,19
 MS-DRG,599,Malignant Breast Disorders Without Cc/Mcc,,,7408.38,19358.06,19
+MS-DRG,6,Liver Transplant Without Mcc,,,40870.99,124118.29,19
+MS-DRG,60,Multiple Sclerosis And Cerebellar Ataxia Without Cc/Mcc,,,8709.64,26618.91,19
 MS-DRG,600,Non-Malignant Breast Disorders With Cc/Mcc,,,9763.46,26206.59,19
 MS-DRG,601,Non-Malignant Breast Disorders Without Cc/Mcc,,,5985.98,15221.76,19
 MS-DRG,602,Cellulitis With Mcc,,,13048.64,36914.81,19
@@ -22596,12 +22555,14 @@ MS-DRG,604,"Trauma To The Skin, Subcutaneous Tissue And Breast With Mcc",,,13488
 MS-DRG,605,"Trauma To The Skin, Subcutaneous Tissue And Breast Without Mcc",,,8676.77,23046.51,19
 MS-DRG,606,Minor Skin Disorders With Mcc,,,13843.76,38808.95,19
 MS-DRG,607,Minor Skin Disorders Without Mcc,,,8593.71,22804.97,19
+MS-DRG,61,"Ischemic Stroke, Precerebral Occlusion Or Transient Ischemia With Thrombolytic Agent With Mcc",,,24606.03,82482.07,19
 MS-DRG,614,Adrenal And Pituitary Procedures With Cc/Mcc,,,19715.03,84463.25,19
 MS-DRG,615,Adrenal And Pituitary Procedures Without Cc/Mcc,,,12858.3,51538.67,19
 MS-DRG,616,"Amputation Of Lower Limb For Endocrine, Nutritional And Metabolic Disorders With Mcc",,,30924.61,87742.77,19
 MS-DRG,617,"Amputation Of Lower Limb For Endocrine, Nutritional And Metabolic Disorders With Cc",,,16933.4,47056.64,19
 MS-DRG,618,"Amputation Of Lower Limb For Endocrine, Nutritional And Metabolic Disorders Without Cc/Mcc",,,13022.68,35684.34,19
 MS-DRG,619,O.R. Procedures For Obesity With Mcc,,,25733.39,72646.81,19
+MS-DRG,62,"Ischemic Stroke, Precerebral Occlusion Or Transient Ischemia With Thrombolytic Agent With Cc",,,15954.86,51695.35,19
 MS-DRG,620,O.R. Procedures For Obesity With Cc,,,14597.35,43749.72,19
 MS-DRG,621,O.R. Procedures For Obesity Without Cc/Mcc,,,13802.23,39804.76,19
 MS-DRG,622,"Skin Grafts And Wound Debridement For Endocrine, Nutritional And Metabolic Disorders With Mcc",,,31545.83,89549.26,19
@@ -22612,16 +22573,19 @@ MS-DRG,626,"Thyroid, Parathyroid And Thyroglossal Procedures With Cc",,,13724.36
 MS-DRG,627,"Thyroid, Parathyroid And Thyroglossal Procedures Without Cc/Mcc",,,12244.0,38526.91,19
 MS-DRG,628,"Other Endocrine, Nutritional And Metabolic O.R. Procedures With Mcc",,,32995.91,93766.06,19
 MS-DRG,629,"Other Endocrine, Nutritional And Metabolic O.R. Procedures With Cc",,,19602.56,54818.48,19
+MS-DRG,63,"Ischemic Stroke, Precerebral Occlusion Or Transient Ischemia With Thrombolytic Agent Without Cc/Mcc",,,12897.23,51308.87,19
 MS-DRG,630,"Other Endocrine, Nutritional And Metabolic O.R. Procedures Without Cc/Mcc",,,13379.15,38366.75,19
 MS-DRG,637,Diabetes With Mcc,,,13181.88,36147.29,19
 MS-DRG,638,Diabetes With Cc,,,8505.46,22548.34,19
 MS-DRG,639,Diabetes Without Cc/Mcc,,,6126.15,15629.35,19
+MS-DRG,64,Intracranial Hemorrhage Or Cerebral Infarction With Mcc,,,18150.75,52022.65,19
 MS-DRG,640,"Miscellaneous Disorders Of Nutrition, Metabolism, Fluids And Electrolytes With Mcc",,,12307.16,33972.63,19
 MS-DRG,641,"Miscellaneous Disorders Of Nutrition, Metabolism, Fluids And Electrolytes Without Mcc",,,7484.52,19579.47,19
 MS-DRG,642,Inborn And Other Disorders Of Metabolism,,,13055.56,60058.81,19
 MS-DRG,643,Endocrine Disorders With Mcc,,,14993.62,41415.78,19
 MS-DRG,644,Endocrine Disorders With Cc,,,9619.84,25788.94,19
 MS-DRG,645,Endocrine Disorders Without Cc/Mcc,,,7398.86,19330.38,19
+MS-DRG,65,Intracranial Hemorrhage Or Cerebral Infarction With Cc Or Tpa In 24 Hours,,,9492.65,32471.94,19
 MS-DRG,650,Kidney Transplant With Hemodialysis With Mcc,,,41428.19,267372.95,19
 MS-DRG,651,Kidney Transplant With Hemodialysis Without Mcc,,,32814.22,170702.26,19
 MS-DRG,652,Kidney Transplant,,,28693.25,212763.27,19
@@ -22632,6 +22596,7 @@ MS-DRG,656,Kidney And Ureter Procedures For Neoplasm With Mcc,,,28297.85,99957.5
 MS-DRG,657,Kidney And Ureter Procedures For Neoplasm With Cc,,,16584.73,55776.11,19
 MS-DRG,658,Kidney And Ureter Procedures For Neoplasm Without Cc/Mcc,,,14177.73,48749.69,19
 MS-DRG,659,Kidney And Ureter Procedures For Non-Neoplasm With Mcc,,,22735.46,63928.89,19
+MS-DRG,66,Intracranial Hemorrhage Or Cerebral Infarction Without Cc/Mcc,,,6672.95,24627.28,19
 MS-DRG,660,Kidney And Ureter Procedures For Non-Neoplasm With Cc,,,12186.9,33253.89,19
 MS-DRG,661,Kidney And Ureter Procedures For Non-Neoplasm Without Cc/Mcc,,,9709.82,28826.42,19
 MS-DRG,662,Minor Bladder Procedures With Mcc,,,27239.71,77027.16,19
@@ -22642,12 +22607,14 @@ MS-DRG,666,Prostatectomy With Cc,,,15886.51,44012.28,19
 MS-DRG,667,Prostatectomy Without Cc/Mcc,,,10322.38,27831.93,19
 MS-DRG,668,Transurethral Procedures With Mcc,,,26015.45,73467.02,19
 MS-DRG,669,Transurethral Procedures With Cc,,,14179.46,46496.92,19
+MS-DRG,67,Precerebral Occlusion Without Infarction With Mcc,,,13458.75,42639.0,19
 MS-DRG,670,Transurethral Procedures Without Cc/Mcc,,,9207.14,27743.56,19
 MS-DRG,671,Urethral Procedures With Cc/Mcc,,,16281.91,62447.37,19
 MS-DRG,672,Urethral Procedures Without Cc/Mcc,,,10091.37,27160.16,19
 MS-DRG,673,Other Kidney And Urinary Tract Procedures With Mcc,,,37103.9,105712.0,19
 MS-DRG,674,Other Kidney And Urinary Tract Procedures With Cc,,,20985.15,58839.04,19
 MS-DRG,675,Other Kidney And Urinary Tract Procedures Without Cc/Mcc,,,14952.95,42182.88,19
+MS-DRG,68,Precerebral Occlusion Without Infarction Without Mcc,,,8230.32,25341.06,19
 MS-DRG,682,Renal Failure With Mcc,,,13565.17,37767.87,19
 MS-DRG,683,Renal Failure With Cc,,,8328.95,22035.08,19
 MS-DRG,684,Renal Failure Without Cc/Mcc,,,5945.32,15518.7,19
@@ -22655,6 +22622,7 @@ MS-DRG,686,Kidney And Urinary Tract Neoplasms With Mcc,,,16357.18,68620.73,19
 MS-DRG,687,Kidney And Urinary Tract Neoplasms With Cc,,,9817.1,28920.43,19
 MS-DRG,688,Kidney And Urinary Tract Neoplasms Without Cc/Mcc,,,7589.2,23822.97,19
 MS-DRG,689,Kidney And Urinary Tract Infections With Mcc,,,10790.46,29193.08,19
+MS-DRG,69,Transient Ischemia Without Thrombolytic,,,7662.75,25386.33,19
 MS-DRG,690,Kidney And Urinary Tract Infections Without Mcc,,,7755.32,20366.97,19
 MS-DRG,693,Urinary Stones With Mcc,,,12384.16,33827.54,19
 MS-DRG,694,Urinary Stones Without Mcc,,,7514.8,19667.53,19
@@ -22663,10 +22631,13 @@ MS-DRG,696,Kidney And Urinary Tract Signs And Symptoms Without Mcc,,,6712.75,173
 MS-DRG,697,Urethral Stricture,,,10076.67,27117.38,19
 MS-DRG,698,Other Kidney And Urinary Tract Diagnoses With Mcc,,,15065.43,41624.6,19
 MS-DRG,699,Other Kidney And Urinary Tract Diagnoses With Cc,,,9533.32,25537.34,19
+MS-DRG,7,Lung Transplant,,,112797.11,325826.25,19
+MS-DRG,70,Other Cerebrovascular Disorders With Mcc,,,15155.41,49383.39,19
 MS-DRG,700,Other Kidney And Urinary Tract Diagnoses Without Cc/Mcc,,,6720.54,19056.29,19
 MS-DRG,707,Major Male Pelvic Procedures With Cc/Mcc,,,18058.17,77001.6,19
 MS-DRG,708,Major Male Pelvic Procedures Without Cc/Mcc,,,14025.45,45734.39,19
 MS-DRG,709,Penis Procedures With Cc/Mcc,,,20885.65,58549.7,19
+MS-DRG,71,Other Cerebrovascular Disorders With Cc,,,9628.49,26754.7,19
 MS-DRG,710,Penis Procedures Without Cc/Mcc,,,12874.73,35254.11,19
 MS-DRG,711,Testes Procedures With Cc/Mcc,,,18780.61,52428.28,19
 MS-DRG,712,Testes Procedures Without Cc/Mcc,,,10266.14,27668.39,19
@@ -22676,6 +22647,7 @@ MS-DRG,715,Other Male Reproductive System O.R. Procedures For Malignancy With Cc
 MS-DRG,716,Other Male Reproductive System O.R. Procedures For Malignancy Without Cc/Mcc,,,13478.65,47433.54,19
 MS-DRG,717,Other Male Reproductive System O.R. Procedures Except Malignancy With Cc/Mcc,,,17108.18,47564.87,19
 MS-DRG,718,Other Male Reproductive System O.R. Procedures Except Malignancy Without Cc/Mcc,,,12372.05,33792.32,19
+MS-DRG,72,Other Cerebrovascular Disorders Without Cc/Mcc,,,7294.17,21514.49,19
 MS-DRG,722,"Malignancy, Male Reproductive System With Mcc",,,16409.09,45531.94,19
 MS-DRG,723,"Malignancy, Male Reproductive System With Cc",,,10638.18,28750.26,19
 MS-DRG,724,"Malignancy, Male Reproductive System Without Cc/Mcc",,,6424.64,21967.13,19
@@ -22684,6 +22656,7 @@ MS-DRG,726,Benign Prostatic Hypertrophy Without Mcc,,,6998.27,18648.91,19
 MS-DRG,727,Inflammation Of The Male Reproductive System With Mcc,,,13581.61,37309.68,19
 MS-DRG,728,Inflammation Of The Male Reproductive System Without Mcc,,,7770.03,20409.74,19
 MS-DRG,729,Other Male Reproductive System Diagnoses With Cc/Mcc,,,9911.41,29098.0,19
+MS-DRG,73,Cranial And Peripheral Nerve Disorders With Mcc,,,14631.96,40364.09,19
 MS-DRG,730,Other Male Reproductive System Diagnoses Without Cc/Mcc,,,6565.67,19665.61,19
 MS-DRG,734,"Pelvic Evisceration, Radical Hysterectomy And Radical Vulvectomy With Cc/Mcc",,,19180.34,53590.67,19
 MS-DRG,735,"Pelvic Evisceration, Radical Hysterectomy And Radical Vulvectomy Without Cc/Mcc",,,12392.82,42280.37,19
@@ -22691,6 +22664,7 @@ MS-DRG,736,Uterine And Adnexa Procedures For Ovarian Or Adnexal Malignancy With 
 MS-DRG,737,Uterine And Adnexa Procedures For Ovarian Or Adnexal Malignancy With Cc,,,18579.89,55111.07,19
 MS-DRG,738,Uterine And Adnexa Procedures For Ovarian Or Adnexal Malignancy Without Cc/Mcc,,,13457.02,39794.32,19
 MS-DRG,739,Uterine And Adnexa Procedures For Non-Ovarian And Non-Adnexal Malignancy With Mcc,,,31750.02,90143.03,19
+MS-DRG,74,Cranial And Peripheral Nerve Disorders Without Mcc,,,9670.02,28676.7,19
 MS-DRG,740,Uterine And Adnexa Procedures For Non-Ovarian And Non-Adnexal Malignancy With Cc,,,16408.23,55347.84,19
 MS-DRG,741,Uterine And Adnexa Procedures For Non-Ovarian And Non-Adnexal Malignancy Without Cc/Mcc,,,13090.17,41249.74,19
 MS-DRG,742,Uterine And Adnexa Procedures For Non-Malignancy With Cc/Mcc,,,16626.26,46163.46,19
@@ -22701,6 +22675,7 @@ MS-DRG,746,"Vagina, Cervix And Vulva Procedures With Cc/Mcc",,,15780.95,43705.33
 MS-DRG,747,"Vagina, Cervix And Vulva Procedures Without Cc/Mcc",,,8189.66,34400.9,19
 MS-DRG,748,Female Reproductive System Reconstructive Procedures,,,12754.47,51859.0,19
 MS-DRG,749,Other Female Reproductive System O.R. Procedures With Cc/Mcc,,,22966.47,64600.66,19
+MS-DRG,75,Viral Meningitis With Cc/Mcc,,,17341.78,48244.18,19
 MS-DRG,750,Other Female Reproductive System O.R. Procedures Without Cc/Mcc,,,13520.18,37131.04,19
 MS-DRG,754,"Malignancy, Female Reproductive System With Mcc",,,16685.96,53457.18,19
 MS-DRG,755,"Malignancy, Female Reproductive System With Cc",,,10163.19,27368.98,19
@@ -22708,13 +22683,16 @@ MS-DRG,756,"Malignancy, Female Reproductive System Without Cc/Mcc",,,9061.78,241
 MS-DRG,757,"Infections, Female Reproductive System With Mcc",,,13140.35,36026.52,19
 MS-DRG,758,"Infections, Female Reproductive System With Cc",,,9221.84,24631.58,19
 MS-DRG,759,"Infections, Female Reproductive System Without Cc/Mcc",,,6492.99,18485.26,19
+MS-DRG,76,Viral Meningitis Without Cc/Mcc,,,7891.16,20761.98,19
 MS-DRG,760,Menstrual And Other Female Reproductive System Disorders With Cc/Mcc,,,9468.43,25348.64,19
 MS-DRG,761,Menstrual And Other Female Reproductive System Disorders Without Cc/Mcc,,,5687.49,14425.4,19
 MS-DRG,768,Vaginal Delivery With O.R. Procedures Except Sterilization And/Or D&C,,,10023.02,26961.39,19
 MS-DRG,769,Postpartum And Post Abortion Diagnoses With O.R. Procedures,,,15371.71,42515.27,19
+MS-DRG,77,Hypertensive Encephalopathy With Mcc,,,,,0
 MS-DRG,770,"Abortion With D&C, Aspiration Curettage Or Hysterotomy",,,9426.9,25227.87,19
 MS-DRG,776,Postpartum And Post Abortion Diagnoses Without O.R. Procedures,,,6415.99,16472.21,19
 MS-DRG,779,Abortion Without D&C,,,8030.46,21167.06,19
+MS-DRG,78,Hypertensive Encephalopathy With Cc,,,,,0
 MS-DRG,783,Cesarean Section With Sterilization With Mcc,,,21993.12,61770.17,19
 MS-DRG,784,Cesarean Section With Sterilization With Cc,,,9923.52,26672.05,19
 MS-DRG,785,Cesarean Section With Sterilization Without Cc/Mcc,,,9038.42,24098.19,19
@@ -22722,6 +22700,7 @@ MS-DRG,786,Cesarean Section Without Sterilization With Mcc,,,14532.16,30490.75,1
 MS-DRG,787,Cesarean Section Without Sterilization With Cc,,,9839.05,22113.37,19
 MS-DRG,788,Cesarean Section Without Sterilization Without Cc/Mcc,,,8447.07,20215.75,19
 MS-DRG,789,"Neonates, Died Or Transferred To Another Acute Care Facility",,,16344.2,114960.97,19
+MS-DRG,79,Hypertensive Encephalopathy Without Cc/Mcc,,,14586.2,16774.13,2
 MS-DRG,790,"Extreme Immaturity Or Respiratory Distress Syndrome, Neonate",,,52174.88,211868.43,19
 MS-DRG,791,Prematurity With Major Problems,,,35870.12,102124.2,19
 MS-DRG,792,Prematurity Without Major Problems,,,21942.07,61621.73,19
@@ -22732,6 +22711,8 @@ MS-DRG,796,Vaginal Delivery With Sterilization And/Or D&C With Mcc,,,10848.43,29
 MS-DRG,797,Vaginal Delivery With Sterilization And/Or D&C With Cc,,,9407.0,25170.0,19
 MS-DRG,798,Vaginal Delivery With Sterilization And/Or D&C Without Cc/Mcc,,,9032.36,24080.58,19
 MS-DRG,799,Splenic Procedures With Mcc,,,39935.71,113946.85,19
+MS-DRG,8,Simultaneous Pancreas And Kidney Transplant,,,49242.71,141011.4,19
+MS-DRG,80,Nontraumatic Stupor And Coma With Mcc,,,16411.69,45539.49,19
 MS-DRG,800,Splenic Procedures With Cc,,,25058.53,70684.34,19
 MS-DRG,801,Splenic Procedures Without Cc/Mcc,,,17267.37,64776.75,19
 MS-DRG,802,Other O.R. Procedures Of The Blood And Blood Forming Organs With Mcc,,,35222.08,100239.72,19
@@ -22742,6 +22723,7 @@ MS-DRG,806,Vaginal Delivery Without Sterilization Or D&C With Cc,,,7275.14,18970
 MS-DRG,807,Vaginal Delivery Without Sterilization Or D&C Without Cc/Mcc,,,6259.43,12162.18,19
 MS-DRG,808,Major Hematological And Immunological Diagnoses Except Sickle Cell Crisis And Coagulation Disorders,,,19854.33,60358.25,19
 MS-DRG,809,Major Hematological And Immunological Diagnoses Except Sickle Cell Crisis And Coagulation Disorders,,,11704.11,31849.97,19
+MS-DRG,81,Nontraumatic Stupor And Coma Without Mcc,,,8500.26,31754.67,19
 MS-DRG,810,Major Hematological And Immunological Diagnoses Except Sickle Cell Crisis And Coagulation Disorders,,,9806.72,26332.39,19
 MS-DRG,811,Red Blood Cell Disorders With Mcc,,,12901.56,35332.1,19
 MS-DRG,812,Red Blood Cell Disorders Without Mcc,,,8695.8,24049.29,19
@@ -22752,6 +22734,7 @@ MS-DRG,816,Reticuloendothelial And Immunity Disorders Without Cc/Mcc,,,6219.59,1
 MS-DRG,817,Other Antepartum Diagnoses With O.R. Procedures With Mcc,,,20491.99,57404.92,19
 MS-DRG,818,Other Antepartum Diagnoses With O.R. Procedures With Cc,,,10780.94,29165.4,19
 MS-DRG,819,Other Antepartum Diagnoses With O.R. Procedures Without Cc/Mcc,,,8191.39,21635.03,19
+MS-DRG,82,Traumatic Stupor And Coma >1 Hour With Mcc,,,20526.6,70319.89,19
 MS-DRG,820,Lymphoma And Leukemia With Major O.R. Procedures With Mcc,,,51493.97,156614.6,19
 MS-DRG,821,Lymphoma And Leukemia With Major O.R. Procedures With Cc,,,20119.95,68185.5,19
 MS-DRG,822,Lymphoma And Leukemia With Major O.R. Procedures Without Cc/Mcc,,,11168.55,47235.08,19
@@ -22762,6 +22745,7 @@ MS-DRG,826,Myeloproliferative Disorders Or Poorly Differentiated Neoplasms With 
 MS-DRG,827,Myeloproliferative Disorders Or Poorly Differentiated Neoplasms With Major O.R. Procedures With Cc,,,20748.09,82401.98,19
 MS-DRG,828,Myeloproliferative Disorders Or Poorly Differentiated Neoplasms With Major O.R. Procedures Without C,,,15492.84,56594.35,19
 MS-DRG,829,Myeloproliferative Disorders Or Poorly Differentiated Neoplasms With Other Procedures With Cc/Mcc,,,28091.94,113045.94,19
+MS-DRG,83,Traumatic Stupor And Coma >1 Hour With Cc,,,12828.01,37687.78,19
 MS-DRG,830,Myeloproliferative Disorders Or Poorly Differentiated Neoplasms With Other Procedures Without Cc/Mcc,,,13772.82,37865.71,19
 MS-DRG,831,Other Antepartum Diagnoses Without O.R. Procedures With Mcc,,,11155.57,30254.83,19
 MS-DRG,832,Other Antepartum Diagnoses Without O.R. Procedures With Cc,,,6994.81,18155.41,19
@@ -22772,6 +22756,7 @@ MS-DRG,836,Acute Leukemia Without Cc/Mcc,,,11302.66,35511.61,19
 MS-DRG,837,Chemotherapy With Acute Leukemia As Secondary Diagnosis Or With High Dose Chemotherapy Agent With Mc,,,42318.48,140935.73,19
 MS-DRG,838,Chemotherapy With Acute Leukemia As Secondary Diagnosis With Cc Or High Dose Chemotherapy Agent,,,18811.76,62903.5,19
 MS-DRG,839,Chemotherapy With Acute Leukemia As Secondary Diagnosis Without Cc/Mcc,,,13244.18,36328.44,19
+MS-DRG,84,Traumatic Stupor And Coma >1 Hour Without Cc/Mcc,,,9021.12,24167.67,19
 MS-DRG,840,Lymphoma And Non-Acute Leukemia With Mcc,,,28739.97,106503.5,19
 MS-DRG,841,Lymphoma And Non-Acute Leukemia With Cc,,,14866.43,49957.9,19
 MS-DRG,842,Lymphoma And Non-Acute Leukemia Without Cc/Mcc,,,9493.52,31820.83,19
@@ -22782,6 +22767,7 @@ MS-DRG,846,Chemotherapy Without Acute Leukemia As Secondary Diagnosis With Mcc,,
 MS-DRG,847,Chemotherapy Without Acute Leukemia As Secondary Diagnosis With Cc,,,12070.09,32914.23,19
 MS-DRG,848,Chemotherapy Without Acute Leukemia As Secondary Diagnosis Without Cc/Mcc,,,8100.54,21370.85,19
 MS-DRG,849,Radiotherapy,,,24194.19,88011.28,19
+MS-DRG,85,Traumatic Stupor And Coma <1 Hour With Mcc,,,20408.06,57934.87,19
 MS-DRG,850,Acute Leukemia With Other Procedures,,,75673.81,225545.22,19
 MS-DRG,853,Infectious And Parasitic Diseases With O.R. Procedures With Mcc,,,43480.45,124254.88,19
 MS-DRG,854,Infectious And Parasitic Diseases With O.R. Procedures With Cc,,,18039.13,50272.08,19
@@ -22789,6 +22775,7 @@ MS-DRG,855,Infectious And Parasitic Diseases With O.R. Procedures Without Cc/Mcc
 MS-DRG,856,Postoperative Or Post-Traumatic Infections With O.R. Procedures With Mcc,,,40107.02,114445.02,19
 MS-DRG,857,Postoperative Or Post-Traumatic Infections With O.R. Procedures With Cc,,,19279.84,53880.01,19
 MS-DRG,858,Postoperative Or Post-Traumatic Infections With O.R. Procedures Without Cc/Mcc,,,12802.92,35045.28,19
+MS-DRG,86,Traumatic Stupor And Coma <1 Hour With Cc,,,12022.51,32775.85,19
 MS-DRG,862,Postoperative And Post-Traumatic Infections With Mcc,,,16530.22,45884.18,19
 MS-DRG,863,Postoperative And Post-Traumatic Infections Without Mcc,,,9385.37,25107.1,19
 MS-DRG,864,Fever And Inflammatory Conditions,,,8431.91,22334.48,19
@@ -22797,10 +22784,12 @@ MS-DRG,866,Viral Illness Without Mcc,,,8275.31,21879.08,19
 MS-DRG,867,Other Infectious And Parasitic Diseases Diagnoses With Mcc,,,18861.94,78749.5,19
 MS-DRG,868,Other Infectious And Parasitic Diseases Diagnoses With Cc,,,9672.62,30031.15,19
 MS-DRG,869,Other Infectious And Parasitic Diseases Diagnoses Without Cc/Mcc,,,7064.89,29421.82,19
+MS-DRG,87,Traumatic Stupor And Coma <1 Hour Without Cc/Mcc,,,8665.52,23013.8,19
 MS-DRG,870,Septicemia Or Severe Sepsis With Mv >96 Hours,,,60552.65,186847.7,19
 MS-DRG,871,Septicemia Or Severe Sepsis Without Mv >96 Hours With Mcc,,,17558.08,48873.18,19
 MS-DRG,872,Septicemia Or Severe Sepsis Without Mv >96 Hours Without Mcc,,,9605.13,25746.17,19
 MS-DRG,876,O.R. Procedures With Principal Diagnosis Of Mental Illness,,,34190.76,97240.65,19
+MS-DRG,88,Concussion With Mcc,,,12447.32,57969.69,19
 MS-DRG,880,Acute Adjustment Reaction And Psychosocial Dysfunction,,,9059.19,25351.51,19
 MS-DRG,881,Depressive Neuroses,,,8892.2,23672.99,19
 MS-DRG,882,Neuroses Except Depressive,,,10042.06,38871.62,19
@@ -22809,10 +22798,12 @@ MS-DRG,884,Organic Disturbances And Intellectual Disability,,,14671.76,40479.83,
 MS-DRG,885,Psychoses,,,12836.66,35143.4,19
 MS-DRG,886,Behavioral And Developmental Disorders,,,18707.07,52214.42,19
 MS-DRG,887,Other Mental Disorder Diagnoses,,,10016.97,26943.78,19
+MS-DRG,89,Concussion With Cc,,,10256.63,32228.21,19
 MS-DRG,894,"Alcohol, Drug Abuse Or Dependence, Left Ama",,,6088.94,15521.17,19
 MS-DRG,895,"Alcohol, Drug Abuse Or Dependence With Rehabilitation Therapy",,,12999.32,35616.41,19
 MS-DRG,896,"Alcohol, Drug Abuse Or Dependence Without Rehabilitation Therapy With Mcc",,,15850.17,43906.61,19
 MS-DRG,897,"Alcohol, Drug Abuse Or Dependence Without Rehabilitation Therapy Without Mcc",,,8389.52,22211.2,19
+MS-DRG,90,Concussion Without Cc/Mcc,,,7873.86,30086.86,19
 MS-DRG,901,Wound Debridements For Injuries With Mcc,,,37060.64,105586.2,19
 MS-DRG,902,Wound Debridements For Injuries With Cc,,,17315.82,64021.18,19
 MS-DRG,903,Wound Debridements For Injuries Without Cc/Mcc,,,10870.92,35570.8,19
@@ -22822,6 +22813,7 @@ MS-DRG,906,Hand Procedures For Injuries,,,17746.7,55041.43,19
 MS-DRG,907,Other O.R. Procedures For Injuries With Mcc,,,33969.26,96596.56,19
 MS-DRG,908,Other O.R. Procedures For Injuries With Cc,,,18014.04,50199.11,19
 MS-DRG,909,Other O.R. Procedures For Injuries Without Cc/Mcc,,,12109.03,33027.45,19
+MS-DRG,91,Other Disorders Of Nervous System With Mcc,,,15946.21,53760.1,19
 MS-DRG,913,Traumatic Injury With Mcc,,,14894.12,41126.44,19
 MS-DRG,914,Traumatic Injury Without Mcc,,,8412.88,24630.76,19
 MS-DRG,915,Allergic Reactions With Mcc,,,15300.77,45027.57,19
@@ -22829,6 +22821,7 @@ MS-DRG,916,Allergic Reactions Without Mcc,,,6516.35,16764.07,19
 MS-DRG,917,Poisoning And Toxic Effects Of Drugs With Mcc,,,14321.35,39460.85,19
 MS-DRG,918,Poisoning And Toxic Effects Of Drugs Without Mcc,,,8167.16,21564.58,19
 MS-DRG,919,Complications Of Treatment With Mcc,,,16591.65,49957.9,19
+MS-DRG,92,Other Disorders Of Nervous System With Cc,,,9602.53,27371.0,19
 MS-DRG,920,Complications Of Treatment With Cc,,,9423.44,28244.95,19
 MS-DRG,921,Complications Of Treatment Without Cc/Mcc,,,6707.56,20901.68,19
 MS-DRG,922,"Other Injury, Poisoning And Toxic Effect Diagnoses With Mcc",,,15887.37,107492.35,19
@@ -22836,10 +22829,12 @@ MS-DRG,923,"Other Injury, Poisoning And Toxic Effect Diagnoses Without Mcc",,,95
 MS-DRG,927,Extensive Burns Or Full Thickness Burns With Mv >96 Hours With Skin Graft,,,185476.81,862776.54,19
 MS-DRG,928,Full Thickness Burn With Skin Graft Or Inhalation Injury With Cc/Mcc,,,62809.96,180464.7,19
 MS-DRG,929,Full Thickness Burn With Skin Graft Or Inhalation Injury Without Cc/Mcc,,,28617.98,81035.13,19
+MS-DRG,93,Other Disorders Of Nervous System Without Cc/Mcc,,,7641.12,24797.89,19
 MS-DRG,933,Extensive Burns Or Full Thickness Burns With Mv >96 Hours Without Skin Graft,,,34444.26,97977.84,19
 MS-DRG,934,Full Thickness Burn Without Skin Graft Or Inhalation Injury,,,19877.69,55618.56,19
 MS-DRG,935,Non-Extensive Burns,,,18574.7,51829.48,19
 MS-DRG,939,O.R. Procedures With Diagnoses Of Other Contact With Health Services With Mcc,,,32145.42,91292.84,19
+MS-DRG,94,Bacterial And Tuberculous Infections Of Nervous System With Mcc,,,31201.48,101802.97,19
 MS-DRG,940,O.R. Procedures With Diagnoses Of Other Contact With Health Services With Cc,,,20970.44,58796.26,19
 MS-DRG,941,O.R. Procedures With Diagnoses Of Other Contact With Health Services Without Cc/Mcc,,,18295.23,51016.81,19
 MS-DRG,945,Rehabilitation With Cc/Mcc,,,14150.04,49860.41,19
@@ -22847,6 +22842,7 @@ MS-DRG,946,Rehabilitation Without Cc/Mcc,,,10673.66,28853.42,19
 MS-DRG,947,Signs And Symptoms With Mcc,,,11734.4,33293.66,19
 MS-DRG,948,Signs And Symptoms Without Mcc,,,7677.46,26023.51,19
 MS-DRG,949,Aftercare With Cc/Mcc,,,11044.83,29932.78,19
+MS-DRG,95,Bacterial And Tuberculous Infections Of Nervous System With Cc,,,23066.83,86263.38,19
 MS-DRG,950,Aftercare Without Cc/Mcc,,,6182.38,15792.89,19
 MS-DRG,951,Other Factors Influencing Health Status,,,5562.03,13988.93,19
 MS-DRG,955,Craniotomy For Multiple Significant Trauma,,,58989.22,262982.31,19
@@ -22854,21 +22850,25 @@ MS-DRG,956,"Limb Reattachment, Hip And Femur Procedures For Multiple Significant
 MS-DRG,957,Other O.R. Procedures For Multiple Significant Trauma With Mcc,,,66679.16,223024.35,19
 MS-DRG,958,Other O.R. Procedures For Multiple Significant Trauma With Cc,,,37210.32,106021.47,19
 MS-DRG,959,Other O.R. Procedures For Multiple Significant Trauma Without Cc/Mcc,,,26223.96,74073.38,19
+MS-DRG,96,Bacterial And Tuberculous Infections Of Nervous System Without Cc/Mcc,,,23066.83,64892.52,19
 MS-DRG,963,Other Multiple Significant Trauma With Mcc,,,24404.44,83049.61,19
 MS-DRG,964,Other Multiple Significant Trauma With Cc,,,14011.61,38560.12,19
 MS-DRG,965,Other Multiple Significant Trauma Without Cc/Mcc,,,8888.74,23662.92,19
 MS-DRG,969,Hiv With Extensive O.R. Procedures With Mcc,,,53713.21,196053.77,19
+MS-DRG,97,Non-Bacterial Infection Of Nervous System Except Viral Meningitis With Mcc,,,32000.93,90872.67,19
 MS-DRG,970,Hiv With Extensive O.R. Procedures Without Mcc,,,23570.38,66356.83,19
 MS-DRG,974,Hiv With Major Related Condition With Mcc,,,25721.28,75525.29,19
 MS-DRG,975,Hiv With Major Related Condition With Cc,,,11955.89,32582.12,19
 MS-DRG,976,Hiv With Major Related Condition Without Cc/Mcc,,,8561.69,22711.88,19
 MS-DRG,977,Hiv With Or Without Other Related Condition,,,11979.25,32650.05,19
+MS-DRG,98,Non-Bacterial Infection Of Nervous System Except Viral Meningitis With Cc,,,20607.06,57739.55,19
 MS-DRG,981,Extensive O.R. Procedures Unrelated To Principal Diagnosis With Mcc,,,41345.13,154616.01,19
 MS-DRG,982,Extensive O.R. Procedures Unrelated To Principal Diagnosis With Cc,,,22022.53,64477.31,19
 MS-DRG,983,Extensive O.R. Procedures Unrelated To Principal Diagnosis Without Cc/Mcc,,,15581.09,48826.29,19
 MS-DRG,987,Non-Extensive O.R. Procedures Unrelated To Principal Diagnosis With Mcc,,,30414.14,115371.83,19
 MS-DRG,988,Non-Extensive O.R. Procedures Unrelated To Principal Diagnosis With Cc,,,14971.99,44999.71,19
 MS-DRG,989,Non-Extensive O.R. Procedures Unrelated To Principal Diagnosis Without Cc/Mcc,,,11127.02,31497.01,19
+MS-DRG,99,Non-Bacterial Infection Of Nervous System Except Viral Meningitis Without Cc/Mcc,,,12539.03,46173.1,19
 MS-DRG,998,Principal Diagnosis Invalid As Discharge Diagnosis,,,,,0
 MS-DRG,999,Ungroupable,,,,,0
 NDC,0054-3532-44,LORAZEPAM 2 MG/ML PO CONC [4571],42.22,42.22,,,0
