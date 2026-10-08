@@ -18,5 +18,10 @@
     "file_sha256": "9dee78a475fc3c5b20f8109b74984249475174b348255c802b6bffddea1bc692",
     "compressed_bytes": 21792873,
     "archived": "2026-09-05T10:48:35Z"
+  },
+  "fetch_failures": {
+    "first_failed": "2026-10-08T13:45:52Z",
+    "last_error": "Command '['/home/runner/work/_temp/ci/curl_chrome150', '-sS', '-L', '--compressed', '--max-time', '3600', '-D', '/tmp/tmp3c_mmd7l.hdrs', '-o', '-', '--fail', 'https://www.northwell.edu/cms-hpt.txt']' ",
+    "last_attempt": "2026-10-08T13:45:52Z"
   }
 }
