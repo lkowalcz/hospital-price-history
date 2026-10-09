@@ -3,25 +3,20 @@
   "location_name": "Lenox Hill Hospital",
   "mrf_url": "https://www.northwell.edu/sites/northwell.edu/files/machine-readable-files/Lenox_Hill_Hospital_StandardCharges.zip",
   "source_filename": "Lenox_Hill_Hospital_StandardCharges.json",
-  "sha256": "fb7e89ebd2767dcd4e5810991f4f0663ea06254bdacbffbf86c59464c6f5bf79",
-  "size_bytes": 693647840,
-  "source_last_modified": "Mon, 30 Mar 2026 17:17:29 GMT",
+  "sha256": "6c5434dccd015a269213a6082c5430e455584175ebed4219afade2a90f339439",
+  "size_bytes": 693647854,
+  "source_last_modified": "Wed, 07 Oct 2026 17:04:22 GMT",
   "source_etag": null,
-  "transfer_fingerprint": "b67ba30540210753857024689aad77f67734906c9e3a3d752e2f4cfe9d200d15",
+  "transfer_fingerprint": "b40eeb4b43dcc357108aae9041c27809ef29b93ec84c6266a201793144b7c29f",
   "status": "summarized",
   "first_seen": "2026-08-25T05:46:45Z",
-  "last_changed": "2026-08-27T00:21:43Z",
+  "last_changed": "2026-10-09T13:32:32Z",
   "summary_version": 2,
   "cold_storage": {
-    "url": "https://archive.org/details/hospital-price-history-lenox-hill-fb7e89ebd276",
-    "sha256": "fb7e89ebd2767dcd4e5810991f4f0663ea06254bdacbffbf86c59464c6f5bf79",
-    "file_sha256": "fb7e89ebd2767dcd4e5810991f4f0663ea06254bdacbffbf86c59464c6f5bf79",
-    "compressed_bytes": 21859386,
-    "archived": "2026-09-09T11:56:51Z"
-  },
-  "fetch_failures": {
-    "first_failed": "2026-10-08T13:49:01Z",
-    "last_error": "Command '['/home/runner/work/_temp/ci/curl_chrome150', '-sS', '-L', '--compressed', '--max-time', '3600', '-D', '/tmp/tmp1p19jx06.hdrs', '-o', '-', '--fail', 'https://www.northwell.edu/cms-hpt.txt']' ",
-    "last_attempt": "2026-10-08T13:49:01Z"
+    "url": "https://archive.org/details/hospital-price-history-lenox-hill-6c5434dccd01",
+    "sha256": "6c5434dccd015a269213a6082c5430e455584175ebed4219afade2a90f339439",
+    "file_sha256": "6c5434dccd015a269213a6082c5430e455584175ebed4219afade2a90f339439",
+    "compressed_bytes": 21846690,
+    "archived": "2026-10-09T13:33:40Z"
   }
 }

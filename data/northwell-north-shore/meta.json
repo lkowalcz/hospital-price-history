@@ -3,25 +3,20 @@
   "location_name": "North Shore University Hospital",
   "mrf_url": "https://www.northwell.edu/sites/northwell.edu/files/machine-readable-files/North_Shore_University_Hospital_StandardCharges.zip",
   "source_filename": "North_Shore_University_Hospital_StandardCharges.json",
-  "sha256": "9dee78a475fc3c5b20f8109b74984249475174b348255c802b6bffddea1bc692",
-  "size_bytes": 693249872,
-  "source_last_modified": "Mon, 30 Mar 2026 17:18:28 GMT",
+  "sha256": "1fcc40d816d36e04fa820bce629c48690178e87f46b462109160fb1d02d2310e",
+  "size_bytes": 693249886,
+  "source_last_modified": "Wed, 07 Oct 2026 17:02:02 GMT",
   "source_etag": null,
-  "transfer_fingerprint": "e7b11e12e4b6bfbb037673e5b85e6055e25055105baee695036bc4325515c4ea",
+  "transfer_fingerprint": "202ade9891e6cb48ff838628d14d5d2d07f9c7bab01c7afecbfa2affcb72562c",
   "status": "summarized",
   "first_seen": "2026-08-12T05:45:49Z",
-  "last_changed": "2026-08-27T00:17:12Z",
+  "last_changed": "2026-10-09T13:30:19Z",
   "summary_version": 2,
   "cold_storage": {
-    "url": "https://archive.org/details/hospital-price-history-northwell-north-shore-9dee78a475fc",
-    "sha256": "9dee78a475fc3c5b20f8109b74984249475174b348255c802b6bffddea1bc692",
-    "file_sha256": "9dee78a475fc3c5b20f8109b74984249475174b348255c802b6bffddea1bc692",
-    "compressed_bytes": 21792873,
-    "archived": "2026-09-05T10:48:35Z"
-  },
-  "fetch_failures": {
-    "first_failed": "2026-10-08T13:45:52Z",
-    "last_error": "Command '['/home/runner/work/_temp/ci/curl_chrome150', '-sS', '-L', '--compressed', '--max-time', '3600', '-D', '/tmp/tmp3c_mmd7l.hdrs', '-o', '-', '--fail', 'https://www.northwell.edu/cms-hpt.txt']' ",
-    "last_attempt": "2026-10-08T13:45:52Z"
+    "url": "https://archive.org/details/hospital-price-history-northwell-north-shore-1fcc40d816d3",
+    "sha256": "1fcc40d816d36e04fa820bce629c48690178e87f46b462109160fb1d02d2310e",
+    "file_sha256": "1fcc40d816d36e04fa820bce629c48690178e87f46b462109160fb1d02d2310e",
+    "compressed_bytes": 21636514,
+    "archived": "2026-10-09T13:31:31Z"
   }
 }

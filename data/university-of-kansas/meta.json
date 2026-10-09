@@ -22,6 +22,6 @@
   "fetch_failures": {
     "first_failed": "2026-09-18T11:32:34Z",
     "last_error": "file is 36,780,032,207 bytes, over MAX_DOWNLOAD_BYTES=10,000,000,000; fetch from an uncapped environment",
-    "last_attempt": "2026-10-02T12:53:47Z"
+    "last_attempt": "2026-10-09T13:34:17Z"
   }
 }
