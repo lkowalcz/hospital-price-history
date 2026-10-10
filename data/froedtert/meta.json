@@ -18,5 +18,10 @@
     "file_sha256": "c98934176d9ee288acd7ab68f7a579780b5fdd13ebc70299355faee03d613d20",
     "compressed_bytes": 34952191,
     "archived": "2026-09-19T11:16:42Z"
+  },
+  "fetch_failures": {
+    "first_failed": "2026-10-10T12:49:53Z",
+    "last_error": "Command '['/home/runner/work/_temp/ci/curl_chrome150', '-sS', '-L', '--compressed', '--max-time', '3600', '-D', '/tmp/tmp1rb481tg.hdrs', '-o', '-', '--fail', 'https://www.froedtert.com/cms-hpt.txt']' ",
+    "last_attempt": "2026-10-10T12:49:53Z"
   }
 }

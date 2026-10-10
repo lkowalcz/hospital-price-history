@@ -3,14 +3,14 @@
   "location_name": "NewYork-Presbyterian Columbia University Irving Medical Center",
   "mrf_url": "https://nyp.widen.net/content/hisgjrgpuk/original/133957095_NewYork-Presbyterian-Hospital_standardcharges.json.zip",
   "source_filename": "133957095_newyork-presbyterian-hospital_standardcharges.json",
-  "sha256": "fa4b2e8ef40fadf5227969d9cadbc2f46df7baeb0a22a7a173bbda5d8e4827c7",
-  "size_bytes": 228944671,
-  "source_last_modified": "Wed, 30 Sep 2026 14:29:36 GMT",
-  "source_etag": "\"ff3d8023e8655a368aee85ef9301561e\"",
-  "transfer_fingerprint": "49cdee9d17df2b2596c5433128e306adcdff137c0ce32d52f350a9cac0404ccd",
+  "sha256": "38abceced7e1cf243f92c9540b7461a8df639c1bba26da351e3d6cc063cb4795",
+  "size_bytes": 229129021,
+  "source_last_modified": "Fri, 09 Oct 2026 14:38:43 GMT",
+  "source_etag": "\"cfe7499b88354b4c6656bf657a605c3c\"",
+  "transfer_fingerprint": "07252dceaafab40486f8775e2aa922e61ca64876a48aacddbfafc7339f5edaed",
   "status": "sharded",
   "first_seen": "2026-08-12T05:04:03Z",
-  "last_changed": "2026-10-01T13:33:31Z",
+  "last_changed": "2026-10-10T12:45:18Z",
   "summary_version": 2,
-  "raw_commit": "63dc0726cfb6f8f7d72d1e345f7790b0263b2db4"
+  "raw_commit": "a8e862148095386d43d11e524889a9eebf2255c5"
 }
