@@ -2,27 +2,22 @@
   "system": "OU Health",
   "location_name": "OU Health University of Oklahoma Medical Center",
   "mrf_url": "https://apim.services.craneware.com/api-pricing-transparency/api/public/ebdcd27316bbcd47fb02c60d601d05cc/charges/mrf",
-  "source_filename": "821883948_OU-Health---University-of-Oklahoma-Medical-Center_standardcharges.csv",
-  "sha256": "efdeac51be0d9f7c853313345bab34956541c93e737c7204733bd576e34e2099",
-  "size_bytes": 1523992244,
+  "source_filename": "821883948_OU-Health-University-of-Oklahoma-Medical-Center_standardcharges.csv",
+  "sha256": "851c719115135cf073b7b931104351f0feba4b15dd453751f483e4babe081db7",
+  "size_bytes": 1409228678,
   "source_last_modified": null,
   "source_etag": null,
-  "transfer_fingerprint": "1b0b33fdd4f20b80a07793da20727c0ef6e4d3ccb50770a95c495575e85162ba",
+  "transfer_fingerprint": "17ba534ef526454024eaaa9be4b3779fe5c350f15e1242cbfea4b225d4beb7a8",
   "status": "summarized",
   "first_seen": "2026-08-25T15:52:58Z",
-  "last_changed": "2026-08-27T00:50:38Z",
+  "last_changed": "2026-10-11T13:09:57Z",
   "summary_version": 2,
-  "cold_storage": {
-    "url": "https://archive.org/details/hospital-price-history-ou-medical-center-efdeac51be0d",
-    "sha256": "efdeac51be0d9f7c853313345bab34956541c93e737c7204733bd576e34e2099",
-    "file_sha256": "efdeac51be0d9f7c853313345bab34956541c93e737c7204733bd576e34e2099",
-    "compressed_bytes": 5947163,
-    "archived": "2026-09-14T13:07:12Z"
-  },
   "fetch_escalated": "2026-09-16T11:51:40Z",
-  "fetch_failures": {
-    "first_failed": "2026-10-09T13:35:18Z",
-    "last_error": "HTTP Error 403: Forbidden",
-    "last_attempt": "2026-10-09T13:35:18Z"
+  "cold_storage": {
+    "url": "https://archive.org/details/hospital-price-history-ou-medical-center-851c71911513",
+    "sha256": "851c719115135cf073b7b931104351f0feba4b15dd453751f483e4babe081db7",
+    "file_sha256": "851c719115135cf073b7b931104351f0feba4b15dd453751f483e4babe081db7",
+    "compressed_bytes": 5706596,
+    "archived": "2026-10-11T13:10:26Z"
   }
 }
