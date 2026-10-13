@@ -3,14 +3,14 @@
   "location_name": "University of Vermont Medical Center",
   "mrf_url": "https://www.uvmhealth.org/sites/default/files/030219309_university-of-vermont-medical-center-inc_standardcharges.csv",
   "source_filename": "030219309_university-of-vermont-medical-center-inc_standardcharges.csv",
-  "sha256": "f2f65df232f4dcd46cc9fa34df79757f2c62b85f23de56d9acc8de9e621a35eb",
-  "size_bytes": 272372755,
-  "source_last_modified": "Fri, 15 May 2026 19:36:47 GMT",
-  "source_etag": "\"104dbfa4-651e0555dd1c0\"",
-  "transfer_fingerprint": "a4532df99315dc0b41ebd0dfbe84f6b85e8cc946017299521726e6e9e70d6da0",
+  "sha256": "91506c1c510a5d430b56a4899a2ca538aebcd68e3d7b2049e1cef0c52446a92c",
+  "size_bytes": 269017205,
+  "source_last_modified": "Mon, 12 Oct 2026 18:02:59 GMT",
+  "source_etag": "\"10184011-65da8821b9ac0\"",
+  "transfer_fingerprint": "d5177809835be1abcb24273d6dd2a33e2b9fe78aa4f9b8599431ae92429ec420",
   "status": "sharded",
   "first_seen": "2026-08-25T14:02:45Z",
-  "last_changed": "2026-08-25T14:02:45Z",
-  "raw_commit": "e03c3ea8a1ceb8b9ba428f95890ede03de536cc2",
-  "summary_version": 2
+  "last_changed": "2026-10-13T14:38:43Z",
+  "summary_version": 2,
+  "raw_commit": "802458401718f993ec7d9a6c4ed43d7c681660c6"
 }
