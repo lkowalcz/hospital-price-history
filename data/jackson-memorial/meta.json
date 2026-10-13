@@ -3,14 +3,14 @@
   "location_name": "Jackson Memorial Hospital",
   "mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbJMHMiamiFL&type=CDMWithoutLabel&fileType=CSV",
   "source_filename": "591713947_public-health-trust-of-miami-dade-county-florida_standardcharges.csv",
-  "sha256": "e0584f278436a4fe16c465e64bf1c6adcdfec9e69803f21059e09c039ca9cc9c",
-  "size_bytes": 304996535,
+  "sha256": "cfafb2848895a1395dc8412689cb6501b127d56453bf1e9aa23a9ee721440aca",
+  "size_bytes": 441342028,
   "source_last_modified": null,
   "source_etag": null,
-  "transfer_fingerprint": "605eb38c65550d6bdd8d492484f8a078664a9b95071acb1744ca53e85329d3b7",
+  "transfer_fingerprint": "b18eac761e778f1ebb8e1695c81ace9d9d9231f68729289b84c0f1452e2d8526",
   "status": "sharded",
   "first_seen": "2026-08-14T03:56:05Z",
-  "last_changed": "2026-09-25T17:01:57Z",
+  "last_changed": "2026-10-13T17:03:26Z",
   "summary_version": 2,
-  "raw_commit": "7e05415b87c4465a6ff769b79d1c591d9b761a44"
+  "raw_commit": "a78de2531bd81f87bd6b82414eb00c677af95b4a"
 }
