@@ -3,15 +3,15 @@
   "location_name": "HCA FLORIDA KENDALL HOSPITAL",
   "mrf_url": "https://stctrprodsnsvc00455826e6.blob.core.windows.net/pt-final-posting-files/65-0260078_HCA-FLORIDA-KENDALL-HOSPITAL_standardcharges.json?si=dpx-pt-json-access-policy&spr=https&sv=2026-02-06&sr=c&sig=ks%2BgfAjyEHlZmeP2PYJ%2f9NpMuCoRStjTb2bhIy9Y6LM%3D",
   "source_filename": "65-0260078_HCA-FLORIDA-KENDALL-HOSPITAL_standardcharges.json",
-  "sha256": "27f01eaf216c26dbe2d7e8728942d08412cd923b091bd6ffca31306fb96fef43",
-  "size_bytes": 447494703,
-  "source_last_modified": "Sat, 19 Sep 2026 23:53:04 GMT",
-  "source_etag": "\"0x8DF16A9255F5AB3\"",
-  "transfer_fingerprint": "85aea051a33f77af5cb609e90f4de0965826ac7aa288c0b8a05889a8bacade96",
+  "sha256": "d7e47bdfdc6eeb7d8f93c6882d6e8c0478badc56233850ab6c0163faaebcac55",
+  "size_bytes": 447494719,
+  "source_last_modified": "Tue, 13 Oct 2026 20:04:34 GMT",
+  "source_etag": "\"0x8DF2965336750B7\"",
+  "transfer_fingerprint": "2a89f6bdfcb636e337a608d43b88d372d7d941a6ad392a9a31abfa341265f991",
   "status": "sharded",
   "first_seen": "2026-08-14T03:43:37Z",
-  "last_changed": "2026-09-20T17:03:23Z",
+  "last_changed": "2026-10-14T17:05:21Z",
   "note": "ingested from a local fetch (see README notes)",
   "summary_version": 2,
-  "raw_commit": "9c0643f792a58281b3c968d36ec1d40887910e85"
+  "raw_commit": "2b05608e4f91470b19de52380b7e0b7c0f052522"
 }

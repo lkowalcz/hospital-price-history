@@ -68207,19 +68207,19 @@ CPT,99284,"Emergency department visit for the evaluation and management of a pat
 CPT,99284,"Emergency department visit for the evaluation and management of a patient, which requires a medically appropriate history and/or examination and moderate level of medical decision making UNSCHEDULED",,,947.44,967.39,3
 CPT,99284,LVL 4 EMER DEPT,7676.0,7676.0,1228.16,9211.2,30
 CPT,99284,LVL 4 FREE STD EMER DEPT,7676.0,7676.0,1228.16,9211.2,40
-CPT,99285,"Emergency department visit for the evaluation and management of a patient, which requires a medically appropriate history and/or examination and high level of medical decision making ",,,77.0,6974.0,35
+CPT,99285,"Emergency department visit for the evaluation and management of a patient, which requires a medically appropriate history and/or examination and high level of medical decision making ",,,800.0,7734.0,35
 CPT,99285,"Emergency department visit for the evaluation and management of a patient, which requires a medically appropriate history and/or examination and high level of medical decision making SCHEDULED",,,209.95,214.37,3
 CPT,99285,"Emergency department visit for the evaluation and management of a patient, which requires a medically appropriate history and/or examination and high level of medical decision making UNSCHEDULED",,,1397.61,1427.03,3
 CPT,99285,LVL 5 EMER DEPT,16140.0,16140.0,2582.4,19368.0,30
 CPT,99285,LVL 5 FREE STD EMER DEPT,16140.0,16140.0,2582.4,19368.0,40
 CPT,99291,CRIT CARE 1ST 30-74 MINS,17424.0,17424.0,2787.84,20908.8,20
 CPT,99291,CRIT CARE 1ST 30-74M ER,17424.0,17424.0,2787.84,20908.8,40
-CPT,99291,"Critical care, evaluation and management of the critically ill or critically injured patient; first 30-74 minutes ",,,77.0,6974.0,35
+CPT,99291,"Critical care, evaluation and management of the critically ill or critically injured patient; first 30-74 minutes ",,,800.0,7734.0,35
 CPT,99291,"Critical care, evaluation and management of the critically ill or critically injured patient; first 30-74 minutes SCHEDULED",,,262.2,267.72,3
 CPT,99291,"Critical care, evaluation and management of the critically ill or critically injured patient; first 30-74 minutes UNSCHEDULED",,,1955.61,1996.78,3
 CPT,99292,CRIT CARE EACH ADD 30MIN,7636.0,7636.0,786.51,9163.2,95
 CPT,99292,CRIT CARE ECH ADD 30M ER,7636.0,7636.0,786.51,9163.2,19
-CPT,99292,"Critical care, evaluation and management of the critically ill or critically injured patient; each additional 30 minutes (List separately in addition to code for primary service) ",,,77.0,6974.0,20
+CPT,99292,"Critical care, evaluation and management of the critically ill or critically injured patient; each additional 30 minutes (List separately in addition to code for primary service) ",,,800.0,7734.0,20
 CPT,99292,"Critical care, evaluation and management of the critically ill or critically injured patient; each additional 30 minutes (List separately in addition to code for primary service) SCHEDULED",,,132.05,134.83,3
 CPT,99292,"Critical care, evaluation and management of the critically ill or critically injured patient; each additional 30 minutes (List separately in addition to code for primary service) UNSCHEDULED",,,764.24,780.33,3
 CPT,99304,"Initial nursing facility care, per day, for the evaluation and management of a patient, which requires a medically appropriate history and/or examination and straightforward or low level of medical de",,,103.55,105.73,3
@@ -81813,7 +81813,7 @@ HCPCS,G0380,Level 1 hospital emergency department visit provided in a type b eme
 HCPCS,G0381,Level 2 hospital emergency department visit provided in a type b emergency department; (the ed must meet at least one of the following requirements: (1) it is licensed by the state in which it is loca,,,571.61,3143.0,38
 HCPCS,G0382,Level 3 hospital emergency department visit provided in a type b emergency department; (the ed must meet at least one of the following requirements: (1) it is licensed by the state in which it is loca,,,800.0,3721.0,38
 HCPCS,G0383,Level 4 hospital emergency department visit provided in a type b emergency department; (the ed must meet at least one of the following requirements: (1) it is licensed by the state in which it is loca,,,800.0,4359.0,38
-HCPCS,G0384,Level 5 hospital emergency department visit provided in a type b emergency department; (the ed must meet at least one of the following requirements: (1) it is licensed by the state in which it is loca,,,77.0,6974.0,38
+HCPCS,G0384,Level 5 hospital emergency department visit provided in a type b emergency department; (the ed must meet at least one of the following requirements: (1) it is licensed by the state in which it is loca,,,800.0,7734.0,38
 HCPCS,G0390,TRAUMA RESP TIER 2 CC,23445.0,23445.0,2016.27,28134.0,32
 HCPCS,G0390,TRAUMA RESPONSE CC LVL 1,30000.0,30000.0,2580.0,36000.0,32
 HCPCS,G0390,Trauma response team associated with hospital critical care service UNSCHEDULED,,,4641.96,4739.68,3
