@@ -19,10 +19,5 @@
     "file_sha256": "851c719115135cf073b7b931104351f0feba4b15dd453751f483e4babe081db7",
     "compressed_bytes": 5706596,
     "archived": "2026-10-11T13:10:26Z"
-  },
-  "fetch_failures": {
-    "first_failed": "2026-10-12T15:50:57Z",
-    "last_error": "HTTP Error 403: Forbidden",
-    "last_attempt": "2026-10-12T15:50:57Z"
   }
 }
