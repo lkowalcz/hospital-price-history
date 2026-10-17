@@ -22,7 +22,7 @@ and 418 recorded source/summary states.
 All 107 have a current summary and a matching archived-source link; one has
 an unresolved recorded fetch failure. These are build-time counts, not a
 claim that every source was freshly downloaded or remotely verified.
-There are 38 historical states without a matching archived-source link;
+There were 38 historical states without a matching archived-source link;
 these can include multiple summary rebuilds for the same underlying file.
 The [live quality report](https://lukekowalczyk.com/hospital-price-history/data/quality.json)
 is the current source for these measurements.
@@ -59,9 +59,10 @@ Do not backfill successful-check timestamps from historical commit dates.
 The [historical source audit](SOURCE_AUDIT.md) reviewed the 38 baseline gaps:
 32 were temporary checksum resets, two were relocated DMC Harper shard
 snapshots, and three were archived originals whose hashes match after the
-original newline normalization. Those 37 links are restored with evidence.
-Hackensack's first original remains unavailable in the stores searched; its
-summary survives and its limitation is explicit. All 418 existing state IDs
+original newline normalization. Hackensack's first capture is recoverable as
+an exactly verified byte prefix of its archived full file. All 38 links are
+restored with evidence; the truncated capture has an explicit warning against
+interpreting absent entries as price removals. All 418 existing state IDs
 remain stable. These include operational metadata states, not only distinct files.
 
 Operational follow-through: observe a complete scheduled cycle on both

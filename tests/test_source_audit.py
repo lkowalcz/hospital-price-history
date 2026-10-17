@@ -215,6 +215,45 @@ class SourceAuditTests(unittest.TestCase):
             self.assertEqual(result["normalized_size_bytes"], len(expected))
         self.assertEqual(audit.hash_stream(io.BytesIO(b""))["file_size_bytes"], 0)
 
+    def test_prefix_hash_uses_exact_byte_count_and_rejects_short_file(self):
+        body = b"a\r\nb\r\nc\r\n"
+        for count in range(len(body) + 1):
+            result = audit.hash_stream(io.BytesIO(body), block_size=2, prefix_bytes=count)
+            self.assertEqual(result["prefix_sha256"], hashlib.sha256(body[:count]).hexdigest())
+            self.assertEqual(result["file_sha256"], hashlib.sha256(body).hexdigest())
+            self.assertEqual(result["prefix_bytes"], count)
+        with self.assertRaisesRegex(ValueError, "ends before"):
+            audit.hash_stream(io.BytesIO(body), prefix_bytes=len(body) + 1)
+
+    def test_reconstructed_prefix_preserves_incomplete_capture_warning(self):
+        body = b"a\r\nb\r\n"
+        prefix = body[:4]
+        self.meta.update(sha256=hashlib.sha256(prefix).hexdigest(), size_bytes=len(prefix), status="summarized")
+        (self.path / "standardcharges.csv").unlink()
+        self.save_meta()
+        target = self.commit()
+        raw_sha = hashlib.sha256(body).hexdigest()
+        item = "hospital-price-history-test-" + raw_sha[:12]
+        self.meta.update(sha256=raw_sha, size_bytes=len(body), cold_storage={
+            "url": "https://archive.org/details/" + item, "sha256": raw_sha, "file_sha256": raw_sha})
+        self.save_meta()
+        archive_commit = self.commit()
+        evidence = dict(item=item, file="original.csv.zst", file_sha256=raw_sha, file_size_bytes=len(body),
+                        compressed_sha256="f" * 64, prefix_bytes=len(prefix), prefix_sha256=hashlib.sha256(prefix).hexdigest(),
+                        archive_metadata_revision=archive_commit)
+        evidence["download_url"] = audit.archive_download_url(evidence)
+        record = self.record(target, "verified_prefix", evidence)
+        self.save_audit([record])
+        snapshot = next(s for s in self.history() if s["revision"] == target)
+        self.assertEqual(snapshot["source"]["snapshot_hash_transform"], "prefix")
+        self.assertEqual(snapshot["source"]["snapshot_prefix_bytes"], len(prefix))
+        self.assertEqual(snapshot["source_warning"]["code"], "truncated_capture")
+        bad = copy.deepcopy(record)
+        bad["evidence"]["prefix_bytes"] += 1
+        self.save_audit([bad])
+        with self.assertRaisesRegex(ValueError, "prefix identity mismatch"):
+            self.history()
+
 
 if __name__ == "__main__":
     unittest.main()

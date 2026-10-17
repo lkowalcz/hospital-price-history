@@ -96,10 +96,15 @@ def apply_audit(root, revision, histories, sources, repo, raw_repo, audit=None):
             source = {"kind": "source_shards", "url": f"{raw_repo}/tree/{evidence['raw_revision']}/data/{slug}",
                       "revision": evidence["raw_revision"], "metadata_url": pinned(repo, commit, path),
                       "header_git_blob": evidence["header_blob"], "shards_git_tree": evidence["shards_tree"]}
-        elif method == "crlf_to_lf":
-            require(record["status"] == "linked", "normalization repair is not linked")
-            require(evidence["normalized_sha256"] == meta.get("sha256")
-                    and evidence["normalized_size_bytes"] == meta.get("size_bytes"), "normalized identity mismatch")
+        elif method in {"crlf_to_lf", "verified_prefix"}:
+            require(record["status"] == "linked", "archive repair is not linked")
+            if method == "crlf_to_lf":
+                require(evidence["normalized_sha256"] == meta.get("sha256")
+                        and evidence["normalized_size_bytes"] == meta.get("size_bytes"), "normalized identity mismatch")
+            else:
+                require(evidence["prefix_sha256"] == meta.get("sha256")
+                        and evidence["prefix_bytes"] == meta.get("size_bytes")
+                        and 0 < evidence["prefix_bytes"] < evidence["file_size_bytes"], "prefix identity mismatch")
             require(digest(evidence["file_sha256"]) and digest(evidence["compressed_sha256"]), "invalid archive hash")
             archive_revision = evidence["archive_metadata_revision"]
             require(digest(archive_revision, 40), "invalid archive metadata revision")
@@ -111,8 +116,15 @@ def apply_audit(root, revision, histories, sources, repo, raw_repo, audit=None):
             require(evidence["download_url"] == archive_download_url(evidence), "unexpected archive download URL")
             source = {"kind": "archived_original", "url": archived["url"],
                       "metadata_url": pinned(repo, archive_revision, path), "file_sha256": evidence["file_sha256"],
-                      "snapshot_hash_transform": "crlf_to_lf", "download_url": evidence["download_url"],
+                      "snapshot_hash_transform": "crlf_to_lf" if method == "crlf_to_lf" else "prefix",
+                      "download_url": evidence["download_url"],
                       "compressed_sha256": evidence["compressed_sha256"]}
+            if method == "verified_prefix":
+                source["snapshot_prefix_bytes"] = evidence["prefix_bytes"]
+                snapshot["source_warning"] = {
+                    "code": "truncated_capture",
+                    "detail": "This historical capture is an exact byte prefix of the surviving full file. "
+                              "Its summary describes an incomplete capture; absent entries do not establish price removals."}
         elif method == "not_located":
             require(record["status"] == "unavailable", "invalid unresolved status")
             require(snapshot["source"] is None, "previously unresolved source now has a link; update its audit")
@@ -132,16 +144,21 @@ def archive_download_url(evidence):
     return "https://archive.org/download/" + evidence["item"] + "/" + urllib.parse.quote(evidence["file"], safe="")
 
 
-def hash_stream(handle, block_size=8 * 1024 * 1024):
+def hash_stream(handle, block_size=8 * 1024 * 1024, prefix_bytes=None):
     """Hash original and historical CSV normalization with bounded memory.
 
     Retain a trailing CR across block boundaries so CRLF is normalized exactly
     as bytes.replace(b'\r\n', b'\n') over the complete file would be.
     """
     raw, normalized = hashlib.sha256(), hashlib.sha256()
+    prefix = hashlib.sha256()
+    if prefix_bytes is not None:
+        require(isinstance(prefix_bytes, int) and prefix_bytes >= 0, "invalid prefix length")
     raw_size = normalized_size = 0
     carry = b""
     while block := handle.read(block_size):
+        if prefix_bytes is not None and raw_size < prefix_bytes:
+            prefix.update(block[:prefix_bytes - raw_size])
         raw.update(block)
         raw_size += len(block)
         data = carry + block
@@ -152,8 +169,12 @@ def hash_stream(handle, block_size=8 * 1024 * 1024):
         normalized.update(data)
         normalized_size += len(data)
     normalized.update(carry)
-    return {"file_sha256": raw.hexdigest(), "file_size_bytes": raw_size,
-            "normalized_sha256": normalized.hexdigest(), "normalized_size_bytes": normalized_size + len(carry)}
+    result = {"file_sha256": raw.hexdigest(), "file_size_bytes": raw_size,
+              "normalized_sha256": normalized.hexdigest(), "normalized_size_bytes": normalized_size + len(carry)}
+    if prefix_bytes is not None:
+        require(raw_size >= prefix_bytes, "archive ends before the recorded prefix")
+        result.update(prefix_sha256=prefix.hexdigest(), prefix_bytes=prefix_bytes)
+    return result
 
 
 def verify_archive(record, cache):
@@ -176,10 +197,13 @@ def verify_archive(record, cache):
     require(actual["file_sha256"] == evidence["compressed_sha256"]
             and actual["file_size_bytes"] == evidence["compressed_bytes"], "compressed archive mismatch")
     with subprocess.Popen(["zstd", "-qdc", "--long=31", str(path)], stdout=subprocess.PIPE) as decoder:
-        actual = hash_stream(decoder.stdout)
+        actual = hash_stream(decoder.stdout, prefix_bytes=evidence.get("prefix_bytes"))
         require(decoder.wait() == 0, "archive decompression failed")
-    for key, value in actual.items():
-        require(value == evidence[key], f"archive {key} mismatch")
+    keys = ["file_sha256", "file_size_bytes"] + (
+        ["prefix_sha256", "prefix_bytes"] if record["method"] == "verified_prefix"
+        else ["normalized_sha256", "normalized_size_bytes"])
+    for key in keys:
+        require(actual[key] == evidence[key], f"archive {key} mismatch")
 
 
 def verify_raw(record, raw_root, main_root):
@@ -213,7 +237,7 @@ def audit_totals(audit):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--raw-repo", type=Path, required=True)
-    parser.add_argument("--verify-downloads", action="store_true", help="Download and hash the three reviewed originals (requires zstd)")
+    parser.add_argument("--verify-downloads", action="store_true", help="Download and hash the four reviewed originals (requires zstd)")
     parser.add_argument("--cache", type=Path, help="Optional directory for compressed originals")
     args = parser.parse_args()
     import data_catalog
@@ -228,7 +252,7 @@ def main():
         for record in audit["records"]:
             if record["method"] == "relocated_shards":
                 verify_raw(record, args.raw_repo, ROOT)
-            if record["method"] == "crlf_to_lf" and args.verify_downloads:
+            if record["method"] in {"crlf_to_lf", "verified_prefix"} and args.verify_downloads:
                 verify_archive(record, cache)
             print(record["slug"] + ": " + record["method"], flush=True)
     print(json.dumps(audit_totals(audit), indent=2))

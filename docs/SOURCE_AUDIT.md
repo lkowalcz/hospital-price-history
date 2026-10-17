@@ -1,8 +1,8 @@
 # Historical source audit
 
-The October 17, 2026 audit resolved **37 of the 38 source-link gaps** in the
+The October 17, 2026 audit resolved **all 38 source-link gaps** in the
 catalog at main revision `64704381037323a9ec23cbe17322d0ef4dae997e`.
-One historical original remains unavailable in the stores searched.
+One recovered source is a truncated capture, explicitly flagged as incomplete.
 All 418 existing archive-state IDs and their summary downloads are retained;
 the audit does not manufacture historical checks or new source captures.
 
@@ -11,7 +11,7 @@ the audit does not manufacture historical checks or new source captures.
 | Source checksum cleared to force a refresh | 32 | Link the retained source using the immediately preceding metadata identity, with explicit evidence. |
 | Pre-split DMC Harper shards omitted from catalog links | 2 | Link the matching published raw-repository revisions. |
 | Early CSV hashes normalized CRLF to LF | 3 | Link archived originals whose fully decompressed bytes reproduce the old hashes under that exact transformation. |
-| Hackensack's first original not located | 1 | Preserve its summary and metadata; publish the missing-source explanation. |
+| Hackensack's first capture was truncated | 1 | Reproduce its exact bytes from a verified prefix of the archived full file; flag the incomplete capture. |
 
 The reviewed records and exact checksums are in [source_audit.json](../source_audit.json).
 The [published audit](https://lukekowalczyk.com/hospital-price-history/data/source-audit.json)
@@ -77,20 +77,26 @@ metadata revisions are recorded in the audit. The manifest keeps both hashes
 distinct and sets `source.snapshot_hash_transform: crlf_to_lf`. Downloading
 the original yields its original bytes, not a silently modified file.
 
-## Remaining gap: Hackensack University Medical Center
+## Truncated capture: Hackensack University Medical Center
 
 The August 25 state at `a359d32e52…` records a 1,082,699,953-byte file with
 SHA-256 `53ba10171f58a97857d93c26fd79dc84aa8ef63a86d2c28f7b40a86d8575ce7e`.
-Its summary and metadata remain downloadable. No source payload for this
-identity was found in the main or raw repository histories, including the
-retained pre-rewrite refs.
+Its summary and metadata remain downloadable. The first 1,082,699,953 raw
+bytes of the later archived `94eadf5d55bc…` original match that SHA-256 exactly.
+The full original is 2,295,205,053 bytes. The audit verified the entire
+compressed and decompressed file as well as the exact historical prefix.
 
-The expected hash-named Internet Archive item does not exist. A search for
-the project's Hackensack items found only the later `94eadf5d55bc…` original,
-which is 2,295,205,053 bytes and has a different hash. That file cannot serve
-as the missing version. The audit records the search endpoints and results.
-This finding is limited to the searched stores; recovery would require a
-retained copy whose identity can be verified against the old metadata.
+To reproduce the old capture, decompress the linked original, retain exactly
+the first 1,082,699,953 bytes without newline normalization, and check the
+historical hash. The source descriptor records `snapshot_hash_transform: prefix`
+and `snapshot_prefix_bytes`; the audit records the full-file and prefix hashes
+and lengths separately. The linked download is the full archived original.
+
+This recovery also establishes a limitation: the old capture was incomplete.
+Its manifest carries `source_warning.code: truncated_capture`, and the quality
+report and hospital page surface the warning. Its summary cannot establish
+that absent entries were removed from the hospital's published prices. This
+historical warning does not describe the current full-file capture.
 
 ## Repeat the checks
 
@@ -106,11 +112,11 @@ objects. It also compares the original pre-rewrite objects when that retained
 local history is available. Fresh clones can verify the published raw object
 IDs against the committed audit evidence.
 
-The second command repeats the three complete archive checks and requires
+The second command repeats the four complete archive checks and requires
 `zstd`. Downloads use a temporary directory; decompressed files are streamed
 with bounded memory and are not written to disk. Add `--cache /path/to/cache`
-to retain and reuse the approximately 200 MB of compressed downloads. Cached
-bytes are still checked before use. Ordinary site builds only read the
+to retain and reuse the approximately 261 MB of compressed downloads (about
+9 GB decompressed). Cached bytes are still checked before use. Ordinary site builds only read the
 committed audit and do not repeat those downloads.
 
 Future repairs should add reviewed records with exact snapshot identity and

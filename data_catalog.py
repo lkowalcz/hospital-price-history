@@ -241,6 +241,9 @@ def build_catalog(hospitals, root, outdir, base, repo, raw_repo):
         snapshots = histories[slug]
         latest = snapshots[-1] if snapshots else None
         source_gaps = sum(snapshot["source"] is None for snapshot in snapshots)
+        source_warnings = [{"snapshot_id": s["snapshot_id"], "recorded_at": s["recorded_at"],
+                            "summary_url": s["summary_url"], **s["source_warning"]}
+                           for s in snapshots if s.get("source_warning")]
         stats, issues = inspect_summary(path / "summary.csv")
         if not meta:
             issues.append("metadata_missing")
@@ -270,6 +273,7 @@ def build_catalog(hospitals, root, outdir, base, repo, raw_repo):
                  "last_attempt_at": collection["last_attempt_at"],
                  "last_full_download_at": collection["last_full_download_at"], "collection": collection,
                  "snapshot_count": len(snapshots), "snapshots_without_archived_source": source_gaps,
+                 "historical_source_warnings": source_warnings,
                  "latest_snapshot": latest,
                  "summary_rows": stats["row_count"] if stats is not None else None,
                  "metadata_url": raw_url(repo, revision, f"data/{slug}/meta.json") if meta else None,
@@ -279,12 +283,14 @@ def build_catalog(hospitals, root, outdir, base, repo, raw_repo):
         reports.append({"slug": slug, "issues": sorted(issues), "summary": stats,
                         "snapshots_without_archived_source": source_gaps,
                         "historical_source_gaps": [g for g in remaining_gaps if g["slug"] == slug],
+                        "historical_source_warnings": source_warnings,
                         "fetch_failures": meta.get("fetch_failures"),
                         "summary_warning": meta.get("summary_warning")})
         write_json(outdir / "data" / "snapshots" / f"{slug}.json",
                    {**envelope, "slug": slug, "snapshots": snapshots})
     totals = {"hospitals": len(entries), "snapshots": sum(e["snapshot_count"] for e in entries),
               "snapshots_without_archived_source": sum(e["snapshots_without_archived_source"] for e in entries),
+              "historical_source_warnings": sum(len(e["historical_source_warnings"]) for e in entries),
               "with_summary": sum(e["summary_rows"] is not None for e in entries),
               "with_archived_source": sum(bool(e["latest_snapshot"] and e["latest_snapshot"]["source"]) for e in entries),
               "with_issues": sum(bool(e["issues"]) for e in entries),

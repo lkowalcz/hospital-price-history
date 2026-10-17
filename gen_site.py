@@ -141,6 +141,10 @@ def hospital_page(h, meta, outdir, catalog_entry):
         parts.append(f'<p class="warn">{catalog_entry["snapshots_without_archived_source"]} historical archive '
                      f'state(s) have no located source file. '
                      f'<a href="{BASE}/data/source-audit.json">Read the source-gap audit</a>.</p>')
+    for warning in catalog_entry["historical_source_warnings"]:
+        parts.append(f'<p class="warn">Historical source warning ({esc(warning["recorded_at"][:10])}): '
+                     f'{esc(warning["detail"])} '
+                     f'<a href="{BASE}/data/source-audit.json">Read the source audit</a>.</p>')
     parts.append("<h2>Tracking status</h2><table>")
     status_rows = [
         ("Monitored since", (meta.get("first_seen") or "")[:10]),
@@ -310,6 +314,7 @@ def data_page(catalog, outdir):
             f'<tr><th>With an archived source link for the latest snapshot</th><td>{totals["with_archived_source"]:,}</td></tr>',
             f'<tr><th>Recorded archive states</th><td>{totals["snapshots"]:,}</td></tr>',
             f'<tr><th>Historical states without an archived source link</th><td>{totals["snapshots_without_archived_source"]:,}</td></tr>',
+            f'<tr><th>Historical states with source limitations</th><td>{totals["historical_source_warnings"]:,}</td></tr>',
             f'<tr><th>Hospitals with recorded issues</th><td>{totals["with_issues"]:,}</td></tr></table>',
             '<p>Archived-source coverage means a matching link is recorded; this build does not '
             'download and verify every original. Historical gaps count recorded states, including '

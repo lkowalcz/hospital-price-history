@@ -144,6 +144,7 @@ At merges, the state entering the first-parent/mainline history is recorded.
 | `source` | Matching archived source descriptor, or null when no link is recorded. |
 | `source_identity` | Optional audited identity for a retained state whose metadata checksum was deliberately cleared. Contains `sha256`, `basis`, and a pinned evidence `metadata_url`; the original null `source_sha256` remains unchanged. |
 | `source_audit` | Optional reviewed status, repair method, explanation, and pinned `audit_url`. An unavailable original remains a null `source`. |
+| `source_warning` | Optional historical source limitation with `code` and `detail`. `truncated_capture` means the retained capture is an incomplete prefix of the full file. |
 
 A source descriptor has `kind`, `url`, and `metadata_url` identifying the
 metadata that supports the link. Kinds are `normalized_file` (direct download),
@@ -167,6 +168,12 @@ originals retain CRLF. Audited links set `source.snapshot_hash_transform` to
 transformation and comparing with the snapshot hash. The full audit records
 both unmodified and normalized lengths and hashes.
 
+A recovered truncated capture instead uses `snapshot_hash_transform: prefix`
+with `snapshot_prefix_bytes`. Decompress the linked full original and retain
+exactly that many raw bytes, without newline normalization, before checking
+the snapshot hash. Its `source_warning` identifies the incomplete capture;
+absent summary entries do not establish price removals.
+
 ### Historical source audit
 
 `source-audit.json` includes the normal catalog envelope, `audited_at`, pinned
@@ -177,10 +184,11 @@ as `source_audit_url` and supplies `source_audit_totals`.
 
 Records identify an exact hospital, main revision, metadata blob, and recorded
 source hash. Methods are `metadata_hash_reset`, `relocated_shards`, `crlf_to_lf`,
-and `not_located`; statuses are `linked` or `unavailable`. Evidence documents
-the matching prior metadata, Git content objects, complete file hashes, or
-stores searched. Site generation rejects mismatched identities and unexpected
-metadata changes rather than applying a repair to a different source.
+`verified_prefix`, and `not_located`; statuses are `linked` or `unavailable`.
+Evidence documents the matching prior metadata, Git content objects, complete
+file or prefix hashes, or stores searched. Site generation rejects mismatched
+identities and unexpected metadata changes rather than applying a repair to a
+different source.
 
 The audit restores links while retaining historical IDs, summaries, recorded
 hashes, and metadata-transition classifications. Archive-state counts include
@@ -194,6 +202,10 @@ and `hospitals`. Hospital reports contain `slug`, `issues`, `summary` statistics
 `snapshots_without_archived_source`, the current `fetch_failures` record, and
 `summary_warning`. `historical_source_gaps` identifies each unlinked historical
 state and includes its audit explanation when reviewed.
+`historical_source_warnings` lists known limitations with snapshot identity,
+date, summary URL, warning code, and detail. The catalog includes the same
+per-hospital list and a total count. These warnings describe historical states
+separately from current collection issues.
 
 Summary checks cover column names, row shape, duplicate exact
 code/type/description keys, finite numeric prices, and nonnegative integer

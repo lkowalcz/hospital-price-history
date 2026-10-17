@@ -18,8 +18,8 @@ The [collection health report](https://lukekowalczyk.com/hospital-price-history/
 distinguishes successful checks, full downloads, failures, deferred checks,
 and overdue collection. Check times come from explicit observations; checks
 before logging began remain unknown.
-The [historical source audit](docs/SOURCE_AUDIT.md) restores 37 previously
-missing links and documents the one original not found in the searched stores.
+The [historical source audit](docs/SOURCE_AUDIT.md) restores all 38 previously
+missing links and flags one recovered historical capture as incomplete.
 
 ## Coverage
 

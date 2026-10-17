@@ -3,7 +3,7 @@
   "audited_at": "2026-10-17T04:28:32+00:00",
   "baseline_revision": "64704381037323a9ec23cbe17322d0ef4dae997e",
   "raw_repository_revision": "2b05608e4f91470b19de52380b7e0b7c0f052522",
-  "scope": "All 38 source-link gaps in the baseline catalog; main and raw repository histories, retained pre-rewrite refs, and project Internet Archive metadata. Three archived originals were fully rehashed.",
+  "scope": "All 38 source-link gaps in the baseline catalog; main and raw repository histories, retained pre-rewrite refs, and project Internet Archive metadata. Four archived originals were fully rehashed.",
   "baseline_totals": {
     "hospitals": 107,
     "recorded_states": 418,
@@ -334,21 +334,21 @@
       "revision": "a359d32e5227836c4d2ca45ecea7ed707521432d",
       "recorded_source_sha256": "53ba10171f58a97857d93c26fd79dc84aa8ef63a86d2c28f7b40a86d8575ce7e",
       "metadata_blob": "af444d54ea4349a22bd9e5d38b1fc6d6c66e7cf3",
-      "status": "unavailable",
-      "method": "not_located",
-      "explanation": "No matching original was located in either repository history or the project Internet Archive items. This capture predates cold storage; its metadata and summary survive. The later archived file has a different hash and size and cannot replace this version.",
+      "status": "linked",
+      "method": "verified_prefix",
+      "explanation": "The first capture is exactly the first 1,082,699,953 bytes of the surviving archived original: the prefix length and SHA-256 match the historical metadata. Decompress and retain that raw-byte prefix to reproduce the historical source. The capture was incomplete; its summary cannot establish that absent entries were removed.",
       "evidence": {
-        "retained_main_paths": [
-          "data/hackensack-umc/meta.json",
-          "data/hackensack-umc/summary.csv"
-        ],
-        "retained_raw_paths": [],
-        "archive_search_url": "https://archive.org/advancedsearch.php?q=identifier%3Ahospital-price-history-hackensack-umc-%2A&fl%5B%5D=identifier&rows=100&output=json",
-        "archive_items_found": [
-          "hospital-price-history-hackensack-umc-94eadf5d55bc"
-        ],
-        "expected_archive_metadata_url": "https://archive.org/metadata/hospital-price-history-hackensack-umc-53ba10171f58",
-        "expected_archive_item_exists": false
+        "item": "hospital-price-history-hackensack-umc-94eadf5d55bc",
+        "file": "221487576-1457456279_hmh-hospitals-corporation_standardcharges.csv.zst",
+        "download_url": "https://archive.org/download/hospital-price-history-hackensack-umc-94eadf5d55bc/221487576-1457456279_hmh-hospitals-corporation_standardcharges.csv.zst",
+        "compressed_sha256": "876da4881c32966dde77cb057b5f6168acbfa61e48c4999d0de32724e3252cd2",
+        "compressed_bytes": 61731991,
+        "file_sha256": "94eadf5d55bc3167e0d8630595a7b95eb5200e93934740805e0c4098905e8f80",
+        "file_size_bytes": 2295205053,
+        "prefix_bytes": 1082699953,
+        "prefix_sha256": "53ba10171f58a97857d93c26fd79dc84aa8ef63a86d2c28f7b40a86d8575ce7e",
+        "compressed_sha1": "7630bb2c82dd97acbccd466650393633118e6cf7",
+        "archive_metadata_revision": "93f8fe002a3bd6855fc49894fad30a58a586a49c"
       }
     },
     {
