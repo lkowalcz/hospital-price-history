@@ -1,6 +1,6 @@
 {
   "system": "UAMS Health",
-  "location_name": "University of Arkansas for Medical Sciences",
+  "location_name": "UAMS Medical Center",
   "mrf_url": "https://apim.services.craneware.com/api-pricing-transparency/api/public/8179f216930ea52889ace48af58b8713/charges/mrf",
   "source_filename": "716046242_University-of-Arkansas-for-Medical-Sciences_standardcharges.csv",
   "sha256": "88ce6bcc7f4b9662bd6374a79e0b09fc38c1e05d3b95ca05333f7dc155bc9e71",
@@ -8,7 +8,7 @@
   "source_last_modified": null,
   "source_etag": null,
   "transfer_fingerprint": "8cb8eacafb867736357a365f7cbe92e99bc0b365ffdfb7158729cebb6214d2af",
-  "status": "missing-from-hpt-txt",
+  "status": "summarized",
   "first_seen": "2026-08-25T15:53:09Z",
   "last_changed": "2026-08-27T00:50:55Z",
   "summary_version": 2,
@@ -18,6 +18,5 @@
     "file_sha256": "88ce6bcc7f4b9662bd6374a79e0b09fc38c1e05d3b95ca05333f7dc155bc9e71",
     "compressed_bytes": 3586353,
     "archived": "2026-09-14T13:08:02Z"
-  },
-  "status_changed": "2026-10-02T12:54:08Z"
+  }
 }
