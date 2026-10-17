@@ -3,9 +3,9 @@ name: Tests
 on:
   push:
     branches: [main]
-    paths: ["*.py", "site_assets/**", "tests/**", "requirements.txt", ".github/workflows/test.yml"]
+    paths: ["*.py", "examples/**", "tests/**", "requirements.txt", ".github/workflows/test.yml"]
   pull_request:
-    paths: ["*.py", "site_assets/**", "tests/**", "requirements.txt", ".github/workflows/test.yml"]
+    paths: ["*.py", "examples/**", "tests/**", "requirements.txt", ".github/workflows/test.yml"]
   workflow_dispatch: {}
 
 permissions:
@@ -33,10 +33,3 @@ jobs:
 
       - name: Run tests
         run: python -m unittest discover -s tests -v
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-
-      - name: Test comparison calculations
-        run: node --test tests/test_comparison_model.mjs

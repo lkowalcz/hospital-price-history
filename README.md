@@ -10,6 +10,11 @@ The archive records when it finds revised files, changed download URLs, or
 links removed from a hospital's listing. Hospital pages include available
 price summaries and a history of recorded changes.
 
+The project's focus is a dependable historical dataset for others to analyze
+and build on. Start with the [data catalog](https://lukekowalczyk.com/hospital-price-history/data/)
+for downloads, historical snapshot manifests, and recorded collection issues.
+The [data roadmap](docs/ROADMAP.md) sets the priorities and completion criteria.
+
 ## Coverage
 
 The archive tracks 107 hospitals across ownership types and regions. The
@@ -158,11 +163,11 @@ commits with a sparse or full checkout.
 
 ```sh
 python3 -m unittest discover -s tests
-node --test tests/test_comparison_model.mjs
 ```
 
-CI runs tests for parsing, summarization, sharding round-trips, and price
-index calculations on every code push. Fixtures cover the file-format
+CI runs tests for parsing, summarization, sharding round-trips, price
+index calculations, historical catalogs, and verified downloads on every
+code push. Fixtures cover the file-format
 issues described below. `tests/golden/` contains the expected
 `summary.csv` output; changes to those files should be reviewed as
 changes to the summarization method.
@@ -179,20 +184,35 @@ hospitals, the daily run re-downloads files a few at a time until their
 summaries are current. This uses the same `BACKFILL_PER_RUN` allowance as
 cold-storage backfills.
 
-### Comparing recorded prices
+### Using the data
 
-The [Rush snapshot comparison](https://lukekowalczyk.com/hospital-price-history/hospitals/rush-university/compare/)
-lets readers select two recorded summaries, compare cash prices, gross
-charges, or negotiated extremes, search and filter entries, and download
-the filtered comparison. Every snapshot links to its exact committed
-summary, metadata, and available archived source.
+The [catalog](https://lukekowalczyk.com/hospital-price-history/data/catalog.json)
+lists every hospital, its latest snapshot, recorded issues, and a link to
+its historical snapshot manifest. A [CSV inventory](https://lukekowalczyk.com/hospital-price-history/data/catalog.csv)
+and [quality report](https://lukekowalczyk.com/hospital-price-history/data/quality.json)
+are also available. No API key or repository clone is needed.
 
-The site build exports Rush's historical summaries through comparison.py
-and serves the browser interface from site_assets/. Historical source
-files are never downloaded for this build. New summary revisions and
-method changes appear on the next site deployment. This first comparison
-is limited to Rush; the existing hospital pages remain available for the
-full roster. See [comparison interpretation](docs/DATA.md#snapshot-comparisons).
+Download a summary and its provenance with Python's standard library:
+
+```sh
+python3 examples/download_summary.py rush-university --output rush.csv
+# Use --snapshot FULL_COMMIT to select a particular historical summary.
+```
+
+The example verifies the downloaded bytes against the recorded Git blob ID
+and saves a `.provenance.json` sidecar. Read billing codes as strings to keep
+leading zeros. See the [catalog schema and interpretation guide](docs/DATA.md#catalog-and-snapshot-manifests)
+before analyzing changes.
+
+`gen_site.py` calls `data_catalog.py` on each deployment to generate these
+files for the full roster. It reads historical metadata and current summaries;
+it never downloads historical source files or copies summaries into the site.
+The full commit history is required, and local `data/` and `hospitals.json`
+changes must be committed so download links describe the actual bytes.
+
+The Rush comparison interface has been retired; its former URL redirects to
+the standard hospital archive page. Price exploration interfaces are outside
+the current roadmap.
 
 ### Experimental price index
 

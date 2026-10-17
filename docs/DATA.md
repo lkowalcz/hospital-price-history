@@ -70,38 +70,132 @@ counted as a price change. See `compute_index.py`.
 | `summary_version` | See above. |
 | `summary_warning` | Set when a new summary has fewer than half the rows or coded rows of its predecessor. Contains `at` and a `detail` such as `rows 120,000 -> 3,000`. The snapshot is saved, and the hospital is excluded from the price index until a later snapshot passes the check and clears the warning. |
 
-## Snapshot comparisons
+## Catalog and snapshot manifests
 
-The Rush comparison matches rows by exact code type, code, and description.
-It preserves leading zeros and does not infer that renamed descriptions
-refer to the same entry. Unmatched rows appear as additions and removals,
-not price increases or decreases. Counts are summary entries, not unique
-services: one service may appear under multiple billing codes.
+The static site publishes four resources, regenerated at every deployment:
 
-For a selected price field, an entry is comparable only if both snapshots
-report finite positive values. Missing, zero, and negative values do not
-form a percent-change denominator. The page separates newly reported and
-no-longer-reported prices from increases and decreases. Differences larger
-than fourfold in either direction are flagged for review but remain visible.
+| Resource (relative to the site root) | Contents |
+|---|---|
+| `data/catalog.json` | Full hospital roster, current metadata, issues, and latest snapshot descriptors. |
+| `data/catalog.csv` | Flat hospital inventory with current summary/source links. Null values are empty cells; issue codes are separated with semicolons. |
+| `data/snapshots/<slug>.json` | Recorded source and summary versions for a hospital, oldest first in mainline commit order. |
+| `data/quality.json` | Coverage totals, issue definitions, and structural checks of current summaries. |
 
-Comparisons across different summary versions are blocked. Legacy version
-1 comparisons carry an additional warning because that method depended on
-source row order. Historical summary warnings are displayed with the results.
-Payer names, plans, service settings, modifiers, and units are not preserved
-as separate dimensions in these summaries; inspect the archived originals
-before interpreting a change as a difference in the price of equivalent care.
+Every JSON resource has `schema_version` (currently 1), `catalog_revision`
+(the full main-repository commit used for the build), and `generated_at`
+(UTC build time). This catalog schema version is separate from
+`summary_version`, which identifies price aggregation methodology.
+Consumers should reject unsupported schema versions, tolerate additional
+fields, and save the manifest alongside their analysis. Breaking field or
+semantic changes require a new catalog schema version.
 
-Snapshot dates are commit recording dates, not effective dates. The evidence
-cards also show when that source version was observed, which may precede a
-summary rebuilt under a new method. The summary and original links are pinned
-to the recorded revisions, so shared comparisons remain reproducible.
+Catalog and manifest URLs are moving discovery resources. Price summaries,
+metadata, and Git-hosted sources are linked at full revisions. Check that
+catalog and manifest `catalog_revision` values agree; retry if a deployment
+occurred between requests. Internet Archive items are identified by snapshot
+hash and also expose the archived file's hash when recorded.
 
-The filtered CSV includes every matching entry, exact source price strings,
-calculated changes, snapshot dates, methods, and summary URLs. The screen
-rounds currency to at most six decimal places and percentages to two;
-the export rounds calculated changes to twelve significant digits to avoid
-floating-point display artifacts. Spreadsheet formula-like text is prefixed
-with an apostrophe. The underlying snapshot CSV downloads are unchanged.
+### Hospital records
+
+`catalog.json` contains `hospitals`, `totals`, and `quality_url`. Each hospital
+has these fields:
+
+| Field | Meaning |
+|---|---|
+| `slug`, `name`, `system` | Roster identity. Use the slug for joins; display names can change. |
+| `status` | Most recently recorded storage/listing status; null before metadata exists. |
+| `first_seen`, `last_changed` | Metadata observation timestamps, or null. A URL change can update `last_changed` even when bytes match. |
+| `last_successful_check_at` | Currently null for every hospital: successful checks have not been recorded individually. Never infer it from `last_changed`, a commit date, or build time. |
+| `snapshot_count` | Number of source/summary states in the manifest, including rebuilds and states without summaries. Not a count of price changes. |
+| `snapshots_without_archived_source` | Recorded states without a matching source link, including older versions. Summary rebuilds can share a source, so this is not necessarily a count of distinct missing files. |
+| `latest_snapshot` | Last descriptor in the manifest, or null if no snapshot exists. |
+| `summary_rows` | Rows in the current summary, or null if absent. Inspect issue flags before treating the file as valid. |
+| `metadata_url` | Current metadata pinned to `catalog_revision`, or null. |
+| `snapshots_url`, `hospital_url` | Discovery links to the full manifest and archive page. |
+| `issues` | List of recorded collection problems and structural validation findings. Empty does not prove source freshness or price accuracy. |
+
+### Snapshot descriptors
+
+Each manifest contains `slug` and `snapshots`, in addition to the common
+envelope. A new descriptor is emitted when the source hash, summary blob,
+or summary method changes. Validator refreshes and failure records do not
+create snapshots. A return to an earlier content state remains a separate
+snapshot. Summary removal creates a descriptor with a null `summary_url`.
+Deleting metadata ends that recorded state; historical descriptors remain.
+At merges, the state entering the first-parent/mainline history is recorded.
+
+| Field | Meaning |
+|---|---|
+| `snapshot_id` | `<slug>:<full main-repo commit>`, identifying when this state entered the archive. |
+| `revision`, `recorded_at` | Mainline commit and recording timestamp. These are not price effective dates. |
+| `change_kind` | `source` for an initial state or changed source hash; `summary` for changed summary bytes/method; `summary_removed` when a summary disappears. |
+| `source_observed_at` | `last_changed` from metadata at recording time; can predate a summary rebuild. |
+| `source_sha256`, `source_size_bytes` | Snapshot identity and size from metadata. The hash covers normalized bytes for smaller files and unnormalized bytes for large files; it is not always the hash of an archived download. Null when unknown. |
+| `summary_version` | Aggregation method, or null without a summary. Missing legacy metadata defaults to method 1. |
+| `summary_git_blob` | Git object ID for the exact summary bytes, or null. This repository uses SHA-1 Git object IDs: hash `b"blob " + byte_length + b"\0" + file_bytes`. It is distinct from `source_sha256`. |
+| `summary_url` | CSV download at the recording revision, or null. All price strings and code formatting are unchanged. |
+| `metadata_url` | Metadata at the recording revision. |
+| `summary_warning` | Warning recorded with that snapshot, or null. |
+| `source` | Matching archived source descriptor, or null when no link is recorded. |
+
+A source descriptor has `kind`, `url`, and `metadata_url` identifying the
+metadata that supports the link. Kinds are `normalized_file` (direct download),
+`source_shards` (pinned Git directory), and `archived_original` (Internet
+Archive item). Git sources include `revision`; archived originals include
+`file_sha256` when recorded, covering the uncompressed original bytes.
+Shard directories contain a header and content buckets, not one CSV download.
+
+Originals sometimes reach cold storage after initial collection. The manifest
+can enrich older descriptors using a source with the same hospital and source
+hash; `source.metadata_url` pins that evidence separately. An Internet Archive
+original takes preference over normalized files or shards. No live hospital
+URL is substituted for an absent archived source. A source link's presence
+does not establish that its remote host is currently reachable.
+
+### Quality report
+
+`quality.json` includes `totals`, `issue_definitions` (code to explanation),
+and `hospitals`. Hospital reports contain `slug`, `issues`, `summary` statistics,
+`snapshots_without_archived_source`, the current `fetch_failures` record, and
+`summary_warning`.
+
+Summary checks cover column names, row shape, duplicate exact
+code/type/description keys, finite numeric prices, and nonnegative integer
+payer counts. Statistics include row and coded-row counts, malformed rows,
+duplicate keys, invalid numbers, and positive-value counts for each price
+field. Zero, negative, and blank prices do not count as positive observations.
+These checks do not establish clinical comparability, unit consistency,
+correct source interpretation, or complete payer coverage.
+
+Issue codes are `metadata_missing`, `fetch_failed`, `listing_missing`,
+`summary_missing`, `summary_empty`, `summary_schema_invalid`,
+`summary_malformed_rows`, `summary_duplicate_keys`, `summary_invalid_numbers`,
+`summary_warning`, `legacy_summary_method`, `source_unavailable`, and
+`archive_hash_mismatch`. The report supplies their human-readable definitions.
+Failure records can be persisted only weekly, so their `last_attempt` field
+is the latest *recorded* failure attempt, not necessarily the latest attempt.
+
+Totals count hospitals, recorded states, hospitals with a current summary,
+with a source link for their latest snapshot, historical states without a
+source link, hospitals with issues, and occurrences of each issue code.
+A hospital can have several issues. Historical gaps are counted separately
+from current issue flags so recovered hospitals retain an accurate history.
+
+### Reproducing a download
+
+The standard-library [example](../examples/download_summary.py) discovers a
+hospital through the catalog, selects a summary, verifies its Git blob ID,
+and saves the file plus a provenance sidecar. It refuses to overwrite files
+or save a download whose hash differs. It preserves leading zeros and price
+precision because it does not parse or rewrite the CSV. When loading it in
+pandas or a spreadsheet, explicitly read billing codes as strings.
+
+For analyses over time, match code type, code, and description deliberately;
+renames are not automatically equivalent services. One service can appear
+under multiple codes. Compare like summary methods, and use only finite
+positive prices as percentage-change denominators. Review extreme differences
+against original files. Payer names, plans, settings, modifiers, and units are
+not separate dimensions in summaries; original files are needed for that context.
 
 ## Attribution and license
 

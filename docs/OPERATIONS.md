@@ -11,11 +11,17 @@ are stored only on the Pi.
 | Job | Host | Schedule | Responsibility |
 |-----|------|----------|------|
 | `scrape.yml` | GitHub Actions | daily, 06:23 UTC cron (often delayed by hours) | every hospital except the `SKIP` list in the workflow |
-| `pages.yml` | GitHub Actions | on completion of `scrape.yml`, and on any push touching `data/` | the site |
+| `pages.yml` | GitHub Actions | on completion of `scrape.yml`, and on relevant data/generator pushes | the site, data catalog, manifests, and quality report |
 | `local_refetch.py` | Pi `homectl.local` | daily, 13:00 New York, via cron | the `LOCAL_ONLY` list in `local_refetch.py`; a test checks that it matches the workflow's `SKIP` |
 
 The Pi pushes commits with a deploy key, which triggers the site's
 push-based deployment workflow.
+
+The generated [data catalog](https://lukekowalczyk.com/hospital-price-history/data/)
+reports recorded failures and structural summary checks for the full roster.
+Its timestamps do not establish when each hospital was last successfully
+checked: those observations are a [roadmap milestone](ROADMAP.md#2-measure-collection-reliability--next).
+Continue using workflow results and the Pi heartbeat to monitor execution.
 
 After each run, the Pi force-pushes an annotated `pi-heartbeat` tag with
 the completion time as its tagger date. This records successful runs even

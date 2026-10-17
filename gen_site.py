@@ -10,12 +10,13 @@ import csv
 import html
 import json
 import re
+import shutil
 import subprocess
 import sys
 from datetime import date
 from pathlib import Path
 
-from comparison import build_comparison
+from data_catalog import ISSUES, build_catalog
 
 ROOT = Path(__file__).resolve().parent
 BASE = "https://lukekowalczyk.com/hospital-price-history"
@@ -41,11 +42,11 @@ h1{font-size:1.6rem;margin:.2rem 0}h2{font-size:1.15rem;margin-top:2rem;border-b
 a{color:var(--accent)}.muted{color:var(--muted);font-size:.9rem}
 table{border-collapse:collapse;width:100%;font-size:.9rem;margin:.8rem 0}
 th,td{text-align:left;padding:.35rem .6rem;border-bottom:1px solid var(--line)}
-th{background:var(--soft)}td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+th{background:var(--soft)}td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .warn{background:#fff4e5;border:1px solid #f0c988;border-radius:6px;padding:.7rem 1rem;margin:1rem 0}
 .badge{display:inline-block;background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:0 .45rem;font-size:.8rem}
 footer{margin:3rem 0 1rem;font-size:.85rem;color:var(--muted);border-top:1px solid var(--line);padding-top:1rem}
-.wrap{overflow-x:auto}
+.wrap{overflow-x:auto}code{overflow-wrap:anywhere}
 """
 
 
@@ -66,7 +67,7 @@ def page(title, description, body, canonical, jsonld):
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(description)}">
 <link rel="canonical" href="{canonical}">
-<script type="application/ld+json">{json.dumps(jsonld)}</script>
+<script type="application/ld+json">{json.dumps(jsonld).replace('<', chr(92) + 'u003c')}</script>
 <style>{CSS}</style></head><body><main>
 {body}
 <footer>Source: hospital price files published under 45 CFR § 180.50.
@@ -111,7 +112,7 @@ def featured_rows(rows):
     return out[:8]
 
 
-def hospital_page(h, meta, outdir, comparison_url=None):
+def hospital_page(h, meta, outdir, catalog_entry):
     slug = h["slug"]
     name = h["location_name"] if len(h["location_name"]) < 60 else slug.replace("-", " ").title()
     rows = load_summary(slug)
@@ -123,11 +124,19 @@ def hospital_page(h, meta, outdir, comparison_url=None):
              f'<p class="muted">{esc(h["system"])} &middot; '
              f'<span class="badge">{esc(meta.get("status", "no data"))}</span></p>']
 
-    if comparison_url:
-        parts.append(f'<p style="padding:1rem;background:#eaf3fb;border-radius:8px">'
-                     f'<a href="{esc(comparison_url)}"><strong>Compare recorded prices →</strong></a><br>'
-                     '<span class="muted">Choose two snapshots, explore price changes, '
-                     'and download a comparison with links to the archived evidence.</span></p>')
+    snapshot = catalog_entry["latest_snapshot"] or {}
+    parts.append('<h2>Get the data</h2><ul>')
+    if snapshot.get("summary_url"):
+        parts.append(f'<li><a href="{esc(snapshot["summary_url"])}">Download latest summary CSV</a> '
+                     f'(method {esc(snapshot["summary_version"])})</li>')
+    parts.append(f'<li><a href="{esc(catalog_entry["snapshots_url"])}">Snapshot manifest (JSON)</a> '
+                 f'— {catalog_entry["snapshot_count"]} recorded source or summary versions</li>')
+    if catalog_entry["metadata_url"]:
+        parts.append(f'<li><a href="{esc(catalog_entry["metadata_url"])}">Collection metadata (JSON)</a></li>')
+    if snapshot.get("source"):
+        parts.append(f'<li><a href="{esc(snapshot["source"]["url"])}">Archived source for the latest snapshot</a></li>')
+    parts.append(f'</ul><p class="muted">Downloads link to recorded versions. '
+                 f'<a href="{BASE}/data/">Data catalog, coverage report, and usage guide</a>.</p>')
     parts.append("<h2>Tracking status</h2><table>")
     status_rows = [
         ("Monitored since", (meta.get("first_seen") or "")[:10]),
@@ -143,7 +152,7 @@ def hospital_page(h, meta, outdir, comparison_url=None):
             f'<a href="{RAW_REPO}/tree/{esc(ref)}/data/{slug}">full data</a> &middot; '
             f'<a href="{RAW_REPO}/commits/main/data/{slug}">change history</a>'))
     cs = meta.get("cold_storage")
-    if cs:
+    if cs and cs.get("sha256") == meta.get("sha256"):
         status_rows.append((
             "Original file",
             f'<a href="{esc(cs["url"])}">copy on the Internet Archive</a> '
@@ -169,7 +178,7 @@ def hospital_page(h, meta, outdir, comparison_url=None):
     if rows:
         feat = featured_rows(rows)
         if feat:
-            parts.append("<h2>Example prices</h2><div class=\"wrap\"><table>"
+            parts.append('<h2>Example prices</h2><div class="wrap" tabindex="0" role="region" aria-label="Example price summary"><table>'
                          "<tr><th>Code</th><th>Description</th><th class=num>Gross charge</th>"
                          "<th class=num>Cash price</th><th class=num>Negotiated (min–max)</th>"
                          "<th class=num>Payer entries</th></tr>")
@@ -184,7 +193,7 @@ def hospital_page(h, meta, outdir, comparison_url=None):
                              f'<td class=num>{r["payer_entries"]}</td></tr>')
             parts.append("</table></div>"
                          f'<p class="muted">Download the full summary ({len(rows):,} rows): '
-                         f'<a href="https://raw.githubusercontent.com/lkowalcz/hospital-price-history/main/data/{slug}/summary.csv">summary.csv</a></p>')
+                         f'<a href="{esc(snapshot.get("summary_url", ""))}">summary.csv</a></p>')
 
     parts.append("<h2>Change history</h2>")
     if events:
@@ -205,7 +214,7 @@ def hospital_page(h, meta, outdir, comparison_url=None):
         "isBasedOn": meta.get("mrf_url"),
         "dateModified": (meta.get("last_changed") or "")[:10],
         "distribution": [{"@type": "DataDownload", "encodingFormat": "text/csv",
-                          "contentUrl": f"https://raw.githubusercontent.com/lkowalcz/hospital-price-history/main/data/{slug}/summary.csv"}],
+                          "contentUrl": snapshot["summary_url"]}] if snapshot.get("summary_url") else [],
         "keywords": ["hospital prices", "price transparency", h["system"], name],
     }
     d = outdir / "hospitals" / slug
@@ -215,28 +224,21 @@ def hospital_page(h, meta, outdir, comparison_url=None):
     return canonical
 
 
-def index_page(hospitals, metas, outdir, comparisons=None):
+def index_page(hospitals, metas, outdir):
     body = ["<h1>Hospital Price History</h1>",
             '<p>This archive collects the machine-readable price files US hospitals '
             'publish under federal price transparency rules (45 CFR § 180.50). '
             'Scheduled checks save new versions as hospitals update their files. '
-            'Choose a hospital below to see example prices, download a summary, '
+            'Choose a hospital below to download its data '
             'or browse its recorded changes.</p>'
             f'<p>The <a href="{REPO}">GitHub repository</a> contains the archive data '
             'and documentation. Larger files stored in shards, including their '
             f'payer-level rates, are in a <a href="{RAW_REPO}">separate repository</a>.</p>',
-            "<div class=\"wrap\"><table><tr><th>Hospital</th><th>System</th>"
+            f'<p><a href="{BASE}/data/"><strong>Use the data →</strong></a> '
+            'Browse the machine-readable catalog, historical snapshot manifests, '
+            'and coverage report for the full roster.</p>',
+            '<div class="wrap" tabindex="0" role="region" aria-label="Hospital inventory"><table><tr><th>Hospital</th><th>System</th>'
             "<th>Last change recorded</th><th>Status</th></tr>"]
-    if comparisons:
-        cards = []
-        for h in hospitals:
-            if h["slug"] in comparisons:
-                cards.append('<div style="padding:1.2rem;background:#eaf3fb;border-radius:8px;margin:1.5rem 0">'
-                             '<strong>Explore what changed</strong>'
-                             f'<p style="margin:.4rem 0">Compare recorded prices at {esc(h["location_name"])}: '
-                             'before-and-after values, searchable entries, and the evidence behind each snapshot.</p>'
-                             f'<a href="{esc(comparisons[h["slug"]])}">Open the snapshot comparison →</a></div>')
-        body[-1:-1] = cards  # before the hospital table
     for h in sorted(hospitals, key=lambda x: x["location_name"].casefold()):
         m = metas[h["slug"]]
         name = h["location_name"] if len(h["location_name"]) < 60 else h["slug"].replace("-", " ").title()
@@ -265,6 +267,82 @@ def index_page(hospitals, metas, outdir, comparisons=None):
         page("Hospital Price History", desc, "\n".join(body), f"{BASE}/", jsonld))
 
 
+def data_page(catalog, outdir):
+    totals = catalog["totals"]
+    canonical = f"{BASE}/data/"
+    body = [f'<p><a href="{BASE}/">← Hospital archive</a></p>',
+            '<h1>Use the data</h1>',
+            '<p>A historical archive for researchers and developers. Download recorded '
+            'summaries, locate archived sources, and inspect collection limitations.</p>',
+            '<h2>Downloads</h2><ul>',
+            '<li><a href="catalog.json">Hospital catalog (JSON)</a> — current coverage and links for every hospital</li>',
+            '<li><a href="catalog.csv">Hospital catalog (CSV)</a> — the same inventory as a flat table</li>',
+            '<li><a href="quality.json">Quality report (JSON)</a> — recorded problems and summary checks</li>',
+            f'<li><a href="{REPO}/blob/main/docs/DATA.md#catalog-and-snapshot-manifests">Schema and interpretation guide</a></li>',
+            f'<li><a href="{REPO}/blob/main/examples/download_summary.py">Python example: download and verify a historical summary</a></li>',
+            f'<li><a href="{REPO}/blob/main/docs/ROADMAP.md">Data roadmap</a></li></ul>',
+            '<h2>Coverage at this build</h2><table>',
+            f'<tr><th>Hospitals tracked</th><td>{totals["hospitals"]:,}</td></tr>',
+            f'<tr><th>With a current summary</th><td>{totals["with_summary"]:,}</td></tr>',
+            f'<tr><th>With an archived source link for the latest snapshot</th><td>{totals["with_archived_source"]:,}</td></tr>',
+            f'<tr><th>Recorded source or summary versions</th><td>{totals["snapshots"]:,}</td></tr>',
+            f'<tr><th>Historical versions without an archived source link</th><td>{totals["snapshots_without_archived_source"]:,}</td></tr>',
+            f'<tr><th>Hospitals with recorded issues</th><td>{totals["with_issues"]:,}</td></tr></table>',
+            '<p>Archived-source coverage means a matching link is recorded; this build does not '
+            'download and verify every original. Historical gaps count recorded states, including '
+            'summary rebuilds; they do not necessarily represent distinct missing files. '
+            'The catalog lists the gaps per hospital, and manifests identify each affected snapshot.</p>',
+            '<p><strong>Collection freshness is not yet measured per hospital.</strong> '
+            '“Last changed” records a source revision or URL change, not the last successful check. '
+            'An unchanged file can be old and still reachable. Missing issue flags do not establish freshness.</p>',
+            '<h2>Recorded issues</h2>']
+    if totals["with_issues"]:
+        body.append('<table><tr><th>Hospital</th><th>Issue</th></tr>')
+        for entry in catalog["hospitals"]:
+            if entry["issues"]:
+                body.append(f'<tr><td><a href="{esc(entry["hospital_url"])}">{esc(entry["name"])}</a></td>'
+                            f'<td>{"<br>".join(esc(ISSUES[issue]) for issue in entry["issues"])}</td></tr>')
+        body.append('</table>')
+    else:
+        body.append('<p>No issues were found by the implemented checks.</p>')
+    body.extend(['<h2>Working with snapshots</h2><ol>',
+                 '<li>Find a hospital in the catalog and open its <code>snapshots_url</code>.</li>',
+                 '<li>Select a snapshot with a <code>summary_url</code>. Save its '
+                 '<code>snapshot_id</code>, method version, and warnings alongside your analysis.</li>',
+                 '<li>Download the summary from its pinned Git revision. The example script '
+                 'verifies its Git object ID before saving.</li></ol>',
+                 '<p>Snapshot dates record observations, not price effective dates. Summary rows group '
+                 'codes and descriptions; they do not retain separate payer, plan, setting, modifier, or '
+                 'unit dimensions. Consult original files for that context. Do not treat a method '
+                 'change, a renamed entry, or a missing price as a price change.</p>',
+                 f'<p class="muted">Catalog schema {catalog["schema_version"]}; built from '
+                 f'<a href="{REPO}/commit/{catalog["catalog_revision"]}">{catalog["catalog_revision"][:12]}</a>. '
+                 f'Generated {esc(catalog["generated_at"])}.</p>'])
+    (outdir / "data" / "index.html").write_text(page(
+        "Use the data · Hospital Price History", "Download the hospital data catalog and historical snapshot manifests.",
+        "\n".join(body), canonical,
+        {"@context": "https://schema.org", "@type": "DataCatalog", "name": "Hospital Price History data catalog",
+         "url": canonical, "dataset": {"@type": "Dataset", "url": canonical + "catalog.json"}}))
+    return canonical
+
+
+def retire_comparison(outdir):
+    # Preserve existing bookmarks while removing generated scripts and data
+    # when a local output directory is reused.
+    destination = outdir / "hospitals" / "rush-university" / "compare"
+    if destination.exists():
+        shutil.rmtree(destination)
+    destination.mkdir(parents=True)
+    target = f"{BASE}/hospitals/rush-university/"
+    (destination / "index.html").write_text(
+        '<!doctype html><html lang="en"><head><meta charset="utf-8">'
+        '<meta name="viewport" content="width=device-width,initial-scale=1">'
+        f'<meta http-equiv="refresh" content="0;url={target}"><link rel="canonical" href="{target}">'
+        '<meta name="robots" content="noindex"><title>Rush hospital archive</title></head>'
+        f'<body><p>The comparison has been retired. <a href="{target}">Open the Rush hospital archive</a> '
+        'for summaries and historical snapshots.</p></body></html>')
+
+
 def main():
     outdir = Path(sys.argv[1])
     outdir.mkdir(parents=True, exist_ok=True)
@@ -273,14 +351,13 @@ def main():
     for h in hospitals:
         mp = ROOT / "data" / h["slug"] / "meta.json"
         metas[h["slug"]] = json.loads(mp.read_text()) if mp.exists() else {}
-    comparisons = {}
+    catalog = build_catalog(hospitals, ROOT, outdir, BASE, REPO, RAW_REPO)
+    entries = {entry["slug"]: entry for entry in catalog["hospitals"]}
     for h in hospitals:
-        comparison_url = build_comparison(h, outdir, ROOT, BASE, REPO, RAW_REPO)
-        if comparison_url:
-            comparisons[h["slug"]] = comparison_url
-            urls.append(comparison_url)
-        urls.append(hospital_page(h, metas[h["slug"]], outdir, comparison_url))
-    index_page(hospitals, metas, outdir, comparisons)
+        urls.append(hospital_page(h, metas[h["slug"]], outdir, entries[h["slug"]]))
+    index_page(hospitals, metas, outdir)
+    urls.append(data_page(catalog, outdir))
+    retire_comparison(outdir)
     (outdir / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'

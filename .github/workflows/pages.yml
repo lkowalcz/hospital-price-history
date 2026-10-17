@@ -3,7 +3,7 @@ name: Deploy site
 on:
   push:
     branches: [main]
-    paths: ["data/**", "gen_site.py", "comparison.py", "site_assets/**", "hospitals.json",
+    paths: ["data/**", "gen_site.py", "data_catalog.py", "hospitals.json",
             ".github/workflows/pages.yml"]
   # The scrape workflow commits with the bot token, whose pushes never
   # trigger push-based deploys; a fixed later cron used to stand in, but
@@ -32,8 +32,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0      # full history for per-hospital change logs
-          filter: blob:none   # fetch historical summaries needed for comparisons
-                              # on demand, without legacy MRF shard blobs
+          filter: blob:none  # catalog reads historical metadata, never old MRF blobs
 
       - uses: actions/setup-python@v5
         with:
