@@ -130,13 +130,17 @@ def hospital_page(h, meta, outdir, catalog_entry):
         parts.append(f'<li><a href="{esc(snapshot["summary_url"])}">Download latest summary CSV</a> '
                      f'(method {esc(snapshot["summary_version"])})</li>')
     parts.append(f'<li><a href="{esc(catalog_entry["snapshots_url"])}">Snapshot manifest (JSON)</a> '
-                 f'— {catalog_entry["snapshot_count"]} recorded source or summary versions</li>')
+                 f'— {catalog_entry["snapshot_count"]} recorded archive states</li>')
     if catalog_entry["metadata_url"]:
         parts.append(f'<li><a href="{esc(catalog_entry["metadata_url"])}">Collection metadata (JSON)</a></li>')
     if snapshot.get("source"):
         parts.append(f'<li><a href="{esc(snapshot["source"]["url"])}">Archived source for the latest snapshot</a></li>')
     parts.append(f'</ul><p class="muted">Downloads link to recorded versions. '
                  f'<a href="{BASE}/data/">Data catalog, coverage report, and usage guide</a>.</p>')
+    if catalog_entry["snapshots_without_archived_source"]:
+        parts.append(f'<p class="warn">{catalog_entry["snapshots_without_archived_source"]} historical archive '
+                     f'state(s) have no located source file. '
+                     f'<a href="{BASE}/data/source-audit.json">Read the source-gap audit</a>.</p>')
     parts.append("<h2>Tracking status</h2><table>")
     status_rows = [
         ("Monitored since", (meta.get("first_seen") or "")[:10]),
@@ -296,6 +300,7 @@ def data_page(catalog, outdir):
             '<li><a href="catalog.csv">Hospital catalog (CSV)</a> — the same inventory as a flat table</li>',
             '<li><a href="quality.json">Quality report (JSON)</a> — recorded problems and summary checks</li>',
             '<li><a href="collection-health.json">Collection health (JSON)</a> — check outcomes, evidence, schedules, and gaps</li>',
+            '<li><a href="source-audit.json">Historical source audit (JSON)</a> — repaired links, verification evidence, and remaining gaps</li>',
             f'<li><a href="{REPO}/blob/main/docs/DATA.md#catalog-and-snapshot-manifests">Schema and interpretation guide</a></li>',
             f'<li><a href="{REPO}/blob/main/examples/download_summary.py">Python example: download and verify a historical summary</a></li>',
             f'<li><a href="{REPO}/blob/main/docs/ROADMAP.md">Data roadmap</a></li></ul>',
@@ -303,13 +308,16 @@ def data_page(catalog, outdir):
             f'<tr><th>Hospitals tracked</th><td>{totals["hospitals"]:,}</td></tr>',
             f'<tr><th>With a current summary</th><td>{totals["with_summary"]:,}</td></tr>',
             f'<tr><th>With an archived source link for the latest snapshot</th><td>{totals["with_archived_source"]:,}</td></tr>',
-            f'<tr><th>Recorded source or summary versions</th><td>{totals["snapshots"]:,}</td></tr>',
-            f'<tr><th>Historical versions without an archived source link</th><td>{totals["snapshots_without_archived_source"]:,}</td></tr>',
+            f'<tr><th>Recorded archive states</th><td>{totals["snapshots"]:,}</td></tr>',
+            f'<tr><th>Historical states without an archived source link</th><td>{totals["snapshots_without_archived_source"]:,}</td></tr>',
             f'<tr><th>Hospitals with recorded issues</th><td>{totals["with_issues"]:,}</td></tr></table>',
             '<p>Archived-source coverage means a matching link is recorded; this build does not '
             'download and verify every original. Historical gaps count recorded states, including '
-            'summary rebuilds; they do not necessarily represent distinct missing files. '
+            'summary rebuilds and temporary metadata resets; they do not necessarily represent distinct missing files. '
             'The catalog lists the gaps per hospital, and manifests identify each affected snapshot.</p>',
+            f'<p>The historical audit reviewed {catalog["source_audit_totals"]["reviewed_states"]} states and '
+            f'restored source links for {catalog["source_audit_totals"]["linked_states"]}. '
+            f'<a href="{REPO}/blob/main/docs/SOURCE_AUDIT.md">Read the findings and remaining limitations</a>.</p>',
             '<h2>Collection freshness</h2>',
             f'<p>{catalog["collection_totals"]["with_successful_check"]} hospitals have a recorded successful source check; '
             f'{catalog["collection_totals"]["without_successful_check"]} have no successful check recorded yet. '

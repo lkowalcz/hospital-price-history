@@ -235,6 +235,15 @@ metadata. Original files are uploaded to archive.org as items named
 - **Checking**: `grep -L cold_storage data/*/meta.json` lists hospitals
   not yet archived, and each `cold_storage.url` opens the item.
 
+## Historical source repairs
+
+Historical source-link repairs live in `source_audit.json`, separate from the
+collector's current metadata. See [the source audit](SOURCE_AUDIT.md) for
+evidence, the remaining unavailable original, and commands to repeat full
+archive verification. A site build validates committed identity evidence;
+it does not re-download archived originals. Changes to the audit trigger
+tests and site deployment.
+
 ## When a commit says "summary shrank"
 
 The scraper flags a new summary with fewer than half the rows or coded

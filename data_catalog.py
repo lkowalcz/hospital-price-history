@@ -13,6 +13,7 @@ from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 from collection_health import build_health
+from source_audit import apply_audit, audit_totals, load_audit
 
 SCHEMA_VERSION = 1
 COLUMNS = ["code_type", "code", "description", "gross_charge", "discounted_cash",
@@ -153,6 +154,7 @@ def collect_history(root, revision, slugs, repo, raw_repo):
     for slug, snapshots in histories.items():
         for snapshot in snapshots:
             snapshot["source"] = sources.get((slug, snapshot["source_sha256"]))
+    apply_audit(root, revision, histories, sources, repo, raw_repo)
     return histories
 
 
@@ -208,7 +210,7 @@ def build_catalog(hospitals, root, outdir, base, repo, raw_repo):
         raise ValueError("The catalog requires full commit history (fetch-depth: 0).")
     # Links must describe committed bytes, including when building locally.
     if git(root, "status", "--porcelain", "--untracked-files=all", "--", "data", "hospitals.json",
-           "observations", "collection_policy.json").strip():
+           "observations", "collection_policy.json", "source_audit.json").strip():
         raise ValueError("Commit data, roster, policy, and observation changes before publishing the catalog.")
     revision = git(root, "rev-parse", "HEAD").strip()
     envelope = {"schema_version": SCHEMA_VERSION, "catalog_revision": revision,
@@ -217,6 +219,11 @@ def build_catalog(hospitals, root, outdir, base, repo, raw_repo):
     if len(set(slugs)) != len(slugs) or any(not re.fullmatch(r"[a-z0-9-]+", s) for s in slugs):
         raise ValueError("Hospital slugs must be unique and contain only lowercase letters, digits, and hyphens.")
     histories = collect_history(root, revision, slugs, repo, raw_repo)
+    audit = load_audit(root, revision)
+    remaining_gaps = [{"slug": slug, "snapshot_id": s["snapshot_id"], "recorded_at": s["recorded_at"],
+                       "source_sha256": s["source_sha256"], "summary_url": s["summary_url"],
+                       "source_audit": s.get("source_audit")}
+                      for slug, snapshots in histories.items() for s in snapshots if s["source"] is None]
     health = build_health(root, hospitals, envelope["generated_at"])
     health["catalog_revision"] = revision
     for run in health["runs"]:
@@ -271,6 +278,7 @@ def build_catalog(hospitals, root, outdir, base, repo, raw_repo):
         entries.append(entry)
         reports.append({"slug": slug, "issues": sorted(issues), "summary": stats,
                         "snapshots_without_archived_source": source_gaps,
+                        "historical_source_gaps": [g for g in remaining_gaps if g["slug"] == slug],
                         "fetch_failures": meta.get("fetch_failures"),
                         "summary_warning": meta.get("summary_warning")})
         write_json(outdir / "data" / "snapshots" / f"{slug}.json",
@@ -283,9 +291,12 @@ def build_catalog(hospitals, root, outdir, base, repo, raw_repo):
               "issues": dict(sorted(Counter(issue for e in entries for issue in e["issues"]).items()))}
     catalog = {**envelope, "quality_url": f"{base}/data/quality.json",
                "collection_health_url": f"{base}/data/collection-health.json",
+               "source_audit_url": f"{base}/data/source-audit.json", "source_audit_totals": audit_totals(audit),
                "collection_totals": health["totals"], "totals": totals, "hospitals": entries}
     write_json(outdir / "data" / "catalog.json", catalog)
     write_json(outdir / "data" / "collection-health.json", health)
+    write_json(outdir / "data" / "source-audit.json",
+               {**audit, **envelope, "totals": audit_totals(audit), "remaining_gaps": remaining_gaps})
     write_json(outdir / "data" / "quality.json",
                {**envelope, "totals": totals, "issue_definitions": ISSUES, "hospitals": reports})
     with (outdir / "data" / "catalog.csv").open("w", newline="", encoding="utf-8") as handle:

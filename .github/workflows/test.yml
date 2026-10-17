@@ -3,9 +3,9 @@ name: Tests
 on:
   push:
     branches: [main]
-    paths: ["*.py", "examples/**", "tests/**", "requirements.txt", "collection_policy.json", ".github/workflows/**"]
+    paths: ["*.py", "examples/**", "tests/**", "requirements.txt", "collection_policy.json", "source_audit.json", ".github/workflows/**"]
   pull_request:
-    paths: ["*.py", "examples/**", "tests/**", "requirements.txt", "collection_policy.json", ".github/workflows/**"]
+    paths: ["*.py", "examples/**", "tests/**", "requirements.txt", "collection_policy.json", "source_audit.json", ".github/workflows/**"]
   workflow_dispatch: {}
 
 permissions:

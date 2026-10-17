@@ -33,7 +33,7 @@ identify the applicable method and warnings. Automated tests exercise history
 reversions, merges, metadata-only updates, late archiving, missing summaries,
 quality flags, and rejected corrupt downloads.
 
-## 2. Measure collection reliability — observation logging implemented
+## 2. Measure collection reliability — logging and source audit implemented
 
 The collectors now record compact observations for every attempted hospital
 check, including successful unchanged checks. Historical checks before logging
@@ -56,11 +56,19 @@ unchanged reachable source stays distinguishable from an unchecked source,
 and fixtures verify skipped checks, interrupted runs, and overlapping hosts.
 Do not backfill successful-check timestamps from historical commit dates.
 
-**Next: audit historical source gaps.** Repair missing links when the same
-content exists in either repository or cold storage, and document originals
-that cannot be recovered. Never substitute today's file for a missing old
-version. Also observe a complete scheduled cycle on both collectors to verify
-the initial rollout covers all 107 hospitals.
+The [historical source audit](SOURCE_AUDIT.md) reviewed the 38 baseline gaps:
+32 were temporary checksum resets, two were relocated DMC Harper shard
+snapshots, and three were archived originals whose hashes match after the
+original newline normalization. Those 37 links are restored with evidence.
+Hackensack's first original remains unavailable in the stores searched; its
+summary survives and its limitation is explicit. All 418 existing state IDs
+remain stable. These include operational metadata states, not only distinct files.
+
+Operational follow-through: observe a complete scheduled cycle on both
+collectors to verify the logging rollout covers all 107 hospitals. The initial
+live probes covered GitHub Actions and the Pi; earlier checks remain unknown.
+
+**Next: pilot richer derived exports on fixtures**, as described below.
 
 ## 3. Preserve analytical context in derived exports
 

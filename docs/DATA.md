@@ -72,7 +72,7 @@ counted as a price change. See `compute_index.py`.
 
 ## Catalog and snapshot manifests
 
-The static site publishes four resources, regenerated at every deployment:
+The static site publishes these resources, regenerated at every deployment:
 
 | Resource (relative to the site root) | Contents |
 |---|---|
@@ -80,10 +80,13 @@ The static site publishes four resources, regenerated at every deployment:
 | `data/catalog.csv` | Flat hospital inventory with current summary/source links. Null values are empty cells; issue codes are separated with semicolons. |
 | `data/snapshots/<slug>.json` | Recorded source and summary versions for a hospital, oldest first in mainline commit order. |
 | `data/quality.json` | Coverage totals, issue definitions, and structural checks of current summaries. |
+| `data/collection-health.json` | Explicit check observations, collection schedules, and overdue flags. Uses `evaluated_at` for its assessment time. |
+| `data/source-audit.json` | Reviewed historical source gaps, repair evidence, and all remaining gaps at build time. |
 
-Every JSON resource has `schema_version` (currently 1), `catalog_revision`
-(the full main-repository commit used for the build), and `generated_at`
-(UTC build time). This catalog schema version is separate from
+Every JSON resource has `schema_version` (currently 1) and `catalog_revision`
+(the full main-repository commit used for the build). Reports also include
+`generated_at` (UTC build time), except collection health, which uses `evaluated_at`.
+This catalog schema version is separate from
 `summary_version`, which identifies price aggregation methodology.
 Consumers should reject unsupported schema versions, tolerate additional
 fields, and save the manifest alongside their analysis. Breaking field or
@@ -139,6 +142,8 @@ At merges, the state entering the first-parent/mainline history is recorded.
 | `metadata_url` | Metadata at the recording revision. |
 | `summary_warning` | Warning recorded with that snapshot, or null. |
 | `source` | Matching archived source descriptor, or null when no link is recorded. |
+| `source_identity` | Optional audited identity for a retained state whose metadata checksum was deliberately cleared. Contains `sha256`, `basis`, and a pinned evidence `metadata_url`; the original null `source_sha256` remains unchanged. |
+| `source_audit` | Optional reviewed status, repair method, explanation, and pinned `audit_url`. An unavailable original remains a null `source`. |
 
 A source descriptor has `kind`, `url`, and `metadata_url` identifying the
 metadata that supports the link. Kinds are `normalized_file` (direct download),
@@ -155,12 +160,40 @@ pins update source links without creating a new price or summary state. No live 
 URL is substituted for an absent archived source. A source link's presence
 does not establish that its remote host is currently reachable.
 
+Some historical CSV hashes cover CRLF-to-LF normalization while their archived
+originals retain CRLF. Audited links set `source.snapshot_hash_transform` to
+`crlf_to_lf`, retain the original `file_sha256`, and provide the compressed
+`download_url` and `compressed_sha256`. Decompress before applying the documented
+transformation and comparing with the snapshot hash. The full audit records
+both unmodified and normalized lengths and hashes.
+
+### Historical source audit
+
+`source-audit.json` includes the normal catalog envelope, `audited_at`, pinned
+baseline main/raw revisions, searched refs, `records`, `totals`, and
+`remaining_gaps`. The latter lists every currently unlinked archive state,
+including future gaps outside the reviewed set. The catalog links this report
+as `source_audit_url` and supplies `source_audit_totals`.
+
+Records identify an exact hospital, main revision, metadata blob, and recorded
+source hash. Methods are `metadata_hash_reset`, `relocated_shards`, `crlf_to_lf`,
+and `not_located`; statuses are `linked` or `unavailable`. Evidence documents
+the matching prior metadata, Git content objects, complete file hashes, or
+stores searched. Site generation rejects mismatched identities and unexpected
+metadata changes rather than applying a repair to a different source.
+
+The audit restores links while retaining historical IDs, summaries, recorded
+hashes, and metadata-transition classifications. Archive-state counts include
+temporary checksum resets; they are not counts of unique source files or price
+changes. See [the audit findings and repeatable verification](SOURCE_AUDIT.md).
+
 ### Quality report
 
 `quality.json` includes `totals`, `issue_definitions` (code to explanation),
 and `hospitals`. Hospital reports contain `slug`, `issues`, `summary` statistics,
 `snapshots_without_archived_source`, the current `fetch_failures` record, and
-`summary_warning`.
+`summary_warning`. `historical_source_gaps` identifies each unlinked historical
+state and includes its audit explanation when reviewed.
 
 Summary checks cover column names, row shape, duplicate exact
 code/type/description keys, finite numeric prices, and nonnegative integer

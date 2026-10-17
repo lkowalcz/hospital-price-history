@@ -1,0 +1,762 @@
+{
+  "schema_version": 1,
+  "audited_at": "2026-10-17T04:28:32+00:00",
+  "baseline_revision": "64704381037323a9ec23cbe17322d0ef4dae997e",
+  "raw_repository_revision": "2b05608e4f91470b19de52380b7e0b7c0f052522",
+  "scope": "All 38 source-link gaps in the baseline catalog; main and raw repository histories, retained pre-rewrite refs, and project Internet Archive metadata. Three archived originals were fully rehashed.",
+  "baseline_totals": {
+    "hospitals": 107,
+    "recorded_states": 418,
+    "states_without_source": 38
+  },
+  "searched_refs": {
+    "main": {
+      "main": "64704381037323a9ec23cbe17322d0ef4dae997e",
+      "pre-rewrite-backup": "2662f2c01d05a6c6bca37798afebebb494840ddd"
+    },
+    "raw": {
+      "origin/main": "2b05608e4f91470b19de52380b7e0b7c0f052522",
+      "pre-rewrite-backup": "2ba8b0462f92d801808fffe9e51d50f0f4bfcc03",
+      "prehistory": "70dfa934955c525f201fcb4ab302685df5468c33"
+    }
+  },
+  "records": [
+    {
+      "slug": "adventhealth-orlando",
+      "revision": "491b5afc1cdab2a4df4dabd45cd765362d2f3ded",
+      "recorded_source_sha256": null,
+      "metadata_blob": "6a83d7b5949ff71f3d0d0f0e8aadcd1df5dc7812",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "94912b0fd151ab80c9de2f93b29058cb0d64b98a",
+        "prior_metadata_blob": "bc4f505ef69922b29b6c4007cbd55ec2876703fd",
+        "source_sha256": "1fd0c454d2061b38655b294fca9bc21c5b57c4d89d02e33ad98c4fe6ddbfbf12",
+        "changed_fields": [
+          "raw_commit",
+          "sha256",
+          "source_etag",
+          "source_last_modified",
+          "transfer_fingerprint"
+        ],
+        "introduced_raw_revision": "bab8eacfb818b8516f93aa201c07f4b5688a6d3e"
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    },
+    {
+      "slug": "atrium-carolinas",
+      "revision": "08bd57c33204747d9b680b9ad9692f3a9b360267",
+      "recorded_source_sha256": "1c45d66064e0482bc643d6263463f286d4cd365643edd12ff1955e321a4df59c",
+      "metadata_blob": "1d57c3e6a3052a2c68e85443f7d01a38422cb575",
+      "status": "linked",
+      "method": "crlf_to_lf",
+      "evidence": {
+        "item": "hospital-price-history-atrium-carolinas-9d77955855b5",
+        "file": "561398929-1295789907_carolinas-medical-center_standardcharges.csv.zst",
+        "download_url": "https://archive.org/download/hospital-price-history-atrium-carolinas-9d77955855b5/561398929-1295789907_carolinas-medical-center_standardcharges.csv.zst",
+        "compressed_sha256": "e900ed0aa7977a9fdd99e85fdef64b1cb4c0a46192e8529a23f978b3780b37f8",
+        "compressed_sha1": "0b436217b95c5a8eeee337a7cc31efc49cd224a8",
+        "compressed_bytes": 153772412,
+        "file_sha256": "9d77955855b521c9e591d95093de161236d87c93e58ac984d0114677f1ffd658",
+        "file_size_bytes": 2879551417,
+        "normalized_sha256": "1c45d66064e0482bc643d6263463f286d4cd365643edd12ff1955e321a4df59c",
+        "normalized_size_bytes": 2870286338,
+        "archive_metadata_revision": "19a0c4db94dbcc88c4f3bd4f98bbe37e7285d919"
+      },
+      "explanation": "The archived original was fully downloaded and decompressed. Replacing CRLF with LF, exactly as the capture-time scraper did, reproduces the historical SHA-256 and byte count. The unmodified archived bytes retain their separate SHA-256."
+    },
+    {
+      "slug": "atrium-carolinas",
+      "revision": "4f6024db23954661dee92723463865c99cfa04a9",
+      "recorded_source_sha256": null,
+      "metadata_blob": "88e99823985c4bceb5024617c1b9cc12ab340b56",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "31b8e45d332a727cf0fa63837d38943a6da7d1e0",
+        "prior_metadata_blob": "d03cacfcfdd788b71591bd86969b1c71bdf3605f",
+        "source_sha256": "9d77955855b521c9e591d95093de161236d87c93e58ac984d0114677f1ffd658",
+        "changed_fields": [
+          "sha256",
+          "source_etag",
+          "source_last_modified",
+          "transfer_fingerprint"
+        ]
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    },
+    {
+      "slug": "baylor-university-medical",
+      "revision": "d6080ecfe7984a8e2f8327bc8f581fd4f2c7fe16",
+      "recorded_source_sha256": null,
+      "metadata_blob": "03f3f4afe85970ac7801946f12d90167434a927b",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "116e2e1b1aca0ab50cc27fb32841476cbf0b68a6",
+        "prior_metadata_blob": "7746b89ab9d2cb4f1743669afc1b85c6773d8fd5",
+        "source_sha256": "3d20a7ece7e4192618599aa69fc4c5df978edb751679a3c583bd7aa1994020f6",
+        "changed_fields": [
+          "sha256",
+          "source_etag",
+          "source_last_modified",
+          "transfer_fingerprint"
+        ]
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    },
+    {
+      "slug": "boston-medical-center",
+      "revision": "d6080ecfe7984a8e2f8327bc8f581fd4f2c7fe16",
+      "recorded_source_sha256": null,
+      "metadata_blob": "1b87a8a126bcc601d38799387de1167e3c99182e",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "116e2e1b1aca0ab50cc27fb32841476cbf0b68a6",
+        "prior_metadata_blob": "d6160317f97b2541e101d93fb77d1cbb0e5680d9",
+        "source_sha256": "a89a6a3073ad4c6c80b1be104c735b66daeaa75c8ad7ae331e83c1288f563150",
+        "changed_fields": [
+          "sha256",
+          "source_etag",
+          "source_last_modified",
+          "transfer_fingerprint"
+        ]
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    },
+    {
+      "slug": "cedars-sinai",
+      "revision": "4f6024db23954661dee92723463865c99cfa04a9",
+      "recorded_source_sha256": null,
+      "metadata_blob": "30409771ca83248c12ecb475e2520da8f6e9d410",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "31b8e45d332a727cf0fa63837d38943a6da7d1e0",
+        "prior_metadata_blob": "5af8472fbc93aa509aba8732ba2652a97412afa8",
+        "source_sha256": "8c188ab3b02967785256d5867cf760778581e5e849f0fd1141955c2a2dcd2dbf",
+        "changed_fields": [
+          "sha256",
+          "source_etag",
+          "source_last_modified",
+          "transfer_fingerprint"
+        ]
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    },
+    {
+      "slug": "cleveland-clinic",
+      "revision": "08bd57c33204747d9b680b9ad9692f3a9b360267",
+      "recorded_source_sha256": "dabba0312d52a715d7739826a811f7d26fb82d006422d946062357f5e67e7415",
+      "metadata_blob": "9b0c17f2ea5ab3cee03611e772c7ef88ad3aba34",
+      "status": "linked",
+      "method": "crlf_to_lf",
+      "evidence": {
+        "item": "hospital-price-history-cleveland-clinic-9f966fd58f5c",
+        "file": "extracted.zst",
+        "download_url": "https://archive.org/download/hospital-price-history-cleveland-clinic-9f966fd58f5c/extracted.zst",
+        "compressed_sha256": "bb1e6698682bec87ab19f5e3aa7e565f39c91d290bccb39607a62d47bfa8a6e8",
+        "compressed_sha1": "89ed5cfff9d3cf1be0e20d7ef144bd89151009cc",
+        "compressed_bytes": 38281877,
+        "file_sha256": "9f966fd58f5cce12fa6a86e261e81dbf9a63121790443c7f97c82ca4fc313f6e",
+        "file_size_bytes": 1425858177,
+        "normalized_sha256": "dabba0312d52a715d7739826a811f7d26fb82d006422d946062357f5e67e7415",
+        "normalized_size_bytes": 1421901334,
+        "archive_metadata_revision": "701f6f288aea3689552440cbd7a2b7d473a94ad8"
+      },
+      "explanation": "The archived original was fully downloaded and decompressed. Replacing CRLF with LF, exactly as the capture-time scraper did, reproduces the historical SHA-256 and byte count. The unmodified archived bytes retain their separate SHA-256."
+    },
+    {
+      "slug": "cleveland-clinic",
+      "revision": "4f6024db23954661dee92723463865c99cfa04a9",
+      "recorded_source_sha256": null,
+      "metadata_blob": "d8590dc91de52e8ff33582b159241f9d6d91f274",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "31b8e45d332a727cf0fa63837d38943a6da7d1e0",
+        "prior_metadata_blob": "b72bcc9f1126ed3b044f3fd8eb7d40dd6904bb64",
+        "source_sha256": "9f966fd58f5cce12fa6a86e261e81dbf9a63121790443c7f97c82ca4fc313f6e",
+        "changed_fields": [
+          "sha256",
+          "transfer_fingerprint"
+        ]
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    },
+    {
+      "slug": "cleveland-clinic-akron",
+      "revision": "4f6024db23954661dee92723463865c99cfa04a9",
+      "recorded_source_sha256": null,
+      "metadata_blob": "6dcfc8be6be00e563080fa1aebbe66328f999063",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "31b8e45d332a727cf0fa63837d38943a6da7d1e0",
+        "prior_metadata_blob": "d0ed1115399d26b1e9d3a97115a9278cce0c3fc6",
+        "source_sha256": "4e5c625950729e3eceac22e0448b415e835a58fd1211be0144ae080f9b80ad24",
+        "changed_fields": [
+          "sha256",
+          "transfer_fingerprint"
+        ]
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    },
+    {
+      "slug": "cleveland-clinic-weston",
+      "revision": "4f6024db23954661dee92723463865c99cfa04a9",
+      "recorded_source_sha256": null,
+      "metadata_blob": "16bd88dadb59ac138fd7c683b87142a43e789eb6",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "31b8e45d332a727cf0fa63837d38943a6da7d1e0",
+        "prior_metadata_blob": "54d6d0e5e502df091a876c276bccc43bc829d4eb",
+        "source_sha256": "21e7072a97db6551a68647a67faa7ca455861626efdd93a0e6e3f2100ebfa6e8",
+        "changed_fields": [
+          "sha256",
+          "transfer_fingerprint"
+        ]
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    },
+    {
+      "slug": "dmc-harper",
+      "revision": "c7f341aaba4a2dc0acd88f5cdba9ba4e56d0f061",
+      "recorded_source_sha256": "fa5a187a851e8c8a7271ec0d46bc832e423964b6a2b3184f012d25e9594f996d",
+      "metadata_blob": "97d3b0ca66f2275cbfda61217757982b23ba8842",
+      "status": "linked",
+      "method": "relocated_shards",
+      "evidence": {
+        "original_main_revision": "527f17d9de4c5e93f08a79b6f4b021810ea664b7",
+        "original_metadata_blob": "97d3b0ca66f2275cbfda61217757982b23ba8842",
+        "raw_revision": "0563fe573fce3b267cb891b57397514c5f6482e2",
+        "header_blob": "5f31bcc339a5b0b36997356fc9fae2d14afada33",
+        "shards_tree": "af26f5f1bc9e00823ccc852d95cba9d0bbdca7db"
+      },
+      "explanation": "The pre-split source was moved into raw-repository history. Its header blob and complete shard tree exactly match the retained pre-rewrite main-repository snapshot, whose metadata blob is identical."
+    },
+    {
+      "slug": "dmc-harper",
+      "revision": "e0f2fb334c8e3114d9ff656ebe510f039b428b33",
+      "recorded_source_sha256": "e92789f916d7d30f3e61562196f21a4817d17be8d6556c1d6f6f3f1f9702d9d3",
+      "metadata_blob": "21ca2c0db39b69bc35320a6cc37939790e7af9a8",
+      "status": "linked",
+      "method": "relocated_shards",
+      "evidence": {
+        "original_main_revision": "b15c2e8f2758a67040a415a48b64ec491184fb0b",
+        "original_metadata_blob": "21ca2c0db39b69bc35320a6cc37939790e7af9a8",
+        "raw_revision": "4ac91e80175f40ee3f71ac0658c21ff3f9d9d791",
+        "header_blob": "47b3f6e24e26ab2aeafcf6f6c1eb57f096694c32",
+        "shards_tree": "af26f5f1bc9e00823ccc852d95cba9d0bbdca7db"
+      },
+      "explanation": "The pre-split source was moved into raw-repository history. Its header blob and complete shard tree exactly match the retained pre-rewrite main-repository snapshot, whose metadata blob is identical."
+    },
+    {
+      "slug": "duke",
+      "revision": "4f6024db23954661dee92723463865c99cfa04a9",
+      "recorded_source_sha256": null,
+      "metadata_blob": "1578bae5c18b891257b2c7b232bfaa1f9b713110",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "31b8e45d332a727cf0fa63837d38943a6da7d1e0",
+        "prior_metadata_blob": "87789c4aff82bd90b5cc19eca152a172dcdb207a",
+        "source_sha256": "4a3676408e3bb040c132f4d3e3c2630fa01e7c24890c93a7a2d4e1482624bb98",
+        "changed_fields": [
+          "sha256",
+          "transfer_fingerprint"
+        ]
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    },
+    {
+      "slug": "duke-regional",
+      "revision": "4f6024db23954661dee92723463865c99cfa04a9",
+      "recorded_source_sha256": null,
+      "metadata_blob": "484b1a6610e029f1e176bbdbf5b6a5518ffca938",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "31b8e45d332a727cf0fa63837d38943a6da7d1e0",
+        "prior_metadata_blob": "e086334acc12c943e69fa534c59affca73f40952",
+        "source_sha256": "f51869a54067aac7069433be1a49e03884266b01532583c8bb0767fe855831ff",
+        "changed_fields": [
+          "sha256",
+          "transfer_fingerprint"
+        ]
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    },
+    {
+      "slug": "franciscan-indianapolis",
+      "revision": "4f6024db23954661dee92723463865c99cfa04a9",
+      "recorded_source_sha256": null,
+      "metadata_blob": "b960ab926119b953936dca1a3428a5d95fbfa131",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "31b8e45d332a727cf0fa63837d38943a6da7d1e0",
+        "prior_metadata_blob": "f17ccaf4480a3a4d6e63e76ec3887f914068f94f",
+        "source_sha256": "05e013f69d9e8195c926bf713311d5ce623e97dfc36723c9535b1bbeea7d6887",
+        "changed_fields": [
+          "sha256",
+          "source_etag",
+          "source_last_modified",
+          "transfer_fingerprint"
+        ]
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    },
+    {
+      "slug": "froedtert",
+      "revision": "4f6024db23954661dee92723463865c99cfa04a9",
+      "recorded_source_sha256": null,
+      "metadata_blob": "753531b4e106ff0687a1bebbca1a48c73882935f",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "31b8e45d332a727cf0fa63837d38943a6da7d1e0",
+        "prior_metadata_blob": "45b06f2ad268ba3b883a3a61f24fde4c00f27508",
+        "source_sha256": "c98934176d9ee288acd7ab68f7a579780b5fdd13ebc70299355faee03d613d20",
+        "changed_fields": [
+          "sha256",
+          "source_etag",
+          "source_last_modified",
+          "transfer_fingerprint"
+        ]
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    },
+    {
+      "slug": "hackensack-umc",
+      "revision": "a359d32e5227836c4d2ca45ecea7ed707521432d",
+      "recorded_source_sha256": "53ba10171f58a97857d93c26fd79dc84aa8ef63a86d2c28f7b40a86d8575ce7e",
+      "metadata_blob": "af444d54ea4349a22bd9e5d38b1fc6d6c66e7cf3",
+      "status": "unavailable",
+      "method": "not_located",
+      "explanation": "No matching original was located in either repository history or the project Internet Archive items. This capture predates cold storage; its metadata and summary survive. The later archived file has a different hash and size and cannot replace this version.",
+      "evidence": {
+        "retained_main_paths": [
+          "data/hackensack-umc/meta.json",
+          "data/hackensack-umc/summary.csv"
+        ],
+        "retained_raw_paths": [],
+        "archive_search_url": "https://archive.org/advancedsearch.php?q=identifier%3Ahospital-price-history-hackensack-umc-%2A&fl%5B%5D=identifier&rows=100&output=json",
+        "archive_items_found": [
+          "hospital-price-history-hackensack-umc-94eadf5d55bc"
+        ],
+        "expected_archive_metadata_url": "https://archive.org/metadata/hospital-price-history-hackensack-umc-53ba10171f58",
+        "expected_archive_item_exists": false
+      }
+    },
+    {
+      "slug": "hackensack-umc",
+      "revision": "4f6024db23954661dee92723463865c99cfa04a9",
+      "recorded_source_sha256": null,
+      "metadata_blob": "1eabc01b61e36fca08bbb80cfeea64b6f4387062",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "31b8e45d332a727cf0fa63837d38943a6da7d1e0",
+        "prior_metadata_blob": "128ec8ed6aac4ef2a0cf1b5a1b418baa3922d96e",
+        "source_sha256": "94eadf5d55bc3167e0d8630595a7b95eb5200e93934740805e0c4098905e8f80",
+        "changed_fields": [
+          "sha256",
+          "transfer_fingerprint"
+        ]
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    },
+    {
+      "slug": "jackson-memorial",
+      "revision": "d6080ecfe7984a8e2f8327bc8f581fd4f2c7fe16",
+      "recorded_source_sha256": null,
+      "metadata_blob": "858cbb58376e0ce71d3f94043b934214ba58a634",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "116e2e1b1aca0ab50cc27fb32841476cbf0b68a6",
+        "prior_metadata_blob": "20caa1437c638ea67498397d52d1556df25e5036",
+        "source_sha256": "68022fe2716c4e456b5ed27378f4050a2aec49c7804f6dc1e8fb1120df8d97b3",
+        "changed_fields": [
+          "sha256",
+          "transfer_fingerprint"
+        ]
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    },
+    {
+      "slug": "jefferson-tjuh",
+      "revision": "d6080ecfe7984a8e2f8327bc8f581fd4f2c7fe16",
+      "recorded_source_sha256": null,
+      "metadata_blob": "ef16c7f8cb30f30ee1a66c93251cbf4deadf0283",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "116e2e1b1aca0ab50cc27fb32841476cbf0b68a6",
+        "prior_metadata_blob": "84301648524be7134a31f1d09b9e40a5fea5f1c4",
+        "source_sha256": "bffbc3b68df08ec8012d8a803bae749ce9efe56ee5a7198da15483c3521e0a4c",
+        "changed_fields": [
+          "sha256",
+          "source_etag",
+          "source_last_modified",
+          "transfer_fingerprint"
+        ]
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    },
+    {
+      "slug": "lenox-hill",
+      "revision": "4f6024db23954661dee92723463865c99cfa04a9",
+      "recorded_source_sha256": null,
+      "metadata_blob": "68846b3a1ad4a7b0aa5f829d6b36126d2b7f535c",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "31b8e45d332a727cf0fa63837d38943a6da7d1e0",
+        "prior_metadata_blob": "f0699abce4380b387df01b4a86334f251b22ea8e",
+        "source_sha256": "fb7e89ebd2767dcd4e5810991f4f0663ea06254bdacbffbf86c59464c6f5bf79",
+        "changed_fields": [
+          "sha256",
+          "source_last_modified",
+          "transfer_fingerprint"
+        ]
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    },
+    {
+      "slug": "maine-medical-center",
+      "revision": "4f6024db23954661dee92723463865c99cfa04a9",
+      "recorded_source_sha256": null,
+      "metadata_blob": "56cac27cab8549a262cd8f1f3e7ffba5cb387f66",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "31b8e45d332a727cf0fa63837d38943a6da7d1e0",
+        "prior_metadata_blob": "04fe639c2bdaf153b7d0ab11be1e066df4be3ed6",
+        "source_sha256": "541ed4bc440f38a1f7de88d21b2fe9787309b076a5d6e332f984c7ab7e8bce17",
+        "changed_fields": [
+          "sha256",
+          "source_etag",
+          "source_last_modified",
+          "transfer_fingerprint"
+        ]
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    },
+    {
+      "slug": "mu-health",
+      "revision": "bc117f2e09a9327e3678d6d6f5e86d5116a9a2e2",
+      "recorded_source_sha256": null,
+      "metadata_blob": "7750107d1926c03b7f2bb637c3f640d1fbb968ad",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "6cedc27f62bd57b74896506b86636fffd2ec6134",
+        "prior_metadata_blob": "d6e6e02d11495779b0a6e864d022d0dfc10d69b6",
+        "source_sha256": "85fe4571ceeff6e07466f2651ecf371f8c2030559292779379d948776f470f17",
+        "changed_fields": [
+          "sha256",
+          "source_last_modified",
+          "transfer_fingerprint"
+        ]
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    },
+    {
+      "slug": "nebraska-medical-center",
+      "revision": "d6080ecfe7984a8e2f8327bc8f581fd4f2c7fe16",
+      "recorded_source_sha256": null,
+      "metadata_blob": "2fb654f33a4deb0fb044b0943ac5269d44073e2d",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "116e2e1b1aca0ab50cc27fb32841476cbf0b68a6",
+        "prior_metadata_blob": "175201eb6b334f38af80f305b818444d61b8a9d0",
+        "source_sha256": "e8614614bc8ba9f243de7fc0e7cb66eca525ca52d20b84398323e7bd8598a86a",
+        "changed_fields": [
+          "sha256",
+          "transfer_fingerprint"
+        ]
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    },
+    {
+      "slug": "nm-central-dupage",
+      "revision": "bc117f2e09a9327e3678d6d6f5e86d5116a9a2e2",
+      "recorded_source_sha256": null,
+      "metadata_blob": "5b096407b33eebe8dc62363e1687885eb246602d",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "6cedc27f62bd57b74896506b86636fffd2ec6134",
+        "prior_metadata_blob": "a4b89b25e1b8a1161a9c468a36f52f30688268f9",
+        "source_sha256": "c03047159f9bff464d090a5c3569cdff21158429ac81373175345f7e6cfe4f33",
+        "changed_fields": [
+          "sha256",
+          "source_etag",
+          "source_last_modified",
+          "transfer_fingerprint"
+        ]
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    },
+    {
+      "slug": "northwell-north-shore",
+      "revision": "bc117f2e09a9327e3678d6d6f5e86d5116a9a2e2",
+      "recorded_source_sha256": null,
+      "metadata_blob": "d2b5c2c19af8ab83db442902804f2050cb471690",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "6cedc27f62bd57b74896506b86636fffd2ec6134",
+        "prior_metadata_blob": "dd61194f01bd4ef9f5bff931a70dca7c265c7c08",
+        "source_sha256": "9dee78a475fc3c5b20f8109b74984249475174b348255c802b6bffddea1bc692",
+        "changed_fields": [
+          "sha256",
+          "transfer_fingerprint"
+        ]
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    },
+    {
+      "slug": "northwestern-memorial",
+      "revision": "bc117f2e09a9327e3678d6d6f5e86d5116a9a2e2",
+      "recorded_source_sha256": null,
+      "metadata_blob": "7c019600b3156f8329afd8ef5afeda4a92fd9e68",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "6cedc27f62bd57b74896506b86636fffd2ec6134",
+        "prior_metadata_blob": "b857a78f240b9cef08b143c02c660120da926fbd",
+        "source_sha256": "908ac958d68c74c252c25686c81efef67f558106efbc35877ee779550a993712",
+        "changed_fields": [
+          "sha256",
+          "source_etag",
+          "source_last_modified",
+          "transfer_fingerprint"
+        ]
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    },
+    {
+      "slug": "ochsner-medical-center",
+      "revision": "bc117f2e09a9327e3678d6d6f5e86d5116a9a2e2",
+      "recorded_source_sha256": null,
+      "metadata_blob": "b5e5f5a911e5053ac365112bc8a1ef4e1eb9a2c4",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "6cedc27f62bd57b74896506b86636fffd2ec6134",
+        "prior_metadata_blob": "8eab7d96dd59f68a6a757d8bae2767957db685e3",
+        "source_sha256": "2645739710ff580494dc609a060a99ac3c3aed023b1f249106d2e39346b159b3",
+        "changed_fields": [
+          "sha256",
+          "source_etag",
+          "source_last_modified",
+          "transfer_fingerprint"
+        ]
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    },
+    {
+      "slug": "ou-medical-center",
+      "revision": "bc117f2e09a9327e3678d6d6f5e86d5116a9a2e2",
+      "recorded_source_sha256": null,
+      "metadata_blob": "94b815baee49fe46ea1890bac04d277ce1506be2",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "6cedc27f62bd57b74896506b86636fffd2ec6134",
+        "prior_metadata_blob": "7df51fc22a460a9bccbf6ead09a2c193c335ba6f",
+        "source_sha256": "efdeac51be0d9f7c853313345bab34956541c93e737c7204733bd576e34e2099",
+        "changed_fields": [
+          "sha256",
+          "transfer_fingerprint"
+        ]
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    },
+    {
+      "slug": "parkland",
+      "revision": "d6080ecfe7984a8e2f8327bc8f581fd4f2c7fe16",
+      "recorded_source_sha256": null,
+      "metadata_blob": "fb26f03869f6d63b44df44126818559f82101272",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "116e2e1b1aca0ab50cc27fb32841476cbf0b68a6",
+        "prior_metadata_blob": "34ef4fa83801564803282918bc897f10b47d8677",
+        "source_sha256": "fcd7b98d98361ec44ddb7ccede88f784757f05628de92082c61a4cfb03420e5c",
+        "changed_fields": [
+          "sha256",
+          "source_etag",
+          "source_last_modified",
+          "transfer_fingerprint"
+        ]
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    },
+    {
+      "slug": "penn-hup",
+      "revision": "08bd57c33204747d9b680b9ad9692f3a9b360267",
+      "recorded_source_sha256": "25eb29300f50870d9c7fdf64709953715318e82ec94a06d73ddca33a33abeb34",
+      "metadata_blob": "4ea0a04f08c45e6f6f205fe4a7205998d3b75097",
+      "status": "linked",
+      "method": "crlf_to_lf",
+      "evidence": {
+        "item": "hospital-price-history-penn-hup-84201ae3ef0e",
+        "file": "231352685_the-trustees-of-the-university-of-pennsylvania-dba-the-hospital-of-the-univer_standardcharges.csv.zst",
+        "download_url": "https://archive.org/download/hospital-price-history-penn-hup-84201ae3ef0e/231352685_the-trustees-of-the-university-of-pennsylvania-dba-the-hospital-of-the-univer_standardcharges.csv.zst",
+        "compressed_sha256": "daf5b0f3b3e0459f03624ff215ecb89b2f34d07d15f8ea00ff9bf44e1c30b082",
+        "compressed_sha1": "af9b2051612ae8c276fd4c9aba0300b43af48183",
+        "compressed_bytes": 7543840,
+        "file_sha256": "84201ae3ef0e7ae026102ebb731ffc06134e5d626e48f755c20b0f750ec282b2",
+        "file_size_bytes": 2346343903,
+        "normalized_sha256": "25eb29300f50870d9c7fdf64709953715318e82ec94a06d73ddca33a33abeb34",
+        "normalized_size_bytes": 2346268631,
+        "archive_metadata_revision": "cf0b7464f7609e43b8eaca84d4b548ee279df60a"
+      },
+      "explanation": "The archived original was fully downloaded and decompressed. Replacing CRLF with LF, exactly as the capture-time scraper did, reproduces the historical SHA-256 and byte count. The unmodified archived bytes retain their separate SHA-256."
+    },
+    {
+      "slug": "sanford-fargo",
+      "revision": "bc117f2e09a9327e3678d6d6f5e86d5116a9a2e2",
+      "recorded_source_sha256": null,
+      "metadata_blob": "55ba5e30380e9683f7abfc602991a71e1f4cffb7",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "6cedc27f62bd57b74896506b86636fffd2ec6134",
+        "prior_metadata_blob": "bb08085870b024e1b300119ab06e3f918ab8e175",
+        "source_sha256": "486e71eb8e3320a8b7d1a3d7a645f0f4ea6d5a5138936f9d4f9154baea1ebc2c",
+        "changed_fields": [
+          "sha256",
+          "source_etag",
+          "source_last_modified",
+          "transfer_fingerprint"
+        ]
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    },
+    {
+      "slug": "sanford-usd",
+      "revision": "bc117f2e09a9327e3678d6d6f5e86d5116a9a2e2",
+      "recorded_source_sha256": null,
+      "metadata_blob": "ae4af1b27a62c6f733959ec31b102bb229986a1f",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "6cedc27f62bd57b74896506b86636fffd2ec6134",
+        "prior_metadata_blob": "83b96a6daf74d89f5203b4d3aea0afc5001fa159",
+        "source_sha256": "2c94d6436b2e60819b7de8f46553b4a9cb9cfdc3f5f6e92c4b80ff54b340aedb",
+        "changed_fields": [
+          "sha256",
+          "source_etag",
+          "source_last_modified",
+          "transfer_fingerprint"
+        ]
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    },
+    {
+      "slug": "uams",
+      "revision": "bc117f2e09a9327e3678d6d6f5e86d5116a9a2e2",
+      "recorded_source_sha256": null,
+      "metadata_blob": "6c679df2a43c2009b40f3fc6e346a6305029fcee",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "6cedc27f62bd57b74896506b86636fffd2ec6134",
+        "prior_metadata_blob": "e27e64b2437b3c4b8e9bb8ed8c859c4628e21dd4",
+        "source_sha256": "88ce6bcc7f4b9662bd6374a79e0b09fc38c1e05d3b95ca05333f7dc155bc9e71",
+        "changed_fields": [
+          "sha256",
+          "transfer_fingerprint"
+        ]
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    },
+    {
+      "slug": "uihc",
+      "revision": "bc117f2e09a9327e3678d6d6f5e86d5116a9a2e2",
+      "recorded_source_sha256": null,
+      "metadata_blob": "cc575a59026eb0bd7fac9ebbeb93c13b4490a08d",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "6cedc27f62bd57b74896506b86636fffd2ec6134",
+        "prior_metadata_blob": "1d753ae01c22ecea1451ece79e9ba3a3a459e832",
+        "source_sha256": "7124f50a62cd7c4fa8a3c30440b9dbf75f0b1f5a3bed1f9c2d9b2a0012590aeb",
+        "changed_fields": [
+          "sha256",
+          "source_etag",
+          "source_last_modified",
+          "transfer_fingerprint"
+        ]
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    },
+    {
+      "slug": "ummc-jackson",
+      "revision": "d6080ecfe7984a8e2f8327bc8f581fd4f2c7fe16",
+      "recorded_source_sha256": null,
+      "metadata_blob": "0e605aa0672852283e8bdbe424ef2f3a70dfd80b",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "116e2e1b1aca0ab50cc27fb32841476cbf0b68a6",
+        "prior_metadata_blob": "edf82ca3c783563fb3ede25130ac496212bc343a",
+        "source_sha256": "8605c89f540e09540448d22ea22c75f4b55b32a138c76253d7212f9badde6fb8",
+        "changed_fields": [
+          "sha256",
+          "source_etag",
+          "source_last_modified",
+          "transfer_fingerprint"
+        ]
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    },
+    {
+      "slug": "unc-hospitals",
+      "revision": "d6080ecfe7984a8e2f8327bc8f581fd4f2c7fe16",
+      "recorded_source_sha256": null,
+      "metadata_blob": "cd45a3b8e962825013bfa439fe8b7167319e3df1",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "116e2e1b1aca0ab50cc27fb32841476cbf0b68a6",
+        "prior_metadata_blob": "fe94d0adbe942a1cf44b234da86db7742d88e845",
+        "source_sha256": "347dbadf408fa1aa78cab86d65d5f2de0a582234b273ac01ffd253cf64e31a03",
+        "changed_fields": [
+          "sha256",
+          "source_last_modified",
+          "transfer_fingerprint"
+        ]
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    },
+    {
+      "slug": "university-of-kansas",
+      "revision": "bc117f2e09a9327e3678d6d6f5e86d5116a9a2e2",
+      "recorded_source_sha256": null,
+      "metadata_blob": "a4f1f0d9b0a9838eb0214dd7c244518626473975",
+      "status": "linked",
+      "method": "metadata_hash_reset",
+      "evidence": {
+        "prior_revision": "6cedc27f62bd57b74896506b86636fffd2ec6134",
+        "prior_metadata_blob": "530c63c4c2dbfc2689bf25c148c8a3ba893cef9a",
+        "source_sha256": "7d526c5ef5cb9a827d374b429ab1e56b0c9541f36bb87c1de2ebc485ceaaf132",
+        "changed_fields": [
+          "sha256",
+          "source_etag",
+          "source_last_modified",
+          "transfer_fingerprint"
+        ]
+      },
+      "explanation": "Change-detection fields were cleared to force a refresh; the retained source identity is documented in the immediately preceding metadata. This state is not evidence of a new source file."
+    }
+  ]
+}

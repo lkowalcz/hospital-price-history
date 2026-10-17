@@ -3,7 +3,7 @@ name: Deploy site
 on:
   push:
     branches: [main]
-    paths: ["data/**", "observations/**", "collection_health.py", "collection_policy.json",
+    paths: ["data/**", "observations/**", "collection_health.py", "collection_policy.json", "source_audit.py", "source_audit.json",
             "gen_site.py", "data_catalog.py", "hospitals.json",
             ".github/workflows/pages.yml"]
   # The scrape workflow commits with the bot token, whose pushes never
