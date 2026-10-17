@@ -121,9 +121,12 @@ git clone https://github.com/lkowalcz/hospital-price-history-raw ../hospital-pri
 python3 scrape.py
 ```
 
-The scraper writes to `data/`, `commit_message.txt`, and the sibling raw
-clone. Pull both repos before running, since the daily workflow also
+The scraper writes to `data/`, `commit_message.txt`, the sibling raw clone,
+and an observation log under `.collection-spool/observations/`.
+Pull both repos before running, since the daily workflow also
 commits to them. Commit and push the raw repo first, then the main repo.
+Scheduled collectors publish observations automatically; an authorized manual
+run can publish its log with `python3 collection_health.py publish`.
 
 Settings for local runs:
 
@@ -211,8 +214,10 @@ before analyzing changes.
 `gen_site.py` calls `data_catalog.py` on each deployment to generate these
 files for the full roster. It reads historical metadata and current summaries;
 it never downloads historical source files or copies summaries into the site.
-The full commit history is required, and local `data/` and `hospitals.json`
-changes must be committed so download links describe the actual bytes.
+Site builds require Python 3.12 or newer and the full commit history. Local
+data, roster, collection policy, and observation changes must be committed
+so download links describe the actual bytes. Older Python CSV readers reject
+NUL characters present in some archived summaries.
 
 The Rush comparison interface has been retired; its former URL redirects to
 the standard hospital archive page. Price exploration interfaces are outside

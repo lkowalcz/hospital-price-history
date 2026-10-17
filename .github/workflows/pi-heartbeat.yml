@@ -1,8 +1,8 @@
 name: Pi heartbeat
 
 # local_refetch.py (the Raspberry Pi job, daily 13:00 New York) re-points
-# the annotated tag `pi-heartbeat` when it completes. Quiet days produce
-# no commit, so the tag's date is the only reliable sign of life. This
+# the annotated tag `pi-heartbeat` when it completes. This independent host
+# heartbeat complements per-hospital observations in collection-health.yml. It
 # fails — and GitHub emails the failure — when that date is more than
 # three days old, or the tag has never been pushed. It also fails when a
 # hospital the Pi owns is stored only as a summary with no archived
