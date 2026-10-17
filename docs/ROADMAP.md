@@ -33,10 +33,12 @@ identify the applicable method and warnings. Automated tests exercise history
 reversions, merges, metadata-only updates, late archiving, missing summaries,
 quality flags, and rejected corrupt downloads.
 
-## 2. Measure collection reliability — next
+## 2. Measure collection reliability — observation logging implemented
 
-Record a compact observation for every attempted hospital check, including
-successful unchanged checks, rather than inferring freshness from file changes.
+The collectors now record compact observations for every attempted hospital
+check, including successful unchanged checks. Historical checks before logging
+began remain unknown. The catalog exposes evidence, schedules, and overdue
+checks; a daily workflow monitors deadlines independently of site builds.
 
 - Distinguish discovery success, validator or sampled-fingerprint matches,
   full downloads, deliberately deferred checks, and failures.
@@ -48,14 +50,17 @@ successful unchanged checks, rather than inferring freshness from file changes.
   coverage gaps, using each hospital's actual check schedule.
 - Surface archive-upload retries and source-link failures separately from
   price-file fetch failures.
-- Audit historical source gaps: repair missing links when the same content
-  exists in either repository or cold storage, and document originals that
-  cannot be recovered. Never substitute today's file for a missing old version.
 
 Completion criterion: every attempted check produces a durable outcome, an
 unchanged reachable source stays distinguishable from an unchecked source,
 and fixtures verify skipped checks, interrupted runs, and overlapping hosts.
 Do not backfill successful-check timestamps from historical commit dates.
+
+**Next: audit historical source gaps.** Repair missing links when the same
+content exists in either repository or cold storage, and document originals
+that cannot be recovered. Never substitute today's file for a missing old
+version. Also observe a complete scheduled cycle on both collectors to verify
+the initial rollout covers all 107 hospitals.
 
 ## 3. Preserve analytical context in derived exports
 

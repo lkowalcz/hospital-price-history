@@ -14,6 +14,10 @@ The project's focus is a dependable historical dataset for others to analyze
 and build on. Start with the [data catalog](https://lukekowalczyk.com/hospital-price-history/data/)
 for downloads, historical snapshot manifests, and recorded collection issues.
 The [data roadmap](docs/ROADMAP.md) sets the priorities and completion criteria.
+The [collection health report](https://lukekowalczyk.com/hospital-price-history/data/collection-health.json)
+distinguishes successful checks, full downloads, failures, deferred checks,
+and overdue collection. Check times come from explicit observations; checks
+before logging began remain unknown.
 
 ## Coverage
 

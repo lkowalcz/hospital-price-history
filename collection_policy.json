@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "default_host": "github-actions",
+  "check_interval_hours": 24,
+  "grace_hours": 48,
+  "hosts": {
+    "github-actions": {"schedule": "Daily at 06:23 UTC", "maximum_run_hours": 7},
+    "pi": {"schedule": "Daily at 13:00 America/New_York", "maximum_run_hours": 30}
+  },
+  "overrides": {
+    "johns-hopkins": "pi",
+    "hopkins-bayview": "pi",
+    "hopkins-all-childrens": "pi",
+    "sibley-memorial": "pi",
+    "orlando-regional": "pi",
+    "jackson-memorial": "pi",
+    "university-of-kansas": "pi",
+    "hca-florida-kendall": "pi",
+    "tristar-centennial": "pi",
+    "yale-new-haven": "pi"
+  }
+}

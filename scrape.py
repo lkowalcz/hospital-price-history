@@ -1014,12 +1014,15 @@ def utcnow():
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def process(hospital, scratch, impersonate=None):
+def process(hospital, scratch, impersonate=None, observation=None):
     """Scrape one hospital. impersonate: None = per-config (hospitals.json
     `fetch` plus a learned fetch_escalated flag in meta.json); True/False
     forces the transport — the fallback ladder in main() retries a failed
     hospital once with the opposite one."""
     slug = hospital["slug"]
+    observation = observation if observation is not None else {}
+    observation.update(outcome="failed", method="discovery", discovery_status="failed",
+                       verification_interval_hours=24)
     outdir = DATA / slug
     outdir.mkdir(parents=True, exist_ok=True)
     meta_path = outdir / "meta.json"
@@ -1028,8 +1031,10 @@ def process(hospital, scratch, impersonate=None):
     imp = impersonate
     if imp is None:
         imp = wants_impersonate(hospital) or bool(old_meta.get("fetch_escalated"))
+    observation["transport"] = "impersonate" if imp else "plain"
     mrf_url = discover_mrf_url(hospital, imp)
     if not mrf_url:
+        observation.update(outcome="listing_missing", discovery_status="missing")
         # Losing the listing is itself signal; record it without erasing data.
         if old_meta.get("status") != "missing-from-hpt-txt":
             old_meta["status"] = "missing-from-hpt-txt"
@@ -1037,6 +1042,7 @@ def process(hospital, scratch, impersonate=None):
             meta_path.write_text(json.dumps(old_meta, indent=2) + "\n")
             return f"{slug}: MRF no longer listed in cms-hpt.txt"
         return None
+    observation["discovery_status"] = "found"
 
     # A returning listing needs a validated snapshot to restore its storage
     # status, even when the URL, validators, and bytes are unchanged.
@@ -1090,16 +1096,24 @@ def process(hospital, scratch, impersonate=None):
         validators = (h.get("Last-Modified"), h.get("ETag"))
         stored = (old_meta.get("source_last_modified"), old_meta.get("source_etag"))
         if any(validators) and validators == stored:
+            observation.update(outcome="unchanged", method="headers", verified_at=utcnow(),
+                               source_sha256=old_meta["sha256"],
+                               evidence={"last_modified": validators[0], "etag": validators[1]})
             return None
         # Validators absent — or rotating on every request (Kaiser): fall
         # back to a ~5 MB sampled Range fingerprint before a full download.
         fp = remote_fingerprint(mrf_url, impersonate=imp, max_time=mt)
         if fp and fp == old_meta.get("transfer_fingerprint"):
+            observation.update(outcome="unchanged", method="sampled_fingerprint", verified_at=utcnow(),
+                               source_sha256=old_meta["sha256"], evidence={"fingerprint": fp})
             return None
         if fp is None and not any(stored) \
-                and old_meta.get("size_bytes", 0) > MAX_SHARD_TOTAL \
-                and datetime.now(timezone.utc).weekday() != 6:
-            return None  # no Range support either: full refetch Sundays only
+                and old_meta.get("size_bytes", 0) > MAX_SHARD_TOTAL:
+            observation["verification_interval_hours"] = 168
+            if datetime.now(timezone.utc).weekday() != 6:
+                observation.update(outcome="deferred", method="discovery_only",
+                                   reason="weekly_full_download; no reliable cheap verification available")
+                return None  # full refetch Sundays only; not a verified source
 
     if limit:
         cl = int(head(mrf_url, impersonate=imp, max_time=mt).get("Content-Length") or 0)
@@ -1109,7 +1123,9 @@ def process(hospital, scratch, impersonate=None):
     workdir = Path(tempfile.mkdtemp(dir=scratch))
     try:
         tmp = workdir / "download"
+        observation["method"] = "full_download"
         headers = download_to(mrf_url, tmp, impersonate=imp, max_time=mt, limit=limit)
+        downloaded_at = utcnow()
         transfer_fp = local_fingerprint(tmp)
         name, payload_path = materialize(tmp, headers, mrf_url, workdir, limit=limit)
         if payload_path != tmp:
@@ -1143,6 +1159,8 @@ def process(hospital, scratch, impersonate=None):
             else:
                 REFRESHED.append(slug)
             meta_path.write_text(json.dumps(old_meta, indent=2) + "\n")
+            observation.update(outcome="unchanged", verified_at=downloaded_at, downloaded_at=downloaded_at,
+                               source_sha256=sha)
             return None
 
         old_stats = summary_stats(outdir / "summary.csv")
@@ -1175,6 +1193,8 @@ def process(hospital, scratch, impersonate=None):
             try_cold_store(slug, payload_path, sha, meta, name)
         check_summary(slug, old_stats, outdir, meta)
         meta_path.write_text(json.dumps(meta, indent=2) + "\n")
+        observation.update(outcome="changed" if changed else "unchanged", verified_at=downloaded_at,
+                           downloaded_at=downloaded_at, source_sha256=sha)
         verb = ("updated" if old_meta.get("sha256") else "first snapshot") \
             if changed else ("restored listing" if rediscovered else "backfilled summary")
         return f"{slug}: {verb} ({size:,} bytes, {mode})"
@@ -1259,17 +1279,26 @@ def select_hospitals(hospitals, only, skip):
 
 
 def main():
+    import collection_health as health
     scratch = Path(tempfile.mkdtemp(prefix="mrf-scrape-"))
-    hospitals = json.loads((ROOT / "hospitals.json").read_text())
+    roster = json.loads((ROOT / "hospitals.json").read_text())
     only = os.environ.get("ONLY")
-    hospitals = select_hospitals(hospitals, only, os.environ.get("SKIP"))
+    hospitals = select_hospitals(roster, only, os.environ.get("SKIP"))
+    slugs = [h["slug"] for h in hospitals]
+    log = (health.RunLog(os.environ["COLLECTION_LOG"]) if os.environ.get("COLLECTION_LOG") else
+           health.RunLog.create(ROOT, os.environ.get("COLLECTION_HOST", "manual"), slugs,
+               {h["slug"]: "outside_requested_subset" if only else "other_collector"
+                for h in roster if h["slug"] not in slugs}))
     changes, failures, recovered, escalated = [], [], [], []
+    completed = False
     try:
         for hospital in hospitals:
             slug = hospital["slug"]
+            attempt_id = log.begin(slug)
+            observation, retry_errors = {}, []
             try:
                 try:
-                    result = process(hospital, scratch)
+                    result = process(hospital, scratch, observation=observation)
                 except Exception as exc:
                     # Fallback ladder: retry once with the opposite transport
                     # (plain <-> curl-impersonate). CDNs block one or the
@@ -1280,22 +1309,35 @@ def main():
                     print(f"{slug}: {exc}; retrying via "
                           f"{'plain fetch' if default_imp else 'impersonate'}",
                           file=sys.stderr, flush=True)
-                    result = process(hospital, scratch, impersonate=not default_imp)
-                    if not default_imp:
+                    retry_errors.append({"transport": observation.get("transport"), "error": health.error_text(exc)})
+                    observation = {}
+                    result = process(hospital, scratch, impersonate=not default_imp, observation=observation)
+                    if not default_imp and observation.get("verified_at"):
                         mark_escalated(slug)
                         escalated.append(slug)
-                if clear_failure_record(slug):
+                if observation.get("verified_at") and clear_failure_record(slug):
                     recovered.append(slug)
                 if result:
                     changes.append(result)
                     print(result, flush=True)
                 else:
-                    print(f"{slug}: unchanged", flush=True)
+                    print(f"{slug}: {observation['outcome']} ({observation['method']})", flush=True)
             except Exception as exc:  # one bad hospital shouldn't sink the run
+                observation.update(outcome="failed", error=health.error_text(exc))
+                observation.pop("verified_at", None)
+                observation.pop("downloaded_at", None)
                 streak = record_failure(slug, exc)
                 failures.append(f"{slug} (day {streak})")
                 print(f"{slug}: ERROR {exc}", file=sys.stderr, flush=True)
+            observation["retry_errors"] = retry_errors
+            meta_path = DATA / slug / "meta.json"
+            observation["archive_status"] = health.archive_result(
+                json.loads(meta_path.read_text()) if meta_path.exists() else {})
+            log.finish_attempt(slug, attempt_id, observation)
+        completed = True
     finally:
+        if os.environ.get("COLLECTION_PARENT_RUN") != "1":
+            log.finish("completed" if completed else "interrupted")
         shutil.rmtree(scratch, ignore_errors=True)
 
     parts = []

@@ -65,6 +65,7 @@ if (ia_bin := find_ia_bin()):
     os.environ.setdefault("IA_BIN", ia_bin)  # scrape reads it at import
 
 import scrape  # noqa: E402  (needs CURL_IMPERSONATE_BIN / IA_BIN set first)
+import collection_health as health  # noqa: E402
 from scrape import RAW_DATA  # noqa: E402
 
 RAW_REPO = RAW_DATA.parent
@@ -79,7 +80,7 @@ YALE_URL = ("https://www.ynhh.org/-/media/Files/YNHHS/sc/"
             "06-0646652-Yale_New_Haven_Hospital_Standard_Charges011025-1.ashx")
 # Annotated tag re-pointed after every run; .github/workflows/pi-heartbeat.yml
 # fails (and so emails) when its tagger date is more than three days old.
-# A tag rather than a commit: quiet days produce no commit to look for.
+# Host completion is separate from individual hospital verification.
 HEARTBEAT_TAG = "pi-heartbeat"
 
 
@@ -127,8 +128,11 @@ def workaround_url(slug):
         (s.scheme, s.netloc, s.path, urllib.parse.urlsplit(donor).query, ""))
 
 
-def refetch_workaround(slug, scratch):
+def refetch_workaround(slug, scratch, observation=None):
     """Fingerprint-check the workaround URL; ingest only on change."""
+    observation = observation if observation is not None else {}
+    observation.update(outcome="failed", method="discovery", discovery_status="workaround",
+                       transport="plain", verification_interval_hours=24)
     url = workaround_url(slug)
     fp = scrape.remote_fingerprint(url)
     if fp and fp == meta_of(slug).get("transfer_fingerprint"):
@@ -136,15 +140,29 @@ def refetch_workaround(slug, scratch):
         # A stale streak from CI trying the dead published link would keep
         # the site badge on "unreachable"; the source is reachable from here.
         scrape.clear_failure_record(slug)
+        observation.update(outcome="unchanged", method="sampled_fingerprint", verified_at=health.now(),
+                           source_sha256=meta_of(slug)["sha256"], evidence={"fingerprint": fp},
+                           archive_status=health.archive_result(meta_of(slug)))
         return False
     name = Path(urllib.parse.urlsplit(url).path).name or f"{slug}.bin"
     if slug == "yale-new-haven":
         name = name.replace("-1.ashx", ".csv")
     dest = Path(scratch) / name
-    run("curl", "-sS", "-L", "--retry", "3", "-C", "-", "--max-time", "7200",
+    observation["method"] = "full_download"
+    old_sha = meta_of(slug).get("sha256")
+    run("curl", "--fail", "-sS", "-L", "--retry", "3", "-C", "-", "--max-time", "7200",
         "-A", scrape.USER_AGENT, "-o", dest, url)
+    downloaded_at = health.now()
+    with dest.open("rb") as handle:
+        start = handle.read(512).lstrip(b"\xef\xbb\xbf").lstrip().lower()
+    if not start or start.startswith((b"<!doctype", b"<html", b"<head")):
+        raise ValueError("received an empty file or HTML page instead of an MRF")
     run(sys.executable, ROOT / "ingest_local.py", slug, dest)
     scrape.clear_failure_record(slug)
+    meta = meta_of(slug)
+    observation.update(outcome="unchanged" if meta["sha256"] == old_sha else "changed",
+                       verified_at=downloaded_at, downloaded_at=downloaded_at, source_sha256=meta["sha256"],
+                       archive_status=health.archive_result(meta))
     return True
 
 
@@ -152,7 +170,7 @@ def stamp():
     return datetime.datetime.now().astimezone().strftime("%Y-%m-%d %H:%M:%S %Z")
 
 
-def refetch_hospitals():
+def refetch_hospitals(log=None):
     # /tmp is a small tmpfs on the Pi. Keep downloads, extracted files,
     # and compressed originals on its disk; subprocesses inherit TMPDIR.
     scratch_root = Path.home() / ".cache" / "hospital-price-history"
@@ -160,15 +178,26 @@ def refetch_hospitals():
     with tempfile.TemporaryDirectory(prefix="refetch-", dir=scratch_root) as scratch:
         env = dict(os.environ, ONLY=",".join(IP_BLOCKED + OVERSIZED),
                    TMPDIR=scratch, MAX_DOWNLOAD_BYTES="0")
+        if log:
+            env.update(COLLECTION_LOG=str(log.path), COLLECTION_PARENT_RUN="1", COLLECTION_HOST="pi")
         run(sys.executable, ROOT / "scrape.py", env=env)
         changed = (ROOT / "changed_slugs.txt").read_text().split()
 
         for slug in STALE_SAS + ["yale-new-haven"]:
+            attempt_id = log.begin(slug) if log else None
+            observation = {}
             try:
-                if refetch_workaround(slug, scratch):
+                kwargs = {"observation": observation} if log else {}
+                if refetch_workaround(slug, scratch, **kwargs):
                     changed.append(slug)
             except Exception as exc:
+                scrape.record_failure(slug, exc)
+                observation.update(outcome="failed", error=health.error_text(exc))
+                observation.pop("verified_at", None)
+                observation.pop("downloaded_at", None)
                 print(f"{slug}: workaround failed: {exc}", file=sys.stderr, flush=True)
+            if log:
+                log.finish_attempt(slug, attempt_id, observation)
     return changed
 
 
@@ -195,7 +224,20 @@ def main():
     for repo in (ROOT, RAW_REPO):
         git(repo, "pull", "--rebase", "--autostash", "--quiet")
 
-    changed = refetch_hospitals()
+    log = health.RunLog.create(ROOT, "pi", LOCAL_ONLY)
+    # Publish the planned run before any long download. A hard kill then
+    # leaves a durable, explicitly incomplete run rather than a silent gap.
+    health.publish(ROOT)
+    try:
+        changed = refetch_hospitals(log)
+        log.finish()
+        commit_results(changed)
+    finally:
+        log.finish("interrupted")
+        health.publish(ROOT)
+
+
+def commit_results(changed):
 
     # Commit raw first, pin raw_commit, then commit main. The scraper's
     # own message carries the bookkeeping (fetch errors, recoveries,

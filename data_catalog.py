@@ -12,6 +12,7 @@ import subprocess
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
+from collection_health import build_health
 
 SCHEMA_VERSION = 1
 COLUMNS = ["code_type", "code", "description", "gross_charge", "discounted_cash",
@@ -30,6 +31,12 @@ ISSUES = {
     "legacy_summary_method": "The summary uses the legacy, order-dependent method.",
     "source_unavailable": "No archived source link is recorded for the current content hash.",
     "archive_hash_mismatch": "The recorded cold-storage item belongs to a different snapshot.",
+    "collection_check_overdue": "The scheduled collector has not attempted a check within its interval and grace period.",
+    "collection_verification_overdue": "No successful source verification was recorded within its interval and grace period.",
+    "collection_interrupted": "An interrupted collection run is missing this hospital's outcome.",
+    "collection_failed": "The latest observed check failed or could not find the source listing.",
+    "observed_source_not_current": "The latest verified source differs from the committed snapshot; inspect its observation log.",
+    "archive_upload_failed": "The latest check records an unsuccessful archive upload, separately from source verification.",
 }
 
 
@@ -200,8 +207,9 @@ def build_catalog(hospitals, root, outdir, base, repo, raw_repo):
     if git(root, "rev-parse", "--is-shallow-repository").strip() == "true":
         raise ValueError("The catalog requires full commit history (fetch-depth: 0).")
     # Links must describe committed bytes, including when building locally.
-    if git(root, "status", "--porcelain", "--untracked-files=all", "--", "data", "hospitals.json").strip():
-        raise ValueError("Commit data/ and hospitals.json changes before publishing the catalog.")
+    if git(root, "status", "--porcelain", "--untracked-files=all", "--", "data", "hospitals.json",
+           "observations", "collection_policy.json").strip():
+        raise ValueError("Commit data, roster, policy, and observation changes before publishing the catalog.")
     revision = git(root, "rev-parse", "HEAD").strip()
     envelope = {"schema_version": SCHEMA_VERSION, "catalog_revision": revision,
                 "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds")}
@@ -209,6 +217,15 @@ def build_catalog(hospitals, root, outdir, base, repo, raw_repo):
     if len(set(slugs)) != len(slugs) or any(not re.fullmatch(r"[a-z0-9-]+", s) for s in slugs):
         raise ValueError("Hospital slugs must be unique and contain only lowercase letters, digits, and hyphens.")
     histories = collect_history(root, revision, slugs, repo, raw_repo)
+    health = build_health(root, hospitals, envelope["generated_at"])
+    health["catalog_revision"] = revision
+    for run in health["runs"]:
+        run["observation_url"] = raw_url(repo, revision, run["path"])
+    for checked in health["hospitals"]:
+        for key in ("latest_attempt", "last_successful_check"):
+            if checked[key]:
+                checked[key]["observation_url"] = raw_url(repo, revision, checked[key]["path"])
+    checks = {checked["slug"]: checked for checked in health["hospitals"]}
     entries, reports = [], []
     for hospital in sorted(hospitals, key=lambda h: h["slug"]):
         slug = hospital["slug"]
@@ -231,9 +248,20 @@ def build_catalog(hospitals, root, outdir, base, repo, raw_repo):
             issues.append("source_unavailable")
         if meta.get("cold_storage") and meta["cold_storage"].get("sha256") != meta.get("sha256"):
             issues.append("archive_hash_mismatch")
+        collection = checks[slug]
+        issues.extend(collection["issues"])
+        verified = (collection["last_successful_check"] or {}).get("result") or {}
+        observed = (collection["latest_attempt"] or {}).get("result") or {}
+        if verified.get("source_sha256") and verified["source_sha256"] != meta.get("sha256"):
+            issues.append("observed_source_not_current")
+        if observed.get("archive_status") == "failed":
+            issues.append("archive_upload_failed")
         entry = {"slug": slug, "name": hospital["location_name"], "system": hospital["system"],
                  "status": meta.get("status"), "first_seen": meta.get("first_seen"),
-                 "last_changed": meta.get("last_changed"), "last_successful_check_at": None,
+                 "last_changed": meta.get("last_changed"),
+                 "last_successful_check_at": collection["last_successful_check_at"],
+                 "last_attempt_at": collection["last_attempt_at"],
+                 "last_full_download_at": collection["last_full_download_at"], "collection": collection,
                  "snapshot_count": len(snapshots), "snapshots_without_archived_source": source_gaps,
                  "latest_snapshot": latest,
                  "summary_rows": stats["row_count"] if stats is not None else None,
@@ -253,12 +281,16 @@ def build_catalog(hospitals, root, outdir, base, repo, raw_repo):
               "with_archived_source": sum(bool(e["latest_snapshot"] and e["latest_snapshot"]["source"]) for e in entries),
               "with_issues": sum(bool(e["issues"]) for e in entries),
               "issues": dict(sorted(Counter(issue for e in entries for issue in e["issues"]).items()))}
-    catalog = {**envelope, "quality_url": f"{base}/data/quality.json", "totals": totals, "hospitals": entries}
+    catalog = {**envelope, "quality_url": f"{base}/data/quality.json",
+               "collection_health_url": f"{base}/data/collection-health.json",
+               "collection_totals": health["totals"], "totals": totals, "hospitals": entries}
     write_json(outdir / "data" / "catalog.json", catalog)
+    write_json(outdir / "data" / "collection-health.json", health)
     write_json(outdir / "data" / "quality.json",
                {**envelope, "totals": totals, "issue_definitions": ISSUES, "hospitals": reports})
     with (outdir / "data" / "catalog.csv").open("w", newline="", encoding="utf-8") as handle:
         fields = ["slug", "name", "system", "status", "first_seen", "last_changed", "last_successful_check_at",
+                  "last_attempt_at", "last_full_download_at", "scheduled_host", "check_state", "check_method",
                   "snapshot_count", "snapshots_without_archived_source", "summary_rows", "summary_url", "summary_version", "source_url",
                   "metadata_url", "snapshots_url", "issues", "catalog_revision"]
         writer = csv.DictWriter(handle, fieldnames=fields)
@@ -267,6 +299,8 @@ def build_catalog(hospitals, root, outdir, base, repo, raw_repo):
             snapshot = entry["latest_snapshot"] or {}
             row = {key: entry.get(key) for key in fields}
             row.update(summary_url=snapshot.get("summary_url"), summary_version=snapshot.get("summary_version"),
+                       scheduled_host=entry["collection"]["scheduled_host"], check_state=entry["collection"]["state"],
+                       check_method=((entry["collection"]["latest_attempt"] or {}).get("result") or {}).get("method"),
                        source_url=(snapshot.get("source") or {}).get("url"), issues=";".join(entry["issues"]),
                        catalog_revision=revision)
             writer.writerow(row)

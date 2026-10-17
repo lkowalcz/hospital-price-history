@@ -13,19 +13,42 @@ are stored only on the Pi.
 | `scrape.yml` | GitHub Actions | daily, 06:23 UTC cron (often delayed by hours) | every hospital except the `SKIP` list in the workflow |
 | `pages.yml` | GitHub Actions | on completion of `scrape.yml`, and on relevant data/generator pushes | the site, data catalog, manifests, and quality report |
 | `local_refetch.py` | Pi `homectl.local` | daily, 13:00 New York, via cron | the `LOCAL_ONLY` list in `local_refetch.py`; a test checks that it matches the workflow's `SKIP` |
+| `collection-health.yml` | GitHub Actions | daily, 19:31 UTC | overdue hospital checks, overdue source verification, and interrupted runs |
 
 The Pi pushes commits with a deploy key, which triggers the site's
 push-based deployment workflow.
 
 The generated [data catalog](https://lukekowalczyk.com/hospital-price-history/data/)
-reports recorded failures and structural summary checks for the full roster.
-Its timestamps do not establish when each hospital was last successfully
-checked: those observations are a [roadmap milestone](ROADMAP.md#2-measure-collection-reliability--next).
-Continue using workflow results and the Pi heartbeat to monitor execution.
+reports check outcomes, verification methods, schedules, and structural summary
+checks for the full roster. The [collection health report](https://lukekowalczyk.com/hospital-price-history/data/collection-health.json)
+uses explicit observations, with unknown timestamps before logging began.
+Keep workflow results and the Pi heartbeat as independent execution checks.
+
+Collectors spool append-only logs in `.collection-spool/observations/`. They
+publish the planned run before fetching and publish outcomes afterward,
+including after failures. Publication uses a separate Git index and only adds
+log records, so dirty or rejected source changes cannot leak into that commit.
+Each run has a unique path; simultaneous pushes retry against the latest main
+commit. Existing logs can only grow. A stale publisher cannot shorten a log.
+
+GitHub Actions also retains a 30-day log artifact. To retry a failed publication,
+restore the artifact beneath `.collection-spool/observations/` in an authorized
+checkout, then run `python collection_health.py publish`. On the Pi the spool
+survives process failures and is republished on subsequent runs. Do not delete
+unpublished logs. Hard termination can prevent final publication; the previously
+published plan then exposes missing outcomes. `python collection_health.py check`
+recomputes deadlines locally without downloading any price files.
+
+`collection_policy.json` defines scheduled ownership, intervals, grace, and run
+limits. Daily attempts allow 48 hours of grace beyond the 24-hour interval.
+Sunday-only full verifications allow 48 hours beyond 168 hours; daily deferrals
+do not refresh them. Incomplete runs exceed their limit after 7 hours on CI or
+30 hours on Pi. Monitoring starts with the first explicit run log; it never uses
+historical snapshot dates to fill gaps. See [the schema guide](DATA.md#collection-health).
 
 After each run, the Pi force-pushes an annotated `pi-heartbeat` tag with
 the completion time as its tagger date. This records successful runs even
-when no files changed and no commit was needed. The `pi-heartbeat.yml`
+when no price files changed. The `pi-heartbeat.yml`
 workflow checks the tag daily at 18:30 UTC. A missing tag or a date more
 than 72 hours old causes a workflow failure and a GitHub email. If you
 receive one, follow the health check below. The next completed Pi run
@@ -78,12 +101,14 @@ ssh -T github-hph; ssh -T github-hph-raw   # each must greet the matching repo
 The crontab line:
 
 ```
-0 13 * * * cd $HOME/hospital-price-history && flock -n /tmp/hph-refetch.lock .venv/bin/python local_refetch.py >> $HOME/hospital-price-refetch.log 2>&1
+0 13 * * * cd $HOME/hospital-price-history && flock -n /tmp/hph-refetch.lock sh -c 'git pull --rebase --quiet && exec .venv/bin/python local_refetch.py' >> $HOME/hospital-price-refetch.log 2>&1
 ```
 
 In the main repo, `git log --author=price-history-pi` shows the Pi's
-commits. Use the heartbeat tag to check whether the job is running;
-days without file changes do not produce commits.
+commits. Use the heartbeat tag to check completed host runs and collection
+logs for individual checks. The cron launcher pulls under the same lock before
+starting Python, so a new version is imported on the next run. Never update or
+restart an active multi-gigabyte download just to roll out collector code.
 
 ## Rebuild the Pi from scratch
 
@@ -163,8 +188,8 @@ or when several hospitals using impersonation start failing together.
    `scrape.yml`, `IMPERSONATE_WRAPPER` in `local_refetch.py` (a test checks
    that the wrapper names match), the "Last checked" date in `scrape.yml`,
    this Mac's `.tools/`, and the Pi's `.tools/` (step 3 of the rebuild,
-   over ssh). The Pi picks up the new wrapper name on its second run after
-   the pull, since it imports `local_refetch.py` before pulling.
+   over ssh). The cron launcher pulls before Python starts, so the next run
+   imports the new wrapper name.
 
 Last refreshed 2026-09-02: v2.2.2, `curl_chrome150`, 15/15 hospitals.
 

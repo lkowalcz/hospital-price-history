@@ -480,7 +480,7 @@ class ProcessHarness(unittest.TestCase):
             p.stop()
         self._tmp.cleanup()
 
-    def run_process(self, validators=None):
+    def run_process(self, validators=None, observation=None):
         hdrs = scrape.Headers(list((validators or self.validators).items()))
 
         def fake_download(url, dest, impersonate=False, max_time=None, limit=0):
@@ -490,7 +490,7 @@ class ProcessHarness(unittest.TestCase):
         with unittest.mock.patch.object(scrape, "head",
                                         lambda url, impersonate=False, max_time=None: hdrs), \
                 unittest.mock.patch.object(scrape, "download_to", fake_download):
-            return scrape.process(self.HOSPITAL, self.scratch)
+            return scrape.process(self.HOSPITAL, self.scratch, observation=observation)
 
     def meta(self):
         return json.loads((scrape.DATA / "h1" / "meta.json").read_text())
@@ -502,6 +502,93 @@ class ProcessHarness(unittest.TestCase):
         # Route the fixture through the giant path: no payload in memory,
         # summary.csv only.
         return unittest.mock.patch.object(scrape, "MAX_SHARD_TOTAL", 10)
+
+
+class TestCollectionEvidence(ProcessHarness):
+    def run_main_with_process(self, process):
+        root = scrape.DATA.parent
+        (root / "hospitals.json").write_text(json.dumps([self.HOSPITAL]))
+        with unittest.mock.patch.object(scrape, "ROOT", root), \
+                unittest.mock.patch.object(scrape, "process", side_effect=process), \
+                unittest.mock.patch.object(scrape, "IMPERSONATE_BIN", None), \
+                unittest.mock.patch.dict("os.environ", {"ONLY": "", "SKIP": "", "COLLECTION_LOG": ""}):
+            scrape.main()
+
+    def log_events(self):
+        import collection_health
+        path = next((scrape.DATA.parent / ".collection-spool").rglob("*.jsonl"))
+        return collection_health.events(path.read_bytes())
+
+    def test_majority_failure_guard_keeps_completed_failure_log(self):
+        with self.assertRaises(SystemExit) as exit_status:
+            self.run_main_with_process(ValueError("source unavailable"))
+        self.assertEqual(exit_status.exception.code, 1)
+        records = self.log_events()
+        self.assertEqual(records[-1]["outcome"], "completed")
+        result = next(e for e in records if e["event"] == "attempt_finished")
+        self.assertEqual(result["outcome"], "failed")
+        self.assertNotIn("verified_at", result)
+
+    def test_interruption_keeps_attempt_without_invented_outcome(self):
+        with self.assertRaises(KeyboardInterrupt):
+            self.run_main_with_process(KeyboardInterrupt())
+        records = self.log_events()
+        self.assertEqual([e["event"] for e in records],
+                         ["run_started", "attempt_started", "run_finished"])
+        self.assertEqual(records[-1]["outcome"], "interrupted")
+
+    def test_full_download_then_header_check_keep_distinct_evidence(self):
+        first, second = {}, {}
+        self.run_process(observation=first)
+        self.run_process(observation=second)
+        self.assertEqual(first["method"], "full_download")
+        self.assertEqual(first["verified_at"], first["downloaded_at"])
+        self.assertEqual(second["method"], "headers")
+        self.assertEqual(second["outcome"], "unchanged")
+        self.assertNotIn("downloaded_at", second)
+        self.assertEqual(first["source_sha256"], second["source_sha256"])
+
+    def test_sample_match_has_no_full_download_claim(self):
+        self.run_process()
+        meta = self.meta()
+        meta["transfer_fingerprint"] = "sample"
+        self.write_meta(meta)
+        observation = {}
+        with unittest.mock.patch.object(scrape, "remote_fingerprint", return_value="sample"):
+            self.run_process({"ETag": "rotated"}, observation=observation)
+        self.assertEqual(observation["method"], "sampled_fingerprint")
+        self.assertNotIn("downloaded_at", observation)
+
+    def test_html_download_is_not_verified(self):
+        self.body = b"<html>access denied</html>"
+        observation = {}
+        with self.assertRaisesRegex(ValueError, "HTML"):
+            self.run_process(observation=observation)
+        self.assertNotIn("verified_at", observation)
+        self.assertNotIn("downloaded_at", observation)
+
+    def test_deferred_check_keeps_failure_streak_and_records_outcome(self):
+        import collection_health
+        self.run_process()
+        meta = self.meta()
+        meta.update(source_last_modified=None, source_etag=None, size_bytes=999,
+                    fetch_failures={"first_failed": "2026-01-01T00:00:00Z"})
+        self.write_meta(meta)
+        root = scrape.DATA.parent
+        (root / "hospitals.json").write_text(json.dumps([self.HOSPITAL]))
+        with self.summarized(), unittest.mock.patch.object(scrape, "ROOT", root), \
+                unittest.mock.patch.object(scrape, "head", return_value={}), \
+                unittest.mock.patch.object(scrape, "datetime") as clock, \
+                unittest.mock.patch.dict("os.environ", {"ONLY": "h1", "COLLECTION_LOG": ""}):
+            clock.now.return_value.weekday.return_value = 1
+            scrape.main()
+        self.assertIn("fetch_failures", self.meta())
+        path = next((root / ".collection-spool").rglob("*.jsonl"))
+        records = collection_health.events(path.read_bytes())
+        result = next(e for e in records if e["event"] == "attempt_finished")
+        self.assertEqual(result["outcome"], "deferred")
+        self.assertEqual(result["verification_interval_hours"], 168)
+        self.assertNotIn("verified_at", result)
 
 
 class TestProcess(ProcessHarness):

@@ -21,6 +21,11 @@ concurrency:
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    env:
+      COLLECTION_HOST: github-actions
+      ONLY: ${{ inputs.only }}
+      # Keep in sync with local_refetch.LOCAL_ONLY and collection_policy.json.
+      SKIP: johns-hopkins,hopkins-bayview,hopkins-all-childrens,sibley-memorial,orlando-regional,jackson-memorial,university-of-kansas,hca-florida-kendall,tristar-centennial,yale-new-haven
     steps:
       # blob:none keeps historical pack blobs off the runner; the working
       # tree (meta, summaries, stored payloads) is still fully materialized.
@@ -54,6 +59,11 @@ jobs:
           # preinstalled on ubuntu-latest, and this is a no-op then.
           command -v zstd >/dev/null || sudo apt-get install -y -q zstd >/dev/null
 
+      - name: Record planned collection
+        run: |
+          python collection_health.py prepare
+          python collection_health.py publish
+
       - name: Install curl-impersonate
         # Refresh twice a year with check_impersonate.py (docs/OPERATIONS.md).
         # The wrapper name must match local_refetch.IMPERSONATE_WRAPPER;
@@ -71,11 +81,6 @@ jobs:
         env:
           MAX_DOWNLOAD_BYTES: "10000000000"
           RAW_REPO_DIR: ${{ github.workspace }}/raw-repo
-          ONLY: ${{ inputs.only }}
-          # Fetched daily by local_refetch.py from a residential IP instead
-          # (runner IPs are blocked, files exceed the cap, or links are dead). Keep in
-          # sync with the lists there; tests/test_scrape.py checks this.
-          SKIP: johns-hopkins,hopkins-bayview,hopkins-all-childrens,sibley-memorial,orlando-regional,jackson-memorial,university-of-kansas,hca-florida-kendall,tristar-centennial,yale-new-haven
           # Cold storage of summarized originals on the Internet Archive.
           # Both empty (secrets unset) leaves archiving off; see
           # docs/OPERATIONS.md for where the keys come from.
@@ -155,3 +160,21 @@ jobs:
             git pull --rebase --quiet
             git push
           fi
+
+      # Independent of the data commit: a failed ingest or majority-failure
+      # guard still leaves durable observations. Uses a separate Git index.
+      - name: Publish collection outcomes
+        if: always()
+        run: |
+          python collection_health.py finish
+          python collection_health.py publish
+
+      - name: Back up collection log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: collection-observations
+          path: .collection-spool/observations/
+          include-hidden-files: true
+          if-no-files-found: ignore
+          retention-days: 30

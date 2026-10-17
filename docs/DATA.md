@@ -105,7 +105,9 @@ has these fields:
 | `slug`, `name`, `system` | Roster identity. Use the slug for joins; display names can change. |
 | `status` | Most recently recorded storage/listing status; null before metadata exists. |
 | `first_seen`, `last_changed` | Metadata observation timestamps, or null. A URL change can update `last_changed` even when bytes match. |
-| `last_successful_check_at` | Currently null for every hospital: successful checks have not been recorded individually. Never infer it from `last_changed`, a commit date, or build time. |
+| `last_successful_check_at` | Latest successful source verification time from an explicit observation, or null. Header and sample matches count; inspect the method. Never inferred from `last_changed`, a commit date, or build time. |
+| `last_attempt_at`, `last_full_download_at` | Latest attempt start and latest validated full download time, or null. A failed ingest does not count as a validated download. |
+| `collection` | Schedule, collector, latest attempt and result, last successful evidence, pinned log URLs, and overdue/interruption flags. See collection health below. |
 | `snapshot_count` | Number of source/summary states in the manifest, including rebuilds and states without summaries. Not a count of price changes. |
 | `snapshots_without_archived_source` | Recorded states without a matching source link, including older versions. Summary rebuilds can share a source, so this is not necessarily a count of distinct missing files. |
 | `latest_snapshot` | Last descriptor in the manifest, or null if no snapshot exists. |
@@ -175,6 +177,63 @@ Issue codes are `metadata_missing`, `fetch_failed`, `listing_missing`,
 `archive_hash_mismatch`. The report supplies their human-readable definitions.
 Failure records can be persisted only weekly, so their `last_attempt` field
 is the latest *recorded* failure attempt, not necessarily the latest attempt.
+The observation log records every attempt independently of that legacy field.
+
+### Collection health
+
+`collection-health.json` includes `schema_version: 1`, `catalog_revision`,
+`evaluated_at`, `monitoring_since`, `policy`, `totals`, `runs`, and `hospitals`.
+The catalog links it as `collection_health_url`; `collection_totals` counts
+known checks, unknown checks, overdue attempts, and overdue verifications.
+These are build-time assessments. The daily Collection freshness workflow
+recomputes deadlines even when no snapshots or observations arrive.
+
+Each hospital's `collection` includes:
+
+- `scheduled_host`, human-readable `schedule`, `check_interval_hours`,
+  `verification_interval_hours`, and `grace_hours`.
+- `last_attempt_at`, `last_scheduled_attempt_at`, `last_successful_check_at`,
+  and `last_full_download_at`. All remain null until observed. A manual check
+  can establish source reachability but cannot reset the scheduled collector's clock.
+- `latest_attempt` and `last_successful_check`: attempt/run identity, host,
+  start time, `result`, and an `observation_url` pinned to the catalog revision.
+  A started attempt without a finished event has a null result.
+- `state`, `check_overdue`, `verification_overdue`, and `issues`.
+  Unknown checks during the initial grace period are still unknown, not healthy.
+
+Results distinguish `changed`, `unchanged`, `failed`, `listing_missing`, and
+`deferred`. Successful methods are `full_download`, `headers`, or
+`sampled_fingerprint`. Header evidence includes Last-Modified/ETag; samples
+include the fingerprint. These cheap checks cannot prove every byte unchanged.
+`verified_at` records when the evidence was obtained; full downloads also have
+`downloaded_at`, before parsing or upload finishes. Failed or deferred results
+have neither timestamp. Discovery status, transport retries, errors, source
+hash, and archive status are separate fields. `archive_status: available`
+means a matching original archive is recorded, not that it was downloaded
+again for verification. `not_recorded` can include sources retained in Git.
+
+Daily checks have a 24-hour interval and 48-hour grace. Large files without
+reliable cheap verification use the scraper's Sunday full-download fallback:
+168 hours plus 48 hours of grace. Daily discovery-only deferrals do not reset
+that verification clock. Run gaps are flagged after 7 hours on GitHub Actions
+or 30 hours on the Pi, or immediately following explicit interruption.
+Later completed attempts by the responsible collector resolve those gaps.
+Historical interrupted runs remain in the report for provenance.
+
+Additional issue codes are `collection_check_overdue`,
+`collection_verification_overdue`, `collection_interrupted`,
+`collection_failed`, `observed_source_not_current`, and `archive_upload_failed`.
+The latter two distinguish an observed source not yet in the committed archive
+and a failed archive upload from a failed source check.
+
+Raw evidence lives under `observations/YYYY-MM-DD/<host>-<run-id>.jsonl`.
+Events are `run_started`, `attempt_started`, `attempt_finished`, and
+`run_finished`, each with schema version, run/host identity, and UTC time.
+Run starts include planned slugs and reasons for excluded slugs. Exclusions
+are not attempts. Each host owns separate append-only logs; aggregation uses
+attempt/evidence times, never commit order. Interrupted logs can have missing
+outcomes; no successful timestamp is invented to fill those gaps. Observations
+do not create source/summary snapshots.
 
 Totals count hospitals, recorded states, hospitals with a current summary,
 with a source link for their latest snapshot, historical states without a

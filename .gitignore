@@ -4,3 +4,4 @@ changed_slugs.txt
 __pycache__/
 .DS_Store
 .tools/
+.collection-spool/

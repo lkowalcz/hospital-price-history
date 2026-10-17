@@ -145,6 +145,14 @@ def hospital_page(h, meta, outdir, catalog_entry):
         ("Rows in summary", f"{len(rows):,}" if rows else "—"),
         ("Source file", f'<a href="{esc(meta.get("mrf_url", ""))}" rel="nofollow">machine-readable file</a>'
          if meta.get("mrf_url") else "—")]
+    collection = catalog_entry["collection"]
+    verification = (collection["last_successful_check"] or {}).get("result") or {}
+    status_rows.extend([
+        ("Last attempted check", esc(collection["last_attempt_at"] or "Not yet recorded")),
+        ("Last successful source check", esc(collection["last_successful_check_at"] or "Not yet recorded")),
+        ("Verification method", esc(verification.get("method", "—").replace("_", " "))),
+        ("Last validated full download", esc(collection["last_full_download_at"] or "Not yet recorded")),
+        ("Collection schedule", esc(collection["schedule"]))])
     if meta.get("status") == "sharded":
         ref = meta.get("raw_commit") or "main"
         status_rows.append((
@@ -160,6 +168,15 @@ def hospital_page(h, meta, outdir, catalog_entry):
     for label, val in status_rows:
         parts.append(f"<tr><th>{label}</th><td>{val}</td></tr>")
     parts.append("</table>")
+    parts.append('<p class="muted">Header and sampled-fingerprint checks provide limited evidence '
+                 'of an unchanged source; they do not verify every byte. Dates before collection '
+                 'logging began remain unknown.</p>')
+    if collection["latest_attempt"]:
+        parts.append(f'<p>Latest check: {esc(collection["state"].replace("_", " "))}. '
+                     f'<a href="{esc(collection["latest_attempt"]["observation_url"])}">Collection log</a>.</p>')
+    for issue in catalog_entry["issues"]:
+        if issue.startswith("collection_") or issue in {"observed_source_not_current", "archive_upload_failed"}:
+            parts.append(f'<p class="warn">{esc(ISSUES[issue])}</p>')
 
     sw = meta.get("summary_warning")
     if sw:
@@ -278,6 +295,7 @@ def data_page(catalog, outdir):
             '<li><a href="catalog.json">Hospital catalog (JSON)</a> — current coverage and links for every hospital</li>',
             '<li><a href="catalog.csv">Hospital catalog (CSV)</a> — the same inventory as a flat table</li>',
             '<li><a href="quality.json">Quality report (JSON)</a> — recorded problems and summary checks</li>',
+            '<li><a href="collection-health.json">Collection health (JSON)</a> — check outcomes, evidence, schedules, and gaps</li>',
             f'<li><a href="{REPO}/blob/main/docs/DATA.md#catalog-and-snapshot-manifests">Schema and interpretation guide</a></li>',
             f'<li><a href="{REPO}/blob/main/examples/download_summary.py">Python example: download and verify a historical summary</a></li>',
             f'<li><a href="{REPO}/blob/main/docs/ROADMAP.md">Data roadmap</a></li></ul>',
@@ -292,9 +310,15 @@ def data_page(catalog, outdir):
             'download and verify every original. Historical gaps count recorded states, including '
             'summary rebuilds; they do not necessarily represent distinct missing files. '
             'The catalog lists the gaps per hospital, and manifests identify each affected snapshot.</p>',
-            '<p><strong>Collection freshness is not yet measured per hospital.</strong> '
-            '“Last changed” records a source revision or URL change, not the last successful check. '
-            'An unchanged file can be old and still reachable. Missing issue flags do not establish freshness.</p>',
+            '<h2>Collection freshness</h2>',
+            f'<p>{catalog["collection_totals"]["with_successful_check"]} hospitals have a recorded successful source check; '
+            f'{catalog["collection_totals"]["without_successful_check"]} have no successful check recorded yet. '
+            f'{catalog["collection_totals"]["check_overdue"]} are overdue for a scheduled attempt and '
+            f'{catalog["collection_totals"]["verification_overdue"]} are overdue for source verification.</p>',
+            '<p>These counts are evaluated at build time. Daily monitoring also checks the recorded schedules. '
+            'The catalog distinguishes full downloads, header checks, sampled fingerprints, failures, and '
+            'deliberately deferred downloads. “Last changed” describes a snapshot, not its freshness. '
+            'Checks before logging began remain unknown; header and sample matches do not verify every byte.</p>',
             '<h2>Recorded issues</h2>']
     if totals["with_issues"]:
         body.append('<table><tr><th>Hospital</th><th>Issue</th></tr>')

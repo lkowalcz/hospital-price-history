@@ -3,7 +3,8 @@ name: Deploy site
 on:
   push:
     branches: [main]
-    paths: ["data/**", "gen_site.py", "data_catalog.py", "hospitals.json",
+    paths: ["data/**", "observations/**", "collection_health.py", "collection_policy.json",
+            "gen_site.py", "data_catalog.py", "hospitals.json",
             ".github/workflows/pages.yml"]
   # The scrape workflow commits with the bot token, whose pushes never
   # trigger push-based deploys; a fixed later cron used to stand in, but
@@ -25,8 +26,7 @@ concurrency:
 
 jobs:
   build:
-    # A failed scrape commits nothing, so there is nothing new to render.
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    # Failed scrapes can publish observations even when snapshots are rejected.
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

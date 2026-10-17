@@ -10,6 +10,8 @@ from unittest.mock import patch
 
 import data_catalog as catalog
 import gen_site
+import collection_health
+import shutil
 from examples.download_summary import choose_snapshot, download_verified
 
 
@@ -73,6 +75,30 @@ class CatalogTest(unittest.TestCase):
         self.assertEqual([s["change_kind"] for s in snapshots], ["source", "source", "summary"])
         self.assertEqual(snapshots[0]["summary_git_blob"], snapshots[1]["summary_git_blob"])
         self.assertIn(first, snapshots[0]["summary_url"])
+
+    def test_check_evidence_is_pinned_without_creating_price_snapshot(self):
+        self.snapshot()
+        log = collection_health.RunLog.create(self.root, "github-actions", ["test"])
+        aid = log.begin("test")
+        verified = collection_health.now()
+        log.finish_attempt("test", aid, dict(outcome="unchanged", method="headers",
+                           verified_at=verified, source_sha256="a" * 64, evidence={"etag": "v1"}))
+        log.finish()
+        source = self.root / ".collection-spool" / "observations"
+        shutil.copytree(source, self.root / "observations")
+        revision = self.commit("Check unchanged source")
+        result = self.build()
+        entry = result["hospitals"][0]
+        self.assertEqual(entry["snapshot_count"], 1)
+        self.assertEqual(entry["last_successful_check_at"], verified)
+        self.assertIsNone(entry["last_full_download_at"])
+        self.assertIn(revision, entry["collection"]["latest_attempt"]["observation_url"])
+        report = json.loads((self.output / "data/collection-health.json").read_text())
+        self.assertEqual(report["totals"]["with_successful_check"], 1)
+        self.assertEqual(report["catalog_revision"], result["catalog_revision"])
+        self.assertNotIn("observed_source_not_current", entry["issues"])
+        self.update_meta(sha256="b" * 64)
+        self.assertIn("observed_source_not_current", self.build()["hospitals"][0]["issues"])
 
     def test_late_archive_enriches_matching_history_without_new_snapshot(self):
         first = self.snapshot()

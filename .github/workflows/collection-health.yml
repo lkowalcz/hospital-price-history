@@ -1,0 +1,28 @@
+name: Collection freshness
+
+on:
+  schedule:
+    - cron: "31 19 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  freshness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: |
+            collection_health.py
+            collection_policy.json
+            hospitals.json
+            observations/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check schedules and incomplete runs
+        run: python collection_health.py check
