@@ -211,9 +211,12 @@ the committed `summary.csv` history.
   `https://` scheme from its `mrf-url`; the scraper adds it.
 - Jackson Memorial's discovery file blocks GitHub runners; the daily Pi
   job handles it from a residential connection. University of Kansas's
-  published file returns 404 as of 2026-09-22, with no verified replacement;
-  its previous snapshot remains available while daily checks continue.
-  See [known source outages](docs/OPERATIONS.md#known-source-outages).
+  file is reachable again as of 2026-10-16, but its 36.8 GB CSV exceeds
+  CI's 10 GB cap; the Pi handles it using disk-backed scratch space.
+  See [hospitals handled locally](docs/OPERATIONS.md#hospitals-handled-locally).
+- UAMS's discovery listing is now named `UAMS Medical Center`. The roster
+  follows that name; a returning listing is downloaded and validated
+  before the scraper clears its missing-listing status.
 - The parser handles Sutter Health's UTF-16 discovery file, the UTF-8
   byte order mark in UCSF's JSON, and ZIP files containing `__MACOSX`
   metadata.

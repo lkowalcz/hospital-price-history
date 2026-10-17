@@ -611,7 +611,8 @@
     "slug": "university-of-kansas",
     "system": "University of Kansas Health System",
     "hpt_txt": "https://www.kansashealthsystem.com/cms-hpt.txt",
-    "location_name": "University of Kansas Hospital"
+    "location_name": "University of Kansas Hospital",
+    "curl_max_time": 43200
   },
   {
     "slug": "ou-medical-center",
@@ -623,7 +624,7 @@
     "slug": "uams",
     "system": "UAMS Health",
     "hpt_txt": "https://uamshealth.com/cms-hpt.txt",
-    "location_name": "University of Arkansas for Medical Sciences"
+    "location_name": "UAMS Medical Center"
   },
   {
     "slug": "ummc-jackson",

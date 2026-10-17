@@ -2,9 +2,9 @@
 
 GitHub Actions runs `scrape.py` daily and deploys the site. A Raspberry Pi
 on the home network runs `local_refetch.py` daily for hospitals that need
-a local connection or a corrected download URL. This guide covers the
-Pi's setup, monitoring, and recovery. Private deploy keys are stored only
-on the Pi.
+a local connection, a larger download allowance, or a corrected URL. This
+guide covers the Pi's setup, monitoring, and recovery. Private deploy keys
+are stored only on the Pi.
 
 ## What runs where
 
@@ -38,20 +38,26 @@ updates the tag.
   URL scheme changes, those two may start returning 403 errors. Yale New
   Haven's `cms-hpt.txt` points at a deleted file; the live upload carries
   the CMS `-1` suffix (`YALE_URL` in `local_refetch.py`).
+- **Files above CI's 10 GB cap**: University of Kansas now publishes a
+  36.8 GB CSV (verified 2026-10-16). Its previous 404 outage has ended.
+  The Pi runs the normal scraper without a download cap and archives the
+  original after summarizing it. Unchanged files use the usual validators
+  and fingerprint checks rather than downloading again.
 
-## Known source outages
+Local downloads use `~/.cache/hospital-price-history/refetch-*/`, including
+the scraper subprocess's temporary files. The Pi's `/tmp` is a 1.9 GB RAM
+disk and cannot hold Kansas's file. Scratch directories are removed after
+each completed run; allow space for the download, extracted files, and
+compressed originals. An initial Kansas fetch may take several hours.
+Kansas's impersonated-download fallback allows up to 12 hours per attempt.
 
-- **University of Kansas** (checked 2026-09-22): the Kansas City MRF URL
-  published in both `cms-hpt.txt` and the hospital's
-  [pricing page](https://www.kansashealthsystem.com/patient-visitor/financial/patient-bills/services-fees/charge-descriptions)
-  returns Azure `BlobNotFound` (HTTP 404), including from the residential
-  connection. Great Bend and Paola also return 404; Olathe's file is
-  reachable but belongs to a different hospital.
-  No replacement has been verified. CI continues checking the published
-  link daily and retains the previous summary and archived original;
-  do not clear `fetch_failures` until a live file is reachable. The
-  hospital's discovery file lists `ManagedCareContracting@kumc.edu` as
-  the contact for correcting the link.
+## Discovery listing changes
+
+The scraper matches each roster entry's `location_name` against the
+hospital's `cms-hpt.txt`. UAMS renamed its listing to `UAMS Medical Center`
+in October 2026; the roster now uses that name. A returning listing forces
+a download and rebuild so `missing-from-hpt-txt` clears only after a valid
+snapshot is collected, even if the file itself has not changed.
 
 ## Health check
 
@@ -186,8 +192,8 @@ metadata. Original files are uploaded to archive.org as items named
 - **Hospitals handled by the Pi** (the workflow's `SKIP` list) are
   archived locally. `local_refetch.py` turns cold storage on whenever
   `~/.config/internetarchive/ia.ini` exists there and
-  the venv has the `ia` client. Currently, only TriStar Centennial is large
-  enough to be summarized; HCA Kendall is near the size threshold. The daily
+  the venv has the `ia` client. Kansas requires this for its oversized CSV;
+  other hospitals may cross the summary size threshold as files change. The daily
   heartbeat workflow fails if any hospital handled by the Pi is summarized
   without an archived original, providing an email alert if credentials
   are missing or expired. To archive an existing snapshot from the Mac,

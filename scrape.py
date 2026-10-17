@@ -1038,6 +1038,10 @@ def process(hospital, scratch, impersonate=None):
             return f"{slug}: MRF no longer listed in cms-hpt.txt"
         return None
 
+    # A returning listing needs a validated snapshot to restore its storage
+    # status, even when the URL, validators, and bytes are unchanged.
+    rediscovered = old_meta.get("status") == "missing-from-hpt-txt"
+
     # A metadata-only giant that predates the summarizer gets one forced
     # download to backfill summary.csv, bypassing the cheap-skip paths.
     upgrade_needed = (
@@ -1080,7 +1084,7 @@ def process(hospital, scratch, impersonate=None):
     resummarize = upgrade_needed or (backfill and summary_stale)
 
     mt = hospital.get("curl_max_time")
-    if not resummarize and not backfill \
+    if not resummarize and not backfill and not rediscovered \
             and mrf_url == old_meta.get("mrf_url") and old_meta.get("sha256"):
         h = head(mrf_url, impersonate=imp, max_time=mt)
         validators = (h.get("Last-Modified"), h.get("ETag"))
@@ -1126,7 +1130,7 @@ def process(hospital, scratch, impersonate=None):
             sha = sha256_file(payload_path)
 
         changed = sha != old_meta.get("sha256") or mrf_url != old_meta.get("mrf_url")
-        if not changed and not resummarize:
+        if not changed and not resummarize and not rediscovered:
             # Content identical but validators rotated; refresh them so the
             # cheap-skip paths work next run. The meta.json edit still lands
             # in a commit, so main() names it rather than calling the run
@@ -1172,7 +1176,7 @@ def process(hospital, scratch, impersonate=None):
         check_summary(slug, old_stats, outdir, meta)
         meta_path.write_text(json.dumps(meta, indent=2) + "\n")
         verb = ("updated" if old_meta.get("sha256") else "first snapshot") \
-            if changed else "backfilled summary"
+            if changed else ("restored listing" if rediscovered else "backfilled summary")
         return f"{slug}: {verb} ({size:,} bytes, {mode})"
     finally:
         shutil.rmtree(workdir, ignore_errors=True)

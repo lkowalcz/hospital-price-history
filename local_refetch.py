@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
-"""Scheduled local refetch for hospitals CI cannot reach: local_refetch.py.
+"""Scheduled local refetch for hospitals CI cannot collect: local_refetch.py.
 
-Two failure classes are covered (see README "Notes"):
+Three failure classes are covered (see docs/OPERATIONS.md):
   - Runner-IP blocks (Hopkins x4, Orlando Regional, Jackson Memorial):
     their CDNs serve a residential IP fine, so the normal scrape pipeline
     just runs here.
+  - Files above CI's download cap (University of Kansas): the normal
+    pipeline runs uncapped, using disk-backed scratch space instead of
+    the Pi's small /tmp RAM disk.
   - Broken published links, fetched via documented workarounds:
       * HCA Kendall / TriStar Centennial: their cms-hpt.txt carries stale
         Azure SAS tokens; the container-scoped token HCA publishes for a
@@ -67,10 +70,11 @@ from scrape import RAW_DATA  # noqa: E402
 RAW_REPO = RAW_DATA.parent
 IP_BLOCKED = ["johns-hopkins", "hopkins-bayview", "hopkins-all-childrens",
               "sibley-memorial", "orlando-regional", "jackson-memorial"]
+OVERSIZED = ["university-of-kansas"]
 SAS_DONOR = "hca-houston-medical-center"
 STALE_SAS = ["hca-florida-kendall", "tristar-centennial"]
 # Everything this script owns; CI's scrape.yml SKIPs exactly this set.
-LOCAL_ONLY = IP_BLOCKED + STALE_SAS + ["yale-new-haven"]
+LOCAL_ONLY = IP_BLOCKED + OVERSIZED + STALE_SAS + ["yale-new-haven"]
 YALE_URL = ("https://www.ynhh.org/-/media/Files/YNHHS/sc/"
             "06-0646652-Yale_New_Haven_Hospital_Standard_Charges011025-1.ashx")
 # Annotated tag re-pointed after every run; .github/workflows/pi-heartbeat.yml
@@ -148,6 +152,26 @@ def stamp():
     return datetime.datetime.now().astimezone().strftime("%Y-%m-%d %H:%M:%S %Z")
 
 
+def refetch_hospitals():
+    # /tmp is a small tmpfs on the Pi. Keep downloads, extracted files,
+    # and compressed originals on its disk; subprocesses inherit TMPDIR.
+    scratch_root = Path.home() / ".cache" / "hospital-price-history"
+    scratch_root.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix="refetch-", dir=scratch_root) as scratch:
+        env = dict(os.environ, ONLY=",".join(IP_BLOCKED + OVERSIZED),
+                   TMPDIR=scratch, MAX_DOWNLOAD_BYTES="0")
+        run(sys.executable, ROOT / "scrape.py", env=env)
+        changed = (ROOT / "changed_slugs.txt").read_text().split()
+
+        for slug in STALE_SAS + ["yale-new-haven"]:
+            try:
+                if refetch_workaround(slug, scratch):
+                    changed.append(slug)
+            except Exception as exc:
+                print(f"{slug}: workaround failed: {exc}", file=sys.stderr, flush=True)
+    return changed
+
+
 def heartbeat():
     """Tell CI this run completed: re-point HEARTBEAT_TAG at HEAD with a
     fresh tagger date and force-push just that ref. Never fatal — the data
@@ -171,21 +195,9 @@ def main():
     for repo in (ROOT, RAW_REPO):
         git(repo, "pull", "--rebase", "--autostash", "--quiet")
 
-    # 1) IP-blocked hospitals: the normal pipeline, from this IP.
-    env = dict(os.environ, ONLY=",".join(IP_BLOCKED))
-    run(sys.executable, ROOT / "scrape.py", env=env)
-    changed = (ROOT / "changed_slugs.txt").read_text().split()
+    changed = refetch_hospitals()
 
-    # 2) Broken-link hospitals, via their documented workarounds.
-    with tempfile.TemporaryDirectory() as scratch:
-        for slug in STALE_SAS + ["yale-new-haven"]:
-            try:
-                if refetch_workaround(slug, scratch):
-                    changed.append(slug)
-            except Exception as exc:
-                print(f"{slug}: workaround failed: {exc}", file=sys.stderr, flush=True)
-
-    # 3) Commit raw first, pin raw_commit, then commit main. The scraper's
+    # Commit raw first, pin raw_commit, then commit main. The scraper's
     # own message carries the bookkeeping (fetch errors, recoveries,
     # validator refreshes) that explains a meta.json-only commit.
     msg = "Local refetch: " + (", ".join(changed) or "no content changes")
@@ -214,6 +226,8 @@ def main():
     if git(ROOT, "status", "--porcelain", "--", "data", capture=True):
         git(ROOT, "add", "data/")
         git(ROOT, "commit", "-m", msg)
+        # Large downloads can overlap CI's next data commit.
+        git(ROOT, "pull", "--rebase", "--quiet")
         git(ROOT, "push")
     heartbeat()
     print(f"=== {stamp()} done:", msg, flush=True)

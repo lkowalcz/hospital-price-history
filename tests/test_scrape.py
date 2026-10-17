@@ -407,6 +407,39 @@ class TestMainSmoke(unittest.TestCase):
             self.assertEqual((Path(d) / "changed_slugs.txt").read_text(), "")
 
 
+class TestLocalRefetch(unittest.TestCase):
+    def test_downloads_use_disk_scratch_without_ci_cap(self):
+        import local_refetch
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "changed_slugs.txt").write_text("university-of-kansas\n")
+            scratch_dirs = []
+
+            def fake_run(*args, env):
+                scratch = Path(env["TMPDIR"])
+                scratch_dirs.append(scratch)
+                self.assertTrue(scratch.is_dir())
+                self.assertEqual(scratch.parent, root / ".cache" / "hospital-price-history")
+                self.assertEqual(env["MAX_DOWNLOAD_BYTES"], "0")
+                self.assertIn("university-of-kansas", env["ONLY"].split(","))
+
+            def fake_workaround(slug, scratch):
+                self.assertEqual(Path(scratch), scratch_dirs[0])
+                self.assertTrue(Path(scratch).is_dir())
+                return slug == "yale-new-haven"
+
+            with unittest.mock.patch.object(local_refetch, "ROOT", root), \
+                    unittest.mock.patch.object(Path, "home", return_value=root), \
+                    unittest.mock.patch.object(local_refetch, "run", side_effect=fake_run), \
+                    unittest.mock.patch.object(local_refetch, "refetch_workaround",
+                                               side_effect=fake_workaround), \
+                    unittest.mock.patch.dict("os.environ", {"MAX_DOWNLOAD_BYTES": "10000000000",
+                                                            "TMPDIR": "/tmp"}):
+                self.assertEqual(local_refetch.refetch_hospitals(),
+                                 ["university-of-kansas", "yale-new-haven"])
+            self.assertFalse(scratch_dirs[0].exists())
+
+
 class ProcessHarness(unittest.TestCase):
     """process() end to end with the network mocked out and data/ in a
     temp dir. Archiving is off unless a test turns it on."""
@@ -512,6 +545,29 @@ class TestProcess(ProcessHarness):
                                             lambda url, impersonate=False, max_time=None: hdrs):
                 self.assertIsNone(scrape.process(self.HOSPITAL, self.scratch))
         self.assertEqual(scrape.REFRESHED, [])
+
+    def test_returning_listing_restores_unchanged_snapshot(self):
+        self.run_process()
+        first = self.meta()
+        missing = dict(first, status="missing-from-hpt-txt", status_changed="2026-01-01T00:00:00Z")
+        self.write_meta(missing)
+        # A reachable discovery listing alone is not enough: preserve the
+        # previous state if the actual file cannot be downloaded.
+        with unittest.mock.patch.object(scrape, "download_to", side_effect=OSError("offline")):
+            with self.assertRaises(OSError):
+                scrape.process(self.HOSPITAL, self.scratch)
+        self.assertEqual(self.meta(), missing)
+
+        result = self.run_process()  # same URL, validators, and content
+        self.assertIn("restored listing", result)
+        self.assertEqual(self.downloads, 2)
+        restored = self.meta()
+        self.assertEqual(restored["status"], "stored")
+        self.assertNotIn("status_changed", restored)
+        self.assertEqual(restored["sha256"], first["sha256"])
+        self.assertEqual(restored["last_changed"], first["last_changed"])
+        self.assertEqual((scrape.DATA / "h1" / "summary.csv").read_bytes(),
+                         (GOLDEN / "wide_summary.csv").read_bytes())
 
     def test_crash_mid_write_keeps_previous_snapshot(self):
         self.run_process()
