@@ -148,7 +148,8 @@ Shard directories contain a header and content buckets, not one CSV download.
 Originals sometimes reach cold storage after initial collection. The manifest
 can enrich older descriptors using a source with the same hospital and source
 hash; `source.metadata_url` pins that evidence separately. An Internet Archive
-original takes preference over normalized files or shards. No live hospital
+original takes preference over normalized files or shards. Corrected raw-repo
+pins update source links without creating a new price or summary state. No live hospital
 URL is substituted for an absent archived source. A source link's presence
 does not establish that its remote host is currently reachable.
 

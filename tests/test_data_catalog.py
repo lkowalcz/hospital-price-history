@@ -98,6 +98,15 @@ class CatalogTest(unittest.TestCase):
         self.assertIn("b" * 40, entry["latest_snapshot"]["source"]["url"])
         self.assertIn("listing_missing", entry["issues"])
 
+    def test_corrected_raw_pin_updates_link_without_new_snapshot(self):
+        self.snapshot()
+        self.update_meta(status="sharded", raw_commit="b" * 40)
+        corrected = self.update_meta(raw_commit="c" * 40)
+        snapshots = self.history()
+        self.assertEqual(len(snapshots), 1)
+        self.assertIn("c" * 40, snapshots[0]["source"]["url"])
+        self.assertIn(corrected, snapshots[0]["source"]["metadata_url"])
+
     def test_reversion_and_summary_deletion_remain_observable(self):
         self.snapshot("100")
         self.snapshot("200")

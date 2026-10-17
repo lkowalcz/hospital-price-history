@@ -116,7 +116,13 @@ def collect_history(root, revision, slugs, repo, raw_repo):
             source = recorded_source(root, meta, commit, slug, repo, raw_repo)
             if source and sha:
                 known = sources.get((slug, sha))
-                if known is None or (source["kind"] == "archived_original" and known["kind"] != "archived_original"):
+                # Keep the first evidence for an unchanged link, but accept
+                # corrected raw-repo pins (for example after a history graft).
+                # A recorded original takes precedence over normalized copies.
+                changed_link = known is None or any(source.get(key) != known.get(key)
+                                                     for key in ("kind", "url", "revision", "file_sha256"))
+                preferred = known is None or known["kind"] != "archived_original" or source["kind"] == "archived_original"
+                if changed_link and preferred:
                     sources[(slug, sha)] = source
             if previous.get(slug) == identity:
                 continue
