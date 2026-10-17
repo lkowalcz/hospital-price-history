@@ -70,6 +70,39 @@ counted as a price change. See `compute_index.py`.
 | `summary_version` | See above. |
 | `summary_warning` | Set when a new summary has fewer than half the rows or coded rows of its predecessor. Contains `at` and a `detail` such as `rows 120,000 -> 3,000`. The snapshot is saved, and the hospital is excluded from the price index until a later snapshot passes the check and clears the warning. |
 
+## Snapshot comparisons
+
+The Rush comparison matches rows by exact code type, code, and description.
+It preserves leading zeros and does not infer that renamed descriptions
+refer to the same entry. Unmatched rows appear as additions and removals,
+not price increases or decreases. Counts are summary entries, not unique
+services: one service may appear under multiple billing codes.
+
+For a selected price field, an entry is comparable only if both snapshots
+report finite positive values. Missing, zero, and negative values do not
+form a percent-change denominator. The page separates newly reported and
+no-longer-reported prices from increases and decreases. Differences larger
+than fourfold in either direction are flagged for review but remain visible.
+
+Comparisons across different summary versions are blocked. Legacy version
+1 comparisons carry an additional warning because that method depended on
+source row order. Historical summary warnings are displayed with the results.
+Payer names, plans, service settings, modifiers, and units are not preserved
+as separate dimensions in these summaries; inspect the archived originals
+before interpreting a change as a difference in the price of equivalent care.
+
+Snapshot dates are commit recording dates, not effective dates. The evidence
+cards also show when that source version was observed, which may precede a
+summary rebuilt under a new method. The summary and original links are pinned
+to the recorded revisions, so shared comparisons remain reproducible.
+
+The filtered CSV includes every matching entry, exact source price strings,
+calculated changes, snapshot dates, methods, and summary URLs. The screen
+rounds currency to at most six decimal places and percentages to two;
+the export rounds calculated changes to twelve significant digits to avoid
+floating-point display artifacts. Spreadsheet formula-like text is prefixed
+with an apostrophe. The underlying snapshot CSV downloads are unchanged.
+
 ## Attribution and license
 
 Each hospital page includes schema.org Dataset metadata. The archive is

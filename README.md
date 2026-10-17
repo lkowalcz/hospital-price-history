@@ -158,6 +158,7 @@ commits with a sparse or full checkout.
 
 ```sh
 python3 -m unittest discover -s tests
+node --test tests/test_comparison_model.mjs
 ```
 
 CI runs tests for parsing, summarization, sharding round-trips, and price
@@ -177,6 +178,21 @@ to update all `stored` and `sharded` hospitals at once. For `summarized`
 hospitals, the daily run re-downloads files a few at a time until their
 summaries are current. This uses the same `BACKFILL_PER_RUN` allowance as
 cold-storage backfills.
+
+### Comparing recorded prices
+
+The [Rush snapshot comparison](https://lukekowalczyk.com/hospital-price-history/hospitals/rush-university/compare/)
+lets readers select two recorded summaries, compare cash prices, gross
+charges, or negotiated extremes, search and filter entries, and download
+the filtered comparison. Every snapshot links to its exact committed
+summary, metadata, and available archived source.
+
+The site build exports Rush's historical summaries through comparison.py
+and serves the browser interface from site_assets/. Historical source
+files are never downloaded for this build. New summary revisions and
+method changes appear on the next site deployment. This first comparison
+is limited to Rush; the existing hospital pages remain available for the
+full roster. See [comparison interpretation](docs/DATA.md#snapshot-comparisons).
 
 ### Experimental price index
 

@@ -15,6 +15,8 @@ import sys
 from datetime import date
 from pathlib import Path
 
+from comparison import build_comparison
+
 ROOT = Path(__file__).resolve().parent
 BASE = "https://lukekowalczyk.com/hospital-price-history"
 REPO = "https://github.com/lkowalcz/hospital-price-history"
@@ -109,7 +111,7 @@ def featured_rows(rows):
     return out[:8]
 
 
-def hospital_page(h, meta, outdir):
+def hospital_page(h, meta, outdir, comparison_url=None):
     slug = h["slug"]
     name = h["location_name"] if len(h["location_name"]) < 60 else slug.replace("-", " ").title()
     rows = load_summary(slug)
@@ -121,6 +123,11 @@ def hospital_page(h, meta, outdir):
              f'<p class="muted">{esc(h["system"])} &middot; '
              f'<span class="badge">{esc(meta.get("status", "no data"))}</span></p>']
 
+    if comparison_url:
+        parts.append(f'<p style="padding:1rem;background:#eaf3fb;border-radius:8px">'
+                     f'<a href="{esc(comparison_url)}"><strong>Compare recorded prices →</strong></a><br>'
+                     '<span class="muted">Choose two snapshots, explore price changes, '
+                     'and download a comparison with links to the archived evidence.</span></p>')
     parts.append("<h2>Tracking status</h2><table>")
     status_rows = [
         ("Monitored since", (meta.get("first_seen") or "")[:10]),
@@ -208,7 +215,7 @@ def hospital_page(h, meta, outdir):
     return canonical
 
 
-def index_page(hospitals, metas, outdir):
+def index_page(hospitals, metas, outdir, comparisons=None):
     body = ["<h1>Hospital Price History</h1>",
             '<p>This archive collects the machine-readable price files US hospitals '
             'publish under federal price transparency rules (45 CFR § 180.50). '
@@ -220,6 +227,16 @@ def index_page(hospitals, metas, outdir):
             f'payer-level rates, are in a <a href="{RAW_REPO}">separate repository</a>.</p>',
             "<div class=\"wrap\"><table><tr><th>Hospital</th><th>System</th>"
             "<th>Last change recorded</th><th>Status</th></tr>"]
+    if comparisons:
+        cards = []
+        for h in hospitals:
+            if h["slug"] in comparisons:
+                cards.append('<div style="padding:1.2rem;background:#eaf3fb;border-radius:8px;margin:1.5rem 0">'
+                             '<strong>Explore what changed</strong>'
+                             f'<p style="margin:.4rem 0">Compare recorded prices at {esc(h["location_name"])}: '
+                             'before-and-after values, searchable entries, and the evidence behind each snapshot.</p>'
+                             f'<a href="{esc(comparisons[h["slug"]])}">Open the snapshot comparison →</a></div>')
+        body[-1:-1] = cards  # before the hospital table
     for h in sorted(hospitals, key=lambda x: x["location_name"].casefold()):
         m = metas[h["slug"]]
         name = h["location_name"] if len(h["location_name"]) < 60 else h["slug"].replace("-", " ").title()
@@ -256,9 +273,14 @@ def main():
     for h in hospitals:
         mp = ROOT / "data" / h["slug"] / "meta.json"
         metas[h["slug"]] = json.loads(mp.read_text()) if mp.exists() else {}
+    comparisons = {}
     for h in hospitals:
-        urls.append(hospital_page(h, metas[h["slug"]], outdir))
-    index_page(hospitals, metas, outdir)
+        comparison_url = build_comparison(h, outdir, ROOT, BASE, REPO, RAW_REPO)
+        if comparison_url:
+            comparisons[h["slug"]] = comparison_url
+            urls.append(comparison_url)
+        urls.append(hospital_page(h, metas[h["slug"]], outdir, comparison_url))
+    index_page(hospitals, metas, outdir, comparisons)
     (outdir / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
