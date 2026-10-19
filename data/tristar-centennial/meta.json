@@ -13,5 +13,10 @@
   "last_changed": "2026-09-22T17:05:53Z",
   "note": "ingested from a local fetch (see README notes)",
   "summary_version": 2,
-  "raw_commit": "3d330e54bf33bcbb60843ba02bec55082f1eddbd"
+  "raw_commit": "3d330e54bf33bcbb60843ba02bec55082f1eddbd",
+  "fetch_failures": {
+    "first_failed": "2026-10-19T17:02:37Z",
+    "last_error": "HTTP Error 500: Internal Server Error",
+    "last_attempt": "2026-10-19T17:02:37Z"
+  }
 }
