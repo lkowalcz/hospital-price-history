@@ -3,14 +3,14 @@
   "location_name": "UK Chandler Hospital",
   "mrf_url": "https://HospitalPriceDisclosure.com/Download.aspx?ci=Dn*__*BGKKwBFJp793mE1jFzw*-*",
   "source_filename": "Download.aspx.json",
-  "sha256": "fbb9f914f2d451e836ee1b1e5ce57a8fff2cc1d6e72546fdceedce09e54e2956",
-  "size_bytes": 50658004,
-  "source_last_modified": "Thu, 02 Apr 2026 19:46:37 GMT",
-  "source_etag": "0x8DE90F08DAC0FDF",
-  "transfer_fingerprint": "1227cf507d41d255401b4ff21b46511ab9ea1fab1700d1ea549d023434d5c79e",
+  "sha256": "3193f64edca3e978d6d562d3e479b9d1223d724a1302754e4f2313413d1c2870",
+  "size_bytes": 49299571,
+  "source_last_modified": "Tue, 20 Oct 2026 16:05:33 GMT",
+  "source_etag": "0x8DF2EC3F873CDCB",
+  "transfer_fingerprint": "2de56fa79a034d38b9afba472003397abbd03a9f504482262d78c8dde62cc895",
   "status": "sharded",
   "first_seen": "2026-08-25T14:17:34Z",
-  "last_changed": "2026-08-25T14:17:34Z",
-  "raw_commit": "e03c3ea8a1ceb8b9ba428f95890ede03de536cc2",
-  "summary_version": 2
+  "last_changed": "2026-10-21T12:07:50Z",
+  "summary_version": 2,
+  "raw_commit": "5b8f40ff87359f38106a9dba0ed287f9582d8b28"
 }
