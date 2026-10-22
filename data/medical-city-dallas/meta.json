@@ -3,20 +3,20 @@
   "location_name": "MEDICAL CITY DALLAS HOSPITAL",
   "mrf_url": "https://stctrprodsnsvc00455826e6.blob.core.windows.net/pt-final-posting-files/62-1682198_MEDICAL-CITY-DALLAS_standardcharges.json?si=dpx-pt-json-access-policy&spr=https&sv=2026-02-06&sr=c&sig=ks%2BgfAjyEHlZmeP2PYJ%2f9NpMuCoRStjTb2bhIy9Y6LM%3D",
   "source_filename": "62-1682198_MEDICAL-CITY-DALLAS_standardcharges.json",
-  "sha256": "bdec9ce186f75ee4267ad962e00ce8d615e219d1dd97de505a46f1c5c6bd6468",
-  "size_bytes": 839009580,
-  "source_last_modified": "Sat, 19 Sep 2026 08:18:46 GMT",
-  "source_etag": "\"0x8DF1626A01CE760\"",
-  "transfer_fingerprint": "8eae33116f2678e9e2afb59418b5bf80e5d1455644318012c82fb2f2c613e352",
+  "sha256": "c44635b94110e029f2a833bc9099f40083acc6add7093ccff11e00e7f324c62d",
+  "size_bytes": 856808540,
+  "source_last_modified": "Thu, 22 Oct 2026 09:57:38 GMT",
+  "source_etag": "\"0x8DF3022E77CA23A\"",
+  "transfer_fingerprint": "0d59dacb43d4c2013603cb4dfedf8b4a5c1220af857efb9dd58d093af329f0e5",
   "status": "summarized",
   "first_seen": "2026-08-14T03:44:05Z",
-  "last_changed": "2026-09-19T11:13:47Z",
+  "last_changed": "2026-10-22T12:08:17Z",
   "summary_version": 2,
   "cold_storage": {
-    "url": "https://archive.org/details/hospital-price-history-medical-city-dallas-bdec9ce186f7",
-    "sha256": "bdec9ce186f75ee4267ad962e00ce8d615e219d1dd97de505a46f1c5c6bd6468",
-    "file_sha256": "bdec9ce186f75ee4267ad962e00ce8d615e219d1dd97de505a46f1c5c6bd6468",
-    "compressed_bytes": 20296189,
-    "archived": "2026-09-19T11:14:16Z"
+    "url": "https://archive.org/details/hospital-price-history-medical-city-dallas-c44635b94110",
+    "sha256": "c44635b94110e029f2a833bc9099f40083acc6add7093ccff11e00e7f324c62d",
+    "file_sha256": "c44635b94110e029f2a833bc9099f40083acc6add7093ccff11e00e7f324c62d",
+    "compressed_bytes": 20640225,
+    "archived": "2026-10-22T12:09:01Z"
   }
 }
