@@ -50093,7 +50093,7 @@ CPT,0522T,"Programming device evaluation (in person) with iterative adjustment o
 CPT,0523T,CFFR W/ 3D MAP INTRAPROC,23777.3,23777.3,3566.59,23777.3,36
 CPT,0523T,"Intraprocedural coronary fractional flow reserve (FFR) with 3D functional mapping of color-coded FFR values for the coronary tree, derived from coronary angiogram data, for real-time review and interp",23777.3,23777.3,291.0,2900.0,32
 CPT,0524T,"Endovenous catheter directed chemical ablation with balloon isolation of incompetent extremity vein, open or percutaneous, including all vascular access, catheter manipulation, diagnostic imaging, ima",,,1404.42,6446.0,79
-CPT,0524U,KRYPTOR OB SFLT1/PLGF IA,336.57,336.57,,,0
+CPT,0524U,KRYPTOR OB SFLT1/PLGF IA,336.57,336.57,50.49,336.57,41
 CPT,0525T,"Insertion or replacement of intracardiac ischemia monitoring system, including testing of the lead and monitor, initial system programming, and imaging supervision and interpretation; complete system ",,,2224.34,13472.0,79
 CPT,0526T,"Insertion or replacement of intracardiac ischemia monitoring system, including testing of the lead and monitor, initial system programming, and imaging supervision and interpretation; electrode only ",,,1753.0,13472.0,79
 CPT,0527T,"Insertion or replacement of intracardiac ischemia monitoring system, including testing of the lead and monitor, initial system programming, and imaging supervision and interpretation; implantable moni",,,1753.0,13472.0,79
@@ -53567,12 +53567,12 @@ CPT,35458,REPAIR ARTERIAL BLOCKAGE ,,,4421.0,4421.0,1
 CPT,35459,REPAIR ARTERIAL BLOCKAGE ,,,4421.0,4421.0,1
 CPT,35460,REPAIR VENOUS BLOCKAGE ,,,4421.0,4421.0,1
 CPT,35470,REPAIR ARTERIAL BLOCKAGE ,,,4421.0,4421.0,1
-CPT,35471,REPAIR ARTERIAL BLOCKAGE ,,,4421.0,12528.0,3
-CPT,35472,REPAIR ARTERIAL BLOCKAGE ,,,4421.0,12528.0,3
+CPT,35471,REPAIR ARTERIAL BLOCKAGE ,,,4421.0,4421.0,1
+CPT,35472,REPAIR ARTERIAL BLOCKAGE ,,,4421.0,4421.0,1
 CPT,35473,REPAIR ARTERIAL BLOCKAGE ,,,4421.0,4421.0,1
 CPT,35474,REPAIR ARTERIAL BLOCKAGE ,,,4421.0,4421.0,1
-CPT,35475,REPAIR ARTERIAL BLOCKAGE ,,,4421.0,12528.0,3
-CPT,35476,REPAIR VENOUS BLOCKAGE ,,,4421.0,12528.0,3
+CPT,35475,REPAIR ARTERIAL BLOCKAGE ,,,4421.0,4421.0,1
+CPT,35476,REPAIR VENOUS BLOCKAGE ,,,4421.0,4421.0,1
 CPT,35480,"ATHERECTOMY, OPEN ",,,4421.0,4421.0,1
 CPT,35481,"ATHERECTOMY, OPEN ",,,4421.0,4421.0,1
 CPT,35482,"ATHERECTOMY, OPEN ",,,4421.0,4421.0,1
@@ -55101,7 +55101,7 @@ CPT,49553,"Repair initial femoral hernia, any age; incarcerated or strangulated 
 CPT,49555,Repair recurrent femoral hernia; reducible ,,,1404.42,6446.0,139
 CPT,49557,Repair recurrent femoral hernia; incarcerated or strangulated ,,,1404.42,8866.0,139
 CPT,49560,REPAIR INITIAL INCISIONAL OR VENTRAL HERNIA; REDUCIBLE ,,,1471.0,4421.0,42
-CPT,49561,REPAIR INITIAL INCISIONAL OR VENTRAL HERNIA; INCARCERATED OR STRANGULATED ,,,1471.0,10083.0,44
+CPT,49561,REPAIR INITIAL INCISIONAL OR VENTRAL HERNIA; INCARCERATED OR STRANGULATED ,,,1471.0,4584.0,42
 CPT,49565,REPAIR RECURRENT INCISIONAL OR VENTRAL HERNIA; REDUCIBLE ,,,1471.0,4421.0,42
 CPT,49566,REPAIR RECURRENT INCISIONAL OR VENTRAL HERNIA; INCARCERATED OR STRANGULATED ,,,1876.0,4584.0,42
 CPT,49568,IMPLANTATION OF MESH OR OTHER PROSTHESIS FOR OPEN INCISIONAL OR VENTRAL HERNIA REPAIR OR MESH FOR CLOSURE OF DEBRIDEMENT FOR NECROTIZING SOFT TISSUE INFECTION (LIST SEPARATELY IN ADDITION TO CODE FOR ,,,990.0,5078.0,42
@@ -56530,7 +56530,7 @@ CPT,64567,"Percutaneous electrical nerve field stimulation, cranial nerves, with
 CPT,64568,"Open implantation of cranial nerve (eg, vagus nerve) neurostimulator electrode array and pulse generator ",,,870.0,36293.0,103
 CPT,64569,"Revision or replacement of cranial nerve (eg, vagus nerve) neurostimulator electrode array, including connection to existing pulse generator ",,,870.0,9431.0,119
 CPT,64570,"Removal of cranial nerve (eg, vagus nerve) neurostimulator electrode array and pulse generator ",,,607.0,8866.0,119
-CPT,64573,IMPLANT NEUROELECTRODES ,,,988.0,10083.0,23
+CPT,64573,IMPLANT NEUROELECTRODES ,,,988.0,4421.0,21
 CPT,64575,Open implantation of neurostimulator electrode array; peripheral nerve (excludes sacral nerve) ,,,607.0,36293.0,139
 CPT,64577,IMPLANT NEUROELECTRODES ,,,988.0,4421.0,21
 CPT,64580,Open implantation of neurostimulator electrode array; neuromuscular ,,,607.0,36293.0,125
