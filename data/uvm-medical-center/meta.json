@@ -12,10 +12,5 @@
   "first_seen": "2026-08-25T14:02:45Z",
   "last_changed": "2026-10-13T14:38:43Z",
   "summary_version": 2,
-  "raw_commit": "802458401718f993ec7d9a6c4ed43d7c681660c6",
-  "fetch_failures": {
-    "first_failed": "2026-10-22T12:11:08Z",
-    "last_error": "Command '['/home/runner/work/_temp/ci/curl_chrome150', '-sS', '-L', '--compressed', '--max-time', '3600', '-D', '/tmp/tmpsemzzdpb.hdrs', '-o', '-', '--fail', 'https://www.uvmhealth.org/cms-hpt.txt']' ",
-    "last_attempt": "2026-10-22T12:11:08Z"
-  }
+  "raw_commit": "802458401718f993ec7d9a6c4ed43d7c681660c6"
 }
