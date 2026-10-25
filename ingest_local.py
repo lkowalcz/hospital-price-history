@@ -9,18 +9,21 @@ the pipeline on it anyway — to rebuild the summary under a new
 SUMMARY_VERSION or to archive an original that never was — without
 touching last_changed.
 
+Use --source-url URL for a verified download whose normal discovery endpoint
+is blocked. This records the actual source URL without making network requests.
+
 Sharded content is written into the companion raw repo (a sibling
 hospital-price-history-raw clone, or RAW_REPO_DIR); remember to commit and
 push BOTH repos, raw first. Consider archiving the original download with
 archive_snapshot.py before deleting it.
 """
 
+import argparse
 import hashlib
 import json
-import sys
 from pathlib import Path
 
-from scrape import (DATA, ROOT, MAX_SHARD_TOTAL, SUMMARY_VERSION,
+from scrape import (DATA, ROOT, MAX_SHARD_TOTAL, SUMMARY_VERSION, Headers,
                     archiving_enabled, check_summary, discover_mrf_url, head,
                     local_fingerprint, normalize_payload, sha256_file,
                     store_snapshot, summary_stats, try_cold_store, utcnow,
@@ -28,9 +31,13 @@ from scrape import (DATA, ROOT, MAX_SHARD_TOTAL, SUMMARY_VERSION,
 
 
 def main():
-    force = "--force" in sys.argv
-    args = [a for a in sys.argv[1:] if a != "--force"]
-    slug, path = args[0], Path(args[1])
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("slug")
+    parser.add_argument("file", type=Path)
+    parser.add_argument("--force", action="store_true")
+    parser.add_argument("--source-url", help="Verified download URL; skip network discovery and HEAD")
+    args = parser.parse_args()
+    slug, path, force = args.slug, args.file, args.force
     hospital = next(h for h in json.loads((ROOT / "hospitals.json").read_text())
                     if h["slug"] == slug)
     outdir = DATA / slug
@@ -39,8 +46,9 @@ def main():
     old_meta = json.loads(meta_path.read_text()) if meta_path.exists() else {}
 
     imp = wants_impersonate(hospital) or bool(old_meta.get("fetch_escalated"))
-    mrf_url = discover_mrf_url(hospital, imp)
-    h = head(mrf_url, impersonate=imp, max_time=hospital.get("curl_max_time"))
+    mrf_url = args.source_url or discover_mrf_url(hospital, imp)
+    h = Headers([]) if args.source_url else head(
+        mrf_url, impersonate=imp, max_time=hospital.get("curl_max_time"))
     name = path.name
     size = path.stat().st_size
 

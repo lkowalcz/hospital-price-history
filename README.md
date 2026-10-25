@@ -252,7 +252,9 @@ the committed `summary.csv` history.
   files with instructions for browsing their websites instead of the
   machine-readable `mrf-url` blocks specified by the CMS format.
 - Yale New Haven's listed URL returns a 404; `local_refetch.py` fetches
-  the replacement file. Geisinger's link leads to a Radware CAPTCHA page,
+  the replacement file, falling back to Chromium when Yale challenges
+  command-line downloads (see [setup](docs/OPERATIONS.md#yale-browser-fallback-setup)).
+  Geisinger's link leads to a Radware CAPTCHA page,
   recorded under `fetch_failures` in its `meta.json`. UAB's CDN blocks
   GitHub runner IPs, so its snapshot was fetched locally. Rush omits the
   `https://` scheme from its `mrf-url`; the scraper adds it.

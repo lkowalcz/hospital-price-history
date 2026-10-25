@@ -66,7 +66,15 @@ updates the tag.
   Houston's `mrf_url` can access the same container. If Houston's
   URL scheme changes, those two may start returning 403 errors. Yale New
   Haven's `cms-hpt.txt` points at a deleted file; the live upload carries
-  the CMS `-1` suffix (`YALE_URL` in `local_refetch.py`).
+  the CMS `-1` suffix (`YALE_URL` in `local_refetch.py`). Since 2026-10-23,
+  Yale also challenges command-line requests. If its normal download fails,
+  the Pi opens the official pricing page in headless Chromium, waits for
+  the download link, and retries within that browser session. Matching
+  five-range fingerprints record an unchanged check; otherwise the browser
+  streams a full download to disk for normal ingestion. Observation logs
+  record `transport: browser` and the failed plain request. A challenge,
+  invalid range, HTML response, or incomplete download cannot refresh
+  verification. The freshness policy is unchanged.
 - **Files above CI's 10 GB cap**: University of Kansas now publishes a
   36.8 GB CSV (verified 2026-10-16). Its previous 404 outage has ended.
   The Pi runs the normal scraper without a download cap and archives the
@@ -79,6 +87,35 @@ disk and cannot hold Kansas's file. Scratch directories are removed after
 each completed run; allow space for the download, extracted files, and
 compressed originals. An initial Kansas fetch may take several hours.
 Kansas's impersonated-download fallback allows up to 12 hours per attempt.
+
+### Yale browser fallback setup
+
+On the Pi, install matching Chromium and ChromeDriver packages, then the
+optional Python dependencies in the collector's existing venv:
+
+```sh
+sudo apt-get update
+sudo apt-get install --no-install-recommends chromium chromium-driver
+.venv/bin/pip install -r requirements-local.txt
+```
+
+Keep Chromium and ChromeDriver updated together. Other hosts can set
+`BROWSER_BINARY` and `CHROMEDRIVER` to matching installed executables.
+Each session has a disposable profile under the disk-backed scratch directory;
+no cookies or browser profiles are committed. Only Yale uses this fallback.
+
+Run the browser transport's local HTTP fixture tests with:
+
+```sh
+HPH_BROWSER_TESTS=1 .venv/bin/python -m unittest discover -s tests -p test_browser_fetch.py -v
+```
+
+These cover real range requests, streaming downloads, unsupported ranges,
+malformed ranges, HTML challenges, and broken transfers. They do not contact
+hospitals. The ordinary suite also tests Yale's fallback and observation paths.
+The verified browser download is ingested with `--source-url`, which records
+the URL actually fetched and skips blocked command-line discovery and HEAD
+requests. Only use that option for a source whose URL has been verified.
 
 ## Discovery listing changes
 
@@ -122,7 +159,8 @@ Pi OS 64-bit (Debian trixie) with `git` and `python3-venv` installed.
    cd hospital-price-history-raw
    git sparse-checkout init --no-cone && git sparse-checkout set '/*' '!/data/' && git checkout main
    ```
-3. In the main clone: `python3 -m venv .venv && .venv/bin/pip install -r requirements.txt`,
+3. In the main clone: `python3 -m venv .venv && .venv/bin/pip install -r requirements-local.txt`.
+   Install Chromium and ChromeDriver as described above for Yale's fallback,
    then install curl-impersonate where `local_refetch.py` expects it (use
    the release the workflow's `CI_VERSION` names; v2.2.2 as of 2026-09-02):
    ```sh

@@ -67,6 +67,7 @@ if (ia_bin := find_ia_bin()):
 import scrape  # noqa: E402  (needs CURL_IMPERSONATE_BIN / IA_BIN set first)
 import collection_health as health  # noqa: E402
 from scrape import RAW_DATA  # noqa: E402
+from browser_fetch import BrowserFetch  # noqa: E402
 
 RAW_REPO = RAW_DATA.parent
 IP_BLOCKED = ["johns-hopkins", "hopkins-bayview", "hopkins-all-childrens",
@@ -78,6 +79,7 @@ STALE_SAS = ["hca-florida-kendall", "tristar-centennial"]
 LOCAL_ONLY = IP_BLOCKED + OVERSIZED + STALE_SAS + ["yale-new-haven"]
 YALE_URL = ("https://www.ynhh.org/-/media/Files/YNHHS/sc/"
             "06-0646652-Yale_New_Haven_Hospital_Standard_Charges011025-1.ashx")
+YALE_PAGE = "https://www.ynhh.org/patients-visitors/billing-insurance/Pricing"
 # Annotated tag re-pointed after every run; .github/workflows/pi-heartbeat.yml
 # fails (and so emails) when its tagger date is more than three days old.
 # Host completion is separate from individual hospital verification.
@@ -128,6 +130,23 @@ def workaround_url(slug):
         (s.scheme, s.netloc, s.path, urllib.parse.urlsplit(donor).query, ""))
 
 
+def unchanged_workaround(slug, fp, observation):
+    print(f"{slug}: unchanged (fingerprint match, {observation['transport']})", flush=True)
+    scrape.clear_failure_record(slug)
+    meta = meta_of(slug)
+    observation.update(outcome="unchanged", method="sampled_fingerprint", verified_at=health.now(),
+                       source_sha256=meta["sha256"], evidence={"fingerprint": fp},
+                       archive_status=health.archive_result(meta))
+    return False
+
+
+def validate_workaround_download(dest):
+    with dest.open("rb") as handle:
+        start = handle.read(512).lstrip(b"\xef\xbb\xbf").lstrip().lower()
+    if not start or start.startswith((b"<!doctype", b"<html", b"<head")):
+        raise ValueError("received an empty file or HTML page instead of an MRF")
+
+
 def refetch_workaround(slug, scratch, observation=None):
     """Fingerprint-check the workaround URL; ingest only on change."""
     observation = observation if observation is not None else {}
@@ -136,34 +155,41 @@ def refetch_workaround(slug, scratch, observation=None):
     url = workaround_url(slug)
     fp = scrape.remote_fingerprint(url)
     if fp and fp == meta_of(slug).get("transfer_fingerprint"):
-        print(f"{slug}: unchanged (fingerprint match)", flush=True)
-        # A stale streak from CI trying the dead published link would keep
-        # the site badge on "unreachable"; the source is reachable from here.
-        scrape.clear_failure_record(slug)
-        observation.update(outcome="unchanged", method="sampled_fingerprint", verified_at=health.now(),
-                           source_sha256=meta_of(slug)["sha256"], evidence={"fingerprint": fp},
-                           archive_status=health.archive_result(meta_of(slug)))
-        return False
+        return unchanged_workaround(slug, fp, observation)
     name = Path(urllib.parse.urlsplit(url).path).name or f"{slug}.bin"
     if slug == "yale-new-haven":
         name = name.replace("-1.ashx", ".csv")
     dest = Path(scratch) / name
     observation["method"] = "full_download"
     old_sha = meta_of(slug).get("sha256")
-    run("curl", "--fail", "-sS", "-L", "--retry", "3", "-C", "-", "--max-time", "7200",
-        "-A", scrape.USER_AGENT, "-o", dest, url)
-    downloaded_at = health.now()
-    with dest.open("rb") as handle:
-        start = handle.read(512).lstrip(b"\xef\xbb\xbf").lstrip().lower()
-    if not start or start.startswith((b"<!doctype", b"<html", b"<head")):
-        raise ValueError("received an empty file or HTML page instead of an MRF")
-    run(sys.executable, ROOT / "ingest_local.py", slug, dest)
+    try:
+        run("curl", "--fail", "-sS", "-L", "--retry", "3", "-C", "-", "--max-time", "7200",
+            "-A", scrape.USER_AGENT, "-o", dest, url)
+        downloaded_at = health.now()
+        validate_workaround_download(dest)
+    except (subprocess.CalledProcessError, ValueError) as exc:
+        if slug != "yale-new-haven":
+            raise
+        print(f"{slug}: plain fetch failed; retrying in Chromium", flush=True)
+        observation.update(transport="browser", retry_errors=[{
+            "transport": "plain", "error": health.error_text(exc)}])
+        with BrowserFetch(YALE_PAGE, url, scratch) as browser:
+            fp = browser.fingerprint()
+            if fp and fp == meta_of(slug).get("transfer_fingerprint"):
+                return unchanged_workaround(slug, fp, observation)
+            browser.download(dest)
+            downloaded_at = health.now()
+    validate_workaround_download(dest)
+    source_args = ("--source-url", url) if slug == "yale-new-haven" else ()
+    run(sys.executable, ROOT / "ingest_local.py", slug, dest, *source_args)
     scrape.clear_failure_record(slug)
     meta = meta_of(slug)
     observation.update(outcome="unchanged" if meta["sha256"] == old_sha else "changed",
                        verified_at=downloaded_at, downloaded_at=downloaded_at, source_sha256=meta["sha256"],
                        archive_status=health.archive_result(meta))
-    return True
+    # An identical ingest writes no shards. Staging it as a replacement in
+    # the Pi's sparse raw checkout would delete the existing raw snapshot.
+    return meta["sha256"] != old_sha
 
 
 def stamp():
