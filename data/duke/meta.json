@@ -3,20 +3,20 @@
   "location_name": "Duke University Hospital",
   "mrf_url": "https://rca.elevatepfs.com/ptapp/api/cdm/export/oneclick?recno=fad40f5dd5e6b2097ff0a8f592b095fac2e3a3eeef64efd5ca2b56f564a91e8e",
   "source_filename": "562070036_Duke-University-Hospital_standardcharges.csv",
-  "sha256": "4a3676408e3bb040c132f4d3e3c2630fa01e7c24890c93a7a2d4e1482624bb98",
-  "size_bytes": 950021371,
+  "sha256": "c714a7522cec299c2e5a19d55a12dcf0f6fbe71f243d08f8f91a3a35d2ba9042",
+  "size_bytes": 950021368,
   "source_last_modified": null,
   "source_etag": null,
-  "transfer_fingerprint": "cc8fefb6a3d9ee340deec35af3113d66b040fe90adc8e800eb752407e8b2e2ed",
+  "transfer_fingerprint": "2b9d790ee4e59541871546a8e159f1b968636a7f194ef0910eb582a3ac2f0355",
   "status": "summarized",
   "first_seen": "2026-08-12T05:21:16Z",
-  "last_changed": "2026-08-26T23:42:29Z",
+  "last_changed": "2026-10-25T11:48:38Z",
   "summary_version": 2,
   "cold_storage": {
-    "url": "https://archive.org/details/hospital-price-history-duke-4a3676408e3b",
-    "sha256": "4a3676408e3bb040c132f4d3e3c2630fa01e7c24890c93a7a2d4e1482624bb98",
-    "file_sha256": "4a3676408e3bb040c132f4d3e3c2630fa01e7c24890c93a7a2d4e1482624bb98",
-    "compressed_bytes": 12453495,
-    "archived": "2026-09-04T11:31:54Z"
+    "url": "https://archive.org/details/hospital-price-history-duke-c714a7522cec",
+    "sha256": "c714a7522cec299c2e5a19d55a12dcf0f6fbe71f243d08f8f91a3a35d2ba9042",
+    "file_sha256": "c714a7522cec299c2e5a19d55a12dcf0f6fbe71f243d08f8f91a3a35d2ba9042",
+    "compressed_bytes": 12452577,
+    "archived": "2026-10-25T11:49:19Z"
   }
 }

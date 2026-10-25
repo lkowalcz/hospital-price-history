@@ -3,20 +3,20 @@
   "location_name": "Duke Regional Hospital",
   "mrf_url": "https://rca.elevatepfs.com/ptapp/api/cdm/export/oneclick?recno=6218eb9ff7c607c1b86fc33c62f39d2663e9f7a51d87144995dfaa26b0ab9984",
   "source_filename": "562070036_Duke-Regional-Hospital_standardcharges.csv",
-  "sha256": "f51869a54067aac7069433be1a49e03884266b01532583c8bb0767fe855831ff",
-  "size_bytes": 665647226,
+  "sha256": "d063b088a4e16776b56c00f75c5e00fe793cf0e986db74e44304137daa02f42f",
+  "size_bytes": 665647223,
   "source_last_modified": null,
   "source_etag": null,
-  "transfer_fingerprint": "7d430bcc59cdbdd92b12546b9d70d5eb3689c91519b47f22b52cdac4586391bd",
+  "transfer_fingerprint": "be63508fd7045da48557e4b1065c906e8aaf6eec2fa1d088539d2874df19df98",
   "status": "summarized",
   "first_seen": "2026-08-25T06:04:22Z",
-  "last_changed": "2026-08-27T00:34:05Z",
+  "last_changed": "2026-10-25T11:52:01Z",
   "summary_version": 2,
   "cold_storage": {
-    "url": "https://archive.org/details/hospital-price-history-duke-regional-f51869a54067",
-    "sha256": "f51869a54067aac7069433be1a49e03884266b01532583c8bb0767fe855831ff",
-    "file_sha256": "f51869a54067aac7069433be1a49e03884266b01532583c8bb0767fe855831ff",
-    "compressed_bytes": 8867859,
-    "archived": "2026-09-10T11:35:44Z"
+    "url": "https://archive.org/details/hospital-price-history-duke-regional-d063b088a4e1",
+    "sha256": "d063b088a4e16776b56c00f75c5e00fe793cf0e986db74e44304137daa02f42f",
+    "file_sha256": "d063b088a4e16776b56c00f75c5e00fe793cf0e986db74e44304137daa02f42f",
+    "compressed_bytes": 8868635,
+    "archived": "2026-10-25T11:52:27Z"
   }
 }
