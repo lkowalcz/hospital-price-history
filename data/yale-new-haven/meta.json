@@ -13,10 +13,5 @@
   "last_changed": "2026-09-24T17:02:46Z",
   "note": "ingested from a local fetch (see README notes)",
   "summary_version": 2,
-  "raw_commit": "95b8751e23a0b90ad76ca27190c9cc3e60b01e55",
-  "fetch_failures": {
-    "first_failed": "2026-10-23T17:05:26Z",
-    "last_error": "Command '['curl', '--fail', '-sS', '-L', '--retry', '3', '-C', '-', '--max-time', '7200', '-A', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0",
-    "last_attempt": "2026-10-23T17:05:26Z"
-  }
+  "raw_commit": "95b8751e23a0b90ad76ca27190c9cc3e60b01e55"
 }
