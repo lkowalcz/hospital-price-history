@@ -23,3 +23,7 @@ date,field,hospital,item,prev,cur
 2026-10-18,gross,university-of-kansas,CPT|80053,266.5,49.0
 2026-10-18,gross,university-of-kansas,CPT|93306,5390.0,1223.5
 2026-10-18,gross,university-of-kansas,CPT|99214,2415.21,330.5
+2026-10-30,cash,penn-hup,CPT|45378,2672.5,418.0
+2026-10-30,cash,pennsylvania-hospital,CPT|45378,2380.0,418.0
+2026-10-30,gross,penn-hup,CPT|45378,2672.5,418.0
+2026-10-30,gross,pennsylvania-hospital,CPT|45378,2380.0,418.0

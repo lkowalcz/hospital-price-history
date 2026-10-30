@@ -3,20 +3,20 @@
   "location_name": "The Hospital of the University of Pennsylvania",
   "mrf_url": "https://tupa-q-001.sitecorecontenthub.cloud/api/public/content/231352685_the-trustees-of-the-university-of-pennsylvania-dba-the-hospital-of-the-univer_standardcharges.csv",
   "source_filename": "231352685_the-trustees-of-the-university-of-pennsylvania-dba-the-hospital-of-the-univer_standardcharges.csv",
-  "sha256": "84201ae3ef0e7ae026102ebb731ffc06134e5d626e48f755c20b0f750ec282b2",
-  "size_bytes": 2346343903,
-  "source_last_modified": "Thu, 27 Aug 2026 20:36:19 GMT",
-  "source_etag": "\"0x8DF047AD96D13E9\"",
-  "transfer_fingerprint": "1aeba2b94771f545a8b82bb03c30e645fdb11b98a83eb415a9e6acd7b029b2eb",
+  "sha256": "780ebe2c23a5e9358bcd10e0605970bca8416ada452647e85c46ab3fa9a9792b",
+  "size_bytes": 1201782389,
+  "source_last_modified": "Thu, 29 Oct 2026 21:38:13 GMT",
+  "source_etag": "\"0x8DF3604EF5DF468\"",
+  "transfer_fingerprint": "7b4815c4b71bb732a95b14eb4400581b418a26d43860f5ef08604099fa8baee6",
   "status": "summarized",
   "first_seen": "2026-08-12T05:45:47Z",
-  "last_changed": "2026-08-28T18:52:17Z",
+  "last_changed": "2026-10-30T13:13:43Z",
   "summary_version": 2,
   "cold_storage": {
-    "url": "https://archive.org/details/hospital-price-history-penn-hup-84201ae3ef0e",
-    "sha256": "84201ae3ef0e7ae026102ebb731ffc06134e5d626e48f755c20b0f750ec282b2",
-    "file_sha256": "84201ae3ef0e7ae026102ebb731ffc06134e5d626e48f755c20b0f750ec282b2",
-    "compressed_bytes": 7543840,
-    "archived": "2026-09-05T10:47:51Z"
+    "url": "https://archive.org/details/hospital-price-history-penn-hup-780ebe2c23a5",
+    "sha256": "780ebe2c23a5e9358bcd10e0605970bca8416ada452647e85c46ab3fa9a9792b",
+    "file_sha256": "780ebe2c23a5e9358bcd10e0605970bca8416ada452647e85c46ab3fa9a9792b",
+    "compressed_bytes": 5756099,
+    "archived": "2026-10-30T13:15:32Z"
   }
 }
