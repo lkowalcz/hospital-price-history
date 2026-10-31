@@ -3,20 +3,16 @@
   "location_name": "MaineHealth Maine Medical Center Portland",
   "mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7975/010238552-1760436216_mainehealth_standardcharges.csv",
   "source_filename": "010238552-1760436216_mainehealth_standardcharges.csv",
-  "sha256": "541ed4bc440f38a1f7de88d21b2fe9787309b076a5d6e332f984c7ab7e8bce17",
-  "size_bytes": 1184369198,
-  "source_last_modified": "Mon, 09 Mar 2026 17:52:48 GMT",
-  "source_etag": "0x8DE7E04AD2335BE",
-  "transfer_fingerprint": "d48bae6dc160e61e26435e8caeef297dc4b6faf03492fd7efc93248458aae15b",
-  "status": "summarized",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "size_bytes": 0,
+  "source_last_modified": "Fri, 30 Oct 2026 22:58:59 GMT",
+  "source_etag": "0x8DF36D962549A12",
+  "transfer_fingerprint": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+  "status": "stored",
   "first_seen": "2026-08-25T14:16:18Z",
-  "last_changed": "2026-08-27T00:37:19Z",
-  "summary_version": 2,
-  "cold_storage": {
-    "url": "https://archive.org/details/hospital-price-history-maine-medical-center-541ed4bc440f",
-    "sha256": "541ed4bc440f38a1f7de88d21b2fe9787309b076a5d6e332f984c7ab7e8bce17",
-    "file_sha256": "541ed4bc440f38a1f7de88d21b2fe9787309b076a5d6e332f984c7ab7e8bce17",
-    "compressed_bytes": 42306272,
-    "archived": "2026-09-11T11:38:49Z"
+  "last_changed": "2026-10-31T12:51:13Z",
+  "summary_warning": {
+    "at": "2026-10-31T12:51:13Z",
+    "detail": "summary lost (was 80,771 rows)"
   }
 }

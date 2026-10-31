@@ -1,5 +1,5 @@
 {
- "date": "2026-10-30",
+ "date": "2026-10-31",
  "index_cash": 99.11345985263682,
  "index_gross": 99.73134405173373,
  "basket_version": 1,
@@ -94,7 +94,6 @@
   "hackensack-umc": 2,
   "rhode-island-hospital": 2,
   "uvm-medical-center": 2,
-  "maine-medical-center": 2,
   "christiana-hospital": 2,
   "sentara-norfolk": 2,
   "wvu-hospitals": 2,
@@ -7433,84 +7432,6 @@
    "CPT|99284": {
     "cash": 941.5,
     "gross": 941.5
-   },
-   "DRG|194": {},
-   "DRG|291": {},
-   "DRG|392": {},
-   "DRG|470": {},
-   "DRG|603": {},
-   "DRG|788": {},
-   "DRG|807": {}
-  },
-  "maine-medical-center": {
-   "CPT|29881": {},
-   "CPT|36415": {
-    "cash": 39.2,
-    "gross": 39.2
-   },
-   "CPT|43239": {},
-   "CPT|45378": {},
-   "CPT|66984": {},
-   "CPT|70450": {
-    "cash": 1017.05,
-    "gross": 1017.05
-   },
-   "CPT|71046": {
-    "cash": 445.05,
-    "gross": 445.05
-   },
-   "CPT|72148": {
-    "cash": 1848.6,
-    "gross": 1848.6
-   },
-   "CPT|74177": {
-    "cash": 2826.25,
-    "gross": 2826.25
-   },
-   "CPT|76700": {
-    "cash": 873.8,
-    "gross": 873.8
-   },
-   "CPT|77067": {
-    "cash": 673.6,
-    "gross": 673.6
-   },
-   "CPT|80053": {
-    "cash": 374.85,
-    "gross": 374.85
-   },
-   "CPT|81001": {
-    "cash": 35.55,
-    "gross": 35.55
-   },
-   "CPT|84443": {
-    "cash": 300.7,
-    "gross": 300.7
-   },
-   "CPT|85025": {
-    "cash": 143.7,
-    "gross": 143.7
-   },
-   "CPT|93000": {},
-   "CPT|93306": {
-    "cash": 2910.55,
-    "gross": 2910.55
-   },
-   "CPT|99213": {
-    "cash": 132.45,
-    "gross": 132.45
-   },
-   "CPT|99214": {
-    "cash": 202.85000000000002,
-    "gross": 202.85000000000002
-   },
-   "CPT|99283": {
-    "cash": 358.35,
-    "gross": 358.35
-   },
-   "CPT|99284": {
-    "cash": 512.65,
-    "gross": 512.65
    },
    "DRG|194": {},
    "DRG|291": {},
