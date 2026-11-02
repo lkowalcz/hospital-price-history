@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "slug": "adventhealth-orlando",
+  "download_sha256": "0d81b8b08882b69c3393e69a4440dedb8a238d251623ae31aaeb0223f19d9b02",
+  "download_bytes": 36565578,
+  "source_url": "https://HospitalPriceDisclosure.com/download.aspx?pi=A7H2v*_*svHhuGAp2wfaahGA*-*",
+  "source_filename": "download.aspx.json",
+  "captured_at": "2026-11-02T08:25:09Z",
+  "status": "archived",
+  "artifact_kind": "download",
+  "collector": "github-actions",
+  "container": "plain",
+  "response_headers": {
+    "Content-Type": "application/octet-stream",
+    "Content-Length": "36565578",
+    "ETag": "0x8DF338D0BD580B1",
+    "Last-Modified": "Mon, 26 Oct 2026 18:14:59 GMT"
+  },
+  "last_attempt_at": "2026-11-02T08:25:09Z",
+  "archive": {
+    "url": "https://archive.org/details/hospital-price-original-0d81b8b08882b69c3393e69a4440dedb8a238d251623ae31aaeb0223f19d9b02",
+    "download_url": "https://archive.org/download/hospital-price-original-0d81b8b08882b69c3393e69a4440dedb8a238d251623ae31aaeb0223f19d9b02/original-14bedef51d538e821e86135c57c7db217c31f72daa68d7b87597ca2cf545fd51.zst",
+    "compressed_sha256": "14bedef51d538e821e86135c57c7db217c31f72daa68d7b87597ca2cf545fd51",
+    "compressed_bytes": 887449,
+    "compression": "zstd",
+    "archived_at": "2026-11-02T08:25:30Z"
+  },
+  "snapshot_sha256": "1fd0c454d2061b38655b294fca9bc21c5b57c4d89d02e33ad98c4fe6ddbfbf12",
+  "payload_sha256": "0d81b8b08882b69c3393e69a4440dedb8a238d251623ae31aaeb0223f19d9b02"
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "sha256": "1833c7c469958fd9c502c7a91d0ec1cfca43ab6d3cd314674346b16ae2855134",
+  "bytes": 3493,
+  "source_url": "https://www.mainehealth.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T08:25:58Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip",
+    "ETag": "W/\"6ae0de52-da5\"",
+    "Last-Modified": "Tue, 27 Oct 2026 17:24:34 GMT"
+  }
+}

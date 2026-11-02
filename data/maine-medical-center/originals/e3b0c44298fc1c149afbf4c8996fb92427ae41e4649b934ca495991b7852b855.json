@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "slug": "maine-medical-center",
+  "download_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "download_bytes": 0,
+  "source_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7975/010238552-1760436216_mainehealth_standardcharges.csv",
+  "source_filename": "010238552-1760436216_mainehealth_standardcharges.csv",
+  "captured_at": "2026-11-02T08:25:58Z",
+  "status": "archived",
+  "artifact_kind": "download",
+  "collector": "github-actions",
+  "container": "plain",
+  "response_headers": {
+    "Content-Type": "application/octet-stream",
+    "Content-Length": "0",
+    "ETag": "0x8DF36D962549A12",
+    "Last-Modified": "Fri, 30 Oct 2026 22:58:59 GMT"
+  },
+  "last_attempt_at": "2026-11-02T08:25:58Z",
+  "archive": {
+    "url": "https://archive.org/details/hospital-price-original-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "download_url": "https://archive.org/download/hospital-price-original-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855/original-f96deff1816083fdff8bc3e46c3fe6ca46a6bb49f4d5a00627616c13237a512c.zst",
+    "compressed_sha256": "f96deff1816083fdff8bc3e46c3fe6ca46a6bb49f4d5a00627616c13237a512c",
+    "compressed_bytes": 13,
+    "compression": "zstd",
+    "archived_at": "2026-11-02T08:26:22Z"
+  }
+}

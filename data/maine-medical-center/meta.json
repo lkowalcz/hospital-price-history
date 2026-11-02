@@ -14,5 +14,10 @@
   "summary_warning": {
     "at": "2026-10-31T12:51:13Z",
     "detail": "summary lost (was 80,771 rows)"
+  },
+  "fetch_failures": {
+    "first_failed": "2026-11-02T08:26:23Z",
+    "last_error": "received an empty MRF; retained the previous snapshot and any original receipt",
+    "last_attempt": "2026-11-02T08:26:23Z"
   }
 }

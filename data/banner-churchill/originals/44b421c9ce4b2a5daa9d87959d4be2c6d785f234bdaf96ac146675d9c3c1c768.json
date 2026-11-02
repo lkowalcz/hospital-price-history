@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "slug": "banner-churchill",
+  "download_sha256": "44b421c9ce4b2a5daa9d87959d4be2c6d785f234bdaf96ac146675d9c3c1c768",
+  "download_bytes": 27097095,
+  "source_url": "https://images.pricetransparency.healthcare/public-mrfs/banner/880321712_banner-churchill-community-hospital_standardcharges.csv",
+  "source_filename": "880321712_banner-churchill-community-hospital_standardcharges.csv",
+  "captured_at": "2026-11-02T08:25:34Z",
+  "status": "archived",
+  "artifact_kind": "download",
+  "collector": "github-actions",
+  "container": "plain",
+  "response_headers": {
+    "Content-Type": "binary/octet-stream",
+    "Content-Length": "27097095",
+    "ETag": "\"b19f5f9efa86c00c52421976467f485c\"",
+    "Last-Modified": "Wed, 30 Sep 2026 20:17:57 GMT"
+  },
+  "last_attempt_at": "2026-11-02T08:25:34Z",
+  "archive": {
+    "url": "https://archive.org/details/hospital-price-original-44b421c9ce4b2a5daa9d87959d4be2c6d785f234bdaf96ac146675d9c3c1c768",
+    "download_url": "https://archive.org/download/hospital-price-original-44b421c9ce4b2a5daa9d87959d4be2c6d785f234bdaf96ac146675d9c3c1c768/original-4e4e170f35696d5bfb734cc8b048480167169e1e68d8dff187b73fc90e4891cc.zst",
+    "compressed_sha256": "4e4e170f35696d5bfb734cc8b048480167169e1e68d8dff187b73fc90e4891cc",
+    "compressed_bytes": 1614456,
+    "compression": "zstd",
+    "archived_at": "2026-11-02T08:25:57Z"
+  },
+  "snapshot_sha256": "c01bd59768f7e0bb8689553b398c1b8e0df85eff93b5c3005f47a427583a99f2",
+  "payload_sha256": "44b421c9ce4b2a5daa9d87959d4be2c6d785f234bdaf96ac146675d9c3c1c768"
+}
