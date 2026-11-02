@@ -105,6 +105,15 @@ was enabled are re-downloaded at a rate of `BACKFILL_PER_RUN` per run
 download cap, such as Mayo's, can be archived manually with
 `archive_snapshot.py <slug> <file>` after a local ingest.
 
+Scheduled collectors also preserve exact new downloads before parsing, across
+all storage modes. `data/<slug>/originals/` holds receipts with original hashes,
+archive links, and normalized-snapshot associations. ZIP/gzip wrappers are
+retained. Pending uploads stay in a recovery queue and retry from those bytes;
+the catalog exposes pending uploads and exact discovery documents. Capture is
+prospective: older normalized snapshots do not automatically acquire exact
+originals. See [preservation operations](docs/OPERATIONS.md#original-file-preservation)
+for activation and recovery limits.
+
 ### Checking for changes
 
 The scraper avoids full downloads where possible. It first sends a `HEAD`
@@ -224,6 +233,21 @@ NUL characters present in some archived summaries.
 The Rush comparison interface has been retired; its former URL redirects to
 the standard hospital archive page. Price exploration interfaces are outside
 the current roadmap.
+
+### Detailed-export pilot
+
+Export complete source records and their payer/plan context without changing
+the existing summaries:
+
+```sh
+python export_records.py tests/fixtures/wide.csv /tmp/wide-records --input-kind original
+```
+
+The output contains checked, compressed JSONL partitions, file metadata, and a
+manifest. CSV cells and parsed JSON properties remain alongside convenient
+fields, including percentages, formulas, allowed-amount percentiles, counts,
+units, notes, and linked codes. The schema is a pilot; read the
+[export guide](docs/DATA.md#detailed-export-pilot) before using it.
 
 ### Experimental price index
 

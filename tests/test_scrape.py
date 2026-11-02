@@ -592,6 +592,20 @@ class TestCollectionEvidence(ProcessHarness):
 
 
 class TestProcess(ProcessHarness):
+    def test_forced_download_bypasses_validators_without_changing_snapshot_date(self):
+        self.run_process()
+        before = self.meta()
+        with unittest.mock.patch.dict("os.environ", {"ONLY": "h1", "FORCE_FULL_DOWNLOAD": "1"}):
+            self.run_process()
+        self.assertEqual(self.downloads, 2)
+        self.assertEqual(self.meta()["sha256"], before["sha256"])
+        self.assertEqual(self.meta()["last_changed"], before["last_changed"])
+
+    def test_forced_download_rejects_unscoped_run(self):
+        with unittest.mock.patch.dict("os.environ", {"ONLY": "", "FORCE_FULL_DOWNLOAD": "1"}):
+            with self.assertRaisesRegex(ValueError, "explicit ONLY"):
+                scrape.main()
+
     """First snapshot, quiet validator refresh, crash safety of the swap."""
 
     def test_first_snapshot_stored_with_summary(self):

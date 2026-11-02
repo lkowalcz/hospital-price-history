@@ -66,6 +66,7 @@ if (ia_bin := find_ia_bin()):
 
 import scrape  # noqa: E402  (needs CURL_IMPERSONATE_BIN / IA_BIN set first)
 import collection_health as health  # noqa: E402
+import preserve_source  # noqa: E402
 from scrape import RAW_DATA  # noqa: E402
 from browser_fetch import BrowserFetch  # noqa: E402
 
@@ -180,7 +181,7 @@ def refetch_workaround(slug, scratch, observation=None):
             browser.download(dest)
             downloaded_at = health.now()
     validate_workaround_download(dest)
-    source_args = ("--source-url", url) if slug == "yale-new-haven" else ()
+    source_args = ("--source-url", url)
     run(sys.executable, ROOT / "ingest_local.py", slug, dest, *source_args)
     scrape.clear_failure_record(slug)
     meta = meta_of(slug)
@@ -242,11 +243,14 @@ def heartbeat():
 def main():
     # The cron log is append-only with no timestamps of its own.
     print(f"=== {stamp()} local_refetch start", flush=True)
+    os.environ.setdefault("COLLECTION_HOST", "pi")
     if os.environ.get("IA_ARCHIVE") is None and IA_CONFIG.exists() and os.environ.get("IA_BIN"):
         os.environ["IA_ARCHIVE"] = "1"  # inherited by the scrape/ingest subprocesses
         print("cold storage: on (archive.org credentials found)", flush=True)
     else:
         print(f"cold storage: {'on' if scrape.archiving_enabled() else 'off'}", flush=True)
+    if scrape.archiving_enabled():
+        os.environ.setdefault("PRESERVE_ORIGINALS", "1")
     for repo in (ROOT, RAW_REPO):
         git(repo, "pull", "--rebase", "--autostash", "--quiet")
 
@@ -258,6 +262,8 @@ def main():
         changed = refetch_hospitals(log)
         log.finish()
         commit_results(changed)
+        if preserve_source.enabled() and preserve_source.pending(ROOT):
+            raise RuntimeError("Original-file archive uploads are pending; retained in the persistent spool")
     finally:
         log.finish("interrupted")
         health.publish(ROOT)

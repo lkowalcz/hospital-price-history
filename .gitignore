@@ -5,3 +5,4 @@ __pycache__/
 .DS_Store
 .tools/
 .collection-spool/
+.archive-spool/

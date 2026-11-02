@@ -8,9 +8,14 @@ on:
       only:
         description: "Comma-separated hospital slugs to scrape (default: all)"
         required: false
+      full_download:
+        description: "Download despite matching validators (requires explicit hospital slugs)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
+  actions: read
 
 # Two scrape runs racing would fight over the two-repo commit dance;
 # queue instead.
@@ -23,7 +28,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       COLLECTION_HOST: github-actions
+      PRESERVE_ORIGINALS: "1"
       ONLY: ${{ inputs.only }}
+      FORCE_FULL_DOWNLOAD: ${{ inputs.full_download && '1' || '0' }}
       # Keep in sync with local_refetch.LOCAL_ONLY and collection_policy.json.
       SKIP: johns-hopkins,hopkins-bayview,hopkins-all-childrens,sibley-memorial,orlando-regional,jackson-memorial,university-of-kansas,hca-florida-kendall,tristar-centennial,yale-new-haven
     steps:
@@ -64,6 +71,12 @@ jobs:
           python collection_health.py prepare
           python collection_health.py publish
 
+      - name: Restore original-file recovery queue
+        id: original_queue
+        run: python archive_recovery.py
+        env:
+          GH_TOKEN: ${{ github.token }}
+
       - name: Install curl-impersonate
         # Refresh twice a year with check_impersonate.py (docs/OPERATIONS.md).
         # The wrapper name must match local_refetch.IMPERSONATE_WRAPPER;
@@ -92,6 +105,19 @@ jobs:
 
       - name: Compute price index
         run: python compute_index.py
+
+      # Checkpoint before commits, even if collection or parsing failed. A marker
+      # is always included so an empty queue supersedes an older pending queue.
+      - name: Back up original-file recovery queue
+        if: always() && steps.original_queue.outcome == 'success'
+        uses: actions/upload-artifact@v4
+        with:
+          name: original-queue-${{ github.run_id }}-${{ github.run_attempt }}
+          path: .archive-spool/
+          include-hidden-files: true
+          compression-level: 0
+          if-no-files-found: error
+          retention-days: 90
 
       # Raw repo first, so meta.json in the main commit can pin the raw
       # commit that holds this snapshot's shards. For each rewritten slug:
@@ -178,3 +204,7 @@ jobs:
           include-hidden-files: true
           if-no-files-found: ignore
           retention-days: 30
+
+      - name: Check original-file archive backlog
+        if: always() && steps.original_queue.outcome == 'success'
+        run: python preserve_source.py check

@@ -47,6 +47,8 @@ import zipfile
 from datetime import datetime, timezone
 from pathlib import Path
 
+import preserve_source
+
 # Some MRFs carry very large quoted fields; never let the csv module's
 # default 128 KB field cap abort a summarization.
 csv.field_size_limit(10**9)
@@ -302,13 +304,15 @@ def wants_impersonate(hospital):
 
 
 def discover_mrf_url(hospital, impersonate):
-    raw, _ = fetch_small(hospital["hpt_txt"], timeout=30,
+    raw, headers = fetch_small(hospital["hpt_txt"], timeout=30,
                          impersonate=impersonate,
                          max_time=hospital.get("curl_max_time"))
     text = decode_text(raw)
     if text.lstrip()[:16].casefold().startswith(("<!doctype", "<html", "<head")):
         # A challenge/block page here is a fetch failure, not a delisting.
         raise ValueError("cms-hpt.txt returned an HTML page (bot-block?)")
+    if preserve_source.enabled():
+        preserve_source.discovery(hospital, raw, headers, data=DATA)
     wanted = normalize_name(hospital["location_name"])
     for block in parse_hpt_txt(text):
         if normalize_name(block.get("location-name", "")) == wanted:
@@ -1077,6 +1081,7 @@ def process(hospital, scratch, impersonate=None, observation=None):
     summary_stale = summarized and old_meta.get("summary_version", 1) != SUMMARY_VERSION
     archive_wanted = (
         summarized and archiving_enabled()
+        and not preserve_source.enabled()
         and (old_meta.get("cold_storage") or {}).get("sha256") != old_meta.get("sha256")
         and not cold_attempt_recent(old_meta)
     )
@@ -1090,7 +1095,7 @@ def process(hospital, scratch, impersonate=None, observation=None):
     resummarize = upgrade_needed or (backfill and summary_stale)
 
     mt = hospital.get("curl_max_time")
-    if not resummarize and not backfill and not rediscovered \
+    if os.environ.get("FORCE_FULL_DOWNLOAD") != "1" and not resummarize and not backfill and not rediscovered \
             and mrf_url == old_meta.get("mrf_url") and old_meta.get("sha256"):
         h = head(mrf_url, impersonate=imp, max_time=mt)
         validators = (h.get("Last-Modified"), h.get("ETag"))
@@ -1127,6 +1132,14 @@ def process(hospital, scratch, impersonate=None, observation=None):
         headers = download_to(mrf_url, tmp, impersonate=imp, max_time=mt, limit=limit)
         downloaded_at = utcnow()
         transfer_fp = local_fingerprint(tmp)
+        original = None
+        if preserve_source.enabled():
+            with tmp.open("rb") as handle:
+                start = handle.read(512).lstrip(b"\xef\xbb\xbf \t\r\n").lower()
+            if start.startswith((b"<!doctype", b"<html", b"<head")):
+                raise ValueError("received an HTML page instead of an MRF (bot-block?)")
+            original = preserve_source.capture(tmp, slug, mrf_url,
+                filename_from(headers, mrf_url, tmp), headers, data=DATA, root=DATA.parent)
         name, payload_path = materialize(tmp, headers, mrf_url, workdir, limit=limit)
         if payload_path != tmp:
             tmp.unlink()  # the zip has served its purpose; free runner disk
@@ -1145,6 +1158,9 @@ def process(hospital, scratch, impersonate=None, observation=None):
             payload = None
             sha = sha256_file(payload_path)
 
+        if original:
+            preserve_source.bind(original, sha, sha256_file(payload_path), data=DATA, root=DATA.parent)
+
         changed = sha != old_meta.get("sha256") or mrf_url != old_meta.get("mrf_url")
         if not changed and not resummarize and not rediscovered:
             # Content identical but validators rotated; refresh them so the
@@ -1154,7 +1170,10 @@ def process(hospital, scratch, impersonate=None, observation=None):
             old_meta["source_last_modified"] = headers.get("Last-Modified")
             old_meta["source_etag"] = headers.get("ETag")
             old_meta["transfer_fingerprint"] = transfer_fp
-            if backfill:  # downloaded for cold storage only
+            if original:
+                preserve_source.apply_to_meta(old_meta, original)
+                REFRESHED.append(slug)
+            elif backfill:  # downloaded for legacy cold storage only
                 try_cold_store(slug, payload_path, sha, old_meta, name)
             else:
                 REFRESHED.append(slug)
@@ -1189,7 +1208,9 @@ def process(hospital, scratch, impersonate=None, observation=None):
         for key in ("cold_storage", "cold_storage_attempt"):
             if (old_meta.get(key) or {}).get("sha256") == sha:
                 meta[key] = old_meta[key]  # same bytes (e.g. the URL moved)
-        if mode == "summarized" and "cold_storage" not in meta and archiving_enabled():
+        if original:
+            preserve_source.apply_to_meta(meta, original)
+        if not original and mode == "summarized" and "cold_storage" not in meta and archiving_enabled():
             try_cold_store(slug, payload_path, sha, meta, name)
         check_summary(slug, old_stats, outdir, meta)
         meta_path.write_text(json.dumps(meta, indent=2) + "\n")
@@ -1280,6 +1301,12 @@ def select_hospitals(hospitals, only, skip):
 
 def main():
     import collection_health as health
+    if os.environ.get("FORCE_FULL_DOWNLOAD") == "1" and not os.environ.get("ONLY", "").strip():
+        raise ValueError("FORCE_FULL_DOWNLOAD requires an explicit ONLY hospital list")
+    if preserve_source.enabled():
+        pending = preserve_source.retry(data=DATA, root=DATA.parent)
+        if pending and os.environ.get("GITHUB_ACTIONS") == "true":
+            raise RuntimeError("Original archive backlog remains; checkpoint it before collecting more files")
     scratch = Path(tempfile.mkdtemp(prefix="mrf-scrape-"))
     roster = json.loads((ROOT / "hospitals.json").read_text())
     only = os.environ.get("ONLY")
@@ -1334,6 +1361,9 @@ def main():
             observation["archive_status"] = health.archive_result(
                 json.loads(meta_path.read_text()) if meta_path.exists() else {})
             log.finish_attempt(slug, attempt_id, observation)
+            if (preserve_source.enabled() and os.environ.get("GITHUB_ACTIONS") == "true"
+                    and preserve_source.pending(DATA.parent)):
+                raise RuntimeError("Original upload pending; stopping collection to checkpoint the retained bytes")
         completed = True
     finally:
         if os.environ.get("COLLECTION_PARENT_RUN") != "1":

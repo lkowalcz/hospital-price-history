@@ -54,6 +54,65 @@ than 72 hours old causes a workflow failure and a GitHub email. If you
 receive one, follow the health check below. The next completed Pi run
 updates the tag.
 
+## Original-file preservation
+
+The scheduled workflow sets `PRESERVE_ORIGINALS=1`. The Pi enables it when
+archive.org credentials are configured. Manual runs can set it explicitly
+alongside the existing archive credentials. This adds exact-original capture
+for every completed download, including formats the parser cannot read; it
+does not force a download of every unchanged historical source. Plain HTML
+challenge pages are rejected before capture.
+
+`preserve_source.py` copies or hard-links each completed download into
+`.archive-spool/<slug>/<download-sha256>/` before processing it. The spool is
+outside temporary download directories; override it with `ORIGINAL_SPOOL_DIR`
+only to a persistent disk. It uses zstd compression and uploads to a
+content-addressed Internet Archive item. Compression is verified against the
+original SHA-256 before upload. Upload success records the public receipt
+before removing local bytes. Receipts remain in the spool to recover an
+interrupted data commit. Do not delete the spool while uploads are pending.
+
+```sh
+python preserve_source.py retry   # uses retained bytes, never the live hospital URL
+python preserve_source.py check   # nonzero when pending originals remain
+```
+
+For a bounded rollout or archive backfill check, dispatch the scrape workflow
+with explicit `only` hospital slugs and `full_download: true`. Locally use
+`ONLY=<slug> FORCE_FULL_DOWNLOAD=1`; an unscoped forced run is rejected. This
+bypasses validators/sampling but retains normal content hashes and history,
+so downloading identical bytes does not create a new price snapshot. The
+normal scheduled collection policy is unchanged.
+
+On CI, `archive_recovery.py` restores the most recent eligible `original-queue`
+artifact from this workflow on main. Checkpoint names include the run ID and
+attempt, so reruns cannot overwrite the previous recovery copy. A failed
+restore stops collection.
+The queue is checkpointed before data commits, even after a collection error;
+an empty-queue marker supersedes older checkpoints. Pending uploads stop CI
+from collecting more files and fail the backlog check. Artifacts have 90-day
+retention: they are a recovery buffer, not permanent storage. Repeated daily
+checkpoints carry unresolved bytes forward, but an extended outage or a hard
+runner termination before checkpointing can still lose an unuploaded capture.
+Investigate failures promptly. Never clear an unavailable checkpoint just to
+make the workflow green. The Pi's queue survives process failures on its disk;
+its run reports failure after publishing results if originals remain pending.
+
+Original receipts are committed under `data/<slug>/originals/`. Their status
+is independent of parser success. The catalog lists originals even when no
+normalized snapshot could be built, and flags `original_upload_pending`.
+Distinct discovery listings are retained under `data/<slug>/discovery/`.
+For local ingestion, `artifact_kind: local_input` explicitly identifies bytes
+supplied by the operator; a previously extracted local file must not be
+described as the original ZIP download.
+
+Before treating the rollout as verified, observe a scheduled run on each host
+and exercise recovery. Offline tests cover upload failure, scratch cleanup,
+interruption, retry after source deletion, ZIP retention, and receipt recovery.
+They do not establish live Internet Archive availability or artifact delivery.
+Periodic independent archive verification and forced full-download scheduling
+remain roadmap work.
+
 ## Hospitals handled locally
 
 - **Runner IP blocks**: the Johns Hopkins hospitals (four slugs), Orlando

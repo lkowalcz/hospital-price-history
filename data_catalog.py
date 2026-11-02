@@ -14,6 +14,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from collection_health import build_health
 from source_audit import apply_audit, audit_totals, load_audit
+from preserve_source import validate as validate_original
 
 SCHEMA_VERSION = 1
 COLUMNS = ["code_type", "code", "description", "gross_charge", "discounted_cash",
@@ -38,6 +39,7 @@ ISSUES = {
     "collection_failed": "The latest observed check failed or could not find the source listing.",
     "observed_source_not_current": "The latest verified source differs from the committed snapshot; inspect its observation log.",
     "archive_upload_failed": "The latest check records an unsuccessful archive upload, separately from source verification.",
+    "original_upload_pending": "An exact original is retained in the recovery queue but its public archive upload is pending.",
 }
 
 
@@ -205,6 +207,23 @@ def write_json(path, value):
     path.write_text(json.dumps(value, indent=2, ensure_ascii=False, allow_nan=False) + "\n", encoding="utf-8")
 
 
+def preservation_records(root, revision, slug, repo):
+    """Small committed receipts; never read or copy original price-file bytes."""
+    originals, discovery = [], []
+    for path in sorted((root / "data" / slug / "originals").glob("*.json")):
+        record = validate_original(json.loads(path.read_text()))
+        if record["slug"] != slug or path.stem != record["download_sha256"]:
+            raise ValueError("Original receipt identity does not match its path")
+        originals.append({**record, "metadata_url": raw_url(repo, revision, path.relative_to(root).as_posix())})
+    for path in sorted((root / "data" / slug / "discovery").glob("*.json")):
+        record = json.loads(path.read_text())
+        if record.get("sha256") != path.stem or not re.fullmatch(r"[a-f0-9]{64}", path.stem):
+            raise ValueError("Discovery receipt identity does not match its path")
+        discovery.append({**record, "metadata_url": raw_url(repo, revision, path.relative_to(root).as_posix()),
+                          "download_url": raw_url(repo, revision, path.with_suffix(".bin").relative_to(root).as_posix())})
+    return originals, discovery
+
+
 def build_catalog(hospitals, root, outdir, base, repo, raw_repo):
     if git(root, "rev-parse", "--is-shallow-repository").strip() == "true":
         raise ValueError("The catalog requires full commit history (fetch-depth: 0).")
@@ -219,6 +238,21 @@ def build_catalog(hospitals, root, outdir, base, repo, raw_repo):
     if len(set(slugs)) != len(slugs) or any(not re.fullmatch(r"[a-z0-9-]+", s) for s in slugs):
         raise ValueError("Hospital slugs must be unique and contain only lowercase letters, digits, and hyphens.")
     histories = collect_history(root, revision, slugs, repo, raw_repo)
+    preservation = {s: preservation_records(root, revision, s, repo) for s in slugs}
+    for slug, snapshots in histories.items():
+        for snapshot in snapshots:
+            snapshot["original_downloads"] = [r for r in preservation[slug][0]
+                if r.get("snapshot_sha256") and r["snapshot_sha256"] == snapshot["source_sha256"]]
+            # A captured ZIP/gzip may be the only retained source for a file we
+            # could not parse. Keep its wrapper and hash explicit for consumers.
+            archived = [r for r in snapshot["original_downloads"] if r["status"] == "archived"]
+            if snapshot["source"] is None and archived:
+                record = archived[0]
+                snapshot["source"] = {"kind": "archived_original", "url": record["archive"]["url"],
+                    "download_url": record["archive"]["download_url"], "metadata_url": record["metadata_url"],
+                    "file_sha256": record["download_sha256"], "container": record["container"],
+                    "compressed_sha256": record["archive"]["compressed_sha256"],
+                    "payload_sha256": record.get("payload_sha256")}
     audit = load_audit(root, revision)
     remaining_gaps = [{"slug": slug, "snapshot_id": s["snapshot_id"], "recorded_at": s["recorded_at"],
                        "source_sha256": s["source_sha256"], "summary_url": s["summary_url"],
@@ -245,6 +279,9 @@ def build_catalog(hospitals, root, outdir, base, repo, raw_repo):
                             "summary_url": s["summary_url"], **s["source_warning"]}
                            for s in snapshots if s.get("source_warning")]
         stats, issues = inspect_summary(path / "summary.csv")
+        originals, discovery = preservation[slug]
+        if any(r["status"] == "pending" for r in originals):
+            issues.append("original_upload_pending")
         if not meta:
             issues.append("metadata_missing")
         for field, issue in (("fetch_failures", "fetch_failed"), ("summary_warning", "summary_warning")):
@@ -274,6 +311,7 @@ def build_catalog(hospitals, root, outdir, base, repo, raw_repo):
                  "last_full_download_at": collection["last_full_download_at"], "collection": collection,
                  "snapshot_count": len(snapshots), "snapshots_without_archived_source": source_gaps,
                  "historical_source_warnings": source_warnings,
+                 "original_downloads": originals, "discovery_documents": discovery,
                  "latest_snapshot": latest,
                  "summary_rows": stats["row_count"] if stats is not None else None,
                  "metadata_url": raw_url(repo, revision, f"data/{slug}/meta.json") if meta else None,
@@ -294,6 +332,8 @@ def build_catalog(hospitals, root, outdir, base, repo, raw_repo):
               "with_summary": sum(e["summary_rows"] is not None for e in entries),
               "with_archived_source": sum(bool(e["latest_snapshot"] and e["latest_snapshot"]["source"]) for e in entries),
               "with_issues": sum(bool(e["issues"]) for e in entries),
+              "original_downloads": sum(len(e["original_downloads"]) for e in entries),
+              "original_uploads_pending": sum(r["status"] == "pending" for e in entries for r in e["original_downloads"]),
               "issues": dict(sorted(Counter(issue for e in entries for issue in e["issues"]).items()))}
     catalog = {**envelope, "quality_url": f"{base}/data/quality.json",
                "collection_health_url": f"{base}/data/collection-health.json",

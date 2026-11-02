@@ -66,6 +66,51 @@ class CatalogTest(unittest.TestCase):
         return catalog.build_catalog(self.hospitals, self.root, self.output, "https://example.org",
                                      "https://github.com/example/main", "https://github.com/example/raw")
 
+    def test_original_receipts_are_pinned_and_do_not_invent_price_snapshots(self):
+        first = self.snapshot()
+        folder = self.directory / "originals"
+        folder.mkdir()
+        receipt = {"schema_version": 1, "slug": "test", "download_sha256": "b" * 64,
+                   "snapshot_sha256": "a" * 64, "payload_sha256": "c" * 64,
+                   "container": "zip", "status": "pending", "captured_at": "2026-11-02T00:00:00Z"}
+        path = folder / ("b" * 64 + ".json")
+        path.write_text(json.dumps(receipt))
+        pending_revision = self.commit("Pending exact original")
+        entry = self.build()["hospitals"][0]
+        self.assertEqual(entry["snapshot_count"], 1)
+        self.assertEqual(entry["latest_snapshot"]["revision"], first)
+        self.assertIn(pending_revision, entry["original_downloads"][0]["metadata_url"])
+        self.assertIn("original_upload_pending", entry["issues"])
+        receipt.update(status="archived", archive={"url": "https://archive.org/details/original",
+            "download_url": "https://archive.org/download/original/original.zst", "compressed_sha256": "d" * 64})
+        path.write_text(json.dumps(receipt))
+        self.commit("Archive confirmed")
+        result = self.build()
+        entry = result["hospitals"][0]
+        self.assertEqual(entry["snapshot_count"], 1)
+        self.assertNotIn("original_upload_pending", entry["issues"])
+        self.assertNotIn("source_unavailable", entry["issues"])
+        self.assertEqual(entry["latest_snapshot"]["source"]["container"], "zip")
+        self.assertEqual(result["totals"]["original_uploads_pending"], 0)
+
+    def test_unparsed_original_and_discovery_remain_discoverable(self):
+        self.snapshot()
+        folder = self.directory / "originals"
+        folder.mkdir()
+        (folder / ("b" * 64 + ".json")).write_text(json.dumps({"schema_version": 1,
+            "slug": "test", "download_sha256": "b" * 64, "status": "pending"}))
+        folder = self.directory / "discovery"
+        folder.mkdir()
+        body = b"location-name: Test Hospital\r\n"
+        sha = hashlib.sha256(body).hexdigest()
+        (folder / (sha + ".bin")).write_bytes(body)
+        (folder / (sha + ".json")).write_text(json.dumps({"schema_version": 1, "sha256": sha}))
+        revision = self.commit("Unparsed original and discovery")
+        entry = self.build()["hospitals"][0]
+        self.assertEqual(len(entry["original_downloads"]), 1)
+        self.assertEqual(entry["latest_snapshot"]["original_downloads"], [])
+        self.assertIn(revision, entry["discovery_documents"][0]["download_url"])
+
     def test_source_change_without_price_change_and_method_rebuild(self):
         first = self.snapshot()
         second = self.snapshot(sha="b")

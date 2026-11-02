@@ -4,10 +4,14 @@
 For hospitals whose files must be fetched outside the scraper (oversized
 for runners, IP-blocked CDNs, flaky hosts needing manual resume). Runs the
 same storage/summary/meta pipeline as scrape.py's process(). Content
-identical to the stored snapshot is a no-op unless --force, which re-runs
+identical to the stored snapshot is not rebuilt unless --force, which re-runs
 the pipeline on it anyway — to rebuild the summary under a new
 SUMMARY_VERSION or to archive an original that never was — without
 touching last_changed.
+
+With PRESERVE_ORIGINALS=1, the supplied bytes enter the persistent original
+queue even when the normalized snapshot is unchanged. Receipts identify them
+as local_input, since an operator may have already extracted a download.
 
 Use --source-url URL for a verified download whose normal discovery endpoint
 is blocked. This records the actual source URL without making network requests.
@@ -22,6 +26,8 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+
+import preserve_source
 
 from scrape import (DATA, ROOT, MAX_SHARD_TOTAL, SUMMARY_VERSION, Headers,
                     archiving_enabled, check_summary, discover_mrf_url, head,
@@ -52,15 +58,25 @@ def main():
     name = path.name
     size = path.stat().st_size
 
+    original = None
+    if preserve_source.enabled():
+        original = preserve_source.capture(path, slug, mrf_url, name, h, data=DATA, root=DATA.parent,
+                                            artifact_kind="local_input")
+
     if size <= MAX_SHARD_TOTAL:
         payload = normalize_payload(name, path.read_bytes())
         sha = hashlib.sha256(payload).hexdigest()
     else:
         payload = None
         sha = sha256_file(path)
+    if original:
+        preserve_source.bind(original, sha, sha256_file(path), data=DATA, root=DATA.parent)
     changed = sha != old_meta.get("sha256")
     if not changed and not force:
-        print(f"{slug}: content identical to the stored snapshot; nothing to do "
+        if original:
+            preserve_source.apply_to_meta(old_meta, original)
+            preserve_source.write_json(meta_path, old_meta)
+        print(f"{slug}: content identical to the stored snapshot; no snapshot rebuild "
               "(--force re-runs the pipeline on it)")
         return
 
@@ -89,7 +105,9 @@ def main():
     for key in ("cold_storage", "cold_storage_attempt"):
         if (old_meta.get(key) or {}).get("sha256") == sha:
             meta[key] = old_meta[key]
-    if mode == "summarized" and "cold_storage" not in meta and archiving_enabled():
+    if original:
+        preserve_source.apply_to_meta(meta, original)
+    if not original and mode == "summarized" and "cold_storage" not in meta and archiving_enabled():
         try_cold_store(slug, path, sha, meta, name)
     check_summary(slug, old_stats, outdir, meta)
     meta_path.write_text(json.dumps(meta, indent=2) + "\n")

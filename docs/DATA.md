@@ -302,6 +302,111 @@ positive prices as percentage-change denominators. Review extreme differences
 against original files. Payer names, plans, settings, modifiers, and units are
 not separate dimensions in summaries; original files are needed for that context.
 
+## Exact originals and discovery documents
+
+With original preservation enabled, each distinct completed download gets a
+receipt at `data/<slug>/originals/<download_sha256>.json`. The catalog hospital
+entry exposes these as `original_downloads`, with a revision-pinned
+`metadata_url`. They include files for which extraction or parsing failed;
+archiving does not establish schema validity or price accuracy.
+
+| Field | Meaning |
+|-------|---------|
+| `download_sha256`, `download_bytes` | Exact bytes saved by the HTTP client, before the collector's ZIP/gzip extraction or normalization. HTTP content decoding performed by the client can precede this boundary. |
+| `artifact_kind` | `download` for the scraper, `local_input` for an operator-supplied file, which may already have been extracted. |
+| `container` | `plain`, `zip`, or `gzip`, detected from the supplied bytes. |
+| `source_url`, `source_filename`, `response_headers` | Requested URL, supplied filename, and selected available response headers. A local input can have no response headers. Final redirect URLs are not yet captured. |
+| `captured_at`, `collector` | First capture time for these bytes at this hospital, and collector identity. Re-observations do not invent new first-capture dates. |
+| `status` | `pending` while retained for retry, or `archived` after upload succeeds. |
+| `archive` | Item and compressed-download URLs, compressed SHA-256/size, compression, and upload time. Present after success. |
+| `snapshot_sha256` | Optional association with the existing normalized snapshot identity. This is distinct from the original-file hash. |
+| `payload_sha256` | Optional checksum of the extracted, unnormalized MRF. ZIP/gzip extraction can make this differ from `download_sha256`. |
+| `last_attempt_at`, `last_error` | Archive-upload attempt and failure evidence, separate from source-fetch outcomes. |
+
+Snapshot descriptors include `original_downloads` whose normalized association
+matches that state. This does not assert that a later capture occurred at the
+historical snapshot's recording time: read `captured_at`. Unassociated captures
+remain discoverable at the hospital level. Receipts do not create new price
+snapshots. `original_upload_pending` flags pending receipts, including older
+ones, and catalog totals include `original_downloads` and
+`original_uploads_pending`.
+
+Verify a compressed download against `archive.compressed_sha256`, decompress
+zstd, and verify the resulting bytes against `download_sha256`. Only then
+unpack the ZIP/gzip wrapper if present. Preserve the wrapper as evidence.
+Compressed filenames include their own hash, so a different compressor
+version cannot overwrite an older receipt's object. For unwrapped files,
+`meta.json` also exposes the compatible `cold_storage` descriptor. When an
+archived wrapper is the only matching source, the snapshot's `source`
+descriptor explicitly includes `container`, `payload_sha256`, the compressed
+hash, and the download URL.
+
+Each distinct `cms-hpt.txt` response is saved byte-for-byte as
+`data/<slug>/discovery/<sha256>.bin` with a JSON receipt. The catalog's
+`discovery_documents` list pins both files and includes the first observation
+time, source URL, headers, and hash. These are distinct document states, not
+an observation log; use collection observations for attempted-check times.
+
+## Detailed-export pilot
+
+`export_records.py` reads an already available, unwrapped CMS tall CSV, wide
+CSV, or JSON file and writes a new output directory. It does not download
+files, update summaries, or publish anything. Install `requirements.txt`;
+Python 3.12+ is recommended because older CSV readers reject NUL characters
+present in some source files.
+
+```sh
+python export_records.py data/johns-hopkins/standardcharges.csv /tmp/hopkins-records \
+  --input-kind normalized --partition-rows 5000
+```
+
+The output has schema version 1 and `stability: pilot`. It contains:
+
+- `manifest.json`: parser/schema versions, input SHA-256/size, record and warning
+  counts, metadata checksum, and each partition's checksum/size/record count.
+  Optional `--snapshot` and `--source-url` are supplied provenance, not claims
+  independently verified by the exporter.
+- `metadata.json`: the original CSV metadata rows and column list, or all JSON
+  root properties except the service array. This includes supplied hospital
+  identifiers, dates, attestations, contract provisions, and unknown fields.
+- `records-00000.jsonl.gz`, etc.: deterministic gzip partitions, with one record
+  per CSV body record or JSON `standard_charge_information` item.
+
+Each record includes its `source_sha256`, parser version, `record_id` (input
+hash plus zero-based ordinal), and a locator. CSV locators count logical records
+from the start of the file, including its three header/metadata records, and
+also record physical line start/end. JSON locators are JSON Pointers. Locators
+refer to the supplied input: `--input-kind normalized` or `reconstructed` must
+not be represented as an original download's row numbering. IDs are stable for
+the same input bytes and parser; they are not service identities across dates.
+
+Convenient fields retain descriptions, codes and their relationships, modifiers,
+drug units, notes, and charge groups. Each group retains setting, billing class,
+gross/cash/minimum/maximum amounts, and its payer/plan rates. Rates keep dollars,
+percentages, algorithms, methodology, hospital-reported allowed-amount
+percentiles/counts, legacy estimated amounts, and notes separately. No conversion
+to a common price, averaging, name matching, deduplication, or code filtering
+occurs. Empty wide-format payer groups and uncoded rows remain present.
+
+`source_record` retains every original CSV cell or parsed JSON property,
+including fields not mapped into the convenience view. CSV prices remain
+strings; JSON numbers retain decimal precision. An absent CSV column/cell maps
+to null, while a present blank cell stays `""`. JSON's parsed source object
+distinguishes absent properties from explicit nulls even when the convenience
+view uses null for both. Keep count ranges such as `1 through 10` as strings.
+Duplicate CSV columns and row-width mismatches are preserved with warnings;
+ambiguous convenience fields remain null. Duplicate JSON properties and invalid
+JSON/CSV syntax fail the export explicitly. Exact lexical formatting always
+comes from the original bytes, not the parsed export.
+
+Outputs are published by renaming a completed staging directory; errors leave
+no partial successful export and existing output directories are never
+overwritten. Memory is bounded by the largest service record and file metadata,
+not total file size. JSON metadata uses a separate streaming pass. Check the
+manifest and partition hashes before analysis. Matching services across dates
+still requires review of code relationships, descriptions, settings, units,
+payer/plan labels, and parser versions.
+
 ## Attribution and license
 
 Each hospital page includes schema.org Dataset metadata. The archive is

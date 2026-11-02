@@ -69,17 +69,67 @@ Operational follow-through: observe a complete scheduled cycle on both
 collectors to verify the logging rollout covers all 107 hospitals. The initial
 live probes covered GitHub Actions and the Pi; earlier checks remain unknown.
 
-**Next: pilot richer derived exports on fixtures**, as described below.
+**Next: verify the preservation rollout on both collectors, and review the
+detailed-export pilot with a downstream user.** Preserve evidence for future
+questions before expanding coverage or adding interfaces.
 
-## 3. Preserve analytical context in derived exports
+## 3. Preserve exact originals — implementation ready; rollout pending
 
-Pilot a separate versioned export on existing tall CSV, wide CSV, and CMS
-JSON fixtures before applying it to the full archive. Keep current summaries
-available during the pilot.
+The November 2026 baseline has 28 current snapshots with archived-original
+links, 21 stored as normalized files, and 58 stored as sorted shards. The
+normalized files and shards retain useful data but do not necessarily retain
+exact downloaded bytes or original record order.
+
+- Preserve each distinct completed download before ZIP/gzip extraction,
+  normalization, or parsing, including unsupported price-file formats.
+- Identify downloaded bytes, extracted payloads, and normalized snapshots
+  with separate hashes. Keep formatting changes distinct from price changes.
+- Retain pending originals until upload succeeds; retry those bytes even
+  after the hospital replaces its live file.
+- Publish receipts independently of successful parsing. An archived file
+  is not necessarily valid price data. Report pending uploads separately.
+
+Implemented by `preserve_source.py`, the scraper, and local ingestion.
+Scheduled collectors enable `PRESERVE_ORIGINALS=1`; manual collectors can
+opt in. The Pi retains a persistent spool. GitHub Actions restores and
+checkpoints its queue in a 90-day recovery artifact and stops collection
+when an upload remains pending. The artifact is temporary recovery storage.
+Hard runner termination before checkpointing remains a limitation; a missing
+checkpoint must be investigated rather than reset silently.
+
+Completion criterion: demonstrate a scheduled cycle on both hosts and an
+upload outage/recovery with correct public receipts. Independently verify
+archived bytes after upload. Add a bounded policy for periodic full downloads
+despite matching headers/samples. Capture is prospective: re-fetching today's
+file does not recover an old original. Plan backfills separately with explicit
+storage and bandwidth limits.
+
+## 4. Preserve analytical context in derived exports — pilot implemented
+
+`export_records.py` produces a versioned, partitioned JSONL export from CMS
+tall CSV, wide CSV, and JSON. It retains source records and file metadata
+beside convenient fields, without aggregation, code selection, price filtering,
+or inferred payer identities. Existing summaries remain available. The schema
+is a pilot and is not generated automatically for the full archive.
+
+Initial verification at source-data revision
+`c9258d9a468fbf4f50bc1a66891b256f6eb874ae`: all 81,889 source records were
+reproduced from McLean (489), Johns Hopkins (59,395), and OhioHealth Riverside
+(22,005). CSV cells/JSON objects and file metadata matched the supplied
+normalized sources; partition checksums were verified. Tall/wide CSV and JSON
+fixtures additionally cover missing values, multiline records, linked codes,
+unknown fields, exact decimals, and unsupported/ambiguous input. This verifies
+extraction fidelity, not clinical comparability or exact-original coverage.
 
 - Preserve payer, plan, service setting, billing-code relationships, modifiers,
   units, rate type, and the unmodified description when present.
 - Keep dollar rates, percentages, formulas, and absent values distinct.
+- Keep hospital-reported median/10th/90th-percentile allowed amounts, their
+  supporting counts (including `1 through 10`), and legacy estimated amounts
+  separate from negotiated charges and statistics calculated by this project.
+- Retain all source cells/parsed JSON properties, including unknown fields,
+  notes, unusual values, duplicate rows, and uncoded services. Reject ambiguous
+  duplicate JSON properties explicitly; keep the original for another parser.
 - Include source snapshot identity, parser version, source record locator,
   and explicit missingness. Avoid inferring dimensions the source omits.
 - Publish small partitioned downloads with checksums. Choose CSV/JSONL/Parquet
@@ -93,11 +143,35 @@ record and distinguish settings, units, and payer context without consulting
 undocumented parser behavior. New formats must have bounded memory/disk use
 on both the CI runner and collection host.
 
-## 4. Validate reuse before expanding coverage
+## 5. Preserve discovery and interpretive evidence — initial capture implemented
+
+- Save exact distinct `cms-hpt.txt` responses and pin their receipts/downloads
+  in the catalog, including listings from which a hospital disappeared.
+- Retain hospital identifiers, locations, schema versions, attestations,
+  file-level contract provisions, and financial-aid notes as published.
+  The export pilot preserves complete supplied file metadata.
+- Keep collection time, the hospital's stated update date, and explicitly
+  supplied effective dates separate; do not infer one from another.
+- Extend provenance to final redirect URLs and references to external
+  documents needed to interpret a file. Evaluate retention of those documents
+  on real examples before expanding collection.
+- Review identity checks against source identifiers/addresses before adding
+  automated discovery or expanding the roster.
+
+Completion criterion: a researcher can reconstruct how a source was found,
+which hospitals it identifies, what its dates mean, and the source-specific
+conditions attached to its rates.
+
+## 6. Validate reuse before expanding coverage
 
 Use a concrete downstream analysis or integration to test the documentation
 and export design. Ask participating users to identify the missing fields,
 access patterns, and provenance that prevent independent use.
+
+Review task: follow one payer/plan's published rate for the same service and
+setting across two snapshots, reproduce the source values, and explain every
+ambiguity. Seek feedback from a domain expert or downstream project such as
+The Healthcare Files before declaring the export schema stable.
 
 Measure successful reproducible downloads, resolved collection gaps,
 source/archive coverage, and independent reuse. Add hospitals or new product

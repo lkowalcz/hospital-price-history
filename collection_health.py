@@ -156,6 +156,11 @@ class RunLog:
 
 
 def archive_result(meta):
+    original = meta.get("original_download") or {}
+    if original.get("status") == "pending":
+        return "failed"
+    if original.get("status") == "archived":
+        return "available"
     if meta.get("sha256") and (meta.get("cold_storage") or {}).get("sha256") == meta["sha256"]:
         return "available"
     if meta.get("sha256") and (meta.get("cold_storage_attempt") or {}).get("sha256") == meta["sha256"]:
