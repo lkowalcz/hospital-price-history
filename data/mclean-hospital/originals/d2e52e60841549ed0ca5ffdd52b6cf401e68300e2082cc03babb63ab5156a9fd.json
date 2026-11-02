@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "mclean-hospital",
+  "download_sha256": "d2e52e60841549ed0ca5ffdd52b6cf401e68300e2082cc03babb63ab5156a9fd",
+  "download_bytes": 20578,
+  "source_url": "https://www.massgeneralbrigham.org/price-transparency/042697981_McLean-Hospital_StandardCharges.zip",
+  "source_filename": "042697981_McLean-Hospital_StandardCharges.zip",
+  "captured_at": "2026-11-02T07:55:48Z",
+  "status": "archived",
+  "artifact_kind": "download",
+  "collector": "github-actions",
+  "container": "gzip",
+  "response_headers": {
+    "Content-Type": "application/zip",
+    "Content-Encoding": "gzip",
+    "Content-Length": "20578",
+    "ETag": "\"4f5844528e4a505b854803e4c26ad7cf\"",
+    "Last-Modified": "Thu, 23 Jul 2026 19:36:39 GMT"
+  },
+  "last_attempt_at": "2026-11-02T07:55:48Z",
+  "archive": {
+    "url": "https://archive.org/details/hospital-price-original-d2e52e60841549ed0ca5ffdd52b6cf401e68300e2082cc03babb63ab5156a9fd",
+    "download_url": "https://archive.org/download/hospital-price-original-d2e52e60841549ed0ca5ffdd52b6cf401e68300e2082cc03babb63ab5156a9fd/original-221877d52faa3dee4de2d004837d4306e537a74c8769582e3a330bd138d11def.zst",
+    "compressed_sha256": "221877d52faa3dee4de2d004837d4306e537a74c8769582e3a330bd138d11def",
+    "compressed_bytes": 20592,
+    "compression": "zstd",
+    "archived_at": "2026-11-02T07:56:25Z"
+  },
+  "snapshot_sha256": "8aeaaf67d783b6ed40805dda5aab6b131955d1ab1293f74afc34dbb771183e8b",
+  "payload_sha256": "983bf940735410ace300a813eb5969dc39cd9539f2f2aecdc52ee59b6e2ee681"
+}
