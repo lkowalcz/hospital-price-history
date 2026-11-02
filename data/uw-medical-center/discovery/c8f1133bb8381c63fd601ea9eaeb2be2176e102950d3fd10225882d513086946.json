@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "sha256": "c8f1133bb8381c63fd601ea9eaeb2be2176e102950d3fd10225882d513086946",
+  "bytes": 676,
+  "source_url": "https://www.uwmedicine.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:21:54Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip",
+    "Content-Length": "276",
+    "Last-Modified": "Thu, 15 Oct 2026 22:53:57 GMT"
+  }
+}

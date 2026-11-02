@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "sha256": "1bafbff5f93be647c99c277f4bc39d177d0ca959b168060b6a59d18448cfc0ce",
+  "bytes": 2672,
+  "source_url": "https://www.muhealth.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:23:27Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Length": "2672",
+    "Last-Modified": "Tue, 08 Jul 2025 19:32:54 GMT"
+  }
+}

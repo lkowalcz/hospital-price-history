@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "sha256": "76cf5ee42d726154cfadf3b5d2fdd6605eea5599b8751fc24707dba424a6b2ca",
+  "bytes": 25914,
+  "source_url": "https://www.sutterhealth.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:18:56Z",
+  "response_headers": {
+    "Content-Type": "text/plain; charset=UTF-8",
+    "Content-Encoding": "gzip",
+    "Content-Disposition": "inline; filename=\"cms-hpt.txt\"",
+    "Last-Modified": "Mon, 14 Sep 2026 18:20:32 GMT"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "sha256": "b9584a0bdb9b08b1a972d0c701d507c76f3bafa1591a59f1ab5e56998402e014",
+  "bytes": 1934,
+  "source_url": "https://www.uvmhealth.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:23:21Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip",
+    "Content-Length": "408",
+    "ETag": "\"78e-65b26f2e14b80-gzip\"",
+    "Last-Modified": "Thu, 10 Sep 2026 20:38:22 GMT"
+  }
+}

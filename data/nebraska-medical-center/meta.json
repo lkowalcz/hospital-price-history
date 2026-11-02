@@ -12,5 +12,30 @@
   "first_seen": "2026-08-25T15:40:53Z",
   "last_changed": "2026-08-27T17:57:43Z",
   "raw_commit": "6da6a71abd18743bd414fe104d71ae8c2f8e286b",
-  "summary_version": 2
+  "summary_version": 2,
+  "original_download": {
+    "download_sha256": "2a8fc6d194fe90abe9f30d30b6feb08f4b787ca0a67cf7e464f09999a146751a",
+    "status": "archived",
+    "captured_at": "2026-11-02T16:23:31Z",
+    "artifact_kind": "download",
+    "archive": {
+      "url": "https://archive.org/details/hospital-price-original-2a8fc6d194fe90abe9f30d30b6feb08f4b787ca0a67cf7e464f09999a146751a",
+      "download_url": "https://archive.org/download/hospital-price-original-2a8fc6d194fe90abe9f30d30b6feb08f4b787ca0a67cf7e464f09999a146751a/original-be096cb79a54971dfc75f78443d9a762e62cb55e04ab090d934454116b028053.zst",
+      "compressed_sha256": "be096cb79a54971dfc75f78443d9a762e62cb55e04ab090d934454116b028053",
+      "compressed_bytes": 5838497,
+      "compression": "zstd",
+      "archived_at": "2026-11-02T16:24:00Z"
+    }
+  },
+  "cold_storage": {
+    "url": "https://archive.org/details/hospital-price-original-2a8fc6d194fe90abe9f30d30b6feb08f4b787ca0a67cf7e464f09999a146751a",
+    "download_url": "https://archive.org/download/hospital-price-original-2a8fc6d194fe90abe9f30d30b6feb08f4b787ca0a67cf7e464f09999a146751a/original-be096cb79a54971dfc75f78443d9a762e62cb55e04ab090d934454116b028053.zst",
+    "compressed_sha256": "be096cb79a54971dfc75f78443d9a762e62cb55e04ab090d934454116b028053",
+    "compressed_bytes": 5838497,
+    "compression": "zstd",
+    "archived_at": "2026-11-02T16:24:00Z",
+    "sha256": "e8614614bc8ba9f243de7fc0e7cb66eca525ca52d20b84398323e7bd8598a86a",
+    "file_sha256": "2a8fc6d194fe90abe9f30d30b6feb08f4b787ca0a67cf7e464f09999a146751a",
+    "date": "2026-11-02"
+  }
 }

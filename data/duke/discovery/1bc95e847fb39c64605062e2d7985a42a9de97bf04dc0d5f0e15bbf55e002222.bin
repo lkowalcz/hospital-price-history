@@ -1,0 +1,23 @@
+location-name: Duke University Hospital
+source-page-url: https://www.dukehealth.org/paying-for-care/what-duke-charges-services
+mrf-url: https://rca.elevatepfs.com/ptapp/api/cdm/export/oneclick?recno=fad40f5dd5e6b2097ff0a8f592b095fac2e3a3eeef64efd5ca2b56f564a91e8e
+contact-name: Kathy Nielsen
+contact-email: kathy.nielsen@duke.edu
+
+location-name: Duke Regional Hospital
+source-page-url: https://www.dukehealth.org/paying-for-care/what-duke-charges-services
+mrf-url: https://rca.elevatepfs.com/ptapp/api/cdm/export/oneclick?recno=6218eb9ff7c607c1b86fc33c62f39d2663e9f7a51d87144995dfaa26b0ab9984
+contact-name: Kathy Nielsen
+contact-email: kathy.nielsen@duke.edu
+
+location-name: Duke Raleigh Hospital a Campus of Duke University Hospital
+source-page-url: https://www.dukehealth.org/paying-for-care/what-duke-charges-services
+mrf-url: https://rca.elevatepfs.com/ptapp/api/cdm/export/oneclick?recno=4263023a5f130d4eb5cb1e4abe03548c291beec09fcc93ce1aa00de82380e386
+contact-name: Kathy Nielsen
+contact-email: kathy.nielsen@duke.edu
+
+location-name: Duke Health Lake Norman Hospital
+source-page-url: https://www.dukehealth.org/paying-for-care/what-duke-charges-services
+mrf-url: https://rca.elevatepfs.com/ptapp/api/cdm/export/oneclick?recno=c63aa9e0ca2813b16b47832dbe7b87882e211317b4b2dded9f0599d8cd150754
+contact-name: Kathy Nielsen
+contact-email: kathy.nielsen@duke.edu

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "sha256": "fd38953ad96457615cc85921430e0da368b2143167dd3847f194b44f6e5ec0c7",
+  "bytes": 371,
+  "source_url": "https://www.denverhealth.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:21:42Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip",
+    "ETag": "W/\"685efcf1-173\"",
+    "Last-Modified": "Fri, 27 Jun 2025 20:20:01 GMT"
+  }
+}

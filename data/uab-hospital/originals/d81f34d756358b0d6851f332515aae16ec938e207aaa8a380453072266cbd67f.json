@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "slug": "uab-hospital",
+  "download_sha256": "d81f34d756358b0d6851f332515aae16ec938e207aaa8a380453072266cbd67f",
+  "download_bytes": 61193503,
+  "source_url": "https://cdn.hs.uab.edu/static/63-6005396_University-of-Alabama-Hospital_standardcharges.zip",
+  "source_filename": "63-6005396_University-of-Alabama-Hospital_standardcharges.zip",
+  "captured_at": "2026-11-02T16:21:07Z",
+  "status": "archived",
+  "artifact_kind": "download",
+  "collector": "github-actions",
+  "container": "zip",
+  "response_headers": {
+    "Content-Type": "application/zip",
+    "ETag": "\"3a5bd1f-64c48b7b977b7\"",
+    "Last-Modified": "Thu, 05 Mar 2026 15:37:44 GMT"
+  },
+  "last_attempt_at": "2026-11-02T16:21:07Z",
+  "archive": {
+    "url": "https://archive.org/details/hospital-price-original-d81f34d756358b0d6851f332515aae16ec938e207aaa8a380453072266cbd67f",
+    "download_url": "https://archive.org/download/hospital-price-original-d81f34d756358b0d6851f332515aae16ec938e207aaa8a380453072266cbd67f/original-ed1084e7ef0c2f0c769075afc18fbb3677b215ac5a4ac355a2fc88f2bc1e1780.zst",
+    "compressed_sha256": "ed1084e7ef0c2f0c769075afc18fbb3677b215ac5a4ac355a2fc88f2bc1e1780",
+    "compressed_bytes": 61194918,
+    "compression": "zstd",
+    "archived_at": "2026-11-02T16:21:38Z"
+  },
+  "snapshot_sha256": "349af7a85c60f200c728a2dcef1bb7ea58aa5d3cc8c30ce2096545805b5e2cb1",
+  "payload_sha256": "4a270cb08952d9d443541cd471b1e5b575ae6756cf331530ed5a48701d2faea3"
+}

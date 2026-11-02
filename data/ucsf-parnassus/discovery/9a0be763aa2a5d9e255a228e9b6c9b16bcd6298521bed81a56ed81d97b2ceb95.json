@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "sha256": "9a0be763aa2a5d9e255a228e9b6c9b16bcd6298521bed81a56ed81d97b2ceb95",
+  "bytes": 1240,
+  "source_url": "https://www.ucsfhealth.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:18:30Z",
+  "response_headers": {
+    "Content-Type": "text/plain; charset=UTF-8",
+    "Content-Encoding": "gzip",
+    "ETag": "W/\"4d8-1a183029538\"",
+    "Last-Modified": "Wed, 28 Oct 2026 14:55:47 GMT"
+  }
+}

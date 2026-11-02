@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "sha256": "f6a98532a49fadc5a92ac6056059a0f4cfe662abd39d11d7068db92445987be0",
+  "bytes": 2449,
+  "source_url": "https://www.phs.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:24:04Z",
+  "response_headers": {
+    "Content-Type": "text/plain; charset=utf-8",
+    "Content-Encoding": "gzip",
+    "Content-Disposition": "inline; filename=\"cms-hpt.txt\"",
+    "ETag": "W/\"557928b4378d03c4c67f1f47b367a732\"",
+    "Last-Modified": "Mon, 02 Nov 2026 12:05:57 GMT"
+  }
+}

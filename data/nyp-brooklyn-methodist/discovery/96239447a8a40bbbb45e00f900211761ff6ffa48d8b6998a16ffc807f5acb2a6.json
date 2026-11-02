@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "sha256": "96239447a8a40bbbb45e00f900211761ff6ffa48d8b6998a16ffc807f5acb2a6",
+  "bytes": 3298,
+  "source_url": "https://www.nyp.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:22:05Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip",
+    "Last-Modified": "Wed, 30 Sep 2026 18:09:37 GMT"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "sha256": "20b21852c655782bc52846ecf107d6016be730c415782f281079763e145eb5b8",
+  "bytes": 18958,
+  "source_url": "https://healthy.kaiserpermanente.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:18:42Z",
+  "response_headers": {
+    "Content-Type": "text/plain; charset=UTF-8",
+    "Content-Encoding": "gzip",
+    "Content-Length": "1037",
+    "Last-Modified": "Fri, 30 Oct 2026 05:37:28 GMT"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "sha256": "77b64648a50b3722656bbb5ac5cfec2ba3babd23dfd2e846ee8fd1302a8a6c56",
+  "bytes": 1561,
+  "source_url": "https://www.uclahealth.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:22:04Z",
+  "response_headers": {
+    "Content-Type": "text/plain; charset=utf-8",
+    "Content-Encoding": "gzip",
+    "Last-Modified": "Mon, 02 Nov 2026 16:18:34 GMT"
+  }
+}

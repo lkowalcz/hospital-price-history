@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "sha256": "f00921f978ae9d75cd881d6943f51af6aa4da8f200516d450f33ef6271f10cee",
+  "bytes": 649,
+  "source_url": "https://uihc.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:23:28Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip",
+    "Last-Modified": "Tue, 27 Oct 2026 21:24:01 GMT"
+  }
+}

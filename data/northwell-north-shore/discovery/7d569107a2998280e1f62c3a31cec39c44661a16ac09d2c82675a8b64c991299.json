@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "sha256": "7d569107a2998280e1f62c3a31cec39c44661a16ac09d2c82675a8b64c991299",
+  "bytes": 8331,
+  "source_url": "https://www.northwell.edu/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:18:41Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip",
+    "Last-Modified": "Fri, 31 Jul 2026 17:39:11 GMT"
+  }
+}

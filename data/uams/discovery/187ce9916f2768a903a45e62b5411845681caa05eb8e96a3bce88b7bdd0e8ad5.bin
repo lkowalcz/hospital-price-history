@@ -1,0 +1,11 @@
+location-name: UAMS Medical Center
+source-page-url: https://uamshealth.com/patients-and-guests/patient-support/billing/price-transparency/
+mrf-url: https://apim.services.craneware.com/api-pricing-transparency/api/public/8179f216930ea52889ace48af58b8713/charges/mrf
+contact-name: Terri Meier
+contact-email: TMeier@uams.edu
+
+location-name: UAMS Health Benton-Bryant
+source-page-url: https://uamshealth.com/patients-and-guests/patient-support/billing/price-transparency/
+mrf-url: https://apim.services.craneware.com/api-pricing-transparency/api/public/f92677cc288ba08524ea6c28aefb71a2/charges/mrf
+contact-name: Terri Meier
+contact-email: TMeier@uams.edu

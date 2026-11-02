@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "sha256": "46ebbfbefd2921342561c8f87fe0920cddcaa81b38d99d8b0c56a9ed6e492d74",
+  "bytes": 2986,
+  "source_url": "https://www.nm.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:18:39Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Length": "2986",
+    "ETag": "\"d85f135d3b7dc1:0\"",
+    "Last-Modified": "Thu, 19 Mar 2026 19:04:26 GMT"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "sha256": "187ce9916f2768a903a45e62b5411845681caa05eb8e96a3bce88b7bdd0e8ad5",
+  "bytes": 650,
+  "source_url": "https://uamshealth.com/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:24:02Z",
+  "response_headers": {
+    "Content-Type": "text/plain; charset=utf-8",
+    "Content-Length": "650",
+    "ETag": "\"6abd1d44-28a\"",
+    "Last-Modified": "Wed, 30 Sep 2026 14:31:32 GMT"
+  }
+}

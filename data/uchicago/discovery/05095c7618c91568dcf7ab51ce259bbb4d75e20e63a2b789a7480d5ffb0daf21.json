@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "sha256": "05095c7618c91568dcf7ab51ce259bbb4d75e20e63a2b789a7480d5ffb0daf21",
+  "bytes": 1221,
+  "source_url": "https://www.uchicagomedicine.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:18:29Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip",
+    "ETag": "W/\"0x8DE9181F5BEE9E5\"",
+    "Last-Modified": "Fri, 03 Apr 2026 13:07:29 GMT"
+  }
+}

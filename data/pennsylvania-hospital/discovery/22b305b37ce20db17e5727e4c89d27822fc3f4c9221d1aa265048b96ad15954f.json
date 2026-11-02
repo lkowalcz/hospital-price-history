@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "sha256": "22b305b37ce20db17e5727e4c89d27822fc3f4c9221d1aa265048b96ad15954f",
+  "bytes": 5501,
+  "source_url": "https://www.pennmedicine.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:23:13Z",
+  "response_headers": {
+    "Content-Type": "text/plain;charset=utf-8",
+    "Content-Encoding": "gzip",
+    "ETag": "\"156p365vlyo48t\""
+  }
+}

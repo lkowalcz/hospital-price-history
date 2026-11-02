@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "sha256": "a3272884f4f61603e178a3432da75248244fee56e8c55a72c59ccc11461eeb96",
+  "bytes": 1668,
+  "source_url": "https://www.uabmedicine.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:20:14Z",
+  "response_headers": {
+    "Content-Type": "text/plain;charset=utf-8",
+    "Content-Encoding": "gzip"
+  }
+}

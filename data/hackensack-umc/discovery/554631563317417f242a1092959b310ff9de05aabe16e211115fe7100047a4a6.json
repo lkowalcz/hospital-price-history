@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "sha256": "554631563317417f242a1092959b310ff9de05aabe16e211115fe7100047a4a6",
+  "bytes": 4881,
+  "source_url": "https://www.hackensackmeridianhealth.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:23:16Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip",
+    "ETag": "\"140vh7lqpdd3rl\""
+  }
+}

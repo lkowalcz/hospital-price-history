@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "sha256": "f072f72bb8bdc2a9cba928df9b3aa725031c07ee09c986de0d98defec32e9a7d",
+  "bytes": 11664,
+  "source_url": "https://www.atriumhealth.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:18:49Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Length": "11664",
+    "Content-Disposition": "inline; filename=\"CLT_cms-hpt.txt\"",
+    "ETag": "74cd61b75fcf4627afe839b3a55d3a77",
+    "Last-Modified": "Tue, 15 Sep 2026 17:25:41 GMT"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "sha256": "71f5d3e07db5d560ea79ce42d7269a32133820bbd4fd60dff52c11e787749c3a",
+  "bytes": 7940,
+  "source_url": "https://www.novanthealth.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:19:47Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Length": "7940",
+    "ETag": "\"dd99569b6368dd1:0\"",
+    "Last-Modified": "Fri, 30 Oct 2026 11:41:30 GMT"
+  }
+}

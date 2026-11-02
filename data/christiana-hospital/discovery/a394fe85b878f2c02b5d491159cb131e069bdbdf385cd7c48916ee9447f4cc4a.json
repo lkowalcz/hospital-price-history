@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "sha256": "a394fe85b878f2c02b5d491159cb131e069bdbdf385cd7c48916ee9447f4cc4a",
+  "bytes": 918,
+  "source_url": "https://christianacare.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:23:22Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Length": "918",
+    "Content-Disposition": "inline",
+    "ETag": "\"0x8DE8F68EBB58FEC\"",
+    "Last-Modified": "Tue, 31 Mar 2026 21:03:12 GMT"
+  }
+}

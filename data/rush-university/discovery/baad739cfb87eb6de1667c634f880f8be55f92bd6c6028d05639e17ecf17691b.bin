@@ -1,0 +1,17 @@
+location-name: Rush University Medical Center
+source-page-url: www.rush.edu/patients-visitors/billing/cost-care
+mrf-url: apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbRUMCCHICAGOIL&type=CDMWithoutLabel&fileType=CSV
+contact-name: Blake Evans
+contact-email: Blake_Evans@rush.edu
+
+location-name: Rush Oak Park Hospital, Inc
+source-page-url: www.rush.edu/patients-visitors/billing/cost-care
+mrf-url: apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbRushOakPark&type=CDMWithoutLabel&fileType=CSV
+contact-name: Blake Evans
+contact-email: Blake_Evans@rush.edu
+
+location-name: Copley Memorial Hospital, Inc
+source-page-url: www.rush.edu/patients-visitors/billing/cost-care
+mrf-url: apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbCMHAURORAIL&type=CDMWithoutLabel&fileType=CSV
+contact-name: Blake Evans
+contact-email: Blake_Evans@rush.edu

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "sha256": "af4578601cc347931b3c6a690fb88d820b900622a7e82175ad9b86d79ab09987",
+  "bytes": 478,
+  "source_url": "https://www.mdanderson.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:18:36Z",
+  "response_headers": {
+    "Content-Type": "text/plain; charset=utf-8",
+    "Content-Encoding": "gzip",
+    "Content-Length": "282",
+    "Last-Modified": "Wed, 25 Feb 2026 15:45:15 GMT"
+  }
+}

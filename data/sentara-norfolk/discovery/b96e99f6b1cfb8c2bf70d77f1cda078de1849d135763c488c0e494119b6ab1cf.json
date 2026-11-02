@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "sha256": "b96e99f6b1cfb8c2bf70d77f1cda078de1849d135763c488c0e494119b6ab1cf",
+  "bytes": 5415,
+  "source_url": "https://www.sentara.com/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:23:23Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip",
+    "ETag": "W/\"0959d63c56dd1:0\"",
+    "Last-Modified": "Wed, 07 Oct 2026 09:12:50 GMT"
+  }
+}

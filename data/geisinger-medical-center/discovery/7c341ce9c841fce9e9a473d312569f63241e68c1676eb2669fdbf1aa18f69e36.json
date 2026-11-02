@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "sha256": "7c341ce9c841fce9e9a473d312569f63241e68c1676eb2669fdbf1aa18f69e36",
+  "bytes": 4303,
+  "source_url": "https://www.geisinger.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:19:45Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip"
+  }
+}

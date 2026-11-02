@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "sha256": "d02a7323d3b9f2dfb78c30562af915a2d98dfb2ccda07825f4d706a202e62699",
+  "bytes": 20209,
+  "source_url": "https://hcahoustonhealthcare.com/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:18:51Z",
+  "response_headers": {
+    "Content-Type": "text/plain; charset=utf-8",
+    "Content-Encoding": "gzip",
+    "Content-Length": "1564"
+  }
+}

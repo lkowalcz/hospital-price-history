@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "sha256": "78e7bbcbc7c752c52dc6befb3535ec796e863601066858808ed9800f5f035e82",
+  "bytes": 2302,
+  "source_url": "https://www.dmc.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:18:52Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip",
+    "ETag": "\"1dd3a93d8a0c8fe\"",
+    "Last-Modified": "Wed, 02 Sep 2026 04:30:56 GMT"
+  }
+}

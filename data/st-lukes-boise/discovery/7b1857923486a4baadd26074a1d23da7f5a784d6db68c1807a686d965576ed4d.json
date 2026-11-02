@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "sha256": "7b1857923486a4baadd26074a1d23da7f5a784d6db68c1807a686d965576ed4d",
+  "bytes": 3160,
+  "source_url": "https://www.stlukesonline.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:24:05Z",
+  "response_headers": {
+    "Content-Type": "text/plain; charset=utf-8",
+    "Content-Encoding": "gzip",
+    "Last-Modified": "Mon, 02 Nov 2026 12:05:23 GMT"
+  }
+}

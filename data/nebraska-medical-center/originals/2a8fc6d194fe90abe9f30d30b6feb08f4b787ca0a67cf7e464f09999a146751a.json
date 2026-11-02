@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "slug": "nebraska-medical-center",
+  "download_sha256": "2a8fc6d194fe90abe9f30d30b6feb08f4b787ca0a67cf7e464f09999a146751a",
+  "download_bytes": 159092343,
+  "source_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbTNMCOMAHANE&type=CDMWithoutLabel&fileType=CSV",
+  "source_filename": "911858433_nebraska-medical-center_standardcharges.csv",
+  "captured_at": "2026-11-02T16:23:31Z",
+  "status": "archived",
+  "artifact_kind": "download",
+  "collector": "github-actions",
+  "container": "plain",
+  "response_headers": {
+    "Content-Type": "application/octet-stream",
+    "Content-Disposition": "attachment; filename=\"911858433_nebraska-medical-center_standardcharges.csv\""
+  },
+  "last_attempt_at": "2026-11-02T16:23:31Z",
+  "archive": {
+    "url": "https://archive.org/details/hospital-price-original-2a8fc6d194fe90abe9f30d30b6feb08f4b787ca0a67cf7e464f09999a146751a",
+    "download_url": "https://archive.org/download/hospital-price-original-2a8fc6d194fe90abe9f30d30b6feb08f4b787ca0a67cf7e464f09999a146751a/original-be096cb79a54971dfc75f78443d9a762e62cb55e04ab090d934454116b028053.zst",
+    "compressed_sha256": "be096cb79a54971dfc75f78443d9a762e62cb55e04ab090d934454116b028053",
+    "compressed_bytes": 5838497,
+    "compression": "zstd",
+    "archived_at": "2026-11-02T16:24:00Z"
+  },
+  "snapshot_sha256": "e8614614bc8ba9f243de7fc0e7cb66eca525ca52d20b84398323e7bd8598a86a",
+  "payload_sha256": "2a8fc6d194fe90abe9f30d30b6feb08f4b787ca0a67cf7e464f09999a146751a"
+}

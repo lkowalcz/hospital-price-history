@@ -1,0 +1,11 @@
+location-name: Nebraska Medical Center
+source-page-url: https://www.nebraskamed.com/patients/billing/current-hospital-prices
+mrf-url: https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbTNMCOMAHANE&type=CDMWithoutLabel&fileType=CSV
+contact-name: Daniel Gard
+contact-email: dgard@nebraskamed.com
+
+location-name: Bellevue Medical Center
+source-page-url: https://www.nebraskamed.com/patients/billing/current-hospital-prices
+mrf-url: https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbBMCBELLEVUENE&type=CDMWithoutLabel&fileType=CSV
+contact-name: Daniel Gard
+contact-email: dgard@nebraskamed.com

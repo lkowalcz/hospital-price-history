@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "slug": "rush-university",
+  "download_sha256": "3c82819dbaf02ebdb7f00b1bee612cd5e536325ed1be87f1c15333f69708c7c7",
+  "download_bytes": 70549416,
+  "source_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbRUMCCHICAGOIL&type=CDMWithoutLabel&fileType=CSV",
+  "source_filename": "362174823_rush-university-medical-center_standardcharges.csv",
+  "captured_at": "2026-11-02T16:19:49Z",
+  "status": "archived",
+  "artifact_kind": "download",
+  "collector": "github-actions",
+  "container": "plain",
+  "response_headers": {
+    "Content-Type": "application/octet-stream",
+    "Content-Disposition": "attachment; filename=\"362174823_rush-university-medical-center_standardcharges.csv\""
+  },
+  "last_attempt_at": "2026-11-02T16:19:49Z",
+  "archive": {
+    "url": "https://archive.org/details/hospital-price-original-3c82819dbaf02ebdb7f00b1bee612cd5e536325ed1be87f1c15333f69708c7c7",
+    "download_url": "https://archive.org/download/hospital-price-original-3c82819dbaf02ebdb7f00b1bee612cd5e536325ed1be87f1c15333f69708c7c7/original-4bdc188aaa7e556a632dea060342092dbc5fcf0ff2230528c050ade3961c9042.zst",
+    "compressed_sha256": "4bdc188aaa7e556a632dea060342092dbc5fcf0ff2230528c050ade3961c9042",
+    "compressed_bytes": 2936294,
+    "compression": "zstd",
+    "archived_at": "2026-11-02T16:20:12Z"
+  },
+  "snapshot_sha256": "736a005fe21e6772e7a4e5d62efa1ab9558536400028af02968f9ad572028500",
+  "payload_sha256": "3c82819dbaf02ebdb7f00b1bee612cd5e536325ed1be87f1c15333f69708c7c7"
+}

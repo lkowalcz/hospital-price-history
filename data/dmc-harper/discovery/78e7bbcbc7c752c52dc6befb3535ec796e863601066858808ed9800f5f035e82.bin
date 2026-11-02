@@ -1,0 +1,41 @@
+location-name: DMC Detroit Receiving Hospital
+source-page-url: https://www.dmc.org/patients/pricing-info-estimates/hospital-pricing-information
+mrf-url: https://mrfs.hyvehealthcare.com/TenetHealth/272844942_vhs-detroit-receiving-hospital-inc_standardcharges.json
+contact-name: Alexandria (Tara) Vafadari
+contact-email: AVafadar@dmc.org
+
+location-name: DMC Harper University Hospital
+source-page-url: https://www.dmc.org/patients/pricing-info-estimates/hospital-pricing-information
+mrf-url: https://mrfs.hyvehealthcare.com/TenetHealth/272844767-1427360700_vhs-harper-hutzel-hospital-inc_standardcharges.json
+contact-name: Alexandria (Tara) Vafadari
+contact-email: AVafadar@dmc.org
+
+location-name: DMC Huron Valley-Sinai Hospital
+source-page-url: https://www.dmc.org/patients/pricing-info-estimates/hospital-pricing-information
+mrf-url: https://mrfs.hyvehealthcare.com/TenetHealth/272844563_vhs-huron-valley-sinai-hospital-inc_standardcharges.json
+contact-name: Daniel Babb
+contact-email: dbabb@dmc.org
+
+location-name: DMC Sinai-Grace Hospital
+source-page-url: https://www.dmc.org/patients/pricing-info-estimates/hospital-pricing-information
+mrf-url: https://mrfs.hyvehealthcare.com/TenetHealth/272844632_vhs-sinai-grace-hospital-inc_standardcharges.json
+contact-name: Gina Butcher
+contact-email: GButcher@dmc.org
+
+location-name: Hutzel Womens Hospital
+source-page-url: https://www.dmc.org/patients/pricing-info-estimates/hospital-pricing-information
+mrf-url: https://mrfs.hyvehealthcare.com/TenetHealth/272844767_vhs-harper-hutzel-hospital-inc_standardcharges.json
+contact-name: Alexandria (Tara) Vafadari
+contact-email: AVafadar@dmc.org
+
+location-name: Children's Hospital of Michigan
+source-page-url: https://www.childrensdmc.org/patients/pricing-info-estimates/hospital-pricing-information
+mrf-url: https://mrfs.hyvehealthcare.com/TenetHealth/272845064_vhs-childrens-hospital-of-michigan-inc_standardcharges.json
+contact-name: Ben Brow
+contact-email: bbrow@dmc.org
+
+location-name: DMC Rehabilitation Institute of Michigan
+source-page-url: https://www.dmc.org/patients/pricing-info-estimates/hospital-pricing-information
+mrf-url: https://mrfs.hyvehealthcare.com/TenetHealth/473740774_vhs-rehabilitation-institute-of-michigan-inc_standardcharges.json
+contact-name: Dan Babb
+contact-email: dbabb@dmc.org

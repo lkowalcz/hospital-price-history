@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "sha256": "1b1c6fdefd5c75fdc2d29fa7c86e4f8e54d3385a6d0911c37bae52f1130cedad",
+  "bytes": 17295,
+  "source_url": "https://medicalcityhealthcare.com/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:18:50Z",
+  "response_headers": {
+    "Content-Type": "text/plain; charset=utf-8",
+    "Content-Encoding": "gzip",
+    "Content-Length": "1813"
+  }
+}

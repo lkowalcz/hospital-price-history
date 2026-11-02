@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "sha256": "e7cdb0b62b017285db0a5ca5e11a0b7e8aca2078596c5fe1f254f66261169ae8",
+  "bytes": 3934,
+  "source_url": "https://www.emoryhealthcare.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:18:41Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip",
+    "ETag": "W/\"86a98cda29f4dc1:0\"",
+    "Last-Modified": "Thu, 04 Jun 2026 13:55:51 GMT"
+  }
+}

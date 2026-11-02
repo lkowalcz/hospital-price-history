@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "sha256": "77484ee3205637cf4ba62ddbf2626cecafe23250b1b17c43eb16fdb5d790c1c5",
+  "bytes": 2106,
+  "source_url": "https://www.queens.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:24:08Z",
+  "response_headers": {
+    "Content-Type": "text/plain;charset=utf-8",
+    "Content-Encoding": "gzip",
+    "Content-Disposition": "inline"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "sha256": "ef0df8e7c9765d663e03be711ac3c4b4d172e2cf8e74626be93633d6dc4ff826",
+  "bytes": 920,
+  "source_url": "https://www.bmc.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:18:50Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip",
+    "Content-Length": "273",
+    "ETag": "W/\"6ae34418-398\"",
+    "Last-Modified": "Thu, 29 Oct 2026 13:03:20 GMT"
+  }
+}

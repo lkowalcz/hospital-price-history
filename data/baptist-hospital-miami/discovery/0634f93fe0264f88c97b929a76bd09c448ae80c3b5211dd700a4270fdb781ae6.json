@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "sha256": "0634f93fe0264f88c97b929a76bd09c448ae80c3b5211dd700a4270fdb781ae6",
+  "bytes": 4023,
+  "source_url": "https://www.baptisthealth.net/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:21:43Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Length": "4023",
+    "ETag": "\"d25edcf2acddc1:0\"",
+    "Last-Modified": "Wed, 15 Apr 2026 19:06:22 GMT"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "sha256": "baad739cfb87eb6de1667c634f880f8be55f92bd6c6028d05639e17ecf17691b",
+  "bytes": 854,
+  "source_url": "https://www.rush.edu/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:19:47Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Length": "854",
+    "Last-Modified": "Wed, 14 Oct 2026 22:11:59 GMT"
+  }
+}

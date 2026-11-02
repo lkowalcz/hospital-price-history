@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "sha256": "8a7102fb70f59674a7740c0b54b46f9b69a0a7ac640d3e453017f9db332e1aae",
+  "bytes": 7363,
+  "source_url": "https://my.clevelandclinic.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:18:26Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip",
+    "ETag": "W/\"0d64ae44166dd1:0:dtagent10347260902154543uAY+\"",
+    "Last-Modified": "Tue, 27 Oct 2026 18:35:07 GMT"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "sha256": "7b60db8fb6c6b0b74749dfc2777ad687fae045973e32ecb4f778b311491308e1",
+  "bytes": 1124,
+  "source_url": "https://stanfordhealthcare.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:18:26Z",
+  "response_headers": {
+    "Content-Type": "text/plain; charset=utf-8",
+    "Content-Encoding": "gzip",
+    "Content-Length": "306",
+    "Content-Disposition": "inline",
+    "Last-Modified": "Thu, 18 Jun 2026 14:45:57 GMT"
+  }
+}

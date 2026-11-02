@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "sha256": "9d98454757f5574f8109945feb3375ae777f4ec05ad75a21d420893ce83f2ca8",
+  "bytes": 4418,
+  "source_url": "https://www.franciscanhealth.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:24:09Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip",
+    "Content-Length": "618",
+    "ETag": "\"d3f7aa5d4a4fdd1:0\"",
+    "Last-Modified": "Mon, 28 Sep 2026 13:07:50 GMT"
+  }
+}

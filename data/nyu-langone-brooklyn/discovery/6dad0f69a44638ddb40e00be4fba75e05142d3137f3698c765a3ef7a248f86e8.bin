@@ -1,0 +1,29 @@
+location-name: NYU Langone Tisch Hospital
+source-page-url: https://med.nyu.edu/standard-charges/
+mrf-url: https://standard-charges-prod.s3.amazonaws.com/pricing_files/133971298-1801992631_nyu-langone-tisch_standardcharges.csv
+contact-name: Caren Larkey
+contact-email: Caren.Larkey@nyulangone.org
+
+location-name: NYU Langone Orthopedic Hospital
+source-page-url: https://med.nyu.edu/standard-charges/
+mrf-url: https://standard-charges-prod.s3.amazonaws.com/pricing_files/133971298-1669578324_nyu-langone-orthopedic-hospital_standardcharges.csv
+contact-name: Caren Larkey
+contact-email: Caren.Larkey@nyulangone.org
+
+location-name: NYU Langone Hospital - Brooklyn
+source-page-url: https://med.nyu.edu/standard-charges/
+mrf-url: https://standard-charges-prod.s3.amazonaws.com/pricing_files/133971298-1619341716_nyu-langone-brooklyn_standardcharges.csv
+contact-name: Caren Larkey
+contact-email: Caren.Larkey@nyulangone.org
+
+location-name: NYU Langone Hospital - Long Island
+source-page-url: https://med.nyu.edu/standard-charges/
+mrf-url: https://standard-charges-prod.s3.amazonaws.com/pricing_files/133971298-1427616002_nyu-langone-long-island_standardcharges.csv
+contact-name: Caren Larkey
+contact-email: Caren.Larkey@nyulangone.org
+
+location-name: NYU Langone Hospital - Suffolk
+source-page-url: https://med.nyu.edu/standard-charges/
+mrf-url: https://standard-charges-prod.s3.amazonaws.com/pricing_files/133971298-1487743480_nyu-langone-health-suffolk_standardcharges.csv
+contact-name: Caren Larkey
+contact-email: Caren.Larkey@nyulangone.org

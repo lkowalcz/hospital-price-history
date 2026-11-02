@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "sha256": "39663bddb1a881bb43e2da33785bc57339ffde12b3fd5e72c2290bbf71b11568",
+  "bytes": 5037,
+  "source_url": "https://www.massgeneralbrigham.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:18:24Z",
+  "response_headers": {
+    "Content-Type": "text/plain; charset=utf-8",
+    "Content-Encoding": "gzip",
+    "Content-Length": "623",
+    "ETag": "\"b5d511c1c84d558989b887f19b0fe388\"",
+    "Last-Modified": "Wed, 23 Sep 2026 16:10:41 GMT"
+  }
+}

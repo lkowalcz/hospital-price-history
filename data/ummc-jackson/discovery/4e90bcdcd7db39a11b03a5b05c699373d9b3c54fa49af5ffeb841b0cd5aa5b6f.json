@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "sha256": "4e90bcdcd7db39a11b03a5b05c699373d9b3c54fa49af5ffeb841b0cd5aa5b6f",
+  "bytes": 1275,
+  "source_url": "https://www.umc.edu/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:24:04Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Length": "1275",
+    "ETag": "\"1dd6adca683f87b\"",
+    "Last-Modified": "Mon, 02 Nov 2026 15:13:01 GMT"
+  }
+}

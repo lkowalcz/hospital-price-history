@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "sha256": "03159e751868fa2c399dfac9eb4ad8ff9b66bf0ffd00e4119fe411c0418269c4",
+  "bytes": 329,
+  "source_url": "https://www.cedars-sinai.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:18:28Z",
+  "response_headers": {
+    "Content-Type": "text/plain;charset=iso-8859-1",
+    "Content-Encoding": "gzip",
+    "Content-Length": "243",
+    "ETag": "\"149-64614197a4e40-gzip\"",
+    "Last-Modified": "Tue, 16 Dec 2025 16:20:01 GMT"
+  }
+}

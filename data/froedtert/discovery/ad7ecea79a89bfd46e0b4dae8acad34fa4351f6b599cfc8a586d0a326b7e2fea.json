@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "sha256": "ad7ecea79a89bfd46e0b4dae8acad34fa4351f6b599cfc8a586d0a326b7e2fea",
+  "bytes": 3828,
+  "source_url": "https://www.froedtert.com/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:23:27Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip",
+    "Content-Length": "624",
+    "Last-Modified": "Thu, 19 Dec 2024 18:51:18 GMT"
+  }
+}

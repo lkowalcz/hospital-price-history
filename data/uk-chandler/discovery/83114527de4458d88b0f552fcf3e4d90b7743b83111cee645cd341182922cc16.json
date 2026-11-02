@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "sha256": "83114527de4458d88b0f552fcf3e4d90b7743b83111cee645cd341182922cc16",
+  "bytes": 982,
+  "source_url": "https://ukhealthcare.uky.edu/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:23:26Z",
+  "response_headers": {
+    "Content-Type": "text/plain; charset=utf-8",
+    "Content-Encoding": "gzip",
+    "ETag": "W/\"1793246347\"",
+    "Last-Modified": "Thu, 29 Oct 2026 03:59:07 GMT"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "sha256": "cdeb9de705d263a60679c9a8cd6865a6ec915698bdf9653c083fb56501d1e73d",
+  "bytes": 12493,
+  "source_url": "https://www.bswhealth.com/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:19:00Z",
+  "response_headers": {
+    "Content-Type": "text/plain; charset=utf-8",
+    "Content-Encoding": "gzip"
+  }
+}

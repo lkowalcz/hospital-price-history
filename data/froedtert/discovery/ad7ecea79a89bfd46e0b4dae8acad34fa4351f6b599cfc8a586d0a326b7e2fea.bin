@@ -1,0 +1,53 @@
+location-name: Froedtert Hospital
+source-page-url: https://search.hospitalpriceindex.com/hpi2/machineReadable/FroedtertHospital/7864
+mrf-url: https://sthpiprd.blob.core.windows.net/machine-readable-files/7864/396105970_froedtert-memorial-lutheran-hospital-inc_standardcharges.csv
+contact-name: Price Transparency Team; Attn: Matt Clark
+contact-email: PriceTransparencyTeam@froedtert.com
+
+location-name: Froedtert Bluemound Rehabilitation Hospital
+source-page-url: https://search.hospitalpriceindex.com/hpi2/machineReadable/FroedtertBluemoundRehabilitationHospital/11566
+mrf-url: https://sthpiprd.blob.core.windows.net/machine-readable-files/11566/396105970_froedtert-bluemound-rehabilitation-hospital_standardcharges.csv
+contact-name: Price Transparency Team; Attn: Matt Clark
+contact-email: PriceTransparencyTeam@froedtert.com
+
+location-name: Froedtert Menomonee Falls Hospital
+source-page-url: https://search.hospitalpriceindex.com/hpi2/machineReadable/FroedtertMenomoneeFallsHospital/8143
+mrf-url: https://sthpiprd.blob.core.windows.net/machine-readable-files/8143/390987025_community-memorial-hospital-of-menomonee-falls-inc_standardcharges.csv
+contact-name: Price Transparency Team; Attn: Matt Clark
+contact-email: PriceTransparencyTeam@froedtert.com
+
+location-name: Froedtert West Bend Hospital
+source-page-url: https://search.hospitalpriceindex.com/hpi2/machineReadable/FroedtertStJosephsHospital/8142
+mrf-url: https://sthpiprd.blob.core.windows.net/machine-readable-files/8142/390806302_st-josephs-community-hospital-of-west-bend-inc_standardcharges.csv
+contact-name: Price Transparency Team; Attn: Matt Clark
+contact-email: PriceTransparencyTeam@froedtert.com
+
+location-name: Froedtert Holy Family Memorial Hospital
+source-page-url: https://search.hospitalpriceindex.com/hpi2/machineReadable/HolyFamilyMemorialMedicalCenter/10297
+mrf-url: https://sthpiprd.blob.core.windows.net/machine-readable-files/10297/390806395_holy-family-memorial-inc_standardcharges.csv
+contact-name: Price Transparency Team; Attn: Matt Clark
+contact-email: PriceTransparencyTeam@froedtert.com
+
+location-name: Froedtert Community Hospital - Mequon
+source-page-url: https://search.hospitalpriceindex.com/hpi2/machineReadable/FroedtertCommunityHospitalMequon/11568
+mrf-url: https://sthpiprd.blob.core.windows.net/machine-readable-files/11568/843381796_froedtert-community-hospital-mequon_standardcharges.csv
+contact-name: Price Transparency Team; Attn: Matt Clark
+contact-email: PriceTransparencyTeam@froedtert.com
+
+location-name: Froedtert Community Hospital - New Berlin
+source-page-url: https://search.hospitalpriceindex.com/hpi2/machineReadable/FroedtertCommunityHospitalNewBerlin/8215
+mrf-url: https://sthpiprd.blob.core.windows.net/machine-readable-files/8215/843381796_froedtert-community-hospital-new-berlin_standardcharges.csv
+contact-name: Price Transparency Team; Attn: Matt Clark
+contact-email: PriceTransparencyTeam@froedtert.com
+
+location-name: Froedtert Community Hospital - Oak Creek
+source-page-url: https://search.hospitalpriceindex.com/hpi2/machineReadable/FroedtertCommunityHospitalOakCreek/11569
+mrf-url: https://sthpiprd.blob.core.windows.net/machine-readable-files/11569/843381796_froedtert-community-hospital-oak-creek_standardcharges.csv
+contact-name: Price Transparency Team; Attn: Matt Clark
+contact-email: PriceTransparencyTeam@froedtert.com
+
+location-name: Froedtert Community Hospital - Pewaukee
+source-page-url: https://search.hospitalpriceindex.com/hpi2/machineReadable/FroedtertCommunityHospitalPewaukee/11567
+mrf-url: https://sthpiprd.blob.core.windows.net/machine-readable-files/11567/843381796_froedtert-community-hospital-pewaukee_standardcharges.csv
+contact-name: Price Transparency Team; Attn: Matt Clark
+contact-email: PriceTransparencyTeam@froedtert.com

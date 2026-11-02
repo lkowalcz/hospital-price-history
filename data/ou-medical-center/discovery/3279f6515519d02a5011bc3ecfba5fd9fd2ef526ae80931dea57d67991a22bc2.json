@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "sha256": "3279f6515519d02a5011bc3ecfba5fd9fd2ef526ae80931dea57d67991a22bc2",
+  "bytes": 1248,
+  "source_url": "https://www.ouhealth.com/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:24:01Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip",
+    "Content-Length": "427",
+    "ETag": "\"e2d451e1b2c2dc1:0\"",
+    "Last-Modified": "Thu, 02 Apr 2026 15:10:45 GMT"
+  }
+}

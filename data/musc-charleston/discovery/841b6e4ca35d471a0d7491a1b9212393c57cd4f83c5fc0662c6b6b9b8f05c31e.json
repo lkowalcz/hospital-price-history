@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "sha256": "841b6e4ca35d471a0d7491a1b9212393c57cd4f83c5fc0662c6b6b9b8f05c31e",
+  "bytes": 4088,
+  "source_url": "https://www.muschealth.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:21:53Z",
+  "response_headers": {
+    "Content-Type": "text/plain; charset=utf-8",
+    "Content-Length": "4088"
+  }
+}

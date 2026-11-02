@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "sha256": "d93fe93402388b280b36581e2c20d4f18797f5dcc829555347e7ff07967326b9",
+  "bytes": 2215,
+  "source_url": "https://www.brownhealth.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:23:20Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip",
+    "Last-Modified": "Thu, 21 May 2026 19:57:00 GMT"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "sha256": "b8eac725ab54836f3bfaa189bf44ac848c2dc87f23a56133a3454bdf6bd2a5d5",
+  "bytes": 21276,
+  "source_url": "https://www.providence.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:18:52Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip",
+    "Content-Length": "2640",
+    "ETag": "\"12aeb5361c1dc1:0\"",
+    "Last-Modified": "Tue, 31 Mar 2026 22:54:27 GMT"
+  }
+}

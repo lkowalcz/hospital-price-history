@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "sha256": "60b2af8a7f74bc80a012a1e40523e7c6c85980b246b81c4d21ba2e54096222bc",
+  "bytes": 2514,
+  "source_url": "https://www.mayoclinic.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:21:55Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip",
+    "Content-Length": "516",
+    "Content-Disposition": "inline; filename=\"AGL-DMC-cms-HPT.txt\"",
+    "ETag": "c50032ef49cb45a19d733c1900c6dd59",
+    "Last-Modified": "Fri, 14 Aug 2026 17:48:43 GMT"
+  }
+}

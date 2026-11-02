@@ -1,0 +1,17 @@
+location-name: OU Health University of Oklahoma Medical Center
+source-page-url: https://www.ouhealth.com/ou-health-patients-families/insurance-billing/billing-ou-health-hospitals-ers/hospital-charges-pricing-transparency/
+mrf-url: https://apim.services.craneware.com/api-pricing-transparency/api/public/ebdcd27316bbcd47fb02c60d601d05cc/charges/mrf
+contact-name: Krystal Murer
+contact-email: pricingtransparency@ouhealth.com
+
+location-name: OU Health Edmond Medical Center
+source-page-url: https://www.ouhealth.com/ou-health-patients-families/insurance-billing/billing-ou-health-hospitals-ers/hospital-charges-pricing-transparency/
+mrf-url: https://apim.services.craneware.com/api-pricing-transparency/api/public/ebdcd27316bbcd47fb02c60d601d05cc/charges/mrf
+contact-name: Krystal Murer
+contact-email: pricingtransparency@ouhealth.com
+
+location-name: Oklahoma Children's Hospital OU Health
+source-page-url: https://www.ouhealth.com/ou-health-patients-families/insurance-billing/billing-ou-health-hospitals-ers/hospital-charges-pricing-transparency/
+mrf-url: https://apim.services.craneware.com/api-pricing-transparency/api/public/ebdcd27316bbcd47fb02c60d601d05cc/charges/mrf
+contact-name: Krystal Murer
+contact-email: pricingtransparency@ouhealth.com

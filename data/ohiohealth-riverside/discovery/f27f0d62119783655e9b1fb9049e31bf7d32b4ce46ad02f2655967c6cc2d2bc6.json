@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "sha256": "f27f0d62119783655e9b1fb9049e31bf7d32b4ce46ad02f2655967c6cc2d2bc6",
+  "bytes": 6954,
+  "source_url": "https://www.ohiohealth.com/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:19:46Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip",
+    "ETag": "W/\"1dd5125de86ca2a\"",
+    "Last-Modified": "Wed, 30 Sep 2026 21:51:38 GMT"
+  }
+}

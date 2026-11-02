@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "sha256": "dbb744d76ae558e6e6ff4684db2c8b3d700ec477c45ccd1ab0c8716bf3135e67",
+  "bytes": 2216,
+  "source_url": "https://www.tgh.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:21:42Z",
+  "response_headers": {
+    "Content-Type": "text/plain; charset=utf-8",
+    "Content-Encoding": "gzip",
+    "Content-Length": "885"
+  }
+}

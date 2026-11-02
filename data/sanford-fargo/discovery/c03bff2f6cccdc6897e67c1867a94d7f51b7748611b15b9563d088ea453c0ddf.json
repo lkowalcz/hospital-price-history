@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "sha256": "c03bff2f6cccdc6897e67c1867a94d7f51b7748611b15b9563d088ea453c0ddf",
+  "bytes": 9768,
+  "source_url": "https://www.sanfordhealth.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:23:13Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip",
+    "Last-Modified": "Thu, 23 Jul 2026 20:08:58 GMT"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "sha256": "9fd0f669157894745be16b4b0d3f2a38ccd67e5c02c621ab55325839c26165fe",
+  "bytes": 5278,
+  "source_url": "https://www.jeffersonhealth.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:21:54Z",
+  "response_headers": {
+    "Content-Type": "text/plain;charset=utf-8",
+    "Content-Encoding": "gzip",
+    "Content-Length": "615",
+    "ETag": "\"149e-626698c81c3c0-gzip\"",
+    "Last-Modified": "Fri, 08 Nov 2024 16:50:31 GMT"
+  }
+}

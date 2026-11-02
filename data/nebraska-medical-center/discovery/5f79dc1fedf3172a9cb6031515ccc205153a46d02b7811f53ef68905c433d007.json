@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "sha256": "5f79dc1fedf3172a9cb6031515ccc205153a46d02b7811f53ef68905c433d007",
+  "bytes": 616,
+  "source_url": "https://www.nebraskamed.com/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:23:28Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Length": "616",
+    "Last-Modified": "Wed, 30 Sep 2026 15:30:27 GMT"
+  }
+}

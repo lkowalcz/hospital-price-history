@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "sha256": "1bc95e847fb39c64605062e2d7985a42a9de97bf04dc0d5f0e15bbf55e002222",
+  "bytes": 1363,
+  "source_url": "https://www.dukehealth.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:22:07Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip",
+    "Content-Length": "445",
+    "ETag": "\"553-65084bd3c1340-gzip\"",
+    "Last-Modified": "Tue, 28 Apr 2026 12:55:01 GMT"
+  }
+}

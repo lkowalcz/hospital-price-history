@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "sha256": "27519a841abdd3d59fb115053eff5b949c411d60684197447a47eae07bc207a5",
+  "bytes": 13286,
+  "source_url": "https://intermountainhealthcare.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:18:59Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip",
+    "Content-Disposition": "inline; filename=\"Price Transparency.txt\"",
+    "Last-Modified": "Thu, 11 Sep 2025 21:19:51 GMT"
+  }
+}

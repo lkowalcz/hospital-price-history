@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "sha256": "e2afde01aebc8943ac6a9d3c1c40af296af2146d2eaeb9bb59a9a54f6928be1b",
+  "bytes": 295,
+  "source_url": "https://www.uofmhealth.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:20:12Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip",
+    "Last-Modified": "Tue, 27 Oct 2026 17:57:02 GMT"
+  }
+}

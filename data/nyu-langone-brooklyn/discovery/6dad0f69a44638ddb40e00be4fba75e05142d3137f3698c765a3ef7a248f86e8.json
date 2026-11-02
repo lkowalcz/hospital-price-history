@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "sha256": "6dad0f69a44638ddb40e00be4fba75e05142d3137f3698c765a3ef7a248f86e8",
+  "bytes": 1537,
+  "source_url": "https://nyulangone.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:22:05Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Length": "1537",
+    "ETag": "\"6adfa8aa-601\"",
+    "Last-Modified": "Mon, 26 Oct 2026 19:23:22 GMT"
+  }
+}

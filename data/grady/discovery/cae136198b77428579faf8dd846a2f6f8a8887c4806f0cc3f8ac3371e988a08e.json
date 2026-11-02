@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "sha256": "cae136198b77428579faf8dd846a2f6f8a8887c4806f0cc3f8ac3371e988a08e",
+  "bytes": 280,
+  "source_url": "https://www.gradyhealth.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:21:42Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip",
+    "ETag": "W/\"688adf4d-118\"",
+    "Last-Modified": "Thu, 31 Jul 2025 03:13:17 GMT"
+  }
+}

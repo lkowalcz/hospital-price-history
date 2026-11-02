@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "sha256": "c1c738787bb8ca9201d16fa9e72831ab684bcad620dd84134d78d31c87447462",
+  "bytes": 333,
+  "source_url": "https://www.parklandhealth.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T16:21:41Z",
+  "response_headers": {
+    "Content-Type": "text/plain; charset=utf-8",
+    "Content-Length": "333"
+  }
+}
