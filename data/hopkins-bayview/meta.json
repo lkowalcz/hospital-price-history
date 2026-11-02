@@ -5,11 +5,36 @@
   "source_filename": "521341890_johns-hopkins-bayview-medical-center_standardcharges.csv",
   "sha256": "a578e4b43e140927c50c4008e89c49754d4ac670778468ace54842059bfb6557",
   "size_bytes": 6025219,
-  "source_last_modified": "Tue, 25 Aug 2026 05:46:28 GMT",
+  "source_last_modified": "Mon, 02 Nov 2026 07:55:50 GMT",
   "source_etag": null,
   "transfer_fingerprint": "6432f3cd316627fe556bc52a66491dde6fa136d650a819e7053c88d4bb67e0a1",
   "status": "stored",
   "first_seen": "2026-08-25T05:46:28Z",
   "last_changed": "2026-08-25T05:46:28Z",
-  "summary_version": 2
+  "summary_version": 2,
+  "original_download": {
+    "download_sha256": "c3a6195cce558cfa7e0737981cae66ba08bc2b7e56f32cd3bc2e9b23c066211e",
+    "status": "archived",
+    "captured_at": "2026-11-02T07:55:50Z",
+    "artifact_kind": "download",
+    "archive": {
+      "url": "https://archive.org/details/hospital-price-original-c3a6195cce558cfa7e0737981cae66ba08bc2b7e56f32cd3bc2e9b23c066211e",
+      "download_url": "https://archive.org/download/hospital-price-original-c3a6195cce558cfa7e0737981cae66ba08bc2b7e56f32cd3bc2e9b23c066211e/original-f80c153a96f2e2354a2f90a918d094cc94e96b83d7be7f7539e1082715c810cc.zst",
+      "compressed_sha256": "f80c153a96f2e2354a2f90a918d094cc94e96b83d7be7f7539e1082715c810cc",
+      "compressed_bytes": 323096,
+      "compression": "zstd",
+      "archived_at": "2026-11-02T07:56:18Z"
+    }
+  },
+  "cold_storage": {
+    "url": "https://archive.org/details/hospital-price-original-c3a6195cce558cfa7e0737981cae66ba08bc2b7e56f32cd3bc2e9b23c066211e",
+    "download_url": "https://archive.org/download/hospital-price-original-c3a6195cce558cfa7e0737981cae66ba08bc2b7e56f32cd3bc2e9b23c066211e/original-f80c153a96f2e2354a2f90a918d094cc94e96b83d7be7f7539e1082715c810cc.zst",
+    "compressed_sha256": "f80c153a96f2e2354a2f90a918d094cc94e96b83d7be7f7539e1082715c810cc",
+    "compressed_bytes": 323096,
+    "compression": "zstd",
+    "archived_at": "2026-11-02T07:56:18Z",
+    "sha256": "a578e4b43e140927c50c4008e89c49754d4ac670778468ace54842059bfb6557",
+    "file_sha256": "c3a6195cce558cfa7e0737981cae66ba08bc2b7e56f32cd3bc2e9b23c066211e",
+    "date": "2026-11-02"
+  }
 }

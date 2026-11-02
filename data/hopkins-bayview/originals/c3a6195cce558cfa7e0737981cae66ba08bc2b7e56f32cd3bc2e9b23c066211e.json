@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "slug": "hopkins-bayview",
+  "download_sha256": "c3a6195cce558cfa7e0737981cae66ba08bc2b7e56f32cd3bc2e9b23c066211e",
+  "download_bytes": 6056242,
+  "source_url": "https://www.hopkinsmedicine.org/-/media/patient-care/documents/billing-insurance/charge-fees/521341890_johns-hopkins-bayview-medical-center_standardcharges.csv",
+  "source_filename": "521341890_johns-hopkins-bayview-medical-center_standardcharges.csv",
+  "captured_at": "2026-11-02T07:55:50Z",
+  "status": "archived",
+  "artifact_kind": "download",
+  "collector": "manual",
+  "container": "plain",
+  "response_headers": {
+    "Content-Type": "text/csv",
+    "Content-Length": "6056242",
+    "Content-Disposition": "inline; filename=\"521341890_johns-hopkins-bayview-medical-center_standardcharges.csv\"",
+    "Last-Modified": "Mon, 02 Nov 2026 07:55:50 GMT"
+  },
+  "last_attempt_at": "2026-11-02T07:55:50Z",
+  "archive": {
+    "url": "https://archive.org/details/hospital-price-original-c3a6195cce558cfa7e0737981cae66ba08bc2b7e56f32cd3bc2e9b23c066211e",
+    "download_url": "https://archive.org/download/hospital-price-original-c3a6195cce558cfa7e0737981cae66ba08bc2b7e56f32cd3bc2e9b23c066211e/original-f80c153a96f2e2354a2f90a918d094cc94e96b83d7be7f7539e1082715c810cc.zst",
+    "compressed_sha256": "f80c153a96f2e2354a2f90a918d094cc94e96b83d7be7f7539e1082715c810cc",
+    "compressed_bytes": 323096,
+    "compression": "zstd",
+    "archived_at": "2026-11-02T07:56:18Z"
+  },
+  "snapshot_sha256": "a578e4b43e140927c50c4008e89c49754d4ac670778468ace54842059bfb6557",
+  "payload_sha256": "c3a6195cce558cfa7e0737981cae66ba08bc2b7e56f32cd3bc2e9b23c066211e"
+}
