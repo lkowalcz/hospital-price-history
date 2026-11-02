@@ -1,0 +1,23 @@
+location-name: Jackson Memorial Hospital
+source-page-url: https://apps.para-hcfs.com/PTT/FinalLinks/JacksonMemorial.aspx
+mrf-url: https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbJMHMiamiFL&type=CDMWithoutLabel&fileType=CSV
+contact-name: Barbara Fonte
+contact-email: Barbara.Fonte@jhsmiami.org
+
+location-name: Jackson North Medical Center
+source-page-url: https://apps.para-hcfs.com/PTT/FinalLinks/JacksonNorth.aspx
+mrf-url: https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbJNMCNorthMiamiBeachFL&type=CDMWithoutLabel&fileType=CSV
+contact-name: Barbara Fonte
+contact-email: Barbara.Fonte@jhsmiami.org
+
+location-name: Jackson South Medical Center
+source-page-url: https://apps.para-hcfs.com/PTT/FinalLinks/JacksonSouth.aspx
+mrf-url: https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbJSCHMiamiFL&type=CDMWithoutLabel&fileType=CSV
+contact-name: Barbara Fonte
+contact-email: Barbara.Fonte@jhsmiami.org
+
+location-name: Jackson West Medical Center
+source-page-url: https://apps.para-hcfs.com/PTT/FinalLinks/JacksonWest.aspx
+mrf-url: https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbJWMCMIAMIFL&type=CDMWithoutLabel&fileType=CSV
+contact-name: Barbara Fonte
+contact-email: Barbara.Fonte@jhsmiami.org

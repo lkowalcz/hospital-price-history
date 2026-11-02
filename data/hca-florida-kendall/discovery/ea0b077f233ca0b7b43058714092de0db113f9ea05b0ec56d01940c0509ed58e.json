@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "sha256": "ea0b077f233ca0b7b43058714092de0db113f9ea05b0ec56d01940c0509ed58e",
+  "bytes": 77330,
+  "source_url": "https://hcafloridahealthcare.com/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T18:02:46Z",
+  "response_headers": {
+    "Content-Type": "text/plain; charset=utf-8",
+    "Content-Encoding": "gzip",
+    "Content-Length": "4969"
+  }
+}

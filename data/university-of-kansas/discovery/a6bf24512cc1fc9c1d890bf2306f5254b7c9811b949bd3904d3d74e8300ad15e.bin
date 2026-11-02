@@ -1,0 +1,23 @@
+location-name: University of Kansas Hospital
+source-page-url: https://www.kansashealthsystem.com/patient-visitor/financial/patient-bills/services-fees/charge-descriptions
+mrf-url: https://ukhspricetransparency.blob.core.windows.net/ukhs-price-transparency/48-1201402_TheUniversityOfKansasHealthSystemKansasCityCampus_standardcharges.csv
+contact-name: Jamie Johnson
+contact-email: ManagedCareContracting@kumc.edu
+
+location-name: The University of Kansas Health System Great Bend Campus
+source-page-url: https://www.kansashealthsystem.com/patient-visitor/financial/patient-bills/services-fees/charge-descriptions
+mrf-url: https://ukhspricetransparency.blob.core.windows.net/ukhs-price-transparency/83-0516935_TheUniversityOfKansasHealthSystemGreatBendCampus_standardcharges.csv
+contact-name: Jamie Johnson
+contact-email: ManagedCareContracting@kumc.edu
+
+location-name: The University of Kansas Health System Olathe Hospital
+source-page-url: https://www.kansashealthsystem.com/patient-visitor/financial/patient-bills/services-fees/charge-descriptions
+mrf-url: https://ukhspricetransparency.blob.core.windows.net/ukhs-price-transparency/48-0577664_TheUniversityOfKansasHealthSystemOlatheCampus_standardcharges.csv
+contact-name: Jamie Johnson 
+contact-email: ManagedCareContracting@kumc.edu
+
+location-name: The University of Kansas Health System Paola Hospital
+source-page-url: https://www.kansashealthsystem.com/patient-visitor/financial/patient-bills/services-fees/charge-descriptions
+mrf-url: https://ukhspricetransparency.blob.core.windows.net/ukhs-price-transparency/48-1155548_TheUniversityOfKansasHealthSystemPaolaCampus_standardcharges.csv
+contact-name: Jamie Johnson
+contact-email: ManagedCareContracting@kumc.edu

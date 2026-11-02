@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "sha256": "8615240b2cbc70c48acdb87e3be5fd0abb0f63a273113ad5fa076427f8d040cf",
+  "bytes": 14416,
+  "source_url": "https://www.orlandohealth.com/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T18:02:42Z",
+  "response_headers": {
+    "Content-Type": "text/plain; charset=utf-8",
+    "Content-Encoding": "br",
+    "ETag": "W/\"slzb27pi3hb3q\""
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "sha256": "0e71b2fe59bdbcb54f245cc6c9678965ef0d443d68647d01cea4a26ebfa676e1",
+  "bytes": 2377,
+  "source_url": "https://www.hopkinsmedicine.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T18:02:43Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip",
+    "ETag": "\"985c2ad4a1c6dc1:0\"",
+    "Last-Modified": "Tue, 07 Apr 2026 15:18:46 GMT"
+  }
+}

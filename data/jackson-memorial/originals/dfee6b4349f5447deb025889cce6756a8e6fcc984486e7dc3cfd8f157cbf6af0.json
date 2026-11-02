@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "slug": "jackson-memorial",
+  "download_sha256": "dfee6b4349f5447deb025889cce6756a8e6fcc984486e7dc3cfd8f157cbf6af0",
+  "download_bytes": 443015197,
+  "source_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbJMHMiamiFL&type=CDMWithoutLabel&fileType=CSV",
+  "source_filename": "591713947_public-health-trust-of-miami-dade-county-florida_standardcharges.csv",
+  "captured_at": "2026-11-02T18:01:54Z",
+  "status": "archived",
+  "artifact_kind": "download",
+  "collector": "pi",
+  "container": "plain",
+  "response_headers": {
+    "Content-Type": "application/octet-stream",
+    "Content-Disposition": "attachment; filename=\"591713947_public-health-trust-of-miami-dade-county-florida_standardcharges.csv\""
+  },
+  "last_attempt_at": "2026-11-02T18:01:54Z",
+  "archive": {
+    "url": "https://archive.org/details/hospital-price-original-dfee6b4349f5447deb025889cce6756a8e6fcc984486e7dc3cfd8f157cbf6af0",
+    "download_url": "https://archive.org/download/hospital-price-original-dfee6b4349f5447deb025889cce6756a8e6fcc984486e7dc3cfd8f157cbf6af0/original-db512800da79aa7ec87362e58ea0f9869b15bbbc361db90191d20a777e0ef83d.zst",
+    "compressed_sha256": "db512800da79aa7ec87362e58ea0f9869b15bbbc361db90191d20a777e0ef83d",
+    "compressed_bytes": 14276013,
+    "compression": "zstd",
+    "archived_at": "2026-11-02T18:02:33Z"
+  },
+  "snapshot_sha256": "d10ffe8ab7cde6cc3618e328fac67a4a9cf7baa9d881c8a1e695c4d232d28285",
+  "payload_sha256": "dfee6b4349f5447deb025889cce6756a8e6fcc984486e7dc3cfd8f157cbf6af0"
+}

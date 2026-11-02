@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "sha256": "e5746610a1fef790383644e2ad859add132da04846ec0a9d104d3dde149b0582",
+  "bytes": 1271,
+  "source_url": "https://www.jacksonhealth.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T18:00:08Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip",
+    "Content-Length": "294",
+    "ETag": "\"4f7-65c8fe5b22500-gzip\"",
+    "Last-Modified": "Mon, 28 Sep 2026 19:16:04 GMT"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "sha256": "a6bf24512cc1fc9c1d890bf2306f5254b7c9811b949bd3904d3d74e8300ad15e",
+  "bytes": 1717,
+  "source_url": "https://www.kansashealthsystem.com/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T18:02:46Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip",
+    "Content-Length": "510",
+    "ETag": "\"c1ef9d8830ffdc1:0\"",
+    "Last-Modified": "Thu, 18 Jun 2026 14:41:22 GMT"
+  }
+}

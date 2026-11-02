@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "sha256": "b61c9dde2b61bdbda67c59b813a7703966014cd17ac6e44ead3658db03bf1e2d",
+  "bytes": 13308,
+  "source_url": "https://tristarhealth.com/cms-hpt.txt",
+  "first_observed_at": "2026-11-02T18:04:55Z",
+  "response_headers": {
+    "Content-Type": "text/plain; charset=utf-8",
+    "Content-Encoding": "gzip",
+    "Content-Length": "1367"
+  }
+}

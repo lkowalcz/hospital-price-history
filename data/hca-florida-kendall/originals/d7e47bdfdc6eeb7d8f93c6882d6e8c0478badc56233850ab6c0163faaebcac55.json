@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "slug": "hca-florida-kendall",
+  "download_sha256": "d7e47bdfdc6eeb7d8f93c6882d6e8c0478badc56233850ab6c0163faaebcac55",
+  "download_bytes": 447494719,
+  "source_url": "https://stctrprodsnsvc00455826e6.blob.core.windows.net/pt-final-posting-files/65-0260078_HCA-FLORIDA-KENDALL-HOSPITAL_standardcharges.json?si=dpx-pt-json-access-policy&spr=https&sv=2026-02-06&sr=c&sig=ks%2BgfAjyEHlZmeP2PYJ%2f9NpMuCoRStjTb2bhIy9Y6LM%3D",
+  "source_filename": "65-0260078_HCA-FLORIDA-KENDALL-HOSPITAL_standardcharges.json",
+  "captured_at": "2026-11-02T18:04:03Z",
+  "status": "archived",
+  "artifact_kind": "local_input",
+  "collector": "pi",
+  "container": "plain",
+  "response_headers": {},
+  "last_attempt_at": "2026-11-02T18:04:04Z",
+  "archive": {
+    "url": "https://archive.org/details/hospital-price-original-d7e47bdfdc6eeb7d8f93c6882d6e8c0478badc56233850ab6c0163faaebcac55",
+    "download_url": "https://archive.org/download/hospital-price-original-d7e47bdfdc6eeb7d8f93c6882d6e8c0478badc56233850ab6c0163faaebcac55/original-6c8b8bffd4e6d9bb1a275e7d1a60569fddbe7c5ee0f59f0dafcd4c7fa6139cd0.zst",
+    "compressed_sha256": "6c8b8bffd4e6d9bb1a275e7d1a60569fddbe7c5ee0f59f0dafcd4c7fa6139cd0",
+    "compressed_bytes": 17710236,
+    "compression": "zstd",
+    "archived_at": "2026-11-02T18:04:48Z"
+  },
+  "snapshot_sha256": "d7e47bdfdc6eeb7d8f93c6882d6e8c0478badc56233850ab6c0163faaebcac55",
+  "payload_sha256": "d7e47bdfdc6eeb7d8f93c6882d6e8c0478badc56233850ab6c0163faaebcac55"
+}
