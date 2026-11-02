@@ -119,6 +119,21 @@ daily reservations and explicit over-budget exclusions (see
 file does not recover an old original. Plan backfills separately with explicit
 storage and bandwidth limits.
 
+The follow-up release `a42f9c0ec4486d161170e69662cc4b0951cbc30f` deployed the
+rotation and source-incident handling on 2026-11-02. All 203 tests passed on
+GitHub Actions and the Pi (four optional browser tests skipped). A
+[scoped live run](https://github.com/lkowalcz/hospital-price-history/actions/runs/41412609772)
+published its reservations before capturing AdventHealth Orlando and Banner
+Churchill. Their snapshot identities and last-changed dates remained stable.
+AdventHealth's recorded URL remains usable despite its listing's HTTP 403;
+that discovery failure stays visible independently of successful source checks.
+Maine's empty response was archived as evidence and rejected as price data;
+its last available summary is directly linked. All three public archive
+downloads were independently retrieved, decompressed, and SHA-256 verified,
+including the zero-byte response. No original uploads remained pending.
+The Pi's next rotation selection was checked without starting a full collection
+cycle. Complete scheduled cycles and a live upload-outage drill remain pending.
+
 ## 4. Preserve analytical context in derived exports — pilot implemented
 
 `export_records.py` produces a versioned, partitioned JSONL export from CMS
