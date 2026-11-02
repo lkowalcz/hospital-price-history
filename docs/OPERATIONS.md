@@ -106,8 +106,10 @@ For local ingestion, `artifact_kind: local_input` explicitly identifies bytes
 supplied by the operator; a previously extracted local file must not be
 described as the original ZIP download.
 
-Before treating the rollout as verified, observe a scheduled run on each host
-and exercise recovery. Offline tests cover upload failure, scratch cleanup,
+The 2026-11-02 rollout passed scoped live checks on GitHub Actions and the Pi,
+public-download hash verification for both captured originals, and a second
+GitHub run restoring the previous checkpoint. The [roadmap](ROADMAP.md#3-preserve-exact-originals--deployed-scheduled-cycle-checks-pending)
+records the run links and remaining full-cycle verification. Offline tests cover upload failure, scratch cleanup,
 interruption, retry after source deletion, ZIP retention, and receipt recovery.
 They do not establish live Internet Archive availability or artifact delivery.
 Periodic independent archive verification and forced full-download scheduling

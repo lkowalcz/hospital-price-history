@@ -69,11 +69,11 @@ Operational follow-through: observe a complete scheduled cycle on both
 collectors to verify the logging rollout covers all 107 hospitals. The initial
 live probes covered GitHub Actions and the Pi; earlier checks remain unknown.
 
-**Next: verify the preservation rollout on both collectors, and review the
+**Next: observe complete scheduled cycles on both collectors, and review the
 detailed-export pilot with a downstream user.** Preserve evidence for future
 questions before expanding coverage or adding interfaces.
 
-## 3. Preserve exact originals — implementation ready; rollout pending
+## 3. Preserve exact originals — deployed; scheduled-cycle checks pending
 
 The November 2026 baseline has 28 current snapshots with archived-original
 links, 21 stored as normalized files, and 58 stored as sorted shards. The
@@ -96,6 +96,19 @@ checkpoints its queue in a 90-day recovery artifact and stops collection
 when an upload remains pending. The artifact is temporary recovery storage.
 Hard runner termination before checkpointing remains a limitation; a missing
 checkpoint must be investigated rather than reset silently.
+
+Deployed to GitHub Actions and the Pi on 2026-11-02 at code revision
+`52f38d77cb90ecb64c4dfbe2dd5fd2d426bd0d46`. All 185 tests ran successfully on
+both hosts (four optional browser tests skipped). A
+[scoped GitHub collection](https://github.com/lkowalcz/hospital-price-history/actions/runs/41409296554)
+captured McLean's exact download; a manual Pi check captured Hopkins Bayview's.
+Both public Internet Archive downloads were independently retrieved and their
+compressed/original SHA-256 hashes verified. A
+[second GitHub run](https://github.com/lkowalcz/hospital-price-history/actions/runs/41409730731)
+restored the prior recovery checkpoint and verified the unchanged source by
+headers. Both queues were empty of pending uploads. These were bounded rollout
+checks, not evidence that a complete scheduled cycle or live upload outage
+has been exercised.
 
 Completion criterion: demonstrate a scheduled cycle on both hosts and an
 upload outage/recovery with correct public receipts. Independently verify
