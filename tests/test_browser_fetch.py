@@ -24,6 +24,17 @@ class BrowserTransportTests(unittest.TestCase):
         return dict(data=base64.b64encode(data).decode(), range=content_range,
                     etag='"v1"', modified=None)
 
+    def test_capture_cap_applies_with_and_without_content_length(self):
+        dest = self.root / "file.csv"
+        for length in ("1000", None):
+            dest.write_bytes(b"previous")
+            replies = [{"length": length}, {"done": False, "data": base64.b64encode(b"123456").decode()}]
+            with self.subTest(length=length), patch.object(self.browser, "_execute", side_effect=replies):
+                with self.assertRaisesRegex(ValueError, "byte limit"):
+                    self.browser.download(dest, limit=5)
+            self.assertEqual(dest.read_bytes(), b"previous")
+            self.assertFalse(dest.with_suffix(".csv.part").exists())
+
     def test_fingerprint_matches_existing_local_algorithm(self):
         path = self.root / "file.csv"
         path.write_bytes(bytes(range(256)) * 24000)
@@ -91,6 +102,20 @@ class YaleFallbackTests(unittest.TestCase):
 
     def run_refetch(self, slug="yale-new-haven"):
         return local_refetch.refetch_workaround(slug, self.root, self.observation)
+
+    def test_rotating_capture_bypasses_browser_sample_match_and_caps_download(self):
+        self.browser.fingerprint.return_value = "known"
+        self.browser.download.side_effect = lambda dest, limit: dest.write_bytes(b"code,price\nx,2\n")
+        plan = {"reason": "missing_original", "download_limit_bytes": 1000, "reserved_bytes": 2002}
+        with patch.object(local_refetch, "run", side_effect=[subprocess.CalledProcessError(22, ["curl"]), None]) as run:
+            self.assertFalse(local_refetch.refetch_workaround("yale-new-haven", self.root, self.observation, plan))
+        self.browser.download.assert_called_once()
+        self.browser.fingerprint.assert_not_called()
+        self.assertEqual(self.browser.download.call_args.kwargs, {"limit": 1000})
+        curl_args = run.call_args_list[0].args
+        self.assertEqual(curl_args[curl_args.index("--retry") + 1], "0")
+        self.assertEqual(curl_args[curl_args.index("--max-filesize") + 1], "1000")
+        self.assertEqual(self.observation["method"], "full_download")
 
     def test_browser_sample_match_records_evidence_without_ingestion(self):
         with patch.object(local_refetch, "run", side_effect=subprocess.CalledProcessError(22, ["curl"])) as run:

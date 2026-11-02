@@ -104,7 +104,7 @@ def parse_header_dump(text):
     return status, Headers((k.strip(), v.strip()) for k, v in pairs)
 
 
-def curl_fetch(url, dest=None, extra=(), max_time=None):
+def curl_fetch(url, dest=None, extra=(), max_time=None, retries=True):
     """Fetch via curl-impersonate; returns (status, Headers, stdout_bytes)."""
     with tempfile.NamedTemporaryFile(suffix=".hdrs", delete=False) as tf:
         hdr_path = tf.name
@@ -112,7 +112,7 @@ def curl_fetch(url, dest=None, extra=(), max_time=None):
     # blob resets long transfers) — curl retries internally, continuing at
     # the byte offset already on disk.
     resume = ("-C", "-", "--retry", "3", "--retry-all-errors") \
-        if dest and str(dest) != os.devnull else ()
+        if retries and dest and str(dest) != os.devnull else ()
     cmd = [IMPERSONATE_BIN, "-sS", "-L", "--compressed",
            "--max-time", str(max_time or os.environ.get("CURL_MAX_TIME", "3600")),
            "-D", hdr_path,
@@ -184,14 +184,14 @@ def over_limit(size, limit):
             "fetch from an uncapped environment")
 
 
-def download_to(url, dest, impersonate=False, max_time=None, limit=0):
+def download_to(url, dest, impersonate=False, max_time=None, limit=0, retries=True):
     """Stream url to dest; returns the response Headers. A non-zero limit
     aborts the transfer (ValueError) once more bytes than that arrive."""
     if impersonate and IMPERSONATE_BIN:
         def go():
             extra = ("--fail",) + (("--max-filesize", str(limit)) if limit else ())
             try:
-                status, headers, _ = curl_fetch(url, dest=dest, extra=extra, max_time=max_time)
+                status, headers, _ = curl_fetch(url, dest=dest, extra=extra, max_time=max_time, retries=retries)
             except subprocess.CalledProcessError as exc:
                 if exc.returncode == 63:  # CURLE_FILESIZE_EXCEEDED: not transient
                     raise ValueError(
@@ -199,18 +199,18 @@ def download_to(url, dest, impersonate=False, max_time=None, limit=0):
                         "fetch from an uncapped environment") from exc
                 raise
             return headers
-        return with_retries(go)
+        return with_retries(go) if retries else go()
 
     def go():
         written = 0
         with request(url) as resp, open(dest, "wb") as f:
-            for chunk in iter(lambda: resp.read(1024 * 1024), b""):
+            for chunk in iter(lambda: resp.read(min(1024 * 1024, limit - written + 1) if limit else 1024 * 1024), b""):
                 f.write(chunk)
                 written += len(chunk)
                 if limit and written > limit:
                     raise ValueError(over_limit(written, limit))
             return Headers(resp.headers.items())
-    return with_retries(go)
+    return with_retries(go) if retries else go()
 
 
 def fingerprint_offsets(total):
@@ -350,7 +350,12 @@ def materialize(tmp, headers, url, workdir, limit=0):
     if magic[:2] == b"\x1f\x8b":  # transfer-gzipped despite our requests
         plain = workdir / "gunzipped"
         with gzip.open(tmp, "rb") as src_f, open(plain, "wb") as dst:
-            shutil.copyfileobj(src_f, dst, 1024 * 1024)
+            size = 0
+            for chunk in iter(lambda: src_f.read(1024 * 1024), b""):
+                size += len(chunk)
+                if limit and size > limit:
+                    raise ValueError("gzip unpacks to " + over_limit(size, limit))
+                dst.write(chunk)
         tmp = plain
         with open(tmp, "rb") as f:
             magic = f.read(4)
@@ -1018,7 +1023,7 @@ def utcnow():
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def process(hospital, scratch, impersonate=None, observation=None):
+def process(hospital, scratch, impersonate=None, observation=None, capture_plan=None):
     """Scrape one hospital. impersonate: None = per-config (hospitals.json
     `fetch` plus a learned fetch_escalated flag in meta.json); True/False
     forces the transport — the fallback ladder in main() retries a failed
@@ -1036,7 +1041,15 @@ def process(hospital, scratch, impersonate=None, observation=None):
     if imp is None:
         imp = wants_impersonate(hospital) or bool(old_meta.get("fetch_escalated"))
     observation["transport"] = "impersonate" if imp else "plain"
-    mrf_url = discover_mrf_url(hospital, imp)
+    try:
+        mrf_url = discover_mrf_url(hospital, imp)
+        observation["discovery_status"] = "found" if mrf_url else "missing"
+    except (urllib.error.URLError, OSError, ValueError, subprocess.CalledProcessError) as exc:
+        if not hospital.get("allow_cached_mrf_on_discovery_error") or not old_meta.get("mrf_url"):
+            raise
+        import collection_health as health
+        mrf_url = old_meta["mrf_url"]
+        observation.update(discovery_status="cached_after_error", discovery_error=health.error_text(exc))
     if not mrf_url:
         observation.update(outcome="listing_missing", discovery_status="missing")
         # Losing the listing is itself signal; record it without erasing data.
@@ -1046,7 +1059,6 @@ def process(hospital, scratch, impersonate=None, observation=None):
             meta_path.write_text(json.dumps(old_meta, indent=2) + "\n")
             return f"{slug}: MRF no longer listed in cms-hpt.txt"
         return None
-    observation["discovery_status"] = "found"
 
     # A returning listing needs a validated snapshot to restore its storage
     # status, even when the URL, validators, and bytes are unchanged.
@@ -1070,6 +1082,9 @@ def process(hospital, scratch, impersonate=None, observation=None):
     # servers without HEAD support report nothing and a zip's payload is
     # what lands on disk.
     limit = int(os.environ.get("MAX_DOWNLOAD_BYTES") or 0)
+    if capture_plan:
+        limit = min(limit or capture_plan["download_limit_bytes"], capture_plan["download_limit_bytes"])
+        observation["original_capture"] = capture_plan
 
     # A summarized hospital gets one forced re-download when its summary
     # predates the current summarizer (its content exists nowhere else to
@@ -1095,8 +1110,8 @@ def process(hospital, scratch, impersonate=None, observation=None):
     resummarize = upgrade_needed or (backfill and summary_stale)
 
     mt = hospital.get("curl_max_time")
-    if os.environ.get("FORCE_FULL_DOWNLOAD") != "1" and not resummarize and not backfill and not rediscovered \
-            and mrf_url == old_meta.get("mrf_url") and old_meta.get("sha256"):
+    if os.environ.get("FORCE_FULL_DOWNLOAD") != "1" and not capture_plan and not resummarize and not backfill and not rediscovered \
+            and old_meta.get("size_bytes") != 0 and mrf_url == old_meta.get("mrf_url") and old_meta.get("sha256"):
         h = head(mrf_url, impersonate=imp, max_time=mt)
         validators = (h.get("Last-Modified"), h.get("ETag"))
         stored = (old_meta.get("source_last_modified"), old_meta.get("source_etag"))
@@ -1129,7 +1144,8 @@ def process(hospital, scratch, impersonate=None, observation=None):
     try:
         tmp = workdir / "download"
         observation["method"] = "full_download"
-        headers = download_to(mrf_url, tmp, impersonate=imp, max_time=mt, limit=limit)
+        headers = download_to(mrf_url, tmp, impersonate=imp, max_time=mt, limit=limit,
+                              **({"retries": False} if capture_plan else {}))
         downloaded_at = utcnow()
         transfer_fp = local_fingerprint(tmp)
         original = None
@@ -1140,10 +1156,13 @@ def process(hospital, scratch, impersonate=None, observation=None):
                 raise ValueError("received an HTML page instead of an MRF (bot-block?)")
             original = preserve_source.capture(tmp, slug, mrf_url,
                 filename_from(headers, mrf_url, tmp), headers, data=DATA, root=DATA.parent)
+            observation["original_download_sha256"] = original["download_sha256"]
         name, payload_path = materialize(tmp, headers, mrf_url, workdir, limit=limit)
         if payload_path != tmp:
             tmp.unlink()  # the zip has served its purpose; free runner disk
         size = payload_path.stat().st_size
+        if size == 0:
+            raise ValueError("received an empty MRF; retained the previous snapshot and any original receipt")
 
         with open(payload_path, "rb") as f:
             start = f.read(512).lstrip(b"\xef\xbb\xbf").lstrip().lower()
@@ -1323,9 +1342,11 @@ def main():
             slug = hospital["slug"]
             attempt_id = log.begin(slug)
             observation, retry_errors = {}, []
+            capture_plan = log.start.get("original_capture_plan", {}).get(slug)
+            capture_kwargs = {"capture_plan": capture_plan} if capture_plan else {}
             try:
                 try:
-                    result = process(hospital, scratch, observation=observation)
+                    result = process(hospital, scratch, observation=observation, **capture_kwargs)
                 except Exception as exc:
                     # Fallback ladder: retry once with the opposite transport
                     # (plain <-> curl-impersonate). CDNs block one or the
@@ -1338,7 +1359,7 @@ def main():
                           file=sys.stderr, flush=True)
                     retry_errors.append({"transport": observation.get("transport"), "error": health.error_text(exc)})
                     observation = {}
-                    result = process(hospital, scratch, impersonate=not default_imp, observation=observation)
+                    result = process(hospital, scratch, impersonate=not default_imp, observation=observation, **capture_kwargs)
                     if not default_imp and observation.get("verified_at"):
                         mark_escalated(slug)
                         escalated.append(slug)

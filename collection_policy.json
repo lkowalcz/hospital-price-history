@@ -3,6 +3,14 @@
   "default_host": "github-actions",
   "check_interval_hours": 24,
   "grace_hours": 48,
+  "original_capture": {
+    "full_download_interval_days": 30,
+    "retry_interval_hours": 168,
+    "hosts": {
+      "github-actions": {"max_files_per_day": 3, "max_bytes_per_day": 20000000000, "max_download_bytes": 10000000000},
+      "pi": {"max_files_per_day": 1, "max_bytes_per_day": 100000000000, "max_download_bytes": 50000000000}
+    }
+  },
   "hosts": {
     "github-actions": {"schedule": "Daily at 06:23 UTC", "maximum_run_hours": 7},
     "pi": {"schedule": "Daily at 13:00 America/New_York", "maximum_run_hours": 30}

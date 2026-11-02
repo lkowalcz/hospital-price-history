@@ -112,8 +112,10 @@ has been exercised.
 
 Completion criterion: demonstrate a scheduled cycle on both hosts and an
 upload outage/recovery with correct public receipts. Independently verify
-archived bytes after upload. Add a bounded policy for periodic full downloads
-despite matching headers/samples. Capture is prospective: re-fetching today's
+archived bytes after upload. The bounded rotation now schedules missing originals
+and periodic full downloads despite matching headers/samples, with per-host
+daily reservations and explicit over-budget exclusions (see
+[operations](OPERATIONS.md#bounded-original-capture)). Capture is prospective: re-fetching today's
 file does not recover an old original. Plan backfills separately with explicit
 storage and bandwidth limits.
 

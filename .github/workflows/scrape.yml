@@ -12,6 +12,10 @@ on:
         description: "Download despite matching validators (requires explicit hospital slugs)"
         type: boolean
         default: false
+      capture_rotation:
+        description: "Apply the daily original-capture budget to this run's hospital subset"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -29,6 +33,7 @@ jobs:
     env:
       COLLECTION_HOST: github-actions
       PRESERVE_ORIGINALS: "1"
+      ORIGINAL_CAPTURE_ROTATION: ${{ (github.event_name == 'schedule' || inputs.capture_rotation) && '1' || '0' }}
       ONLY: ${{ inputs.only }}
       FORCE_FULL_DOWNLOAD: ${{ inputs.full_download && '1' || '0' }}
       # Keep in sync with local_refetch.LOCAL_ONLY and collection_policy.json.

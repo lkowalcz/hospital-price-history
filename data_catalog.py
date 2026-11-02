@@ -37,6 +37,7 @@ ISSUES = {
     "collection_verification_overdue": "No successful source verification was recorded within its interval and grace period.",
     "collection_interrupted": "An interrupted collection run is missing this hospital's outcome.",
     "collection_failed": "The latest observed check failed or could not find the source listing.",
+    "collection_discovery_failed": "Discovery failed; the source was checked using its previously recorded URL.",
     "observed_source_not_current": "The latest verified source differs from the committed snapshot; inspect its observation log.",
     "archive_upload_failed": "The latest check records an unsuccessful archive upload, separately from source verification.",
     "original_upload_pending": "An exact original is retained in the recovery queue but its public archive upload is pending.",
@@ -313,6 +314,7 @@ def build_catalog(hospitals, root, outdir, base, repo, raw_repo):
                  "historical_source_warnings": source_warnings,
                  "original_downloads": originals, "discovery_documents": discovery,
                  "latest_snapshot": latest,
+                 "latest_summary_snapshot": next((s for s in reversed(snapshots) if s["summary_url"]), None),
                  "summary_rows": stats["row_count"] if stats is not None else None,
                  "metadata_url": raw_url(repo, revision, f"data/{slug}/meta.json") if meta else None,
                  "snapshots_url": f"{base}/data/snapshots/{slug}.json",
@@ -335,7 +337,12 @@ def build_catalog(hospitals, root, outdir, base, repo, raw_repo):
               "original_downloads": sum(len(e["original_downloads"]) for e in entries),
               "original_uploads_pending": sum(r["status"] == "pending" for e in entries for r in e["original_downloads"]),
               "issues": dict(sorted(Counter(issue for e in entries for issue in e["issues"]).items()))}
+    from capture_rotation import observation_records, report as capture_report
+    capture_logs = observation_records(root, include_spool=False)
+    capture_reports = {host: capture_report(root, hospitals, host, at=envelope["generated_at"], logs=capture_logs)
+                       for host in health["policy"].get("original_capture", {}).get("hosts", {})}
     catalog = {**envelope, "quality_url": f"{base}/data/quality.json",
+               "original_capture": capture_reports,
                "collection_health_url": f"{base}/data/collection-health.json",
                "source_audit_url": f"{base}/data/source-audit.json", "source_audit_totals": audit_totals(audit),
                "collection_totals": health["totals"], "totals": totals, "hospitals": entries}

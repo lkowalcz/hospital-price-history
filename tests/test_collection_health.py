@@ -46,6 +46,14 @@ class HealthTests(unittest.TestCase):
         self.assertIsNone(entry["last_successful_check_at"])
         self.assertFalse(entry["check_overdue"])
 
+    def test_cached_discovery_keeps_source_success_and_listing_problem_separate(self):
+        log = self.start()
+        self.attempt(log, result=self.success(discovery_status="cached_after_error", discovery_error="403"))
+        entry = self.report()["hospitals"][0]
+        self.assertEqual(entry["state"], "unchanged")
+        self.assertIn("collection_discovery_failed", entry["issues"])
+        self.assertNotIn("collection_failed", entry["issues"])
+
     def test_failure_and_deferred_never_refresh_success(self):
         log = self.start()
         self.attempt(log, result=self.success())

@@ -62,6 +62,8 @@ def main():
     if preserve_source.enabled():
         original = preserve_source.capture(path, slug, mrf_url, name, h, data=DATA, root=DATA.parent,
                                             artifact_kind="local_input")
+    if size == 0:
+        raise ValueError("received an empty MRF; retained the previous snapshot and any original receipt")
 
     if size <= MAX_SHARD_TOTAL:
         payload = normalize_payload(name, path.read_bytes())

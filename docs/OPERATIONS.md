@@ -81,8 +81,8 @@ For a bounded rollout or archive backfill check, dispatch the scrape workflow
 with explicit `only` hospital slugs and `full_download: true`. Locally use
 `ONLY=<slug> FORCE_FULL_DOWNLOAD=1`; an unscoped forced run is rejected. This
 bypasses validators/sampling but retains normal content hashes and history,
-so downloading identical bytes does not create a new price snapshot. The
-normal scheduled collection policy is unchanged.
+so downloading identical bytes does not create a new price snapshot. Scheduled
+collection additionally uses the bounded rotation described below.
 
 On CI, `archive_recovery.py` restores the most recent eligible `original-queue`
 artifact from this workflow on main. Checkpoint names include the run ID and
@@ -112,8 +112,66 @@ GitHub run restoring the previous checkpoint. The [roadmap](ROADMAP.md#3-preserv
 records the run links and remaining full-cycle verification. Offline tests cover upload failure, scratch cleanup,
 interruption, retry after source deletion, ZIP retention, and receipt recovery.
 They do not establish live Internet Archive availability or artifact delivery.
-Periodic independent archive verification and forced full-download scheduling
-remain roadmap work.
+Periodic independent archive verification remains roadmap work.
+
+### Bounded original capture
+
+`capture_rotation.py` prioritizes current snapshots without archived originals,
+then files without a recorded full download in 30 days. Matching headers and
+sampled fingerprints cannot skip a selected capture. Legacy cold-storage links
+count separately from the new exact-download receipts; local inputs alone do
+not establish exact-download coverage. Missing historical bytes cannot be
+recreated by fetching a current file.
+
+`collection_policy.json` sets the daily UTC budgets. GitHub may select three
+extra captures per day, reserving at most 20 GB with a 10 GB per-transfer cap.
+The Pi may select one, reserving at most 100 GB with a 50 GB per-transfer cap
+(Kansas's existing source is about 37 GB). These are ceilings, not targets:
+each file reserves two transfers at 125% of its last known size, subject to the
+host cap, with a 10 MB minimum. Two slots allow the existing transport fallback;
+internal transfer retries are disabled for these selected captures. HTTP
+overhead, cheap discovery/sampling, archive uploads, and ordinary downloads
+triggered by source changes are outside this extra-capture budget.
+
+Run-start observations contain the allocations and are published before work.
+Failed/interrupted runs and same-day reruns consume their reservations. A
+reserved hospital waits seven days before another forced attempt, while normal
+source checks continue daily. Pending uploads prevent another scheduled capture
+for that hospital. Over-budget files remain visible in the catalog's
+`original_capture` report. The three Mayo sources exceed GitHub's 10 GB cap;
+they retain their existing archives and need a separately bounded larger-host
+capture before periodic coverage can include them.
+
+Preview without reserving or downloading:
+
+```sh
+python capture_rotation.py --host github-actions
+python capture_rotation.py --host pi
+```
+
+Scheduled GitHub runs enable `ORIGINAL_CAPTURE_ROTATION=1`; a manual workflow
+can opt in with `capture_rotation: true`, optionally restricted by `only`.
+The Pi enables it alongside preservation. Set `ORIGINAL_CAPTURE_ROTATION=0`
+to disable extra captures while retaining ordinary checks and preservation.
+The catalog report previews the next selection using committed observations;
+the collector additionally includes unpublished local reservations.
+
+### Source incidents investigated on 2026-11-02
+
+- AdventHealth Orlando's `cms-hpt.txt` returned HTTP 403 on both local hosts.
+  Its previously published HospitalPriceDisclosure URL still returned a
+  36,565,578-byte JSON file identifying AdventHealth Orlando (Florida license
+  4369). The roster explicitly permits using that recorded URL after a discovery
+  error. Each such observation records `cached_after_error`, the error, and a
+  separate `collection_discovery_failed` issue. A valid listing that removes the
+  hospital never triggers this fallback. Other hospitals do not inherit it.
+- Maine Medical Center's published Azure blob returned Content-Length 0 and
+  the MD5 of empty bytes, last modified 2026-10-30. This confirms the recorded
+  empty source rather than a parser-only loss. New empty responses are preserved
+  when archiving is enabled but rejected before replacing price data. Existing
+  historical empty snapshots remain in history; the catalog's
+  `latest_summary_snapshot` and hospital page link to the last available summary
+  without representing it as the current source.
 
 ## Hospitals handled locally
 

@@ -188,7 +188,10 @@ class CatalogTest(unittest.TestCase):
         self.assertEqual(len(snapshots), 4)
         self.assertEqual(snapshots[-1]["change_kind"], "summary_removed")
         self.assertIsNone(snapshots[-1]["summary_url"])
-        self.assertIn("summary_missing", self.build()["hospitals"][0]["issues"])
+        entry = self.build()["hospitals"][0]
+        self.assertIn("summary_missing", entry["issues"])
+        self.assertEqual(entry["latest_summary_snapshot"]["snapshot_id"], snapshots[-2]["snapshot_id"])
+        self.assertEqual(entry["latest_summary_snapshot"]["summary_url"], snapshots[-2]["summary_url"])
 
     def test_merge_records_mainline_result(self):
         self.snapshot()

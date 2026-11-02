@@ -164,6 +164,7 @@
   {
     "slug": "adventhealth-orlando",
     "system": "AdventHealth",
+    "allow_cached_mrf_on_discovery_error": true,
     "hpt_txt": "https://www.adventhealth.com/cms-hpt.txt",
     "location_name": "AdventHealth Orlando"
   },

@@ -154,20 +154,22 @@ class BrowserFetch:
             digest.update(data)
         return digest.hexdigest()
 
-    def download(self, dest):
+    def download(self, dest, limit=0):
         """Stream one GET to disk. Never publish an empty or partial download."""
         dest = Path(dest)
         partial = dest.with_name(dest.name + ".part")
         try:
             response = self._execute(BEGIN_DOWNLOAD, self.file_url)
             expected = int(response["length"]) if response["length"] is not None else None
+            if limit and expected is not None and expected > limit:
+                raise ValueError("Browser download exceeds original-capture byte limit")
             deadline = time.monotonic() + 7200
             size = 0
             with partial.open("wb") as handle:
                 while True:
                     if time.monotonic() > deadline:
                         raise TimeoutError("Browser download exceeded two hours")
-                    chunk = self._execute(READ_CHUNK, SAMPLE_BYTES)
+                    chunk = self._execute(READ_CHUNK, min(SAMPLE_BYTES, limit - size + 1) if limit else SAMPLE_BYTES)
                     if chunk["done"]:
                         break
                     data = base64.b64decode(chunk["data"], validate=True)
@@ -175,6 +177,8 @@ class BrowserFetch:
                         raise ValueError("Invalid browser download chunk")
                     handle.write(data)
                     size += len(data)
+                    if limit and size > limit:
+                        raise ValueError("Browser download exceeds original-capture byte limit")
             if not size or (expected is not None and size != expected):
                 raise ValueError("Empty or incomplete browser download")
             with partial.open("rb") as handle:

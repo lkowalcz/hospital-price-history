@@ -64,6 +64,12 @@ def events(data):
         if kind == "run_started":
             if index or len(set(event["planned_slugs"])) != len(event["planned_slugs"]):
                 raise ValueError("Duplicate run start or planned slug")
+            for slug, reservation in event.get("original_capture_plan", {}).items():
+                cap = reservation.get("download_limit_bytes")
+                if (slug not in event["planned_slugs"] or type(cap) is not int or cap <= 0
+                        or reservation.get("reserved_bytes") != 2 * (cap + 1)
+                        or reservation.get("reason") not in {"missing_original", "periodic_full_download"}):
+                    raise ValueError("Invalid original-capture reservation")
         elif kind == "attempt_started":
             aid = event["attempt_id"]
             if aid in seen or event["slug"] not in start["planned_slugs"]:
@@ -107,6 +113,7 @@ class RunLog:
 
     @classmethod
     def create(cls, root, host, planned, excluded=None):
+        from capture_rotation import plan
         if not re.fullmatch(r"[a-z0-9-]+", host):
             raise ValueError("Invalid collection host")
         run_id = f"{host}-{uuid.uuid4().hex}"
@@ -119,6 +126,7 @@ class RunLog:
             revision = None  # isolated tests or a non-Git local run
         start = dict(schema_version=1, event="run_started", run_id=run_id, host=host, at=timestamp,
                      code_revision=revision, planned_slugs=planned, excluded=excluded or {})
+        start["original_capture_plan"] = plan(root, host, planned)
         with path.open("x") as handle:
             handle.write(json.dumps(start, sort_keys=True) + "\n")
             handle.flush()
@@ -293,6 +301,8 @@ def build_health(root, hospitals, evaluated_at=None):
             issues.append("collection_interrupted")
         if result and result["outcome"] in {"failed", "listing_missing"}:
             issues.append("collection_failed")
+        if result and result.get("discovery_status") == "cached_after_error":
+            issues.append("collection_discovery_failed")
         entries.append({"slug": slug, "scheduled_host": owner, "schedule": policy["hosts"][owner]["schedule"],
                         "check_interval_hours": policy["check_interval_hours"],
                         "verification_interval_hours": interval, "grace_hours": policy["grace_hours"],

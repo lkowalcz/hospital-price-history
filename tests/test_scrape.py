@@ -480,17 +480,20 @@ class ProcessHarness(unittest.TestCase):
             p.stop()
         self._tmp.cleanup()
 
-    def run_process(self, validators=None, observation=None):
+    def run_process(self, validators=None, observation=None, capture_plan=None):
         hdrs = scrape.Headers(list((validators or self.validators).items()))
 
-        def fake_download(url, dest, impersonate=False, max_time=None, limit=0):
+        def fake_download(url, dest, impersonate=False, max_time=None, limit=0, retries=True):
             self.downloads += 1
+            if capture_plan:
+                self.assertFalse(retries)
+                self.assertEqual(limit, capture_plan["download_limit_bytes"])
             Path(dest).write_bytes(self.body)
             return hdrs
         with unittest.mock.patch.object(scrape, "head",
                                         lambda url, impersonate=False, max_time=None: hdrs), \
                 unittest.mock.patch.object(scrape, "download_to", fake_download):
-            return scrape.process(self.HOSPITAL, self.scratch, observation=observation)
+            return scrape.process(self.HOSPITAL, self.scratch, observation=observation, capture_plan=capture_plan)
 
     def meta(self):
         return json.loads((scrape.DATA / "h1" / "meta.json").read_text())
@@ -592,6 +595,47 @@ class TestCollectionEvidence(ProcessHarness):
 
 
 class TestProcess(ProcessHarness):
+    def test_rotating_capture_bypasses_matching_headers_and_samples(self):
+        self.run_process()
+        before = self.meta()
+        observation = {}
+        plan = {"reason": "missing_original", "download_limit_bytes": 100000, "reserved_bytes": 200002}
+        self.run_process(observation=observation, capture_plan=plan)
+        self.assertEqual(self.downloads, 2)
+        self.assertEqual(observation["original_capture"], plan)
+        self.assertEqual(self.meta()["last_changed"], before["last_changed"])
+
+    def test_empty_download_does_not_replace_existing_snapshot(self):
+        self.run_process()
+        before = self.meta()
+        summary = (scrape.DATA / "h1/summary.csv").read_bytes()
+        self.body = b""
+        with self.assertRaisesRegex(ValueError, "empty MRF"):
+            self.run_process({"ETag": "new"})
+        self.assertEqual(self.meta(), before)
+        self.assertEqual((scrape.DATA / "h1/summary.csv").read_bytes(), summary)
+
+    def test_cached_discovery_requires_explicit_opt_in_and_keeps_failure_evidence(self):
+        self.run_process()
+        with unittest.mock.patch.object(scrape, "discover_mrf_url", side_effect=ValueError("listing unavailable")):
+            with self.assertRaisesRegex(ValueError, "listing unavailable"):
+                self.run_process()
+            with unittest.mock.patch.dict(self.HOSPITAL, {"allow_cached_mrf_on_discovery_error": True}):
+                observation = {}
+                self.run_process(observation=observation)
+                self.assertEqual(observation["outcome"], "unchanged")
+                self.assertEqual(observation["discovery_status"], "cached_after_error")
+                self.assertEqual(observation["discovery_error"], "listing unavailable")
+
+    def test_cached_discovery_does_not_override_a_real_delisting(self):
+        self.run_process()
+        with unittest.mock.patch.object(scrape, "discover_mrf_url", return_value=None), \
+                unittest.mock.patch.dict(self.HOSPITAL, {"allow_cached_mrf_on_discovery_error": True}):
+            observation = {}
+            self.run_process(observation=observation)
+        self.assertEqual(observation["outcome"], "listing_missing")
+        self.assertEqual(self.downloads, 1)
+
     def test_forced_download_bypasses_validators_without_changing_snapshot_date(self):
         self.run_process()
         before = self.meta()
@@ -952,6 +996,21 @@ class TestHeartbeat(unittest.TestCase):
 
 
 class TestDownloadCap(unittest.TestCase):
+    def test_budgeted_download_does_not_retry_a_failed_transfer(self):
+        with tempfile.TemporaryDirectory() as tmp, \
+                unittest.mock.patch.object(scrape, "request", side_effect=ConnectionError("offline")) as request:
+            with self.assertRaises(ConnectionError):
+                scrape.download_to("https://x/file", Path(tmp) / "download", limit=1000, retries=False)
+        self.assertEqual(request.call_count, 1)
+
+    def test_gzip_expansion_obeys_payload_cap(self):
+        import gzip
+        with tempfile.TemporaryDirectory() as tmp:
+            source = Path(tmp) / "file.gz"
+            source.write_bytes(gzip.compress(b"code,price\n" * 1000))
+            with self.assertRaisesRegex(ValueError, "gzip unpacks"):
+                scrape.materialize(source, scrape.Headers([]), "https://x/file.csv", Path(tmp), limit=1000)
+
     def test_plain_download_aborts_past_limit(self):
         class Resp(io.BytesIO):
             headers = {"Content-Type": "text/csv"}
@@ -967,6 +1026,7 @@ class TestDownloadCap(unittest.TestCase):
             dest = Path(tmp) / "dl"
             with self.assertRaises(ValueError):
                 scrape.download_to("https://x/f", dest, limit=1000)
+            self.assertEqual(dest.stat().st_size, 1001)
             self.assertEqual(scrape.download_to("https://x/f", dest, limit=0)
                              .get("Content-Type"), "text/csv")
             self.assertEqual(dest.stat().st_size, 3000)

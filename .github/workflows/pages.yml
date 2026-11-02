@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths: ["data/**", "observations/**", "collection_health.py", "collection_policy.json", "source_audit.py", "source_audit.json",
-            "gen_site.py", "data_catalog.py", "preserve_source.py", "hospitals.json",
+            "gen_site.py", "data_catalog.py", "preserve_source.py", "capture_rotation.py", "hospitals.json",
             ".github/workflows/pages.yml"]
   # The scrape workflow commits with the bot token, whose pushes never
   # trigger push-based deploys; a fixed later cron used to stand in, but

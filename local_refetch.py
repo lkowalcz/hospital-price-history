@@ -148,14 +148,17 @@ def validate_workaround_download(dest):
         raise ValueError("received an empty file or HTML page instead of an MRF")
 
 
-def refetch_workaround(slug, scratch, observation=None):
+def refetch_workaround(slug, scratch, observation=None, capture_plan=None):
     """Fingerprint-check the workaround URL; ingest only on change."""
     observation = observation if observation is not None else {}
     observation.update(outcome="failed", method="discovery", discovery_status="workaround",
                        transport="plain", verification_interval_hours=24)
+    limit = capture_plan["download_limit_bytes"] if capture_plan else 0
+    if capture_plan:
+        observation["original_capture"] = capture_plan
     url = workaround_url(slug)
-    fp = scrape.remote_fingerprint(url)
-    if fp and fp == meta_of(slug).get("transfer_fingerprint"):
+    fp = None if capture_plan else scrape.remote_fingerprint(url)
+    if not capture_plan and fp and fp == meta_of(slug).get("transfer_fingerprint"):
         return unchanged_workaround(slug, fp, observation)
     name = Path(urllib.parse.urlsplit(url).path).name or f"{slug}.bin"
     if slug == "yale-new-haven":
@@ -164,8 +167,8 @@ def refetch_workaround(slug, scratch, observation=None):
     observation["method"] = "full_download"
     old_sha = meta_of(slug).get("sha256")
     try:
-        run("curl", "--fail", "-sS", "-L", "--retry", "3", "-C", "-", "--max-time", "7200",
-            "-A", scrape.USER_AGENT, "-o", dest, url)
+        run("curl", "--fail", "-sS", "-L", "--retry", "0" if capture_plan else "3", "-C", "-", "--max-time", "7200",
+            "-A", scrape.USER_AGENT, "-o", dest, *(("--max-filesize", str(limit)) if limit else ()), url)
         downloaded_at = health.now()
         validate_workaround_download(dest)
     except (subprocess.CalledProcessError, ValueError) as exc:
@@ -175,10 +178,10 @@ def refetch_workaround(slug, scratch, observation=None):
         observation.update(transport="browser", retry_errors=[{
             "transport": "plain", "error": health.error_text(exc)}])
         with BrowserFetch(YALE_PAGE, url, scratch) as browser:
-            fp = browser.fingerprint()
-            if fp and fp == meta_of(slug).get("transfer_fingerprint"):
+            fp = None if capture_plan else browser.fingerprint()
+            if not capture_plan and fp and fp == meta_of(slug).get("transfer_fingerprint"):
                 return unchanged_workaround(slug, fp, observation)
-            browser.download(dest)
+            browser.download(dest, **({"limit": limit} if limit else {}))
             downloaded_at = health.now()
     validate_workaround_download(dest)
     source_args = ("--source-url", url)
@@ -215,6 +218,9 @@ def refetch_hospitals(log=None):
             observation = {}
             try:
                 kwargs = {"observation": observation} if log else {}
+                capture_plan = log.start.get("original_capture_plan", {}).get(slug) if log else None
+                if capture_plan:
+                    kwargs["capture_plan"] = capture_plan
                 if refetch_workaround(slug, scratch, **kwargs):
                     changed.append(slug)
             except Exception as exc:
@@ -251,6 +257,7 @@ def main():
         print(f"cold storage: {'on' if scrape.archiving_enabled() else 'off'}", flush=True)
     if scrape.archiving_enabled():
         os.environ.setdefault("PRESERVE_ORIGINALS", "1")
+        os.environ.setdefault("ORIGINAL_CAPTURE_ROTATION", "1")
     for repo in (ROOT, RAW_REPO):
         git(repo, "pull", "--rebase", "--autostash", "--quiet")
 

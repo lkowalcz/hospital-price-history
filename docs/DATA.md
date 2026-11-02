@@ -83,6 +83,25 @@ The static site publishes these resources, regenerated at every deployment:
 | `data/collection-health.json` | Explicit check observations, collection schedules, and overdue flags. Uses `evaluated_at` for its assessment time. |
 | `data/source-audit.json` | Reviewed historical source gaps, repair evidence, and all remaining gaps at build time. |
 
+Each hospital's `latest_summary_snapshot` points to its most recent recorded
+summary, even when `latest_snapshot` has none. It is historical evidence, not a
+claim that the hospital still publishes those prices. Empty downloaded responses
+are preserved as original receipts but are now rejected before replacing a
+usable snapshot; older empty snapshots remain part of the history.
+
+The catalog's `original_capture` report shows each collector's bounded capture
+rotation, including current original coverage, last recorded full download,
+next selection, retry waits, pending uploads, and over-budget exclusions.
+`exact_download` means a matching receipt from a direct download;
+`legacy_original` means a matching older cold-storage link. A preview selection
+does not establish that a download occurred. Actual allocations are recorded in
+run-start observations as `original_capture_plan`; selected attempts record
+`original_capture` separately from their outcome and verification method.
+
+`collection_discovery_failed` means the source was checked using its previously
+recorded URL after discovery failed. This fallback requires explicit roster
+configuration and does not override a hospital's removal from a valid listing.
+
 Every JSON resource has `schema_version` (currently 1) and `catalog_revision`
 (the full main-repository commit used for the build). Reports also include
 `generated_at` (UTC build time), except collection health, which uses `evaluated_at`.

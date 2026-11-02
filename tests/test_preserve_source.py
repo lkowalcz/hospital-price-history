@@ -214,6 +214,22 @@ class CollectionPreservationTests(ProcessHarness):
             self.patches.append(p)
             p.start()
 
+    def test_empty_response_is_preserved_without_replacing_price_data(self):
+        self.run_process()
+        before = self.meta()
+        self.body = b""
+        observation = {}
+        with self.assertRaisesRegex(ValueError, "empty MRF"):
+            self.run_process({"ETag": "empty"}, observation=observation)
+        sha = hashlib.sha256(b"").hexdigest()
+        receipt = json.loads((scrape.DATA / "h1/originals" / (sha + ".json")).read_text())
+        self.assertEqual(receipt["download_bytes"], 0)
+        self.assertEqual(receipt["status"], "archived")
+        self.assertNotIn("snapshot_sha256", receipt)
+        self.assertEqual(observation["original_download_sha256"], sha)
+        self.assertNotIn("verified_at", observation)
+        self.assertEqual(self.meta(), before)
+
     def test_stored_sharded_and_metadata_only_all_preserve_originals(self):
         for small, large, body, mode in [(10**8, 10**8, self.body, "stored"),
                                          (100, 10**8, self.body, "sharded"),

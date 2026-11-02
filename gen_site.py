@@ -129,6 +129,11 @@ def hospital_page(h, meta, outdir, catalog_entry):
     if snapshot.get("summary_url"):
         parts.append(f'<li><a href="{esc(snapshot["summary_url"])}">Download latest summary CSV</a> '
                      f'(method {esc(snapshot["summary_version"])})</li>')
+    elif catalog_entry.get("latest_summary_snapshot"):
+        previous = catalog_entry["latest_summary_snapshot"]
+        parts.append(f'<li><a href="{esc(previous["summary_url"])}">Download last available summary CSV</a> '
+                     f'(historical snapshot recorded {esc(previous["recorded_at"][:10])}; '
+                     'the current snapshot has no summary)</li>')
     parts.append(f'<li><a href="{esc(catalog_entry["snapshots_url"])}">Snapshot manifest (JSON)</a> '
                  f'— {catalog_entry["snapshot_count"]} recorded archive states</li>')
     if catalog_entry["metadata_url"]:
