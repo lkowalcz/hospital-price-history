@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "slug": "banner-wyoming",
+  "download_sha256": "c09ab3e38b5f43f96a814578cde722d4496e6a8949805cc28b4f339ebcf04c79",
+  "download_bytes": 62633853,
+  "source_url": "https://images.pricetransparency.healthcare/public-mrfs/banner/830279242_banner-wyoming-medical-center_standardcharges.csv",
+  "source_filename": "830279242_banner-wyoming-medical-center_standardcharges.csv",
+  "captured_at": "2026-11-03T14:32:17Z",
+  "status": "archived",
+  "artifact_kind": "download",
+  "collector": "github-actions",
+  "container": "plain",
+  "response_headers": {
+    "Content-Type": "binary/octet-stream",
+    "Content-Length": "62633853",
+    "ETag": "\"dfb12bfbef71ba5c3eaa0fc65d6195c0\"",
+    "Last-Modified": "Wed, 30 Sep 2026 20:18:01 GMT"
+  },
+  "last_attempt_at": "2026-11-03T14:32:17Z",
+  "archive": {
+    "url": "https://archive.org/details/hospital-price-original-c09ab3e38b5f43f96a814578cde722d4496e6a8949805cc28b4f339ebcf04c79",
+    "download_url": "https://archive.org/download/hospital-price-original-c09ab3e38b5f43f96a814578cde722d4496e6a8949805cc28b4f339ebcf04c79/original-0166c839a4cce9a41ff6faf2ada8544307420e555b549f88b2bbb659c44c8631.zst",
+    "compressed_sha256": "0166c839a4cce9a41ff6faf2ada8544307420e555b549f88b2bbb659c44c8631",
+    "compressed_bytes": 3813385,
+    "compression": "zstd",
+    "archived_at": "2026-11-03T14:32:49Z"
+  },
+  "snapshot_sha256": "330b50b8fdff4fae6510f6b0bdf6df51b75141172a1d57b5103b722aed03812b",
+  "payload_sha256": "c09ab3e38b5f43f96a814578cde722d4496e6a8949805cc28b4f339ebcf04c79"
+}

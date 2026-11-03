@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "slug": "baptist-hospital-miami",
+  "download_sha256": "552a5b0a84d8c3830030cca7d8c0b064778d10d70a8840d821e0c88927137a27",
+  "download_bytes": 25902897,
+  "source_url": "https://baptisthealth.net/-/media/Documents/Patient-Resources/Patient-Pricing/Apr-2026/590910342_baptist-hospital-of-miami_standardcharges.zip",
+  "source_filename": "590910342_baptist-hospital-of-miami_standardcharges.zip",
+  "captured_at": "2026-11-03T14:31:26Z",
+  "status": "archived",
+  "artifact_kind": "download",
+  "collector": "github-actions",
+  "container": "zip",
+  "response_headers": {
+    "Content-Type": "application/x-zip-compressed",
+    "Content-Length": "25902897",
+    "Content-Disposition": "attachment; filename=\"590910342_baptist-hospital-of-miami_standardcharges.zip\"",
+    "Last-Modified": "Tue, 07 Apr 2026 15:54:30 GMT"
+  },
+  "last_attempt_at": "2026-11-03T14:31:26Z",
+  "archive": {
+    "url": "https://archive.org/details/hospital-price-original-552a5b0a84d8c3830030cca7d8c0b064778d10d70a8840d821e0c88927137a27",
+    "download_url": "https://archive.org/download/hospital-price-original-552a5b0a84d8c3830030cca7d8c0b064778d10d70a8840d821e0c88927137a27/original-bff735c75b7b9f66e26a0c2754742439ae5ef8503287077492b08064cfd6814a.zst",
+    "compressed_sha256": "bff735c75b7b9f66e26a0c2754742439ae5ef8503287077492b08064cfd6814a",
+    "compressed_bytes": 25892300,
+    "compression": "zstd",
+    "archived_at": "2026-11-03T14:31:46Z"
+  },
+  "snapshot_sha256": "07f38f7197df2cfa460ff029f7cd290b9f903b6e27317dcaba627ecafe99896a",
+  "payload_sha256": "02bcfe94f05379658e11844a2f38da9c9308421d580c4e79558b3012446a33ef"
+}

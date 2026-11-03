@@ -5,12 +5,26 @@
   "source_filename": "590910342_baptist-hospital-of-miami_standardcharges.csv",
   "sha256": "07f38f7197df2cfa460ff029f7cd290b9f903b6e27317dcaba627ecafe99896a",
   "size_bytes": 562325842,
-  "source_last_modified": null,
+  "source_last_modified": "Tue, 07 Apr 2026 15:54:30 GMT",
   "source_etag": null,
   "transfer_fingerprint": "3ad292a6dd549fc7c9d6a41370a06db90fb0491a48376b769a4257fcfdeff889",
   "status": "sharded",
   "first_seen": "2026-08-14T03:56:43Z",
   "last_changed": "2026-08-14T03:56:43Z",
   "raw_commit": "e03c3ea8a1ceb8b9ba428f95890ede03de536cc2",
-  "summary_version": 2
+  "summary_version": 2,
+  "original_download": {
+    "download_sha256": "552a5b0a84d8c3830030cca7d8c0b064778d10d70a8840d821e0c88927137a27",
+    "status": "archived",
+    "captured_at": "2026-11-03T14:31:26Z",
+    "artifact_kind": "download",
+    "archive": {
+      "url": "https://archive.org/details/hospital-price-original-552a5b0a84d8c3830030cca7d8c0b064778d10d70a8840d821e0c88927137a27",
+      "download_url": "https://archive.org/download/hospital-price-original-552a5b0a84d8c3830030cca7d8c0b064778d10d70a8840d821e0c88927137a27/original-bff735c75b7b9f66e26a0c2754742439ae5ef8503287077492b08064cfd6814a.zst",
+      "compressed_sha256": "bff735c75b7b9f66e26a0c2754742439ae5ef8503287077492b08064cfd6814a",
+      "compressed_bytes": 25892300,
+      "compression": "zstd",
+      "archived_at": "2026-11-03T14:31:46Z"
+    }
+  }
 }

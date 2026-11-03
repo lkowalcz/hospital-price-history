@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "providence-alaska",
+  "download_sha256": "7c9bf08532bcc86ec9b855cf6cb3f98b71663a0b0aacddd553c2df8c6689bb6b",
+  "download_bytes": 185285522,
+  "source_url": "https://pricetransparency.providence.org/alaska/live/920016429_providence-alaska-medical-center_standardcharges.json",
+  "source_filename": "920016429_providence-alaska-medical-center_standardcharges.json",
+  "captured_at": "2026-11-02T16:22:17Z",
+  "status": "archived",
+  "artifact_kind": "download",
+  "collector": "github-actions",
+  "container": "plain",
+  "response_headers": {
+    "Content-Type": "application/json",
+    "Content-Length": "185285522",
+    "Content-Disposition": "attachment",
+    "ETag": "\"2d6c69b5636add1:0\"",
+    "Last-Modified": "Mon, 02 Nov 2026 00:47:16 GMT"
+  },
+  "last_attempt_at": "2026-11-02T16:22:17Z",
+  "archive": {
+    "url": "https://archive.org/details/hospital-price-original-7c9bf08532bcc86ec9b855cf6cb3f98b71663a0b0aacddd553c2df8c6689bb6b",
+    "download_url": "https://archive.org/download/hospital-price-original-7c9bf08532bcc86ec9b855cf6cb3f98b71663a0b0aacddd553c2df8c6689bb6b/original-29e5457afc4d891ba185e96f0340a6001f07b7db736607dd831f04c770bb35cc.zst",
+    "compressed_sha256": "29e5457afc4d891ba185e96f0340a6001f07b7db736607dd831f04c770bb35cc",
+    "compressed_bytes": 8239432,
+    "compression": "zstd",
+    "archived_at": "2026-11-02T16:22:49Z"
+  },
+  "snapshot_sha256": "7c9bf08532bcc86ec9b855cf6cb3f98b71663a0b0aacddd553c2df8c6689bb6b",
+  "payload_sha256": "7c9bf08532bcc86ec9b855cf6cb3f98b71663a0b0aacddd553c2df8c6689bb6b"
+}
