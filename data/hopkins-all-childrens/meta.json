@@ -5,11 +5,36 @@
   "source_filename": "590683252_johns-hopkins-all-children-_s-hospital_standardcharges.csv",
   "sha256": "22b33f4ea7277c5e7b8d63912ba7869616a8d1b12c9e91851bbf31b63528dcfa",
   "size_bytes": 18514236,
-  "source_last_modified": "Sat, 29 Aug 2026 12:53:26 GMT",
+  "source_last_modified": "Tue, 03 Nov 2026 18:02:17 GMT",
   "source_etag": null,
   "transfer_fingerprint": "134503bdfe39d5be311d39b3c1b915d872a780cb73d3d19f825750700b790474",
   "status": "stored",
   "first_seen": "2026-08-25T05:46:30Z",
   "last_changed": "2026-08-25T05:46:30Z",
-  "summary_version": 2
+  "summary_version": 2,
+  "original_download": {
+    "download_sha256": "f988a474c295abd4e08d31f88afe48edf86cd94717f31a46f7f7b4bde87cd538",
+    "status": "archived",
+    "captured_at": "2026-11-03T18:02:18Z",
+    "artifact_kind": "download",
+    "archive": {
+      "url": "https://archive.org/details/hospital-price-original-f988a474c295abd4e08d31f88afe48edf86cd94717f31a46f7f7b4bde87cd538",
+      "download_url": "https://archive.org/download/hospital-price-original-f988a474c295abd4e08d31f88afe48edf86cd94717f31a46f7f7b4bde87cd538/original-d46a3f120a36d63afb19b5fac9c180fefef31c20c1c6d402ef8f8cfd32ff17eb.zst",
+      "compressed_sha256": "d46a3f120a36d63afb19b5fac9c180fefef31c20c1c6d402ef8f8cfd32ff17eb",
+      "compressed_bytes": 848021,
+      "compression": "zstd",
+      "archived_at": "2026-11-03T18:02:44Z"
+    }
+  },
+  "cold_storage": {
+    "url": "https://archive.org/details/hospital-price-original-f988a474c295abd4e08d31f88afe48edf86cd94717f31a46f7f7b4bde87cd538",
+    "download_url": "https://archive.org/download/hospital-price-original-f988a474c295abd4e08d31f88afe48edf86cd94717f31a46f7f7b4bde87cd538/original-d46a3f120a36d63afb19b5fac9c180fefef31c20c1c6d402ef8f8cfd32ff17eb.zst",
+    "compressed_sha256": "d46a3f120a36d63afb19b5fac9c180fefef31c20c1c6d402ef8f8cfd32ff17eb",
+    "compressed_bytes": 848021,
+    "compression": "zstd",
+    "archived_at": "2026-11-03T18:02:44Z",
+    "sha256": "22b33f4ea7277c5e7b8d63912ba7869616a8d1b12c9e91851bbf31b63528dcfa",
+    "file_sha256": "f988a474c295abd4e08d31f88afe48edf86cd94717f31a46f7f7b4bde87cd538",
+    "date": "2026-11-03"
+  }
 }

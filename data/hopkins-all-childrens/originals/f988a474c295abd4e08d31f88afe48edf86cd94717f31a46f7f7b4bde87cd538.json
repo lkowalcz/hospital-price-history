@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "slug": "hopkins-all-childrens",
+  "download_sha256": "f988a474c295abd4e08d31f88afe48edf86cd94717f31a46f7f7b4bde87cd538",
+  "download_bytes": 18601305,
+  "source_url": "https://www.hopkinsmedicine.org/-/media/patient-care/documents/billing-insurance/charge-fees/590683252_johns-hopkins-all-children-_s-hospital_standardcharges.csv",
+  "source_filename": "590683252_johns-hopkins-all-children-_s-hospital_standardcharges.csv",
+  "captured_at": "2026-11-03T18:02:18Z",
+  "status": "archived",
+  "artifact_kind": "download",
+  "collector": "pi",
+  "container": "plain",
+  "response_headers": {
+    "Content-Type": "text/csv",
+    "Content-Length": "18601305",
+    "Content-Disposition": "inline; filename=\"590683252_johns-hopkins-all-children-_s-hospital_standardcharges.csv\"",
+    "Last-Modified": "Tue, 03 Nov 2026 18:02:17 GMT"
+  },
+  "last_attempt_at": "2026-11-03T18:02:18Z",
+  "archive": {
+    "url": "https://archive.org/details/hospital-price-original-f988a474c295abd4e08d31f88afe48edf86cd94717f31a46f7f7b4bde87cd538",
+    "download_url": "https://archive.org/download/hospital-price-original-f988a474c295abd4e08d31f88afe48edf86cd94717f31a46f7f7b4bde87cd538/original-d46a3f120a36d63afb19b5fac9c180fefef31c20c1c6d402ef8f8cfd32ff17eb.zst",
+    "compressed_sha256": "d46a3f120a36d63afb19b5fac9c180fefef31c20c1c6d402ef8f8cfd32ff17eb",
+    "compressed_bytes": 848021,
+    "compression": "zstd",
+    "archived_at": "2026-11-03T18:02:44Z"
+  },
+  "snapshot_sha256": "22b33f4ea7277c5e7b8d63912ba7869616a8d1b12c9e91851bbf31b63528dcfa",
+  "payload_sha256": "f988a474c295abd4e08d31f88afe48edf86cd94717f31a46f7f7b4bde87cd538"
+}
