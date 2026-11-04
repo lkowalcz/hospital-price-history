@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "slug": "johns-hopkins",
+  "download_sha256": "6d53647926c07a4c7d034873cf53fcaf79c0765723a91c969800f9e5dc877460",
+  "download_bytes": 14677899,
+  "source_url": "https://www.hopkinsmedicine.org/-/media/patient-care/documents/billing-insurance/charge-fees/520591656_the-johns-hopkins-hospital_standardcharges.csv",
+  "source_filename": "520591656_the-johns-hopkins-hospital_standardcharges.csv",
+  "captured_at": "2026-11-04T18:02:18Z",
+  "status": "archived",
+  "artifact_kind": "download",
+  "collector": "pi",
+  "container": "plain",
+  "response_headers": {
+    "Content-Type": "text/csv",
+    "Content-Length": "14677899",
+    "Content-Disposition": "inline; filename=\"520591656_the-johns-hopkins-hospital_standardcharges.csv\"",
+    "Last-Modified": "Wed, 04 Nov 2026 18:02:17 GMT"
+  },
+  "last_attempt_at": "2026-11-04T18:02:18Z",
+  "archive": {
+    "url": "https://archive.org/details/hospital-price-original-6d53647926c07a4c7d034873cf53fcaf79c0765723a91c969800f9e5dc877460",
+    "download_url": "https://archive.org/download/hospital-price-original-6d53647926c07a4c7d034873cf53fcaf79c0765723a91c969800f9e5dc877460/original-d9efce6ec661ac6e09c83b1d2ba3032134398219e03805036f3c322fac67b97f.zst",
+    "compressed_sha256": "d9efce6ec661ac6e09c83b1d2ba3032134398219e03805036f3c322fac67b97f",
+    "compressed_bytes": 679744,
+    "compression": "zstd",
+    "archived_at": "2026-11-04T18:02:41Z"
+  },
+  "snapshot_sha256": "5756a1330f9bcc80b2aa6c7af5adc3f6254b254930da811817ce479b24be8ef7",
+  "payload_sha256": "6d53647926c07a4c7d034873cf53fcaf79c0765723a91c969800f9e5dc877460"
+}
