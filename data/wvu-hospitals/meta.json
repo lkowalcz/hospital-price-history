@@ -1,16 +1,41 @@
 {
   "system": "WVU Medicine",
   "location_name": "West Virginia University Hospitals",
-  "mrf_url": "https://wvumedicine.org/wp-content/uploads/2026/08/550643304_West-Virginia-University-Hospitals-Inc._standardcharges.csv",
+  "mrf_url": "https://wvumedicine.org/wp-content/uploads/2026/10/550643304_West-Virginia-University-Hospitals-Inc._standardcharges.csv",
   "source_filename": "550643304_West-Virginia-University-Hospitals-Inc._standardcharges.csv",
-  "sha256": "06c1a8d2bffc1c3818399636565ace1c7d89b8accb4f1de34c8c1cfa20398e8a",
-  "size_bytes": 252962653,
-  "source_last_modified": "Mon, 03 Aug 2026 13:24:40 GMT",
+  "sha256": "ef85e30cbf7e7274d52bee90d2d276374e42be63f2b643c140b890b4e9cd2ce1",
+  "size_bytes": 253000351,
+  "source_last_modified": "Thu, 29 Oct 2026 17:22:52 GMT",
   "source_etag": null,
-  "transfer_fingerprint": "1003f0cfb69a94ac62652621e40ef4df888d4d2d4ee5e8f6164f0d1586dc682e",
+  "transfer_fingerprint": "8a5fd889fddbdf2b0fa8a70087d4e53f7c13685ca7b37fe5e8011ce72e0bb495",
   "status": "sharded",
   "first_seen": "2026-08-25T14:17:25Z",
-  "last_changed": "2026-08-25T14:17:25Z",
-  "raw_commit": "e03c3ea8a1ceb8b9ba428f95890ede03de536cc2",
-  "summary_version": 2
+  "last_changed": "2026-11-04T14:48:56Z",
+  "summary_version": 2,
+  "original_download": {
+    "download_sha256": "d077723a3867e2c53c3890133cc0b1097e7f6662a952fce25813834377fb5fac",
+    "status": "archived",
+    "captured_at": "2026-11-04T14:48:23Z",
+    "artifact_kind": "download",
+    "archive": {
+      "url": "https://archive.org/details/hospital-price-original-d077723a3867e2c53c3890133cc0b1097e7f6662a952fce25813834377fb5fac",
+      "download_url": "https://archive.org/download/hospital-price-original-d077723a3867e2c53c3890133cc0b1097e7f6662a952fce25813834377fb5fac/original-600527e9a99ed02b5e460e211a60c6a54107ac0540d98e0e462e97cfdc6c1623.zst",
+      "compressed_sha256": "600527e9a99ed02b5e460e211a60c6a54107ac0540d98e0e462e97cfdc6c1623",
+      "compressed_bytes": 3214900,
+      "compression": "zstd",
+      "archived_at": "2026-11-04T14:48:47Z"
+    }
+  },
+  "cold_storage": {
+    "url": "https://archive.org/details/hospital-price-original-d077723a3867e2c53c3890133cc0b1097e7f6662a952fce25813834377fb5fac",
+    "download_url": "https://archive.org/download/hospital-price-original-d077723a3867e2c53c3890133cc0b1097e7f6662a952fce25813834377fb5fac/original-600527e9a99ed02b5e460e211a60c6a54107ac0540d98e0e462e97cfdc6c1623.zst",
+    "compressed_sha256": "600527e9a99ed02b5e460e211a60c6a54107ac0540d98e0e462e97cfdc6c1623",
+    "compressed_bytes": 3214900,
+    "compression": "zstd",
+    "archived_at": "2026-11-04T14:48:47Z",
+    "sha256": "ef85e30cbf7e7274d52bee90d2d276374e42be63f2b643c140b890b4e9cd2ce1",
+    "file_sha256": "d077723a3867e2c53c3890133cc0b1097e7f6662a952fce25813834377fb5fac",
+    "date": "2026-11-04"
+  },
+  "raw_commit": "9c45fca820ba340af673dac8b1bd00d2dad35053"
 }

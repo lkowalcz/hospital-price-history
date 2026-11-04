@@ -11,5 +11,19 @@
   "status": "stored",
   "first_seen": "2026-08-12T05:04:02Z",
   "last_changed": "2026-08-21T07:34:53Z",
-  "summary_version": 2
+  "summary_version": 2,
+  "original_download": {
+    "download_sha256": "61aba8ebfd933fe70531fc56794e16addf4961e57879f9e43ae103ce733aa75d",
+    "status": "archived",
+    "captured_at": "2026-11-04T14:44:22Z",
+    "artifact_kind": "download",
+    "archive": {
+      "url": "https://archive.org/details/hospital-price-original-61aba8ebfd933fe70531fc56794e16addf4961e57879f9e43ae103ce733aa75d",
+      "download_url": "https://archive.org/download/hospital-price-original-61aba8ebfd933fe70531fc56794e16addf4961e57879f9e43ae103ce733aa75d/original-5c964ae1d0d6996498844b0ae22f23b9efbcc69bf3479e68091c3c48c78803b7.zst",
+      "compressed_sha256": "5c964ae1d0d6996498844b0ae22f23b9efbcc69bf3479e68091c3c48c78803b7",
+      "compressed_bytes": 997365,
+      "compression": "zstd",
+      "archived_at": "2026-11-04T14:45:00Z"
+    }
+  }
 }

@@ -3,13 +3,38 @@
   "location_name": "Corewell Health Butterworth Hospital",
   "mrf_url": "https://assets.contentstack.io/v3/assets/blt3055f692fe7bf193/bltc408d11dea40490d/381360529_corewell-health-butterworth-hospital_standardcharges.csv",
   "source_filename": "381360529_corewell-health-butterworth-hospital_standardcharges.csv",
-  "sha256": "dec33951b5c3f3ec17366aba68f865a3fea9cceaf9f0d223b64b94e2639ecb60",
-  "size_bytes": 30143326,
-  "source_last_modified": "Tue, 06 Oct 2026 18:26:37 GMT",
+  "sha256": "11ab45dfa94d1d132d1ed3c767cdce33b81705df6ef93dcf655c16703c2c6d50",
+  "size_bytes": 33748274,
+  "source_last_modified": "Wed, 04 Nov 2026 09:18:33 GMT",
   "source_etag": null,
-  "transfer_fingerprint": "80a28bc5bf5326897e98679b42d42e558d249f7667fb4651bc53c5f19cf3e96e",
+  "transfer_fingerprint": "3c62c4e4707215e0fd7b61dfa135cdf59eadf5e959dd7d66525dc2687da02b99",
   "status": "stored",
   "first_seen": "2026-08-14T03:56:47Z",
-  "last_changed": "2026-10-07T13:41:16Z",
-  "summary_version": 2
+  "last_changed": "2026-11-04T14:47:44Z",
+  "summary_version": 2,
+  "original_download": {
+    "download_sha256": "af8cefc12e38da8e0f2af0c429bd50be5b38e33cbc79133d5788e9055fae8da8",
+    "status": "archived",
+    "captured_at": "2026-11-04T14:47:12Z",
+    "artifact_kind": "download",
+    "archive": {
+      "url": "https://archive.org/details/hospital-price-original-af8cefc12e38da8e0f2af0c429bd50be5b38e33cbc79133d5788e9055fae8da8",
+      "download_url": "https://archive.org/download/hospital-price-original-af8cefc12e38da8e0f2af0c429bd50be5b38e33cbc79133d5788e9055fae8da8/original-6c7ccd5631ebcbb777bd2a09aef915d7117295eccade76fe651ce203472a2554.zst",
+      "compressed_sha256": "6c7ccd5631ebcbb777bd2a09aef915d7117295eccade76fe651ce203472a2554",
+      "compressed_bytes": 1449323,
+      "compression": "zstd",
+      "archived_at": "2026-11-04T14:47:42Z"
+    }
+  },
+  "cold_storage": {
+    "url": "https://archive.org/details/hospital-price-original-af8cefc12e38da8e0f2af0c429bd50be5b38e33cbc79133d5788e9055fae8da8",
+    "download_url": "https://archive.org/download/hospital-price-original-af8cefc12e38da8e0f2af0c429bd50be5b38e33cbc79133d5788e9055fae8da8/original-6c7ccd5631ebcbb777bd2a09aef915d7117295eccade76fe651ce203472a2554.zst",
+    "compressed_sha256": "6c7ccd5631ebcbb777bd2a09aef915d7117295eccade76fe651ce203472a2554",
+    "compressed_bytes": 1449323,
+    "compression": "zstd",
+    "archived_at": "2026-11-04T14:47:42Z",
+    "sha256": "11ab45dfa94d1d132d1ed3c767cdce33b81705df6ef93dcf655c16703c2c6d50",
+    "file_sha256": "af8cefc12e38da8e0f2af0c429bd50be5b38e33cbc79133d5788e9055fae8da8",
+    "date": "2026-11-04"
+  }
 }

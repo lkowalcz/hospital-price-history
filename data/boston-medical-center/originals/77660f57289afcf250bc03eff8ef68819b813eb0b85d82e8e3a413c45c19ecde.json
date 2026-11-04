@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "slug": "boston-medical-center",
+  "download_sha256": "77660f57289afcf250bc03eff8ef68819b813eb0b85d82e8e3a413c45c19ecde",
+  "download_bytes": 43012814,
+  "source_url": "https://www.bmchealthsystem.org/wp-content/uploads/043314093_BostonMedicalCenter_standardcharges.csv.zip",
+  "source_filename": "043314093_BostonMedicalCenter_standardcharges.csv.zip",
+  "captured_at": "2026-11-04T14:45:27Z",
+  "status": "archived",
+  "artifact_kind": "download",
+  "collector": "github-actions",
+  "container": "zip",
+  "response_headers": {
+    "Content-Type": "application/zip",
+    "Content-Length": "43012814",
+    "ETag": "\"69c550df-29052ce\"",
+    "Last-Modified": "Thu, 26 Mar 2026 15:29:35 GMT"
+  },
+  "last_attempt_at": "2026-11-04T14:45:27Z",
+  "archive": {
+    "url": "https://archive.org/details/hospital-price-original-77660f57289afcf250bc03eff8ef68819b813eb0b85d82e8e3a413c45c19ecde",
+    "download_url": "https://archive.org/download/hospital-price-original-77660f57289afcf250bc03eff8ef68819b813eb0b85d82e8e3a413c45c19ecde/original-38f1dd5c6a9ecd7274f3b3bdd5f452f38717874109ee8e3668a528be3cecab6a.zst",
+    "compressed_sha256": "38f1dd5c6a9ecd7274f3b3bdd5f452f38717874109ee8e3668a528be3cecab6a",
+    "compressed_bytes": 43013815,
+    "compression": "zstd",
+    "archived_at": "2026-11-04T14:45:52Z"
+  },
+  "snapshot_sha256": "a89a6a3073ad4c6c80b1be104c735b66daeaa75c8ad7ae331e83c1288f563150",
+  "payload_sha256": "a89a6a3073ad4c6c80b1be104c735b66daeaa75c8ad7ae331e83c1288f563150"
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "brigham-and-womens",
+  "download_sha256": "c95c8202c190db88dbd641267919484b27bd433f45585cda0d497d9d276ac4ca",
+  "download_bytes": 2876602,
+  "source_url": "https://www.massgeneralbrigham.org/price-transparency/042312909_Brigham-and-Womens-Hospital_StandardCharges.zip",
+  "source_filename": "042312909_Brigham-and-Womens-Hospital_StandardCharges.zip",
+  "captured_at": "2026-11-04T14:43:59Z",
+  "status": "archived",
+  "artifact_kind": "download",
+  "collector": "github-actions",
+  "container": "gzip",
+  "response_headers": {
+    "Content-Type": "application/zip",
+    "Content-Encoding": "gzip",
+    "Content-Length": "2876602",
+    "ETag": "\"0923a157238f398d4a267bdc0faa7e52\"",
+    "Last-Modified": "Thu, 23 Jul 2026 19:36:39 GMT"
+  },
+  "last_attempt_at": "2026-11-04T14:43:59Z",
+  "archive": {
+    "url": "https://archive.org/details/hospital-price-original-c95c8202c190db88dbd641267919484b27bd433f45585cda0d497d9d276ac4ca",
+    "download_url": "https://archive.org/download/hospital-price-original-c95c8202c190db88dbd641267919484b27bd433f45585cda0d497d9d276ac4ca/original-5069a4d13d038c3fbd2e6eba41f9a37f151c220b9d03e42d816a5f70390c33dd.zst",
+    "compressed_sha256": "5069a4d13d038c3fbd2e6eba41f9a37f151c220b9d03e42d816a5f70390c33dd",
+    "compressed_bytes": 2876682,
+    "compression": "zstd",
+    "archived_at": "2026-11-04T14:44:22Z"
+  },
+  "snapshot_sha256": "1fdaca8cf89da24ae22f4028b120db64e7badec1f3d37a361f6878bdfcd4aefd",
+  "payload_sha256": "4d0aeb5a857faf5f30c0938ad7142f111450f0f75a44b703ff54c7a6cd8d3260"
+}
