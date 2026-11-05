@@ -13,10 +13,5 @@
   "last_changed": "2026-10-22T17:06:31Z",
   "note": "ingested from a local fetch (see README notes)",
   "summary_version": 2,
-  "raw_commit": "36d755678439795a581c84ccee501dbc135f61e6",
-  "fetch_failures": {
-    "first_failed": "2026-11-02T18:04:55Z",
-    "last_error": "Cannot mix str and non-str arguments",
-    "last_attempt": "2026-11-02T18:04:55Z"
-  }
+  "raw_commit": "36d755678439795a581c84ccee501dbc135f61e6"
 }
