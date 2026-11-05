@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "sha256": "40ccd8191693f2535ebe71f135a026d7232262db5150842078ac1e619fd72fb0",
+  "bytes": 8205,
+  "source_url": "https://wvumedicine.org/cms-hpt.txt",
+  "first_observed_at": "2026-11-05T14:53:01Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip",
+    "ETag": "W/\"6aeb2c8a-200d\"",
+    "Last-Modified": "Wed, 04 Nov 2026 13:00:58 GMT"
+  }
+}

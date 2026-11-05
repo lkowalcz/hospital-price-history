@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "slug": "christiana-hospital",
+  "download_sha256": "426f854084556f13b8dde02e77ae4694670b59ef028b7b95c04131fae487123a",
+  "download_bytes": 149664560,
+  "source_url": "https://documents.christianacare.org/Finance/510103684_christianacare_standardcharges.csv",
+  "source_filename": "510103684_christianacare_standardcharges.csv",
+  "captured_at": "2026-11-05T14:52:33Z",
+  "status": "archived",
+  "artifact_kind": "download",
+  "collector": "github-actions",
+  "container": "plain",
+  "response_headers": {
+    "Content-Type": "text/csv; charset=utf-8",
+    "Content-Length": "149664560",
+    "Last-Modified": "Tue, 31 Mar 2026 18:21:56 GMT"
+  },
+  "last_attempt_at": "2026-11-05T14:52:33Z",
+  "archive": {
+    "url": "https://archive.org/details/hospital-price-original-426f854084556f13b8dde02e77ae4694670b59ef028b7b95c04131fae487123a",
+    "download_url": "https://archive.org/download/hospital-price-original-426f854084556f13b8dde02e77ae4694670b59ef028b7b95c04131fae487123a/original-5612f7488d2474a38d674ab166a2c971bbdfb27264ebf311d1f38c3a207e0edc.zst",
+    "compressed_sha256": "5612f7488d2474a38d674ab166a2c971bbdfb27264ebf311d1f38c3a207e0edc",
+    "compressed_bytes": 10116832,
+    "compression": "zstd",
+    "archived_at": "2026-11-05T14:52:59Z"
+  },
+  "snapshot_sha256": "dd3229b5ff13af29fb874ff2eb3a510dd6aa6b0f39e691dd47c77e7a88aa0f2e",
+  "payload_sha256": "426f854084556f13b8dde02e77ae4694670b59ef028b7b95c04131fae487123a"
+}

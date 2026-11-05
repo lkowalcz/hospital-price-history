@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "slug": "wvu-hospitals",
+  "download_sha256": "d077723a3867e2c53c3890133cc0b1097e7f6662a952fce25813834377fb5fac",
+  "download_bytes": 253030232,
+  "source_url": "https://wvumedicine.org/wp-content/uploads/2026/10/550643304_West-Virginia-University-Hospitals-Inc._standardcharges.csv",
+  "source_filename": "550643304_West-Virginia-University-Hospitals-Inc._standardcharges.csv",
+  "captured_at": "2026-11-04T14:48:23Z",
+  "status": "archived",
+  "artifact_kind": "download",
+  "collector": "github-actions",
+  "container": "plain",
+  "response_headers": {
+    "Content-Type": "text/csv; charset=utf-8",
+    "Content-Length": "253030232",
+    "Last-Modified": "Thu, 29 Oct 2026 17:22:52 GMT"
+  },
+  "last_attempt_at": "2026-11-04T14:48:23Z",
+  "archive": {
+    "url": "https://archive.org/details/hospital-price-original-d077723a3867e2c53c3890133cc0b1097e7f6662a952fce25813834377fb5fac",
+    "download_url": "https://archive.org/download/hospital-price-original-d077723a3867e2c53c3890133cc0b1097e7f6662a952fce25813834377fb5fac/original-600527e9a99ed02b5e460e211a60c6a54107ac0540d98e0e462e97cfdc6c1623.zst",
+    "compressed_sha256": "600527e9a99ed02b5e460e211a60c6a54107ac0540d98e0e462e97cfdc6c1623",
+    "compressed_bytes": 3214900,
+    "compression": "zstd",
+    "archived_at": "2026-11-04T14:48:47Z"
+  },
+  "snapshot_sha256": "ef85e30cbf7e7274d52bee90d2d276374e42be63f2b643c140b890b4e9cd2ce1",
+  "payload_sha256": "d077723a3867e2c53c3890133cc0b1097e7f6662a952fce25813834377fb5fac"
+}

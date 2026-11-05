@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "slug": "corewell-butterworth",
+  "download_sha256": "af8cefc12e38da8e0f2af0c429bd50be5b38e33cbc79133d5788e9055fae8da8",
+  "download_bytes": 33900243,
+  "source_url": "https://assets.contentstack.io/v3/assets/blt3055f692fe7bf193/bltc408d11dea40490d/381360529_corewell-health-butterworth-hospital_standardcharges.csv",
+  "source_filename": "381360529_corewell-health-butterworth-hospital_standardcharges.csv",
+  "captured_at": "2026-11-04T14:47:12Z",
+  "status": "archived",
+  "artifact_kind": "download",
+  "collector": "github-actions",
+  "container": "plain",
+  "response_headers": {
+    "Content-Type": "text/csv",
+    "Content-Length": "33900243",
+    "Content-Disposition": "inline; filename=381360529_corewell-health-butterworth-hospital_standardcharges.csv",
+    "Last-Modified": "Wed, 04 Nov 2026 09:18:33 GMT"
+  },
+  "last_attempt_at": "2026-11-04T14:47:12Z",
+  "archive": {
+    "url": "https://archive.org/details/hospital-price-original-af8cefc12e38da8e0f2af0c429bd50be5b38e33cbc79133d5788e9055fae8da8",
+    "download_url": "https://archive.org/download/hospital-price-original-af8cefc12e38da8e0f2af0c429bd50be5b38e33cbc79133d5788e9055fae8da8/original-6c7ccd5631ebcbb777bd2a09aef915d7117295eccade76fe651ce203472a2554.zst",
+    "compressed_sha256": "6c7ccd5631ebcbb777bd2a09aef915d7117295eccade76fe651ce203472a2554",
+    "compressed_bytes": 1449323,
+    "compression": "zstd",
+    "archived_at": "2026-11-04T14:47:42Z"
+  },
+  "snapshot_sha256": "11ab45dfa94d1d132d1ed3c767cdce33b81705df6ef93dcf655c16703c2c6d50",
+  "payload_sha256": "af8cefc12e38da8e0f2af0c429bd50be5b38e33cbc79133d5788e9055fae8da8"
+}

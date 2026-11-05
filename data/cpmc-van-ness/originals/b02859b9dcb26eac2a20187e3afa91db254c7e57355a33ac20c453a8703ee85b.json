@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "slug": "cpmc-van-ness",
+  "download_sha256": "b02859b9dcb26eac2a20187e3afa91db254c7e57355a33ac20c453a8703ee85b",
+  "download_bytes": 16860354,
+  "source_url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/940562680-1740348929_california-pacific-medical-center-van-ness-campus_standardcharges.csv",
+  "source_filename": "940562680-1740348929_california-pacific-medical-center-van-ness-campus_standardcharges.csv",
+  "captured_at": "2026-11-05T14:50:20Z",
+  "status": "archived",
+  "artifact_kind": "download",
+  "collector": "github-actions",
+  "container": "plain",
+  "response_headers": {
+    "Content-Type": "text/csv",
+    "Content-Length": "16860354",
+    "ETag": "\"0x8DF2EDD5B39C9F7\"",
+    "Last-Modified": "Tue, 20 Oct 2026 19:07:16 GMT"
+  },
+  "last_attempt_at": "2026-11-05T14:50:20Z",
+  "archive": {
+    "url": "https://archive.org/details/hospital-price-original-b02859b9dcb26eac2a20187e3afa91db254c7e57355a33ac20c453a8703ee85b",
+    "download_url": "https://archive.org/download/hospital-price-original-b02859b9dcb26eac2a20187e3afa91db254c7e57355a33ac20c453a8703ee85b/original-0874982668c0be1bfbb9706d7b41de48a6cba8e594719727a99711a98f3039a0.zst",
+    "compressed_sha256": "0874982668c0be1bfbb9706d7b41de48a6cba8e594719727a99711a98f3039a0",
+    "compressed_bytes": 501103,
+    "compression": "zstd",
+    "archived_at": "2026-11-05T14:50:42Z"
+  },
+  "snapshot_sha256": "51fd5e4c428810717720549adfc683665f66007de187eee944981d2da6e20651",
+  "payload_sha256": "b02859b9dcb26eac2a20187e3afa91db254c7e57355a33ac20c453a8703ee85b"
+}

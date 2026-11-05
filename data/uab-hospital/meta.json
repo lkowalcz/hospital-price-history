@@ -5,26 +5,26 @@
   "source_filename": "63-6005396_university-of-alabama-hospital_standardcharges.csv",
   "sha256": "349af7a85c60f200c728a2dcef1bb7ea58aa5d3cc8c30ce2096545805b5e2cb1",
   "size_bytes": 409312421,
-  "source_last_modified": "Thu, 05 Mar 2026 15:37:44 GMT",
-  "source_etag": "\"3a5bd1f-64c48b7b977b7\"",
-  "transfer_fingerprint": "1b6b55afc8920dbcac7da39e28808d29303f1c75610caf96d9fc44529b0a6bf4",
+  "source_last_modified": "Thu, 05 Mar 2026 15:37:43 GMT",
+  "source_etag": "\"3a5bd1f-64c48b7b83941\"",
+  "transfer_fingerprint": "99064f30492ed3b060362a93c474b0e5caa601c2e6863b742d56e2922da3b2ae",
   "status": "sharded",
   "first_seen": "2026-08-14T04:07:36Z",
   "last_changed": "2026-08-14T04:07:36Z",
   "raw_commit": "e03c3ea8a1ceb8b9ba428f95890ede03de536cc2",
   "summary_version": 2,
   "original_download": {
-    "download_sha256": "d81f34d756358b0d6851f332515aae16ec938e207aaa8a380453072266cbd67f",
+    "download_sha256": "4b4fb8953e8b66881a46c9af96d17bc3451364ca32e69fcd46302413328938e4",
     "status": "archived",
-    "captured_at": "2026-11-02T16:21:07Z",
+    "captured_at": "2026-11-05T14:51:15Z",
     "artifact_kind": "download",
     "archive": {
-      "url": "https://archive.org/details/hospital-price-original-d81f34d756358b0d6851f332515aae16ec938e207aaa8a380453072266cbd67f",
-      "download_url": "https://archive.org/download/hospital-price-original-d81f34d756358b0d6851f332515aae16ec938e207aaa8a380453072266cbd67f/original-ed1084e7ef0c2f0c769075afc18fbb3677b215ac5a4ac355a2fc88f2bc1e1780.zst",
-      "compressed_sha256": "ed1084e7ef0c2f0c769075afc18fbb3677b215ac5a4ac355a2fc88f2bc1e1780",
+      "url": "https://archive.org/details/hospital-price-original-4b4fb8953e8b66881a46c9af96d17bc3451364ca32e69fcd46302413328938e4",
+      "download_url": "https://archive.org/download/hospital-price-original-4b4fb8953e8b66881a46c9af96d17bc3451364ca32e69fcd46302413328938e4/original-034b8a0ef11ee2cb9f65d25ac660abdd7b8af859e700bfd8804b0e74e24205a8.zst",
+      "compressed_sha256": "034b8a0ef11ee2cb9f65d25ac660abdd7b8af859e700bfd8804b0e74e24205a8",
       "compressed_bytes": 61194918,
       "compression": "zstd",
-      "archived_at": "2026-11-02T16:21:38Z"
+      "archived_at": "2026-11-05T14:51:40Z"
     }
   }
 }

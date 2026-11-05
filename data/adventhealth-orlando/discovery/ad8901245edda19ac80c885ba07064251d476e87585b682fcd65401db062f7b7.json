@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "sha256": "ad8901245edda19ac80c885ba07064251d476e87585b682fcd65401db062f7b7",
+  "bytes": 30563,
+  "source_url": "https://www.adventhealth.com/cms-hpt.txt",
+  "first_observed_at": "2026-11-05T14:50:17Z",
+  "response_headers": {
+    "Content-Type": "text/plain",
+    "Content-Encoding": "gzip",
+    "Content-Length": "2129",
+    "Last-Modified": "Wed, 04 Nov 2026 22:03:27 GMT"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "slug": "denver-health",
+  "download_sha256": "b94dc436cac6f16dab6f674e668393bcd94ac0ac4b1d09b376ed950cdb1565f1",
+  "download_bytes": 201084332,
+  "source_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7840/841343242_denver-health-and-hospital-authority_standardcharges.csv",
+  "source_filename": "841343242_denver-health-and-hospital-authority_standardcharges.csv",
+  "captured_at": "2026-11-05T14:51:45Z",
+  "status": "archived",
+  "artifact_kind": "download",
+  "collector": "github-actions",
+  "container": "plain",
+  "response_headers": {
+    "Content-Type": "application/octet-stream",
+    "Content-Length": "201084332",
+    "ETag": "0x8DEA6D0CC3CF122",
+    "Last-Modified": "Thu, 30 Apr 2026 15:54:44 GMT"
+  },
+  "last_attempt_at": "2026-11-05T14:51:45Z",
+  "archive": {
+    "url": "https://archive.org/details/hospital-price-original-b94dc436cac6f16dab6f674e668393bcd94ac0ac4b1d09b376ed950cdb1565f1",
+    "download_url": "https://archive.org/download/hospital-price-original-b94dc436cac6f16dab6f674e668393bcd94ac0ac4b1d09b376ed950cdb1565f1/original-735207951fb835bd8c04fa3e8321705e85ae1db5aa812d8cdfe5d3205a0ca0ae.zst",
+    "compressed_sha256": "735207951fb835bd8c04fa3e8321705e85ae1db5aa812d8cdfe5d3205a0ca0ae",
+    "compressed_bytes": 11480219,
+    "compression": "zstd",
+    "archived_at": "2026-11-05T14:52:08Z"
+  },
+  "snapshot_sha256": "7377e99e651872d692103ba256d10722712a417fbc09065a1d65f759fdea89a6",
+  "payload_sha256": "b94dc436cac6f16dab6f674e668393bcd94ac0ac4b1d09b376ed950cdb1565f1"
+}
