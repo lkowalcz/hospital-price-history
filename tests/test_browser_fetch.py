@@ -81,6 +81,41 @@ class BrowserTransportTests(unittest.TestCase):
             self.assertFalse(dest.with_suffix(".csv.part").exists())
 
 
+class WorkaroundDiscoveryTests(unittest.TestCase):
+    def test_centennial_renamed_listing_uses_its_file_with_donor_token(self):
+        listing = b"""location-name: TRISTAR ASHLAND CITY MEDICAL CENTER
+mrf-url: https://x/ashland.json?sig=stale
+location-name: TRISTAR CENTENNIAL MEDICAL CENTER
+mrf-url: https://x/centennial.json?sig=stale
+location-name: TRISTAR CENTENNIAL WOMEN'S HOSPITAL
+mrf-url: https://x/womens.json?sig=stale
+"""
+        with patch.object(scrape, "fetch_small", return_value=(listing, {})), \
+                patch.object(scrape.preserve_source, "enabled", return_value=False), \
+                patch.object(local_refetch, "meta_of", return_value={"mrf_url": "https://x/donor.json?sig=current"}):
+            self.assertEqual(local_refetch.workaround_url("tristar-centennial"),
+                             "https://x/centennial.json?sig=current")
+
+    def test_missing_listing_or_url_fails_before_fetch_without_refreshing_verification(self):
+        for listing in (b"location-name: Other Hospital\nmrf-url: https://x/other.json\n",
+                        b"location-name: TRISTAR CENTENNIAL MEDICAL CENTER\nmrf-url: \n"):
+            observation = {}
+            with self.subTest(listing=listing), \
+                    patch.object(scrape, "fetch_small", return_value=(listing, {})), \
+                    patch.object(scrape.preserve_source, "enabled", return_value=False), \
+                    patch.object(scrape, "remote_fingerprint") as fingerprint, \
+                    patch.object(scrape, "clear_failure_record") as clear, \
+                    patch.object(local_refetch, "run") as run:
+                with self.assertRaisesRegex(ValueError, "tristar-centennial: no MRF URL listed"):
+                    local_refetch.refetch_workaround("tristar-centennial", Path("unused"), observation)
+                fingerprint.assert_not_called()
+                run.assert_not_called()
+                clear.assert_not_called()
+            self.assertEqual(observation["outcome"], "failed")
+            self.assertNotIn("verified_at", observation)
+            self.assertNotIn("downloaded_at", observation)
+
+
 class YaleFallbackTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()

@@ -173,6 +173,25 @@ the collector additionally includes unpublished local reservations.
   `latest_summary_snapshot` and hospital page link to the last available summary
   without representing it as the current source.
 
+### Freshness alert on 2026-11-05 (UTC)
+
+The [failed freshness run](https://github.com/lkowalcz/hospital-price-history/actions/runs/41941655954)
+reported overdue verification for Maine Medical Center and TriStar Centennial.
+Both scheduled collectors were still attempting their assigned hospitals.
+
+- TriStar renamed its discovery listing from `CENTENNIAL MEDICAL CENTER` to
+  `TRISTAR CENTENNIAL MEDICAL CENTER`. The roster now follows that exact name.
+  The local workaround also reports a missing listing explicitly instead of
+  passing a missing URL into URL parsing (`Cannot mix str and non-str arguments`).
+  A live check of the corrected URL matched the stored five-range fingerprint;
+  the file itself remains available. Deploy the roster and collector change to
+  the Pi and collect a successful observation to clear its overdue status.
+- Maine's currently published URL still returns HTTP 200 with Content-Length 0
+  and the MD5 of empty bytes. It remains a source failure. A successful TriStar
+  check alone will not clear the workflow: Maine needs a usable source file
+  before its verification can advance. Keep the existing freshness deadlines
+  and empty-file rejection in place.
+
 ## Hospitals handled locally
 
 - **Runner IP blocks**: the Johns Hopkins hospitals (four slugs), Orlando

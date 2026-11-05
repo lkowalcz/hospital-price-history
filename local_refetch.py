@@ -122,10 +122,12 @@ def meta_of(slug):
 def workaround_url(slug):
     if slug == "yale-new-haven":
         return YALE_URL
+    hospital = next(h for h in json.loads((ROOT / "hospitals.json").read_text())
+                    if h["slug"] == slug)
+    published = scrape.discover_mrf_url(hospital, False)
+    if not published:
+        raise ValueError(f"{slug}: no MRF URL listed for {hospital['location_name']!r} in cms-hpt.txt")
     donor = meta_of(SAS_DONOR).get("mrf_url", "")
-    published = scrape.discover_mrf_url(
-        next(h for h in json.loads((ROOT / "hospitals.json").read_text())
-             if h["slug"] == slug), False)
     s = urllib.parse.urlsplit(published)
     return urllib.parse.urlunsplit(
         (s.scheme, s.netloc, s.path, urllib.parse.urlsplit(donor).query, ""))
