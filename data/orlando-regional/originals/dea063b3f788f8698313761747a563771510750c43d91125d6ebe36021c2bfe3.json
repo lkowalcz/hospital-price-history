@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "slug": "orlando-regional",
+  "download_sha256": "dea063b3f788f8698313761747a563771510750c43d91125d6ebe36021c2bfe3",
+  "download_bytes": 90570353,
+  "source_url": "https://HospitalPriceDisclosure.com/download.aspx?pi=r5C56pFicSGYmflCJ5*__*QXg*-*",
+  "source_filename": "download.aspx.json",
+  "captured_at": "2026-11-05T18:03:30Z",
+  "status": "archived",
+  "artifact_kind": "download",
+  "collector": "pi",
+  "container": "plain",
+  "response_headers": {
+    "Content-Type": "application/octet-stream",
+    "Content-Length": "90570353",
+    "ETag": "0x8DE8EC835AEB6F3",
+    "Last-Modified": "Tue, 31 Mar 2026 01:52:47 GMT"
+  },
+  "last_attempt_at": "2026-11-05T18:03:30Z",
+  "archive": {
+    "url": "https://archive.org/details/hospital-price-original-dea063b3f788f8698313761747a563771510750c43d91125d6ebe36021c2bfe3",
+    "download_url": "https://archive.org/download/hospital-price-original-dea063b3f788f8698313761747a563771510750c43d91125d6ebe36021c2bfe3/original-5cb95c93a38ae5394c43466b8fbefe1c668e5049f483d91596a32f4123119f3e.zst",
+    "compressed_sha256": "5cb95c93a38ae5394c43466b8fbefe1c668e5049f483d91596a32f4123119f3e",
+    "compressed_bytes": 1849972,
+    "compression": "zstd",
+    "archived_at": "2026-11-05T18:03:57Z"
+  },
+  "snapshot_sha256": "dea063b3f788f8698313761747a563771510750c43d91125d6ebe36021c2bfe3",
+  "payload_sha256": "dea063b3f788f8698313761747a563771510750c43d91125d6ebe36021c2bfe3"
+}
