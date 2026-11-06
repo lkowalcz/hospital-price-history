@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "emory-university-hospital",
+  "download_sha256": "03d57df5c9685bd11f112d2372eb87a3d3b8fb3b7d1ee058505a72a14cd792b6",
+  "download_bytes": 53983440,
+  "source_url": "https://www.emoryhealthcare.org/-/media/Project/EH/Emory/ui/pricing-transparency/csv/2026/580566256_1588640692_emory-university_standardcharges.csv",
+  "source_filename": "580566256_1588640692_emory-university_standardcharges.csv",
+  "captured_at": "2026-11-06T14:27:17Z",
+  "status": "archived",
+  "artifact_kind": "download",
+  "collector": "github-actions",
+  "container": "plain",
+  "response_headers": {
+    "Content-Type": "text/csv",
+    "Content-Length": "53983440",
+    "Content-Disposition": "inline; filename=\"580566256_1588640692_emory-university_standardcharges.csv\"",
+    "ETag": "beb0c23900c64ab2872353b9f8a15a58",
+    "Last-Modified": "Wed, 03 Jun 2026 21:31:28 GMT"
+  },
+  "last_attempt_at": "2026-11-06T14:27:17Z",
+  "archive": {
+    "url": "https://archive.org/details/hospital-price-original-03d57df5c9685bd11f112d2372eb87a3d3b8fb3b7d1ee058505a72a14cd792b6",
+    "download_url": "https://archive.org/download/hospital-price-original-03d57df5c9685bd11f112d2372eb87a3d3b8fb3b7d1ee058505a72a14cd792b6/original-08a98cf780f4b7800283a5e91c2604972e06b7dfd5be641bb87322db3709e797.zst",
+    "compressed_sha256": "08a98cf780f4b7800283a5e91c2604972e06b7dfd5be641bb87322db3709e797",
+    "compressed_bytes": 2150100,
+    "compression": "zstd",
+    "archived_at": "2026-11-06T14:27:50Z"
+  },
+  "snapshot_sha256": "e1bf1a0be650a80b72f20076db77cad825200a6a8b3102a4ff129c031bd786db",
+  "payload_sha256": "03d57df5c9685bd11f112d2372eb87a3d3b8fb3b7d1ee058505a72a14cd792b6"
+}

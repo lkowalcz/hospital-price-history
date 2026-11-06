@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "slug": "dmc-harper",
+  "download_sha256": "9dc7464eaa385731ef0b33938a3492e588c03bd4ea2295d43813a7ae05763dd5",
+  "download_bytes": 137986961,
+  "source_url": "https://mrfs.hyvehealthcare.com/TenetHealth/272844767-1427360700_vhs-harper-hutzel-hospital-inc_standardcharges.json",
+  "source_filename": "272844767-1427360700_vhs-harper-hutzel-hospital-inc_standardcharges.json",
+  "captured_at": "2026-11-06T14:28:08Z",
+  "status": "archived",
+  "artifact_kind": "download",
+  "collector": "github-actions",
+  "container": "plain",
+  "response_headers": {
+    "Content-Type": "application/force-download",
+    "Content-Length": "137986961",
+    "ETag": "\"0x8DF0A078E0D9B2C\"",
+    "Last-Modified": "Thu, 03 Sep 2026 22:06:07 GMT"
+  },
+  "last_attempt_at": "2026-11-06T14:28:08Z",
+  "archive": {
+    "url": "https://archive.org/details/hospital-price-original-9dc7464eaa385731ef0b33938a3492e588c03bd4ea2295d43813a7ae05763dd5",
+    "download_url": "https://archive.org/download/hospital-price-original-9dc7464eaa385731ef0b33938a3492e588c03bd4ea2295d43813a7ae05763dd5/original-5ffb0529e003b189009e4b0541aacf624f83f48e0e9f2489ef1bd8746fb1b710.zst",
+    "compressed_sha256": "5ffb0529e003b189009e4b0541aacf624f83f48e0e9f2489ef1bd8746fb1b710",
+    "compressed_bytes": 3051244,
+    "compression": "zstd",
+    "archived_at": "2026-11-06T14:28:33Z"
+  },
+  "snapshot_sha256": "9dc7464eaa385731ef0b33938a3492e588c03bd4ea2295d43813a7ae05763dd5",
+  "payload_sha256": "9dc7464eaa385731ef0b33938a3492e588c03bd4ea2295d43813a7ae05763dd5"
+}
