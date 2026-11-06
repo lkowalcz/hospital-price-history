@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "slug": "sibley-memorial",
+  "download_sha256": "905702381a8a3d26205d481dc3587361588ae3f64bac1d424c2bcca85e59d31a",
+  "download_bytes": 22229031,
+  "source_url": "https://www.hopkinsmedicine.org/-/media/patient-care/documents/billing-insurance/charge-fees/450562642_sibley-memorial-hospital_standardcharges.csv",
+  "source_filename": "450562642_sibley-memorial-hospital_standardcharges.csv",
+  "captured_at": "2026-11-06T18:04:40Z",
+  "status": "pending",
+  "artifact_kind": "download",
+  "collector": "pi",
+  "container": "plain",
+  "response_headers": {
+    "Content-Type": "text/csv",
+    "Content-Length": "22229031",
+    "Content-Disposition": "inline; filename=\"450562642_sibley-memorial-hospital_standardcharges.csv\"",
+    "Last-Modified": "Fri, 06 Nov 2026 18:04:39 GMT"
+  },
+  "last_attempt_at": "2026-11-06T18:04:40Z",
+  "last_error": "Command '['/home/lkowalcz/hospital-price-history/.venv/bin/ia', 'upload', 'hospital-price-original-905702381a8a3d26205d481dc3587361588ae3f64bac1d424c2bcca85e59d31a', '/home/lkowalcz/hospital-price-history/.archive-spool/sibley-memorial/905702381a8a3d26205d481dc3587361588ae3f64bac1d424c2bcca85e59d31a/original-b368b157276d085e7caacdbeea7899e23d8427b472cdd80e7b4529ac39bc9c87.zst', '--no-derive', '--checksum', '--retries', '3', '--sleep', '20', '--metadata', 'mediatype:data', '--metadata', 'title:Ho",
+  "snapshot_sha256": "657bbc3064857af50099dbe989644b032a5d6e22e3414f3e074b12b68dfdf368",
+  "payload_sha256": "905702381a8a3d26205d481dc3587361588ae3f64bac1d424c2bcca85e59d31a"
+}
