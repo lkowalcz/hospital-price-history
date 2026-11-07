@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "slug": "harborview",
+  "download_sha256": "482427e536899750d2c15a81d4baae742df9f6f11a0e627a060a67532909962b",
+  "download_bytes": 62330717,
+  "source_url": "https://www.uwmedicine.org/sites/stevie/files/mrf/911631806_harborview-medical-center_standardcharges.json",
+  "source_filename": "911631806_harborview-medical-center_standardcharges.json",
+  "captured_at": "2026-11-07T13:23:34Z",
+  "status": "archived",
+  "artifact_kind": "download",
+  "collector": "github-actions",
+  "container": "plain",
+  "response_headers": {
+    "Content-Type": "application/octet-stream",
+    "Content-Encoding": "gzip",
+    "Content-Length": "2751444",
+    "Last-Modified": "Wed, 01 Apr 2026 19:06:56 GMT"
+  },
+  "last_attempt_at": "2026-11-07T13:23:34Z",
+  "archive": {
+    "url": "https://archive.org/details/hospital-price-original-482427e536899750d2c15a81d4baae742df9f6f11a0e627a060a67532909962b",
+    "download_url": "https://archive.org/download/hospital-price-original-482427e536899750d2c15a81d4baae742df9f6f11a0e627a060a67532909962b/original-22c2b41b2f6b65394fac5a94398f0cd5d94137b7b0966f03e47c3df83b3fe99b.zst",
+    "compressed_sha256": "22c2b41b2f6b65394fac5a94398f0cd5d94137b7b0966f03e47c3df83b3fe99b",
+    "compressed_bytes": 1991823,
+    "compression": "zstd",
+    "archived_at": "2026-11-07T13:24:02Z"
+  },
+  "snapshot_sha256": "482427e536899750d2c15a81d4baae742df9f6f11a0e627a060a67532909962b",
+  "payload_sha256": "482427e536899750d2c15a81d4baae742df9f6f11a0e627a060a67532909962b"
+}

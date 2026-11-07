@@ -3,14 +3,39 @@
   "location_name": "Mount Sinai Hospital",
   "mrf_url": "https://www.mountsinai.org/files/mrf/131624096_mount-sinai-hospital_standardcharges.json",
   "source_filename": "131624096_mount-sinai-hospital_standardcharges.json",
-  "sha256": "7ed0c38603bc2b3d5068663adc4ed0fc10120f96442e994dca3b0f5e2c7a063a",
-  "size_bytes": 158239446,
-  "source_last_modified": "Fri, 02 Oct 2026 15:46:16 GMT",
-  "source_etag": "\"03efd9ab0729b13182b05868ceabd670:1790955976.938505\"",
-  "transfer_fingerprint": "bb3af6bbc7ae71b85b69388a5eba993ae2b0c8bd47d73c204cd986cb238a98ae",
+  "sha256": "3d3ce119ee368a8785c87b9ead89b9d15a80fbc3391a4f559e9f0ae5fe63ff3e",
+  "size_bytes": 158261884,
+  "source_last_modified": "Fri, 06 Nov 2026 19:22:04 GMT",
+  "source_etag": "\"4eca26e7e4c45fcb9ee6871bb6ca497a:1793992924.492986\"",
+  "transfer_fingerprint": "0ab8f3c4e89190c11156a5b46f9c9c629d059909241f5ae8c30759112ba29345",
   "status": "sharded",
   "first_seen": "2026-08-14T05:14:55Z",
-  "last_changed": "2026-10-03T11:52:25Z",
+  "last_changed": "2026-11-07T13:22:29Z",
   "summary_version": 2,
-  "raw_commit": "97d508df10b00942bbb9488141312e8111381bec"
+  "original_download": {
+    "download_sha256": "3d3ce119ee368a8785c87b9ead89b9d15a80fbc3391a4f559e9f0ae5fe63ff3e",
+    "status": "archived",
+    "captured_at": "2026-11-07T13:21:33Z",
+    "artifact_kind": "download",
+    "archive": {
+      "url": "https://archive.org/details/hospital-price-original-3d3ce119ee368a8785c87b9ead89b9d15a80fbc3391a4f559e9f0ae5fe63ff3e",
+      "download_url": "https://archive.org/download/hospital-price-original-3d3ce119ee368a8785c87b9ead89b9d15a80fbc3391a4f559e9f0ae5fe63ff3e/original-1cb7658b55d76d2a464c7466ef547f19b32cdb1ed3398acff007e618ed86e395.zst",
+      "compressed_sha256": "1cb7658b55d76d2a464c7466ef547f19b32cdb1ed3398acff007e618ed86e395",
+      "compressed_bytes": 5014689,
+      "compression": "zstd",
+      "archived_at": "2026-11-07T13:22:14Z"
+    }
+  },
+  "cold_storage": {
+    "url": "https://archive.org/details/hospital-price-original-3d3ce119ee368a8785c87b9ead89b9d15a80fbc3391a4f559e9f0ae5fe63ff3e",
+    "download_url": "https://archive.org/download/hospital-price-original-3d3ce119ee368a8785c87b9ead89b9d15a80fbc3391a4f559e9f0ae5fe63ff3e/original-1cb7658b55d76d2a464c7466ef547f19b32cdb1ed3398acff007e618ed86e395.zst",
+    "compressed_sha256": "1cb7658b55d76d2a464c7466ef547f19b32cdb1ed3398acff007e618ed86e395",
+    "compressed_bytes": 5014689,
+    "compression": "zstd",
+    "archived_at": "2026-11-07T13:22:14Z",
+    "sha256": "3d3ce119ee368a8785c87b9ead89b9d15a80fbc3391a4f559e9f0ae5fe63ff3e",
+    "file_sha256": "3d3ce119ee368a8785c87b9ead89b9d15a80fbc3391a4f559e9f0ae5fe63ff3e",
+    "date": "2026-11-07"
+  },
+  "raw_commit": "655fe1cc4d6595da9ce6bcb08cca24a0fe7c1652"
 }

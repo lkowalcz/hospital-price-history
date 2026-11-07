@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "slug": "grady",
+  "download_sha256": "3a26dd319a0abc902f8b25d7149ee5be537b1abb4951c42840801a16d0abc4ad",
+  "download_bytes": 5936790,
+  "source_url": "https://www.gradyhealth.org/files/263037695_GradyMemorialHospitalCorporation_standardcharges.csv.zip",
+  "source_filename": "263037695_GradyMemorialHospitalCorporation_standardcharges.csv.zip",
+  "captured_at": "2026-11-07T13:20:41Z",
+  "status": "archived",
+  "artifact_kind": "download",
+  "collector": "github-actions",
+  "container": "zip",
+  "response_headers": {
+    "Content-Type": "application/zip",
+    "Content-Length": "5936790",
+    "ETag": "\"69557067-5a9696\"",
+    "Last-Modified": "Wed, 31 Dec 2025 18:50:15 GMT"
+  },
+  "last_attempt_at": "2026-11-07T13:20:41Z",
+  "archive": {
+    "url": "https://archive.org/details/hospital-price-original-3a26dd319a0abc902f8b25d7149ee5be537b1abb4951c42840801a16d0abc4ad",
+    "download_url": "https://archive.org/download/hospital-price-original-3a26dd319a0abc902f8b25d7149ee5be537b1abb4951c42840801a16d0abc4ad/original-cbb5c98b92971dc6d908c058fc4e2eb10415605876c9bcb7f80e17f83ecd079e.zst",
+    "compressed_sha256": "cbb5c98b92971dc6d908c058fc4e2eb10415605876c9bcb7f80e17f83ecd079e",
+    "compressed_bytes": 5507809,
+    "compression": "zstd",
+    "archived_at": "2026-11-07T13:21:14Z"
+  },
+  "snapshot_sha256": "b601ff733e27c381905af95ac4d0c48fcfde835b77a3276c4e1cb5eb4d747334",
+  "payload_sha256": "56a52c7d93dfce17bfb549a283809efbe8dc9eb30423eed183ddb0b29535ad6f"
+}

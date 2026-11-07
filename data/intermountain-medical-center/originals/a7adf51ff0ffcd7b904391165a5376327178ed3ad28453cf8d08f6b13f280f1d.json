@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "slug": "intermountain-medical-center",
+  "download_sha256": "a7adf51ff0ffcd7b904391165a5376327178ed3ad28453cf8d08f6b13f280f1d",
+  "download_bytes": 9351214,
+  "source_url": "https://intermountainhealthcare.org/-/media/files/intermountain-health/locations/hospital-prices/942854057_intermountain-medical-center_standardcharges.ashx",
+  "source_filename": "942854057_intermountain-medical-center_standardcharges.zip",
+  "captured_at": "2026-11-07T13:20:09Z",
+  "status": "archived",
+  "artifact_kind": "download",
+  "collector": "github-actions",
+  "container": "zip",
+  "response_headers": {
+    "Content-Type": "application/x-zip-compressed",
+    "Content-Disposition": "attachment; filename=\"942854057_intermountain-medical-center_standardcharges.zip\"",
+    "Last-Modified": "Mon, 31 Aug 2026 17:12:00 GMT"
+  },
+  "last_attempt_at": "2026-11-07T13:20:09Z",
+  "archive": {
+    "url": "https://archive.org/details/hospital-price-original-a7adf51ff0ffcd7b904391165a5376327178ed3ad28453cf8d08f6b13f280f1d",
+    "download_url": "https://archive.org/download/hospital-price-original-a7adf51ff0ffcd7b904391165a5376327178ed3ad28453cf8d08f6b13f280f1d/original-f77e867d8828333959cdce0789b3449ebb145f172f1df4b019984ab0a9a8c850.zst",
+    "compressed_sha256": "f77e867d8828333959cdce0789b3449ebb145f172f1df4b019984ab0a9a8c850",
+    "compressed_bytes": 7855241,
+    "compression": "zstd",
+    "archived_at": "2026-11-07T13:20:33Z"
+  },
+  "snapshot_sha256": "61d054ac6f78ddc4ea1ba2feebb6d0f9e3b4cad6e56ecea0b43f636a3b32c158",
+  "payload_sha256": "3273e79d9f9a0a1e43fecc5a3486688a18a1618facbe4f87c15cac9c9c75ea1c"
+}
