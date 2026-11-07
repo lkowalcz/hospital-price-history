@@ -46,6 +46,43 @@ do not refresh them. Incomplete runs exceed their limit after 7 hours on CI or
 30 hours on Pi. Monitoring starts with the first explicit run log; it never uses
 historical snapshot dates to fill gaps. See [the schema guide](DATA.md#collection-health).
 
+### Source incident notifications
+
+The daily freshness workflow runs `collection_incidents.py --apply`. A failed
+source check, missing listing, or overdue verification opens an assigned GitHub
+issue labeled `collection-incident`. Subsequent daily evaluations leave that
+issue open without posting again; unresolved incidents receive a reminder every
+seven days. A new successful source check closes the issue with a recovery
+comment. An in-progress run, deferred download, old success, or removed hospital
+does not count as recovery. A later recurrence opens a new incident.
+
+GitHub sends issue notifications according to the assignee/subscriber's account
+settings. The workflow assigns incidents to `lkowalcz`. The issue body links to
+the original observation; reminders include the latest evidence. Keep the hidden
+tracking marker and label intact. Comments are the durable reminder clock, so
+cache eviction or a fresh runner cannot restart daily notifications. Concurrent
+freshness runs are serialized, and manually closing an unresolved issue causes
+a new issue at the next evaluation.
+
+A successful incident-reporting run means the source problems were tracked;
+it does not mean every source is fresh. Overdue scheduled checks and interrupted
+collectors still fail the workflow, as do missing observations, invalid incident
+state, and GitHub API failures. Source freshness remains visible in the workflow
+summary, open issues, website, and collection health JSON. The standalone
+`python collection_health.py check` retains its strict nonzero result for any
+overdue source. Daily collection, empty-file rejection, snapshot history, and
+freshness deadlines are unchanged.
+
+Preview incident actions without publishing notifications:
+
+```sh
+python collection_incidents.py --repo lkowalcz/hospital-price-history
+```
+
+After reviewing the preview, add `--apply --assignee lkowalcz` to publish. This
+requires GitHub authentication with issue write access; the workflow uses its
+repository token with `issues: write` and does not need a new secret.
+
 After each run, the Pi force-pushes an annotated `pi-heartbeat` tag with
 the completion time as its tagger date. This records successful runs even
 when no price files changed. The `pi-heartbeat.yml`

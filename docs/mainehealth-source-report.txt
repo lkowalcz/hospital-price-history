@@ -1,0 +1,42 @@
+Subject: Maine Medical Center Portland price-transparency download is empty
+
+Hello MaineHealth Patient Financial Services,
+
+Could you forward this report to the team responsible for your hospital
+price-transparency files, or to your Hospital Price Index provider?
+
+The machine-readable file linked for MaineHealth Maine Medical Center Portland
+on your Billing & Financial Services page currently downloads as an empty file:
+
+https://sthpiprd.blob.core.windows.net/machine-readable-files/7975/010238552-1760436216_mainehealth_standardcharges.csv
+
+The link appears under "MaineHealth Maine Medical Center Portland" here:
+https://www.mainehealth.org/patients-visitors/billing-and-financial-services
+
+I checked the download again on November 7, 2026 at approximately 06:09 UTC.
+Both the response headers and a full GET request confirm an empty response:
+
+  HTTP status: 200 OK
+  Content-Length: 0
+  Actual downloaded bytes: 0
+  Last-Modified: Fri, 30 Oct 2026 22:58:59 GMT
+  ETag: 0x8DF36D962549A12
+  Content-MD5: 1B2M2Y8AsgTpgAmY7PhCfg== (the MD5 of empty content)
+
+Our public hospital-price-history archive has observed the empty download
+since October 31. Subsequent daily checks have continued to receive it.
+The latest recorded collection attempt is available here:
+https://github.com/lkowalcz/hospital-price-history/blob/25cb7393439e86931de0d54eb791a98fd567ee6a/observations/2026-11-06/github-actions-32b6053f2dac4bbea2b4a3a51d498359.jsonl
+
+Could your team restore the complete file, or update the public page and
+cms-hpt.txt listing to a working replacement URL? Please let me know when
+it is available so I can verify the download again.
+
+Thank you,
+Lucas Kowalczyk
+
+---
+Prepared report; not yet sent.
+Published contact route: MaineHealth Patient Financial Services,
+1-866-804-2499, Monday-Friday, 8 am-4:30 pm; or Customer Service in MyChart.
+Contact source: https://www.mainehealth.org/contact-mainehealth
